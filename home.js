@@ -5,6 +5,7 @@ const ctx = canvas.getContext("2d");
 const motionLayers = Array.from(document.querySelectorAll(".motion-layer"));
 const revealCards = Array.from(document.querySelectorAll(".reveal-card"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const carousels = new Map();
 
 let width = 0;
 let height = 0;
@@ -97,6 +98,43 @@ function revealOnScroll() {
   });
 }
 
+function setupCarousel(name) {
+  const items = Array.from(document.querySelectorAll(`[data-carousel-item="${name}"]`));
+  const previous = document.querySelector(`[data-carousel-prev="${name}"]`);
+  const next = document.querySelector(`[data-carousel-next="${name}"]`);
+  const status = document.querySelector(`[data-carousel-status="${name}"]`);
+
+  if (!items.length || !previous || !next || !status) {
+    return;
+  }
+
+  const pages = Math.max(...items.map((item) => Number(item.dataset.page || 0))) + 1;
+  const state = { index: 0, items, pages, previous, next, status };
+  carousels.set(name, state);
+
+  function render() {
+    state.items.forEach((item) => {
+      const isActive = Number(item.dataset.page || 0) === state.index;
+      item.classList.toggle("is-hidden", !isActive);
+      item.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    state.status.textContent = `${state.index + 1} / ${state.pages}`;
+  }
+
+  previous.addEventListener("click", () => {
+    state.index = (state.index - 1 + state.pages) % state.pages;
+    render();
+  });
+
+  next.addEventListener("click", () => {
+    state.index = (state.index + 1) % state.pages;
+    render();
+  });
+
+  render();
+}
+
 window.addEventListener("resize", () => {
   resizeCanvas();
   revealOnScroll();
@@ -125,3 +163,5 @@ resizeCanvas();
 drawConstellation();
 updateMotion();
 revealOnScroll();
+setupCarousel("symptom");
+setupCarousel("quote");

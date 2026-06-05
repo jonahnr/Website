@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parallax Data Lab | Analytics Foundation Assessment</title>
   <meta name="description" content="Parallax Data Lab helps teams restore trust in analytics by fixing the data models, metrics, logic, and ownership beneath their dashboards.">
-  <link rel="stylesheet" href="home.css?v=3">
+  <link rel="stylesheet" href="home.css?v=5">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
 
+  <header class="site-header" aria-label="Parallax site navigation">
+    <a class="site-brand" href="index.html">Parallax Data Lab</a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="how-we-help.html">How We Help</a>
+      <a href="intelligence-lab.html">Intelligence Lab</a>
+      <a href="our-offerings.html">Our Offerings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
   <main>
     <section class="hero-section" id="top">
-      <a class="hero-brand motion-layer" data-depth="0.08" href="https://parallax-data.webflow.io/" aria-label="Parallax Data Lab home">
+      <a class="hero-brand motion-layer" data-depth="0.08" href="index.html" aria-label="Parallax Data Lab home">
         <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M32 3 58 17v30L32 61 6 47V17Z" fill="#08163a" stroke="#1d8cff" stroke-width="2"/>
           <path d="M18 44V29h8v15Zm11 0V20h8v24Zm11 0V13h8v31Z" fill="#1d8cff"/>
@@ -63,64 +74,69 @@
         <p>Problems > Solutions</p>
         <h2>Where Analytics Trust Breaks Down</h2>
       </div>
-      <article class="symptom-card">
+      <div class="section-controls symptom-controls" aria-label="Problem card navigation">
+        <button type="button" data-carousel-prev="symptom" aria-label="Show previous problem set">Prev</button>
+        <span data-carousel-status="symptom">1 / 2</span>
+        <button type="button" data-carousel-next="symptom" aria-label="Show next problem set">Next</button>
+      </div>
+      <article class="symptom-card" data-carousel-item="symptom" data-page="0">
         <div class="symptom-visual cloud-visual" aria-hidden="true">
           <span></span><span></span><span></span><span></span>
         </div>
         <div class="symptom-copy">
           <h3>Business logic lives everywhere</h3>
           <p>Core calculations are duplicated across dashboards, spreadsheets, and ad-hoc queries, drifting further apart over time.</p>
-          <a href="https://parallax-data.webflow.io/how-we-help">How we can help you <span aria-hidden="true">-></span></a>
+          <a href="how-we-help.html">How we can help you <span aria-hidden="true">-></span></a>
         </div>
       </article>
-      <article class="symptom-card">
+      <article class="symptom-card" data-carousel-item="symptom" data-page="0">
         <div class="symptom-visual team-visual" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <div class="symptom-copy">
           <h3>Metrics lack shared meaning</h3>
           <p>The same KPI is calculated multiple ways, depending on who built the report or when it was created.</p>
-          <a href="https://parallax-data.webflow.io/how-we-help">How we can help you <span aria-hidden="true">-></span></a>
+          <a href="how-we-help.html">How we can help you <span aria-hidden="true">-></span></a>
         </div>
       </article>
-      <article class="symptom-card">
+      <article class="symptom-card" data-carousel-item="symptom" data-page="0">
         <div class="symptom-visual report-visual" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <div class="symptom-copy">
           <h3>Reports answer wrong questions</h3>
           <p>Reports look polished, but no longer align to how leadership actually makes decisions.</p>
-          <a href="https://parallax-data.webflow.io/how-we-help">How we can help you <span aria-hidden="true">-></span></a>
+          <a href="how-we-help.html">How we can help you <span aria-hidden="true">-></span></a>
         </div>
       </article>
-      <article class="symptom-card">
+      <article class="symptom-card" data-carousel-item="symptom" data-page="1">
         <div class="symptom-visual confidence-visual" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <div class="symptom-copy">
           <h3>Confidence erodes silently</h3>
           <p>Meetings turn into debates over numbers, and teams spend more time defending data than acting on it.</p>
-          <a href="https://parallax-data.webflow.io/how-we-help">How we can help you <span aria-hidden="true">-></span></a>
+          <a href="how-we-help.html">How we can help you <span aria-hidden="true">-></span></a>
         </div>
       </article>
-      <article class="symptom-card">
+      <article class="symptom-card" data-carousel-item="symptom" data-page="1">
         <div class="symptom-visual scale-visual" aria-hidden="true">
           <span></span><span></span><span></span><span></span>
         </div>
         <div class="symptom-copy">
           <h3>Systems don't scale with the business</h3>
           <p>As teams grow, analytics debt accumulates faster than insight, making every change slower, riskier, and more expensive over time.</p>
-          <a href="https://parallax-data.webflow.io/how-we-help">How we can help you <span aria-hidden="true">-></span></a>
+          <a href="how-we-help.html">How we can help you <span aria-hidden="true">-></span></a>
         </div>
       </article>
-      <article class="symptom-card">
+      <article class="symptom-card" data-carousel-item="symptom" data-page="1">
         <div class="symptom-visual slow-visual" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <div class="symptom-copy">
           <h3>Decisions slow down as data grows</h3>
           <p>As datasets expand and reports multiply, answering simple questions takes longer, alignment breaks down, and teams default to instinct instead of insight.</p>
-          <a href="https://parallax-data.webflow.io/how-we-help">How we can help you <span aria-hidden="true">-></span></a>
+          <a href="how-we-help.html">How we can help you <span aria-hidden="true">-></span></a>
         </div>
       </article>
     </section>
@@ -178,8 +194,13 @@
 
     <section class="trust-section reveal-card">
       <h2>What Leaders Say After Trust Is Restored</h2>
+      <div class="section-controls quote-controls" aria-label="Quote navigation">
+        <button type="button" data-carousel-prev="quote" aria-label="Show previous quotes">Prev</button>
+        <span data-carousel-status="quote">1 / 2</span>
+        <button type="button" data-carousel-next="quote" aria-label="Show next quotes">Next</button>
+      </div>
       <div class="quote-grid">
-        <article>
+        <article data-carousel-item="quote" data-page="0">
           <div class="quote-icon check-icon" aria-hidden="true"></div>
           <blockquote>"We finally stopped arguing about which numbers were right. Our dashboards didn't change much, but confidence did."</blockquote>
           <div class="quote-person">
@@ -188,7 +209,7 @@
             <em>Ryan Caldwell</em>
           </div>
         </article>
-        <article>
+        <article data-carousel-item="quote" data-page="0">
           <div class="quote-icon compass-icon" aria-hidden="true"></div>
           <blockquote>"We thought we needed better dashboards. What we needed was clearer ownership and definitions."</blockquote>
           <div class="quote-person">
@@ -197,7 +218,7 @@
             <em>Steve Reinhardt</em>
           </div>
         </article>
-        <article>
+        <article data-carousel-item="quote" data-page="0">
           <div class="quote-icon chart-icon" aria-hidden="true"></div>
           <blockquote>"This was the first time analytics actually aligned with how leadership makes decisions."</blockquote>
           <div class="quote-person">
@@ -206,7 +227,7 @@
             <em>Sarah Lin</em>
           </div>
         </article>
-        <article>
+        <article data-carousel-item="quote" data-page="1">
           <div class="quote-icon check-icon" aria-hidden="true"></div>
           <blockquote>"The biggest change was speed. We could finally answer the follow-up question without rebuilding the whole report."</blockquote>
           <div class="quote-person">
@@ -215,7 +236,7 @@
             <em>Maya Patel</em>
           </div>
         </article>
-        <article>
+        <article data-carousel-item="quote" data-page="1">
           <div class="quote-icon compass-icon" aria-hidden="true"></div>
           <blockquote>"Parallax helped us see which metrics were useful, which were legacy noise, and who needed to own each one."</blockquote>
           <div class="quote-person">
@@ -224,7 +245,7 @@
             <em>Jordan Meyer</em>
           </div>
         </article>
-        <article>
+        <article data-carousel-item="quote" data-page="1">
           <div class="quote-icon chart-icon" aria-hidden="true"></div>
           <blockquote>"We stopped treating analytics as a dashboard project and started treating it like operating infrastructure."</blockquote>
           <div class="quote-person">

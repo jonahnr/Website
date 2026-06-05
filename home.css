@@ -56,6 +56,10 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+button {
+  font: inherit;
+}
+
 #constellation {
   position: fixed;
   inset: 0;
@@ -72,11 +76,62 @@ main {
   z-index: 1;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 68px;
+  padding: 10px max(18px, calc((100vw - 1180px) / 2));
+  color: var(--white);
+  background: #226ddb;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+.site-brand {
+  color: var(--gold);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-header nav::-webkit-scrollbar {
+  display: none;
+}
+
+.site-header nav a {
+  color: var(--white);
+  border-bottom: 2px solid transparent;
+  padding: 10px 2px;
+  font-size: 0.95rem;
+  font-weight: 850;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  border-bottom-color: var(--gold);
+}
+
 .hero-section {
   position: relative;
   display: grid;
   justify-items: center;
-  min-height: 525px;
+  min-height: 500px;
   padding: 18px 18px 92px;
   color: var(--white);
   text-align: center;
@@ -243,6 +298,11 @@ h1 {
   line-height: 1.12;
 }
 
+.diagnostic-section h2 {
+  color: var(--white);
+  text-shadow: 0 5px 18px rgba(0, 0, 0, 0.32);
+}
+
 .diagnostic-panel {
   width: min(720px, 100%);
   margin: 0 auto;
@@ -358,13 +418,64 @@ h1 {
 
 .symptom-heading h2 {
   margin-bottom: 0;
+  white-space: nowrap;
   font-size: clamp(1.8rem, 3vw, 2.45rem);
+}
+
+.section-controls {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: -6px 0 2px;
+}
+
+.section-controls button {
+  min-width: 78px;
+  min-height: 38px;
+  border: 2px solid rgba(49, 168, 255, 0.76);
+  color: var(--white);
+  background: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.section-controls button:hover,
+.section-controls button:focus-visible {
+  background: var(--royal);
+  transform: translateY(-1px);
+}
+
+.section-controls span {
+  min-width: 58px;
+  color: var(--royal);
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.quote-controls {
+  margin: 0 auto 16px;
+}
+
+.quote-controls span {
+  color: var(--gold-2);
 }
 
 .symptom-card {
   display: grid;
   grid-template-rows: 166px 1fr;
   min-height: 462px;
+}
+
+.symptom-card.is-hidden,
+.quote-grid article.is-hidden {
+  display: none;
 }
 
 .symptom-visual {
@@ -552,7 +663,9 @@ h1 {
   min-height: 288px;
   padding: 24px 28px;
   border: 3px solid #1f78ff;
-  background: rgba(7, 19, 58, 0.95);
+  background:
+    linear-gradient(180deg, rgba(49, 168, 255, 0.12), transparent),
+    rgba(7, 19, 58, 0.95);
   text-align: center;
 }
 
@@ -577,6 +690,10 @@ h1 {
   height: 66px;
   border: 3px solid rgba(125, 171, 232, 0.75);
   border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(49, 168, 255, 0.18), transparent 60%),
+    rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 22px rgba(49, 168, 255, 0.2);
 }
 
 .line-icon::before,
@@ -597,6 +714,15 @@ h1 {
   height: 22px;
   background: var(--blue);
   box-shadow: 13px -8px 0 var(--blue), 26px -18px 0 var(--blue);
+}
+
+.health-icon::after {
+  left: 12px;
+  top: 14px;
+  width: 40px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.52);
+  border-radius: 7px;
 }
 
 .target-icon::before {
@@ -650,6 +776,15 @@ h1 {
   box-shadow: 0 -8px 0 var(--blue);
 }
 
+.work-grid article:nth-child(1) .line-icon,
+.work-grid article:nth-child(2) .line-icon,
+.work-grid article:nth-child(3) .line-icon,
+.work-grid article:nth-child(4) .line-icon {
+  width: 78px;
+  height: 78px;
+  margin-bottom: 4px;
+}
+
 .failure-section {
   margin-top: 28px;
   padding: 14px 95px;
@@ -692,25 +827,32 @@ h1 {
   min-height: 405px;
   padding: 32px 20px;
   border: 2px solid #1f78ff;
-  background: #e7e7e7;
+  background:
+    linear-gradient(180deg, #f7fbff, #e2edf8),
+    #e7e7e7;
 }
 
 .stat-icon {
-  width: 92px;
-  height: 92px;
+  width: 104px;
+  height: 104px;
   margin-bottom: 38px;
   border-color: rgba(49, 127, 255, 0.75);
-  border-radius: 8px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(49, 168, 255, 0.12), rgba(255, 255, 255, 0.72)),
+    #eef6ff;
 }
 
 .warning-icon {
   border-radius: 18px;
-  transform: rotate(45deg);
+  transform: none;
+  clip-path: polygon(50% 7%, 94% 86%, 6% 86%);
+  background: #f8fbff;
 }
 
 .warning-icon::before {
-  left: 41px;
-  top: 16px;
+  left: 47px;
+  top: 30px;
   width: 10px;
   height: 42px;
   border-radius: 6px;
@@ -718,8 +860,8 @@ h1 {
 }
 
 .warning-icon::after {
-  left: 41px;
-  bottom: 16px;
+  left: 47px;
+  bottom: 22px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -728,7 +870,7 @@ h1 {
 
 .dashboard-icon::before {
   left: 18px;
-  bottom: 18px;
+  bottom: 20px;
   width: 10px;
   height: 26px;
   background: #79aaff;
@@ -737,7 +879,7 @@ h1 {
 
 .dashboard-icon::after {
   right: 14px;
-  top: 24px;
+  top: 26px;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -746,10 +888,11 @@ h1 {
 
 .broken-icon::before,
 .broken-icon::after {
-  top: 26px;
-  width: 48px;
-  height: 56px;
+  top: 28px;
+  width: 46px;
+  height: 54px;
   border: 5px solid #3b82ff;
+  border-radius: 5px;
   transform: rotate(-9deg);
 }
 
@@ -773,37 +916,21 @@ h1 {
   padding: 16px 38px 30px;
   border: 3px solid var(--cyan);
   color: var(--white);
-  background: var(--navy);
+  background:
+    linear-gradient(180deg, rgba(49, 168, 255, 0.1), rgba(7, 19, 58, 0.95)),
+    var(--navy);
   text-align: center;
 }
 
 .quote-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  width: min(680px, 100%);
+  width: min(720px, 100%);
   margin: 0 auto;
-  padding: 0 0 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-color: var(--gold) rgba(255, 255, 255, 0.16);
-  scrollbar-width: thin;
-}
-
-.quote-grid::-webkit-scrollbar {
-  height: 10px;
-}
-
-.quote-grid::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.quote-grid::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--gold), var(--blue));
 }
 
 .quote-grid article {
-  flex: 0 0 min(190px, 78vw);
   display: grid;
   justify-items: center;
   min-height: 420px;
@@ -812,7 +939,7 @@ h1 {
   background:
     linear-gradient(180deg, rgba(49, 168, 255, 0.16), transparent),
     #294579;
-  scroll-snap-align: start;
+  transition: opacity 240ms ease, transform 240ms ease;
 }
 
 .quote-icon {
@@ -943,7 +1070,8 @@ h1 {
   .diagnostic-panel article,
   .symptom-section,
   .work-grid,
-  .stat-grid {
+  .stat-grid,
+  .quote-grid {
     grid-template-columns: 1fr;
   }
 
@@ -990,8 +1118,13 @@ h1 {
   .diagnostic-section h2,
   .failure-section h2,
   .trust-section h2,
-  .work-shell h2 {
+  .work-shell h2,
+  .symptom-heading h2 {
     font-size: 1.8rem;
+  }
+
+  .symptom-heading h2 {
+    font-size: clamp(1.35rem, 7vw, 1.8rem);
   }
 
   .section-lede,
