@@ -1,18 +1,18 @@
-:root {
-  --navy: #07133a;
-  --deep: #020718;
-  --royal: #226ddb;
-  --blue: #1d8cff;
-  --cyan: #39c4ff;
-  --gold: #f7b935;
-  --gold-2: #ffd66f;
-  --ice: #d9ecfb;
+﻿:root {
+  --navy: #0b1745;
+  --deep: #050916;
+  --royal: #1f6ae5;
+  --blue: #1f6ae5;
+  --cyan: #45beff;
+  --gold: #f5b544;
+  --gold-2: #ffd77a;
+  --ice: #eaf4ff;
   --panel-blue: #9db8d8;
   --panel-blue-2: #7fa9cf;
-  --surface: #edf6ff;
+  --surface: #f4f8fc;
   --card: #ffffff;
   --white: #ffffff;
-  --ink: #030915;
+  --ink: #081024;
   --soft: #dbe8ff;
   --shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
 }
@@ -369,7 +369,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  content: "✓";
+  content: "âœ“";
   color: var(--gold);
   font-size: 1.7rem;
   line-height: 1;
@@ -803,7 +803,7 @@
   height: 30px;
   border: 2px solid var(--gold);
   border-radius: 50%;
-  content: "✓";
+  content: "âœ“";
   font-size: 1.2rem;
 }
 
@@ -999,7 +999,7 @@ main {
 }
 
 .nav-dropdown-toggle::after {
-  content: "⌄";
+  content: "âŒ„";
   font-size: 0.8rem;
 }
 
@@ -1010,7 +1010,7 @@ main {
 }
 
 .nav-dropdown > a::after {
-  content: "⌄";
+  content: "âŒ„";
   font-size: 0.8rem;
 }
 
@@ -3199,7 +3199,7 @@ h1 {
 .offer-copy li::before {
   position: absolute;
   left: 0;
-  content: "✓";
+  content: "âœ“";
   color: var(--gold);
   font-size: 1.4rem;
   line-height: 1;
@@ -3437,7 +3437,7 @@ h1 {
 .deliverable-card li::before {
   position: absolute;
   left: 0;
-  content: "•";
+  content: "â€¢";
   color: var(--gold);
   font-size: 1.55rem;
   line-height: 1;
@@ -3719,7 +3719,7 @@ h1 {
 .assessment-expect li::before {
   position: absolute;
   left: 0;
-  content: "✦";
+  content: "âœ¦";
   color: var(--white);
 }
 
@@ -4065,7 +4065,7 @@ h1 {
 
 .reset-check-grid span::before,
 .reset-receive li::before {
-  content: "✓";
+  content: "âœ“";
   color: #0b2b80;
   font-size: 2.4rem;
   font-weight: 900;
@@ -5035,7 +5035,7 @@ h1 {
   position: absolute;
   left: 0;
   top: -.18em;
-  content: "✓";
+  content: "âœ“";
   color: var(--gold);
   font-size: 1.75em;
   line-height: 1;
@@ -5388,7 +5388,7 @@ h1 {
 .about-arrow-list li::before {
   position: absolute;
   left: 0;
-  content: "➤";
+  content: "âž¤";
   color: var(--gold);
   text-shadow: 0 0 8px rgba(247,185,53,.75);
 }
@@ -5439,7 +5439,7 @@ h1 {
 .about-systems-grid li::before {
   position: absolute;
   left: 0;
-  content: "●";
+  content: "â—";
   color: var(--gold);
 }
 
@@ -5750,4 +5750,1759 @@ h1 {
 @keyframes fractionalGridDrift {
   from { background-position: 0 0, 0 0, 0 0, 0 0; }
   to { background-position: 160px 100px, -140px 90px, 0 96px, 96px 0; }
+}
+
+/* === Parallax brand system refinement === */
+:root {
+  --brand-primary: #0b1745;
+  --brand-secondary: #1f6ae5;
+  --accent-primary: #f5b544;
+  --accent-secondary: #45beff;
+  --navy: #0b1745;
+  --deep: #050916;
+  --royal: #1f6ae5;
+  --blue: #1f6ae5;
+  --cyan: #45beff;
+  --gold: #f5b544;
+  --gold-2: #ffd77a;
+  --surface: #f4f8fc;
+  --card: #ffffff;
+  --ink: #081024;
+  --soft: #dbe8ff;
+  --muted: #5d6880;
+  --line: rgba(31, 106, 229, 0.24);
+  --line-strong: rgba(69, 190, 255, 0.56);
+  --panel: rgba(11, 23, 69, 0.82);
+  --panel-solid: #101d52;
+  --panel-soft: rgba(255, 255, 255, 0.08);
+  --shadow: 0 18px 42px rgba(5, 9, 22, 0.28);
+  --shadow-soft: 0 14px 32px rgba(11, 23, 69, 0.14);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --max-content: 1180px;
+  --section-pad: clamp(56px, 7vw, 92px);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(69, 190, 255, 0.15), transparent 24rem),
+    radial-gradient(circle at 86% 10%, rgba(245, 181, 68, 0.12), transparent 22rem),
+    linear-gradient(180deg, #071029 0%, var(--brand-primary) 42%, #0f2f71 100%);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    radial-gradient(circle at 78% 16%, rgba(69, 190, 255, 0.18), transparent 18rem),
+    radial-gradient(circle at 18% 18%, rgba(245, 181, 68, 0.10), transparent 16rem);
+  background-size: 80px 80px, 80px 80px, auto, auto;
+  opacity: 0.72;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+p, li, blockquote {
+  text-wrap: pretty;
+}
+
+.site-header {
+  min-height: 72px;
+  background: rgba(11, 23, 69, 0.96);
+  border-bottom: 1px solid rgba(69, 190, 255, 0.28);
+  box-shadow: 0 10px 28px rgba(5, 9, 22, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.site-brand {
+  color: var(--accent-primary);
+  letter-spacing: 0;
+}
+
+.site-header nav {
+  gap: clamp(14px, 2vw, 26px);
+}
+
+.site-header nav a,
+.nav-dropdown-toggle {
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible,
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible,
+.site-header nav a[aria-current="page"],
+.nav-dropdown-toggle[aria-current="page"] {
+  color: var(--white);
+  background: rgba(31, 106, 229, 0.34);
+  border-color: rgba(245, 181, 68, 0.86);
+}
+
+.nav-dropdown-menu {
+  border-color: rgba(69, 190, 255, 0.42);
+  border-radius: var(--radius-md);
+  background: rgba(8, 16, 45, 0.98);
+  box-shadow: var(--shadow);
+}
+
+.nav-dropdown-menu a {
+  border-radius: var(--radius-sm);
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+  background: rgba(31, 106, 229, 0.24);
+}
+
+.hero-section,
+.help-hero,
+.lab-hero,
+.offerings-hero,
+.assessment-intro,
+.reset-hero,
+.fractional-hero,
+.about-hero {
+  color: var(--white);
+  background-color: var(--brand-primary);
+  background-blend-mode: normal;
+}
+
+.hero-section,
+.help-hero,
+.lab-hero,
+.offerings-hero,
+.assessment-intro,
+.reset-hero,
+.fractional-hero,
+.about-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.82), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 78% 18%, rgba(69, 190, 255, 0.22), transparent 24rem),
+    radial-gradient(circle at 22% 18%, rgba(245, 181, 68, 0.12), transparent 20rem);
+}
+
+.hero-section {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.78), rgba(11, 23, 69, 0.9)),
+    url("assets/parallax-customer-intelligence-hero.png");
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.help-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.62), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 50% 30%, rgba(245, 181, 68, 0.15), transparent 18rem),
+    url("assets/parallax-customer-intelligence-hero.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+main > section,
+.help-section,
+.help-process,
+.success-section,
+.patterns-section,
+.next-section,
+.risk-section,
+.lab-section,
+.offerings-section,
+.offer-detail,
+.assessment-steps,
+.assessment-form-section,
+.assessment-talk,
+.assessment-expect,
+.assessment-close,
+.reset-objective,
+.reset-fix-section,
+.reset-receive,
+.reset-timeline,
+.reset-after,
+.reset-start,
+.fractional-definition,
+.fractional-fit,
+.fractional-benefits,
+.fractional-practice,
+.fractional-options,
+.fractional-outcomes,
+.about-pov,
+.about-work,
+.about-fit,
+.about-systems,
+.about-why,
+.about-founder,
+.about-contact {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+.help-page,
+.lab-page,
+.offerings-page,
+.assessment-page,
+.reset-page,
+.fractional-page,
+.about-page {
+  color: var(--white);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(69, 190, 255, 0.14), transparent 22rem),
+    radial-gradient(circle at 86% 18%, rgba(245, 181, 68, 0.11), transparent 20rem),
+    linear-gradient(180deg, #050916 0%, var(--brand-primary) 48%, #071029 100%) !important;
+}
+
+.diagnostic-section,
+.symptom-section,
+.work-section,
+.failure-section,
+.trust-section,
+.method-section,
+.outcome-section,
+.cta-section,
+.situation-section,
+.process-section,
+.help-process,
+.success-section,
+.patterns-section,
+.next-section,
+.risk-section,
+.benefit-section,
+.principles-section,
+.initiatives-section,
+.offerings-section,
+.offer-detail,
+.offerings-jump,
+.offerings-cta,
+.assessment-steps,
+.assessment-form-section,
+.assessment-talk,
+.assessment-expect,
+.assessment-close,
+.reset-objective,
+.reset-fix-section,
+.reset-receive,
+.reset-timeline,
+.reset-after,
+.reset-start,
+.fractional-definition,
+.fractional-fit,
+.fractional-benefits,
+.fractional-practice,
+.fractional-options,
+.fractional-outcomes,
+.about-pov,
+.about-work,
+.about-fit,
+.about-systems,
+.about-why,
+.about-founder,
+.about-contact {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(69, 190, 255, 0.08), transparent 18rem),
+    linear-gradient(180deg, rgba(5, 9, 22, 0.24), rgba(5, 9, 22, 0.42)),
+    var(--brand-primary) !important;
+}
+
+.work-shell,
+.diagnostic-panel article,
+.symptom-card,
+.stat-grid article,
+.quote-grid article,
+.situation-grid article,
+.process-step,
+.pattern-list article,
+.next-grid article,
+.risk-grid article,
+.benefit-grid article,
+.principle-grid article,
+.initiative-card,
+.studio-card,
+.offer-grid article,
+.offer-panel,
+.engagement-path,
+.reset-objective-panel,
+.reset-fix-card,
+.reset-receive-panel,
+.reset-format-grid article,
+.reset-after-grid article,
+.fractional-definition-panel,
+.fractional-fit-grid article,
+.fractional-benefit-grid article,
+.fractional-practice-grid article,
+.fractional-options-grid article,
+.fractional-outcome-grid,
+.about-rule-grid article,
+.about-work-grid article,
+.about-fit-grid article,
+.about-systems-grid article,
+.about-contact-form,
+.about-next-card {
+  border: 1px solid var(--line-strong) !important;
+  border-radius: var(--radius-md) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.045)),
+    rgba(11, 23, 69, 0.78) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.offer-panel,
+.assessment-form,
+.about-contact-form,
+.about-next-card,
+.principle-grid article {
+  color: var(--ink) !important;
+  background: linear-gradient(180deg, #ffffff, #eef5ff) !important;
+  border-color: rgba(31, 106, 229, 0.24) !important;
+}
+
+.offer-panel *,
+.assessment-form *,
+.about-contact-form *,
+.about-next-card *,
+.principle-grid article * {
+  color: inherit;
+}
+
+.about-next-card a,
+.about-contact-form button,
+.about-book {
+  color: var(--white) !important;
+}
+
+.primary-action,
+.secondary-action,
+.secondary-offer-button,
+.lab-button,
+.lab-blue-button,
+.assessment-secondary,
+.reset-call-button,
+.about-book,
+.about-contact-form button {
+  min-height: 46px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm) !important;
+  padding-inline: 24px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.primary-action,
+.lab-blue-button,
+.reset-call-button,
+.about-contact-form button,
+.about-book {
+  color: var(--white) !important;
+  background: var(--brand-secondary) !important;
+  border-color: rgba(69, 190, 255, 0.38) !important;
+}
+
+.secondary-action,
+.secondary-offer-button,
+.assessment-secondary,
+.secondary-lab-button {
+  color: var(--white) !important;
+  background: rgba(11, 23, 69, 0.66) !important;
+  border-color: rgba(69, 190, 255, 0.58) !important;
+}
+
+.lab-button {
+  color: var(--brand-primary) !important;
+  background: var(--accent-primary) !important;
+  border-color: rgba(255, 255, 255, 0.48) !important;
+}
+
+.primary-action:hover,
+.primary-action:focus-visible,
+.secondary-action:hover,
+.secondary-action:focus-visible,
+.secondary-offer-button:hover,
+.secondary-offer-button:focus-visible,
+.lab-button:hover,
+.lab-button:focus-visible,
+.lab-blue-button:hover,
+.lab-blue-button:focus-visible,
+.assessment-secondary:hover,
+.assessment-secondary:focus-visible,
+.reset-call-button:hover,
+.reset-call-button:focus-visible,
+.about-book:hover,
+.about-book:focus-visible,
+.about-contact-form button:hover,
+.about-contact-form button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(31, 106, 229, 0.24) !important;
+}
+
+.primary-action:hover,
+.primary-action:focus-visible,
+.lab-blue-button:hover,
+.lab-blue-button:focus-visible,
+.reset-call-button:hover,
+.reset-call-button:focus-visible,
+.about-contact-form button:hover,
+.about-contact-form button:focus-visible,
+.about-book:hover,
+.about-book:focus-visible {
+  background: #1558c7 !important;
+}
+
+.page-kicker,
+.about-small-kicker,
+.offerings-hero p:first-child,
+.hero-brand em,
+.lab-section h4,
+.initiative-card h4,
+.studio-card h4,
+.reset-kicker,
+.fractional-kicker {
+  color: var(--accent-primary) !important;
+  letter-spacing: 0.03em;
+}
+
+.hero-section h1,
+.help-hero h1,
+.lab-hero h1,
+.offerings-hero h1,
+.assessment-intro h1,
+.reset-hero h1,
+.fractional-hero h1,
+.about-hero h1 {
+  max-width: 1120px;
+  color: var(--white) !important;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.hero-section h1 strong,
+.hero-section h1 em,
+.help-hero h1 strong,
+.lab-hero h1 strong,
+.offerings-hero h1 strong,
+.assessment-intro h1 strong,
+.reset-hero h1 strong,
+.fractional-hero h1 strong,
+.about-hero h1 strong {
+  color: var(--accent-primary);
+}
+
+h2,
+.help-section h2,
+.help-process h2,
+.success-section h2,
+.patterns-section h2,
+.next-section h2,
+.risk-section h2,
+.lab-section h2,
+.about-pov h2,
+.about-work h2,
+.about-fit h2,
+.about-systems h2,
+.about-why h2,
+.about-founder h2,
+.about-contact h2 {
+  color: var(--white);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.work-shell h2,
+.diagnostic-section h2,
+.symptom-section h2,
+.failure-section h2,
+.trust-section h2,
+.method-section h2,
+.outcome-section h2 {
+  color: var(--white) !important;
+}
+
+.diagnostic-panel h3,
+.symptom-card h3,
+.work-grid h3,
+.stat-grid strong,
+.quote-person strong,
+.situation-grid h3,
+.benefit-grid h3,
+.initiative-card h3,
+.studio-card h3,
+.offer-grid h3,
+.offer-copy h2,
+.reset-fix-card h3,
+.fractional-fit-grid h3,
+.fractional-benefit-grid h3,
+.fractional-practice-grid h3,
+.fractional-options-grid h3,
+.about-rule-grid h3,
+.about-work-grid h3,
+.about-fit-grid h3,
+.about-systems-grid h3 {
+  color: var(--white);
+  letter-spacing: 0;
+}
+
+.offer-panel h3,
+.offer-panel li,
+.assessment-form h2,
+.assessment-form label,
+.assessment-form p,
+.about-contact-form h3,
+.about-contact-form label,
+.about-next-card h3,
+.about-next-card li,
+.principle-grid h3,
+.principle-grid p {
+  color: var(--ink) !important;
+}
+
+.section-lede,
+.section-note,
+.help-lede,
+.lab-section > p,
+.offerings-lede,
+.about-center-note,
+.about-hero-copy > p,
+.about-why-copy p,
+.about-founder-copy p,
+.about-contact-intro p,
+.hero-copy p,
+.help-hero p,
+.lab-hero p,
+.offerings-hero p,
+.assessment-intro p,
+.reset-hero p,
+.fractional-hero p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid rgba(31, 106, 229, 0.22) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--ink) !important;
+  background: #ffffff !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(69, 190, 255, 0.26);
+  border-color: var(--brand-secondary) !important;
+}
+
+.about-page {
+  --about-panel: rgba(11, 23, 69, 0.78);
+  --about-panel-2: rgba(31, 106, 229, 0.46);
+}
+
+.about-hero,
+.about-pov,
+.about-work,
+.about-fit,
+.about-systems,
+.about-why,
+.about-founder,
+.about-contact,
+.fractional-page,
+.fractional-definition-panel,
+.fractional-fit-grid article,
+.fractional-benefit-grid article,
+.fractional-practice-grid article,
+.fractional-options-grid article,
+.fractional-outcome-grid {
+  --purple-replacement: var(--brand-primary);
+}
+
+.about-hero {
+  grid-template-columns: minmax(360px, 0.78fr) minmax(420px, 1fr);
+}
+
+.about-orbit-ring {
+  border-color: rgba(69, 190, 255, 0.82) !important;
+  box-shadow: 0 0 52px rgba(69, 190, 255, 0.42), inset 0 0 42px rgba(31, 106, 229, 0.46) !important;
+}
+
+.about-bars span {
+  background: linear-gradient(180deg, var(--accent-secondary), var(--brand-secondary)) !important;
+  border-color: rgba(69, 190, 255, 0.9) !important;
+  box-shadow: inset 0 0 18px rgba(255,255,255,.16), 0 0 26px rgba(69, 190, 255, 0.36) !important;
+}
+
+.about-rule-grid article,
+.about-work-grid article,
+.about-fit-grid article,
+.about-systems-grid article,
+.fractional-definition-panel,
+.fractional-fit-grid article,
+.fractional-benefit-grid article,
+.fractional-practice-grid article,
+.fractional-options-grid article,
+.fractional-outcome-grid {
+  background-color: rgba(11, 23, 69, 0.78) !important;
+}
+
+.about-contact {
+  align-items: stretch;
+}
+
+.about-contact-form {
+  align-self: stretch;
+}
+
+.section-controls button {
+  border-radius: var(--radius-sm) !important;
+  border-color: var(--line-strong) !important;
+  color: var(--white) !important;
+  background: rgba(11, 23, 69, 0.76) !important;
+}
+
+.section-controls span,
+.delivery-grid span,
+.tag-row span {
+  border-color: rgba(69, 190, 255, 0.44) !important;
+  color: var(--white) !important;
+  background: rgba(31, 106, 229, 0.16);
+}
+
+.help-illustration,
+.line-icon,
+.stat-icon,
+.lab-icon,
+.lab-graphic,
+.fractional-card-icon,
+.fractional-badge {
+  border-color: rgba(69, 190, 255, 0.6) !important;
+  background-color: rgba(31, 106, 229, 0.12) !important;
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding-inline: 18px;
+  }
+
+  .site-header nav {
+    width: 100%;
+    gap: 8px 14px;
+  }
+
+  .site-header nav a,
+  .nav-dropdown-toggle {
+    padding-block: 8px;
+    font-size: 0.86rem;
+  }
+
+  .hero-section,
+  .help-hero,
+  .lab-hero,
+  .offerings-hero,
+  .assessment-intro,
+  .reset-hero,
+  .fractional-hero,
+  .about-hero {
+    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+/* === End Parallax brand system refinement === */
+
+/* Brand system nav chevron repair */
+.nav-dropdown-toggle::after,
+.nav-dropdown > a::after {
+  content: "" !important;
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin-left: 2px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+/* Brand system encoded pseudo-icon repair */
+.process-grid li::before,
+.next-grid li::before,
+.risk-panel li::before,
+.offer-copy li::before,
+.about-check-list li::before,
+.reset-check-grid span::before,
+.reset-receive li::before {
+  content: "" !important;
+  display: inline-block;
+  width: 0.46em;
+  height: 0.82em;
+  border: solid var(--accent-primary);
+  border-width: 0 0.18em 0.18em 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: rotate(45deg);
+}
+
+.process-grid li::before,
+.next-grid li::before,
+.offer-copy li::before {
+  top: 0.18em;
+  font-size: 1rem;
+}
+
+.about-check-list li::before {
+  top: 0.12em;
+  font-size: 1.15rem;
+}
+
+.risk-panel li::before {
+  top: 0.22em;
+  width: 0.44em;
+  height: 0.76em;
+  border-radius: 0 !important;
+}
+
+.reset-check-grid span::before,
+.reset-receive li::before {
+  border-color: var(--brand-secondary);
+}
+
+.engagement-split li::before,
+.deliverable-card li::before,
+.about-systems-grid li::before,
+.assessment-expect li::before {
+  content: "" !important;
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.46em;
+  height: 0.46em;
+  border-radius: 50%;
+  background: var(--accent-primary);
+}
+
+.assessment-expect li::before {
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.about-arrow-list li::before {
+  content: "" !important;
+  top: 0.35em;
+  width: 0.72em;
+  height: 0.72em;
+  border: solid var(--accent-primary);
+  border-width: 0 0.18em 0.18em 0;
+  transform: rotate(-45deg);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Conversion clarity refinement */
+:root {
+  --hero-type: clamp(2.35rem, 5.2vw, 4.8rem);
+  --section-type: clamp(1.8rem, 3vw, 2.7rem);
+  --card-type: clamp(1.02rem, 1.5vw, 1.28rem);
+}
+
+.hero-section h1,
+.help-hero h1,
+.lab-hero h1,
+.offerings-hero h1,
+.assessment-intro h1,
+.reset-hero h1,
+.fractional-hero h1,
+.about-hero h1 {
+  font-size: var(--hero-type) !important;
+  line-height: 1.08 !important;
+  max-width: 1040px;
+}
+
+.diagnostic-section h2,
+.symptom-section h2,
+.work-shell h2,
+.failure-section h2,
+.trust-section h2,
+.closing-section h2,
+.proof-section h2,
+.deliverables-snapshot h2,
+.assessment-deliverables h2,
+.offerings-section h2,
+.offer-detail h2,
+.assessment-steps h2,
+.assessment-form-section h2,
+.assessment-talk h2,
+.assessment-expect h2,
+.assessment-close h2,
+.lab-section h2,
+.about-pov h2,
+.about-work h2,
+.about-fit h2,
+.about-systems h2,
+.about-why h2,
+.about-founder h2,
+.about-contact h2 {
+  font-size: var(--section-type) !important;
+  line-height: 1.15 !important;
+}
+
+.diagnostic-panel h3,
+.symptom-card h3,
+.work-grid h3,
+.offer-grid h3,
+.offer-panel h3,
+.engagement-path h3,
+.proof-grid strong,
+.deliverables-grid strong,
+.assessment-deliverable-grid strong,
+.assessment-step-grid h3,
+.reset-fix-card h3,
+.fractional-fit-grid h3,
+.fractional-benefit-grid h3,
+.about-rule-grid h3,
+.about-work-grid h3,
+.about-fit-grid h3,
+.about-systems-grid h3 {
+  font-size: var(--card-type) !important;
+}
+
+.proof-section,
+.deliverables-snapshot,
+.assessment-deliverables {
+  padding: var(--section-pad) 18px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(69, 190, 255, 0.10), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    #071029 !important;
+}
+
+.proof-intro,
+.deliverables-snapshot > .page-kicker,
+.deliverables-snapshot > h2,
+.assessment-deliverables > .page-kicker,
+.assessment-deliverables > h2 {
+  width: min(var(--max-content), calc(100% - 36px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proof-intro {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.proof-intro p:not(.page-kicker),
+.deliverables-snapshot > p:not(.page-kicker),
+.assessment-deliverables > p:not(.page-kicker) {
+  max-width: 820px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1.02rem, 1.6vw, 1.24rem);
+  font-weight: 600;
+}
+
+.proof-grid,
+.deliverables-grid,
+.assessment-deliverable-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: min(var(--max-content), calc(100% - 36px));
+  margin: 28px auto 0;
+}
+
+.proof-grid article,
+.deliverables-grid article,
+.assessment-deliverable-grid article {
+  min-height: 174px;
+  padding: 24px;
+  border: 1px solid rgba(69, 190, 255, 0.42);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.045)),
+    rgba(11, 23, 69, 0.78);
+  box-shadow: var(--shadow-soft);
+}
+
+.proof-grid strong,
+.deliverables-grid strong,
+.assessment-deliverable-grid strong {
+  display: block;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.deliverables-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(245, 181, 68, 0.72);
+  border-radius: 50%;
+  color: var(--accent-primary);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.proof-grid p,
+.deliverables-grid p,
+.assessment-deliverable-grid p {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: 600;
+  line-height: 1.48;
+}
+
+.primary-action,
+.secondary-action,
+.secondary-offer-button,
+.lab-button,
+.lab-blue-button,
+.assessment-secondary,
+.reset-call-button,
+.about-book,
+.about-contact-form button,
+.assessment-form button {
+  min-width: min(100%, 220px);
+  font-size: 0.94rem;
+}
+
+.hero-copy p,
+.offerings-hero p,
+.assessment-intro p,
+.fractional-hero p,
+.reset-hero p,
+.lab-hero p,
+.help-hero p,
+.about-hero-copy > p {
+  font-size: clamp(1.02rem, 1.65vw, 1.34rem) !important;
+}
+
+@media (max-width: 860px) {
+  .proof-grid,
+  .deliverables-grid,
+  .assessment-deliverable-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section h1,
+  .help-hero h1,
+  .lab-hero h1,
+  .offerings-hero h1,
+  .assessment-intro h1,
+  .reset-hero h1,
+  .fractional-hero h1,
+  .about-hero h1 {
+    font-size: clamp(2.05rem, 12vw, 3.1rem) !important;
+  }
+}
+
+/* Conversion section visibility and anchor offset */
+.proof-section,
+.deliverables-snapshot,
+.assessment-deliverables {
+  scroll-margin-top: 96px;
+}
+
+.proof-section.reveal-card,
+.deliverables-snapshot.reveal-card,
+.assessment-deliverables.reveal-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Hero photo asset pass and parallax dots restoration */
+#constellation {
+  z-index: 12 !important;
+  opacity: 0.34 !important;
+  mix-blend-mode: screen;
+}
+
+.site-header {
+  z-index: 30;
+}
+
+main,
+.site-header,
+.nav-dropdown-menu {
+  isolation: isolate;
+}
+
+.lab-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.56), rgba(11, 23, 69, 0.88)),
+    radial-gradient(circle at 76% 20%, rgba(69, 190, 255, 0.18), transparent 24rem),
+    radial-gradient(circle at 20% 18%, rgba(245, 181, 68, 0.10), transparent 18rem),
+    url("assets/data-contours-bbc.avif") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.lab-hero::before {
+  opacity: 0.5;
+}
+
+.lab-hero::after {
+  opacity: 0.78;
+}
+
+.lab-hero-inner,
+.hero-copy,
+.offerings-hero-inner,
+.assessment-shell,
+.reset-hero-inner,
+.fractional-hero-inner,
+.about-hero-copy,
+.help-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #constellation {
+    opacity: 0.16 !important;
+  }
+}
+
+/* Home and How We Help hero asset integration */
+.hero-section {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.66), rgba(11, 23, 69, 0.88)),
+    radial-gradient(circle at 78% 20%, rgba(69, 190, 255, 0.18), transparent 22rem),
+    url("assets/data-contours-bbc.avif") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.hero-section::before {
+  background:
+    linear-gradient(90deg, transparent, rgba(69, 190, 255, 0.24), transparent) 0 35% / 100% 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(245, 181, 68, 0.14), transparent) 0 77% / 100% 2px no-repeat;
+  opacity: 0.72;
+}
+
+.help-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
+    url("assets/data-contours-bbc.avif") !important;
+  background-position: center 42%;
+  background-size: cover;
+}
+
+.help-hero::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0 48%, rgba(69, 190, 255, 0.20) 49%, transparent 50%),
+    linear-gradient(68deg, transparent 0 50%, rgba(245, 181, 68, 0.12) 51%, transparent 52%);
+  background-size: 420px 420px, 520px 520px;
+  pointer-events: none;
+}
+
+.help-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Unique hero asset assignments */
+.hero-section {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.70), rgba(11, 23, 69, 0.90)),
+    radial-gradient(circle at 78% 20%, rgba(69, 190, 255, 0.16), transparent 22rem),
+    url("assets/parallax-customer-intelligence-hero.png") !important;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.help-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
+    url("assets/data-contours-bbc.avif") !important;
+  background-position: center 42%;
+  background-size: cover;
+}
+
+.lab-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.88), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 76% 20%, rgba(69, 190, 255, 0.24), transparent 24rem),
+    radial-gradient(circle at 20% 18%, rgba(245, 181, 68, 0.12), transparent 18rem),
+    linear-gradient(115deg, transparent 0 46%, rgba(69, 190, 255, 0.18) 47%, transparent 49%),
+    linear-gradient(64deg, transparent 0 52%, rgba(245, 181, 68, 0.10) 53%, transparent 55%) !important;
+  background-size: auto, auto, auto, 520px 520px, 680px 680px;
+  background-position: center;
+}
+
+/* Z asset hero system and readability pass */
+.hero-section {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.56), rgba(11, 23, 69, 0.88)),
+    radial-gradient(circle at 76% 18%, rgba(69, 190, 255, 0.16), transparent 22rem),
+    url("assets/z.png") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.help-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.60), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
+    url("assets/data-contours-bbc.avif") !important;
+  background-position: center 42%;
+  background-size: cover;
+}
+
+.lab-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.90)),
+    radial-gradient(circle at 72% 20%, rgba(69, 190, 255, 0.14), transparent 22rem),
+    url("assets/zz.png") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.offerings-hero,
+.assessment-intro {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.68), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 70% 18%, rgba(69, 190, 255, 0.15), transparent 22rem),
+    url("assets/zzz.jpg") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.reset-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.62), rgba(11, 23, 69, 0.92)),
+    radial-gradient(circle at 50% 30%, rgba(245, 181, 68, 0.14), transparent 20rem),
+    url("assets/zz.png") !important;
+  background-position: center 48%;
+  background-size: cover;
+}
+
+.fractional-hero {
+  background-image:
+    linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.90)),
+    radial-gradient(circle at 72% 20%, rgba(69, 190, 255, 0.16), transparent 20rem),
+    url("assets/z.png") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.about-hero {
+  background-image:
+    linear-gradient(90deg, rgba(5, 9, 22, 0.88), rgba(11, 23, 69, 0.72) 48%, rgba(5, 9, 22, 0.84)),
+    radial-gradient(circle at 76% 35%, rgba(69, 190, 255, 0.18), transparent 22rem),
+    url("assets/data-contours-bbc.avif") !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.hero-section::before,
+.help-hero::before,
+.lab-hero::before,
+.offerings-hero::before,
+.reset-hero::before,
+.fractional-hero::before,
+.about-hero::before {
+  opacity: 0.62;
+}
+
+.hero-section h1,
+.help-hero h1,
+.lab-hero h1,
+.offerings-hero h1,
+.assessment-intro h1,
+.reset-hero h1,
+.fractional-hero h1,
+.about-hero h1,
+.hero-section p,
+.help-hero p,
+.lab-hero p,
+.offerings-hero p,
+.assessment-intro p,
+.reset-hero p,
+.fractional-hero p,
+.about-hero p,
+.reset-subhead {
+  color: #ffffff !important;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.52);
+}
+
+.hero-section .micro-promise,
+.page-kicker,
+.about-small-kicker,
+.reset-kicker,
+.fractional-kicker {
+  color: var(--accent-primary) !important;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.42);
+}
+
+/* Dark surfaces: keep copy bright enough over image/parallax layers. */
+.help-page,
+.lab-page,
+.offerings-page,
+.assessment-page,
+.decision-reset-page,
+.fractional-page,
+.about-page,
+.proof-section,
+.deliverables-snapshot,
+.assessment-deliverables,
+.work-shell,
+.diagnostic-panel article,
+.symptom-card,
+.stat-grid article,
+.quote-grid article,
+.situation-grid article,
+.process-grid article,
+.next-grid article,
+.risk-panel,
+.benefit-grid article,
+.initiative-card,
+.studio-card,
+.offer-grid article,
+.engagement-path,
+.reset-objective-panel,
+.reset-fix-card,
+.reset-receive-panel,
+.reset-format-grid article,
+.reset-after-grid article,
+.fractional-definition-panel,
+.fractional-fit-grid article,
+.fractional-benefit-grid article,
+.fractional-practice-grid article,
+.fractional-options-grid article,
+.fractional-outcome-grid,
+.about-rule-grid article,
+.about-work-grid article,
+.about-fit-grid article,
+.about-systems-grid article {
+  color: #ffffff !important;
+}
+
+.help-page p,
+.lab-page p,
+.offerings-page p,
+.assessment-page p,
+.decision-reset-page p,
+.fractional-page p,
+.about-page p,
+.help-page li,
+.lab-page li,
+.offerings-page li,
+.assessment-page li,
+.decision-reset-page li,
+.fractional-page li,
+.about-page li,
+.quote-grid blockquote,
+.section-lede,
+.section-note,
+.proof-grid p,
+.deliverables-grid p,
+.assessment-deliverable-grid p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.help-page h2,
+.lab-page h2,
+.offerings-page h2,
+.assessment-page h2,
+.decision-reset-page h2,
+.fractional-page h2,
+.about-page h2,
+.help-page h3,
+.lab-page h3,
+.offerings-page h3,
+.assessment-page h3,
+.decision-reset-page h3,
+.fractional-page h3,
+.about-page h3,
+.proof-grid strong,
+.deliverables-grid strong,
+.assessment-deliverable-grid strong {
+  color: #ffffff !important;
+}
+
+/* Light surfaces: restore dark ink so form and output panels remain legible. */
+.offer-panel,
+.assessment-form,
+.about-contact-form,
+.about-next-card,
+.principle-grid article,
+.reset-check-grid span,
+.reset-glance,
+.assessment-step-grid article {
+  color: var(--ink) !important;
+}
+
+.offer-panel *,
+.assessment-form *,
+.about-contact-form *,
+.about-next-card *,
+.principle-grid article *,
+.reset-check-grid span *,
+.reset-glance *,
+.assessment-step-grid article * {
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+input,
+select,
+textarea {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+}
+
+.primary-action,
+.lab-blue-button,
+.reset-call-button,
+.about-book,
+.assessment-form button,
+.about-contact-form button {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.lab-button {
+  color: var(--brand-primary) !important;
+  text-shadow: none !important;
+}
+
+/* Final explicit readability fixes */
+.symptom-card,
+.quote-grid article,
+.benefit-grid article,
+.principle-grid article,
+.assessment-deliverable-grid article,
+.proof-grid article,
+.deliverables-grid article,
+.reset-glance,
+.assessment-step-grid article {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.045)),
+    rgba(11, 23, 69, 0.84) !important;
+  color: #ffffff !important;
+  border-color: rgba(69, 190, 255, 0.54) !important;
+}
+
+.symptom-card *,
+.quote-grid article *,
+.benefit-grid article *,
+.principle-grid article *,
+.assessment-deliverable-grid article *,
+.proof-grid article *,
+.deliverables-grid article *,
+.reset-glance *,
+.assessment-step-grid article * {
+  color: inherit !important;
+}
+
+.symptom-card p,
+.quote-grid blockquote,
+.quote-person span,
+.quote-person em,
+.benefit-grid p,
+.principle-grid p,
+.assessment-deliverable-grid p,
+.proof-grid p,
+.deliverables-grid p,
+.reset-glance li,
+.reset-glance p,
+.assessment-step-grid p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.assessment-form,
+.about-contact-form,
+.offer-panel,
+.about-next-card {
+  background: linear-gradient(180deg, #ffffff, #eef5ff) !important;
+  color: var(--ink) !important;
+}
+
+.assessment-form *,
+.about-contact-form *,
+.offer-panel *,
+.about-next-card * {
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+.assessment-form label,
+.about-contact-form label,
+.assessment-form h2,
+.about-contact-form h2,
+.assessment-form p,
+.about-contact-form p,
+.offer-panel h3,
+.offer-panel p,
+.about-next-card h3,
+.about-next-card li {
+  color: var(--ink) !important;
+}
+
+.assessment-form button,
+.about-contact-form button,
+.primary-action,
+.lab-blue-button,
+.reset-call-button,
+.about-book {
+  background: var(--brand-secondary) !important;
+  color: #ffffff !important;
+  border-color: rgba(69, 190, 255, 0.54) !important;
+}
+
+.assessment-secondary,
+.secondary-action,
+.secondary-offer-button,
+.secondary-lab-button {
+  color: #ffffff !important;
+  background: rgba(11, 23, 69, 0.76) !important;
+  border-color: rgba(69, 190, 255, 0.62) !important;
+}
+
+input,
+select,
+textarea {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  border-color: rgba(31, 106, 229, 0.32) !important;
+}
+
+
+/* Homepage generated asset and section standardization pass */
+.hero-brand {
+  width: min(340px, 72vw);
+  max-width: 340px;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.hero-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.34));
+}
+
+.diagnostic-section,
+.symptom-section,
+.proof-section,
+.failure-section,
+.trust-section {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.diagnostic-section,
+.symptom-section,
+.proof-section,
+.failure-section,
+.trust-section,
+.work-shell {
+  border: 1px solid rgba(69, 190, 255, 0.28);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(11, 23, 69, 0.94), rgba(8, 18, 54, 0.88)),
+    rgba(11, 23, 69, 0.92) !important;
+  box-shadow: 0 28px 78px rgba(4, 12, 36, 0.28);
+}
+
+.diagnostic-section > h2,
+.symptom-heading h2,
+.proof-intro h2,
+.failure-heading h2,
+.trust-section h2 {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+.diagnostic-panel,
+.proof-grid,
+.stat-grid,
+.quote-grid {
+  gap: 18px;
+}
+
+.diagnostic-panel article,
+.symptom-card,
+.proof-grid article,
+.failure-grid article,
+.quote-grid article {
+  border: 1px solid rgba(69, 190, 255, 0.30) !important;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.045)),
+    rgba(11, 23, 69, 0.70) !important;
+  color: #ffffff !important;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(4, 12, 36, 0.24);
+}
+
+.diagnostic-panel article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 42%);
+  align-items: stretch;
+  padding: 18px;
+  min-height: 280px;
+}
+
+.diagnostic-panel article > div:first-child {
+  align-self: center;
+  padding: 10px 4px 10px 6px;
+}
+
+.diagnostic-image,
+.symptom-image,
+.failure-image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: rgba(5, 13, 38, 0.70);
+}
+
+.diagnostic-image {
+  height: 100%;
+  min-height: 240px;
+  border-radius: 14px;
+  border: 1px solid rgba(245, 181, 68, 0.24);
+}
+
+.symptom-card {
+  grid-template-columns: minmax(260px, 42%) minmax(0, 1fr);
+  align-items: stretch;
+  padding: 16px;
+}
+
+.symptom-image {
+  height: 100%;
+  min-height: 260px;
+  border-radius: 14px;
+  border: 1px solid rgba(69, 190, 255, 0.24);
+}
+
+.symptom-copy {
+  align-self: center;
+  padding: clamp(18px, 3vw, 32px);
+  color: #ffffff !important;
+}
+
+.symptom-copy h3,
+.symptom-copy p,
+.symptom-copy a,
+.diagnostic-panel h3,
+.diagnostic-panel p,
+.failure-grid strong,
+.failure-grid p,
+.quote-grid blockquote,
+.quote-person strong,
+.quote-person span,
+.quote-person em,
+.proof-grid strong,
+.proof-grid p {
+  text-shadow: none !important;
+}
+
+.symptom-copy p,
+.diagnostic-panel p,
+.failure-grid p,
+.quote-grid blockquote,
+.proof-grid p,
+.section-lede,
+.section-note {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.symptom-copy a {
+  color: var(--accent-secondary) !important;
+}
+
+.proof-section {
+  padding: clamp(34px, 5vw, 58px);
+}
+
+.proof-intro {
+  max-width: 760px;
+}
+
+.proof-grid article {
+  padding: 24px;
+}
+
+.failure-section {
+  padding: clamp(34px, 5vw, 58px);
+}
+
+.failure-heading {
+  max-width: 780px;
+}
+
+.failure-controls,
+.symptom-controls,
+.quote-controls {
+  margin-top: 20px;
+  margin-bottom: 22px;
+}
+
+.failure-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.failure-grid article {
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+  padding: 0 0 22px;
+}
+
+.failure-image {
+  height: 210px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(69, 190, 255, 0.22);
+}
+
+.failure-grid strong,
+.failure-grid p {
+  padding-inline: 22px;
+}
+
+.failure-grid strong {
+  color: #ffffff !important;
+  font-size: 1.04rem;
+}
+
+.stat-grid article.is-hidden,
+.failure-grid article.is-hidden {
+  display: none;
+}
+
+.quote-person {
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid rgba(69, 190, 255, 0.24);
+  border-radius: 14px;
+  background: rgba(4, 12, 36, 0.52) !important;
+  color: #ffffff !important;
+}
+
+.quote-person strong {
+  color: #ffffff !important;
+}
+
+.quote-person span,
+.quote-person em {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+@media (max-width: 900px) {
+  .diagnostic-panel article,
+  .symptom-card,
+  .failure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostic-image,
+  .symptom-image {
+    min-height: 220px;
+  }
+
+  .failure-grid article {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .diagnostic-section,
+  .symptom-section,
+  .proof-section,
+  .failure-section,
+  .trust-section {
+    width: min(100% - 24px, 1180px);
+    border-radius: 18px;
+  }
+
+  .proof-section,
+  .failure-section {
+    padding: 26px 18px;
+  }
+
+  .diagnostic-panel article,
+  .symptom-card {
+    padding: 12px;
+  }
+
+  .failure-image {
+    height: 190px;
+  }
+}
+
+/* Homepage copy contrast hardening */
+.symptom-copy {
+  border: 1px solid rgba(69, 190, 255, 0.20);
+  border-radius: 14px;
+  background: rgba(4, 12, 36, 0.46) !important;
+}
+
+/* Homepage symptom cards are three-up, so keep each card vertical and readable. */
+.symptom-card {
+  display: flex !important;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  padding: 16px;
+}
+
+.symptom-image {
+  flex: 0 0 auto;
+  height: 260px;
+  min-height: 0;
+}
+
+.symptom-copy {
+  width: auto !important;
+  min-width: 0;
+  align-self: stretch;
+  padding: 18px;
+}
+
+.symptom-copy p {
+  width: auto !important;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .symptom-image {
+    height: 220px;
+  }
 }
