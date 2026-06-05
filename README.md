@@ -17,8 +17,8 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `intelligence-lab.html` - Local Intelligence Lab page.
 - `our-offerings.html` - Local Our Offerings page.
 - `analytics-health-check.html` - Internal Analytics Foundation Assessment request page with a FormSubmit-powered context form.
-- `decision-system-reset.html` - Internal Decision System Reset engagement page.
-- `fractional-analytics.html` - Internal Fractional Analytics Consulting engagement page.
+- `decision-system-reset.html` - Internal Decision System Reset service page.
+- `fractional-analytics.html` - Internal Fractional Analytics & Decision Systems Partnership page.
 - `about.html` - Local About page.
 - `home.css` - Shared styling, responsive layout, ribbon nav, card visuals, subpage layouts, and carousel states.
 - `home.js` - Animated background, scroll reveals, pointer motion, and click-based card/quote transitions.
@@ -99,4 +99,4 @@ Before publishing, make sure these files are committed and pushed:
 
 If the page shows a 404, confirm GitHub Pages is pointed at the branch and folder containing `index.html`.
 
-If styling looks old, the assessment page references `home.css?v=12`; bump the version number in each HTML file after major CSS changes to force a browser cache refresh.
+If styling looks old, the assessment page references `home.css?v=12`, the Decision System Reset page references `home.css?v=15`, and the Fractional Analytics page references `home.css?v=16`; bump the version number in each HTML file after major CSS changes to force a browser cache refresh.

@@ -3756,6 +3756,977 @@ h1 {
   letter-spacing: 0.14em;
 }
 
+/* Decision System Reset page */
+.decision-reset-page {
+  position: relative;
+  overflow: hidden;
+  color: #161922;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(247, 185, 53, 0.1), transparent 18rem),
+    radial-gradient(circle at 82% 20%, rgba(49, 168, 255, 0.16), transparent 22rem),
+    linear-gradient(180deg, #050816 0, #152c70 32%, #aebcff 58%, #9eadf1 100%);
+}
+
+.reset-live-bg {
+  position: fixed;
+  inset: 68px -12% -12%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background:
+    linear-gradient(115deg, transparent 0 48%, rgba(49, 168, 255, 0.36) 49%, transparent 50%),
+    linear-gradient(122deg, transparent 0 58%, rgba(247, 185, 53, 0.22) 59%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.28) 0 1px, transparent 2px);
+  background-size: 520px 100%, 720px 100%, 86px 86px;
+  mix-blend-mode: screen;
+}
+
+.decision-reset-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+.reset-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(64px, 8vw, 96px) 18px 72px;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgba(13, 0, 37, 0.98), rgba(13, 0, 37, 0.88) 46%, rgba(13, 0, 37, 0.72)),
+    radial-gradient(circle at 88% 42%, rgba(247, 185, 53, 0.24), transparent 18rem),
+    radial-gradient(circle at 68% 72%, rgba(49, 168, 255, 0.2), transparent 24rem),
+    #0d0025;
+}
+
+.reset-hero::before {
+  position: absolute;
+  inset: 14% -18% -18% -10%;
+  content: "";
+  background:
+    linear-gradient(110deg, transparent 0 48%, rgba(49, 168, 255, 0.42) 49%, transparent 50%),
+    linear-gradient(116deg, transparent 0 55%, rgba(247, 185, 53, 0.34) 56%, transparent 57%),
+    repeating-radial-gradient(ellipse at 74% 54%, rgba(111, 93, 255, 0.46) 0 2px, transparent 3px 20px);
+  opacity: 0.78;
+  transform: perspective(820px) rotateX(62deg) rotateZ(-5deg);
+  pointer-events: none;
+}
+
+.reset-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1760px, 100%);
+  margin: 0 auto;
+}
+
+.reset-hero h1 {
+  max-width: 1760px;
+  margin: 0 auto 34px;
+  color: var(--white);
+  font-size: clamp(3.1rem, 5.1vw, 6rem);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.reset-subhead {
+  margin: 0 auto 40px;
+  color: var(--white);
+  font-size: clamp(1.35rem, 2.3vw, 2.2rem);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.reset-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(390px, 0.86fr);
+  gap: 32px;
+  align-items: center;
+  width: min(1260px, 100%);
+  margin: 0 auto;
+}
+
+.reset-hero-copy {
+  padding: clamp(26px, 3vw, 38px);
+  border: 1px solid rgba(49, 168, 255, 0.32);
+  background: linear-gradient(180deg, rgba(29, 17, 60, 0.88), rgba(20, 14, 48, 0.76));
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+}
+
+.reset-hero-copy p {
+  margin-bottom: 34px;
+  color: var(--white);
+  font-size: clamp(1.55rem, 2.1vw, 2.1rem);
+  line-height: 1.12;
+}
+
+.reset-hero-copy .primary-action {
+  min-width: min(440px, 100%);
+  margin: 0 auto 28px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.reset-glance {
+  padding: clamp(28px, 3vw, 36px);
+  color: #07112c;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(235, 241, 255, 0.94)),
+    #f4f6ff;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.28);
+}
+
+.reset-glance h2 {
+  margin-bottom: 28px;
+  color: #07112c;
+  font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.reset-glance ul {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+  text-align: left;
+}
+
+.reset-glance li {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+  color: #07112c;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.28;
+}
+
+.reset-glance strong {
+  font-weight: 900;
+}
+
+.reset-mini-icon,
+.reset-orb,
+.reset-large-icon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 28%, #ffffff, #a7d8ff 34%, #5d7bff 60%, #172666 100%);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.7), 0 12px 22px rgba(0, 0, 0, 0.24);
+}
+
+.reset-mini-icon {
+  width: 48px;
+  height: 48px;
+  font-size: 0.92rem;
+}
+
+.reset-mini-icon::before,
+.reset-orb::before,
+.reset-large-icon::before {
+  color: var(--gold);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.reset-mini-icon.time::before,
+.reset-orb.cadence::before {
+  content: "T";
+}
+
+.reset-mini-icon.format::before,
+.reset-mini-icon.mapping::before,
+.reset-orb.mapping::before {
+  content: "M";
+}
+
+.reset-mini-icon.start::before {
+  content: "S";
+}
+
+.reset-mini-icon.outcome::before,
+.reset-orb.ownership::before {
+  content: "O";
+}
+
+.reset-call-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  width: 100%;
+  padding: 0 18px;
+  border: 3px solid rgba(255, 255, 255, 0.86);
+  color: var(--white);
+  background: #5448ec;
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.reset-call-button:hover,
+.reset-call-button:focus-visible {
+  background: #3e84ff;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.reset-objective,
+.reset-fix-section,
+.reset-receive,
+.reset-timeline,
+.reset-after,
+.reset-start {
+  padding: clamp(42px, 6vw, 70px) 18px;
+}
+
+.reset-objective,
+.reset-fix-section {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(49, 168, 255, 0.1), transparent 16rem),
+    linear-gradient(180deg, #f4f4ff, #eef1ff);
+}
+
+.reset-objective h2,
+.reset-fix-section h2,
+.reset-receive h2,
+.reset-timeline h2,
+.reset-after h2,
+.reset-start h2 {
+  margin: 0 auto 18px;
+  color: #111521;
+  font-size: clamp(2.45rem, 4vw, 4.1rem);
+  line-height: 1.08;
+  text-align: center;
+}
+
+.reset-objective-panel {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 0 14px 28px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(9, 15, 38, 0.08);
+}
+
+.reset-objective-panel h3 {
+  margin: 0 -2px 26px;
+  padding: 8px 16px;
+  color: #070a12;
+  background: linear-gradient(90deg, #f2bd00, rgba(242, 189, 0, 0.14), transparent);
+  font-size: 1.5rem;
+}
+
+.reset-objective-panel > p {
+  margin: 0 0 16px;
+  padding: 0 0 0 0;
+  color: #111521;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.35;
+}
+
+.reset-check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px 48px;
+  padding-top: 10px;
+  border-top: 1px solid #0d1742;
+}
+
+.reset-check-grid article {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  align-items: start;
+  gap: 16px;
+}
+
+.reset-check-grid span,
+.reset-receive li::before {
+  display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  content: "";
+  background:
+    linear-gradient(135deg, transparent 42%, #dca800 43% 48%, transparent 49%),
+    radial-gradient(circle, #ffffff 0 46%, #f2d94d 47% 58%, #bc8e00 59% 100%);
+  box-shadow: inset 0 0 0 4px #fff5b2, 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.reset-check-grid span::before,
+.reset-receive li::before {
+  content: "✓";
+  color: #0b2b80;
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+
+.reset-check-grid strong {
+  display: block;
+  color: #070a12;
+  font-size: 1.45rem;
+}
+
+.reset-check-grid p {
+  grid-column: 2;
+  margin: 8px 0 0;
+  color: #070a12;
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+
+.reset-fix-section {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(235, 239, 255, 0.92)),
+    radial-gradient(circle at 18% 80%, rgba(49, 168, 255, 0.12), transparent 18rem),
+    radial-gradient(circle at 78% 22%, rgba(247, 185, 53, 0.1), transparent 16rem),
+    #fbf8ff;
+}
+
+.reset-fix-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px;
+  width: min(1300px, 100%);
+  margin: 34px auto 0;
+}
+
+.reset-fix-grid article {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(49, 168, 255, 0.35);
+  background: linear-gradient(180deg, #f7f9ff, #e4e8f5);
+  box-shadow: 0 16px 28px rgba(20, 28, 70, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.reset-fix-grid article:hover {
+  border-color: rgba(247, 185, 53, 0.72);
+  box-shadow: 0 20px 34px rgba(20, 28, 70, 0.26);
+  transform: translateY(-4px);
+}
+
+.reset-card-image {
+  display: block;
+  width: 100%;
+  height: 148px;
+  object-fit: cover;
+  border-bottom: 3px solid rgba(247, 185, 53, 0.72);
+}
+
+.reset-orb {
+  position: absolute;
+  left: 50%;
+  top: -48px;
+  width: 92px;
+  height: 92px;
+  transform: translateX(-50%);
+}
+
+.reset-orb::before,
+.reset-large-icon::before {
+  font-size: 2.2rem;
+}
+
+.reset-fix-grid h3 {
+  margin: 22px 18px 18px;
+  color: #1b1d25;
+  font-size: 1.18rem;
+  line-height: 1.24;
+  text-align: center;
+}
+
+.reset-fix-grid ul,
+.reset-format-grid ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reset-fix-grid li,
+.reset-format-grid li {
+  position: relative;
+  padding-left: 24px;
+  color: #292c36;
+  font-size: 1rem;
+  line-height: 1.38;
+}
+
+.reset-fix-grid ul {
+  padding: 0 18px 22px;
+}
+
+.reset-fix-grid li::before,
+.reset-format-grid li::before {
+  position: absolute;
+  left: 0;
+  content: ">";
+  color: #100047;
+  font-weight: 900;
+}
+
+.reset-receive,
+.reset-timeline,
+.reset-after,
+.reset-start {
+  background:
+    radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.26), transparent 16rem),
+    linear-gradient(180deg, #aebcff, #9eadf1);
+}
+
+.reset-receive > p,
+.reset-after > p,
+.reset-start > p {
+  max-width: 1060px;
+  margin: 0 auto 14px;
+  color: #161922;
+  font-size: clamp(1.3rem, 2.2vw, 1.72rem);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.reset-receive-panel {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 40px;
+  width: min(1064px, 100%);
+  margin: 0 auto;
+  padding: 24px 42px 24px 18px;
+  background: rgba(218, 224, 255, 0.64);
+  box-shadow: 0 10px 22px rgba(22, 29, 80, 0.18);
+}
+
+.reset-large-icon {
+  width: 74px;
+  height: 74px;
+}
+
+.reset-large-icon::before {
+  content: "R";
+}
+
+.reset-receive-panel h3 {
+  margin-bottom: 28px;
+  color: #111521;
+  font-size: 1.55rem;
+}
+
+.reset-receive-panel ul {
+  display: grid;
+  gap: 26px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reset-receive li {
+  position: relative;
+  padding-left: 60px;
+  color: #161922;
+  font-size: 1.18rem;
+  line-height: 1.32;
+}
+
+.reset-receive li::before {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.25rem;
+}
+
+.reset-receive li strong,
+.reset-receive li span {
+  display: block;
+}
+
+.reset-receive li strong {
+  color: #111521;
+}
+
+.reset-format-grid,
+.reset-after-grid {
+  display: grid;
+  gap: 28px;
+  width: min(1060px, 100%);
+  margin: 0 auto;
+}
+
+.reset-format-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reset-format-grid article,
+.reset-after-grid article {
+  position: relative;
+  min-height: 274px;
+  padding: 42px 48px 32px 112px;
+  background: rgba(218, 224, 255, 0.72);
+  box-shadow: 0 10px 20px rgba(22, 29, 80, 0.18);
+}
+
+.reset-format-grid .reset-mini-icon {
+  position: absolute;
+  left: 30px;
+  top: 68px;
+}
+
+.reset-format-grid h3,
+.reset-after-grid h3 {
+  color: #111521;
+  font-size: 1.18rem;
+  text-align: center;
+}
+
+.reset-format-grid p,
+.reset-after-grid p {
+  color: #262a38;
+  font-size: 1.08rem;
+  line-height: 1.42;
+}
+
+.reset-format-grid p + p,
+.reset-after-grid p + p {
+  margin-top: 44px;
+}
+
+.reset-after-grid {
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px 28px;
+  background: rgba(220, 226, 255, 0.5);
+}
+
+.reset-after-grid article {
+  min-height: 444px;
+  padding: 130px 16px 26px;
+  background: rgba(236, 239, 255, 0.82);
+}
+
+.reset-after-grid .reset-orb {
+  top: 18px;
+}
+
+.reset-after-grid h3 {
+  margin-bottom: 32px;
+}
+
+.reset-start {
+  border-bottom: 4px solid var(--gold);
+  text-align: center;
+}
+
+.reset-start p {
+  max-width: 820px;
+}
+
+.reset-start .primary-action {
+  margin-top: 18px;
+  min-width: min(350px, 100%);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Fractional Analytics Partnership page */
+.fractional-page {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(49, 168, 255, 0.18), transparent 20rem),
+    radial-gradient(circle at 82% 30%, rgba(247, 185, 53, 0.12), transparent 18rem),
+    linear-gradient(180deg, #050816 0, #07133a 48%, #050816 100%);
+}
+
+.fractional-live-bg {
+  position: fixed;
+  inset: 68px 0 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    radial-gradient(circle at 14% 22%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 18%, rgba(49, 168, 255, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 64%, rgba(247, 185, 53, 0.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.32) 0 1px, transparent 2px);
+  background-size: 180px 180px, 260px 260px, 330px 330px, 72px 72px;
+  mix-blend-mode: screen;
+}
+
+.fractional-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+.fractional-hero {
+  min-height: 610px;
+  display: grid;
+  align-items: center;
+  padding: clamp(68px, 8vw, 112px) 18px 72px;
+  background:
+    linear-gradient(180deg, rgba(4, 9, 32, 0.5), rgba(4, 9, 32, 0.86)),
+    url("assets/fractional-hero-terrain.png") center bottom / cover no-repeat,
+    #050816;
+  text-align: center;
+}
+
+.fractional-hero-inner {
+  width: min(1420px, 100%);
+  margin: 0 auto;
+}
+
+.fractional-hero h1 {
+  max-width: 1320px;
+  margin: 0 auto 58px;
+  color: var(--white);
+  font-size: clamp(2.9rem, 5vw, 4.9rem);
+  line-height: 1.08;
+}
+
+.fractional-hero p {
+  max-width: 1150px;
+  margin: 0 auto 28px;
+  color: var(--white);
+  font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.fractional-hero .primary-action {
+  min-width: min(470px, 100%);
+  margin-top: 62px;
+  text-decoration: none;
+}
+
+.fractional-definition,
+.fractional-fit,
+.fractional-benefits,
+.fractional-practice,
+.fractional-options,
+.fractional-outcomes {
+  padding: clamp(58px, 7vw, 86px) 18px;
+  background:
+    linear-gradient(180deg, rgba(5, 8, 22, 0.7), rgba(5, 8, 22, 0.78)),
+    radial-gradient(circle at 12% 20%, rgba(49, 168, 255, 0.12), transparent 16rem);
+}
+
+.fractional-section-heading,
+.fractional-fit h2,
+.fractional-benefits h2,
+.fractional-practice h2,
+.fractional-options h2,
+.fractional-outcomes h2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fractional-section-heading h2,
+.fractional-fit h2,
+.fractional-benefits h2,
+.fractional-practice h2,
+.fractional-options h2,
+.fractional-outcomes h2 {
+  color: var(--white);
+  font-size: clamp(2.1rem, 3.4vw, 3rem);
+  line-height: 1.12;
+}
+
+.fractional-section-heading::after,
+.fractional-rule,
+.fractional-options h3::after {
+  display: block;
+  width: min(540px, 70vw);
+  height: 3px;
+  margin: 24px auto;
+  content: "";
+  background: var(--gold);
+}
+
+.fractional-badge,
+.fractional-card-icon {
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.32));
+}
+
+.fractional-badge {
+  width: 118px;
+  height: 118px;
+  margin: 0 auto -6px;
+}
+
+.fractional-card-icon {
+  width: 92px;
+  height: 92px;
+  margin: -58px auto 22px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.fractional-section-heading p {
+  max-width: 780px;
+  margin: 0 auto 24px;
+  color: var(--white);
+  font-size: clamp(1.14rem, 2vw, 1.45rem);
+  font-weight: 650;
+  line-height: 1.34;
+}
+
+.fractional-definition-panel {
+  width: min(1520px, 100%);
+  margin: 50px auto 0;
+  border: 3px solid var(--gold);
+  background: rgba(48, 65, 139, 0.82);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.25);
+}
+
+.fractional-definition-panel > p {
+  margin: 0;
+  padding: 28px;
+  border-bottom: 1px solid rgba(247, 185, 53, 0.65);
+  color: var(--white);
+  font-size: clamp(1.12rem, 1.8vw, 1.45rem);
+  font-weight: 650;
+  line-height: 1.32;
+  text-align: center;
+}
+
+.fractional-definition-panel > div {
+  display: grid;
+  grid-template-columns: 0.9fr 1.25fr;
+}
+
+.fractional-definition-panel > div p {
+  margin: 0;
+  padding: 24px 36px;
+  color: var(--white);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.38;
+}
+
+.fractional-definition-panel > div p + p {
+  border-left: 2px solid var(--gold);
+}
+
+.fractional-definition-panel strong,
+.fractional-gold-note {
+  color: var(--gold);
+}
+
+.fractional-fit-grid,
+.fractional-practice-grid {
+  display: grid;
+  gap: 22px;
+  width: min(860px, 100%);
+  margin: 72px auto 0;
+}
+
+.fractional-fit-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.fractional-fit-grid article,
+.fractional-benefit-grid article,
+.fractional-practice-grid article,
+.fractional-options-grid article,
+.fractional-outcome-grid article {
+  border: 1px solid rgba(247, 185, 53, 0.75);
+  background:
+    linear-gradient(180deg, rgba(60, 81, 166, 0.82), rgba(40, 55, 127, 0.86));
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+}
+
+.fractional-fit-grid article {
+  padding: 58px 30px 32px;
+}
+
+.fractional-fit-grid h3,
+.fractional-benefit-grid h3,
+.fractional-practice-grid h3,
+.fractional-options-grid h3,
+.fractional-outcome-grid h3 {
+  color: var(--white);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.18;
+  text-align: center;
+}
+
+.fractional-fit-grid ul,
+.fractional-benefit-grid ul,
+.fractional-practice-grid ul {
+  display: grid;
+  gap: 18px;
+  padding: 0;
+  margin: 28px 0 0;
+  list-style: none;
+}
+
+.fractional-fit-grid li,
+.fractional-benefit-grid li,
+.fractional-practice-grid li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--white);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fractional-fit-grid li::before,
+.fractional-benefit-grid li::before,
+.fractional-practice-grid li::before,
+.fractional-outcome-grid p::before {
+  position: absolute;
+  left: 0;
+  content: ">";
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.fractional-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: min(1240px, 100%);
+  margin: 54px auto 22px;
+}
+
+.fractional-benefit-grid article {
+  padding: 58px 22px 30px;
+  border-width: 1px 1px 1px 0;
+}
+
+.fractional-benefit-grid article:first-child {
+  border-left-width: 1px;
+}
+
+.fractional-gold-note {
+  margin: 22px auto 0;
+  color: var(--gold);
+  font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+  font-weight: 900;
+  text-align: center;
+}
+
+.fractional-practice-grid {
+  grid-template-columns: repeat(3, 1fr);
+  width: min(1100px, 100%);
+  padding-bottom: 5px;
+  border-bottom: 5px dotted var(--gold);
+}
+
+.fractional-practice-grid article {
+  padding: 58px 28px 30px;
+}
+
+.fractional-options-grid,
+.fractional-outcome-grid {
+  display: grid;
+  gap: 24px;
+  width: min(1320px, 100%);
+  margin: 50px auto 18px;
+}
+
+.fractional-options-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fractional-options-grid article {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  min-height: 520px;
+  padding: 32px 36px 26px;
+}
+
+.fractional-options-grid h3::after {
+  width: 76px;
+  height: 2px;
+  margin: 10px auto 12px;
+}
+
+.fractional-options-grid p,
+.fractional-outcome-grid p {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.fractional-options-grid img {
+  align-self: end;
+  width: min(210px, 72%);
+  margin: 28px auto 0;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.34));
+}
+
+.fractional-options > p {
+  margin: 0 auto;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 850;
+  text-align: center;
+}
+
+.fractional-outcome-grid {
+  grid-template-columns: repeat(4, 1fr);
+  padding: 28px 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  background: rgba(48, 65, 139, 0.7);
+}
+
+.fractional-outcome-grid article {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 28px 24px;
+}
+
+.fractional-outcome-grid .fractional-card-icon {
+  margin-top: -14px;
+}
+
+.fractional-outcome-grid p {
+  position: relative;
+  padding-left: 24px;
+}
+
+.fractional-close {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  max-width: 780px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.fractional-close p {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.28;
+}
+
+.fractional-close .primary-action {
+  margin-top: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
 @media (max-width: 920px) {
   .offerings-jump,
   .offer-grid,
@@ -3764,7 +4735,17 @@ h1 {
   .engagement-split,
   .path-grid,
   .deliverable-grid,
-  .assessment-step-grid {
+  .assessment-step-grid,
+  .reset-hero-grid,
+  .reset-check-grid,
+  .reset-format-grid,
+  .reset-after-grid,
+  .fractional-definition-panel > div,
+  .fractional-fit-grid,
+  .fractional-benefit-grid,
+  .fractional-practice-grid,
+  .fractional-options-grid,
+  .fractional-outcome-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3792,9 +4773,70 @@ h1 {
   .assessment-form-section {
     padding-inline: 24px;
   }
+
+  .reset-fix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reset-fix-grid article,
+  .reset-fix-grid article:nth-child(4),
+  .reset-fix-grid article:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .reset-receive-panel {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-inline: 24px;
+  }
+
+  .reset-format-grid article {
+    padding-left: 112px;
+  }
+
+  .fractional-benefit-grid article {
+    border-left-width: 1px;
+  }
+
+  .fractional-definition-panel > div p + p {
+    border-top: 1px solid var(--gold);
+    border-left: 0;
+  }
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .site-brand {
+    text-align: center;
+  }
+
+  .site-header nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .site-header nav a,
+  .nav-dropdown-toggle {
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
   .nav-dropdown-menu {
     position: static;
     display: none;
@@ -3814,5 +4856,71 @@ h1 {
 
   .offerings-hero p {
     margin-bottom: 42px;
+  }
+
+  .reset-hero-copy,
+  .reset-glance,
+  .reset-objective-panel,
+  .reset-format-grid article,
+  .reset-after-grid article {
+    padding-inline: 18px;
+  }
+
+  .reset-hero {
+    padding-top: 46px;
+  }
+
+  .reset-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 3.55rem);
+  }
+
+  .reset-hero-copy p {
+    font-size: 1.3rem;
+  }
+
+  .reset-glance li {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .reset-check-grid article {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .reset-check-grid p {
+    grid-column: auto;
+  }
+
+  .reset-format-grid article {
+    padding-top: 126px;
+    padding-left: 18px;
+  }
+
+  .reset-format-grid .reset-mini-icon {
+    left: 50%;
+    top: 36px;
+    transform: translateX(-50%);
+  }
+
+  .fractional-hero {
+    min-height: auto;
+    padding-top: 48px;
+  }
+
+  .fractional-hero h1 {
+    font-size: clamp(2.25rem, 12vw, 3.1rem);
+  }
+
+  .fractional-definition-panel > div p,
+  .fractional-fit-grid article,
+  .fractional-benefit-grid article,
+  .fractional-practice-grid article,
+  .fractional-options-grid article,
+  .fractional-outcome-grid article {
+    padding-inline: 20px;
   }
 }
