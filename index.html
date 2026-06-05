@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parallax Data Lab | Analytics Foundation Assessment</title>
   <meta name="description" content="Parallax Data Lab helps teams restore trust in analytics by fixing the data models, metrics, logic, and ownership beneath their dashboards.">
-  <link rel="stylesheet" href="home.css?v=11">
+  <link rel="stylesheet" href="home.css?v=27">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
@@ -32,15 +32,7 @@
   <main>
     <section class="hero-section" id="top">
       <a class="hero-brand motion-layer" data-depth="0.08" href="index.html" aria-label="Parallax Data Lab home">
-        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M32 3 58 17v30L32 61 6 47V17Z" fill="#08163a" stroke="#1d8cff" stroke-width="2"/>
-          <path d="M18 44V29h8v15Zm11 0V20h8v24Zm11 0V13h8v31Z" fill="#1d8cff"/>
-          <path d="M12 43c13-4 26-11 40-31" fill="none" stroke="#f6b734" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        <span>
-          <strong>PARALLAX</strong>
-          <em>DATA LAB</em>
-        </span>
+        <img class="hero-logo" src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab">
       </a>
 
       <div class="hero-rule" aria-hidden="true"></div>
@@ -48,7 +40,7 @@
       <div class="hero-copy motion-layer" data-depth="-0.05">
         <h1>Your Dashboards Aren't Broken.<br>Your Analytics Foundation Is.</h1>
         <p>We help growing SaaS and data-driven teams restore trust in analytics by fixing the data models, metrics, and ownership beneath their dashboards.</p>
-        <a class="primary-action" href="https://jonahnr.github.io/Website/analytics-health-check.html">Analytics Foundation Assessment</a>
+        <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
         <strong class="micro-promise">A concrete path forward.</strong>
       </div>
     </section>
@@ -61,18 +53,14 @@
             <h3>Teams grow. Priorities shift. Analytics evolves without a clear owner.</h3>
             <p>Each new report solves a local problem, but over time the system fragments, definitions drift, and trust quietly erodes.</p>
           </div>
-          <div class="mesh-thumbnail thumbnail-ring" aria-hidden="true">
-            <span></span>
-          </div>
+          <img class="diagnostic-image" src="assets/home-generated/diagnostic-owner-drift.png" alt="Abstract analytics network expanding without a clear owner">
         </article>
         <article>
           <div>
             <h3>What looks like a dashboard problem is almost always a structural one.</h3>
             <p>Without shared definitions, governed logic, and clear ownership, analytics stops being a decision tool and becomes a source of debate.</p>
           </div>
-          <div class="mesh-thumbnail thumbnail-flow" aria-hidden="true">
-            <span></span>
-          </div>
+          <img class="diagnostic-image" src="assets/home-generated/diagnostic-structural-balance.png" alt="Balanced analytics structure connecting dashboards and decisions">
         </article>
       </div>
     </section>
@@ -88,9 +76,7 @@
         <button type="button" data-carousel-next="symptom" aria-label="Show next problem set">Next</button>
       </div>
       <article class="symptom-card" data-carousel-item="symptom" data-page="0">
-        <div class="symptom-visual cloud-visual" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
-        </div>
+        <img class="symptom-image" src="assets/home-generated/symptom-business-logic-everywhere.png" alt="Business logic duplicated across analytics systems">
         <div class="symptom-copy">
           <h3>Business logic lives everywhere</h3>
           <p>Core calculations are duplicated across dashboards, spreadsheets, and ad-hoc queries, drifting further apart over time.</p>
@@ -98,9 +84,7 @@
         </div>
       </article>
       <article class="symptom-card" data-carousel-item="symptom" data-page="0">
-        <div class="symptom-visual team-visual" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
+        <img class="symptom-image" src="assets/home-generated/symptom-metrics-shared-meaning.png" alt="Shared metric meaning organized across teams">
         <div class="symptom-copy">
           <h3>Metrics lack shared meaning</h3>
           <p>The same KPI is calculated multiple ways, depending on who built the report or when it was created.</p>
@@ -108,9 +92,7 @@
         </div>
       </article>
       <article class="symptom-card" data-carousel-item="symptom" data-page="0">
-        <div class="symptom-visual report-visual" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
+        <img class="symptom-image" src="assets/home-generated/symptom-reports-wrong-questions.png" alt="Reports disconnected from leadership questions">
         <div class="symptom-copy">
           <h3>Reports answer wrong questions</h3>
           <p>Reports look polished, but no longer align to how leadership actually makes decisions.</p>
@@ -118,9 +100,7 @@
         </div>
       </article>
       <article class="symptom-card" data-carousel-item="symptom" data-page="1">
-        <div class="symptom-visual confidence-visual" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
+        <img class="symptom-image" src="assets/home-generated/symptom-confidence-erodes.png" alt="Analytics confidence gauge surrounded by dashboards">
         <div class="symptom-copy">
           <h3>Confidence erodes silently</h3>
           <p>Meetings turn into debates over numbers, and teams spend more time defending data than acting on it.</p>
@@ -128,9 +108,7 @@
         </div>
       </article>
       <article class="symptom-card" data-carousel-item="symptom" data-page="1">
-        <div class="symptom-visual scale-visual" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
-        </div>
+        <img class="symptom-image" src="assets/home-generated/symptom-systems-scale.png" alt="Analytics systems under pressure as the business scales">
         <div class="symptom-copy">
           <h3>Systems don't scale with the business</h3>
           <p>As teams grow, analytics debt accumulates faster than insight, making every change slower, riskier, and more expensive over time.</p>
@@ -138,9 +116,7 @@
         </div>
       </article>
       <article class="symptom-card" data-carousel-item="symptom" data-page="1">
-        <div class="symptom-visual slow-visual" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
+        <img class="symptom-image" src="assets/home-generated/symptom-decisions-slow.png" alt="Decisions slowing as data and reports multiply">
         <div class="symptom-copy">
           <h3>Decisions slow down as data grows</h3>
           <p>As datasets expand and reports multiply, answering simple questions takes longer, alignment breaks down, and teams default to instinct instead of insight.</p>
@@ -177,24 +153,68 @@
       </div>
     </section>
 
+    <section class="proof-section reveal-card" aria-labelledby="proof-title">
+      <div class="proof-intro">
+        <p class="page-kicker">What you get</p>
+        <h2 id="proof-title">A practical read on where trust is breaking and what to fix first.</h2>
+        <p>Before a rebuild, retainer, or dashboard project, leaders need a clear picture of the operating system beneath reporting. The assessment turns scattered symptoms into a concrete path forward.</p>
+      </div>
+      <div class="proof-grid">
+        <article>
+          <strong>Foundation issue map</strong>
+          <p>Where definitions, models, ownership, and workflows are creating confusion.</p>
+        </article>
+        <article>
+          <strong>Decision-flow diagnosis</strong>
+          <p>Which business questions reports should answer, and where current assets miss the mark.</p>
+        </article>
+        <article>
+          <strong>Prioritized next steps</strong>
+          <p>A short roadmap that clarifies whether to reset, rebuild, or stabilize with ongoing support.</p>
+        </article>
+      </div>
+    </section>
     <section class="failure-section reveal-card">
-      <h2>Common Analytics Failure Patterns We See</h2>
-      <p class="section-lede">There's rarely one explosive failure. Instead, it's a slow, quiet drift where teams slowly stop trusting the numbers.</p>
-      <div class="stat-grid">
-        <article>
-          <div class="stat-icon dashboard-icon" aria-hidden="true"></div>
-          <strong>73%</strong>
-          <p>of teams say it's unclear which sources and definitions to use</p>
+      <div class="failure-heading">
+        <p class="page-kicker">Patterns we see</p>
+        <h2>Common Analytics Failure Patterns We See</h2>
+        <p class="section-lede">There's rarely one explosive failure. Instead, it's a slow, quiet drift where teams gradually stop trusting the numbers.</p>
+      </div>
+      <div class="section-controls failure-controls" aria-label="Failure pattern navigation">
+        <button type="button" data-carousel-prev="failure" aria-label="Show previous failure patterns">Prev</button>
+        <span data-carousel-status="failure">1 / 2</span>
+        <button type="button" data-carousel-next="failure" aria-label="Show next failure patterns">Next</button>
+      </div>
+      <div class="stat-grid failure-grid">
+        <article data-carousel-item="failure" data-page="0">
+          <img class="failure-image" src="assets/home-generated/failure-source-of-truth.png" alt="Disconnected systems creating uncertainty about the source of truth">
+          <strong>Unclear source of truth</strong>
+          <p>Teams are not sure which source, dashboard, or definition should win.</p>
         </article>
-        <article>
-          <div class="stat-icon warning-icon" aria-hidden="true"></div>
-          <strong>71%</strong>
-          <p>of teams see conflicting numbers for the same metric in reports</p>
+        <article data-carousel-item="failure" data-page="0">
+          <img class="failure-image" src="assets/home-generated/failure-conflicting-numbers.png" alt="Conflicting dashboards showing different versions of the same metric">
+          <strong>Conflicting numbers</strong>
+          <p>The same metric shows up differently across reports, teams, and meetings.</p>
         </article>
-        <article>
-          <div class="stat-icon broken-icon" aria-hidden="true"></div>
-          <strong>56%</strong>
-          <p>of teams find that nothing scales without breaking</p>
+        <article data-carousel-item="failure" data-page="0">
+          <img class="failure-image" src="assets/home-generated/failure-scale-breaks.png" alt="Analytics system bending under growing reporting complexity">
+          <strong>Fragile scale</strong>
+          <p>Every new team, region, or workflow adds reporting debt and slows change.</p>
+        </article>
+        <article data-carousel-item="failure" data-page="1">
+          <img class="failure-image" src="assets/home-generated/failure-duplicate-logic.png" alt="Repeated logic copied across dashboards and spreadsheets">
+          <strong>Duplicated logic</strong>
+          <p>Calculations get copied into dashboards, spreadsheets, and one-off queries.</p>
+        </article>
+        <article data-carousel-item="failure" data-page="1">
+          <img class="failure-image" src="assets/home-generated/failure-definition-drift.png" alt="Metric definitions drifting across connected reports">
+          <strong>Definition drift</strong>
+          <p>Metric meaning changes by team, timeframe, tool, or report builder.</p>
+        </article>
+        <article data-carousel-item="failure" data-page="1">
+          <img class="failure-image" src="assets/home-generated/failure-number-debates.png" alt="Decision meeting turning into a debate over analytics numbers">
+          <strong>Decision debate</strong>
+          <p>Meetings shift from choosing action to defending which numbers are right.</p>
         </article>
       </div>
       <p class="section-note">These issues rarely surface all at once. Most teams experience them gradually, as definitions drift, ownership blurs, and confidence in analytics quietly erodes.</p>
@@ -268,10 +288,19 @@
     <section class="closing-section">
       <h2>Build analytics leaders can trust.</h2>
       <p>Get a clear view of where your analytics foundation is breaking down and how to fix it.</p>
-      <a class="primary-action" href="https://jonahnr.github.io/Website/analytics-health-check.html">Request an Assessment</a>
+      <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
     </section>
   </main>
 
   <script src="home.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-document.body.classList.add("has-js");
+﻿document.body.classList.add("has-js");
 
 const canvas = document.querySelector("#constellation");
 const ctx = canvas.getContext("2d");
@@ -232,3 +232,5 @@ revealOnScroll();
 setupDropdowns();
 setupCarousel("symptom");
 setupCarousel("quote");
+setupCarousel("failure");
+
