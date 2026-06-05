@@ -16,6 +16,9 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `how-we-help.html` - Local How We Help page.
 - `intelligence-lab.html` - Local Intelligence Lab page.
 - `our-offerings.html` - Local Our Offerings page.
+- `analytics-health-check.html` - Internal Analytics Foundation Assessment request page with a FormSubmit-powered context form.
+- `decision-system-reset.html` - Internal Decision System Reset engagement page.
+- `fractional-analytics.html` - Internal Fractional Analytics Consulting engagement page.
 - `about.html` - Local About page.
 - `home.css` - Shared styling, responsive layout, ribbon nav, card visuals, subpage layouts, and carousel states.
 - `home.js` - Animated background, scroll reveals, pointer motion, and click-based card/quote transitions.
@@ -26,6 +29,8 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 The page includes:
 
 - Blue top navigation ribbon linking to the local site pages.
+- Clickable Our Offerings dropdown linking to the local offerings overview and three engagement pages.
+- Analytics Foundation Assessment request form that posts to `jonahnr@gmail.com` through FormSubmit.
 - Hero section for the Analytics Foundation Assessment.
 - Diagnostic section explaining dashboard chaos as a symptom of a broken analytics foundation.
 - Problems > Solutions section with six cards, shown three at a time with Prev/Next controls.
@@ -38,7 +43,12 @@ The page includes:
 
 Primary CTA:
 
-- `https://parallax-data.webflow.io/work/analytics-foundation-assessment`
+- `analytics-health-check.html`
+
+Assessment form delivery:
+
+- Form action: `https://formsubmit.co/jonahnr@gmail.com`
+- FormSubmit may require first-time email activation for the recipient address before live submissions are delivered.
 
 Ribbon navigation:
 
@@ -46,6 +56,9 @@ Ribbon navigation:
 - How We Help: `how-we-help.html`
 - Intelligence Lab: `intelligence-lab.html`
 - Our Offerings: `our-offerings.html`
+- Analytics Health Check: `analytics-health-check.html`
+- Decision System Reset: `decision-system-reset.html`
+- Fractional Analytics Consulting: `fractional-analytics.html`
 - About: `about.html`
 
 ## Local Preview
@@ -76,6 +89,9 @@ Before publishing, make sure these files are committed and pushed:
 - `how-we-help.html`
 - `intelligence-lab.html`
 - `our-offerings.html`
+- `analytics-health-check.html`
+- `decision-system-reset.html`
+- `fractional-analytics.html`
 - `about.html`
 - `home.css`
 - `home.js`
@@ -83,4 +99,4 @@ Before publishing, make sure these files are committed and pushed:
 
 If the page shows a 404, confirm GitHub Pages is pointed at the branch and folder containing `index.html`.
 
-If styling looks old, the pages reference `home.css?v=5`; bump the version number in each HTML file after major CSS changes to force a browser cache refresh.
+If styling looks old, the assessment page references `home.css?v=12`; bump the version number in each HTML file after major CSS changes to force a browser cache refresh.

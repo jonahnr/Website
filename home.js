@@ -4,6 +4,7 @@ const canvas = document.querySelector("#constellation");
 const ctx = canvas.getContext("2d");
 const motionLayers = Array.from(document.querySelectorAll(".motion-layer"));
 const revealCards = Array.from(document.querySelectorAll(".reveal-card"));
+const dropdowns = Array.from(document.querySelectorAll(".nav-dropdown"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const carousels = new Map();
 
@@ -135,6 +136,51 @@ function setupCarousel(name) {
   render();
 }
 
+function closeDropdowns(except = null) {
+  dropdowns.forEach((dropdown) => {
+    if (dropdown === except) {
+      return;
+    }
+
+    dropdown.classList.remove("is-open");
+    const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+function setupDropdowns() {
+  dropdowns.forEach((dropdown) => {
+    if (dropdown.tagName === "DETAILS") {
+      return;
+    }
+
+    const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+    if (!toggle) {
+      return;
+    }
+
+    function toggleDropdown(event) {
+      event.stopPropagation();
+      event.preventDefault();
+      const willOpen = !dropdown.classList.contains("is-open");
+      closeDropdowns(dropdown);
+      dropdown.classList.toggle("is-open", willOpen);
+      toggle.setAttribute("aria-expanded", String(willOpen));
+    }
+
+    toggle.addEventListener("click", toggleDropdown);
+  });
+
+  document.addEventListener("click", () => closeDropdowns());
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDropdowns();
+    }
+  });
+}
+
 window.addEventListener("resize", () => {
   resizeCanvas();
   revealOnScroll();
@@ -148,7 +194,7 @@ window.addEventListener("pointermove", (event) => {
   updateMotion();
 }, { passive: true });
 
-reduceMotion.addEventListener("change", () => {
+function handleMotionPreferenceChange() {
   if (reduceMotion.matches && frame) {
     cancelAnimationFrame(frame);
     frame = null;
@@ -157,11 +203,18 @@ reduceMotion.addEventListener("change", () => {
     drawConstellation();
   }
   updateMotion();
-});
+}
+
+if (reduceMotion.addEventListener) {
+  reduceMotion.addEventListener("change", handleMotionPreferenceChange);
+} else if (reduceMotion.addListener) {
+  reduceMotion.addListener(handleMotionPreferenceChange);
+}
 
 resizeCanvas();
 drawConstellation();
 updateMotion();
 revealOnScroll();
+setupDropdowns();
 setupCarousel("symptom");
 setupCarousel("quote");
