@@ -92,6 +92,16 @@ function updateMotion() {
   });
 }
 
+
+function updateParallaxScroll() {
+  const scrollValue = `${window.scrollY || 0}px`;
+  document.documentElement.style.setProperty("--parallax-scroll", scrollValue);
+  const fractionalPage = document.querySelector(".fractional-page");
+  if (fractionalPage) {
+    fractionalPage.style.setProperty("--parallax-scroll", scrollValue);
+  }
+}
+
 function revealOnScroll() {
   const trigger = window.innerHeight * 0.86;
   revealCards.forEach((card) => {
@@ -183,10 +193,14 @@ function setupDropdowns() {
 
 window.addEventListener("resize", () => {
   resizeCanvas();
-  revealOnScroll();
+  updateParallaxScroll();
+revealOnScroll();
 });
 
-window.addEventListener("scroll", revealOnScroll, { passive: true });
+window.addEventListener("scroll", () => {
+  updateParallaxScroll();
+  revealOnScroll();
+}, { passive: true });
 
 window.addEventListener("pointermove", (event) => {
   pointerX = event.clientX / Math.max(width, 1);
