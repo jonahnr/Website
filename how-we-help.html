@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How We Help | Parallax Data Lab</title>
   <meta name="description" content="How Parallax Data Lab helps teams make analytics systems work by diagnosing broken foundations, designing trusted structure, and guiding rebuilds.">
-  <link rel="stylesheet" href="home.css?v=26">
+  <link rel="stylesheet" href="home.css?v=30">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
 
   <header class="site-header" aria-label="Parallax site navigation">
-    <a class="site-brand" href="index.html">Parallax Data Lab</a>
+    <a class="site-brand" href="index.html" aria-label="Parallax Data Lab home"><img src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab"></a>
     <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
-      <a href="how-we-help.html" aria-current="page">How We Help</a>
+      <a class="is-active" href="how-we-help.html" aria-current="page">How We Help</a>
       <a href="intelligence-lab.html">Intelligence Lab</a>
       <details class="nav-dropdown">
         <summary class="nav-dropdown-toggle">Our Offerings</summary>
@@ -43,28 +43,28 @@
       <p class="help-lede">These are not failures. They're signs that analytics has outgrown the way it was originally set up.</p>
       <div class="situation-grid">
         <article>
-          <div class="help-illustration dashboard-x" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-situation-dashboard-trust.png" alt="Mismatched dashboards being reconciled into a trusted analytics signal">
           <div>
             <h3>We Have Dashboards, But We Don't Trust Them</h3>
             <p>Numbers don't match across reports. Simple questions require explanation. Leaders double-check results instead of acting on them.</p>
           </div>
         </article>
         <article>
-          <div class="help-illustration bottleneck" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-situation-bottleneck.png" alt="Reporting requests moving through a bottleneck into a scalable analytics lane">
           <div>
             <h3>Analytics Has Become A Bottleneck</h3>
             <p>One or two people hold everything together. Changes take too long. Reporting slows the business instead of supporting it.</p>
           </div>
         </article>
         <article>
-          <div class="help-illustration scale-bars" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-situation-scale-foundation.png" alt="Tangled data foundations reorganized into a scalable metric architecture">
           <div>
             <h3>Messy Data Foundations Slow Down Scaling</h3>
             <p>Metrics mean different things to different teams. Definitions aren't documented. There's no shared foundation to scale on.</p>
           </div>
         </article>
         <article>
-          <div class="help-illustration senior-judgment" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-situation-senior-judgment.png" alt="Strategic analytics compass guiding dashboards and data architecture">
           <div>
             <h3>We Need Senior Analytics Judgment, Not More Dashboards</h3>
             <p>Hiring feels premature or unclear. More reports won't fix the problem. What's missing is perspective, structure, and ownership.</p>
@@ -79,7 +79,7 @@
       <div class="process-line">Diagnose &gt; Design &gt; Build or Guide</div>
       <div class="process-grid">
         <article>
-          <div class="help-illustration blueprint-search" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-process-diagnose.png" alt="Diagnostic scan over data models dashboards and metrics">
           <strong>1</strong>
           <h3>Diagnose</h3>
           <p>Understand what's really happening beneath your dashboards.</p>
@@ -89,7 +89,7 @@
           </ul>
         </article>
         <article>
-          <div class="help-illustration design-chart" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-process-design.png" alt="Blueprint of clean metric architecture and governed definitions">
           <strong>2</strong>
           <h3>Design</h3>
           <p>Create a foundation teams can trust and scale.</p>
@@ -99,7 +99,7 @@
           </ul>
         </article>
         <article>
-          <div class="help-illustration guide-board" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="help-card-image" src="assets/home-generated/help-process-build-guide.png" alt="Analytics system being implemented with stable pipelines and dashboards">
           <strong>3</strong>
           <h3>Build Or Guide</h3>
           <p>Execute in the way that creates the most leverage.</p>
@@ -152,10 +152,22 @@
       </div>
       <h3>After foundation fixes, teams see:</h3>
       <div class="pattern-outcomes">
-        <article><div class="help-illustration paper-plane" aria-hidden="true"><span></span></div><p>Faster Performance</p></article>
-        <article><div class="help-illustration report-stack" aria-hidden="true"><span></span><span></span></div><p>Fewer Reports</p></article>
-        <article><div class="help-illustration answer-lens" aria-hidden="true"><span></span></div><p>Clearer Answers</p></article>
-        <article><div class="help-illustration handshake" aria-hidden="true"><span></span></div><p>Renewed Confidence</p></article>
+        <article>
+          <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-faster-performance.png" alt="Optimized analytics pipeline showing faster performance">
+          <p>Faster Performance</p>
+        </article>
+        <article>
+          <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-fewer-reports.png" alt="Many reports consolidating into fewer clearer dashboards">
+          <p>Fewer Reports</p>
+        </article>
+        <article>
+          <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-clearer-answers.png" alt="Analytics question resolving into a clear answer path">
+          <p>Clearer Answers</p>
+        </article>
+        <article>
+          <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-renewed-confidence.png" alt="Trusted analytics signal with verified decision network">
+          <p>Renewed Confidence</p>
+        </article>
       </div>
     </section>
 
@@ -165,7 +177,7 @@
       <div class="next-grid">
         <article>
           <div class="next-heading">
-            <div class="help-illustration dashboard-x" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img class="help-card-image" src="assets/home-generated/help-situation-dashboard-trust.png" alt="Mismatched dashboards being reconciled into a trusted analytics signal">
             <h3>Focused Analytics Reset</h3>
           </div>
           <ul>
@@ -173,12 +185,12 @@
             <li>Clarify structural and governance issues</li>
             <li>Performance or model structure has become brittle</li>
           </ul>
-          <p>A short, high-leverage engagement to diagnose issues, realign definitions, and rebuild a stable foundation without overengineering.</p>
-          <a class="primary-action" href="our-offerings.html">Explore Reset &amp; Foundation Engagements</a>
+          <p class="next-description">A short, high-leverage engagement to diagnose issues, realign definitions, and rebuild a stable foundation without overengineering.</p>
+          <a class="primary-action" href="decision-system-reset.html">Explore Reset &amp; Foundation Engagements</a>
         </article>
         <article>
           <div class="next-heading">
-            <div class="help-illustration guide-board" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img class="help-card-image" src="assets/home-generated/help-process-build-guide.png" alt="Analytics system being implemented with stable pipelines and dashboards">
             <h3>Ongoing Senior Ownership</h3>
           </div>
           <ul>
@@ -186,8 +198,8 @@
             <li>One or two people are a bottleneck</li>
             <li>Leadership needs judgment, not just execution</li>
           </ul>
-          <p>Embedded senior guidance to own structure, standards, and decision logic as analytics continues to evolve.</p>
-          <a class="primary-action" href="our-offerings.html">Explore Ongoing Analytics Leadership</a>
+          <p class="next-description">Embedded senior guidance to own structure, standards, and decision logic as analytics continues to evolve.</p>
+          <a class="primary-action" href="fractional-analytics.html">Explore Ongoing Analytics Leadership</a>
         </article>
       </div>
       <p class="next-note">Not sure which path fits best? Our offerings are designed to adapt as your needs change, not lock you into a fixed model.</p>
@@ -206,11 +218,20 @@
         <strong>This keeps work aligned to value, not momentum.</strong>
       </div>
     </section>
+
+    <section class="help-cta-section closing-section reveal-card">
+      <h2>Build analytics leaders can trust.</h2>
+      <p>Get a clearer path for fixing the systems, definitions, and ownership beneath your reporting.</p>
+      <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
+    </section>
   </main>
 
   <script src="home.js"></script>
 </body>
 </html>
+
+
+
 
 
 
