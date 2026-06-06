@@ -122,6 +122,7 @@ function setupCarousel(name) {
   const pages = Math.max(...items.map((item) => Number(item.dataset.page || 0))) + 1;
   const state = { index: 0, items, pages, previous, next, status };
   carousels.set(name, state);
+  items[0].parentElement?.classList.add("is-carousel-ready");
 
   function render() {
     state.items.forEach((item) => {
@@ -233,4 +234,7 @@ setupDropdowns();
 setupCarousel("symptom");
 setupCarousel("quote");
 setupCarousel("failure");
+setupCarousel("pattern");
+
+
 
