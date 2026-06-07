@@ -1,6 +1,6 @@
-# Parallax Data Lab Homepage
+# Parallax Data Lab Website
 
-Static GitHub Pages site for the Parallax Data Lab analytics foundation assessment.
+Static GitHub Pages site for Parallax Data Lab, centered on the Analytics Health Check, Decision System Reset, Fractional Analytics Consulting, and Intelligence Lab paths.
 
 ## GitHub Pages Entry Point
 
@@ -10,40 +10,43 @@ GitHub Pages serves the root URL from:
 
 Do not link to `home.html`; this project currently uses `index.html` as the live page.
 
-## Files
+## Core Files
 
 - `index.html` - Main homepage content and section structure.
-- `how-we-help.html` - Local How We Help page.
-- `intelligence-lab.html` - Local Intelligence Lab page.
-- `our-offerings.html` - Local Our Offerings page.
-- `analytics-health-check.html` - Internal Analytics Foundation Assessment request page with a FormSubmit-powered context form.
-- `decision-system-reset.html` - Internal Decision System Reset service page.
-- `fractional-analytics.html` - Internal Fractional Analytics & Decision Systems Partnership page.
-- `about.html` - Local About page.
-- `home.css` - Shared styling, responsive layout, ribbon nav, card visuals, subpage layouts, and carousel states.
-- `home.js` - Animated background, scroll reveals, pointer motion, and click-based card/quote transitions.
-- `assets/parallax-customer-intelligence-hero.png` - Background image used in the hero and Parallax sections.
+- `how-we-help.html` - How We Help page.
+- `intelligence-lab.html` - Intelligence Lab page.
+- `our-offerings.html` - Offerings overview and path chooser.
+- `analytics-health-check.html` - Internal Analytics Health Check request page with a FormSubmit-powered context form.
+- `decision-system-reset.html` - Decision System Reset service page.
+- `fractional-analytics.html` - Fractional Analytics Consulting page.
+- `about.html` - About page and founder context.
+- `home.css` - Shared styling, responsive layout, navigation, card visuals, subpage layouts, and carousel states.
+- `home.js` - Animated background, scroll reveals, pointer motion, dropdown handling, and carousel transitions.
+- `ASSET-CHECKLIST.md` - Full list of every asset path referenced by the HTML and CSS.
 
 ## Live Page Behavior
 
-The page includes:
+The site includes:
 
-- Blue top navigation ribbon linking to the local site pages.
-- Clickable Our Offerings dropdown linking to the local offerings overview and three engagement pages.
-- Analytics Foundation Assessment request form that posts to `jonahnr@gmail.com` through FormSubmit.
-- Hero section for the Analytics Foundation Assessment.
-- Diagnostic section explaining dashboard chaos as a symptom of a broken analytics foundation.
-- Problems > Solutions section with six cards, shown three at a time with Prev/Next controls.
-- "How Teams Work With Parallax Data" section.
-- Common analytics failure pattern stats.
-- Six leadership quotes, shown three at a time with Prev/Next controls.
-- Final request assessment CTA.
+- Sticky top navigation linking to all local pages.
+- Clickable Our Offerings dropdown linking to the offerings overview and three engagement pages.
+- Analytics Health Check request form that posts to `jonahnr@gmail.com` through FormSubmit.
+- Homepage diagnostic carousel for analytics foundation problems.
+- How We Help process, outcome, and diagnostic disclosure sections.
+- Offerings page that routes visitors to the right engagement path.
+- Decision System Reset and Fractional Analytics Consulting pages for deeper offer detail.
+- Intelligence Lab examples framed as proof/example work rather than the primary conversion path.
+- About page with consistent logo navigation and founder positioning.
 
 ## Important Links
 
 Primary CTA:
 
 - `analytics-health-check.html`
+
+Secondary CTA:
+
+- `https://calendly.com/jonahnr/parallax-data-lab-intro-call`
 
 Assessment form delivery:
 
@@ -60,6 +63,15 @@ Ribbon navigation:
 - Decision System Reset: `decision-system-reset.html`
 - Fractional Analytics Consulting: `fractional-analytics.html`
 - About: `about.html`
+
+## Asset Requirement
+
+Before publishing, make sure the full `assets/` folder is committed and pushed. The current HTML and CSS reference many files under:
+
+- `assets/`
+- `assets/home-generated/`
+
+Use `ASSET-CHECKLIST.md` as the full publishing checklist for referenced images and SVGs. If any referenced file is missing, GitHub Pages will load the page but show broken images or empty visual sections.
 
 ## Local Preview
 
@@ -83,7 +95,7 @@ http://127.0.0.1:8014/index.html
 
 ## GitHub Pages Checklist
 
-Before publishing, make sure these files are committed and pushed:
+Before publishing, make sure these files and folders are committed and pushed:
 
 - `index.html`
 - `how-we-help.html`
@@ -95,8 +107,15 @@ Before publishing, make sure these files are committed and pushed:
 - `about.html`
 - `home.css`
 - `home.js`
-- `assets/parallax-customer-intelligence-hero.png`
+- `README.md`
+- `ASSET-CHECKLIST.md`
+- `assets/`
+
+All HTML pages currently reference:
+
+- `home.css?v=43`
+- `home.js?v=43`
+
+If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 
 If the page shows a 404, confirm GitHub Pages is pointed at the branch and folder containing `index.html`.
-
-If styling looks old, the assessment page references `home.css?v=12`, the Decision System Reset page references `home.css?v=15`, and the Fractional Analytics page references `home.css?v=16`; bump the version number in each HTML file after major CSS changes to force a browser cache refresh.
