@@ -1,208 +1,203 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Decision System Reset | Parallax Data Lab</title>
-  <meta name="description" content="A focused engagement to rebuild how decisions are defined, supported, owned, and executed using analytics.">
-  <link rel="stylesheet" href="home.css?v=26">
+  <meta name="description" content="A focused Parallax Data Lab engagement that rebuilds how decisions are defined, supported, owned, and acted on through analytics.">
+  <link rel="stylesheet" href="home.css?v=43">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
 
   <header class="site-header" aria-label="Parallax site navigation">
-    <a class="site-brand" href="index.html">Parallax Data Lab</a>
+    <a class="site-brand" href="index.html" aria-label="Parallax Data Lab home">
+      <img src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab">
+    </a>
     <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="how-we-help.html">How We Help</a>
       <a href="intelligence-lab.html">Intelligence Lab</a>
-      <details class="nav-dropdown">
-        <summary class="nav-dropdown-toggle" aria-current="page">Our Offerings</summary>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="our-offerings.html" aria-current="page">Our Offerings</a>
         <div class="nav-dropdown-menu" aria-label="Offerings sections">
           <a href="our-offerings.html">Offerings Overview</a>
           <a href="analytics-health-check.html">Analytics Health Check</a>
           <a href="decision-system-reset.html">Decision System Reset</a>
           <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
         </div>
-      </details>
+      </div>
       <a href="about.html">About</a>
     </nav>
   </header>
 
-  <main class="decision-reset-page">
-    <div class="reset-live-bg motion-layer" data-depth="0.18" aria-hidden="true"></div>
-    <section class="reset-hero">
+  <main class="decision-reset-page reset-page-refined">
+    <section class="reset-hero reset-hero-refined" aria-labelledby="reset-hero-title">
       <div class="reset-hero-inner motion-layer" data-depth="0.08">
-        <h1>Decision System Reset: Restoring Clarity To Analytics</h1>
-        <p class="reset-subhead">A focused engagement to rebuild how decisions are defined, supported, and executed using analytics.</p>
-        <div class="reset-hero-grid">
-          <article class="reset-hero-copy">
-            <p>Most organizations don't suffer from a lack of data. They suffer from unclear decisions, disputed metrics, and inconsistent follow-through.</p>
-            <p>This is not a dashboard rebuild. This is a reset of how decisions are made, owned, and executed.</p>
-            <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
-            <p>The Decision System Reset takes the output of the Analytics Health Check and turns it into a clear, enforceable decision system that leaders can actually run.</p>
-          </article>
-          <aside class="reset-glance" aria-label="Engagement at a glance">
-            <h2>Engagement At A Glance</h2>
-            <ul>
-              <li><span class="reset-mini-icon time"></span><strong>Typical length:</strong> 2-4 weeks</li>
-              <li><span class="reset-mini-icon format"></span><strong>Format:</strong> working sessions, synthesis, executive readout</li>
-              <li><span class="reset-mini-icon start"></span><strong>Starts after:</strong> Analytics Health Check</li>
-              <li><span class="reset-mini-icon outcome"></span><strong>Outcome:</strong> documented decision system + 90-day roadmap</li>
-            </ul>
-            <a class="reset-call-button" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Book A 30 Minute Call</a>
-          </aside>
+        <div class="reset-hero-copy">
+          <p class="page-kicker">Decision System Reset</p>
+          <h1 id="reset-hero-title">Turn disputed metrics into decisions leaders can actually run.</h1>
+          <p>Parallax rebuilds the decision layer around analytics: what decisions matter, which metrics inform them, who owns action, and when escalation should happen.</p>
+          <div class="reset-hero-actions">
+            <a class="primary-action" href="analytics-health-check.html">Go to health check</a>
+            <a class="secondary-action" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule a 30-minute call</a>
+          </div>
         </div>
+        <aside class="reset-glance reset-glance-refined" aria-label="Engagement at a glance">
+          <p class="page-kicker">At a glance</p>
+          <dl>
+            <div>
+              <dt>Typical length</dt>
+              <dd>2-4 weeks</dd>
+            </div>
+            <div>
+              <dt>Starts after</dt>
+              <dd>Analytics Health Check</dd>
+            </div>
+            <div>
+              <dt>Outcome</dt>
+              <dd>Decision system and 90-day roadmap</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
     </section>
 
-    <section class="reset-objective reveal-card">
-      <h2>What The Decision System Reset Actually Does</h2>
-      <div class="reset-objective-panel">
-        <h3>The Core Objective</h3>
-        <p>Replace implicit, debated decision-making with explicit, owned, and repeatable decision systems.</p>
-        <div class="reset-check-grid">
-          <article><span></span><strong>Who owns them</strong></article>
-          <article><span></span><strong>How decisions are</strong><p>reviewed and escalated</p></article>
-          <article><span></span><strong>Which metrics matter</strong></article>
-          <article><span></span><strong>What decisions exist</strong></article>
-          <article><span></span><strong>What actions occur</strong><p>when thresholds are met</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="reset-fix-section reveal-card">
-      <h2>What We Fix Inside Analytics Systems</h2>
-      <div class="reset-fix-grid">
+    <section class="reset-objective-refined reveal-card" aria-labelledby="reset-objective-title">
+      <p class="page-kicker">Core objective</p>
+      <h2 id="reset-objective-title">Replace implicit, debated decision-making with an explicit system for action.</h2>
+      <div class="reset-objective-flow">
         <article>
-          <img src="assets/reset-decision-inventory.png" alt="" class="reset-card-image">
-          <h3>Decision Inventory &amp; Clarification</h3>
-          <ul>
-            <li>Identify the decisions leaders are expected to make.</li>
-            <li>Clarify decision intent, frequency, and authority.</li>
-            <li>Remove decisions that should not exist.</li>
-          </ul>
+          <span>01</span>
+          <h3>What decisions exist</h3>
+          <p>Clarify the business decisions leaders are expected to make and remove decisions that should not exist.</p>
         </article>
         <article>
-          <img src="assets/reset-metric-mapping.png" alt="" class="reset-card-image">
-          <h3>Metric-to-Decision Mapping</h3>
-          <ul>
-            <li>Map existing metrics to specific decisions.</li>
-            <li>Identify metrics that create noise or false confidence.</li>
-            <li>Define which metrics are inputs vs signals vs outcomes.</li>
-          </ul>
+          <span>02</span>
+          <h3>Which metrics matter</h3>
+          <p>Separate signal from noise by mapping metrics to decisions, thresholds, and intended action.</p>
         </article>
         <article>
-          <img src="assets/reset-cadence-reset.png" alt="" class="reset-card-image">
-          <h3>Operating Cadence Reset</h3>
-          <ul>
-            <li>Redesign review meetings around decisions, not slides.</li>
-            <li>Align cadence to decision urgency.</li>
-            <li>Remove reporting rituals that do not change outcomes.</li>
-          </ul>
+          <span>03</span>
+          <h3>Who owns them</h3>
+          <p>Assign clear ownership, authority, and accountability for each decision and response path.</p>
         </article>
         <article>
-          <img src="assets/reset-trigger-action.png" alt="" class="reset-card-image">
-          <h3>Trigger &amp; Action Design</h3>
-          <ul>
-            <li>Define thresholds that trigger action.</li>
-            <li>Clarify what happens when metrics move.</li>
-            <li>Remove ambiguity around monitoring vs acting.</li>
-          </ul>
+          <span>04</span>
+          <h3>What triggers action</h3>
+          <p>Define when a metric movement requires response, escalation, or a change in operating behavior.</p>
         </article>
         <article>
-          <img src="assets/reset-ownership-escalation.png" alt="" class="reset-card-image">
-          <h3>Ownership &amp; Escalation</h3>
-          <ul>
-            <li>Assign decision ownership explicitly.</li>
-            <li>Define escalation paths when thresholds are crossed.</li>
-            <li>Clarify where analytics responsibility ends and operational ownership begins.</li>
-          </ul>
+          <span>05</span>
+          <h3>How escalation works</h3>
+          <p>Redesign review cadence so meetings move decisions forward instead of recycling reports.</p>
         </article>
       </div>
     </section>
 
-    <section class="reset-receive reveal-card">
-      <h2>What You Receive From The Reset</h2>
-      <p>Clear artifacts your team can run, not a slide deck that gets archived.</p>
-      <div class="reset-receive-panel">
-        <span class="reset-large-icon"></span>
-        <div>
-          <h3>You walk away with:</h3>
-          <ul>
-            <li><strong>A documented decision inventory</strong><span>A complete map of the decisions leaders are expected to make, clarified and de-duplicated.</span></li>
-            <li><strong>An explicit ownership and accountability model</strong><span>Every decision has a named owner, authority level, and escalation path.</span></li>
-            <li><strong>A metric-to-decision framework</strong><span>Metrics are mapped to decisions so teams know what data informs action and what does not.</span></li>
-            <li><strong>Defined trigger thresholds and response paths</strong><span>Clear thresholds that determine when action is required and what happens next.</span></li>
-            <li><strong>A redesigned decision review cadence</strong><span>Meetings structured around decisions and actions, not reporting or slides.</span></li>
-            <li><strong>A 90-day execution roadmap</strong><span>A prioritized plan to operationalize the system and prevent drift.</span></li>
-          </ul>
-        </div>
+    <section class="reset-fix-refined reveal-card" aria-labelledby="reset-fix-title">
+      <div class="reset-section-heading">
+        <p class="page-kicker">What we fix</p>
+        <h2 id="reset-fix-title">Five parts of the decision system get rebuilt together.</h2>
       </div>
-    </section>
-
-    <section class="reset-timeline reveal-card">
-      <h2>Timeline &amp; Engagement Format</h2>
-      <div class="reset-format-grid">
+      <div class="reset-fix-grid-refined">
         <article>
-          <span class="reset-mini-icon time"></span>
-          <h3>Typical Engagement Length</h3>
-          <p>Two to four weeks, depending on scope and organizational complexity.</p>
-          <p>The work is focused, iterative, and designed to move quickly from diagnosis to alignment.</p>
+          <img src="assets/home-generated/reset-decision-inventory-v2.png" alt="Abstract decision inventory map being organized into clear priorities">
+          <div>
+            <h3>Decision inventory</h3>
+            <p>Clarify decision intent, frequency, authority, and duplication so leaders know what needs to be decided.</p>
+          </div>
         </article>
         <article>
-          <span class="reset-mini-icon mapping"></span>
-          <h3>How The Work Happens</h3>
-          <ul>
-            <li>Stakeholder working sessions</li>
-            <li>System mapping and synthesis</li>
-            <li>Executive readout and decision alignment</li>
-          </ul>
-          <p>No long discovery phase. No months of analysis. The goal is fast clarity and commitment.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="reset-after reveal-card">
-      <h2>What Happens After The Reset</h2>
-      <p>The reset creates the system. What happens next depends on ownership and capacity.</p>
-      <div class="reset-after-grid">
-        <article>
-          <span class="reset-orb execute"></span>
-          <h3>Execute Internally</h3>
-          <p>You run the roadmap with your internal teams. If execution capacity exists, we step back.</p>
-          <p>The system is designed to operate without us.</p>
+          <img src="assets/home-generated/reset-metric-mapping-v2.png" alt="Abstract metric signals flowing into decision gates">
+          <div>
+            <h3>Metric-to-decision mapping</h3>
+            <p>Connect metrics to the decisions they support and remove measures that create noise or false confidence.</p>
+          </div>
         </article>
         <article>
-          <span class="reset-orb partner"></span>
-          <h3>Steward With A Partner</h3>
-          <p>You engage a partner to steward the system over time. This helps prevent drift as decisions, metrics, and ownership evolve.</p>
-          <p>Often used when teams want accountability without permanent overhead.</p>
+          <img src="assets/home-generated/reset-cadence-v2.png" alt="Abstract decision cadence arcs becoming a clean operating timeline">
+          <div>
+            <h3>Operating cadence</h3>
+            <p>Shift review meetings away from slide consumption and toward decisions, ownership, and next action.</p>
+          </div>
         </article>
         <article>
-          <span class="reset-orb pause"></span>
-          <h3>Pause If Ownership Is Missing</h3>
-          <p>You choose not to proceed if ownership or capacity gaps remain unresolved.</p>
-          <p>In some cases, a fractional partnership may be recommended to establish stability before moving forward.</p>
+          <img src="assets/home-generated/reset-trigger-action-v2.png" alt="Abstract threshold line routing metric movement into action paths">
+          <div>
+            <h3>Trigger and action design</h3>
+            <p>Define thresholds, responses, and escalation paths so teams know what happens when metrics move.</p>
+          </div>
+        </article>
+        <article>
+          <img src="assets/home-generated/reset-ownership-v2.png" alt="Abstract ownership hub with escalation branches and accountability checkpoints">
+          <div>
+            <h3>Ownership and escalation</h3>
+            <p>Make responsibility explicit so analytics informs action without becoming the owner of every operational response.</p>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="reset-start reveal-card">
-      <h2>How To Get Started</h2>
-      <p>All engagements begin with the <strong>Analytics Foundation Assessment</strong>. We review your context, identify where decision clarity breaks down, and recommend whether a Decision System Reset is the right next step.</p>
-      <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
+    <section class="reset-deliverables-refined reveal-card" aria-labelledby="reset-deliverables-title">
+      <p class="page-kicker">What you receive</p>
+      <h2 id="reset-deliverables-title">Clear artifacts your team can run, not a slide deck that gets archived.</h2>
+      <div class="reset-deliverable-grid">
+        <article>
+          <strong>Decision inventory</strong>
+          <p>A clarified map of recurring decisions, owners, frequency, authority, and escalation needs.</p>
+        </article>
+        <article>
+          <strong>Metric framework</strong>
+          <p>A practical view of which metrics inform action, which are context, and which should be retired.</p>
+        </article>
+        <article>
+          <strong>Trigger model</strong>
+          <p>Thresholds and response paths that tell teams when monitoring becomes action.</p>
+        </article>
+        <article>
+          <strong>Operating cadence</strong>
+          <p>Meeting and review rhythms structured around decisions, accountability, and follow-through.</p>
+        </article>
+        <article>
+          <strong>90-day roadmap</strong>
+          <p>A prioritized execution plan to operationalize the system and prevent drift.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reset-after-refined reveal-card" aria-labelledby="reset-after-title">
+      <div>
+        <p class="page-kicker">After the reset</p>
+        <h2 id="reset-after-title">The reset creates the operating system. The next step depends on ownership and capacity.</h2>
+      </div>
+      <div class="reset-next-grid">
+        <article>
+          <h3>Execute internally</h3>
+          <p>Your team runs the roadmap with clear owners and cadence.</p>
+        </article>
+        <article>
+          <h3>Steward with a partner</h3>
+          <p>Parallax or another partner helps prevent drift as decisions and metrics evolve.</p>
+        </article>
+        <article>
+          <h3>Pause if ownership is missing</h3>
+          <p>If ownership is not ready, we identify the gap instead of forcing a project.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reset-cta-refined reveal-card" aria-labelledby="reset-cta-title">
+      <p class="page-kicker">Start here</p>
+      <h2 id="reset-cta-title">See whether a Decision System Reset is the right next move.</h2>
+      <p>All reset work begins with the Analytics Health Check so the scope is grounded in your actual decision, metric, and ownership friction.</p>
+      <div class="reset-cta-actions">
+        <a class="primary-action" href="analytics-health-check.html">Go to health check</a>
+        <a class="secondary-action" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule a 30-minute call</a>
+      </div>
     </section>
   </main>
 
-  <script src="home.js"></script>
+  <script src="home.js?v=42"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-

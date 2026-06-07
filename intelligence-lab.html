@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Intelligence Lab | Parallax Data Lab</title>
   <meta name="description" content="The Parallax Intelligence Lab builds advanced analytics, predictive intelligence, governance systems, and executive decision products on top of trusted analytics foundations.">
-  <link rel="stylesheet" href="home.css?v=34">
+  <link rel="stylesheet" href="home.css?v=38">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
@@ -16,15 +16,15 @@
       <a href="index.html">Home</a>
       <a href="how-we-help.html">How We Help</a>
       <a href="intelligence-lab.html" aria-current="page">Intelligence Lab</a>
-      <details class="nav-dropdown">
-        <summary class="nav-dropdown-toggle">Our Offerings</summary>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
         <div class="nav-dropdown-menu" aria-label="Offerings sections">
           <a href="our-offerings.html">Offerings Overview</a>
           <a href="analytics-health-check.html">Analytics Health Check</a>
           <a href="decision-system-reset.html">Decision System Reset</a>
           <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
         </div>
-      </details>
+      </div>
       <a href="about.html">About</a>
     </nav>
   </header>
@@ -118,11 +118,12 @@
     <section class="lab-section lab-principles-section reveal-card" aria-labelledby="lab-principles-title">
       <p class="page-kicker">How we build</p>
       <h2 id="lab-principles-title">Intelligence only works when the foundation is governed.</h2>
+      <p class="lab-method-lede">The Lab does not start by asking what model or dashboard to build. It starts by making the decision system explicit: what leaders need to know, which signals prove it, who owns the definitions, and how the insight turns into action.</p>
       <div class="principle-grid lab-principle-grid">
-        <article><h3>Signals Before Scores</h3><p>We start by identifying the business signals that actually indicate risk, priority, opportunity, or intervention need.</p></article>
-        <article><h3>Governance Before Automation</h3><p>Definitions, access, ownership, and model logic come before automation so the system remains credible.</p></article>
-        <article><h3>Prioritization Before Visualization</h3><p>The goal is not more charts. The goal is helping leaders understand what deserves attention now.</p></article>
-        <article><h3>Systems Before One-Offs</h3><p>We design repeatable intelligence products that can be maintained, explained, and improved over time.</p></article>
+        <article><span>01</span><h3>Decision Question</h3><p>Define the leadership decision first: what needs to be prioritized, predicted, escalated, or explained?</p></article>
+        <article><span>02</span><h3>Signal Map</h3><p>Identify the operational, customer, financial, workflow, or behavioral signals that actually indicate change.</p></article>
+        <article><span>03</span><h3>Governed Logic</h3><p>Align definitions, access rules, model ownership, and metric logic before automation makes the system louder.</p></article>
+        <article><span>04</span><h3>Action Cadence</h3><p>Design the digest, alert, framework, or executive view around who acts, when they act, and what changes next.</p></article>
       </div>
     </section>
 
@@ -132,25 +133,25 @@
       <p>Each initiative starts with a clear leadership question, then works backward into the governed data, model logic, delivery cadence, and action path needed to answer it consistently.</p>
 
       <div class="lab-initiative-grid">
-        <details class="lab-initiative-card" open>
+        <details class="lab-initiative-card">
           <summary>
-            <img src="assets/home-generated/lab-operational-risk.png" alt="Operational risk signals becoming prioritized leadership intelligence">
-            <span class="lab-card-label">Operational risk</span>
-            <h3>Worker Safety Intelligence Digest</h3>
-            <p>Transforms fragmented safety and operational signals into a ranked weekly intelligence digest for leadership.</p>
+            <img src="assets/home-generated/lab-operational-risk.png" alt="Fragmented operational signals becoming prioritized leadership intelligence">
+            <span class="lab-card-label">Operational intelligence</span>
+            <h3>Fragmented Operations Intelligence Digest</h3>
+            <p>Transforms disconnected operational signals into a ranked intelligence digest that shows leaders where attention is needed first.</p>
           </summary>
           <div class="lab-initiative-detail">
             <ul>
-              <li>Detects escalation trends, corrective action backlog risk, compliance drift, and behavioral signals.</li>
-              <li>Turns risk patterns into executive priorities, regional intelligence, and recommended interventions.</li>
-              <li>Best when leaders need to focus on what is changing before incidents or instability escalate.</li>
+              <li>Unifies signals from safety, service delivery, compliance, workflow participation, backlog, customer friction, and operational exceptions.</li>
+              <li>Detects escalation trends, ownership gaps, stalled actions, regional variance, capacity strain, and early signs of instability.</li>
+              <li>Best when leaders have operational data everywhere but lack a clear system for prioritizing what needs action now.</li>
             </ul>
             <div class="lab-card-actions">
-              <a class="lab-blue-button" href="https://jonahnr.github.io/worker-safety-digest/">View Digest</a>
+              <a class="lab-blue-button" href="https://jonahnr.github.io/worker-safety-digest/">View Example Digest</a>
               <a class="secondary-action" href="https://jonahnr.github.io/Predictive-Risk-Intelligence/">View Framework</a>
             </div>
           </div>
-        </details>
+        </div>
 
         <details class="lab-initiative-card">
           <summary>
@@ -169,7 +170,7 @@
               <a class="lab-blue-button" href="https://jonahnr.github.io/rls-demo-webapp/">Explore Governance Framework</a>
             </div>
           </div>
-        </details>
+        </div>
 
         <details class="lab-initiative-card">
           <summary>
@@ -188,7 +189,7 @@
               <a class="lab-blue-button" href="https://jonahnr.github.io/enterprise-outcome-studio/">Explore Outcome Studio</a>
             </div>
           </div>
-        </details>
+        </div>
 
         <details class="lab-initiative-card">
           <summary>
@@ -207,7 +208,7 @@
               <a class="lab-blue-button" href="our-offerings.html">Explore Customer Intelligence</a>
             </div>
           </div>
-        </details>
+        </div>
       </div>
     </section>
 
@@ -235,7 +236,12 @@
     </section>
   </main>
 
-  <script src="home.js?v=34"></script>
+  <script src="home.js?v=42"></script>
 </body>
 </html>
+
+
+
+
+
 

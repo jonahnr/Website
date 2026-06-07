@@ -4,168 +4,171 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Offerings | Parallax Data Lab</title>
-  <meta name="description" content="Structured analytics engagements for clarity, ownership, and scale from Parallax Data Lab.">
-  <link rel="stylesheet" href="home.css?v=26">
+  <meta name="description" content="Choose the right Parallax Data Lab analytics engagement for restoring trust, resetting decision systems, or adding senior analytics ownership.">
+  <link rel="stylesheet" href="home.css?v=41">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
 
   <header class="site-header" aria-label="Parallax site navigation">
-    <a class="site-brand" href="index.html">Parallax Data Lab</a>
+    <a class="site-brand" href="index.html" aria-label="Parallax Data Lab home"><img src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab"></a>
     <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="how-we-help.html">How We Help</a>
       <a href="intelligence-lab.html">Intelligence Lab</a>
-      <details class="nav-dropdown">
-        <summary class="nav-dropdown-toggle" aria-current="page">Our Offerings</summary>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="our-offerings.html" aria-current="page">Our Offerings</a>
         <div class="nav-dropdown-menu" aria-label="Offerings sections">
           <a href="#engagements">Offerings Overview</a>
           <a href="analytics-health-check.html">Analytics Health Check</a>
           <a href="decision-system-reset.html">Decision System Reset</a>
           <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
         </div>
-      </details>
+      </div>
       <a href="about.html">About</a>
     </nav>
   </header>
 
-  <main class="offerings-page">
-    <section class="offerings-hero" id="engagements">
+  <main class="offerings-page offerings-page-refined">
+    <section class="offerings-hero offerings-hero-refined" id="engagements">
       <div class="offerings-hero-inner motion-layer" data-depth="0.08">
-        <h1>Structured Analytics Engagements Built For Clarity, Ownership, And Scale</h1>
-        <p>Parallax Data Lab works with teams whose analytics have outgrown ad hoc fixes. These engagements are intentionally designed to bring structure to data models, metrics, and reporting so leaders can trust what they see and act with confidence.</p>
+        <p class="page-kicker">Our Offerings</p>
+        <h1>Choose the right analytics engagement for where trust is breaking.</h1>
+        <p>Parallax Data Lab helps teams move from reporting confusion to trusted decision systems. Start with diagnosis, rebuild the foundation when needed, or add senior analytics ownership as the business keeps changing.</p>
         <div class="offerings-actions">
-          <a class="secondary-offer-button" href="#how-engagements-work">See How Engagements Work</a>
           <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
+          <a class="secondary-offer-button" href="#offer-chooser">Compare Paths</a>
         </div>
       </div>
     </section>
 
-    <section class="offerings-jump reveal-card" aria-label="Offering section shortcuts">
-      <a href="#engagements"><strong>Main</strong><span>Engagement Overview</span></a>
-      <a href="analytics-health-check.html"><strong>01</strong><span>Analytics Health Check</span></a>
-      <a href="decision-system-reset.html"><strong>02</strong><span>Decision System Reset</span></a>
-      <a href="fractional-analytics.html"><strong>03</strong><span>Fractional Analytics Consulting</span></a>
+    <section id="offer-chooser" class="offerings-section offer-chooser-section reveal-card">
+      <p class="page-kicker">Start here</p>
+      <h2>Which path fits the problem in front of you?</h2>
+      <p class="offerings-lede">The offerings are designed to meet teams at different stages of analytics maturity. If you are unsure, start with the Health Check.</p>
+      <div class="offer-chooser-grid">
+        <a href="analytics-health-check.html">
+          <span>01</span>
+          <strong>Dashboards exist, but trust is shaky.</strong>
+          <p>Start with an Analytics Health Check to diagnose definition drift, duplicated logic, ownership gaps, and reporting friction.</p>
+        </a>
+        <a href="decision-system-reset.html">
+          <span>02</span>
+          <strong>Reports no longer match how leaders decide.</strong>
+          <p>Use a Decision System Reset to simplify metrics, rebuild core views, and align reporting around decision workflows.</p>
+        </a>
+        <a href="fractional-analytics.html">
+          <span>03</span>
+          <strong>Analytics needs senior ownership over time.</strong>
+          <p>Use Fractional Analytics Consulting when priorities keep shifting and your team needs ongoing standards, judgment, and cadence.</p>
+        </a>
+        <a href="intelligence-lab.html">
+          <span>04</span>
+          <strong>You are ready for an intelligence initiative.</strong>
+          <p>Use Intelligence Lab when the foundation is ready for predictive frameworks, governed intelligence layers, or executive decision products.</p>
+        </a>
+      </div>
     </section>
 
-    <section id="how-engagements-work" class="offerings-section reveal-card">
-      <h2>Engagements Designed Around The Foundation Beneath Reporting</h2>
-      <p class="offerings-lede">Each offering is structured to reduce confusion, clarify ownership, and create analytics systems that continue working as teams and priorities evolve.</p>
-      <div class="offer-grid">
+    <section id="how-engagements-work" class="offerings-section offerings-method-section reveal-card">
+      <p class="page-kicker">How engagements work</p>
+      <h2>Every path is built around the foundation beneath reporting.</h2>
+      <div class="offer-method-grid">
         <article>
-          <div class="help-illustration blueprint-search" aria-hidden="true"><span></span><span></span><span></span></div>
-          <h3>Diagnose What Is Breaking</h3>
+          <span>Diagnose</span>
+          <h3>Find what is breaking trust</h3>
           <p>We identify where definitions, data models, reporting logic, ownership, and decision flows are creating friction.</p>
         </article>
         <article>
-          <div class="help-illustration design-chart" aria-hidden="true"><span></span><span></span><span></span></div>
-          <h3>Design The System</h3>
-          <p>We create the standards, architecture, and operating model needed for analytics to become trusted infrastructure.</p>
+          <span>Design</span>
+          <h3>Clarify the operating model</h3>
+          <p>We define the standards, architecture, ownership, and decision logic needed for analytics to become dependable infrastructure.</p>
         </article>
         <article>
-          <div class="help-illustration guide-board" aria-hidden="true"><span></span><span></span><span></span></div>
-          <h3>Build Or Guide The Fix</h3>
-          <p>We either help rebuild key assets directly or guide your team through the highest-leverage path forward.</p>
+          <span>Guide</span>
+          <h3>Build the highest-leverage fix</h3>
+          <p>We rebuild key assets directly or guide your team through the clearest sequence of changes.</p>
         </article>
       </div>
     </section>
 
-    <section class="deliverables-snapshot reveal-card" aria-labelledby="deliverables-title">
+    <section class="offerings-section deliverables-snapshot offerings-proof-section reveal-card" aria-labelledby="deliverables-title">
       <p class="page-kicker">Proof of value</p>
       <h2 id="deliverables-title">Every engagement produces operating artifacts, not just recommendations.</h2>
-      <div class="deliverables-grid">
+      <div class="deliverables-grid offerings-deliverables-grid">
         <article><span>01</span><strong>Metric and logic inventory</strong><p>A clearer view of repeated definitions, report dependencies, and fragile business rules.</p></article>
         <article><span>02</span><strong>Ownership map</strong><p>Who owns each decision, metric, data source, and reporting workflow after the engagement.</p></article>
         <article><span>03</span><strong>90-day action roadmap</strong><p>Sequenced fixes your team can execute without creating another round of analytics sprawl.</p></article>
       </div>
     </section>
-    <section id="health-check" class="offer-detail reveal-card">
-      <div class="offer-copy">
-        <p class="page-kicker">Offering 01</p>
-        <h2>Analytics Health Check</h2>
-        <p>A focused diagnostic engagement for teams that need a clear view of where their analytics foundation is breaking down before investing in a larger rebuild.</p>
-        <ul>
-          <li>Review dashboards, models, metrics, and reporting workflows.</li>
-          <li>Identify definition drift, duplicated logic, ownership gaps, and trust issues.</li>
-          <li>Produce a prioritized foundation roadmap with practical next steps.</li>
-        </ul>
-        <div class="engagement-path">
-          <h3>What the interaction looks like</h3>
-          <p>A short diagnostic sprint: we review your reporting environment, interview key stakeholders, identify trust breaks, and return a practical roadmap your team can act on.</p>
-        </div>
-        <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
-      </div>
-      <div class="offer-panel">
-        <h3>Best Fit</h3>
-        <p>Dashboards exist, but teams do not fully trust them.</p>
-        <h3>Typical Output</h3>
-        <p>Foundation health summary, issue map, ownership gaps, and recommended roadmap.</p>
+
+    <section class="offerings-section offer-details-section reveal-card" aria-labelledby="offering-details-title">
+      <p class="page-kicker">Core paths</p>
+      <h2 id="offering-details-title">Three engagement paths, one foundation-first philosophy.</h2>
+      <div class="offer-card-grid">
+        <article class="offer-card" id="health-check">
+          <img src="assets/home-generated/offerings-health-check.png" alt="Analytics health check diagnostic scan of dashboards and metric logic">
+          <div class="offer-card-body">
+            <p class="page-kicker">Offering 01</p>
+            <h3>Analytics Health Check</h3>
+            <p>A focused diagnostic engagement for teams that need a clear read on where analytics trust is breaking before investing in a larger rebuild.</p>
+            <dl>
+              <div><dt>Best fit</dt><dd>Dashboards exist, but teams do not fully trust them.</dd></div>
+              <div><dt>Typical output</dt><dd>Foundation health summary, issue map, ownership gaps, and recommended roadmap.</dd></div>
+            </dl>
+            <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
+          </div>
+        </article>
+
+        <article class="offer-card" id="decision-reset">
+          <img src="assets/home-generated/offerings-decision-reset.png" alt="Decision system reset reorganizing fragmented reports into a clear decision path">
+          <div class="offer-card-body">
+            <p class="page-kicker">Offering 02</p>
+            <h3>Decision System Reset</h3>
+            <p>A rebuild engagement for teams that need to realign analytics around the questions leadership actually uses to make decisions.</p>
+            <dl>
+              <div><dt>Best fit</dt><dd>Reports look polished, but no longer match executive decisions.</dd></div>
+              <div><dt>Typical output</dt><dd>Decision map, metric standards, streamlined reporting architecture, and governance recommendations.</dd></div>
+            </dl>
+            <a class="secondary-offer-button" href="decision-system-reset.html">Explore Decision System Reset</a>
+          </div>
+        </article>
+
+        <article class="offer-card" id="fractional-consulting">
+          <img src="assets/home-generated/offerings-fractional.png" alt="Fractional analytics consulting shown as a strategic cadence and ownership system">
+          <div class="offer-card-body">
+            <p class="page-kicker">Offering 03</p>
+            <h3>Fractional Analytics Consulting</h3>
+            <p>Ongoing senior analytics architecture support for teams that need judgment, structure, and ownership without immediately hiring full-time leadership.</p>
+            <dl>
+              <div><dt>Best fit</dt><dd>Analytics has outgrown its setup, but a full-time analytics leadership hire is premature.</dd></div>
+              <div><dt>Typical output</dt><dd>Ongoing standards, metric ownership, decision system refinement, and senior analytics guidance.</dd></div>
+            </dl>
+            <a class="secondary-offer-button" href="fractional-analytics.html">Explore Fractional Analytics</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="decision-reset" class="offer-detail reverse reveal-card">
-      <div class="offer-copy">
-        <p class="page-kicker">Offering 02</p>
-        <h2>Decision System Reset</h2>
-        <p>A rebuild engagement for teams that need to realign analytics around how leadership actually makes decisions.</p>
-        <ul>
-          <li>Clarify the business questions dashboards must answer.</li>
-          <li>Redesign metric definitions and semantic reporting structure.</li>
-          <li>Refactor reporting assets into a simpler decision-ready system.</li>
-        </ul>
-        <div class="engagement-path">
-          <h3>What the interaction looks like</h3>
-          <p>A focused reset: we map decisions, simplify reporting logic, rebuild the core metrics and views, and help teams transition from dashboard volume to decision clarity.</p>
-        </div>
-        <a class="secondary-offer-button" href="decision-system-reset.html">Explore Decision System Reset</a>
-      </div>
-      <div class="offer-panel">
-        <h3>Best Fit</h3>
-        <p>Reports are polished, but they no longer align to executive decisions.</p>
-        <h3>Typical Output</h3>
-        <p>Decision map, metric standards, streamlined reporting architecture, and governance recommendations.</p>
+    <section class="offerings-section offering-rhythm-section reveal-card">
+      <p class="page-kicker">Engagement rhythm</p>
+      <h2>Start small, then deepen only where the evidence points.</h2>
+      <div class="offering-rhythm">
+        <article><strong>1. Assess the foundation</strong><p>Clarify the issues before committing to a rebuild or retainer.</p></article>
+        <article><strong>2. Choose the right path</strong><p>Reset decision systems, add senior ownership, or move into targeted intelligence work.</p></article>
+        <article><strong>3. Keep the system useful</strong><p>Anchor metrics, reporting, and ownership to the way decisions are actually made.</p></article>
       </div>
     </section>
 
-    <section id="fractional-consulting" class="offer-detail reveal-card">
-      <div class="offer-copy">
-        <p class="page-kicker">Offering 03</p>
-        <h2>Fractional Analytics Consulting</h2>
-        <p>Ongoing senior analytics architecture support for teams that need judgment, structure, and ownership without immediately hiring a full-time analytics leader.</p>
-        <ul>
-          <li>Provide recurring oversight of metrics, reporting standards, and decision logic.</li>
-          <li>Guide prioritization as new analytics needs emerge.</li>
-          <li>Support teams through scale, governance, and reporting evolution.</li>
-        </ul>
-        <div class="engagement-path">
-          <h3>What the interaction looks like</h3>
-          <p>An ongoing partnership: we join the operating rhythm, advise on analytics priorities, unblock structure decisions, and keep metrics, ownership, and reporting aligned as the business changes.</p>
-        </div>
-        <a class="secondary-offer-button" href="fractional-analytics.html">Explore Fractional Analytics</a>
-      </div>
-      <div class="offer-panel">
-        <h3>Best Fit</h3>
-        <p>Analytics has outgrown its original setup, but a full-time analytics leadership hire is premature.</p>
-        <h3>Typical Output</h3>
-        <p>Ongoing standards, metric ownership, decision system refinement, and senior analytics guidance.</p>
-      </div>
-    </section>
-
-    <section class="offerings-cta reveal-card">
+    <section class="help-cta-section offerings-cta offerings-cta-refined reveal-card">
       <h2>Not sure which path fits best?</h2>
-      <p>Start with the Analytics Health Check. It creates the clarity needed to decide whether your team needs a reset, ongoing support, or a targeted architecture rebuild.</p>
+      <p>Start with the Analytics Health Check. It gives you the clarity needed to choose a reset, ongoing senior ownership, or a targeted intelligence build.</p>
       <a class="primary-action" href="analytics-health-check.html">Request an Assessment</a>
     </section>
   </main>
 
-  <script src="home.js"></script>
+  <script src="home.js?v=42"></script>
 </body>
 </html>
-
-
-
-
-
-
 
 

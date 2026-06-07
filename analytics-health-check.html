@@ -1,135 +1,185 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request an Analytics Foundation Assessment | Parallax Data Lab</title>
-  <meta name="description" content="Request an Analytics Foundation Assessment from Parallax Data Lab. Share context about your analytics foundation, decision clarity, and operating constraints.">
-  <link rel="stylesheet" href="home.css?v=26">
+  <title>Analytics Health Check | Parallax Data Lab</title>
+  <meta name="description" content="Request an Analytics Health Check from Parallax Data Lab to identify where analytics trust, metric definitions, reporting flow, and decision clarity are breaking down.">
+  <link rel="stylesheet" href="home.css?v=42">
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
 
   <header class="site-header" aria-label="Parallax site navigation">
-    <a class="site-brand" href="index.html">Parallax Data Lab</a>
+    <a class="site-brand" href="index.html" aria-label="Parallax Data Lab home">
+      <img src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab">
+    </a>
     <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="how-we-help.html">How We Help</a>
       <a href="intelligence-lab.html">Intelligence Lab</a>
-      <details class="nav-dropdown">
-        <summary class="nav-dropdown-toggle" aria-current="page">Our Offerings</summary>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="our-offerings.html" aria-current="page">Our Offerings</a>
         <div class="nav-dropdown-menu" aria-label="Offerings sections">
           <a href="our-offerings.html">Offerings Overview</a>
           <a href="analytics-health-check.html">Analytics Health Check</a>
           <a href="decision-system-reset.html">Decision System Reset</a>
           <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
         </div>
-      </details>
+      </div>
       <a href="about.html">About</a>
     </nav>
   </header>
 
-  <main class="assessment-page">
-    <section class="assessment-intro">
-      <div class="assessment-shell motion-layer" data-depth="0.08">
-        <h1>Request an Analytics Foundation Assessment</h1>
-        <p>We start every engagement by understanding your analytics foundation, decision clarity, and operating constraints. This assessment helps determine whether a health check, decision system reset, or deeper partnership is the right next step.</p>
-        <p>Based on that context, we outline potential paths forward, each scoped as a project with estimated investment ranges, timelines, and tradeoffs so you can evaluate what makes the most sense for your team.</p>
+  <main class="assessment-page assessment-page-refined">
+    <section class="assessment-hero" aria-labelledby="assessment-hero-title">
+      <div class="assessment-hero-inner motion-layer" data-depth="0.08">
+        <div class="assessment-hero-copy">
+          <p class="page-kicker">Analytics Health Check</p>
+          <h1 id="assessment-hero-title">Find where analytics trust is breaking before you invest in another dashboard.</h1>
+          <p>Parallax reviews your analytics foundation, metric logic, decision flow, and operating constraints so leaders can see what needs attention first.</p>
+          <div class="assessment-hero-actions">
+            <a class="primary-action" href="#assessment-form-title">Go to health check</a>
+            <a class="secondary-action" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule a call first</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="assessment-steps reveal-card" aria-labelledby="assessment-steps-title">
-      <h2 id="assessment-steps-title">What Happens When You Request an Assessment</h2>
-      <div class="assessment-step-grid">
+    <section class="assessment-fit-section reveal-card" aria-labelledby="assessment-fit-title">
+      <p class="page-kicker">When to use this</p>
+      <h2 id="assessment-fit-title">This is for teams that need a clear read on the foundation, not another pile of report requests.</h2>
+      <div class="assessment-fit-grid">
         <article>
-          <span>1</span>
-          <h3>Submit Context</h3>
-          <p>Share your situation, systems, and decision bottlenecks.</p>
+          <span>01</span>
+          <h3>Dashboards exist, but confidence is low</h3>
+          <p>Leadership has reports, but the numbers still trigger side debates, manual validation, or second spreadsheets.</p>
         </article>
         <article>
-          <span>2</span>
-          <h3>We Review Your Situation</h3>
-          <p>We identify where clarity breaks down and what to fix first.</p>
+          <span>02</span>
+          <h3>Metrics mean different things in different rooms</h3>
+          <p>Definitions, ownership, and business logic have drifted enough that the same question gets multiple answers.</p>
         </article>
         <article>
-          <span>3</span>
-          <h3>You Get A Recommendation</h3>
-          <p>A next step and a scoped approach, or a clear no-fit.</p>
+          <span>03</span>
+          <h3>Reporting volume is high, but decisions are slow</h3>
+          <p>The team is busy producing outputs, yet leaders still lack the clarity needed to act quickly.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Analytics ownership is unclear</h3>
+          <p>Requests, priorities, and governance move through too many informal channels without a stable senior owner.</p>
         </article>
       </div>
     </section>
 
-    <section class="assessment-deliverables reveal-card" aria-labelledby="assessment-deliverables-title">
-      <p class="page-kicker">Assessment output</p>
-      <h2 id="assessment-deliverables-title">You leave with a decision-ready recommendation.</h2>
-      <div class="assessment-deliverable-grid">
-        <article><strong>Current-state readout</strong><p>The core trust breaks affecting your dashboards, models, definitions, and decision flow.</p></article>
-        <article><strong>Fit recommendation</strong><p>Whether the right next move is a health check, decision reset, fractional partnership, or no engagement.</p></article>
-        <article><strong>Scoped path forward</strong><p>Likely sequence, timeline, tradeoffs, and investment range before you commit to anything larger.</p></article>
+    <section class="assessment-diagnostic-section reveal-card" aria-labelledby="assessment-diagnostic-title">
+      <div class="assessment-section-heading">
+        <p class="page-kicker">Diagnostic lens</p>
+        <h2 id="assessment-diagnostic-title">We look for the structural causes underneath the visible dashboard symptoms.</h2>
+      </div>
+      <div class="assessment-diagnostic-grid">
+        <article>
+          <img src="assets/home-generated/assessment-trust-map.png" alt="Abstract analytics trust map with fragmented data signals becoming organized">
+          <div>
+            <h3>Trust breakdown map</h3>
+            <p>Where definitions, lineage, ownership, and reporting flow are causing teams to question the numbers.</p>
+          </div>
+        </article>
+        <article>
+          <img src="assets/home-generated/assessment-routing-path.png" alt="Abstract recommendation paths branching from one intake signal">
+          <div>
+            <h3>Next-step routing</h3>
+            <p>Whether the right move is a focused health check, decision reset, fractional analytics support, or no engagement.</p>
+          </div>
+        </article>
+        <article>
+          <img src="assets/home-generated/assessment-decision-clarity.png" alt="Abstract decision clarity visual showing noisy report signals resolving into a clean analytics cockpit">
+          <div>
+            <h3>Decision clarity readout</h3>
+            <p>Which decisions are being slowed by unclear metrics, manual workarounds, duplicated logic, or fragile reporting.</p>
+          </div>
+        </article>
       </div>
     </section>
-    <section class="assessment-form-section reveal-card" aria-labelledby="assessment-form-title">
-      <h2 id="assessment-form-title">To get started, share a bit of context below.</h2>
-      <p>This helps us respond thoughtfully and recommend the right next step.</p>
+
+    <section class="assessment-output-section reveal-card" aria-labelledby="assessment-output-title">
+      <p class="page-kicker">What you receive</p>
+      <h2 id="assessment-output-title">A practical recommendation you can act on before committing to a larger engagement.</h2>
+      <div class="assessment-output-grid">
+        <article>
+          <strong>Current-state readout</strong>
+          <p>The highest-impact trust breaks affecting your dashboards, models, definitions, and decision flow.</p>
+        </article>
+        <article>
+          <strong>Fit recommendation</strong>
+          <p>A clear view of whether this calls for a health check, decision system reset, fractional partnership, or no-fit answer.</p>
+        </article>
+        <article>
+          <strong>Scoped path forward</strong>
+          <p>Likely sequence, timeline, tradeoffs, and investment range before you approve anything larger.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="assessment-form-section assessment-form-refined reveal-card" aria-labelledby="assessment-form-title">
+      <div class="assessment-form-copy">
+        <p class="page-kicker">Request the health check</p>
+        <h2 id="assessment-form-title">Share the context that would help us diagnose the right starting point.</h2>
+        <p>Short is fine. The goal is to understand the friction, the decisions affected, and whether this should become a health check, reset, or direct conversation.</p>
+      </div>
       <form class="assessment-form" action="https://formsubmit.co/jonahnr@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Analytics Foundation Assessment Request">
+        <input type="hidden" name="_subject" value="New Analytics Health Check Request">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <label for="assessment-name">Name</label>
-        <input id="assessment-name" name="Name" type="text" autocomplete="name" required>
+        <div class="assessment-field-row">
+          <div>
+            <label for="assessment-name">Name</label>
+            <input id="assessment-name" name="Name" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="assessment-email">Work Email</label>
+            <input id="assessment-email" name="Work Email" type="email" autocomplete="email" required>
+          </div>
+        </div>
 
-        <label for="assessment-email">Work Email</label>
-        <input id="assessment-email" name="Work Email" type="email" autocomplete="email" required>
+        <div class="assessment-field-row">
+          <div>
+            <label for="assessment-company">Company</label>
+            <input id="assessment-company" name="Company Name" type="text" autocomplete="organization" required>
+          </div>
+          <div>
+            <label for="assessment-role">Role/Title</label>
+            <input id="assessment-role" name="Role/Title" type="text" autocomplete="organization-title">
+          </div>
+        </div>
 
-        <label for="assessment-company">Company Name</label>
-        <input id="assessment-company" name="Company Name" type="text" autocomplete="organization" required>
+        <label for="assessment-friction">Where is analytics trust breaking down right now?</label>
+        <textarea id="assessment-friction" name="Current Analytics Friction" rows="4" required></textarea>
 
-        <label for="assessment-role">Role/Title</label>
-        <input id="assessment-role" name="Role/Title" type="text" autocomplete="organization-title">
+        <label for="assessment-clarity">What decision or operating question do you need clearer in the next 60-90 days?</label>
+        <textarea id="assessment-clarity" name="60-90 Day Clarity Goal" rows="4" required></textarea>
 
-        <label for="assessment-friction">Where are you feeling the most friction right now?</label>
-        <textarea id="assessment-friction" name="Current Analytics Friction" rows="3" required></textarea>
-
-        <label for="assessment-clarity">What are you hoping to get clarity on in the next 60-90 days?</label>
-        <textarea id="assessment-clarity" name="60-90 Day Clarity Goal" rows="3" required></textarea>
-
-        <button type="submit">Request the Assessment</button>
+        <button type="submit">Submit health check request</button>
       </form>
     </section>
 
-    <section class="assessment-talk reveal-card">
-      <h2>Prefer To Talk It Through First?</h2>
-      <p>If you already have clarity on what you're looking for, you can also book a short intro call. We typically review your assessment request first, then use the call to confirm fit and next steps.</p>
-      <a class="assessment-secondary" href="mailto:jonahnr@gmail.com?subject=Intro%20Call%20Request%20-%20Analytics%20Foundation%20Assessment">Book A 30-Minute Intro</a>
-    </section>
-
-    <section class="assessment-expect reveal-card">
-      <h2>What To Expect After Submitting</h2>
+    <section class="assessment-after-section reveal-card" aria-labelledby="assessment-after-title">
+      <div>
+        <p class="page-kicker">After you submit</p>
+        <h2 id="assessment-after-title">You will hear back with a fit recommendation, not a generic sales sequence.</h2>
+      </div>
       <ul>
         <li>We review your request within 1 business day.</li>
-        <li>We identify the key structural issues affecting your analytics and decision flow.</li>
-        <li>You receive a clear recommendation and next step.</li>
-        <li>If it makes sense, we outline scope, timing, cost, and options before any commitment is required.</li>
+        <li>We identify the likely structural issues affecting trust and decision flow.</li>
+        <li>You receive a recommended next step, including when Parallax is not the right fit.</li>
       </ul>
-    </section>
-
-    <section class="assessment-close reveal-card">
-      <h2>Build analytics leaders can trust.</h2>
-      <p>Get a clear view of where your analytics foundation is breaking down and how to fix it.</p>
-      <a class="primary-action" href="#assessment-form-title">Request an Assessment</a>
+      <a class="assessment-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule a 1:1 appointment</a>
     </section>
   </main>
 
-  <script src="home.js"></script>
+  <script src="home.js?v=42"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-

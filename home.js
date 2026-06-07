@@ -172,6 +172,12 @@ function setupDropdowns() {
       return;
     }
 
+    const isLinkToggle = toggle.tagName.toLowerCase() === "a" && toggle.getAttribute("href");
+    if (isLinkToggle) {
+      toggle.setAttribute("aria-haspopup", "true");
+      return;
+    }
+
     function toggleDropdown(event) {
       event.stopPropagation();
       event.preventDefault();
@@ -235,6 +241,7 @@ setupCarousel("symptom");
 setupCarousel("quote");
 setupCarousel("failure");
 setupCarousel("pattern");
+
 
 
 
