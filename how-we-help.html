@@ -1,354 +1,365 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How We Help | Parallax Data Lab</title>
-  <meta name="description" content="How Parallax Data Lab helps teams make analytics systems work by diagnosing broken foundations, designing trusted structure, and guiding rebuilds.">
-  <link rel="stylesheet" href="home.css?v=50">
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How We Help | Parallax Data Lab</title>
+<meta content="How Parallax Data Lab helps teams make analytics systems work by diagnosing broken foundations, designing trusted structure, and guiding rebuilds." name="description"/>
+<link href="home.css?v=54" rel="stylesheet"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="favicon.ico" rel="icon" sizes="any"/><meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Parallax Data Lab | Analytics Trust &amp; Decision Systems" property="og:title"/><meta content="Restore trust in analytics by fixing the definitions, logic, ownership, and decision systems beneath reporting." property="og:description"/><meta content="https://jonahnr.github.io/Website/social-preview.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Parallax Data Lab | Analytics Trust &amp; Decision Systems" name="twitter:title"/><meta content="Restore trust in analytics by fixing the foundation beneath reporting." name="twitter:description"/><meta content="https://jonahnr.github.io/Website/social-preview.png" name="twitter:image"/></head>
 <body>
-  <canvas id="constellation" aria-hidden="true"></canvas>
-
-  <header class="site-header" aria-label="Parallax site navigation">
-    <a class="site-brand" href="index.html" aria-label="Parallax Data Lab home"><img src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab"></a>
-    <nav aria-label="Primary navigation">
+<canvas aria-hidden="true" id="constellation"></canvas>
+<header aria-label="Parallax site navigation" class="site-header">
+<a aria-label="Parallax Data Lab home" class="site-brand" href="index.html"><img alt="Parallax Data Lab" src="assets/parallax_data_lab_original_transparent.png"/></a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a>
+<a aria-current="page" class="is-active" href="how-we-help.html">How We Help</a>
+<a href="intelligence-lab.html">Intelligence Lab</a>
+<div class="nav-dropdown">
+<a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
+<div aria-label="Offerings sections" class="nav-dropdown-menu">
+<a href="our-offerings.html">Offerings Overview</a>
+<a href="analytics-health-check.html">Analytics Health Check</a>
+<a href="decision-system-reset.html">Decision System Reset</a>
+<a href="fractional-analytics.html">Fractional Analytics Consulting</a>
+</div>
+</div>
+<a href="about.html">About</a>
+</nav>
+</header>
+<main class="help-page">
+<section class="help-hero">
+<div class="help-hero-inner motion-layer" data-depth="0.08">
+<h1>How We Help Teams Make Analytics Systems Work</h1>
+<p>We help organizations turn fragmented, hard-to-trust analytics into a reliable system leaders can actually use to make decisions.</p>
+<p>Most teams already have data, dashboards, and tools in place. What they need is a better operating system for decisions.</p>
+</div>
+</section>
+<section class="help-section situation-section reveal-card">
+<h2>Most Teams Come To Us In One Of These Situations</h2>
+<p class="help-lede">These are not failures. They're signs that analytics has outgrown the way it was originally set up.</p>
+<div class="situation-grid">
+<a aria-label="Explore Decision System Reset for dashboard trust issues" class="situation-card" href="decision-system-reset.html">
+<img alt="Mismatched dashboards being reconciled into a trusted analytics signal" class="help-card-image" src="assets/home-generated/help-situation-dashboard-trust.png"/>
+<div>
+<h3>We Have Dashboards, But We Don't Trust Them</h3>
+<p>Numbers don't match across reports. Simple questions require explanation. Leaders double-check results instead of acting on them.</p>
+<span>Explore Decision System Reset</span>
+</div>
+</a>
+<a aria-label="Start with an Analytics Health Check for analytics bottlenecks" class="situation-card" href="analytics-health-check.html">
+<img alt="Reporting requests moving through a bottleneck into a scalable analytics lane" class="help-card-image" src="assets/home-generated/help-situation-bottleneck.png"/>
+<div>
+<h3>Analytics Has Become A Bottleneck</h3>
+<p>One or two people hold everything together. Changes take too long. Reporting slows the business instead of supporting it.</p>
+<span>Request an Analytics Health Check</span>
+</div>
+</a>
+<a aria-label="View example work: Enterprise Outcome Studio for messy data foundations" class="situation-card" href="https://jonahnr.github.io/enterprise-outcome-studio/">
+<img alt="Tangled data foundations reorganized into a scalable metric architecture" class="help-card-image" src="assets/home-generated/help-situation-scale-foundation.png"/>
+<div>
+<h3>Messy Data Foundations Slow Down Scaling</h3>
+<p>Metrics mean different things to different teams. Definitions aren't documented. There's no shared foundation to scale on.</p>
+<span>View Example: Enterprise Outcome Studio</span>
+</div>
+</a>
+<a aria-label="Explore Fractional Analytics Consulting for senior analytics judgment" class="situation-card" href="fractional-analytics.html">
+<img alt="Strategic analytics compass guiding dashboards and data architecture" class="help-card-image" src="assets/home-generated/help-situation-senior-judgment.png"/>
+<div>
+<h3>We Need Senior Analytics Judgment, Not More Dashboards</h3>
+<p>Hiring feels premature or unclear. More reports won't fix the problem. What's missing is perspective, standards, and ownership.</p>
+<span>Explore Fractional Analytics Consulting</span>
+</div>
+</a>
+</div>
+</section>
+<section class="help-process reveal-card">
+<h2>How We Typically Help</h2>
+<p class="help-lede">Every engagement is shaped by the business context, but the work follows a consistent logic.</p>
+<div class="process-line">Diagnose &gt; Design &gt; Build or Guide</div>
+<div class="process-grid">
+<article>
+<img alt="Diagnostic scan over data models dashboards and metrics" class="help-card-image" src="assets/home-generated/help-process-diagnose.png"/>
+<strong>1</strong>
+<h3>Diagnose</h3>
+<p>Understand what's really happening beneath your dashboards.</p>
+<ul>
+<li>Review models, metrics, and reports</li>
+<li>Clarify structural and governance issues</li>
+</ul>
+</article>
+<article>
+<img alt="Blueprint of clean metric architecture and governed definitions" class="help-card-image" src="assets/home-generated/help-process-design.png"/>
+<strong>2</strong>
+<h3>Design</h3>
+<p>Create a foundation teams can trust and scale.</p>
+<ul>
+<li>Align and simplify models</li>
+<li>Establish scale-ready standards</li>
+</ul>
+</article>
+<article>
+<img alt="Analytics system being implemented with stable pipelines and dashboards" class="help-card-image" src="assets/home-generated/help-process-build-guide.png"/>
+<strong>3</strong>
+<h3>Build Or Guide</h3>
+<p>Execute in the way that creates the most leverage.</p>
+<ul>
+<li>Refactor or rebuild assets</li>
+<li>Provide senior guidance or hands-on execution</li>
+</ul>
+</article>
+</div>
+<p class="process-note">Not every engagement looks the same, but every engagement starts with clarity.</p>
+</section>
+<section class="success-section reveal-card">
+<h2>What Success Looks Like</h2>
+<p class="success-intro">When analytics is structured correctly, the change is noticeable.</p>
+<div class="success-map">
+<article>
+<img alt="Trusted analytics signal with verified decision network" class="success-card-image" src="assets/home-generated/help-outcome-renewed-confidence.png"/>
+<h3>Trusted Core Metrics</h3>
+<p>Leadership stops asking which number is right and starts acting on the insight.</p>
+</article>
+<article>
+<img alt="Optimized analytics pipeline showing faster performance" class="success-card-image" src="assets/home-generated/help-outcome-faster-performance.png"/>
+<h3>Faster Decisions</h3>
+<p>Teams answer follow-up questions without rebuilding the report every time.</p>
+</article>
+<article class="center">
+<img alt="Many reports consolidating into fewer clearer dashboards" class="success-card-image" src="assets/home-generated/help-outcome-fewer-reports.png"/>
+<h3>Fewer, Clearer Dashboards</h3>
+<p>The reporting layer gets smaller because the decision layer gets sharper.</p>
+</article>
+<article>
+<img alt="Scalable analytics foundation organized into a clean metric architecture" class="success-card-image" src="assets/home-generated/help-situation-scale-foundation.png"/>
+<h3>Scalable Foundations</h3>
+<p>New teams, products, and priorities can plug into standards instead of creating drift.</p>
+</article>
+<article>
+<img alt="Useful metrics filtered into owned metric nodes" class="success-card-image" src="assets/home-generated/quote-useful-metrics.png"/>
+<h3>Clear Ownership</h3>
+<p>Teams know who defines, maintains, and explains the metrics they rely on.</p>
+</article>
+</div>
+<p class="success-close">Analytics stops being a source of friction and becomes a decision system.</p>
+</section>
+<section class="help-proof-section reveal-card">
+<p class="page-kicker">Example transformation</p>
+<h2>What a foundation reset is designed to change</h2>
+<div class="proof-comparison">
+<article>
+<span>Before</span>
+<strong>Many dashboards, competing definitions, recurring number debates.</strong>
+<p>A common pattern: every team has a report, but no one is fully confident which one should guide decisions.</p>
+</article>
+<article>
+<span>After</span>
+<strong>Governed metric logic, fewer executive views, cleaner weekly review.</strong>
+<p>The target state: the same questions move faster because the foundation underneath the dashboards is aligned.</p>
+</article>
+</div>
+</section>
+<details class="patterns-section help-disclosure reveal-card">
+<summary>
+<span>Diagnostic detail</span>
+<strong>Common Analytics Patterns We're Brought In to Fix</strong>
+<em>Open the diagnostic detail</em>
+</summary>
+<div class="help-disclosure-body">
+<p class="help-lede">Use these examples to spot whether the problem is tooling, structure, ownership, or decision design.</p>
+<div aria-label="Analytics pattern navigation" class="section-controls pattern-controls">
+<button aria-label="Show previous analytics pattern" data-carousel-prev="pattern" type="button">Prev</button>
+<span data-carousel-status="pattern">1 / 5</span>
+<button aria-label="Show next analytics pattern" data-carousel-next="pattern" type="button">Next</button>
+</div>
+<div class="pattern-diagnostic-slider">
+<article data-carousel-item="pattern" data-page="0">
+<h3>Slow Or Brittle Power BI Environments</h3>
+<dl>
+<div><dt>Problem</dt><dd>Reports technically work, but refreshes, filters, and model changes are fragile.</dd></div>
+<div><dt>Example</dt><dd>A leadership dashboard takes minutes to load and breaks whenever a new slicer is added.</dd></div>
+<div><dt>Fix</dt><dd>Separate the model, metric layer, and reporting views so performance does not depend on one overloaded file.</dd></div>
+</dl>
+</article>
+<article data-carousel-item="pattern" data-page="1">
+<h3>Metrics Defined Differently Across Teams</h3>
+<dl>
+<div><dt>Problem</dt><dd>Teams use the same metric name but apply different logic, filters, or time windows.</dd></div>
+<div><dt>Example</dt><dd>Sales, finance, and product all report active customers, but each number is different.</dd></div>
+<div><dt>Fix</dt><dd>Create governed definitions and assign ownership before rebuilding dashboards.</dd></div>
+</dl>
+</article>
+<article data-carousel-item="pattern" data-page="2">
+<h3>Dashboards That Don't Answer Real Questions</h3>
+<dl>
+<div><dt>Problem</dt><dd>Reports are polished, but they do not map to how leaders actually make decisions.</dd></div>
+<div><dt>Example</dt><dd>The dashboard shows every funnel step but not the operational tradeoff leadership needs to make.</dd></div>
+<div><dt>Fix</dt><dd>Start from decision workflows, then rebuild reporting around the questions that matter.</dd></div>
+</dl>
+</article>
+<article data-carousel-item="pattern" data-page="3">
+<h3>Analytics Without Structural Ownership</h3>
+<dl>
+<div><dt>Problem</dt><dd>One capable person becomes the unofficial owner of every metric, report, and exception.</dd></div>
+<div><dt>Example</dt><dd>Every dashboard request waits for the same analyst, even when the issue is governance.</dd></div>
+<div><dt>Fix</dt><dd>Define ownership for models, metrics, and decision logic so the system can scale.</dd></div>
+</dl>
+</article>
+<article data-carousel-item="pattern" data-page="4">
+<h3>Blended Data Sources Without A Modeling Strategy</h3>
+<dl>
+<div><dt>Problem</dt><dd>Data sources are joined inside reports instead of governed upstream.</dd></div>
+<div><dt>Example</dt><dd>CRM, billing, and product data are blended differently depending on who built the report.</dd></div>
+<div><dt>Fix</dt><dd>Design a stable modeling layer before adding more dashboards or sources.</dd></div>
+</dl>
+</article>
+</div>
+<h3>After foundation fixes, teams see:</h3>
+<div class="pattern-outcomes">
+<article>
+<img alt="Optimized analytics pipeline showing faster performance" class="pattern-outcome-image" src="assets/home-generated/help-outcome-faster-performance.png"/>
+<p>Faster Performance</p>
+</article>
+<article>
+<img alt="Many reports consolidating into fewer clearer dashboards" class="pattern-outcome-image" src="assets/home-generated/help-outcome-fewer-reports.png"/>
+<p>Fewer Reports</p>
+</article>
+<article>
+<img alt="Analytics question resolving into a clear answer path" class="pattern-outcome-image" src="assets/home-generated/help-outcome-clearer-answers.png"/>
+<p>Clearer Answers</p>
+</article>
+<article>
+<img alt="Trusted analytics signal with verified decision network" class="pattern-outcome-image" src="assets/home-generated/help-outcome-renewed-confidence.png"/>
+<p>Renewed Confidence</p>
+</article>
+</div>
+</div>
+</details>
+<section class="next-section reveal-card">
+<h2>Where Teams Typically Go Next</h2>
+<p class="help-lede">Different teams need different levels of support. Some need a focused reset to regain trust and clarity. Others need ongoing senior ownership to scale analytics without friction. Most engagements fall naturally into one of these paths.</p>
+<div class="next-grid">
+<article>
+<div class="next-heading">
+<img alt="Mismatched dashboards being reconciled into a trusted analytics signal" class="help-card-image" src="assets/home-generated/help-situation-dashboard-trust.png"/>
+<p class="path-kicker">Best when trust is broken now</p><h3>Focused Analytics Reset</h3>
+</div>
+<ul>
+<li>Dashboards exist but aren't trusted</li>
+<li>Clarify structural and governance issues</li>
+<li>Performance or model structure has become brittle</li>
+</ul>
+<p class="next-description">A short, high-leverage engagement to diagnose issues, realign definitions, and rebuild a stable foundation without overengineering.</p>
+<a class="primary-action" href="decision-system-reset.html">Explore Reset &amp; Foundation Engagements</a>
+</article>
+<article>
+<div class="next-heading">
+<img alt="Analytics system being implemented with stable pipelines and dashboards" class="help-card-image" src="assets/home-generated/help-process-build-guide.png"/>
+<p class="path-kicker">Best when analytics needs a senior owner</p><h3>Ongoing Senior Ownership</h3>
+</div>
+<ul>
+<li>Analytics has outgrown its original setup</li>
+<li>One or two people are a bottleneck</li>
+<li>Leadership needs judgment, not just execution</li>
+</ul>
+<p class="next-description">Embedded senior guidance to own structure, standards, and decision logic as analytics continues to evolve.</p>
+<a class="primary-action" href="fractional-analytics.html">Explore Ongoing Analytics Leadership</a>
+</article>
+</div>
+<p class="next-note">Not sure which path fits best? Our offerings are designed to adapt as your needs change, not lock you into a fixed model.</p>
+</section>
+<section aria-labelledby="help-intelligence-title" class="help-intelligence-section reveal-card">
+<p class="page-kicker">Past the initial support</p>
+<h2 id="help-intelligence-title">Once the foundation is stable, premium intelligence initiatives unlock.</h2>
+<p class="help-lede">Some teams need more than a reset. Once definitions, ownership, and reporting flow are reliable, Parallax can help build targeted Intelligence Lab modules around the specific decisions leaders need to see sooner.</p>
+<div class="help-intelligence-grid">
+<article>
+<span>01</span>
+<h3>Operations Intelligence Digest</h3>
+<p>Ranks fragmented operational signals so leaders can see where attention is needed first.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Governance and RLS Architecture</h3>
+<p>Connects identity, access, semantic models, and metric logic into a scalable governed layer.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Enterprise Outcome Studio</h3>
+<p>Frames analytics transformation around measurable outcomes, operating standards, and adoption.</p>
+</article>
+<article>
+<span>04</span>
+<h3>Customer Health Intelligence</h3>
+<p>Surfaces account risk, retention signals, and emerging customer friction before review cycles.</p>
+</article>
+</div>
+<a class="primary-action" href="intelligence-lab.html">Explore Intelligence Lab</a>
+</section>
+<details class="risk-section help-disclosure reveal-card">
+<summary>
+<span>Low-risk ways to start</span>
+<strong>Reducing Risk in Analytics Systems</strong>
+<em>Open engagement safeguards</em>
+</summary>
+<div class="help-disclosure-body">
+<h3>How We Keep Engagements Focused</h3>
+<div class="risk-panel">
+<p>The Data Strategy Roadmap is a standalone engagement with no obligation to continue:</p>
+<ul>
+<li>Clear exit points are defined before build work begins</li>
+<li>Documentation and knowledge transfer are included by default</li>
+<li>Scope is explicitly bounded to prevent surprise expansion</li>
+</ul>
+<strong>This keeps work aligned to value, not momentum.</strong>
+</div>
+</div>
+</details>
+<section class="help-cta-section closing-section reveal-card">
+<h2>Build analytics leaders can trust.</h2>
+<p>Get a clearer path for fixing the systems, definitions, and ownership beneath your reporting.</p>
+<a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
+</section>
+</main>
+<footer aria-label="Site footer" class="site-footer site-footer-refined">
+  <div class="site-footer-inner">
+    <div class="site-footer-col site-footer-about">
+      <a class="site-footer-brand" href="index.html">Parallax Data Lab</a>
+      <p>Analytics trust, decision systems, and senior data strategy for teams ready to make reporting useful again.</p>
+      <a class="site-footer-email" href="mailto:jonahnr@gmail.com">jonahnr@gmail.com</a>
+      <a class="site-footer-contact-button" href="about.html#contact-us">Contact Us</a>
+    </div>
+    <nav aria-label="Footer core pages" class="site-footer-col">
+      <h3>Core pages</h3>
       <a href="index.html">Home</a>
-      <a class="is-active" href="how-we-help.html" aria-current="page">How We Help</a>
+      <a href="how-we-help.html">How We Help</a>
+      <a href="our-offerings.html">Our Offerings</a>
       <a href="intelligence-lab.html">Intelligence Lab</a>
-      <div class="nav-dropdown">
-        <a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
-        <div class="nav-dropdown-menu" aria-label="Offerings sections">
-          <a href="our-offerings.html">Offerings Overview</a>
-          <a href="analytics-health-check.html">Analytics Health Check</a>
-          <a href="decision-system-reset.html">Decision System Reset</a>
-          <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
-        </div>
-      </div>
       <a href="about.html">About</a>
     </nav>
-  </header>
-
-  <main class="help-page">
-    <section class="help-hero">
-      <div class="help-hero-inner motion-layer" data-depth="0.08">
-        <h1>How We Help Teams Make Analytics Systems Work</h1>
-        <p>We help organizations turn fragmented, hard-to-trust analytics into a reliable system leaders can actually use to make decisions.</p>
-        <p>Most teams already have data, dashboards, and tools in place. What they need is a better operating system for decisions.</p>
-      </div>
-    </section>
-
-    <section class="help-section situation-section reveal-card">
-      <h2>Most Teams Come To Us In One Of These Situations</h2>
-      <p class="help-lede">These are not failures. They're signs that analytics has outgrown the way it was originally set up.</p>
-      <div class="situation-grid">
-        <a class="situation-card" href="decision-system-reset.html" aria-label="Explore Decision System Reset for dashboard trust issues">
-          <img class="help-card-image" src="assets/home-generated/help-situation-dashboard-trust.png" alt="Mismatched dashboards being reconciled into a trusted analytics signal">
-          <div>
-            <h3>We Have Dashboards, But We Don't Trust Them</h3>
-            <p>Numbers don't match across reports. Simple questions require explanation. Leaders double-check results instead of acting on them.</p>
-            <span>Explore Decision System Reset</span>
-          </div>
-        </a>
-        <a class="situation-card" href="analytics-health-check.html" aria-label="Start with an Analytics Health Check for analytics bottlenecks">
-          <img class="help-card-image" src="assets/home-generated/help-situation-bottleneck.png" alt="Reporting requests moving through a bottleneck into a scalable analytics lane">
-          <div>
-            <h3>Analytics Has Become A Bottleneck</h3>
-            <p>One or two people hold everything together. Changes take too long. Reporting slows the business instead of supporting it.</p>
-            <span>Start With An Analytics Health Check</span>
-          </div>
-        </a>
-        <a class="situation-card" href="https://jonahnr.github.io/enterprise-outcome-studio/" aria-label="View example work: Enterprise Outcome Studio for messy data foundations">
-          <img class="help-card-image" src="assets/home-generated/help-situation-scale-foundation.png" alt="Tangled data foundations reorganized into a scalable metric architecture">
-          <div>
-            <h3>Messy Data Foundations Slow Down Scaling</h3>
-            <p>Metrics mean different things to different teams. Definitions aren't documented. There's no shared foundation to scale on.</p>
-            <span>View Example: Enterprise Outcome Studio</span>
-          </div>
-        </a>
-        <a class="situation-card" href="fractional-analytics.html" aria-label="Explore Fractional Analytics Consulting for senior analytics judgment">
-          <img class="help-card-image" src="assets/home-generated/help-situation-senior-judgment.png" alt="Strategic analytics compass guiding dashboards and data architecture">
-          <div>
-            <h3>We Need Senior Analytics Judgment, Not More Dashboards</h3>
-            <p>Hiring feels premature or unclear. More reports won't fix the problem. What's missing is perspective, standards, and ownership.</p>
-            <span>Explore Fractional Analytics Consulting</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="help-process reveal-card">
-      <h2>How We Typically Help</h2>
-      <p class="help-lede">Every engagement is shaped by the business context, but the work follows a consistent logic.</p>
-      <div class="process-line">Diagnose &gt; Design &gt; Build or Guide</div>
-      <div class="process-grid">
-        <article>
-          <img class="help-card-image" src="assets/home-generated/help-process-diagnose.png" alt="Diagnostic scan over data models dashboards and metrics">
-          <strong>1</strong>
-          <h3>Diagnose</h3>
-          <p>Understand what's really happening beneath your dashboards.</p>
-          <ul>
-            <li>Review models, metrics, and reports</li>
-            <li>Clarify structural and governance issues</li>
-          </ul>
-        </article>
-        <article>
-          <img class="help-card-image" src="assets/home-generated/help-process-design.png" alt="Blueprint of clean metric architecture and governed definitions">
-          <strong>2</strong>
-          <h3>Design</h3>
-          <p>Create a foundation teams can trust and scale.</p>
-          <ul>
-            <li>Align and simplify models</li>
-            <li>Establish scale-ready standards</li>
-          </ul>
-        </article>
-        <article>
-          <img class="help-card-image" src="assets/home-generated/help-process-build-guide.png" alt="Analytics system being implemented with stable pipelines and dashboards">
-          <strong>3</strong>
-          <h3>Build Or Guide</h3>
-          <p>Execute in the way that creates the most leverage.</p>
-          <ul>
-            <li>Refactor or rebuild assets</li>
-            <li>Provide senior guidance or hands-on execution</li>
-          </ul>
-        </article>
-      </div>
-      <p class="process-note">Not every engagement looks the same, but every engagement starts with clarity.</p>
-    </section>
-
-    <section class="success-section reveal-card">
-      <h2>What Success Looks Like</h2>
-      <p class="success-intro">When analytics is structured correctly, the change is noticeable.</p>
-      <div class="success-map">
-        <article>
-          <img class="success-card-image" src="assets/home-generated/help-outcome-renewed-confidence.png" alt="Trusted analytics signal with verified decision network">
-          <h3>Trusted Core Metrics</h3>
-          <p>Leadership stops asking which number is right and starts acting on the insight.</p>
-        </article>
-        <article>
-          <img class="success-card-image" src="assets/home-generated/help-outcome-faster-performance.png" alt="Optimized analytics pipeline showing faster performance">
-          <h3>Faster Decisions</h3>
-          <p>Teams answer follow-up questions without rebuilding the report every time.</p>
-        </article>
-        <article class="center">
-          <img class="success-card-image" src="assets/home-generated/help-outcome-fewer-reports.png" alt="Many reports consolidating into fewer clearer dashboards">
-          <h3>Fewer, Clearer Dashboards</h3>
-          <p>The reporting layer gets smaller because the decision layer gets sharper.</p>
-        </article>
-        <article>
-          <img class="success-card-image" src="assets/home-generated/help-situation-scale-foundation.png" alt="Scalable analytics foundation organized into a clean metric architecture">
-          <h3>Scalable Foundations</h3>
-          <p>New teams, products, and priorities can plug into standards instead of creating drift.</p>
-        </article>
-        <article>
-          <img class="success-card-image" src="assets/home-generated/quote-useful-metrics.png" alt="Useful metrics filtered into owned metric nodes">
-          <h3>Clear Ownership</h3>
-          <p>Teams know who defines, maintains, and explains the metrics they rely on.</p>
-        </article>
-      </div>
-      <p class="success-close">Analytics stops being a source of friction and becomes a decision system.</p>
-    </section>
-    <section class="help-proof-section reveal-card">
-      <p class="page-kicker">Example transformation</p>
-      <h2>What a foundation reset is designed to change</h2>
-      <div class="proof-comparison">
-        <article>
-          <span>Before</span>
-          <strong>Many dashboards, competing definitions, recurring number debates.</strong>
-          <p>A common pattern: every team has a report, but no one is fully confident which one should guide decisions.</p>
-        </article>
-        <article>
-          <span>After</span>
-          <strong>Governed metric logic, fewer executive views, cleaner weekly review.</strong>
-          <p>The target state: the same questions move faster because the foundation underneath the dashboards is aligned.</p>
-        </article>
-      </div>
-    </section>
-
-    <details class="patterns-section help-disclosure reveal-card">
-      <summary>
-        <span>Diagnostic detail</span>
-        <strong>Common Analytics Patterns We're Brought In to Fix</strong>
-        <em>Open the diagnostic slider</em>
-      </summary>
-      <div class="help-disclosure-body">
-        <p class="help-lede">Use these examples to spot whether the problem is tooling, structure, ownership, or decision design.</p>
-        <div class="section-controls pattern-controls" aria-label="Analytics pattern navigation">
-          <button type="button" data-carousel-prev="pattern" aria-label="Show previous analytics pattern">Prev</button>
-          <span data-carousel-status="pattern">1 / 5</span>
-          <button type="button" data-carousel-next="pattern" aria-label="Show next analytics pattern">Next</button>
-        </div>
-        <div class="pattern-diagnostic-slider">
-          <article data-carousel-item="pattern" data-page="0">
-            <h3>Slow Or Brittle Power BI Environments</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>Reports technically work, but refreshes, filters, and model changes are fragile.</dd></div>
-              <div><dt>Example</dt><dd>A leadership dashboard takes minutes to load and breaks whenever a new slicer is added.</dd></div>
-              <div><dt>Fix</dt><dd>Separate the model, metric layer, and reporting views so performance does not depend on one overloaded file.</dd></div>
-            </dl>
-          </article>
-          <article data-carousel-item="pattern" data-page="1">
-            <h3>Metrics Defined Differently Across Teams</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>Teams use the same metric name but apply different logic, filters, or time windows.</dd></div>
-              <div><dt>Example</dt><dd>Sales, finance, and product all report active customers, but each number is different.</dd></div>
-              <div><dt>Fix</dt><dd>Create governed definitions and assign ownership before rebuilding dashboards.</dd></div>
-            </dl>
-          </article>
-          <article data-carousel-item="pattern" data-page="2">
-            <h3>Dashboards That Don't Answer Real Questions</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>Reports are polished, but they do not map to how leaders actually make decisions.</dd></div>
-              <div><dt>Example</dt><dd>The dashboard shows every funnel step but not the operational tradeoff leadership needs to make.</dd></div>
-              <div><dt>Fix</dt><dd>Start from decision workflows, then rebuild reporting around the questions that matter.</dd></div>
-            </dl>
-          </article>
-          <article data-carousel-item="pattern" data-page="3">
-            <h3>Analytics Without Structural Ownership</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>One capable person becomes the unofficial owner of every metric, report, and exception.</dd></div>
-              <div><dt>Example</dt><dd>Every dashboard request waits for the same analyst, even when the issue is governance.</dd></div>
-              <div><dt>Fix</dt><dd>Define ownership for models, metrics, and decision logic so the system can scale.</dd></div>
-            </dl>
-          </article>
-          <article data-carousel-item="pattern" data-page="4">
-            <h3>Blended Data Sources Without A Modeling Strategy</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>Data sources are joined inside reports instead of governed upstream.</dd></div>
-              <div><dt>Example</dt><dd>CRM, billing, and product data are blended differently depending on who built the report.</dd></div>
-              <div><dt>Fix</dt><dd>Design a stable modeling layer before adding more dashboards or sources.</dd></div>
-            </dl>
-          </article>
-        </div>
-        <h3>After foundation fixes, teams see:</h3>
-        <div class="pattern-outcomes">
-          <article>
-            <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-faster-performance.png" alt="Optimized analytics pipeline showing faster performance">
-            <p>Faster Performance</p>
-          </article>
-          <article>
-            <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-fewer-reports.png" alt="Many reports consolidating into fewer clearer dashboards">
-            <p>Fewer Reports</p>
-          </article>
-          <article>
-            <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-clearer-answers.png" alt="Analytics question resolving into a clear answer path">
-            <p>Clearer Answers</p>
-          </article>
-          <article>
-            <img class="pattern-outcome-image" src="assets/home-generated/help-outcome-renewed-confidence.png" alt="Trusted analytics signal with verified decision network">
-            <p>Renewed Confidence</p>
-          </article>
-        </div>
-      </div>
-    </details>
-
-    <section class="next-section reveal-card">
-      <h2>Where Teams Typically Go Next</h2>
-      <p class="help-lede">Different teams need different levels of support. Some need a focused reset to regain trust and clarity. Others need ongoing senior ownership to scale analytics without friction. Most engagements fall naturally into one of these paths.</p>
-      <div class="next-grid">
-        <article>
-          <div class="next-heading">
-            <img class="help-card-image" src="assets/home-generated/help-situation-dashboard-trust.png" alt="Mismatched dashboards being reconciled into a trusted analytics signal">
-            <p class="path-kicker">Best when trust is broken now</p><h3>Focused Analytics Reset</h3>
-          </div>
-          <ul>
-            <li>Dashboards exist but aren't trusted</li>
-            <li>Clarify structural and governance issues</li>
-            <li>Performance or model structure has become brittle</li>
-          </ul>
-          <p class="next-description">A short, high-leverage engagement to diagnose issues, realign definitions, and rebuild a stable foundation without overengineering.</p>
-          <a class="primary-action" href="decision-system-reset.html">Explore Reset &amp; Foundation Engagements</a>
-        </article>
-        <article>
-          <div class="next-heading">
-            <img class="help-card-image" src="assets/home-generated/help-process-build-guide.png" alt="Analytics system being implemented with stable pipelines and dashboards">
-            <p class="path-kicker">Best when analytics needs a senior owner</p><h3>Ongoing Senior Ownership</h3>
-          </div>
-          <ul>
-            <li>Analytics has outgrown its original setup</li>
-            <li>One or two people are a bottleneck</li>
-            <li>Leadership needs judgment, not just execution</li>
-          </ul>
-          <p class="next-description">Embedded senior guidance to own structure, standards, and decision logic as analytics continues to evolve.</p>
-          <a class="primary-action" href="fractional-analytics.html">Explore Ongoing Analytics Leadership</a>
-        </article>
-      </div>
-      <p class="next-note">Not sure which path fits best? Our offerings are designed to adapt as your needs change, not lock you into a fixed model.</p>
-    </section>
-
-    <section class="help-intelligence-section reveal-card" aria-labelledby="help-intelligence-title">
-      <p class="page-kicker">Past the initial support</p>
-      <h2 id="help-intelligence-title">When the foundation is stable, we also help with focused intelligence initiatives.</h2>
-      <p class="help-lede">Some teams need more than a reset. Once definitions, ownership, and reporting flow are reliable, Parallax can help build targeted Intelligence Lab modules around the specific decisions leaders need to see sooner.</p>
-      <div class="help-intelligence-grid">
-        <article>
-          <span>01</span>
-          <h3>Operations Intelligence Digest</h3>
-          <p>Ranks fragmented operational signals so leaders can see where attention is needed first.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Governance and RLS Architecture</h3>
-          <p>Connects identity, access, semantic models, and metric logic into a scalable governed layer.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Enterprise Outcome Studio</h3>
-          <p>Frames analytics transformation around measurable outcomes, operating standards, and adoption.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Customer Health Intelligence</h3>
-          <p>Surfaces account risk, retention signals, and emerging customer friction before review cycles.</p>
-        </article>
-      </div>
-      <a class="primary-action" href="intelligence-lab.html">Explore Intelligence Lab</a>
-    </section>
-
-
-    <details class="risk-section help-disclosure reveal-card">
-      <summary>
-        <span>Low-risk ways to start</span>
-        <strong>Reducing Risk in Analytics Systems</strong>
-        <em>Open engagement safeguards</em>
-      </summary>
-      <div class="help-disclosure-body">
-        <h3>How We Keep Engagements Focused</h3>
-        <div class="risk-panel">
-          <p>The Data Strategy Roadmap is a standalone engagement with no obligation to continue:</p>
-          <ul>
-            <li>Clear exit points are defined before build work begins</li>
-            <li>Documentation and knowledge transfer are included by default</li>
-            <li>Scope is explicitly bounded to prevent surprise expansion</li>
-          </ul>
-          <strong>This keeps work aligned to value, not momentum.</strong>
-        </div>
-      </div>
-    </details>
-
-    <section class="help-cta-section closing-section reveal-card">
-      <h2>Build analytics leaders can trust.</h2>
-      <p>Get a clearer path for fixing the systems, definitions, and ownership beneath your reporting.</p>
-      <a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
-    </section>
-  </main>
-
-  <script src="home.js?v=50"></script>
+    <nav aria-label="Footer core services" class="site-footer-col">
+      <h3>Services</h3>
+      <a href="analytics-health-check.html">Analytics Health Check</a>
+      <a href="decision-system-reset.html">Decision System Reset</a>
+      <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
+    </nav>
+    <nav aria-label="Footer intelligence lab services" class="site-footer-col site-footer-intel">
+      <h3>Intelligence Lab Services</h3>
+      <a href="intelligence-lab.html#operations-intelligence-digest">Operations Intelligence Digest</a>
+      <a href="intelligence-lab.html#governance-rls-architecture">Governance &amp; RLS Architecture</a>
+      <a href="intelligence-lab.html#enterprise-outcome-studio">Enterprise Outcome Studio</a>
+      <a href="intelligence-lab.html#customer-health-churn-intelligence">Customer Health &amp; Churn Intelligence</a>
+    </nav>
+    <div class="site-footer-col site-footer-contact">
+      <h3>Contact</h3>
+      <a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a>
+      <a class="site-footer-secondary" href="mailto:jonahnr@gmail.com">Email Jonah</a>
+    </div>
+  </div>
+  <div class="site-footer-bottom">
+    <p>© 2026 Parallax Data Lab. All rights reserved.</p>
+  </div>
+</footer><script src="home.js?v=54"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

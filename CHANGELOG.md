@@ -88,3 +88,43 @@
 - Kept At a Glance on the right on wide screens, with automatic stacking on smaller widths.
 - Moved Prefer to talk first? above the Schedule Intro Call button in What Happens Next.
 - Bumped cache versions to v50.
+
+
+## Cleanup pass 9 – Global background and copy polish
+- Enlarged the Home hero Analytics Health Check CTA and removed underline styling.
+- Added a shared subtle grid background treatment across all pages while preserving the moving constellation canvas.
+- Rephrased the How We Help diagnostic disclosure from “Open the diagnostic slider” to “Open the diagnostic detail.”
+- Strengthened the Intelligence Lab bridge language around premium initiatives once the foundation is stable.
+- Standardized the Intelligence Lab boundaries section font styling to match the rest of the site.
+- Bumped shared CSS/JS cache versions to `v=51`.
+
+## Cleanup pass 10 – Production preparation
+- Consolidated the accumulated About page override layers into one production polish section in `home.css`.
+- Added a shared footer to every page with Parallax Data Lab, jonahnr@gmail.com, core links, and 2026 copyright.
+- Added favicon and social preview assets: `assets/favicon.svg`, `assets/favicon.ico`, `assets/apple-touch-icon.png`, and `assets/social-preview.png`.
+- Added Open Graph and Twitter preview metadata to every page.
+- Added a concrete proof carousel to the homepage and wired it into `setupCarousel("proof")`.
+- Standardized primary health check CTA language around “Request an Analytics Health Check.”
+- Removed the static dot overlay from the About hero while keeping the moving constellation background and shared grid treatment.
+- Added generated placeholder files for any previously missing image paths so the packaged preview does not render broken image icons. Replace placeholders with final branded art where applicable.
+- Added responsive QA fixes for horizontal overflow and About hero text width.
+- Bumped shared CSS/JS cache versions to `v=52`.
+
+
+## Cleanup pass 11 – Footer, proof, background, favicon polish
+- Restyled the homepage concrete proof carousel to match the Home page visual system.
+- Rebuilt the footer into organized columns with core pages, services, contact, email, and copyright.
+- Added Decision System Reset, Fractional Analytics Consulting, and Contact Us to the footer.
+- Lightened the global page background and increased grid/constellation visibility.
+- Added root-level favicon and social preview files in addition to the asset-folder copies.
+- Updated favicon links in every page head and bumped cache versions to `v=53`.
+
+
+## Cleanup pass 12 – Background, footer, proof, and About contrast
+- Smoothed the global blue background and removed the duplicate/faded grid layer.
+- Disabled legacy About page static dot pseudo-elements while preserving the moving constellation canvas.
+- Restyled the Home concrete proof carousel to match the blue card system used elsewhere on the homepage.
+- Added Intelligence Lab service links to the footer and direct anchors to the relevant Intelligence Lab cards.
+- Removed the Intelligence Lab footer gap.
+- Fixed About What Happens Next contrast and centered the Schedule Intro Call button.
+- Bumped cache versions to v54.

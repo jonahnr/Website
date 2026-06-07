@@ -1,217 +1,240 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Offerings | Parallax Data Lab</title>
-  <meta name="description" content="Choose the right Parallax Data Lab analytics engagement for restoring trust, resetting decision systems, or adding senior analytics ownership.">
-  <link rel="stylesheet" href="home.css?v=50">
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Offerings | Parallax Data Lab</title>
+<meta content="Choose the right Parallax Data Lab analytics engagement for restoring trust, resetting decision systems, or adding senior analytics ownership." name="description"/>
+<link href="home.css?v=54" rel="stylesheet"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="favicon.ico" rel="icon" sizes="any"/><meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Parallax Data Lab | Analytics Trust &amp; Decision Systems" property="og:title"/><meta content="Restore trust in analytics by fixing the definitions, logic, ownership, and decision systems beneath reporting." property="og:description"/><meta content="https://jonahnr.github.io/Website/social-preview.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Parallax Data Lab | Analytics Trust &amp; Decision Systems" name="twitter:title"/><meta content="Restore trust in analytics by fixing the foundation beneath reporting." name="twitter:description"/><meta content="https://jonahnr.github.io/Website/social-preview.png" name="twitter:image"/></head>
 <body>
-  <canvas id="constellation" aria-hidden="true"></canvas>
-
-  <header class="site-header" aria-label="Parallax site navigation">
-    <a class="site-brand" href="index.html" aria-label="Parallax Data Lab home"><img src="assets/parallax_data_lab_original_transparent.png" alt="Parallax Data Lab"></a>
-    <nav aria-label="Primary navigation">
+<canvas aria-hidden="true" id="constellation"></canvas>
+<header aria-label="Parallax site navigation" class="site-header">
+<a aria-label="Parallax Data Lab home" class="site-brand" href="index.html"><img alt="Parallax Data Lab" src="assets/parallax_data_lab_original_transparent.png"/></a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a>
+<a href="how-we-help.html">How We Help</a>
+<a href="intelligence-lab.html">Intelligence Lab</a>
+<div class="nav-dropdown">
+<a aria-current="page" class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
+<div aria-label="Offerings sections" class="nav-dropdown-menu">
+<a href="#engagements">Offerings Overview</a>
+<a href="analytics-health-check.html">Analytics Health Check</a>
+<a href="decision-system-reset.html">Decision System Reset</a>
+<a href="fractional-analytics.html">Fractional Analytics Consulting</a>
+</div>
+</div>
+<a href="about.html">About</a>
+</nav>
+</header>
+<main class="offerings-page offerings-page-refined">
+<section class="offerings-hero offerings-hero-refined" id="engagements">
+<div class="offerings-hero-inner motion-layer" data-depth="0.08">
+<p class="page-kicker">Our Offerings</p>
+<h1>Choose the right analytics engagement for where trust is breaking.</h1>
+<p>Parallax Data Lab helps teams move from reporting confusion to trusted decision systems. Start with diagnosis, rebuild the foundation when needed, or add senior analytics ownership as the business keeps changing.</p>
+<div class="offerings-actions">
+<a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
+<a class="secondary-offer-button" href="#offer-chooser">Compare Paths</a>
+</div>
+</div>
+</section>
+<section class="offerings-section offer-chooser-section reveal-card" id="offer-chooser">
+<p class="page-kicker">Start here</p>
+<h2>Which path fits the problem in front of you?</h2>
+<p class="offerings-lede">The offerings are designed to meet teams at different stages of analytics maturity. If you are unsure, start with the Health Check.</p>
+<div class="offer-chooser-grid">
+<a href="analytics-health-check.html">
+<span>01</span>
+<strong>Dashboards exist, but trust is shaky.</strong>
+<p>Start with an Analytics Health Check to diagnose definition drift, duplicated logic, ownership gaps, and reporting friction.</p>
+</a>
+<a href="decision-system-reset.html">
+<span>02</span>
+<strong>Reports no longer match how leaders decide.</strong>
+<p>Use a Decision System Reset to simplify metrics, rebuild core views, and align reporting around decision workflows.</p>
+</a>
+<a href="fractional-analytics.html">
+<span>03</span>
+<strong>Analytics needs senior ownership over time.</strong>
+<p>Use Fractional Analytics Consulting when priorities keep shifting and your team needs ongoing standards, judgment, and cadence.</p>
+</a>
+<a href="intelligence-lab.html">
+<span>04</span>
+<strong>You are ready for an intelligence initiative.</strong>
+<p>Use Intelligence Lab when the foundation is ready for predictive frameworks, governed intelligence layers, or executive decision products.</p>
+</a>
+</div>
+</section>
+<section class="offerings-section offerings-method-section reveal-card" id="how-engagements-work">
+<p class="page-kicker">How engagements work</p>
+<h2>Every path is built around the foundation beneath reporting.</h2>
+<div class="offer-method-grid">
+<article>
+<span>Diagnose</span>
+<h3>Find what is breaking trust</h3>
+<p>We identify where definitions, data models, reporting logic, ownership, and decision flows are creating friction.</p>
+</article>
+<article>
+<span>Design</span>
+<h3>Clarify the operating model</h3>
+<p>We define the standards, architecture, ownership, and decision logic needed for analytics to become dependable infrastructure.</p>
+</article>
+<article>
+<span>Guide</span>
+<h3>Build the highest-leverage fix</h3>
+<p>We rebuild key assets directly or guide your team through the clearest sequence of changes.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="deliverables-title" class="offerings-section deliverables-snapshot offerings-proof-section reveal-card">
+<p class="page-kicker">Proof of value</p>
+<h2 id="deliverables-title">Every engagement produces operating artifacts, not just recommendations.</h2>
+<div class="deliverables-grid offerings-deliverables-grid">
+<article><span>01</span><strong>Metric and logic inventory</strong><p>A clearer view of repeated definitions, report dependencies, and fragile business rules.</p></article>
+<article><span>02</span><strong>Ownership map</strong><p>Who owns each decision, metric, data source, and reporting workflow after the engagement.</p></article>
+<article><span>03</span><strong>90-day action roadmap</strong><p>Sequenced fixes your team can execute without creating another round of analytics sprawl.</p></article>
+</div>
+</section>
+<section aria-labelledby="offering-details-title" class="offerings-section offer-details-section reveal-card">
+<p class="page-kicker">Core paths</p>
+<h2 id="offering-details-title">Three core paths, plus Intelligence Lab when the foundation is ready.</h2>
+<div class="offer-card-grid">
+<article class="offer-card" id="health-check">
+<img alt="Analytics health check diagnostic scan of dashboards and metric logic" src="assets/home-generated/offerings-health-check.png"/>
+<div class="offer-card-body">
+<p class="page-kicker">Offering 01</p>
+<h3>Analytics Health Check</h3>
+<p>A focused diagnostic engagement for teams that need a clear read on where analytics trust is breaking before investing in a larger rebuild.</p>
+<dl>
+<div><dt>Best fit</dt><dd>Dashboards exist, but teams do not fully trust them.</dd></div>
+<div><dt>Typical output</dt><dd>Foundation health summary, issue map, ownership gaps, and recommended roadmap.</dd></div>
+</dl>
+<a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
+</div>
+</article>
+<article class="offer-card" id="decision-reset">
+<img alt="Decision system reset reorganizing fragmented reports into a clear decision path" src="assets/home-generated/offerings-decision-reset.png"/>
+<div class="offer-card-body">
+<p class="page-kicker">Offering 02</p>
+<h3>Decision System Reset</h3>
+<p>A rebuild engagement for teams that need to realign analytics around the questions leadership actually uses to make decisions.</p>
+<dl>
+<div><dt>Best fit</dt><dd>Reports look polished, but no longer match executive decisions.</dd></div>
+<div><dt>Typical output</dt><dd>Decision map, metric standards, streamlined reporting architecture, and governance recommendations.</dd></div>
+</dl>
+<a class="secondary-offer-button" href="decision-system-reset.html">Explore Decision System Reset</a>
+</div>
+</article>
+<article class="offer-card" id="fractional-consulting">
+<img alt="Fractional analytics consulting shown as a strategic cadence and ownership system" src="assets/home-generated/offerings-fractional.png"/>
+<div class="offer-card-body">
+<p class="page-kicker">Offering 03</p>
+<h3>Fractional Analytics Consulting</h3>
+<p>Ongoing senior analytics architecture support for teams that need judgment, structure, and ownership without immediately hiring full-time leadership.</p>
+<dl>
+<div><dt>Best fit</dt><dd>Analytics has outgrown its setup, but a full-time analytics leadership hire is premature.</dd></div>
+<div><dt>Typical output</dt><dd>Ongoing standards, metric ownership, decision system refinement, and senior analytics guidance.</dd></div>
+</dl>
+<a class="secondary-offer-button" href="fractional-analytics.html">Explore Fractional Analytics</a>
+</div>
+</article>
+<article class="offer-card offer-card-wide intelligence-lab-showcase" id="intelligence-lab-path">
+<img alt="Governed data streams converging into an intelligence layer" src="assets/home-generated/lab-hero-intelligence.png"/>
+<div class="offer-card-body">
+<p class="page-kicker">Advanced path</p>
+<h3>Intelligence Lab</h3>
+<p>Once the foundation is stable, Intelligence Lab turns trusted analytics into focused initiatives: operational digests, governed intelligence layers, customer health systems, and executive decision products.</p>
+<dl>
+<div><dt>Best fit</dt><dd>The core data and decision foundation is ready for higher-order intelligence work.</dd></div>
+<div><dt>Typical output</dt><dd>A scoped module or initiative built around a specific leadership decision problem.</dd></div>
+</dl>
+<a class="secondary-offer-button" href="intelligence-lab.html">Explore Intelligence Lab</a>
+</div>
+</article>
+</div>
+</section>
+<section class="offerings-section offering-rhythm-section reveal-card">
+<p class="page-kicker">Engagement rhythm</p>
+<h2>Start small, then deepen only where the evidence points.</h2>
+<div class="offering-rhythm">
+<article><strong>1. Assess the foundation</strong><p>Clarify the issues before committing to a rebuild or retainer.</p></article>
+<article><strong>2. Choose the right path</strong><p>Reset decision systems, add senior ownership, or move into targeted intelligence work.</p></article>
+<article><strong>3. Keep the system useful</strong><p>Anchor metrics, reporting, and ownership to the way decisions are actually made.</p></article>
+</div>
+</section>
+<section aria-labelledby="pricing-guidance-title" class="offerings-section pricing-guidance-section reveal-card">
+<p class="page-kicker">Pricing and fit</p>
+<h2 id="pricing-guidance-title">Start with fit, then scope the work.</h2>
+<p class="offerings-lede">The first step is a fit conversation or short context review. Paid work is only scoped after we understand the problem, the decision impact, and the level of support needed.</p>
+<div class="pricing-guidance-grid">
+<article>
+<strong>Fit review</strong>
+<p>No-cost starting point to confirm whether Parallax is the right partner and which path makes sense.</p>
+</article>
+<article>
+<strong>Analytics Health Check</strong>
+<p>Scoped diagnostic engagement. Pricing is confirmed before kickoff based on the systems, reports, and stakeholders involved.</p>
+</article>
+<article>
+<strong>Decision System Reset</strong>
+<p>Project-based pricing for focused rebuilds across metrics, ownership, cadence, and decision workflows.</p>
+</article>
+<article>
+<strong>Fractional Analytics</strong>
+<p>Recurring advisory or embedded support priced by cadence, ownership level, and operating responsibility.</p>
+</article>
+<article>
+<strong>Intelligence Lab</strong>
+<p>Scoped module or initiative pricing for predictive, governance, customer, or operational intelligence builds.</p>
+</article>
+</div>
+</section>
+<section class="help-cta-section offerings-cta offerings-cta-refined reveal-card">
+<h2>Not sure which path fits best?</h2>
+<p>Start with a fit review. If the Health Check is the right next step, we scope it clearly before any paid work begins.</p>
+<a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
+</section>
+</main>
+<footer aria-label="Site footer" class="site-footer site-footer-refined">
+  <div class="site-footer-inner">
+    <div class="site-footer-col site-footer-about">
+      <a class="site-footer-brand" href="index.html">Parallax Data Lab</a>
+      <p>Analytics trust, decision systems, and senior data strategy for teams ready to make reporting useful again.</p>
+      <a class="site-footer-email" href="mailto:jonahnr@gmail.com">jonahnr@gmail.com</a>
+      <a class="site-footer-contact-button" href="about.html#contact-us">Contact Us</a>
+    </div>
+    <nav aria-label="Footer core pages" class="site-footer-col">
+      <h3>Core pages</h3>
       <a href="index.html">Home</a>
       <a href="how-we-help.html">How We Help</a>
+      <a href="our-offerings.html">Our Offerings</a>
       <a href="intelligence-lab.html">Intelligence Lab</a>
-      <div class="nav-dropdown">
-        <a class="nav-dropdown-toggle" href="our-offerings.html" aria-current="page">Our Offerings</a>
-        <div class="nav-dropdown-menu" aria-label="Offerings sections">
-          <a href="#engagements">Offerings Overview</a>
-          <a href="analytics-health-check.html">Analytics Health Check</a>
-          <a href="decision-system-reset.html">Decision System Reset</a>
-          <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
-        </div>
-      </div>
       <a href="about.html">About</a>
     </nav>
-  </header>
-
-  <main class="offerings-page offerings-page-refined">
-    <section class="offerings-hero offerings-hero-refined" id="engagements">
-      <div class="offerings-hero-inner motion-layer" data-depth="0.08">
-        <p class="page-kicker">Our Offerings</p>
-        <h1>Choose the right analytics engagement for where trust is breaking.</h1>
-        <p>Parallax Data Lab helps teams move from reporting confusion to trusted decision systems. Start with diagnosis, rebuild the foundation when needed, or add senior analytics ownership as the business keeps changing.</p>
-        <div class="offerings-actions">
-          <a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
-          <a class="secondary-offer-button" href="#offer-chooser">Compare Paths</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="offer-chooser" class="offerings-section offer-chooser-section reveal-card">
-      <p class="page-kicker">Start here</p>
-      <h2>Which path fits the problem in front of you?</h2>
-      <p class="offerings-lede">The offerings are designed to meet teams at different stages of analytics maturity. If you are unsure, start with the Health Check.</p>
-      <div class="offer-chooser-grid">
-        <a href="analytics-health-check.html">
-          <span>01</span>
-          <strong>Dashboards exist, but trust is shaky.</strong>
-          <p>Start with an Analytics Health Check to diagnose definition drift, duplicated logic, ownership gaps, and reporting friction.</p>
-        </a>
-        <a href="decision-system-reset.html">
-          <span>02</span>
-          <strong>Reports no longer match how leaders decide.</strong>
-          <p>Use a Decision System Reset to simplify metrics, rebuild core views, and align reporting around decision workflows.</p>
-        </a>
-        <a href="fractional-analytics.html">
-          <span>03</span>
-          <strong>Analytics needs senior ownership over time.</strong>
-          <p>Use Fractional Analytics Consulting when priorities keep shifting and your team needs ongoing standards, judgment, and cadence.</p>
-        </a>
-        <a href="intelligence-lab.html">
-          <span>04</span>
-          <strong>You are ready for an intelligence initiative.</strong>
-          <p>Use Intelligence Lab when the foundation is ready for predictive frameworks, governed intelligence layers, or executive decision products.</p>
-        </a>
-      </div>
-    </section>
-
-    <section id="how-engagements-work" class="offerings-section offerings-method-section reveal-card">
-      <p class="page-kicker">How engagements work</p>
-      <h2>Every path is built around the foundation beneath reporting.</h2>
-      <div class="offer-method-grid">
-        <article>
-          <span>Diagnose</span>
-          <h3>Find what is breaking trust</h3>
-          <p>We identify where definitions, data models, reporting logic, ownership, and decision flows are creating friction.</p>
-        </article>
-        <article>
-          <span>Design</span>
-          <h3>Clarify the operating model</h3>
-          <p>We define the standards, architecture, ownership, and decision logic needed for analytics to become dependable infrastructure.</p>
-        </article>
-        <article>
-          <span>Guide</span>
-          <h3>Build the highest-leverage fix</h3>
-          <p>We rebuild key assets directly or guide your team through the clearest sequence of changes.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="offerings-section deliverables-snapshot offerings-proof-section reveal-card" aria-labelledby="deliverables-title">
-      <p class="page-kicker">Proof of value</p>
-      <h2 id="deliverables-title">Every engagement produces operating artifacts, not just recommendations.</h2>
-      <div class="deliverables-grid offerings-deliverables-grid">
-        <article><span>01</span><strong>Metric and logic inventory</strong><p>A clearer view of repeated definitions, report dependencies, and fragile business rules.</p></article>
-        <article><span>02</span><strong>Ownership map</strong><p>Who owns each decision, metric, data source, and reporting workflow after the engagement.</p></article>
-        <article><span>03</span><strong>90-day action roadmap</strong><p>Sequenced fixes your team can execute without creating another round of analytics sprawl.</p></article>
-      </div>
-    </section>
-
-    <section class="offerings-section offer-details-section reveal-card" aria-labelledby="offering-details-title">
-      <p class="page-kicker">Core paths</p>
-      <h2 id="offering-details-title">Three core paths, plus Intelligence Lab when the foundation is ready.</h2>
-      <div class="offer-card-grid">
-        <article class="offer-card" id="health-check">
-          <img src="assets/home-generated/offerings-health-check.png" alt="Analytics health check diagnostic scan of dashboards and metric logic">
-          <div class="offer-card-body">
-            <p class="page-kicker">Offering 01</p>
-            <h3>Analytics Health Check</h3>
-            <p>A focused diagnostic engagement for teams that need a clear read on where analytics trust is breaking before investing in a larger rebuild.</p>
-            <dl>
-              <div><dt>Best fit</dt><dd>Dashboards exist, but teams do not fully trust them.</dd></div>
-              <div><dt>Typical output</dt><dd>Foundation health summary, issue map, ownership gaps, and recommended roadmap.</dd></div>
-            </dl>
-            <a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
-          </div>
-        </article>
-
-        <article class="offer-card" id="decision-reset">
-          <img src="assets/home-generated/offerings-decision-reset.png" alt="Decision system reset reorganizing fragmented reports into a clear decision path">
-          <div class="offer-card-body">
-            <p class="page-kicker">Offering 02</p>
-            <h3>Decision System Reset</h3>
-            <p>A rebuild engagement for teams that need to realign analytics around the questions leadership actually uses to make decisions.</p>
-            <dl>
-              <div><dt>Best fit</dt><dd>Reports look polished, but no longer match executive decisions.</dd></div>
-              <div><dt>Typical output</dt><dd>Decision map, metric standards, streamlined reporting architecture, and governance recommendations.</dd></div>
-            </dl>
-            <a class="secondary-offer-button" href="decision-system-reset.html">Explore Decision System Reset</a>
-          </div>
-        </article>
-
-        <article class="offer-card" id="fractional-consulting">
-          <img src="assets/home-generated/offerings-fractional.png" alt="Fractional analytics consulting shown as a strategic cadence and ownership system">
-          <div class="offer-card-body">
-            <p class="page-kicker">Offering 03</p>
-            <h3>Fractional Analytics Consulting</h3>
-            <p>Ongoing senior analytics architecture support for teams that need judgment, structure, and ownership without immediately hiring full-time leadership.</p>
-            <dl>
-              <div><dt>Best fit</dt><dd>Analytics has outgrown its setup, but a full-time analytics leadership hire is premature.</dd></div>
-              <div><dt>Typical output</dt><dd>Ongoing standards, metric ownership, decision system refinement, and senior analytics guidance.</dd></div>
-            </dl>
-            <a class="secondary-offer-button" href="fractional-analytics.html">Explore Fractional Analytics</a>
-          </div>
-        </article>
-
-        <article class="offer-card offer-card-wide intelligence-lab-showcase" id="intelligence-lab-path">
-          <img src="assets/home-generated/lab-hero-intelligence.png" alt="Governed data streams converging into an intelligence layer">
-          <div class="offer-card-body">
-            <p class="page-kicker">Advanced path</p>
-            <h3>Intelligence Lab</h3>
-            <p>Once the foundation is stable, Intelligence Lab turns trusted analytics into focused initiatives: operational digests, governed intelligence layers, customer health systems, and executive decision products.</p>
-            <dl>
-              <div><dt>Best fit</dt><dd>The core data and decision foundation is ready for higher-order intelligence work.</dd></div>
-              <div><dt>Typical output</dt><dd>A scoped module or initiative built around a specific leadership decision problem.</dd></div>
-            </dl>
-            <a class="secondary-offer-button" href="intelligence-lab.html">Explore Intelligence Lab</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="offerings-section offering-rhythm-section reveal-card">
-      <p class="page-kicker">Engagement rhythm</p>
-      <h2>Start small, then deepen only where the evidence points.</h2>
-      <div class="offering-rhythm">
-        <article><strong>1. Assess the foundation</strong><p>Clarify the issues before committing to a rebuild or retainer.</p></article>
-        <article><strong>2. Choose the right path</strong><p>Reset decision systems, add senior ownership, or move into targeted intelligence work.</p></article>
-        <article><strong>3. Keep the system useful</strong><p>Anchor metrics, reporting, and ownership to the way decisions are actually made.</p></article>
-      </div>
-    </section>
-
-    <section class="offerings-section pricing-guidance-section reveal-card" aria-labelledby="pricing-guidance-title">
-      <p class="page-kicker">Pricing and fit</p>
-      <h2 id="pricing-guidance-title">Start with fit, then scope the work.</h2>
-      <p class="offerings-lede">The first step is a fit conversation or short context review. Paid work is only scoped after we understand the problem, the decision impact, and the level of support needed.</p>
-      <div class="pricing-guidance-grid">
-        <article>
-          <strong>Fit review</strong>
-          <p>No-cost starting point to confirm whether Parallax is the right partner and which path makes sense.</p>
-        </article>
-        <article>
-          <strong>Analytics Health Check</strong>
-          <p>Scoped diagnostic engagement. Pricing is confirmed before kickoff based on the systems, reports, and stakeholders involved.</p>
-        </article>
-        <article>
-          <strong>Decision System Reset</strong>
-          <p>Project-based pricing for focused rebuilds across metrics, ownership, cadence, and decision workflows.</p>
-        </article>
-        <article>
-          <strong>Fractional Analytics</strong>
-          <p>Recurring advisory or embedded support priced by cadence, ownership level, and operating responsibility.</p>
-        </article>
-        <article>
-          <strong>Intelligence Lab</strong>
-          <p>Scoped module or initiative pricing for predictive, governance, customer, or operational intelligence builds.</p>
-        </article>
-      </div>
-    </section>
-
-
-    <section class="help-cta-section offerings-cta offerings-cta-refined reveal-card">
-      <h2>Not sure which path fits best?</h2>
-      <p>Start with a fit review. If the Health Check is the right next step, we scope it clearly before any paid work begins.</p>
-      <a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
-    </section>
-  </main>
-
-  <script src="home.js?v=50"></script>
+    <nav aria-label="Footer core services" class="site-footer-col">
+      <h3>Services</h3>
+      <a href="analytics-health-check.html">Analytics Health Check</a>
+      <a href="decision-system-reset.html">Decision System Reset</a>
+      <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
+    </nav>
+    <nav aria-label="Footer intelligence lab services" class="site-footer-col site-footer-intel">
+      <h3>Intelligence Lab Services</h3>
+      <a href="intelligence-lab.html#operations-intelligence-digest">Operations Intelligence Digest</a>
+      <a href="intelligence-lab.html#governance-rls-architecture">Governance &amp; RLS Architecture</a>
+      <a href="intelligence-lab.html#enterprise-outcome-studio">Enterprise Outcome Studio</a>
+      <a href="intelligence-lab.html#customer-health-churn-intelligence">Customer Health &amp; Churn Intelligence</a>
+    </nav>
+    <div class="site-footer-col site-footer-contact">
+      <h3>Contact</h3>
+      <a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a>
+      <a class="site-footer-secondary" href="mailto:jonahnr@gmail.com">Email Jonah</a>
+    </div>
+  </div>
+  <div class="site-footer-bottom">
+    <p>© 2026 Parallax Data Lab. All rights reserved.</p>
+  </div>
+</footer><script src="home.js?v=54"></script>
 </body>
 </html>
-
-

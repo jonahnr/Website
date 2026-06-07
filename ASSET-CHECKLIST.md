@@ -101,3 +101,23 @@ Still expected from your asset folder:
 - `assets/about-systems-data-model-scale.png` — How Principles Become Systems: Data Model Scale
 - `assets/Jonah.png` — Founder portrait you will add
 - `assets/new2.png` — About page hero background you will add
+
+## Production pass 10 assets
+- `assets/favicon.svg` — browser favicon source
+- `assets/favicon.ico` — browser favicon fallback
+- `assets/apple-touch-icon.png` — mobile home screen icon
+- `assets/social-preview.png` — Open Graph / Twitter preview image
+- `assets/parallax_data_lab_original_transparent.png` — included fallback logo for local preview
+
+Note: this package now includes generated placeholder files for missing referenced paths so local preview does not show broken images. Replace placeholders with final art where you already have branded assets, especially `assets/Jonah.png` if you have the actual founder photo.
+
+
+## Favicon and social preview assets
+- `favicon.ico` — root browser favicon
+- `favicon.svg` — root SVG favicon fallback
+- `apple-touch-icon.png` — root iOS/home-screen icon
+- `social-preview.png` — root social preview fallback
+- `assets/favicon.ico` — asset-folder favicon copy
+- `assets/favicon.svg` — asset-folder SVG favicon copy
+- `assets/apple-touch-icon.png` — asset-folder touch icon copy
+- `assets/social-preview.png` — Open Graph/Twitter preview image

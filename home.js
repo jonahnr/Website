@@ -267,6 +267,7 @@ setupCarousel("symptom");
 setupCarousel("quote");
 setupCarousel("failure");
 setupCarousel("pattern");
+setupCarousel("proof");
 
 
 
