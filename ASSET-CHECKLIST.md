@@ -86,3 +86,18 @@ These are every `assets/...` path referenced by the current HTML and CSS files. 
 Still expected from your asset folder:
 - `assets/new2.png`
 - `assets/Jonah.png`
+
+
+## About page image assets v48
+- `assets/about-pov-structure.png` — Our Point of View: Structure Before Visualization
+- `assets/about-pov-definitions.png` — Our Point of View: Definitions Before Aggregation
+- `assets/about-pov-ownership.png` — Our Point of View: Ownership Before Scale
+- `assets/about-fit-dashboards-disagree.png` — Who We Work Best With: Dashboards Do Not Agree
+- `assets/about-fit-definitions-drift.png` — Who We Work Best With: Definitions Drift
+- `assets/about-fit-logic-traceability.png` — Who We Work Best With: Logic Is Not Traceable
+- `assets/about-fit-scale-friction.png` — Who We Work Best With: Scale Adds Friction
+- `assets/about-systems-automate-reporting.png` — How Principles Become Systems: Automate Reporting
+- `assets/about-systems-dashboard-sprawl.png` — How Principles Become Systems: Dashboard Sprawl
+- `assets/about-systems-data-model-scale.png` — How Principles Become Systems: Data Model Scale
+- `assets/Jonah.png` — Founder portrait you will add
+- `assets/new2.png` — About page hero background you will add

@@ -198,14 +198,37 @@ function setupDropdowns() {
   });
 }
 
+
+
+const realParallaxItems = Array.from(document.querySelectorAll('[data-parallax-speed]'));
+
+function updateRealParallax() {
+  if (reduceMotion.matches || !realParallaxItems.length) {
+    realParallaxItems.forEach((item) => item.style.setProperty('--real-parallax-y', '0px'));
+    return;
+  }
+
+  const viewportCenter = height / 2;
+  realParallaxItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    const elementCenter = rect.top + rect.height / 2;
+    const distanceFromCenter = viewportCenter - elementCenter;
+    const normalized = Math.max(-1, Math.min(1, distanceFromCenter / Math.max(height, 1)));
+    const speed = Number(item.dataset.parallaxSpeed || 0);
+    item.style.setProperty('--real-parallax-y', `${(normalized * speed).toFixed(2)}px`);
+  });
+}
+
 window.addEventListener("resize", () => {
   resizeCanvas();
   updateParallaxScroll();
-revealOnScroll();
+  updateRealParallax();
+  revealOnScroll();
 });
 
 window.addEventListener("scroll", () => {
   updateParallaxScroll();
+  updateRealParallax();
   revealOnScroll();
 }, { passive: true });
 
@@ -213,6 +236,7 @@ window.addEventListener("pointermove", (event) => {
   pointerX = event.clientX / Math.max(width, 1);
   pointerY = event.clientY / Math.max(height, 1);
   updateMotion();
+  updateRealParallax();
 }, { passive: true });
 
 function handleMotionPreferenceChange() {
@@ -224,6 +248,7 @@ function handleMotionPreferenceChange() {
     drawConstellation();
   }
   updateMotion();
+  updateRealParallax();
 }
 
 if (reduceMotion.addEventListener) {
@@ -235,6 +260,7 @@ if (reduceMotion.addEventListener) {
 resizeCanvas();
 drawConstellation();
 updateMotion();
+updateRealParallax();
 revealOnScroll();
 setupDropdowns();
 setupCarousel("symptom");
