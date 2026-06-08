@@ -128,3 +128,37 @@
 - Removed the Intelligence Lab footer gap.
 - Fixed About What Happens Next contrast and centered the Schedule Intro Call button.
 - Bumped cache versions to v54.
+
+
+## Cleanup pass 13 – Offerings consistency and About simplification
+- Updated Offerings overview copy from “how leaders decide” to “how leaders make decisions.”
+- Standardized At a Glance panels across Health Check, Decision System Reset, and Fractional Analytics using First Step & Length, Best Fit, and Outcome.
+- Made the Intelligence Lab offering card match the same width system as the other offerings cards.
+- Tightened Fractional Analytics formatting and spacing with final CSS overrides.
+- Updated email links to include a direct mailto subject.
+- Simplified the About page by removing redundant How We Work and Who We Work Best With sections.
+
+
+## Cleanup pass 14 – offerings layout, health check copy, and contact routing
+- Restored the Offerings overview to three equal core cards with Intelligence Lab as the lower showcase path.
+- Reordered Analytics Health Check outputs so Fit Recommendation appears before Current-State Readout.
+- Removed “not a generic sales sequence” language from Analytics Health Check.
+- Changed Analytics Health Check response timing to within 3 business days.
+- Routed the footer “Email Jonah” button to the About page contact section instead of opening mail.
+- Re-centered the About page Schedule Intro Call button in What Happens Next.
+- Bumped cache version to v56.
+
+
+## Cleanup pass 15 – card width normalization
+- Normalized card-grid widths across Home, How We Help, Offerings, Analytics Health Check, Decision System Reset, Fractional Analytics, Intelligence Lab, and About.
+- Removed uneven full-width cards inside standard card rows, while preserving the established Intelligence Lab showcase placement below the three core offerings.
+- Added responsive breakpoints so card groups collapse evenly at tablet and mobile sizes.
+- Bumped cache version to `v=57`.
+
+
+## Cleanup pass 17 – About contact balance
+- Centered and widened the About Contact Us form area.
+- Reduced the footprint of the What Happens Next card so it no longer dominates the bottom section.
+- Kept the Schedule Intro Call button centered inside the compact next-step card.
+- Updated About response timing to three business days for consistency.
+- Bumped cache version to v59.

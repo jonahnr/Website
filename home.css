@@ -13173,3 +13173,803 @@ body::after {
     grid-column: 1 !important;
   }
 }
+
+/* === Cleanup pass 13: offering consistency, service glance panels, fractional spacing, and About simplification === */
+.offer-chooser-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+.offer-chooser-grid a {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+}
+
+.offer-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+.offer-card,
+.offer-card-wide,
+.intelligence-lab-showcase {
+  grid-column: auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  height: 100% !important;
+  min-width: 0 !important;
+}
+
+.offer-card-wide > img,
+.intelligence-lab-showcase > img,
+.offer-card img {
+  min-height: 0 !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+}
+
+.offer-card-body {
+  display: grid !important;
+  grid-template-rows: auto auto minmax(132px, auto) auto 1fr auto !important;
+  align-content: stretch !important;
+  height: 100% !important;
+}
+
+.offer-card dl {
+  align-self: stretch !important;
+}
+
+.offer-card dl div {
+  min-height: 108px !important;
+}
+
+.reset-glance-refined,
+.assessment-glance.reset-glance-refined,
+.fractional-hero-panel.reset-glance-refined,
+.about-glance-panel.reset-glance-refined {
+  display: block !important;
+  padding: 28px !important;
+  border: 1px solid rgba(69, 190, 255, 0.32) !important;
+  border-radius: 24px !important;
+  background: rgba(5, 12, 36, 0.72) !important;
+  color: #ffffff !important;
+}
+
+.reset-glance-refined > .page-kicker,
+.assessment-glance.reset-glance-refined > .page-kicker,
+.fractional-hero-panel.reset-glance-refined > .page-kicker,
+.about-glance-panel.reset-glance-refined > .page-kicker {
+  color: #f5b544 !important;
+}
+
+.reset-glance-refined dt,
+.assessment-glance.reset-glance-refined dt,
+.fractional-hero-panel.reset-glance-refined dt,
+.about-glance-panel.reset-glance-refined dt {
+  color: #45beff !important;
+}
+
+.reset-glance-refined dd,
+.assessment-glance.reset-glance-refined dd,
+.fractional-hero-panel.reset-glance-refined dd,
+.about-glance-panel.reset-glance-refined dd {
+  color: #ffffff !important;
+}
+
+.fractional-service-refined .fractional-section-heading {
+  max-width: 900px !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.fractional-service-refined .fractional-section-heading::after {
+  margin: 24px 0 0 !important;
+}
+
+.fractional-service-refined .fractional-section-heading .page-kicker,
+.fractional-service-refined .fractional-section-heading h2 {
+  text-align: left !important;
+}
+
+.fractional-options-grid-refined article {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  gap: 10px 16px !important;
+  align-content: start !important;
+}
+
+.fractional-options-grid-refined span {
+  grid-row: 1 / span 2 !important;
+  margin-top: 2px !important;
+}
+
+.fractional-options-grid-refined h3,
+.fractional-options-grid-refined p {
+  margin-left: 0 !important;
+}
+
+.about-page-modern .about-systems-grid article {
+  grid-template-rows: auto auto minmax(124px, auto) auto auto !important;
+  align-items: start !important;
+}
+
+.about-page-modern .about-systems-grid article > p {
+  min-height: 124px !important;
+}
+
+.about-page-modern .common-wins-label {
+  margin-top: auto !important;
+}
+
+.about-page-modern .about-founder-perspective {
+  margin: 28px 0 !important;
+  padding: 18px 20px !important;
+  border-left: 4px solid #f5b544 !important;
+  border-radius: 16px !important;
+  background: rgba(245, 181, 68, 0.08) !important;
+}
+
+.about-page-modern .about-pov,
+.about-page-modern .about-why,
+.about-page-modern .about-founder,
+.about-page-modern .about-systems,
+.about-page-modern .about-contact {
+  margin-bottom: 34px !important;
+}
+
+.site-footer a[href^="mailto:"] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 1180px) {
+  .offer-chooser-grid,
+  .offer-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .offer-chooser-grid,
+  .offer-card-grid,
+  .fractional-options-grid-refined {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fractional-options-grid-refined article {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fractional-options-grid-refined span {
+    grid-row: auto !important;
+  }
+
+  .offer-card-body {
+    grid-template-rows: auto !important;
+  }
+
+  .offer-card dl div {
+    min-height: auto !important;
+  }
+}
+
+
+/* === Cleanup pass 14: offerings layout, health-check copy order, footer email CTA, About schedule alignment === */
+.offer-chooser-grid.offer-chooser-grid-balanced {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-core {
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 0.34fr) minmax(0, 0.66fr) !important;
+  gap: 14px 22px !important;
+  align-items: center !important;
+  min-height: 150px !important;
+  width: 100% !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab span {
+  grid-row: 1 / span 2 !important;
+  margin: 0 !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab strong {
+  margin: 0 !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab p {
+  margin: 0 !important;
+}
+
+.offer-card-grid.offer-card-grid-balanced {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+
+.offer-card-grid-balanced .offer-card-core {
+  grid-column: auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  height: 100% !important;
+  min-width: 0 !important;
+}
+
+.offer-card-grid-balanced .intelligence-lab-showcase {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: minmax(280px, 0.42fr) minmax(0, 0.58fr) !important;
+  grid-template-rows: auto !important;
+  align-items: stretch !important;
+  min-width: 0 !important;
+  height: auto !important;
+}
+
+.offer-card-grid-balanced .intelligence-lab-showcase > img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 360px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+
+.offer-card-grid-balanced .offer-card-core > img {
+  width: 100% !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+}
+
+.offer-card-grid-balanced .offer-card-body {
+  min-width: 0 !important;
+}
+
+.about-page-modern .about-next-card {
+  justify-items: center !important;
+  text-align: center !important;
+}
+
+.about-page-modern .about-next-card ol {
+  justify-self: stretch !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.about-page-modern .about-book {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  justify-self: center !important;
+  width: min(260px, 100%) !important;
+  margin: 4px auto 8px !important;
+}
+
+.site-footer-secondary[href$="#contact-us"] {
+  text-align: center !important;
+}
+
+@media (max-width: 1100px) {
+  .offer-chooser-grid.offer-chooser-grid-balanced,
+  .offer-card-grid.offer-card-grid-balanced {
+    grid-template-columns: 1fr !important;
+  }
+
+  .offer-chooser-grid-balanced .offer-chooser-lab,
+  .offer-card-grid-balanced .intelligence-lab-showcase {
+    grid-column: 1 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .offer-card-grid-balanced .intelligence-lab-showcase > img {
+    min-height: 240px !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
+/* === Cleanup pass 15: card width normalization across pages === */
+:root {
+  --site-section-width: min(1080px, calc(100% - 36px));
+  --site-wide-section-width: min(1120px, calc(100% - 36px));
+  --site-home-section-width: min(1010px, calc(100% - 28px));
+}
+
+/* Make card groups use equal columns and consistent child sizing. */
+.symptom-section,
+.work-grid,
+.proof-grid,
+.failure-grid,
+.quote-grid,
+.situation-grid,
+.process-grid,
+.success-map,
+.next-grid,
+.help-intelligence-grid,
+.assessment-fit-grid,
+.assessment-diagnostic-grid,
+.assessment-output-grid,
+.reset-objective-flow,
+.reset-fix-grid-refined,
+.reset-deliverable-grid,
+.reset-next-grid,
+.fractional-definition-grid,
+.fractional-fit-grid-refined,
+.fractional-service-grid,
+.fractional-options-grid-refined,
+.fractional-outcome-grid-refined,
+.lab-promise-grid,
+.lab-fit-grid,
+.lab-audience-grid,
+.lab-principle-grid,
+.lab-initiative-grid,
+.lab-boundary-grid,
+.offer-method-grid,
+.offerings-deliverables-grid,
+.offering-rhythm,
+.pricing-guidance-grid,
+.about-rule-grid,
+.about-systems-grid {
+  align-items: stretch !important;
+}
+
+.symptom-section > article,
+.work-grid > article,
+.proof-grid > article,
+.failure-grid > article,
+.quote-grid > article,
+.situation-grid > a,
+.situation-grid > article,
+.process-grid > article,
+.success-map > article,
+.next-grid > article,
+.help-intelligence-grid > article,
+.assessment-fit-grid > article,
+.assessment-diagnostic-grid > article,
+.assessment-output-grid > article,
+.reset-objective-flow > article,
+.reset-fix-grid-refined > article,
+.reset-deliverable-grid > article,
+.reset-next-grid > article,
+.fractional-definition-grid > article,
+.fractional-fit-grid-refined > article,
+.fractional-service-grid > article,
+.fractional-options-grid-refined > article,
+.fractional-outcome-grid-refined > article,
+.lab-promise-grid > article,
+.lab-fit-grid > a,
+.lab-audience-grid > article,
+.lab-principle-grid > article,
+.lab-initiative-grid > details,
+.lab-boundary-grid > article,
+.offer-method-grid > article,
+.offerings-deliverables-grid > article,
+.offering-rhythm > article,
+.pricing-guidance-grid > article,
+.about-rule-grid > article,
+.about-systems-grid > article,
+.offer-chooser-grid > a,
+.offer-card-grid > article {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Home: keep carousel/card rows aligned to the same Home content width. */
+.symptom-section,
+.work-shell,
+.proof-section,
+.concrete-proof-section,
+.failure-section,
+.trust-section {
+  width: var(--site-home-section-width) !important;
+}
+
+.symptom-section,
+.proof-grid,
+.failure-grid,
+.quote-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* How We Help: remove full-width odd cards and keep equal visual rows. */
+.situation-grid,
+.next-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: min(920px, 100%) !important;
+}
+
+.process-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: min(920px, calc(100% - 36px)) !important;
+}
+
+.success-map {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  width: min(920px, 100%) !important;
+}
+
+.success-map .center {
+  grid-column: auto !important;
+}
+
+.success-map article::after {
+  display: none !important;
+}
+
+.help-intelligence-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  width: min(1080px, 100%) !important;
+}
+
+/* Offerings: preserve the established three-plus-lab layout while keeping rows clean. */
+.offer-chooser-grid.offer-chooser-grid-balanced,
+.offer-card-grid.offer-card-grid-balanced {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-core,
+.offer-card-grid-balanced .offer-card-core {
+  min-height: 100% !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  min-height: 150px !important;
+}
+
+.offer-card-grid-balanced .intelligence-lab-showcase {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+.offer-method-grid,
+.offerings-deliverables-grid,
+.offering-rhythm,
+.pricing-guidance-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+/* Service pages: normalize all card rows. */
+.assessment-fit-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.assessment-diagnostic-grid,
+.assessment-output-grid,
+.reset-fix-grid-refined,
+.reset-deliverable-grid,
+.fractional-definition-grid,
+.fractional-service-grid,
+.fractional-options-grid-refined,
+.fractional-outcome-grid-refined,
+.lab-promise-grid,
+.lab-audience-grid,
+.offer-method-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.reset-objective-flow {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+.reset-next-grid,
+.fractional-fit-grid-refined,
+.lab-fit-grid,
+.lab-principle-grid,
+.lab-boundary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.lab-initiative-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* About: keep card rows aligned and make the contact boxes intentional. */
+.about-rule-grid,
+.about-systems-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.about-contact {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+.about-contact-intro,
+.about-contact-form,
+.about-next-card {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Keep image/cards from forcing uneven widths inside normalized columns. */
+.offer-card img,
+.situation-card img,
+.process-grid img,
+.success-map img,
+.work-grid img,
+.symptom-card img,
+.assessment-diagnostic-grid img,
+.reset-fix-grid-refined img,
+.fractional-definition-grid img,
+.fractional-service-grid img,
+.about-card-image,
+.lab-initiative-card img {
+  max-width: 100% !important;
+}
+
+@media (max-width: 1180px) {
+  .assessment-fit-grid,
+  .help-intelligence-grid,
+  .reset-objective-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .offer-chooser-grid.offer-chooser-grid-balanced,
+  .offer-card-grid.offer-card-grid-balanced,
+  .success-map,
+  .assessment-diagnostic-grid,
+  .assessment-output-grid,
+  .reset-fix-grid-refined,
+  .reset-deliverable-grid,
+  .fractional-definition-grid,
+  .fractional-service-grid,
+  .fractional-options-grid-refined,
+  .fractional-outcome-grid-refined,
+  .lab-promise-grid,
+  .lab-audience-grid,
+  .offer-method-grid,
+  .offerings-deliverables-grid,
+  .offering-rhythm,
+  .pricing-guidance-grid,
+  .about-rule-grid,
+  .about-systems-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .offer-chooser-grid-balanced .offer-chooser-lab,
+  .offer-card-grid-balanced .intelligence-lab-showcase {
+    grid-column: 1 / -1 !important;
+  }
+
+  .about-contact {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .about-next-card {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .symptom-section,
+  .work-grid,
+  .proof-grid,
+  .failure-grid,
+  .quote-grid,
+  .situation-grid,
+  .process-grid,
+  .success-map,
+  .next-grid,
+  .help-intelligence-grid,
+  .assessment-fit-grid,
+  .assessment-diagnostic-grid,
+  .assessment-output-grid,
+  .reset-objective-flow,
+  .reset-fix-grid-refined,
+  .reset-deliverable-grid,
+  .reset-next-grid,
+  .fractional-definition-grid,
+  .fractional-fit-grid-refined,
+  .fractional-service-grid,
+  .fractional-options-grid-refined,
+  .fractional-outcome-grid-refined,
+  .lab-promise-grid,
+  .lab-fit-grid,
+  .lab-audience-grid,
+  .lab-principle-grid,
+  .lab-initiative-grid,
+  .lab-boundary-grid,
+  .offer-chooser-grid.offer-chooser-grid-balanced,
+  .offer-card-grid.offer-card-grid-balanced,
+  .offer-method-grid,
+  .offerings-deliverables-grid,
+  .offering-rhythm,
+  .pricing-guidance-grid,
+  .about-rule-grid,
+  .about-systems-grid,
+  .about-contact {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-next-card,
+  .offer-chooser-grid-balanced .offer-chooser-lab,
+  .offer-card-grid-balanced .intelligence-lab-showcase {
+    grid-column: auto !important;
+  }
+}
+
+/* Pass 15 adjustment: keep the established Offerings 3-up layout longer, then collapse cleanly. */
+@media (min-width: 901px) {
+  .offer-chooser-grid.offer-chooser-grid-balanced,
+  .offer-card-grid.offer-card-grid-balanced {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .offer-chooser-grid-balanced .offer-chooser-lab,
+  .offer-card-grid-balanced .intelligence-lab-showcase {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .offer-chooser-grid.offer-chooser-grid-balanced,
+  .offer-card-grid.offer-card-grid-balanced {
+    grid-template-columns: 1fr !important;
+  }
+
+  .offer-chooser-grid-balanced .offer-chooser-lab,
+  .offer-card-grid-balanced .intelligence-lab-showcase {
+    grid-column: auto !important;
+  }
+}
+
+
+/* === Pass 16: Intelligence Lab numbered fit cards === */
+.lab-page-refined .lab-fit-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.lab-page-refined .lab-fit-grid a {
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+}
+
+.lab-page-refined .lab-fit-grid .lab-fit-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 6px;
+  border: 1px solid rgba(245, 181, 68, 0.74);
+  border-radius: 14px;
+  color: var(--gold-2) !important;
+  background: rgba(245, 181, 68, 0.08);
+  font-size: 0.9rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1120px) {
+  .lab-page-refined .lab-fit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .lab-page-refined .lab-fit-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lab-page-refined .lab-fit-grid a {
+    min-height: auto !important;
+  }
+}
+
+/* Pass 17: About contact section balance */
+.about-contact {
+  width: min(1120px, calc(100% - 36px)) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.58fr) !important;
+  gap: 24px !important;
+  align-items: start !important;
+}
+
+.about-contact-intro {
+  grid-column: 1 / -1 !important;
+  width: min(820px, 100%) !important;
+  margin: 0 auto 6px !important;
+  height: auto !important;
+  text-align: center !important;
+  padding: 30px 34px !important;
+}
+
+.about-contact-form {
+  width: 100% !important;
+  max-width: 780px !important;
+  justify-self: end !important;
+  height: auto !important;
+  padding: 34px 38px !important;
+}
+
+.about-next-card {
+  width: 100% !important;
+  max-width: 330px !important;
+  justify-self: start !important;
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: start !important;
+  padding: 24px 22px !important;
+  gap: 12px !important;
+}
+
+.about-next-card h3 {
+  margin-bottom: 4px !important;
+}
+
+.about-next-card ol {
+  gap: 7px !important;
+  margin-bottom: 8px !important;
+}
+
+.about-next-card li {
+  line-height: 1.28 !important;
+}
+
+.about-talk-first-heading {
+  margin-top: 4px !important;
+  text-align: center !important;
+}
+
+.about-next-card .about-book {
+  display: inline-flex !important;
+  width: 100% !important;
+  max-width: 230px !important;
+  justify-self: center !important;
+  margin: 0 auto 2px !important;
+  text-align: center !important;
+}
+
+.about-email-link {
+  text-align: center !important;
+  margin-top: 2px !important;
+}
+
+@media (max-width: 980px) {
+  .about-contact {
+    grid-template-columns: 1fr !important;
+    width: min(840px, calc(100% - 28px)) !important;
+  }
+
+  .about-contact-form,
+  .about-next-card {
+    justify-self: center !important;
+    max-width: 760px !important;
+  }
+
+  .about-next-card {
+    max-width: 520px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-contact-intro,
+  .about-contact-form,
+  .about-next-card {
+    padding: 22px !important;
+  }
+}
