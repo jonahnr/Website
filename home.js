@@ -220,7 +220,7 @@ function updateRealParallax() {
 }
 
 function setupFractionalFlipCards() {
-  const cards = Array.from(document.querySelectorAll(".fractional-flip-card"));
+  const cards = Array.from(document.querySelectorAll(".fractional-flip-card, .pdl-flip-card"));
   if (!cards.length) {
     return;
   }
@@ -228,10 +228,12 @@ function setupFractionalFlipCards() {
   cards.forEach((card) => {
     card.setAttribute("role", "button");
     card.setAttribute("aria-pressed", "false");
+    card.setAttribute("aria-expanded", "false");
 
     function setFlipped(isFlipped) {
       card.classList.toggle("is-flipped", isFlipped);
       card.setAttribute("aria-pressed", String(isFlipped));
+      card.setAttribute("aria-expanded", String(isFlipped));
     }
 
     card.addEventListener("click", (event) => {

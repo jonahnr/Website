@@ -301,3 +301,33 @@
 - Widened Fractional Analytics engagement shape cards and corrected the card flip so each card rotates on its own center axis.
 - Added extra spacing in the Fractional Analytics Start Here CTA section.
 - Bumped cache versions to v96.
+
+
+## v99 Fractional engagement example backs
+- Rebuilt Fractional Analytics Engagement Shape card backs with explicit Context and What comes with it panels for Advisor, Operator, and Embedded Partner.
+- Increased flip-card height allowances so the example content is visible when flipped.
+- Bumped cache references to v99.
+
+
+## v100 Fractional Engagement Shape reliability fix
+- Replaced the fragile 3D flip/backface behavior in Fractional Analytics Engagement Shape with a controlled front/back reveal state.
+- Ensured Advisor, Operator, and Embedded Partner contextual examples render visibly when each card is clicked or tapped.
+- Added helper text explaining the card interaction and improved card readability at desktop, tablet, and mobile widths.
+- Bumped cache references to v=100.
+## v101 - Fractional engagement shape flip correction
+- Restored a true in-place 3D flip for the Fractional Analytics Engagement Shape cards.
+- Removed the fragile display-none reveal behavior from the final override layer.
+- Kept the contextual role examples rendered on the back face for Advisor, Operator, and Embedded Partner.
+- Increased card height and responsive allowances so the back-side context remains visible after flipping.
+
+
+## v103 Fractional Engagement Shape rebuild
+- Rebuilt Fractional Analytics Engagement Shape with isolated flip-card classes to avoid legacy CSS conflicts.
+- Improved helper text contrast.
+- Ensured each card flips in place and shows the role-specific context and included deliverables on the back.
+
+
+## v104 Fractional flip back-content fail-safe
+- Added a stable back-content panel to the Fractional Analytics Engagement Shape cards so contextual examples remain visible after the card flips.
+- Improved contrast for the Engagement Shape helper text.
+- Bumped cache references to v=104.

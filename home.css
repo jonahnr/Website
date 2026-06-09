@@ -20426,3 +20426,1421 @@ nav {
     -webkit-backface-visibility: visible !important;
   }
 }
+
+
+/* Pass 35 v99: Fractional role examples visible on flip-card backs */
+.fractional-three-flip-grid .fractional-flip-back {
+  justify-content: flex-start !important;
+  gap: 18px !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back > h3 {
+  margin-bottom: 4px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example {
+  display: grid !important;
+  grid-template-columns: 0.92fr 1.08fr !important;
+  gap: clamp(18px, 1.6vw, 28px) !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example > div {
+  display: grid !important;
+  align-content: start !important;
+  min-width: 0 !important;
+  padding: 18px !important;
+  border: 1px solid rgba(245, 181, 68, 0.26) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.075) !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example strong {
+  display: block !important;
+  margin: 0 0 10px !important;
+  color: #ffd77a !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example p {
+  margin: 0 !important;
+  color: #edf5ff !important;
+  font-size: clamp(0.96rem, 0.82vw, 1.02rem) !important;
+  line-height: 1.52 !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example ul {
+  margin: 0 !important;
+  gap: 10px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example li {
+  font-size: clamp(0.92rem, 0.78vw, 0.98rem) !important;
+  line-height: 1.42 !important;
+}
+
+@media (min-width: 1500px) {
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 560px !important;
+  }
+}
+
+@media (max-width: 1499px) {
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 430px !important;
+  }
+}
+
+@media (max-width: 900px), (hover: none) {
+  .fractional-three-flip-grid .fractional-role-example {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fractional-three-flip-grid .fractional-role-example > div {
+    padding: 16px !important;
+  }
+}
+
+
+/* Pass 36 v100: Replace fragile 3D fractional flip layer with reliable front/back reveal cards */
+.fractional-options-refined .fractional-options-helper {
+  max-width: 840px !important;
+  margin: -6px auto 30px !important;
+  color: #dbe8ff !important;
+  font-size: clamp(1rem, 1.2vw, 1.12rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  width: min(1320px, 100%) !important;
+  grid-template-columns: repeat(3, minmax(340px, 1fr)) !important;
+  gap: clamp(22px, 2.2vw, 34px) !important;
+  perspective: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  min-height: 0 !important;
+  height: auto !important;
+  cursor: pointer !important;
+  perspective: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+  display: grid !important;
+  min-height: 0 !important;
+  height: auto !important;
+  transform: none !important;
+  transform-style: flat !important;
+  transition: none !important;
+  filter: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-back {
+  position: relative !important;
+  inset: auto !important;
+  min-height: 360px !important;
+  height: auto !important;
+  transform: none !important;
+  transform-style: flat !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-front {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-back {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: fractionalReveal 180ms ease both;
+}
+
+@keyframes fractionalReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fractional-three-flip-grid .fractional-flip-face > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 34px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  color: #0b1745 !important;
+  background: #ffd77a !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back > span {
+  color: #061339 !important;
+  background: #ffd77a !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front h3,
+.fractional-three-flip-grid .fractional-flip-back h3 {
+  font-size: clamp(1.28rem, 1.45vw, 1.72rem) !important;
+  line-height: 1.22 !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front p,
+.fractional-three-flip-grid .fractional-flip-back p,
+.fractional-three-flip-grid .fractional-flip-back li {
+  font-size: clamp(1rem, 0.98vw, 1.1rem) !important;
+  line-height: 1.58 !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example {
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  margin-top: 8px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example > div {
+  padding: 18px 20px !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example ul {
+  margin: 0 !important;
+  gap: 10px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example li::before {
+  background: linear-gradient(135deg, #ffd77a, #45beff) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:focus-visible .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:focus-visible .fractional-flip-back,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-back {
+  box-shadow: 0 22px 54px rgba(8, 16, 36, 0.22) !important;
+  border-color: rgba(245, 181, 68, 0.72) !important;
+}
+
+@media (max-width: 1280px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(980px, 100%) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    width: 100% !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face {
+    padding: 24px 20px !important;
+  }
+}
+
+/* Pass 37 v101: Restore true in-place Fractional Engagement Shape flip with visible role context */
+.fractional-options-refined .fractional-options-helper {
+  max-width: 900px !important;
+  margin: -4px auto 34px !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(360px, 1fr)) !important;
+  gap: clamp(24px, 2vw, 34px) !important;
+  width: min(1500px, 100%) !important;
+  margin: 38px auto 0 !important;
+  align-items: stretch !important;
+  perspective: 1800px !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  position: relative !important;
+  display: block !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 610px !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  perspective: 1800px !important;
+  perspective-origin: 50% 50% !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 610px !important;
+  height: 100% !important;
+  transform: rotateY(0deg) !important;
+  transform-origin: 50% 50% !important;
+  transform-style: preserve-3d !important;
+  transition: transform 620ms cubic-bezier(.2,.72,.18,1), filter 180ms ease !important;
+  will-change: transform !important;
+  filter: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped:focus-within .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+  filter: drop-shadow(0 26px 50px rgba(4, 12, 36, 0.28)) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 610px !important;
+  height: 100% !important;
+  padding: clamp(30px, 2vw, 42px) !important;
+  border-radius: 28px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform-style: preserve-3d !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  overflow: hidden !important;
+  animation: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-front {
+  transform: rotateY(0deg) translateZ(1px) !important;
+  border: 1px solid rgba(31, 106, 229, 0.20) !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(69, 190, 255, 0.14), transparent 11rem),
+    linear-gradient(180deg, #ffffff, #f4f8ff) !important;
+  color: #061339 !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.10) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-back {
+  transform: rotateY(180deg) translateZ(1px) !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(245, 181, 68, 0.24), transparent 12rem),
+    radial-gradient(circle at 90% 76%, rgba(69, 190, 255, 0.16), transparent 12rem),
+    linear-gradient(135deg, #061339, #123d86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.18) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:focus-visible .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-back,
+.fractional-three-flip-grid .fractional-flip-card:focus-visible .fractional-flip-back {
+  border-color: rgba(245, 181, 68, 0.76) !important;
+  box-shadow: 0 24px 54px rgba(8, 16, 36, 0.22) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:not(.is-flipped) .fractional-flip-back {
+  pointer-events: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 34px !important;
+  margin: 0 0 22px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  color: #061339 !important;
+  background: #ffd77a !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid h3,
+.fractional-three-flip-grid .fractional-flip-front h3,
+.fractional-three-flip-grid .fractional-flip-back h3 {
+  max-width: 100% !important;
+  margin: 0 0 18px !important;
+  color: inherit !important;
+  font-size: clamp(1.24rem, 1.32vw, 1.56rem) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.fractional-three-flip-grid p,
+.fractional-three-flip-grid .fractional-flip-front p,
+.fractional-three-flip-grid .fractional-flip-back p,
+.fractional-three-flip-grid .fractional-flip-back li {
+  max-width: 100% !important;
+  margin: 0 0 18px !important;
+  font-size: clamp(0.98rem, 0.9vw, 1.06rem) !important;
+  line-height: 1.56 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front p {
+  color: #263552 !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back p,
+.fractional-three-flip-grid .fractional-flip-back li {
+  color: #edf5ff !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example > div {
+  display: grid !important;
+  align-content: start !important;
+  min-width: 0 !important;
+  padding: 16px 18px !important;
+  border: 1px solid rgba(245, 181, 68, 0.28) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example strong {
+  display: block !important;
+  margin: 0 0 8px !important;
+  color: #ffd77a !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example p {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.48 !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example ul {
+  display: grid !important;
+  gap: 9px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example li {
+  position: relative !important;
+  padding-left: 24px !important;
+  margin: 0 !important;
+  font-size: 0.93rem !important;
+  line-height: 1.4 !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example li::before {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.52em !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  background: linear-gradient(135deg, #ffd77a, #45beff) !important;
+  box-shadow: 0 0 0 5px rgba(245, 181, 68, 0.14) !important;
+}
+
+.fractional-three-flip-grid em {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border: 1px solid rgba(31, 106, 229, 0.18) !important;
+  border-radius: 999px !important;
+  color: #0b1745 !important;
+  background: rgba(31, 106, 229, 0.06) !important;
+  font-style: normal !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 1499px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(980px, 100%) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    min-height: 450px !important;
+  }
+
+  .fractional-three-flip-grid h3,
+  .fractional-three-flip-grid .fractional-flip-front h3,
+  .fractional-three-flip-grid .fractional-flip-back h3 {
+    font-size: clamp(1.32rem, 2vw, 1.78rem) !important;
+  }
+
+  .fractional-three-flip-grid p,
+  .fractional-three-flip-grid .fractional-flip-front p,
+  .fractional-three-flip-grid .fractional-flip-back p,
+  .fractional-three-flip-grid .fractional-flip-back li {
+    font-size: clamp(1rem, 1.25vw, 1.1rem) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    width: 100% !important;
+    gap: 22px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    min-height: 670px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face {
+    padding: 24px 20px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-role-example > div {
+    padding: 14px 15px !important;
+  }
+}
+
+
+/* Pass 37 v102: Fractional Engagement Shape clean rebuild, true flip + readable context backs */
+.fractional-page-refined .fractional-options-refined {
+  width: min(1360px, calc(100% - 36px)) !important;
+  margin-inline: auto !important;
+  overflow: visible !important;
+}
+
+.fractional-options-refined .fractional-options-helper {
+  display: block !important;
+  width: fit-content !important;
+  max-width: min(840px, 100%) !important;
+  margin: 4px auto 34px !important;
+  padding: 12px 18px !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  background: rgba(7, 19, 58, 0.92) !important;
+  box-shadow: 0 12px 28px rgba(8, 16, 36, 0.18) !important;
+  font-size: clamp(0.92rem, 1vw, 1.04rem) !important;
+  font-weight: 850 !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(360px, 1fr)) !important;
+  gap: clamp(24px, 2.2vw, 36px) !important;
+  width: min(1360px, 100%) !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+  perspective: 1800px !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 640px !important;
+  min-height: 640px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 30px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  perspective: 1800px !important;
+  transform: none !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 640px !important;
+  transform: rotateY(0deg) !important;
+  transform-origin: center center !important;
+  transform-style: preserve-3d !important;
+  transition: transform 620ms cubic-bezier(.2,.72,.18,1), filter 180ms ease !important;
+  will-change: transform !important;
+  filter: none !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped:focus-within .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+  filter: drop-shadow(0 28px 58px rgba(4, 12, 36, 0.30)) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 640px !important;
+  padding: clamp(28px, 2vw, 38px) !important;
+  border-radius: 30px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform-style: preserve-3d !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  overflow: hidden !important;
+  animation: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-front {
+  transform: rotateY(0deg) !important;
+  border: 1px solid rgba(31, 106, 229, 0.22) !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(69, 190, 255, 0.16), transparent 11rem),
+    linear-gradient(180deg, #ffffff, #f3f8ff) !important;
+  color: #061339 !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.12) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-back {
+  transform: rotateY(180deg) !important;
+  border: 1px solid rgba(245, 181, 68, 0.62) !important;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(245, 181, 68, 0.24), transparent 12rem),
+    radial-gradient(circle at 90% 76%, rgba(69, 190, 255, 0.18), transparent 12rem),
+    linear-gradient(135deg, #061339, #123d86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.20) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:focus-visible .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-back,
+.fractional-three-flip-grid .fractional-flip-card:focus-visible .fractional-flip-back {
+  border-color: rgba(245, 181, 68, 0.82) !important;
+  box-shadow: 0 26px 58px rgba(8, 16, 36, 0.24) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-front,
+.fractional-three-flip-grid .fractional-flip-card:not(.is-flipped) .fractional-flip-back {
+  pointer-events: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 34px !important;
+  margin: 0 0 20px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(245, 181, 68, 0.56) !important;
+  color: #061339 !important;
+  background: #ffd77a !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front h3,
+.fractional-three-flip-grid .fractional-flip-back h3 {
+  max-width: 100% !important;
+  margin: 0 0 16px !important;
+  color: inherit !important;
+  font-size: clamp(1.22rem, 1.22vw, 1.52rem) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front p,
+.fractional-three-flip-grid .fractional-flip-back p,
+.fractional-three-flip-grid .fractional-flip-back li {
+  max-width: 100% !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(0.98rem, 0.86vw, 1.05rem) !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front p {
+  color: #263552 !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back p,
+.fractional-three-flip-grid .fractional-flip-back li {
+  color: #edf5ff !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example > div {
+  display: grid !important;
+  align-content: start !important;
+  min-width: 0 !important;
+  padding: 15px 17px !important;
+  border: 1px solid rgba(245, 181, 68, 0.30) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example strong {
+  display: block !important;
+  margin: 0 0 7px !important;
+  color: #ffd77a !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example p {
+  margin: 0 !important;
+  font-size: clamp(0.9rem, 0.78vw, 0.97rem) !important;
+  line-height: 1.43 !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example ul {
+  display: grid !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example li {
+  position: relative !important;
+  padding-left: 23px !important;
+  margin: 0 !important;
+  font-size: clamp(0.88rem, 0.76vw, 0.95rem) !important;
+  line-height: 1.34 !important;
+}
+
+.fractional-three-flip-grid .fractional-role-example li::before {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.52em !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  background: linear-gradient(135deg, #ffd77a, #45beff) !important;
+  box-shadow: 0 0 0 5px rgba(245, 181, 68, 0.14) !important;
+}
+
+.fractional-three-flip-grid em {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border: 1px solid rgba(31, 106, 229, 0.18) !important;
+  border-radius: 999px !important;
+  color: #0b1745 !important;
+  background: rgba(31, 106, 229, 0.06) !important;
+  font-style: normal !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 1499px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(1000px, 100%) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-front h3,
+  .fractional-three-flip-grid .fractional-flip-back h3 {
+    font-size: clamp(1.32rem, 2vw, 1.78rem) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-front p,
+  .fractional-three-flip-grid .fractional-flip-back p,
+  .fractional-three-flip-grid .fractional-flip-back li {
+    font-size: clamp(1rem, 1.25vw, 1.1rem) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .fractional-options-refined .fractional-options-helper {
+    width: 100% !important;
+    border-radius: 18px !important;
+  }
+
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    width: 100% !important;
+    gap: 22px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    height: 730px !important;
+    min-height: 730px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face {
+    padding: 24px 20px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-role-example > div {
+    padding: 14px 15px !important;
+  }
+}
+
+
+/* Pass 38 v103: Clean Fractional Engagement Shape flip cards using isolated class names */
+.pdl-engagement-shape-section {
+  width: min(1400px, calc(100% - 36px)) !important;
+  margin-inline: auto !important;
+  overflow: visible !important;
+}
+
+.pdl-engagement-shape-section > h2 {
+  max-width: 980px !important;
+  margin-inline: auto !important;
+}
+
+.pdl-engagement-helper {
+  display: block !important;
+  width: fit-content !important;
+  max-width: min(880px, 100%) !important;
+  margin: 8px auto 36px !important;
+  padding: 13px 20px !important;
+  border: 1px solid rgba(245, 181, 68, 0.62) !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  background: rgba(7, 19, 58, 0.94) !important;
+  box-shadow: 0 14px 30px rgba(8, 16, 36, 0.20) !important;
+  font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
+  font-weight: 850 !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+}
+
+.pdl-engagement-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(370px, 1fr)) !important;
+  gap: clamp(24px, 2.2vw, 36px) !important;
+  width: min(1400px, 100%) !important;
+  margin: 0 auto !important;
+  perspective: 1800px !important;
+  overflow: visible !important;
+}
+
+.pdl-flip-card {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 640px !important;
+  min-height: 640px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 30px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  perspective: 1800px !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.pdl-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 640px !important;
+  transform: rotateY(0deg) !important;
+  transform-origin: center center !important;
+  transform-style: preserve-3d !important;
+  transition: transform 620ms cubic-bezier(.2,.72,.18,1), filter 180ms ease !important;
+  will-change: transform !important;
+}
+
+.pdl-flip-card.is-flipped .pdl-flip-inner {
+  transform: rotateY(180deg) !important;
+  filter: drop-shadow(0 28px 58px rgba(4, 12, 36, 0.30)) !important;
+}
+
+.pdl-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 640px !important;
+  padding: clamp(28px, 2vw, 40px) !important;
+  border-radius: 30px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform-style: preserve-3d !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  overflow: hidden !important;
+}
+
+.pdl-flip-front {
+  transform: rotateY(0deg) !important;
+  border: 1px solid rgba(31, 106, 229, 0.22) !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(69, 190, 255, 0.16), transparent 11rem),
+    linear-gradient(180deg, #ffffff, #f3f8ff) !important;
+  color: #061339 !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.12) !important;
+}
+
+.pdl-flip-back {
+  transform: rotateY(180deg) !important;
+  border: 1px solid rgba(245, 181, 68, 0.66) !important;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(245, 181, 68, 0.24), transparent 12rem),
+    radial-gradient(circle at 90% 76%, rgba(69, 190, 255, 0.18), transparent 12rem),
+    linear-gradient(135deg, #061339, #123d86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.20) !important;
+}
+
+.pdl-flip-card:hover .pdl-flip-front,
+.pdl-flip-card:focus-visible .pdl-flip-front,
+.pdl-flip-card:hover .pdl-flip-back,
+.pdl-flip-card:focus-visible .pdl-flip-back {
+  border-color: rgba(245, 181, 68, 0.86) !important;
+  box-shadow: 0 26px 58px rgba(8, 16, 36, 0.24) !important;
+}
+
+.pdl-flip-card.is-flipped .pdl-flip-front,
+.pdl-flip-card:not(.is-flipped) .pdl-flip-back {
+  pointer-events: none !important;
+}
+
+.pdl-flip-kicker {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 34px !important;
+  margin: 0 0 20px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(245, 181, 68, 0.56) !important;
+  color: #061339 !important;
+  background: #ffd77a !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.pdl-flip-face h3 {
+  max-width: 100% !important;
+  margin: 0 0 16px !important;
+  color: inherit !important;
+  font-size: clamp(1.24rem, 1.24vw, 1.56rem) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.pdl-flip-face p,
+.pdl-flip-face li {
+  max-width: 100% !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(0.98rem, 0.86vw, 1.05rem) !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.pdl-flip-front p {
+  color: #263552 !important;
+}
+
+.pdl-flip-back p,
+.pdl-flip-back li {
+  color: #edf5ff !important;
+}
+
+.pdl-example-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+}
+
+.pdl-example-panel {
+  display: grid !important;
+  align-content: start !important;
+  min-width: 0 !important;
+  padding: 15px 17px !important;
+  border: 1px solid rgba(245, 181, 68, 0.30) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.pdl-example-panel strong {
+  display: block !important;
+  margin: 0 0 7px !important;
+  color: #ffd77a !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.pdl-example-panel p {
+  margin: 0 !important;
+  font-size: clamp(0.9rem, 0.78vw, 0.97rem) !important;
+  line-height: 1.43 !important;
+}
+
+.pdl-example-panel ul {
+  display: grid !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.pdl-example-panel li {
+  position: relative !important;
+  padding-left: 23px !important;
+  margin: 0 !important;
+  font-size: clamp(0.88rem, 0.76vw, 0.95rem) !important;
+  line-height: 1.34 !important;
+}
+
+.pdl-example-panel li::before {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.52em !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  background: linear-gradient(135deg, #ffd77a, #45beff) !important;
+  box-shadow: 0 0 0 5px rgba(245, 181, 68, 0.14) !important;
+}
+
+.pdl-flip-face em {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  font-style: normal !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.pdl-flip-front em {
+  border: 1px solid rgba(31, 106, 229, 0.18) !important;
+  color: #0b1745 !important;
+  background: rgba(31, 106, 229, 0.06) !important;
+}
+
+.pdl-flip-back em {
+  border: 1px solid rgba(245, 181, 68, 0.48) !important;
+  color: #061339 !important;
+  background: #ffd77a !important;
+}
+
+@media (max-width: 1499px) {
+  .pdl-engagement-grid {
+    grid-template-columns: 1fr !important;
+    width: min(1000px, 100%) !important;
+  }
+
+  .pdl-flip-card,
+  .pdl-flip-inner,
+  .pdl-flip-face {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  .pdl-flip-face h3 {
+    font-size: clamp(1.32rem, 2vw, 1.78rem) !important;
+  }
+
+  .pdl-flip-face p,
+  .pdl-flip-face li {
+    font-size: clamp(1rem, 1.25vw, 1.1rem) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .pdl-engagement-helper {
+    width: 100% !important;
+    border-radius: 18px !important;
+  }
+
+  .pdl-engagement-grid {
+    width: 100% !important;
+    gap: 22px !important;
+  }
+
+  .pdl-flip-card,
+  .pdl-flip-inner,
+  .pdl-flip-face {
+    height: 730px !important;
+    min-height: 730px !important;
+  }
+
+  .pdl-flip-face {
+    padding: 24px 20px !important;
+  }
+
+  .pdl-example-panel {
+    padding: 14px 15px !important;
+  }
+}
+
+/* Pass 39 v104: Fractional Engagement Shape fail-safe true flip back content */
+.pdl-engagement-shape-section .pdl-engagement-helper {
+  color: #061339 !important;
+  background: linear-gradient(180deg, #fff8e7, #ffedbe) !important;
+  border: 2px solid rgba(245, 181, 68, 0.95) !important;
+  box-shadow: 0 14px 28px rgba(8, 16, 36, 0.18) !important;
+  text-shadow: none !important;
+}
+
+.pdl-engagement-shape-section .pdl-engagement-grid {
+  grid-template-columns: repeat(3, minmax(380px, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+.pdl-engagement-shape-section .pdl-flip-card {
+  height: 680px !important;
+  min-height: 680px !important;
+  overflow: visible !important;
+}
+
+.pdl-engagement-shape-section .pdl-flip-inner,
+.pdl-engagement-shape-section .pdl-flip-face {
+  height: 680px !important;
+  min-height: 680px !important;
+}
+
+.pdl-engagement-shape-section .pdl-flip-back {
+  color: transparent !important;
+}
+
+.pdl-engagement-shape-section .pdl-flip-back * {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.pdl-flip-back-failsafe {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 6 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  height: 680px !important;
+  min-height: 680px !important;
+  padding: clamp(28px, 2vw, 40px) !important;
+  border: 1px solid rgba(245, 181, 68, 0.78) !important;
+  border-radius: 30px !important;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(245, 181, 68, 0.24), transparent 12rem),
+    radial-gradient(circle at 90% 76%, rgba(69, 190, 255, 0.18), transparent 12rem),
+    linear-gradient(135deg, #061339, #123d86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 24px 58px rgba(8, 16, 36, 0.30) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: rotateY(180deg) scale(0.985) !important;
+  transform-origin: center center !important;
+  transition: opacity 180ms ease 260ms, visibility 0ms linear 440ms, transform 360ms ease 180ms !important;
+  overflow: hidden !important;
+}
+
+.pdl-flip-card.is-flipped .pdl-flip-back-failsafe {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: rotateY(0deg) scale(1) !important;
+  transition: opacity 180ms ease 250ms, visibility 0ms linear 250ms, transform 360ms ease 180ms !important;
+}
+
+.pdl-flip-card.is-flipped .pdl-flip-inner {
+  opacity: 1 !important;
+}
+
+.pdl-flip-back-failsafe .pdl-flip-kicker {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 34px !important;
+  margin: 0 0 20px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(245, 181, 68, 0.56) !important;
+  color: #061339 !important;
+  background: #ffd77a !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.pdl-flip-back-failsafe h3 {
+  max-width: 100% !important;
+  margin: 0 0 18px !important;
+  color: #ffffff !important;
+  font-size: clamp(1.28rem, 1.32vw, 1.62rem) !important;
+  line-height: 1.18 !important;
+  text-align: left !important;
+  text-shadow: none !important;
+}
+
+.pdl-flip-back-failsafe p,
+.pdl-flip-back-failsafe li {
+  color: #edf5ff !important;
+  font-size: clamp(0.96rem, 0.84vw, 1.04rem) !important;
+  line-height: 1.45 !important;
+  text-align: left !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  margin-top: 2px !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-panel {
+  display: grid !important;
+  align-content: start !important;
+  min-width: 0 !important;
+  padding: 16px 18px !important;
+  border: 1px solid rgba(245, 181, 68, 0.32) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-panel strong {
+  display: block !important;
+  margin: 0 0 8px !important;
+  color: #ffd77a !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-panel p {
+  margin: 0 !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-panel ul {
+  display: grid !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-panel li {
+  position: relative !important;
+  padding-left: 23px !important;
+  margin: 0 !important;
+}
+
+.pdl-flip-back-failsafe .pdl-example-panel li::before {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.52em !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  background: linear-gradient(135deg, #ffd77a, #45beff) !important;
+  box-shadow: 0 0 0 5px rgba(245, 181, 68, 0.14) !important;
+}
+
+.pdl-flip-back-failsafe em {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border: 1px solid rgba(245, 181, 68, 0.48) !important;
+  border-radius: 999px !important;
+  color: #061339 !important;
+  background: #ffd77a !important;
+  font-style: normal !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 1499px) {
+  .pdl-engagement-shape-section .pdl-engagement-grid {
+    grid-template-columns: 1fr !important;
+    width: min(1040px, 100%) !important;
+  }
+
+  .pdl-engagement-shape-section .pdl-flip-card,
+  .pdl-engagement-shape-section .pdl-flip-inner,
+  .pdl-engagement-shape-section .pdl-flip-face,
+  .pdl-flip-back-failsafe {
+    height: 600px !important;
+    min-height: 600px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .pdl-engagement-shape-section .pdl-flip-card,
+  .pdl-engagement-shape-section .pdl-flip-inner,
+  .pdl-engagement-shape-section .pdl-flip-face,
+  .pdl-flip-back-failsafe {
+    height: 780px !important;
+    min-height: 780px !important;
+  }
+
+  .pdl-flip-back-failsafe {
+    padding: 24px 20px !important;
+  }
+}
+
