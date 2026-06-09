@@ -42,7 +42,7 @@ The site includes:
 
 Primary CTA:
 
-- `analytics-health-check.html`
+- Free Fit Check CTA linking to `analytics-health-check.html`
 
 Secondary CTA:
 
@@ -113,8 +113,8 @@ Before publishing, make sure these files and folders are committed and pushed:
 
 All HTML pages currently reference:
 
-- `home.css?v=43`
-- `home.js?v=43`
+- `home.css?v=88`
+- `home.js?v=88`
 
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 

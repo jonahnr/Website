@@ -1,4 +1,4 @@
-﻿document.body.classList.add("has-js");
+document.body.classList.add("has-js");
 
 const canvas = document.querySelector("#constellation");
 const ctx = canvas.getContext("2d");
@@ -219,6 +219,42 @@ function updateRealParallax() {
   });
 }
 
+function setupFractionalFlipCards() {
+  const cards = Array.from(document.querySelectorAll(".fractional-flip-card"));
+  if (!cards.length) {
+    return;
+  }
+
+  cards.forEach((card) => {
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-pressed", "false");
+
+    function setFlipped(isFlipped) {
+      card.classList.toggle("is-flipped", isFlipped);
+      card.setAttribute("aria-pressed", String(isFlipped));
+    }
+
+    card.addEventListener("click", (event) => {
+      const interactive = event.target.closest("a, button, input, textarea, select");
+      if (interactive) {
+        return;
+      }
+      setFlipped(!card.classList.contains("is-flipped"));
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        setFlipped(!card.classList.contains("is-flipped"));
+      }
+
+      if (event.key === "Escape") {
+        setFlipped(false);
+      }
+    });
+  });
+}
+
 window.addEventListener("resize", () => {
   resizeCanvas();
   updateParallaxScroll();
@@ -272,10 +308,10 @@ function setupFitPathFinder() {
 
   const pathDetails = {
     fit: {
-      title: "Free Fit Review",
+      title: "Free Fit Check",
       copy: "Best when you want a no-cost starting point before deciding whether any paid work is needed.",
-      href: "analytics-health-check.html",
-      cta: "Start with a free fit review"
+      href: "analytics-health-check.html#assessment-form-title",
+      cta: "Start Free Fit Check"
     },
     health: {
       title: "Analytics Health Check",
@@ -337,8 +373,8 @@ function setupFitPathFinder() {
       if (resultTitle) resultTitle.textContent = "Select your needs above";
       if (resultCopy) resultCopy.textContent = "The matching card below will light up once you choose what best describes your situation.";
       if (resultLink) {
-        resultLink.href = "analytics-health-check.html";
-        resultLink.textContent = "Start with a free fit review";
+        resultLink.href = "analytics-health-check.html#assessment-form-title";
+        resultLink.textContent = "Start Free Fit Check";
       }
       return;
     }
@@ -386,8 +422,104 @@ setupCarousel("quote");
 setupCarousel("failure");
 setupCarousel("pattern");
 setupCarousel("proof");
+setupCarousel("healthSample");
+setupFractionalFlipCards();
 setupFitPathFinder();
 
 
 
 
+
+
+function setupMobileNavigation() {
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const nav = document.querySelector('#primary-navigation');
+
+  if (!header || !toggle || !nav) {
+    return;
+  }
+
+  toggle.addEventListener('click', () => {
+    const willOpen = !header.classList.contains('is-nav-open');
+    header.classList.toggle('is-nav-open', willOpen);
+    toggle.setAttribute('aria-expanded', String(willOpen));
+  });
+
+  nav.addEventListener('click', (event) => {
+    const link = event.target.closest('a');
+    if (!link || window.innerWidth > 760) {
+      return;
+    }
+    header.classList.remove('is-nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) {
+      header.classList.remove('is-nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+setupMobileNavigation();
+
+function setupActiveNavigation() {
+  const nav = document.querySelector('#primary-navigation');
+  if (!nav) {
+    return;
+  }
+
+  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const hash = window.location.hash || '';
+  const offeringPages = new Set([
+    'our-offerings.html',
+    'analytics-health-check.html',
+    'decision-system-reset.html',
+    'fractional-analytics.html'
+  ]);
+
+  nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
+    link.removeAttribute('aria-current');
+    link.classList.remove('is-active');
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) {
+      return;
+    }
+
+    const target = new URL(href, window.location.href);
+    const targetPage = (target.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const targetHash = target.hash || '';
+    const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
+    const isDropdownMenuItem = Boolean(link.closest('.nav-dropdown-menu'));
+    let isCurrent = false;
+
+    if (isDropdownToggle && link.closest('.nav-dropdown-offerings')) {
+      isCurrent = offeringPages.has(page);
+    } else if (isDropdownToggle && link.closest('.nav-dropdown-intelligence')) {
+      isCurrent = page === 'intelligence-lab.html';
+    } else if (isDropdownMenuItem && targetHash) {
+      isCurrent = targetPage === page && targetHash === hash;
+    } else if (isDropdownMenuItem && targetPage === 'intelligence-lab.html') {
+      isCurrent = page === targetPage && !hash;
+    } else if (isDropdownMenuItem && targetPage === 'our-offerings.html') {
+      isCurrent = page === targetPage;
+    } else if (isDropdownMenuItem) {
+      isCurrent = targetPage === page && !hash;
+    } else {
+      isCurrent = targetPage === page && !targetHash;
+    }
+
+    if (isCurrent) {
+      link.setAttribute('aria-current', 'page');
+      link.classList.add('is-active');
+    }
+  });
+}
+
+setupActiveNavigation();
+window.addEventListener('hashchange', setupActiveNavigation);

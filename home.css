@@ -17338,3 +17338,3091 @@ body::after {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* Pass 32: Fit Check CTA language, Home work-section background cleanup, and CTA color polish */
+.home-page .work-section {
+  margin-top: 28px !important;
+  padding: clamp(34px, 5vw, 58px) 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.home-page .work-shell {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.home-page .work-shell h2 {
+  margin-bottom: 22px !important;
+  color: #ffffff !important;
+  text-shadow: 0 8px 24px rgba(4, 12, 36, 0.32) !important;
+}
+
+.home-page .hero-copy .primary-action,
+.home-page .closing-section .primary-action {
+  color: #081024 !important;
+  background: linear-gradient(180deg, #ffd77a 0%, #f5b544 100%) !important;
+  border: 1px solid rgba(255, 215, 122, 0.82) !important;
+  box-shadow: 0 18px 42px rgba(245, 181, 68, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.18) inset !important;
+}
+
+.home-page .hero-copy .primary-action:hover,
+.home-page .hero-copy .primary-action:focus-visible,
+.home-page .closing-section .primary-action:hover,
+.home-page .closing-section .primary-action:focus-visible {
+  color: #081024 !important;
+  background: linear-gradient(180deg, #ffe2a0 0%, #f8bf50 100%) !important;
+  box-shadow: 0 22px 48px rgba(245, 181, 68, 0.30), 0 0 0 1px rgba(255, 255, 255, 0.24) inset !important;
+}
+
+@media (max-width: 720px) {
+  .home-page .work-section {
+    padding-top: 28px !important;
+    padding-bottom: 42px !important;
+  }
+}
+
+
+/* Pass 38: continuing updates for next-step ladder, offerings samples, pricing clarity, and About media polish */
+.next-grid.next-grid-with-premium {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  width: min(1080px, 100%) !important;
+}
+
+.next-grid.next-grid-with-premium > article:not(.next-premium-path) {
+  min-height: 640px !important;
+}
+
+.next-grid.next-grid-with-premium .next-heading h3,
+.next-grid.next-grid-with-premium h3 {
+  min-height: 0 !important;
+}
+
+.next-grid.next-grid-with-premium .next-description {
+  min-height: 132px !important;
+}
+
+.next-premium-path {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.42fr) auto !important;
+  align-items: center !important;
+  gap: 24px !important;
+  min-height: 220px !important;
+  padding: 26px 30px !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 12% 22%, rgba(245, 181, 68, 0.18), transparent 13rem),
+    linear-gradient(135deg, rgba(69, 190, 255, 0.16), rgba(245, 181, 68, 0.10)),
+    rgba(5, 12, 36, 0.78) !important;
+  box-shadow: 0 24px 58px rgba(4, 12, 36, 0.24) !important;
+}
+
+.next-premium-path .next-premium-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.next-premium-path .path-kicker,
+.next-premium-path h3,
+.next-premium-path p {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.next-premium-path h3 {
+  color: #ffffff !important;
+  font-size: clamp(1.55rem, 2.4vw, 2.1rem) !important;
+}
+
+.next-premium-path p:not(.path-kicker) {
+  color: rgba(255, 255, 255, 0.84) !important;
+  font-size: 1rem !important;
+  line-height: 1.55 !important;
+}
+
+.next-premium-path .help-card-image {
+  width: 100% !important;
+  height: 160px !important;
+  border-radius: 18px !important;
+  object-fit: cover !important;
+}
+
+.next-premium-path .primary-action {
+  width: auto !important;
+  min-width: 190px !important;
+  white-space: nowrap !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab.offer-chooser-premium {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  width: min(860px, 100%) !important;
+  min-height: 0 !important;
+  grid-template-columns: auto minmax(0, 0.42fr) minmax(0, 0.58fr) !important;
+  padding: 24px 28px !important;
+}
+
+.offer-chooser-grid-balanced .offer-chooser-lab.offer-chooser-premium p {
+  max-width: 560px !important;
+}
+
+.sample-output-section {
+  max-width: min(1120px, calc(100% - 36px)) !important;
+  padding: clamp(46px, 6vw, 70px) clamp(20px, 4vw, 36px) !important;
+  border: 1px solid rgba(69, 190, 255, 0.24) !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(69, 190, 255, 0.12), transparent 16rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+    rgba(5, 12, 36, 0.48) !important;
+  box-shadow: 0 24px 64px rgba(4, 12, 36, 0.18) !important;
+}
+
+.sample-output-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.sample-output-grid article {
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+  padding: 24px;
+  border: 1px solid rgba(69, 190, 255, 0.28);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(69, 190, 255, 0.10), rgba(5, 12, 36, 0.82)),
+    rgba(7, 19, 58, 0.76);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+}
+
+.sample-output-topline {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sample-output-topline span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(245, 181, 68, 0.68);
+  border-radius: 14px;
+  color: #081024;
+  background: linear-gradient(180deg, #ffd77a, #f5b544);
+  font-size: 0.84rem;
+  font-weight: 950;
+}
+
+.sample-output-topline strong {
+  color: #ffffff;
+  font-size: 1.18rem;
+  line-height: 1.18;
+}
+
+.sample-situation {
+  min-height: 78px;
+  margin: 0 0 18px !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  font-weight: 720;
+  line-height: 1.45 !important;
+}
+
+.sample-output-grid ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0 0 20px;
+  list-style: none;
+}
+
+.sample-output-grid li {
+  position: relative;
+  padding-left: 24px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.42;
+}
+
+.sample-output-grid li::before {
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 14px rgba(245, 181, 68, 0.52);
+}
+
+.sample-output-grid footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffd77a;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.pricing-simple-section {
+  max-width: min(1120px, calc(100% - 36px)) !important;
+  padding: clamp(46px, 6vw, 72px) clamp(20px, 4vw, 36px) !important;
+  border: 1px solid rgba(245, 181, 68, 0.28);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(245, 181, 68, 0.14), transparent 15rem),
+    radial-gradient(circle at 88% 80%, rgba(69, 190, 255, 0.12), transparent 18rem),
+    rgba(4, 12, 36, 0.44) !important;
+}
+
+.pricing-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.price-card-simple {
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 22px;
+  border: 1px solid rgba(69, 190, 255, 0.26);
+  border-radius: 20px;
+  background: rgba(7, 19, 58, 0.76);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.16);
+}
+
+.price-card-simple span {
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border: 1px solid rgba(69, 190, 255, 0.32);
+  border-radius: 999px;
+  color: #cfeaff;
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.price-card-simple h3 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 1.08rem;
+  line-height: 1.15;
+}
+
+.price-card-simple p {
+  margin: 0 0 16px !important;
+  color: rgba(255, 255, 255, 0.80) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.46 !important;
+}
+
+.price-card-simple strong {
+  margin-top: auto;
+  color: #ffd77a;
+  font-size: 0.92rem;
+}
+
+.price-card-simple a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  margin-top: 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(245, 181, 68, 0.70);
+  border-radius: 999px;
+  color: #ffd77a;
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.price-card-free,
+.price-card-premium {
+  border-color: rgba(245, 181, 68, 0.40);
+  background:
+    linear-gradient(180deg, rgba(245, 181, 68, 0.10), rgba(7, 19, 58, 0.80)),
+    rgba(7, 19, 58, 0.76);
+}
+
+.pricing-simple-note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  margin: 22px auto 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(5, 12, 36, 0.50);
+}
+
+.pricing-simple-note strong {
+  color: #ffd77a;
+  white-space: nowrap;
+}
+
+.pricing-simple-note p {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  line-height: 1.45 !important;
+}
+
+.about-page-modern .about-hero .about-check-list li {
+  padding: 18px 18px !important;
+}
+
+.about-page-modern .about-hero .about-check-list li::before {
+  display: none !important;
+  content: none !important;
+}
+
+.about-page-modern .about-founder-artifact-panel {
+  min-height: 210px !important;
+  padding: 18px !important;
+}
+
+.about-page-modern .about-founder-artifact-panel .about-founder-cube,
+.about-page-modern .about-founder-cube {
+  width: min(420px, 96%) !important;
+  max-height: 235px !important;
+  transform: none !important;
+}
+
+.about-page-modern .about-founder-portrait-card .about-founder-portrait,
+.about-page-modern .about-founder-portrait {
+  height: clamp(440px, 48vw, 610px) !important;
+  max-height: none !important;
+}
+
+@media (max-width: 1180px) {
+  .pricing-simple-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .price-card-simple {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 980px) {
+  .next-grid.next-grid-with-premium,
+  .sample-output-grid,
+  .pricing-simple-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .next-grid.next-grid-with-premium > article:not(.next-premium-path) {
+    min-height: 0 !important;
+  }
+
+  .next-grid.next-grid-with-premium .next-description {
+    min-height: 0 !important;
+  }
+
+  .next-premium-path {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .next-premium-path .path-kicker,
+  .next-premium-path h3,
+  .next-premium-path p {
+    text-align: center !important;
+  }
+
+  .next-premium-path .primary-action {
+    width: 100% !important;
+  }
+
+  .sample-output-grid article,
+  .price-card-simple {
+    min-height: 0;
+  }
+
+  .sample-situation {
+    min-height: 0;
+  }
+
+  .pricing-simple-note {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .offer-chooser-grid-balanced .offer-chooser-lab.offer-chooser-premium {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Responsive foundation pass v87 */
+.mobile-nav-toggle {
+  display: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+div,
+header,
+footer,
+nav {
+  min-width: 0;
+}
+
+.primary-action,
+.secondary-action,
+.secondary-offer-button,
+.assessment-secondary,
+.lab-project-link,
+.site-footer-contact-button {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hero-section,
+.help-hero,
+.offerings-hero,
+.assessment-hero,
+.reset-hero,
+.fractional-hero,
+.lab-hero,
+.about-hero {
+  overflow: hidden;
+}
+
+@media (max-width: 1180px) {
+  .site-header {
+    padding-inline: 18px;
+  }
+
+  .site-header nav {
+    gap: 14px;
+  }
+
+  .hero-section,
+  .help-hero,
+  .offerings-hero,
+  .assessment-hero,
+  .reset-hero,
+  .fractional-hero,
+  .lab-hero,
+  .about-hero-modern {
+    min-height: auto !important;
+  }
+
+  .symptom-section,
+  .work-grid,
+  .proof-grid,
+  .failure-grid,
+  .quote-grid,
+  .stat-grid,
+  .situation-grid,
+  .process-grid,
+  .success-map,
+  .pattern-outcomes,
+  .help-intelligence-grid,
+  .offer-method-grid,
+  .sample-output-grid,
+  .assessment-path-grid,
+  .assessment-fit-grid,
+  .assessment-diagnostic-grid,
+  .assessment-output-grid,
+  .reset-participants-grid,
+  .reset-fix-grid-refined,
+  .reset-deliverable-grid,
+  .fractional-definition-grid,
+  .fractional-service-grid,
+  .fractional-monthly-grid,
+  .fractional-options-grid-refined,
+  .fractional-outcome-grid-refined,
+  .lab-promise-grid,
+  .lab-fit-grid,
+  .lab-audience-grid,
+  .lab-principle-grid,
+  .lab-boundary-grid,
+  .about-rule-grid,
+  .about-systems-grid,
+  .site-footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .offer-card-grid,
+  .offer-card-grid-balanced,
+  .offer-chooser-grid,
+  .offer-chooser-grid-balanced,
+  .pricing-simple-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .offer-chooser-premium,
+  .offer-chooser-lab,
+  .offer-card-wide,
+  .intelligence-lab-showcase,
+  .next-premium-path,
+  .reset-participant-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  .assessment-hero-inner,
+  .reset-hero-inner,
+  .fractional-hero-inner,
+  .lab-hero-inner,
+  .about-hero-inner,
+  .reset-artifact-refined,
+  .about-why,
+  .about-founder,
+  .lab-project-snapshot {
+    grid-template-columns: 1fr !important;
+  }
+
+  .assessment-glance,
+  .reset-glance,
+  .fractional-hero-panel,
+  .about-glance-panel {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    background: linear-gradient(180deg, #061944 0, #0d3477 55%, #154fbe 100%) !important;
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .site-header .site-brand {
+    width: min(220px, 62vw);
+    flex: 0 0 auto;
+  }
+
+  .site-header .site-brand img {
+    max-height: 42px;
+  }
+
+  .site-header nav {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 8px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-header nav a,
+  .nav-dropdown-toggle {
+    flex: 0 0 auto;
+    padding: 9px 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    background: rgba(7, 19, 58, 0.26);
+    font-size: 0.82rem;
+  }
+
+  .nav-dropdown-menu {
+    top: calc(100% + 6px);
+    min-width: 230px;
+  }
+
+  .hero-section,
+  .help-hero,
+  .offerings-hero,
+  .assessment-hero,
+  .reset-hero,
+  .fractional-hero,
+  .lab-hero,
+  .about-hero {
+    padding: clamp(52px, 9vw, 76px) 16px clamp(54px, 9vw, 82px) !important;
+  }
+
+  h1,
+  .help-hero h1,
+  .offerings-hero h1,
+  .assessment-hero h1,
+  .reset-hero h1,
+  .fractional-hero h1,
+  .lab-hero h1,
+  .about-hero h1 {
+    max-width: 100% !important;
+    margin-bottom: 18px !important;
+    font-size: clamp(2rem, 7vw, 3.2rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-copy p,
+  .help-hero p,
+  .offerings-hero p,
+  .assessment-hero p,
+  .reset-hero p,
+  .fractional-hero p,
+  .lab-hero p,
+  .about-hero p,
+  .offerings-lede,
+  .help-lede,
+  .section-lede,
+  .section-note {
+    font-size: clamp(1rem, 3vw, 1.22rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  .offerings-hero h1,
+  .symptom-heading h2 {
+    white-space: normal !important;
+  }
+
+  .secondary-offer-button {
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .offerings-actions,
+  .assessment-hero-actions,
+  .reset-hero-actions,
+  .fractional-hero-actions,
+  .lab-hero-actions,
+  .about-hero-actions,
+  .reset-cta-actions,
+  .fractional-cta-actions,
+  .lab-cta-actions {
+    gap: 12px !important;
+  }
+
+  .offerings-actions > a,
+  .assessment-hero-actions > a,
+  .reset-hero-actions > a,
+  .fractional-hero-actions > a,
+  .lab-hero-actions > a,
+  .about-hero-actions > a,
+  .reset-cta-actions > a,
+  .fractional-cta-actions > a,
+  .lab-cta-actions > a {
+    width: min(100%, 420px);
+  }
+
+  .diagnostic-section,
+  .symptom-section,
+  .proof-section,
+  .failure-section,
+  .trust-section,
+  .work-shell,
+  .offerings-section,
+  .offer-detail,
+  .offerings-cta,
+  .assessment-path-section,
+  .assessment-fit-section,
+  .assessment-diagnostic-section,
+  .assessment-output-section,
+  .assessment-sample-section,
+  .assessment-form-section,
+  .assessment-after-section,
+  .reset-objective-refined,
+  .reset-participants-refined,
+  .reset-fix-refined,
+  .reset-artifact-refined,
+  .reset-deliverables-refined,
+  .reset-after-refined,
+  .fractional-definition-refined,
+  .fractional-fit-refined,
+  .fractional-service-refined,
+  .fractional-monthly-refined,
+  .fractional-plan-refined,
+  .fractional-options-refined,
+  .fractional-outcomes-refined,
+  .fractional-cta-refined,
+  .lab-section,
+  .about-pov,
+  .about-why,
+  .about-founder,
+  .about-systems,
+  .about-contact,
+  .help-section,
+  .help-process,
+  .success-section,
+  .patterns-section,
+  .next-section,
+  .risk-section,
+  .help-intelligence-section,
+  .help-cta-section {
+    width: calc(100% - 28px) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    padding-left: clamp(16px, 4vw, 26px) !important;
+    padding-right: clamp(16px, 4vw, 26px) !important;
+  }
+
+  .hero-brand {
+    width: min(270px, 72vw) !important;
+  }
+
+  .work-card-image,
+  .help-card-image,
+  .success-card-image,
+  .quote-image,
+  .failure-image,
+  .about-card-image {
+    height: auto !important;
+    max-height: 260px;
+    object-fit: cover;
+  }
+
+  .about-page-modern .about-founder {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-page-modern .about-founder-media-clean {
+    min-height: 0 !important;
+  }
+
+  .about-page-modern .about-founder-portrait-card,
+  .about-page-modern .about-founder-portrait-card .about-founder-portrait,
+  .about-page-modern .about-founder-portrait {
+    min-height: 0 !important;
+  }
+
+  .about-page-modern .about-founder-portrait-card .about-founder-portrait,
+  .about-page-modern .about-founder-portrait {
+    height: min(620px, 120vw) !important;
+  }
+
+  .about-page-modern .about-founder-artifact-panel .about-founder-cube,
+  .about-page-modern .about-founder-cube {
+    width: min(340px, 82vw) !important;
+    max-height: 210px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    min-height: 62px;
+    padding: 9px 14px;
+  }
+
+  .site-header .site-brand {
+    width: min(205px, 58vw);
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 999px;
+    color: #ffffff;
+    background: rgba(7, 19, 58, 0.48);
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle span {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .mobile-nav-toggle em {
+    margin-left: 4px;
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .site-header nav {
+    grid-column: 1 / -1;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+    max-height: calc(100vh - 82px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 0 4px;
+  }
+
+  .site-header.is-nav-open nav {
+    display: flex;
+  }
+
+  .site-header nav a,
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: center;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  .nav-dropdown-menu {
+    position: static !important;
+    display: grid;
+    min-width: 0 !important;
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px;
+    border-radius: 14px;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .nav-dropdown-menu a {
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .symptom-section,
+  .work-grid,
+  .proof-grid,
+  .failure-grid,
+  .quote-grid,
+  .stat-grid,
+  .situation-grid,
+  .process-grid,
+  .success-map,
+  .pattern-outcomes,
+  .next-grid,
+  .next-grid-three,
+  .next-grid-with-premium,
+  .help-intelligence-grid,
+  .offer-method-grid,
+  .sample-output-grid,
+  .assessment-path-grid,
+  .assessment-fit-grid,
+  .assessment-diagnostic-grid,
+  .assessment-output-grid,
+  .assessment-form .assessment-field-row,
+  .reset-objective-flow,
+  .reset-participants-grid,
+  .reset-fix-grid-refined,
+  .reset-deliverable-grid,
+  .reset-next-grid,
+  .fractional-definition-grid,
+  .fractional-fit-grid-refined,
+  .fractional-service-grid,
+  .fractional-monthly-grid,
+  .fractional-plan-grid,
+  .fractional-options-grid-refined,
+  .fractional-flip-grid,
+  .fractional-outcome-grid-refined,
+  .lab-promise-grid,
+  .lab-fit-grid,
+  .lab-audience-grid,
+  .lab-principle-grid,
+  .lab-initiative-grid,
+  .lab-boundary-grid,
+  .about-rule-grid,
+  .about-systems-grid,
+  .about-check-list,
+  .about-contact-form .assessment-field-row,
+  .site-footer-inner,
+  .pricing-simple-grid,
+  .offer-card-grid,
+  .offer-card-grid-balanced,
+  .offer-chooser-grid,
+  .offer-chooser-grid-balanced {
+    grid-template-columns: 1fr !important;
+  }
+
+  .symptom-heading,
+  .symptom-controls,
+  .offer-chooser-premium,
+  .offer-chooser-lab,
+  .offer-card-wide,
+  .intelligence-lab-showcase,
+  .next-premium-path,
+  .reset-participant-wide {
+    grid-column: auto !important;
+  }
+
+  .symptom-card,
+  .work-grid article,
+  .quote-grid article,
+  .stat-grid article,
+  .offer-card,
+  .price-card-simple,
+  .sample-output-grid article,
+  .next-grid article,
+  .reset-flip-card-inner,
+  .fractional-flip-card,
+  .fractional-flip-inner,
+  .lab-initiative-card {
+    min-height: 0 !important;
+  }
+
+  .diagnostic-panel,
+  .diagnostic-panel article,
+  .proof-slide-grid,
+  .proof-comparison,
+  .assessment-sample-board,
+  .reset-artifact-refined,
+  .about-why,
+  .about-founder,
+  .lab-project-snapshot,
+  .studio-footer,
+  .customer-footer {
+    grid-template-columns: 1fr !important;
+  }
+
+  .diagnostic-panel article,
+  .situation-card,
+  .assessment-diagnostic-grid article,
+  .reset-fix-grid-refined article,
+  .next-premium-path {
+    text-align: center !important;
+  }
+
+  .section-controls {
+    flex-wrap: wrap;
+  }
+
+  .section-controls button {
+    flex: 1 1 120px;
+  }
+
+  .primary-action,
+  .secondary-action,
+  .secondary-offer-button,
+  .assessment-secondary,
+  .site-footer-contact-button {
+    width: 100%;
+    min-width: 0 !important;
+    min-height: 46px;
+    padding-inline: 14px;
+  }
+
+  .pricing-simple-note {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .pricing-simple-note strong {
+    white-space: normal !important;
+  }
+
+  .site-footer-refined {
+    text-align: center;
+  }
+
+  .site-footer-col,
+  .site-footer-about {
+    align-items: center;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    min-width: 0 !important;
+  }
+
+  .site-header {
+    padding-inline: 12px;
+  }
+
+  .hero-section,
+  .help-hero,
+  .offerings-hero,
+  .assessment-hero,
+  .reset-hero,
+  .fractional-hero,
+  .lab-hero,
+  .about-hero {
+    padding-top: 42px !important;
+    padding-bottom: 48px !important;
+  }
+
+  h1,
+  .help-hero h1,
+  .offerings-hero h1,
+  .assessment-hero h1,
+  .reset-hero h1,
+  .fractional-hero h1,
+  .lab-hero h1,
+  .about-hero h1 {
+    font-size: clamp(1.78rem, 9vw, 2.42rem) !important;
+  }
+
+  h2,
+  .help-section h2,
+  .help-process h2,
+  .success-section h2,
+  .patterns-section h2,
+  .next-section h2,
+  .risk-section h2,
+  .offerings-section h2,
+  .assessment-path-section h2,
+  .assessment-fit-section h2,
+  .assessment-diagnostic-section h2,
+  .assessment-output-section h2,
+  .reset-objective-refined h2,
+  .fractional-section-heading h2,
+  .lab-section h2,
+  .about-shell h2,
+  .about-why h2,
+  .about-founder h2 {
+    font-size: clamp(1.48rem, 7.5vw, 2.05rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  p,
+  li,
+  dd,
+  .price-card-simple p,
+  .sample-output-grid li {
+    font-size: 0.98rem !important;
+    line-height: 1.48 !important;
+  }
+
+  .diagnostic-section,
+  .symptom-section,
+  .proof-section,
+  .failure-section,
+  .trust-section,
+  .work-shell,
+  .offerings-section,
+  .assessment-path-section,
+  .assessment-fit-section,
+  .assessment-diagnostic-section,
+  .assessment-output-section,
+  .assessment-sample-section,
+  .assessment-form-section,
+  .reset-objective-refined,
+  .reset-participants-refined,
+  .reset-fix-refined,
+  .reset-deliverables-refined,
+  .fractional-definition-refined,
+  .fractional-fit-refined,
+  .fractional-service-refined,
+  .fractional-monthly-refined,
+  .fractional-plan-refined,
+  .fractional-options-refined,
+  .fractional-outcomes-refined,
+  .lab-section,
+  .about-pov,
+  .about-why,
+  .about-founder,
+  .about-systems,
+  .about-contact,
+  .help-section,
+  .help-process,
+  .success-section,
+  .patterns-section,
+  .next-section,
+  .risk-section,
+  .help-intelligence-section,
+  .help-cta-section {
+    width: calc(100% - 20px) !important;
+    max-width: 100% !important;
+    border-radius: 18px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .diagnostic-panel article,
+  .symptom-copy,
+  .work-grid article,
+  .proof-grid article,
+  .stat-grid article,
+  .quote-grid article,
+  .situation-card,
+  .process-grid article,
+  .success-result-card,
+  .offer-card-body,
+  .price-card-simple,
+  .sample-output-grid article,
+  .assessment-sample-card,
+  .assessment-form,
+  .reset-participants-grid article,
+  .reset-fix-grid-refined article,
+  .fractional-monthly-grid article,
+  .lab-initiative-card,
+  .about-rule-grid article,
+  .about-systems-grid article {
+    padding: 16px !important;
+  }
+
+  .hero-logo {
+    max-width: 245px;
+  }
+
+  .work-card-image,
+  .help-card-image,
+  .success-card-image,
+  .quote-image,
+  .failure-image,
+  .about-card-image {
+    max-height: 210px;
+  }
+
+  .about-page-modern .about-founder-portrait-card .about-founder-portrait,
+  .about-page-modern .about-founder-portrait {
+    height: min(560px, 130vw) !important;
+  }
+
+  .about-page-modern .about-founder-artifact-panel .about-founder-cube,
+  .about-page-modern .about-founder-cube {
+    width: min(300px, 86vw) !important;
+    max-height: 190px !important;
+  }
+}
+
+/* Navigation polish pass v88 */
+.nav-dropdown-menu-intelligence {
+  min-width: 310px;
+}
+
+.site-header .nav-dropdown-menu a[aria-current="page"],
+.site-header .nav-dropdown-menu a.is-active {
+  border-color: rgba(245, 181, 68, 0.86) !important;
+  color: #f5b544 !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.22), rgba(31, 106, 229, 0.16)) !important;
+}
+
+.site-header .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown-toggle.is-active {
+  color: var(--white) !important;
+  background: rgba(31, 106, 229, 0.34) !important;
+  border-color: rgba(245, 181, 68, 0.86) !important;
+}
+
+@media (max-width: 760px) {
+  .nav-dropdown-menu-intelligence {
+    min-width: 0;
+  }
+}
+
+
+/* Pass 24 v89: typography consistency, clearer situation cards, one-card fractional model, and Fit Check path finder polish */
+:where(body, button, input, textarea, select, option, label, a, p, li, dt, dd, h1, h2, h3, h4, h5, h6, strong, span, em) {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+:where(input, textarea, select, button) {
+  font: inherit !important;
+}
+
+:where(h1, h2, h3) {
+  letter-spacing: -0.02em;
+}
+
+:where(p, li, dd, label, input, textarea) {
+  letter-spacing: 0;
+}
+
+.help-page .situation-section h2 {
+  margin-bottom: clamp(18px, 2.4vw, 28px) !important;
+}
+
+.help-page .situation-section .help-lede {
+  margin-bottom: clamp(34px, 4vw, 52px) !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.help-page .situation-card h3 {
+  margin-bottom: 16px !important;
+  line-height: 1.18 !important;
+}
+
+.help-page .situation-card p {
+  margin-bottom: 0 !important;
+  line-height: 1.48 !important;
+}
+
+.help-page .situation-card span {
+  margin-top: 22px !important;
+  padding-top: 16px;
+  border-top: 1px solid rgba(245, 181, 68, 0.22);
+  line-height: 1.25;
+}
+
+.fractional-single-flip-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: min(980px, 100%) !important;
+  margin-inline: auto !important;
+}
+
+.fractional-options-grid-refined .fractional-single-flip-card {
+  min-height: clamp(520px, 48vw, 620px) !important;
+}
+
+.fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-inner {
+  min-height: clamp(520px, 48vw, 620px) !important;
+}
+
+.fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-face {
+  align-content: start !important;
+  padding: clamp(28px, 4vw, 44px) !important;
+  overflow: auto !important;
+}
+
+.fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-face h3 {
+  max-width: 820px;
+  margin-bottom: 16px !important;
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem) !important;
+  line-height: 1.06 !important;
+}
+
+.fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-face p {
+  max-width: 860px;
+  font-size: clamp(1rem, 1.5vw, 1.14rem) !important;
+}
+
+.fractional-shape-mini-grid,
+.fractional-shape-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin-top: clamp(20px, 3vw, 34px);
+}
+
+.fractional-shape-mini-grid section,
+.fractional-shape-detail-grid section {
+  padding: 18px;
+  border: 1px solid rgba(69, 190, 255, 0.28);
+  border-radius: 18px;
+  background: rgba(7, 19, 58, 0.52);
+}
+
+.fractional-shape-mini-grid strong,
+.fractional-shape-detail-grid strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffd77a !important;
+  font-size: 1rem !important;
+}
+
+.fractional-shape-mini-grid p {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.42 !important;
+}
+
+.fractional-single-flip-card em {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: auto;
+  padding: 10px 14px;
+  border: 1px solid rgba(245, 181, 68, 0.36);
+  border-radius: 999px;
+  color: #ffd77a;
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fractional-shape-detail-grid ul {
+  display: grid;
+  gap: 9px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.fractional-shape-detail-grid li {
+  position: relative;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.fractional-shape-detail-grid li::before {
+  position: absolute;
+  left: 0;
+  content: "•";
+  color: #f5b544;
+  font-weight: 900;
+}
+
+.sample-output-section-v89 .sample-output-grid article {
+  min-height: 470px !important;
+}
+
+.sample-output-section-v89 .sample-output-body {
+  display: grid;
+  gap: 12px;
+  margin-top: 4px;
+  padding: 16px;
+  border: 1px solid rgba(69, 190, 255, 0.18);
+  border-radius: 16px;
+  background: rgba(4, 12, 36, 0.28);
+}
+
+.sample-output-section-v89 .sample-output-body > strong {
+  color: #ffd77a !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sample-output-section-v89 .sample-situation b {
+  color: #ffd77a !important;
+}
+
+.pricing-fit-section-v89 .fit-path-finder {
+  margin-top: clamp(28px, 4vw, 42px) !important;
+  margin-bottom: clamp(24px, 4vw, 36px) !important;
+}
+
+.pricing-fit-section-v89 .pricing-fit-grid-v89 {
+  align-items: stretch;
+}
+
+.pricing-fit-card {
+  position: relative;
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.pricing-fit-card.is-fit-dimmed {
+  opacity: 0.58;
+  filter: saturate(0.72);
+}
+
+.pricing-fit-card.is-fit-match {
+  z-index: 2;
+  opacity: 1;
+  filter: saturate(1.08);
+  transform: translateY(-5px);
+  border-color: rgba(245, 181, 68, 0.90) !important;
+  box-shadow: 0 24px 58px rgba(245, 181, 68, 0.18), 0 12px 34px rgba(0, 0, 0, 0.22) !important;
+}
+
+.pricing-fit-card.is-fit-match::after {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  z-index: 3;
+  content: "Recommended";
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 237, 185, 0.86);
+  border-radius: 999px;
+  color: #081024;
+  background: linear-gradient(180deg, #ffd77a, #f5b544);
+  box-shadow: 0 10px 24px rgba(245, 181, 68, 0.22);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pricing-fit-note-v89 {
+  max-width: 900px;
+}
+
+.assessment-page-refined .assessment-hero .page-kicker,
+.assessment-page-refined .assessment-form-section .page-kicker {
+  color: #ffd77a !important;
+}
+
+@media (max-width: 980px) {
+  .fractional-shape-mini-grid,
+  .fractional-shape-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fractional-options-grid-refined .fractional-single-flip-card,
+  .fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-inner {
+    min-height: 760px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .fractional-options-grid-refined .fractional-single-flip-card,
+  .fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-inner {
+    min-height: 880px !important;
+  }
+
+  .fractional-options-grid-refined .fractional-single-flip-card .fractional-flip-face {
+    padding: 24px !important;
+  }
+
+  .sample-output-section-v89 .sample-output-grid article {
+    min-height: 0 !important;
+  }
+}
+
+
+/* v90 focused cleanup: remove double Home arrows, rebuild Health Check sample output, stabilize Fractional Engagement Shape */
+.home-page .symptom-copy a[target="_blank"]::after {
+  content: "" !important;
+}
+
+.assessment-sample-section-v90 {
+  overflow: hidden !important;
+}
+
+.assessment-sample-section-v90 .assessment-sample-heading {
+  max-width: 980px !important;
+}
+
+.assessment-sample-section-v90 .assessment-sample-heading h2 {
+  max-width: 980px !important;
+}
+
+.assessment-sample-controls {
+  margin: clamp(24px, 4vw, 36px) 0 18px !important;
+}
+
+.assessment-sample-carousel {
+  position: relative;
+  margin-top: 18px;
+}
+
+.assessment-output-deck {
+  overflow: hidden;
+  border: 1px solid rgba(31, 106, 229, 0.18);
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff, #f2f7ff);
+  box-shadow: 0 24px 60px rgba(8, 16, 36, 0.12);
+}
+
+.assessment-output-deck.is-hidden {
+  display: none !important;
+}
+
+.assessment-output-cover {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(16px, 3vw, 26px);
+  align-items: center;
+  padding: clamp(22px, 4vw, 34px);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(245, 181, 68, 0.18), transparent 14rem),
+    linear-gradient(135deg, #061339, #123b86);
+  color: #ffffff;
+}
+
+.assessment-output-cover span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid rgba(245, 181, 68, 0.58);
+  border-radius: 999px;
+  color: #061339;
+  background: linear-gradient(135deg, #f5b544, #ffd77a);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.assessment-output-cover h3 {
+  margin: 0 0 8px;
+  color: #ffffff !important;
+  font-size: clamp(1.55rem, 2.6vw, 2.3rem);
+  line-height: 1.04;
+}
+
+.assessment-output-cover p {
+  margin: 0;
+  color: #eaf4ff !important;
+  line-height: 1.45;
+}
+
+.assessment-output-cover strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 280px;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid rgba(69, 190, 255, 0.38);
+  border-radius: 999px;
+  color: #ffd77a !important;
+  background: rgba(7, 19, 58, 0.48);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.assessment-output-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+  gap: 18px;
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.assessment-output-main-card,
+.assessment-output-side-card,
+.assessment-output-matrix > div {
+  border: 1px solid rgba(31, 106, 229, 0.16);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(8, 16, 36, 0.07);
+}
+
+.assessment-output-main-card,
+.assessment-output-side-card {
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.assessment-output-main-card h4 {
+  margin: 8px 0 14px;
+  color: #061339;
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+  line-height: 1.08;
+}
+
+.assessment-output-main-card p,
+.assessment-output-side-card li,
+.assessment-output-matrix p {
+  color: #263552 !important;
+  line-height: 1.58;
+}
+
+.assessment-output-label {
+  margin: 0 0 8px !important;
+  color: #7a4f00 !important;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.assessment-output-side-card ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.assessment-output-side-card li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.assessment-output-side-card li::before {
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 9px;
+  height: 9px;
+  content: "";
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f6ae5, #f5b544);
+}
+
+.assessment-output-matrix {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.assessment-output-matrix > div {
+  padding: 20px;
+}
+
+.assessment-output-matrix span {
+  display: block;
+  margin-bottom: 10px;
+  color: #7a4f00;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.assessment-output-matrix strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #061339 !important;
+  font-size: 1.1rem;
+  line-height: 1.18;
+}
+
+/* Final Fractional Engagement Shape treatment: one large flippable card on desktop, stacked and readable on small screens. */
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: min(1060px, 100%) !important;
+  margin-inline: auto !important;
+  gap: 0 !important;
+  perspective: 1600px !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 560px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 30px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  outline-offset: 6px;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card .fractional-flip-inner,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:hover .fractional-flip-inner,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:focus .fractional-flip-inner,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:focus-within .fractional-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 560px !important;
+  height: 100% !important;
+  transform-style: preserve-3d !important;
+  transition: transform 520ms ease !important;
+  transform: none !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:hover .fractional-flip-inner,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:focus-within .fractional-flip-inner,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card.is-flipped .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 560px !important;
+  height: 100% !important;
+  padding: clamp(28px, 4vw, 48px) !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  backface-visibility: hidden !important;
+  transform-style: preserve-3d !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-front {
+  transform: rotateY(0deg) !important;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(245, 181, 68, 0.18), transparent 16rem),
+    linear-gradient(180deg, #ffffff, #f3f8ff) !important;
+  border: 1px solid rgba(31, 106, 229, 0.20) !important;
+  color: #061339 !important;
+  box-shadow: 0 24px 64px rgba(8, 16, 36, 0.12) !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-back {
+  transform: rotateY(180deg) !important;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(245, 181, 68, 0.18), transparent 16rem),
+    radial-gradient(circle at 92% 10%, rgba(69, 190, 255, 0.14), transparent 18rem),
+    linear-gradient(135deg, #061339, #103a82) !important;
+  border: 1px solid rgba(245, 181, 68, 0.46) !important;
+  color: #ffffff !important;
+  box-shadow: 0 24px 64px rgba(8, 16, 36, 0.16) !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-face > span {
+  display: inline-flex !important;
+  width: fit-content !important;
+  min-height: 34px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 18px !important;
+  padding: 7px 12px !important;
+  border: 1px solid rgba(245, 181, 68, 0.45) !important;
+  border-radius: 999px !important;
+  background: rgba(245, 181, 68, 0.12) !important;
+  color: #7a4f00 !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-back > span {
+  color: #ffd77a !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-face h3 {
+  max-width: 900px !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(1.85rem, 3vw, 2.75rem) !important;
+  line-height: 1.04 !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-front h3,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-front strong {
+  color: #061339 !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-back h3,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-back strong {
+  color: #ffffff !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-front p {
+  color: #263552 !important;
+}
+
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-back p,
+.fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-back li {
+  color: #edf5ff !important;
+}
+
+.fractional-shape-mini-grid,
+.fractional-shape-detail-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin-top: auto !important;
+}
+
+.fractional-shape-mini-grid section,
+.fractional-shape-detail-grid section {
+  padding: clamp(18px, 2.5vw, 24px) !important;
+  border-radius: 22px !important;
+}
+
+.fractional-shape-mini-grid section {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border: 1px solid rgba(31, 106, 229, 0.14) !important;
+}
+
+.fractional-shape-detail-grid section {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(69, 190, 255, 0.22) !important;
+}
+
+.fractional-single-flip-card em {
+  margin-top: 22px !important;
+  color: #7a4f00 !important;
+  background: rgba(245, 181, 68, 0.14) !important;
+}
+
+@media (max-width: 980px) {
+  .assessment-output-cover,
+  .assessment-output-layout,
+  .assessment-output-matrix {
+    grid-template-columns: 1fr !important;
+  }
+
+  .assessment-output-cover strong {
+    max-width: none;
+    justify-self: start;
+  }
+
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card,
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card .fractional-flip-inner,
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-face {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:hover .fractional-flip-inner,
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card:focus-within .fractional-flip-inner,
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card.is-flipped .fractional-flip-inner,
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-single-flip-card .fractional-flip-inner {
+    transform: none !important;
+  }
+
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-inner {
+    display: grid !important;
+    gap: 18px !important;
+  }
+
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-face {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+  }
+
+  .fractional-shape-mini-grid,
+  .fractional-shape-detail-grid {
+    grid-template-columns: 1fr !important;
+    margin-top: 22px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .assessment-output-cover,
+  .assessment-output-layout {
+    padding: 20px !important;
+  }
+
+  .assessment-output-deck {
+    border-radius: 22px !important;
+  }
+
+  .fractional-options-grid-refined.fractional-flip-grid.fractional-single-flip-grid .fractional-flip-face {
+    padding: 24px 20px !important;
+    border-radius: 24px !important;
+  }
+}
+
+
+/* v92 targeted fixes from v90 rollback: Home clickable hover, three Fractional shape cards, footer Fit Check link */
+.home-page .symptom-card {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.home-page .symptom-copy a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  min-height: 40px !important;
+  padding: 0 16px !important;
+  border: 1px solid rgba(31, 106, 229, 0.32) !important;
+  border-radius: 999px !important;
+  color: #061339 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #eef6ff 100%) !important;
+  box-shadow: 0 8px 18px rgba(8, 16, 36, 0.08) !important;
+  cursor: pointer !important;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease !important;
+}
+
+.home-page .symptom-copy a[target="_blank"]::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.home-page .symptom-copy a:hover,
+.home-page .symptom-copy a:focus-visible {
+  color: #081024 !important;
+  border-color: rgba(245, 181, 68, 0.86) !important;
+  background: linear-gradient(180deg, #ffd77a 0%, #f5b544 100%) !important;
+  box-shadow: 0 14px 28px rgba(245, 181, 68, 0.24), 0 0 0 3px rgba(245, 181, 68, 0.12) !important;
+  transform: translateY(-2px) !important;
+}
+
+.home-page .symptom-card:has(.symptom-copy a:hover),
+.home-page .symptom-card:has(.symptom-copy a:focus-visible) {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(8, 16, 36, 0.18);
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(18px, 2vw, 24px) !important;
+  align-items: stretch !important;
+  perspective: 1400px !important;
+  width: min(1120px, calc(100% - 36px)) !important;
+  margin: 0 auto !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  min-height: 430px !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  perspective: 1400px !important;
+  cursor: pointer !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 430px !important;
+  height: 100% !important;
+  transform-style: preserve-3d !important;
+  transition: transform 520ms ease, filter 180ms ease !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 430px !important;
+  height: 100% !important;
+  padding: clamp(24px, 2.4vw, 30px) !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  backface-visibility: hidden !important;
+  transform-style: preserve-3d !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-front {
+  color: #081024 !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(31, 106, 229, 0.10), transparent 10rem),
+    linear-gradient(180deg, #ffffff 0%, #f2f7ff 100%) !important;
+  border: 1px solid rgba(31, 106, 229, 0.22) !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.11) !important;
+  transform: rotateY(0deg) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-back {
+  color: #ffffff !important;
+  background:
+    radial-gradient(circle at 16% 14%, rgba(245, 181, 68, 0.20), transparent 11rem),
+    linear-gradient(135deg, #061339 0%, #103a82 100%) !important;
+  border: 1px solid rgba(245, 181, 68, 0.46) !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.18) !important;
+  transform: rotateY(180deg) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face > span {
+  align-self: flex-start !important;
+  margin-bottom: 18px !important;
+  padding: 8px 12px !important;
+  border-radius: 999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front > span {
+  color: #061339 !important;
+  background: rgba(31, 106, 229, 0.10) !important;
+  border: 1px solid rgba(31, 106, 229, 0.22) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back > span {
+  color: #ffd77a !important;
+  background: rgba(245, 181, 68, 0.14) !important;
+  border: 1px solid rgba(245, 181, 68, 0.42) !important;
+}
+
+.fractional-three-flip-grid h3 {
+  min-height: 0 !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(1.26rem, 1.8vw, 1.55rem) !important;
+  line-height: 1.14 !important;
+  text-align: left !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front h3 {
+  color: #061339 !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back h3 {
+  color: #ffffff !important;
+}
+
+.fractional-three-flip-grid p {
+  margin: 0 !important;
+  color: #263552 !important;
+  font-size: 1rem !important;
+  line-height: 1.56 !important;
+}
+
+.fractional-three-flip-grid em {
+  margin-top: auto !important;
+  color: #1f6ae5 !important;
+  font-size: 0.86rem !important;
+  font-style: normal !important;
+  font-weight: 900 !important;
+}
+
+.fractional-three-flip-grid ul {
+  display: grid !important;
+  gap: 12px !important;
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.fractional-three-flip-grid li {
+  position: relative !important;
+  padding-left: 24px !important;
+  color: #edf5ff !important;
+  font-size: 0.94rem !important;
+  line-height: 1.44 !important;
+}
+
+.fractional-three-flip-grid li::before {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.08em !important;
+  content: "✓" !important;
+  color: #ffd77a !important;
+  font-weight: 900 !important;
+}
+
+.site-footer-refined nav[aria-label="Footer core services"] a[href$="#assessment-form-title"] {
+  color: #ffd77a !important;
+  font-weight: 950 !important;
+}
+
+@media (max-width: 1040px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: min(100%, calc(100% - 28px)) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 470px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 360px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 430px !important;
+  }
+
+  .home-page .symptom-copy a {
+    width: 100% !important;
+  }
+}
+
+
+/* v93 Fractional Analytics engagement shape polish */
+.fractional-page-refined .fractional-options-refined {
+  width: min(1360px, calc(100% - 40px)) !important;
+}
+
+.fractional-page-refined .fractional-options-refined > h2 {
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  width: min(1320px, 100%) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(20px, 2.2vw, 30px) !important;
+  align-items: stretch !important;
+  perspective: 1600px !important;
+  perspective-origin: 50% 50% !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  min-height: 500px !important;
+  perspective: 1600px !important;
+  perspective-origin: 50% 50% !important;
+  transform-style: preserve-3d !important;
+  transform-origin: center center !important;
+  isolation: isolate !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-inner {
+  min-height: 500px !important;
+  transform-origin: center center !important;
+  transform-style: preserve-3d !important;
+  will-change: transform !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  min-height: 500px !important;
+  padding: clamp(26px, 2.1vw, 34px) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  transform-origin: center center !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-front {
+  transform: rotateY(0deg) translateZ(1px) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-back {
+  transform: rotateY(180deg) translateZ(1px) !important;
+}
+
+.fractional-three-flip-grid h3 {
+  font-size: clamp(1.16rem, 1.35vw, 1.42rem) !important;
+  line-height: 1.16 !important;
+  margin-bottom: 14px !important;
+}
+
+.fractional-three-flip-grid p {
+  font-size: 0.98rem !important;
+  line-height: 1.54 !important;
+}
+
+.fractional-three-flip-grid li {
+  font-size: 0.92rem !important;
+  line-height: 1.42 !important;
+}
+
+.fractional-three-flip-grid em {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(31, 106, 229, 0.08) !important;
+  border: 1px solid rgba(31, 106, 229, 0.18) !important;
+}
+
+.fractional-cta-refined h2 {
+  margin-bottom: clamp(18px, 2.4vw, 28px) !important;
+}
+
+.fractional-cta-refined p:not(.page-kicker) {
+  margin-top: 0 !important;
+  margin-bottom: clamp(24px, 3vw, 34px) !important;
+}
+
+@media (max-width: 1180px) {
+  .fractional-page-refined .fractional-options-refined {
+    width: min(100% - 28px, 1180px) !important;
+  }
+
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 540px !important;
+  }
+
+  .fractional-three-flip-grid h3 {
+    font-size: 1.12rem !important;
+  }
+
+  .fractional-three-flip-grid p,
+  .fractional-three-flip-grid li {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(760px, 100%) !important;
+    gap: 20px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 360px !important;
+  }
+
+  .fractional-three-flip-grid h3 {
+    font-size: clamp(1.25rem, 3vw, 1.55rem) !important;
+  }
+
+  .fractional-three-flip-grid p,
+  .fractional-three-flip-grid li {
+    font-size: 1rem !important;
+  }
+}
+
+@media (hover: none), (max-width: 760px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    perspective: none !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+    display: grid !important;
+    gap: 14px !important;
+    transform: none !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-back {
+    transform: none !important;
+  }
+}
+
+/* Pass 30 v95: top-ribbon dropdown hierarchy from v93 base */
+.site-header .nav-dropdown-menu.nav-menu-hierarchy {
+  min-width: 330px;
+  padding: 10px;
+  gap: 6px;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 42px;
+  padding: 11px 12px 11px 16px;
+  border: 1px solid rgba(49, 168, 255, 0.22) !important;
+  border-left-color: var(--gold) !important;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(7, 19, 58, 0.38);
+  line-height: 1.15;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a:hover,
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a:focus-visible {
+  color: var(--white);
+  border-color: rgba(245, 181, 68, 0.76) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.18), rgba(31, 106, 229, 0.18));
+  transform: translateX(2px);
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-parent {
+  border-left-width: 6px !important;
+  font-weight: 900;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child {
+  margin-left: 18px;
+  padding-left: 14px;
+  border-left-width: 3px !important;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.88rem;
+  font-weight: 800;
+  background: rgba(7, 19, 58, 0.24);
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child::before {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  width: 12px;
+  height: 1px;
+  content: "";
+  background: rgba(245, 181, 68, 0.72);
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a span {
+  min-width: 0;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a em {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 22px;
+  padding: 0 8px;
+  border: 1px solid rgba(245, 181, 68, 0.8);
+  border-radius: 999px;
+  color: #050916;
+  background: var(--gold);
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.is-active {
+  color: var(--gold-2) !important;
+  border-color: rgba(245, 181, 68, 0.95) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.24), rgba(31, 106, 229, 0.2)) !important;
+  box-shadow: inset 0 0 0 1px rgba(245, 181, 68, 0.18);
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child.is-active {
+  color: var(--white) !important;
+}
+
+@media (max-width: 760px) {
+  .site-header .nav-dropdown-menu.nav-menu-hierarchy {
+    min-width: 0;
+    width: 100%;
+    padding-inline: 8px;
+  }
+
+  .site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child {
+    margin-left: 12px;
+  }
+}
+
+
+/* Pass 31 v96: correct Offerings hierarchy and Fractional flip-card mechanics */
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-fit-check {
+  margin-left: 30px !important;
+  border-left-width: 3px !important;
+  border-left-color: var(--gold) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.10), rgba(7, 19, 58, 0.24)) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-fit-check::before {
+  left: -24px !important;
+  width: 20px !important;
+  background: rgba(245, 181, 68, 0.86) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-fit-check em {
+  flex: 0 0 auto;
+}
+
+.fractional-page-refined .fractional-options-refined {
+  width: min(1540px, calc(100% - 32px)) !important;
+  overflow: visible !important;
+}
+
+.fractional-page-refined .fractional-options-refined > h2 {
+  max-width: 1040px !important;
+  margin-bottom: clamp(28px, 3vw, 42px) !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(380px, 1fr)) !important;
+  gap: clamp(22px, 2.2vw, 34px) !important;
+  width: min(1500px, 100%) !important;
+  margin-inline: auto !important;
+  align-items: stretch !important;
+  perspective: none !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  position: relative !important;
+  min-width: 0 !important;
+  min-height: 500px !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  perspective: 1600px !important;
+  perspective-origin: center center !important;
+  transform: none !important;
+  transform-origin: center center !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  cursor: pointer !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 500px !important;
+  height: 100% !important;
+  transform: translateZ(0) rotateY(0deg) !important;
+  transform-origin: 50% 50% !important;
+  transform-style: preserve-3d !important;
+  transition: transform 560ms cubic-bezier(.2,.75,.2,1), filter 180ms ease !important;
+  will-change: transform !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+  transform: translateZ(0) rotateY(180deg) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 500px !important;
+  height: 100% !important;
+  padding: clamp(30px, 2.2vw, 38px) !important;
+  border-radius: 26px !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  transform-origin: 50% 50% !important;
+  transform-style: preserve-3d !important;
+  overflow: hidden !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-front {
+  transform: rotateY(0deg) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-back {
+  transform: rotateY(180deg) !important;
+}
+
+.fractional-three-flip-grid h3 {
+  font-size: clamp(1.22rem, 1.25vw, 1.48rem) !important;
+  line-height: 1.18 !important;
+  margin-bottom: 16px !important;
+  max-width: 100% !important;
+}
+
+.fractional-three-flip-grid p {
+  font-size: 1rem !important;
+  line-height: 1.58 !important;
+  max-width: 100% !important;
+}
+
+.fractional-three-flip-grid li {
+  font-size: 0.96rem !important;
+  line-height: 1.46 !important;
+}
+
+.fractional-three-flip-grid ul {
+  gap: 13px !important;
+}
+
+.fractional-three-flip-grid em {
+  margin-top: auto !important;
+}
+
+.fractional-cta-refined h2 {
+  margin-bottom: clamp(24px, 3vw, 36px) !important;
+}
+
+.fractional-cta-refined p:not(.page-kicker) {
+  max-width: 800px !important;
+  margin-top: 0 !important;
+  margin-bottom: clamp(30px, 3.5vw, 44px) !important;
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 1240px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: repeat(3, minmax(330px, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 540px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face {
+    padding: 26px !important;
+  }
+
+  .fractional-three-flip-grid h3 {
+    font-size: 1.16rem !important;
+  }
+
+  .fractional-three-flip-grid p,
+  .fractional-three-flip-grid li {
+    font-size: 0.94rem !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(820px, 100%) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 380px !important;
+  }
+
+  .fractional-three-flip-grid h3 {
+    font-size: clamp(1.28rem, 3vw, 1.62rem) !important;
+  }
+
+  .fractional-three-flip-grid p,
+  .fractional-three-flip-grid li {
+    font-size: 1rem !important;
+  }
+}
+
+@media (hover: none), (max-width: 760px) {
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+    display: grid !important;
+    gap: 14px !important;
+    transform: none !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+}
+
+
+/* Pass 33 v97: Fractional Engagement Shape readable flip cards */
+.fractional-page-refined .fractional-options-refined {
+  width: min(1760px, calc(100% - 20px)) !important;
+  max-width: none !important;
+  overflow: visible !important;
+}
+
+.fractional-page-refined .fractional-options-refined > .page-kicker,
+.fractional-page-refined .fractional-options-refined > h2 {
+  width: min(1120px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(420px, 1fr)) !important;
+  gap: clamp(22px, 2vw, 32px) !important;
+  width: min(1700px, 100%) !important;
+  margin-inline: auto !important;
+  align-items: stretch !important;
+  perspective: 1800px !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  position: relative !important;
+  min-width: 0 !important;
+  min-height: 560px !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  perspective: 1800px !important;
+  perspective-origin: 50% 50% !important;
+  transform: none !important;
+  transform-style: preserve-3d !important;
+  cursor: pointer !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 560px !important;
+  transform: rotateY(0deg) !important;
+  transform-origin: center center !important;
+  transform-style: preserve-3d !important;
+  transition: transform 620ms cubic-bezier(.2,.75,.2,1), filter 200ms ease !important;
+  will-change: transform !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+  filter: drop-shadow(0 24px 46px rgba(4, 12, 36, 0.28)) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 560px !important;
+  height: 100% !important;
+  padding: clamp(30px, 2.1vw, 40px) !important;
+  border-radius: 28px !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  transform-origin: center center !important;
+  transform-style: preserve-3d !important;
+  overflow: hidden !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-front {
+  transform: rotateY(0deg) translateZ(1px) !important;
+  border: 1px solid rgba(31, 106, 229, 0.20) !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(69, 190, 255, 0.14), transparent 11rem),
+    linear-gradient(180deg, #ffffff, #f4f8ff) !important;
+  color: #061339 !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.10) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-back {
+  transform: rotateY(180deg) translateZ(1px) !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(245, 181, 68, 0.22), transparent 12rem),
+    radial-gradient(circle at 86% 72%, rgba(69, 190, 255, 0.14), transparent 12rem),
+    linear-gradient(135deg, #061339, #123d86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.18) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face > span {
+  width: fit-content !important;
+  margin-bottom: 22px !important;
+}
+
+.fractional-three-flip-grid h3 {
+  max-width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 0 18px !important;
+  font-size: clamp(1.28rem, 1.35vw, 1.58rem) !important;
+  line-height: 1.16 !important;
+  text-align: left !important;
+}
+
+.fractional-three-flip-grid p {
+  max-width: 100% !important;
+  margin: 0 0 20px !important;
+  font-size: clamp(1rem, 0.92vw, 1.08rem) !important;
+  line-height: 1.58 !important;
+  text-align: left !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front p {
+  color: #263552 !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back p {
+  color: #edf5ff !important;
+}
+
+.fractional-three-flip-grid ul {
+  display: grid !important;
+  gap: 13px !important;
+  margin: auto 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.fractional-three-flip-grid li {
+  position: relative !important;
+  padding-left: 26px !important;
+  color: #edf5ff !important;
+  font-size: clamp(0.96rem, 0.86vw, 1.02rem) !important;
+  line-height: 1.48 !important;
+  text-align: left !important;
+}
+
+.fractional-three-flip-grid li::before {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.55em !important;
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  background: #f5b544 !important;
+  box-shadow: 0 0 0 5px rgba(245, 181, 68, 0.16) !important;
+}
+
+.fractional-three-flip-grid em {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border: 1px solid rgba(31, 106, 229, 0.18) !important;
+  border-radius: 999px !important;
+  color: #0b1745 !important;
+  background: rgba(31, 106, 229, 0.06) !important;
+  font-style: normal !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 1360px) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(920px, 100%) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 420px !important;
+  }
+
+  .fractional-three-flip-grid h3 {
+    font-size: clamp(1.36rem, 2vw, 1.82rem) !important;
+  }
+}
+
+@media (max-width: 760px), (hover: none) {
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+    display: grid !important;
+    gap: 14px !important;
+    min-height: 0 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+}
+
+
+/* Pass 34 v98: Fractional Engagement Shape readability and true in-place flip fix */
+.fractional-page-refined .fractional-options-refined {
+  width: min(1640px, calc(100% - 48px)) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: visible !important;
+}
+
+.fractional-options-grid-refined.fractional-three-flip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(24px, 2vw, 34px) !important;
+  width: min(1580px, 100%) !important;
+  margin: 38px auto 0 !important;
+  align-items: stretch !important;
+  perspective: none !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card,
+.fractional-options-grid-refined .fractional-shape-card {
+  position: relative !important;
+  display: block !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 470px !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  perspective: 1600px !important;
+  perspective-origin: center center !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-inner,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-inner {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 470px !important;
+  height: 100% !important;
+  transform: rotateY(0deg) !important;
+  transform-origin: 50% 50% !important;
+  transform-style: preserve-3d !important;
+  transition: transform 560ms cubic-bezier(.2,.72,.18,1), filter 200ms ease !important;
+  will-change: transform !important;
+}
+
+/* Do not flip merely because the cursor is over the card. Click/tap toggles .is-flipped via JS. */
+.fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+.fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner {
+  transform: rotateY(0deg) !important;
+  filter: drop-shadow(0 18px 34px rgba(4, 12, 36, 0.16)) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+  transform: rotateY(180deg) !important;
+  filter: drop-shadow(0 24px 46px rgba(4, 12, 36, 0.28)) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-face {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 470px !important;
+  height: 100% !important;
+  padding: clamp(30px, 2vw, 42px) !important;
+  border-radius: 26px !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  transform-origin: 50% 50% !important;
+  transform-style: preserve-3d !important;
+  overflow: visible !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-front {
+  transform: rotateY(0deg) !important;
+  border: 1px solid rgba(31, 106, 229, 0.20) !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(69, 190, 255, 0.14), transparent 11rem),
+    linear-gradient(180deg, #ffffff, #f4f8ff) !important;
+  color: #061339 !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.10) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back,
+.fractional-options-grid-refined .fractional-shape-card .fractional-flip-back {
+  transform: rotateY(180deg) !important;
+  border: 1px solid rgba(245, 181, 68, 0.52) !important;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(245, 181, 68, 0.22), transparent 12rem),
+    radial-gradient(circle at 86% 72%, rgba(69, 190, 255, 0.14), transparent 12rem),
+    linear-gradient(135deg, #061339, #123d86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(8, 16, 36, 0.18) !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-face > span {
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 0 22px !important;
+}
+
+.fractional-three-flip-grid h3 {
+  max-width: 100% !important;
+  margin: 0 0 18px !important;
+  color: inherit !important;
+  font-size: clamp(1.22rem, 1.25vw, 1.5rem) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.fractional-three-flip-grid p {
+  max-width: 100% !important;
+  margin: 0 0 20px !important;
+  font-size: clamp(1rem, 0.9vw, 1.06rem) !important;
+  line-height: 1.62 !important;
+  text-align: left !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-front p {
+  color: #263552 !important;
+}
+
+.fractional-three-flip-grid .fractional-flip-back p,
+.fractional-three-flip-grid .fractional-flip-back li {
+  color: #edf5ff !important;
+}
+
+.fractional-three-flip-grid ul {
+  display: grid !important;
+  gap: 12px !important;
+  margin: auto 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.fractional-three-flip-grid li {
+  position: relative !important;
+  padding-left: 26px !important;
+  font-size: clamp(0.95rem, 0.84vw, 1rem) !important;
+  line-height: 1.48 !important;
+  text-align: left !important;
+}
+
+.fractional-three-flip-grid em {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 10px 14px !important;
+  border: 1px solid rgba(31, 106, 229, 0.18) !important;
+  border-radius: 999px !important;
+  color: #0b1745 !important;
+  background: rgba(31, 106, 229, 0.06) !important;
+  font-style: normal !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 1499px) {
+  .fractional-page-refined .fractional-options-refined {
+    width: min(1120px, calc(100% - 36px)) !important;
+  }
+
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    grid-template-columns: 1fr !important;
+    width: min(1060px, 100%) !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 340px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face {
+    padding: clamp(28px, 3vw, 42px) !important;
+  }
+
+  .fractional-three-flip-grid h3 {
+    font-size: clamp(1.35rem, 2vw, 1.82rem) !important;
+  }
+
+  .fractional-three-flip-grid p {
+    font-size: clamp(1.02rem, 1.4vw, 1.12rem) !important;
+  }
+}
+
+@media (max-width: 760px), (hover: none) {
+  .fractional-options-grid-refined.fractional-three-flip-grid {
+    gap: 20px !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-card,
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-face {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:hover .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card:focus-within .fractional-flip-inner,
+  .fractional-three-flip-grid .fractional-flip-card.is-flipped .fractional-flip-inner {
+    display: grid !important;
+    gap: 14px !important;
+    min-height: 0 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .fractional-three-flip-grid .fractional-flip-face,
+  .fractional-three-flip-grid .fractional-flip-front,
+  .fractional-three-flip-grid .fractional-flip-back {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    min-height: 0 !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+}

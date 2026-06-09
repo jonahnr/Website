@@ -216,3 +216,88 @@
 - Strengthened Decision System Reset participant section contrast so headings, card labels, and body copy are consistently readable.
 - Replaced the fragile Fractional Analytics Engagement Shape flip behavior with stable commercial-depth cards that show the offer details directly.
 - Bumped shared cache references to `v=84`.
+
+## Cleanup pass 32 – Fit Check CTAs and Home background polish
+- Removed the dark outer background layer from the Home “How Teams Work With Parallax Data” section so the global page background remains consistent.
+- Updated Home CTA button styling to use the site gold treatment more consistently.
+- Renamed primary no-cost CTA language from Analytics Health Check/Fit Review to Free Fit Check across conversion cards and buttons.
+- Clarified that the Analytics Health Check is the paid scoped diagnostic that may follow the free Fit Check.
+- Bumped shared cache references to `v=85`.
+
+
+
+## Cleanup pass 16 - Continuing engagement ladder and offerings polish
+
+- Added Analytics Health Check as the first pillar in the How We Help next-step section, with free Fit Check positioning before paid scope.
+- Reframed Intelligence Lab as the premium lower path once the foundation is stable.
+- Reduced blank space in the Our Offerings path chooser Intelligence Lab card.
+- Rebuilt Pricing and Fit into a simpler user-friendly engagement ladder.
+- Replaced the generic proof/output cards with three professional sample output examples for three distinct situations.
+- Removed decorative marks from the About hero outcome cards and enlarged the founder cube without reducing the portrait scale.
+- Bumped shared CSS/JS cache versions to v86.
+
+
+## Cleanup pass 17 - Responsive and mobile foundation
+
+- Added a mobile navigation toggle with a stacked menu for small screens.
+- Added tablet and phone breakpoints across Home, How We Help, Our Offerings, service pages, Intelligence Lab, and About.
+- Converted wide multi-column sections to two-column tablet layouts and one-column mobile layouts.
+- Reduced fixed heights, tightened hero spacing, and normalized CTA widths on small screens.
+- Added overflow protection and responsive media handling for images, cards, forms, and footer columns.
+- Bumped shared CSS/JS cache versions to v87.
+
+## Cleanup pass 19 – Navigation active states and Intelligence Lab dropdown
+- Added active-state handling for Offerings Overview and Analytics Health Check so the selected page is highlighted in the dropdown consistently.
+- Added an Intelligence Lab dropdown to the primary navigation matching the Our Offerings behavior.
+- Linked the Intelligence Lab dropdown to the overview and all current Intelligence Lab service anchors.
+- Added dynamic navigation highlighting for Intelligence Lab hash links.
+- Bumped shared cache references to `v=88`.
+
+
+## Cleanup pass 24 – v89 font, fit check, and engagement shape polish
+- Normalized typography across pages, forms, buttons, cards, and navigation.
+- Added spacing in the How We Help situation cards so yellow action text no longer crowds white body text.
+- Rebuilt Fractional Analytics Engagement Shape from three separate flip cards into one large flippable card covering Advisor, Operator, and Embedded Partner.
+- Kept the Analytics Health Check page named Analytics Health Check while preserving the free Fit Check intake as the starting action.
+- Restored the interactive Fit Check path finder inside Our Offerings Pricing and Fit so selected needs light up the recommended engagement card.
+- Reworked Our Offerings sample outputs into three more polished scenario-based examples.
+- Bumped shared CSS/JS cache versions to v89.
+
+
+## Cleanup pass v90 – Home arrows, Health Check samples, Fractional shape
+- Removed the duplicate Home “View example” arrow caused by the external-link pseudo-element.
+- Rebuilt the Analytics Health Check sample output into a navigable three-example presentation module.
+- Added three sample Health Check scenarios: dashboard trust breakdown, analytics bottleneck diagnosis, and intelligence readiness review.
+- Restored the Fractional Analytics Engagement Shape as one large stable flippable card on desktop, with readable stacked behavior on tablet/mobile.
+- Bumped shared CSS/JS cache versions to `v=90`.
+
+
+## Targeted v92 update from v90 rollback
+- Added stronger hover/focus affordance to Home View example links without reintroducing duplicate arrows.
+- Restored Fractional Analytics Engagement Shape to three even flippable cards: Advisor, Operator, and Embedded Partner.
+- Added a direct Free Fit Check link under Services in every footer.
+- Repaired the fractional flip-card JavaScript setup and bumped cache references to v92.
+
+
+## v93 – Fractional Analytics visual polish
+- Widened the Fractional Analytics Engagement Shape section and cards so the three options have more room on desktop.
+- Reworked flip-card behavior so each card rotates cleanly on its own center axis.
+- Added stronger tablet and mobile fallbacks for the Engagement Shape cards.
+- Added spacing between the Start Here title and supporting copy at the bottom of the Fractional Analytics page.
+- Bumped shared CSS/JS cache references to `v=93`.
+
+## Cleanup pass v95 – Nav hierarchy from v93 base
+- Rebuilt the update from the v93 Fractional polish package to avoid reverting prior Fractional Analytics layout fixes.
+- Added Free Fit Check directly into the Our Offerings top-ribbon dropdown.
+- Added visual hierarchy to the Our Offerings and Intelligence Lab dropdown menus with thicker gold bars for parent pages and thinner indented gold bars for in-page destinations.
+- Updated active nav logic so hash-based items like Free Fit Check and Intelligence Lab service anchors highlight without also highlighting their parent page item.
+- Bumped shared CSS/JS cache versions to v95.
+
+
+
+## Cleanup pass 31 – v96 hierarchy and Fractional flip correction
+- Moved Free Fit Check under Analytics Health Check in the Our Offerings dropdown hierarchy.
+- Increased visual indentation for Free Fit Check as a child path of Analytics Health Check.
+- Widened Fractional Analytics engagement shape cards and corrected the card flip so each card rotates on its own center axis.
+- Added extra spacing in the Fractional Analytics Start Here CTA section.
+- Bumped cache versions to v96.

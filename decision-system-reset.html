@@ -6,25 +6,34 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Decision System Reset | Parallax Data Lab</title>
 <meta content="A focused Parallax Data Lab engagement that rebuilds how decisions are defined, supported, owned, and acted on through analytics." name="description"/>
-<link href="home.css?v=84" rel="stylesheet"/>
+<link href="home.css?v=98" rel="stylesheet"/>
 <link href="apple-touch-icon.png" rel="apple-touch-icon"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="favicon.ico" rel="icon" sizes="any"/><meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Parallax Data Lab | Analytics Trust &amp; Decision Systems" property="og:title"/><meta content="Restore trust in analytics by fixing the definitions, logic, ownership, and decision systems beneath reporting." property="og:description"/><meta content="https://jonahnr.github.io/Website/social-preview.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Parallax Data Lab | Analytics Trust &amp; Decision Systems" name="twitter:title"/><meta content="Restore trust in analytics by fixing the foundation beneath reporting." name="twitter:description"/><meta content="https://jonahnr.github.io/Website/social-preview.png" name="twitter:image"/></head>
 <body>
 <canvas aria-hidden="true" id="constellation"></canvas>
 <header aria-label="Parallax site navigation" class="site-header">
-<a aria-label="Parallax Data Lab home" class="site-brand" href="index.html">
-<img alt="Parallax Data Lab" src="assets/parallax_data_lab_original_transparent.png"/>
-</a>
-<nav aria-label="Primary navigation">
+<a aria-label="Parallax Data Lab home" class="site-brand" href="index.html"><img alt="Parallax Data Lab" src="assets/parallax_data_lab_original_transparent.png"/></a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="mobile-nav-toggle" type="button"><span></span><span></span><span></span><em>Menu</em></button>
+<nav id="primary-navigation" aria-label="Primary navigation">
 <a href="index.html">Home</a>
 <a href="how-we-help.html">How We Help</a>
-<a href="intelligence-lab.html">Intelligence Lab</a>
-<div class="nav-dropdown">
-<a aria-current="page" class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
-<div aria-label="Offerings sections" class="nav-dropdown-menu">
-<a href="our-offerings.html">Offerings Overview</a>
-<a href="analytics-health-check.html">Analytics Health Check</a>
-<a aria-current="page" href="decision-system-reset.html">Decision System Reset</a>
-<a href="fractional-analytics.html">Fractional Analytics Consulting</a>
+<div class="nav-dropdown nav-dropdown-intelligence">
+<a class="nav-dropdown-toggle" href="intelligence-lab.html">Intelligence Lab</a>
+<div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
+<a class="nav-menu-parent" href="intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#predictive-risk-intelligence"><span>Predictive Risk Intelligence</span></a>
+</div>
+</div>
+<div class="nav-dropdown nav-dropdown-offerings">
+<a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
+<div aria-label="Offerings sections" class="nav-dropdown-menu nav-menu-hierarchy">
+<a class="nav-menu-parent" href="our-offerings.html"><span>Offerings Overview</span></a>
+<a class="nav-menu-parent" href="analytics-health-check.html"><span>Analytics Health Check</span></a>
+<a class="nav-menu-child nav-menu-fit-check" href="analytics-health-check.html#assessment-form-title"><span>Free Fit Check</span><em>Free</em></a>
+<a class="nav-menu-parent" href="decision-system-reset.html"><span>Decision System Reset</span></a>
+<a class="nav-menu-parent" href="fractional-analytics.html"><span>Fractional Analytics Consulting</span></a>
 </div>
 </div>
 <a href="about.html">About</a>
@@ -38,13 +47,13 @@
 <h1 id="reset-hero-title">Turn disputed metrics into decisions leaders can actually run.</h1>
 <p>Parallax rebuilds the decision layer around analytics: what decisions matter, which metrics inform them, who owns action, and when escalation should happen.</p>
 <div class="reset-hero-actions">
-<a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
+<a class="primary-action" href="analytics-health-check.html">Request a Free Fit Check</a>
 <a class="secondary-action" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a>
 </div>
 </div>
 <aside aria-label="Engagement at a glance" class="reset-glance reset-glance-refined">
 <p class="page-kicker">At a glance</p>
-<dl><div><dt>First Step &amp; Length</dt><dd>Analytics Health Check first; typical reset is 2-4 weeks</dd></div><div><dt>Best Fit</dt><dd>Reports no longer match how leaders make decisions</dd></div><div><dt>Outcome</dt><dd>Decision system and 90-day roadmap</dd></div></dl>
+<dl><div><dt>First Step &amp; Length</dt><dd>Free fit check first; typical reset is 2-4 weeks after scope is confirmed</dd></div><div><dt>Best Fit</dt><dd>Reports no longer match how leaders make decisions</dd></div><div><dt>Outcome</dt><dd>Decision system and 90-day roadmap</dd></div></dl>
 </aside>
 </div>
 </section>
@@ -263,9 +272,9 @@
 <section aria-labelledby="reset-cta-title" class="reset-cta-refined reveal-card">
 <p class="page-kicker">Start here</p>
 <h2 id="reset-cta-title">See whether a Decision System Reset is the right next move.</h2>
-<p>All reset work begins with the Analytics Health Check so the scope is grounded in your actual decision, metric, and ownership friction.</p>
+<p>All reset work begins with a free fit check. If deeper diagnosis is needed, the paid Analytics Health Check scopes the decision, metric, and ownership friction before reset work begins.</p>
 <div class="reset-cta-actions">
-<a class="primary-action" href="analytics-health-check.html">Request an Analytics Health Check</a>
+<a class="primary-action" href="analytics-health-check.html">Request a Free Fit Check</a>
 <a class="secondary-action" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a>
 </div>
 </section>
@@ -288,6 +297,7 @@
 </nav>
 <nav aria-label="Footer core services" class="site-footer-col">
 <h3>Services</h3>
+      <a href="analytics-health-check.html#assessment-form-title">Free Fit Check</a>
 <a href="analytics-health-check.html">Analytics Health Check</a>
 <a href="decision-system-reset.html">Decision System Reset</a>
 <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
@@ -308,6 +318,6 @@
 <div class="site-footer-bottom">
 <p>© 2026 Parallax Data Lab. All rights reserved.</p>
 </div>
-</footer><script src="home.js?v=84"></script>
+</footer><script src="home.js?v=98"></script>
 </body>
 </html>
