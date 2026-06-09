@@ -257,6 +257,124 @@ if (reduceMotion.addEventListener) {
   reduceMotion.addListener(handleMotionPreferenceChange);
 }
 
+
+function setupFitPathFinder() {
+  const finder = document.querySelector("[data-fit-path-finder]");
+  if (!finder) {
+    return;
+  }
+
+  const buttons = Array.from(finder.querySelectorAll("[data-fit-weights]"));
+  const cards = Array.from(document.querySelectorAll("[data-offering-path]"));
+  const resultTitle = finder.querySelector("[data-fit-result-title]");
+  const resultCopy = finder.querySelector("[data-fit-result-copy]");
+  const resultLink = finder.querySelector("[data-fit-result-link]");
+
+  const pathDetails = {
+    fit: {
+      title: "Free Fit Review",
+      copy: "Best when you want a no-cost starting point before deciding whether any paid work is needed.",
+      href: "analytics-health-check.html",
+      cta: "Start with a free fit review"
+    },
+    health: {
+      title: "Analytics Health Check",
+      copy: "Best when dashboards exist but trust is low, definitions have drifted, or leaders need a clear current-state readout.",
+      href: "analytics-health-check.html",
+      cta: "Scope the health check"
+    },
+    reset: {
+      title: "Decision System Reset",
+      copy: "Best when reports no longer match how leaders make decisions and the operating model needs to be rebuilt.",
+      href: "decision-system-reset.html",
+      cta: "Explore the reset"
+    },
+    fractional: {
+      title: "Fractional Analytics Consulting",
+      copy: "Best when analytics needs senior ownership, recurring judgment, and standards that stay useful as priorities shift.",
+      href: "fractional-analytics.html",
+      cta: "Explore fractional support"
+    },
+    lab: {
+      title: "Intelligence Lab",
+      copy: "Best when the foundation is stable enough for predictive, governed, or executive intelligence products.",
+      href: "intelligence-lab.html",
+      cta: "Explore Intelligence Lab"
+    }
+  };
+
+  const pathOrder = ["fit", "health", "reset", "fractional", "lab"];
+
+  function parseWeights(value) {
+    return value.split(",").reduce((weights, item) => {
+      const [path, score] = item.split(":");
+      const cleanPath = path?.trim();
+      const parsedScore = Number(score);
+      if (cleanPath && Number.isFinite(parsedScore)) {
+        weights[cleanPath] = parsedScore;
+      }
+      return weights;
+    }, {});
+  }
+
+  function updateRecommendation() {
+    const selected = buttons.filter((button) => button.getAttribute("aria-pressed") === "true");
+    const scores = Object.fromEntries(pathOrder.map((path) => [path, 0]));
+
+    selected.forEach((button) => {
+      const weights = parseWeights(button.dataset.fitWeights || "");
+      Object.entries(weights).forEach(([path, score]) => {
+        if (path in scores) {
+          scores[path] += score;
+        }
+      });
+    });
+
+    if (!selected.length) {
+      cards.forEach((card) => {
+        card.classList.remove("is-fit-match", "is-fit-dimmed");
+      });
+      if (resultTitle) resultTitle.textContent = "Select your needs above";
+      if (resultCopy) resultCopy.textContent = "The matching card below will light up once you choose what best describes your situation.";
+      if (resultLink) {
+        resultLink.href = "analytics-health-check.html";
+        resultLink.textContent = "Start with a free fit review";
+      }
+      return;
+    }
+
+    const bestPath = pathOrder.reduce((best, path) => {
+      if (scores[path] > scores[best]) return path;
+      return best;
+    }, pathOrder[0]);
+
+    cards.forEach((card) => {
+      const isMatch = card.dataset.offeringPath === bestPath;
+      card.classList.toggle("is-fit-match", isMatch);
+      card.classList.toggle("is-fit-dimmed", !isMatch);
+    });
+
+    const detail = pathDetails[bestPath];
+    if (resultTitle) resultTitle.textContent = detail.title;
+    if (resultCopy) resultCopy.textContent = detail.copy;
+    if (resultLink) {
+      resultLink.href = detail.href;
+      resultLink.textContent = detail.cta;
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.setAttribute("aria-pressed", "false");
+    button.addEventListener("click", () => {
+      const isPressed = button.getAttribute("aria-pressed") === "true";
+      button.setAttribute("aria-pressed", String(!isPressed));
+      updateRecommendation();
+    });
+  });
+
+  updateRecommendation();
+}
+
 resizeCanvas();
 drawConstellation();
 updateMotion();
@@ -268,6 +386,7 @@ setupCarousel("quote");
 setupCarousel("failure");
 setupCarousel("pattern");
 setupCarousel("proof");
+setupFitPathFinder();
 
 
 

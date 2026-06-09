@@ -162,3 +162,57 @@
 - Kept the Schedule Intro Call button centered inside the compact next-step card.
 - Updated About response timing to three business days for consistency.
 - Bumped cache version to v59.
+
+## Cleanup pass 31 - Home request polish
+- Removed the light blue diagnostic panel frame from the Home dashboard-chaos section and smoothed the section back into the shared page background.
+- Updated Home problem/example links so each View example opens in a new tab.
+- Added a compact Health Check next-steps block near the Home CTA.
+- Bumped the Home page cache references to v76.
+
+## Cleanup pass 17 - How We Help hero CTA polish
+- Added strong hero CTAs to How We Help: Request an Analytics Health Check and Compare Engagement Paths.
+- Styled the hero CTA pair with a gold primary action and dark-blue secondary action to match the Parallax visual system.
+- Bumped How We Help cache references to `v=77`.
+
+## Cleanup pass 18 – Offerings fit review and interactive path finder
+- Clarified that pricing is provided after the free fit review once scope is understood.
+- Replaced Health Check-first language across the Offerings Overview with free fit review-first language.
+- Added an interactive Pricing and Fit path finder that lets visitors select their needs and highlights the recommended offering card.
+- Updated Offerings Overview CTAs to emphasize the free fit review as the first step.
+- Bumped Offerings Overview shared CSS/JS references to `v=78`.
+
+## Cleanup pass 19 - Analytics Health Check clarity
+- Reframed the Analytics Health Check page around a clear three-step path: free fit review, paid scoped Health Check if needed, then a recommended next step.
+- Clarified that the fit review is free and the Analytics Health Check is a paid scoped initiative.
+- Added a representative sample Health Check output section with trust break, evidence pattern, decision impact, and recommendation cards.
+- Changed the form submit button from `Submit Health Check Request` to `Start Fit Review`.
+- Bumped the Analytics Health Check cache references to `v=79`.
+
+## Cleanup pass 21 - Fractional Analytics engagement shape clarity
+- Added hover flip-card behavior to the Fractional Analytics Engagement Shape cards.
+- Added commercial clarity on the back of each card for Advisor, Operator, and Embedded Partner.
+- Clarified the depth of each path: monthly advisory guidance, weekly or biweekly operating support, and recurring embedded leadership with hands-on ownership.
+- Added mobile-friendly fallback behavior so the commercial details remain visible on touch devices.
+- Bumped Fractional Analytics cache references to `v=81`.
+
+## Cleanup pass 22 - Intelligence Lab project detail cleanup
+- Reworked Intelligence Lab open detail panels into compact project snapshots so they no longer expand into long multi-section boxes.
+- Added clearer “what you are looking at” descriptions for each Intelligence Lab example.
+- Linked each example directly to its relevant project in a new tab: Operational Risk Digest, RLS Demo Webapp, Enterprise Outcome Studio, and Predictive Risk Intelligence.
+- Replaced the pending Customer Health card with a live Predictive Risk Intelligence card so every example has a concrete project destination.
+- Updated footer Intelligence Lab links across pages to point to the live Predictive Risk Intelligence card.
+- Bumped shared cache references to `v=82`.
+
+## Cleanup pass 36 – About consultancy positioning and credibility polish
+- Cleaned the About At a Glance panel so each item uses a single divider line.
+- Restyled the three About hero outcome boxes into a more modern compact card treatment.
+- Reframed About copy around Parallax as a small consultancy with more consistent “we” language.
+- Removed the founder cube from its framed panel treatment and widened it beneath the portrait area.
+- Added a short “Why teams bring Jonah in” credibility block with common buyer situations.
+- Bumped shared cache references to `v=83`.
+
+## Cleanup pass 37 – Contrast and Fractional card stabilization
+- Strengthened Analytics Health Check contrast across the path, fit, output, sample, and form sections.
+- Strengthened Decision System Reset participant section contrast so headings, card labels, and body copy are consistently readable.
+- Replaced the fragile Fractional Analytics Engagement Shape flip behavior with stable commercial-depth cards that show the offer details directly.
+- Bumped shared cache references to `v=84`.
