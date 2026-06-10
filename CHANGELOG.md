@@ -331,3 +331,11 @@
 - Added a stable back-content panel to the Fractional Analytics Engagement Shape cards so contextual examples remain visible after the card flips.
 - Improved contrast for the Engagement Shape helper text.
 - Bumped cache references to v=104.
+
+## Cleanup pass 18 – Footer, navigation, favicon, and SEO polish
+- Replaced mojibake copyright text with a safe `&copy;` footer entity across all HTML pages.
+- Moved Our Offerings ahead of Intelligence Lab in the primary navigation so Intelligence Lab reads as a premium path after the core service paths.
+- Compressed repeated diagnostic language on the Home and How We Help pages while keeping the same conversion flow.
+- Added root-level favicon files: `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, and a refreshed `social-preview.png`.
+- Added cache-busting to favicon links and bumped shared CSS/JS references to `v=105`.
+- Updated page titles, meta descriptions, Open Graph/Twitter tags, keyword tags, and WebPage JSON-LD descriptions so each page has a unique search target.

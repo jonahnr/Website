@@ -27,6 +27,13 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `sitemap.xml` - Search engine sitemap for indexable pages.
 - `robots.txt` - Search crawler instructions pointing to the sitemap.
 
+Root favicon files:
+
+- `favicon.svg`
+- `favicon.ico`
+- `apple-touch-icon.png`
+- `social-preview.png`
+
 ## Live Page Behavior
 
 The site includes:
@@ -116,8 +123,8 @@ Before publishing, make sure these files and folders are committed and pushed:
 
 All HTML pages currently reference:
 
-- `home.css?v=88`
-- `home.js?v=88`
+- `home.css?v=105`
+- `home.js?v=105`
 
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 
