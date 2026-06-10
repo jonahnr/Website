@@ -551,58 +551,60 @@ function setupMobileNavigation() {
 
 setupMobileNavigation();
 
+function getPageKey(pathname) {
+  let path = (pathname || "/").split("?")[0].split("#")[0];
+  path = path.replace(/\/+$/g, "");
+
+  if (!path || path === "/" || path.toLowerCase() === "/index.html") {
+    return "home";
+  }
+
+  const lastPart = path.split("/").filter(Boolean).pop() || "index";
+  return lastPart.replace(/\.html$/i, "").toLowerCase();
+}
+
 function setupActiveNavigation() {
-  const nav = document.querySelector('#primary-navigation');
+  const nav = document.querySelector("#primary-navigation");
   if (!nav) {
     return;
   }
 
-  function normalizeNavPath(pathname) {
-    let path = (pathname || '').toLowerCase();
-    path = path.replace(/\\/g, '/');
-    path = path.replace(/\/index\.html$/i, '/');
-    path = path.replace(/\.html$/i, '');
-    path = path.replace(/\/+$/g, '');
-    const parts = path.split('/').filter(Boolean);
-    return parts[parts.length - 1] || 'home';
-  }
-
-  const page = normalizeNavPath(window.location.pathname);
-  const hash = window.location.hash || '';
+  const page = getPageKey(window.location.pathname);
+  const hash = window.location.hash || "";
   const offeringPages = new Set([
-    'our-offerings',
-    'analytics-health-check',
-    'decision-system-reset',
-    'fractional-analytics'
+    "our-offerings",
+    "analytics-health-check",
+    "decision-system-reset",
+    "fractional-analytics"
   ]);
 
   nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
-    link.removeAttribute('aria-current');
-    link.classList.remove('is-active');
+    link.removeAttribute("aria-current");
+    link.classList.remove("is-active");
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
-    const href = link.getAttribute('href');
-    if (!href) {
+  nav.querySelectorAll("a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
       return;
     }
 
     const target = new URL(href, window.location.href);
-    const targetPage = normalizeNavPath(target.pathname);
-    const targetHash = target.hash || '';
-    const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
-    const isDropdownMenuItem = Boolean(link.closest('.nav-dropdown-menu'));
+    const targetPage = getPageKey(target.pathname);
+    const targetHash = target.hash || "";
+    const isDropdownToggle = link.classList.contains("nav-dropdown-toggle");
+    const isDropdownMenuItem = Boolean(link.closest(".nav-dropdown-menu"));
     let isCurrent = false;
 
-    if (isDropdownToggle && link.closest('.nav-dropdown-offerings')) {
+    if (isDropdownToggle && link.closest(".nav-dropdown-offerings")) {
       isCurrent = offeringPages.has(page);
-    } else if (isDropdownToggle && link.closest('.nav-dropdown-intelligence')) {
-      isCurrent = page === 'intelligence-lab';
+    } else if (isDropdownToggle && link.closest(".nav-dropdown-intelligence")) {
+      isCurrent = page === "intelligence-lab";
     } else if (isDropdownMenuItem && targetHash) {
       isCurrent = targetPage === page && targetHash === hash;
-    } else if (isDropdownMenuItem && targetPage === 'intelligence-lab') {
+    } else if (isDropdownMenuItem && targetPage === "intelligence-lab") {
       isCurrent = page === targetPage && !hash;
-    } else if (isDropdownMenuItem && targetPage === 'our-offerings') {
+    } else if (isDropdownMenuItem && targetPage === "our-offerings") {
       isCurrent = page === targetPage;
     } else if (isDropdownMenuItem) {
       isCurrent = targetPage === page && !hash;
@@ -611,11 +613,11 @@ function setupActiveNavigation() {
     }
 
     if (isCurrent) {
-      link.setAttribute('aria-current', 'page');
-      link.classList.add('is-active');
+      link.setAttribute("aria-current", "page");
+      link.classList.add("is-active");
     }
   });
 }
 
 setupActiveNavigation();
-window.addEventListener('hashchange', setupActiveNavigation);
+window.addEventListener("hashchange", setupActiveNavigation);

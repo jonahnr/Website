@@ -1,0 +1,11 @@
+Use this v2 local-friendly Cloudflare package.
+
+For direct file testing:
+- Open index.html, about.html, how-we-help.html directly.
+- Formatting should load because CSS and JS use relative paths.
+
+For clean URL testing:
+- Run npx wrangler pages dev .
+- Open http://localhost:8788/about/
+
+Do not delete your assets/ folder when copying these files into the repo.
