@@ -413,6 +413,89 @@ function setupFitPathFinder() {
   updateRecommendation();
 }
 
+
+function setupAnalyticsEventTracking() {
+  function sendAnalyticsEvent(eventName, params = {}) {
+    if (typeof window.gtag !== "function") {
+      return;
+    }
+
+    window.gtag("event", eventName, {
+      page_path: window.location.pathname,
+      page_title: document.title,
+      ...params
+    });
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a");
+    if (!link) {
+      return;
+    }
+
+    const href = link.getAttribute("href") || "";
+    const text = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const destination = link.href || href;
+    const classes = link.className || "";
+    const eventParams = {
+      link_text: text,
+      link_url: destination,
+      link_classes: String(classes)
+    };
+
+    if (/calendly\.com/i.test(destination)) {
+      sendAnalyticsEvent("calendly_click", eventParams);
+      return;
+    }
+
+    if (/mailto:/i.test(href)) {
+      sendAnalyticsEvent("email_click", eventParams);
+      return;
+    }
+
+    if (/analytics-health-check\.html/i.test(destination) || /Free Fit Check|Fit Check/i.test(text)) {
+      sendAnalyticsEvent("fit_check_cta_click", eventParams);
+      return;
+    }
+
+    if (/our-offerings\.html#offer-chooser|Compare Engagement Paths/i.test(destination + " " + text)) {
+      sendAnalyticsEvent("offering_compare_click", eventParams);
+      return;
+    }
+
+    if (/enterprise-outcome-studio|Predictive-Risk-Intelligence/i.test(destination)) {
+      sendAnalyticsEvent("external_demo_click", eventParams);
+    }
+  });
+
+  document.addEventListener("submit", (event) => {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement)) {
+      return;
+    }
+
+    const action = form.getAttribute("action") || "";
+    if (/formsubmit\.co/i.test(action)) {
+      sendAnalyticsEvent("fit_check_form_submit", {
+        form_class: form.className || "",
+        form_action: action
+      });
+    }
+  }, true);
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-fit-option]");
+    if (!button) {
+      return;
+    }
+
+    sendAnalyticsEvent("fit_path_finder_used", {
+      option_label: (button.textContent || "").replace(/\s+/g, " ").trim(),
+      option_weights: button.dataset.weights || ""
+    });
+  });
+}
+
 resizeCanvas();
 drawConstellation();
 updateMotion();
@@ -427,6 +510,7 @@ setupCarousel("proof");
 setupCarousel("healthSample");
 setupFractionalFlipCards();
 setupFitPathFinder();
+setupAnalyticsEventTracking();
 
 
 
