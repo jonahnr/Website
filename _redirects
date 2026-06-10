@@ -1,0 +1,48 @@
+# Cloudflare Pages clean URL routing for Parallax Data Lab
+# This package keeps flat .html files and relative asset paths so files are easy to open locally.
+# Cloudflare serves the clean public URLs and rewrites nested asset requests back to root assets.
+
+# Shared asset rewrites for clean URL pages using relative paths
+/:slug/home.css /home.css 200
+/:slug/home.js /home.js 200
+/:slug/assets/* /assets/:splat 200
+/:slug/favicon.svg /favicon.svg 200
+/:slug/favicon.ico /favicon.ico 200
+/:slug/apple-touch-icon.png /apple-touch-icon.png 200
+/:slug/social-preview.png /social-preview.png 200
+
+# No-trailing-slash cleanup
+/how-we-help /how-we-help/ 301
+/our-offerings /our-offerings/ 301
+/analytics-health-check /analytics-health-check/ 301
+/decision-system-reset /decision-system-reset/ 301
+/fractional-analytics /fractional-analytics/ 301
+/intelligence-lab /intelligence-lab/ 301
+/about /about/ 301
+/privacy-policy /privacy-policy/ 301
+/thank-you /thank-you/ 301
+
+# Clean URL rewrites
+/how-we-help/ /how-we-help.html 200
+/our-offerings/ /our-offerings.html 200
+/analytics-health-check/ /analytics-health-check.html 200
+/decision-system-reset/ /decision-system-reset.html 200
+/fractional-analytics/ /fractional-analytics.html 200
+/intelligence-lab/ /intelligence-lab.html 200
+/about/ /about.html 200
+/privacy-policy/ /privacy-policy.html 200
+/thank-you/ /thank-you.html 200
+
+# Redirect old .html URLs to clean URLs
+/how-we-help.html /how-we-help/ 301
+/our-offerings.html /our-offerings/ 301
+/analytics-health-check.html /analytics-health-check/ 301
+/decision-system-reset.html /decision-system-reset/ 301
+/fractional-analytics.html /fractional-analytics/ 301
+/intelligence-lab.html /intelligence-lab/ 301
+/about.html /about/ 301
+/privacy-policy.html /privacy-policy/ 301
+/thank-you.html /thank-you/ 301
+
+# Homepage cleanup
+/index.html / 301
