@@ -1,6 +1,6 @@
-# Parallax Data Lab Website
+﻿# Parallax Data Lab Website
 
-Static GitHub Pages site for Parallax Data Lab, centered on the Analytics Health Check, Decision System Reset, Fractional Analytics Consulting, and Intelligence Lab paths.
+Static website for Parallax Data Lab at parallaxdatalab.com, centered on the Analytics Health Check, Decision System Reset, Fractional Analytics Consulting, and Intelligence Lab paths.
 
 ## GitHub Pages Entry Point
 
@@ -122,3 +122,5 @@ All HTML pages currently reference:
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 
 If the page shows a 404, confirm GitHub Pages is pointed at the branch and folder containing `index.html`.
+
+
