@@ -20,9 +20,12 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `decision-system-reset.html` - Decision System Reset service page.
 - `fractional-analytics.html` - Fractional Analytics Consulting page.
 - `about.html` - About page and founder context.
+- `privacy-policy.html` - Privacy policy for analytics, forms, scheduling, and contact data.
 - `home.css` - Shared styling, responsive layout, navigation, card visuals, subpage layouts, and carousel states.
 - `home.js` - Animated background, scroll reveals, pointer motion, dropdown handling, and carousel transitions.
 - `ASSET-CHECKLIST.md` - Full list of every asset path referenced by the HTML and CSS.
+- `sitemap.xml` - Search engine sitemap for indexable pages.
+- `robots.txt` - Search crawler instructions pointing to the sitemap.
 
 ## Live Page Behavior
 
