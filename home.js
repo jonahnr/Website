@@ -557,13 +557,23 @@ function setupActiveNavigation() {
     return;
   }
 
-  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  function normalizeNavPath(pathname) {
+    let path = (pathname || '').toLowerCase();
+    path = path.replace(/\\/g, '/');
+    path = path.replace(/\/index\.html$/i, '/');
+    path = path.replace(/\.html$/i, '');
+    path = path.replace(/\/+$/g, '');
+    const parts = path.split('/').filter(Boolean);
+    return parts[parts.length - 1] || 'home';
+  }
+
+  const page = normalizeNavPath(window.location.pathname);
   const hash = window.location.hash || '';
   const offeringPages = new Set([
-    'our-offerings.html',
-    'analytics-health-check.html',
-    'decision-system-reset.html',
-    'fractional-analytics.html'
+    'our-offerings',
+    'analytics-health-check',
+    'decision-system-reset',
+    'fractional-analytics'
   ]);
 
   nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
@@ -578,7 +588,7 @@ function setupActiveNavigation() {
     }
 
     const target = new URL(href, window.location.href);
-    const targetPage = (target.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const targetPage = normalizeNavPath(target.pathname);
     const targetHash = target.hash || '';
     const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
     const isDropdownMenuItem = Boolean(link.closest('.nav-dropdown-menu'));
@@ -587,12 +597,12 @@ function setupActiveNavigation() {
     if (isDropdownToggle && link.closest('.nav-dropdown-offerings')) {
       isCurrent = offeringPages.has(page);
     } else if (isDropdownToggle && link.closest('.nav-dropdown-intelligence')) {
-      isCurrent = page === 'intelligence-lab.html';
+      isCurrent = page === 'intelligence-lab';
     } else if (isDropdownMenuItem && targetHash) {
       isCurrent = targetPage === page && targetHash === hash;
-    } else if (isDropdownMenuItem && targetPage === 'intelligence-lab.html') {
+    } else if (isDropdownMenuItem && targetPage === 'intelligence-lab') {
       isCurrent = page === targetPage && !hash;
-    } else if (isDropdownMenuItem && targetPage === 'our-offerings.html') {
+    } else if (isDropdownMenuItem && targetPage === 'our-offerings') {
       isCurrent = page === targetPage;
     } else if (isDropdownMenuItem) {
       isCurrent = targetPage === page && !hash;
