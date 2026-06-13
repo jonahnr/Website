@@ -545,6 +545,18 @@ function setupAnalyticsEventTracking() {
       option_weights: button.dataset.weights || ""
     });
   });
+
+  window.addEventListener("message", (event) => {
+    const calendlyOrigin = /^https:\/\/(.+\.)?calendly\.com$/i.test(event.origin || "");
+    const calendlyEvent = event.data && typeof event.data.event === "string" && event.data.event.indexOf("calendly.") === 0;
+    if (!calendlyOrigin || !calendlyEvent) {
+      return;
+    }
+
+    sendAnalyticsEvent(event.data.event.replace("calendly.", "calendly_"), {
+      calendly_event: event.data.event
+    });
+  });
 }
 
 resizeCanvas();
