@@ -1,687 +1,176 @@
-document.body.classList.add("has-js");
-
-const canvas = document.querySelector("#constellation");
-const ctx = canvas.getContext("2d");
-const motionLayers = Array.from(document.querySelectorAll(".motion-layer"));
-const revealCards = Array.from(document.querySelectorAll(".reveal-card"));
-const dropdowns = Array.from(document.querySelectorAll(".nav-dropdown"));
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const carousels = new Map();
-const insightFilterButtons = Array.from(document.querySelectorAll("[data-insight-filter]"));
-const insightCards = Array.from(document.querySelectorAll(".insight-card[data-category]"));
-const insightsResults = document.querySelector("[data-insights-results]");
-const insightsSearch = document.querySelector("[data-insights-search]");
-
-let width = 0;
-let height = 0;
-let points = [];
-let pointerX = 0.5;
-let pointerY = 0.5;
-let frame = null;
-
-function resizeCanvas() {
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = Math.floor(width * ratio);
-  canvas.height = Math.floor(height * ratio);
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-  const count = Math.max(42, Math.min(92, Math.floor(width / 17)));
-  points = Array.from({ length: count }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.26,
-    vy: (Math.random() - 0.5) * 0.26,
-    r: 1 + Math.random() * 2.4,
-    tone: Math.random()
-  }));
-}
-
-function drawConstellation() {
-  if (reduceMotion.matches) {
-    return;
-  }
-
-  ctx.clearRect(0, 0, width, height);
-
-  points.forEach((point, index) => {
-    point.x += point.vx + (pointerX - 0.5) * 0.05;
-    point.y += point.vy + (pointerY - 0.5) * 0.05;
-
-    if (point.x < -32) point.x = width + 32;
-    if (point.x > width + 32) point.x = -32;
-    if (point.y < -32) point.y = height + 32;
-    if (point.y > height + 32) point.y = -32;
-
-    const color = point.tone > 0.74 ? "247, 185, 53" : point.tone > 0.48 ? "24, 211, 181" : "49, 168, 255";
-    ctx.beginPath();
-    ctx.arc(point.x, point.y, point.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${color}, 0.56)`;
-    ctx.fill();
-
-    for (let next = index + 1; next < points.length; next += 1) {
-      const other = points[next];
-      const dx = point.x - other.x;
-      const dy = point.y - other.y;
-      const distance = Math.hypot(dx, dy);
-
-      if (distance < 136) {
-        ctx.beginPath();
-        ctx.moveTo(point.x, point.y);
-        ctx.lineTo(other.x, other.y);
-        ctx.strokeStyle = `rgba(49, 168, 255, ${0.12 * (1 - distance / 136)})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      }
-    }
-  });
-
-  frame = requestAnimationFrame(drawConstellation);
-}
-
-function updateMotion() {
-  if (reduceMotion.matches) {
-    motionLayers.forEach((layer) => {
-      layer.style.transform = "";
-    });
-    return;
-  }
-
-  motionLayers.forEach((layer) => {
-    const depth = Number(layer.dataset.depth || 0);
-    layer.style.transform = `translate3d(${(pointerX - 0.5) * depth * -28}px, ${(pointerY - 0.5) * depth * -16}px, 0)`;
-  });
-}
-
-
-function updateParallaxScroll() {
-  const scrollValue = `${window.scrollY || 0}px`;
-  document.documentElement.style.setProperty("--parallax-scroll", scrollValue);
-  const fractionalPage = document.querySelector(".fractional-page");
-  if (fractionalPage) {
-    fractionalPage.style.setProperty("--parallax-scroll", scrollValue);
-  }
-}
-
-function revealOnScroll() {
-  const trigger = window.innerHeight * 0.86;
-  revealCards.forEach((card) => {
-    card.classList.toggle("is-visible", card.getBoundingClientRect().top < trigger);
-  });
-}
-
-function setupCarousel(name) {
-  const items = Array.from(document.querySelectorAll(`[data-carousel-item="${name}"]`));
-  const previous = document.querySelector(`[data-carousel-prev="${name}"]`);
-  const next = document.querySelector(`[data-carousel-next="${name}"]`);
-  const status = document.querySelector(`[data-carousel-status="${name}"]`);
-
-  if (!items.length || !previous || !next || !status) {
-    return;
-  }
-
-  const pages = Math.max(...items.map((item) => Number(item.dataset.page || 0))) + 1;
-  const state = { index: 0, items, pages, previous, next, status };
-  carousels.set(name, state);
-  items[0].parentElement?.classList.add("is-carousel-ready");
-
-  function render() {
-    state.items.forEach((item) => {
-      const isActive = Number(item.dataset.page || 0) === state.index;
-      item.classList.toggle("is-hidden", !isActive);
-      item.setAttribute("aria-hidden", String(!isActive));
-    });
-
-    state.status.textContent = `${state.index + 1} / ${state.pages}`;
-  }
-
-  previous.addEventListener("click", () => {
-    state.index = (state.index - 1 + state.pages) % state.pages;
-    render();
-  });
-
-  next.addEventListener("click", () => {
-    state.index = (state.index + 1) % state.pages;
-    render();
-  });
-
-  render();
-}
-
-function setupInsightFilters() {
-  if (!insightFilterButtons.length || !insightCards.length) {
-    return;
-  }
-
-  let activeCategory = "all";
-
-  function renderFilter(category) {
-    activeCategory = category;
-    const query = (insightsSearch?.value || "").trim().toLowerCase();
-    let visibleCount = 0;
-    insightCards.forEach((card) => {
-      const categoryMatches = category === "all" || card.dataset.category === category;
-      const textMatches = !query || card.textContent.toLowerCase().includes(query);
-      const isVisible = categoryMatches && textMatches;
-      card.classList.toggle("is-filtered-out", !isVisible);
-      card.setAttribute("aria-hidden", String(!isVisible));
-      if (isVisible) {
-        visibleCount += 1;
-      }
-    });
-
-    const insightsPage = document.querySelector(".insights-page");
-    if (insightsPage) {
-      insightsPage.dataset.activeFilter = category;
-    }
-
-    if (insightsResults) {
-      const categoryLabel = category === "all" ? "articles" : `${category} articles`;
-      insightsResults.textContent = query ? `${visibleCount} matching ${categoryLabel}` : `${visibleCount} ${categoryLabel}`;
-    }
-  }
-
-  insightFilterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      insightFilterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
-      renderFilter(button.dataset.insightFilter || "all");
-    });
-  });
-
-  if (insightsSearch) {
-    insightsSearch.addEventListener("input", () => renderFilter(activeCategory));
-  }
-
-  renderFilter("all");
-}
-
-function closeDropdowns(except = null) {
-  dropdowns.forEach((dropdown) => {
-    if (dropdown === except) {
-      return;
-    }
-
-    dropdown.classList.remove("is-open");
-    const toggle = dropdown.querySelector(".nav-dropdown-toggle");
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", "false");
-    }
-  });
-}
-
-function setupDropdowns() {
-  dropdowns.forEach((dropdown) => {
-    if (dropdown.tagName === "DETAILS") {
-      return;
-    }
-
-    const toggle = dropdown.querySelector(".nav-dropdown-toggle");
-    if (!toggle) {
-      return;
-    }
-
-    const isLinkToggle = toggle.tagName.toLowerCase() === "a" && toggle.getAttribute("href");
-    if (isLinkToggle) {
-      toggle.setAttribute("aria-haspopup", "true");
-      return;
-    }
-
-    function toggleDropdown(event) {
-      event.stopPropagation();
-      event.preventDefault();
-      const willOpen = !dropdown.classList.contains("is-open");
-      closeDropdowns(dropdown);
-      dropdown.classList.toggle("is-open", willOpen);
-      toggle.setAttribute("aria-expanded", String(willOpen));
-    }
-
-    toggle.addEventListener("click", toggleDropdown);
-  });
-
-  document.addEventListener("click", () => closeDropdowns());
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeDropdowns();
-    }
-  });
-}
-
-
-
-const realParallaxItems = Array.from(document.querySelectorAll('[data-parallax-speed]'));
-
-function updateRealParallax() {
-  if (reduceMotion.matches || !realParallaxItems.length) {
-    realParallaxItems.forEach((item) => item.style.setProperty('--real-parallax-y', '0px'));
-    return;
-  }
-
-  const viewportCenter = height / 2;
-  realParallaxItems.forEach((item) => {
-    const rect = item.getBoundingClientRect();
-    const elementCenter = rect.top + rect.height / 2;
-    const distanceFromCenter = viewportCenter - elementCenter;
-    const normalized = Math.max(-1, Math.min(1, distanceFromCenter / Math.max(height, 1)));
-    const speed = Number(item.dataset.parallaxSpeed || 0);
-    item.style.setProperty('--real-parallax-y', `${(normalized * speed).toFixed(2)}px`);
-  });
-}
-
-function setupFractionalFlipCards() {
-  const cards = Array.from(document.querySelectorAll(".fractional-flip-card, .pdl-flip-card"));
-  if (!cards.length) {
-    return;
-  }
-
-  cards.forEach((card) => {
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-pressed", "false");
-    card.setAttribute("aria-expanded", "false");
-
-    function setFlipped(isFlipped) {
-      card.classList.toggle("is-flipped", isFlipped);
-      card.setAttribute("aria-pressed", String(isFlipped));
-      card.setAttribute("aria-expanded", String(isFlipped));
-    }
-
-    card.addEventListener("click", (event) => {
-      const interactive = event.target.closest("a, button, input, textarea, select");
-      if (interactive) {
-        return;
-      }
-      setFlipped(!card.classList.contains("is-flipped"));
-    });
-
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        setFlipped(!card.classList.contains("is-flipped"));
-      }
-
-      if (event.key === "Escape") {
-        setFlipped(false);
-      }
-    });
-  });
-}
-
-window.addEventListener("resize", () => {
-  resizeCanvas();
-  updateParallaxScroll();
-  updateRealParallax();
-  revealOnScroll();
-});
-
-window.addEventListener("scroll", () => {
-  updateParallaxScroll();
-  updateRealParallax();
-  revealOnScroll();
-}, { passive: true });
-
-window.addEventListener("pointermove", (event) => {
-  pointerX = event.clientX / Math.max(width, 1);
-  pointerY = event.clientY / Math.max(height, 1);
-  updateMotion();
-  updateRealParallax();
-}, { passive: true });
-
-function handleMotionPreferenceChange() {
-  if (reduceMotion.matches && frame) {
-    cancelAnimationFrame(frame);
-    frame = null;
-    ctx.clearRect(0, 0, width, height);
-  } else if (!frame) {
-    drawConstellation();
-  }
-  updateMotion();
-  updateRealParallax();
-}
-
-if (reduceMotion.addEventListener) {
-  reduceMotion.addEventListener("change", handleMotionPreferenceChange);
-} else if (reduceMotion.addListener) {
-  reduceMotion.addListener(handleMotionPreferenceChange);
-}
-
-
-function setupFitPathFinder() {
-  const finder = document.querySelector("[data-fit-path-finder]");
-  if (!finder) {
-    return;
-  }
-
-  const buttons = Array.from(finder.querySelectorAll("[data-fit-weights]"));
-  const cards = Array.from(document.querySelectorAll("[data-offering-path]"));
-  const resultTitle = finder.querySelector("[data-fit-result-title]");
-  const resultCopy = finder.querySelector("[data-fit-result-copy]");
-  const resultLink = finder.querySelector("[data-fit-result-link]");
-
-  const pathDetails = {
-    fit: {
-      title: "Free Fit Check",
-      copy: "Best when you want a no-cost starting point before deciding whether any paid work is needed.",
-      href: "analytics-health-check.html#assessment-form-title",
-      cta: "Start Free Fit Check"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thank You | Parallax Data Lab</title>
+<meta content="Thank you for contacting Parallax Data Lab. We will review your request and follow up with the clearest next step." name="description"/>
+<meta name="keywords" content="thank you, Parallax Data Lab, analytics consulting request, fit check submission"/>
+<meta name="robots" content="noindex,follow"/>
+<link rel="canonical" href="https://parallaxdatalab.com/thank-you/"/>
+<link href="home.css?v=108" rel="stylesheet"/>
+<meta name="theme-color" content="#0b1745"/>
+<link href="apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="favicon.ico?v=106" rel="icon" sizes="any"/><meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Thank You | Parallax Data Lab" property="og:title"/><meta content="Thank you for contacting Parallax Data Lab. We will review your request and follow up with the clearest next step." property="og:description"/><meta content="https://parallaxdatalab.com/thank-you/" property="og:url"/><meta content="https://parallaxdatalab.com/social-preview.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Thank You | Parallax Data Lab" name="twitter:title"/><meta content="Thank you for contacting Parallax Data Lab. We will review your request and follow up with the clearest next step." name="twitter:description"/><meta content="https://parallaxdatalab.com/social-preview.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://parallaxdatalab.com/#organization",
+      "name": "Parallax Data Lab",
+      "url": "https://parallaxdatalab.com/",
+      "logo": "https://parallaxdatalab.com/assets/parallax_data_lab_original_transparent.png",
+      "image": "https://parallaxdatalab.com/social-preview.png",
+      "email": "jonahnr@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Jonah Robinson"
+      },
+      "description": "Analytics consulting for BI reporting trust, dashboard clarity, metrics governance, data strategy, and decision systems."
     },
-    health: {
-      title: "Analytics Health Check",
-      copy: "Best when dashboards exist but trust is low, definitions have drifted, or leaders need a clear current-state readout.",
-      href: "analytics-health-check.html",
-      cta: "Scope the health check"
-    },
-    reset: {
-      title: "Decision System Reset",
-      copy: "Best when reports no longer match how leaders make decisions and the operating model needs to be rebuilt.",
-      href: "decision-system-reset.html",
-      cta: "Explore the reset"
-    },
-    fractional: {
-      title: "Fractional Analytics Consulting",
-      copy: "Best when analytics needs senior ownership, recurring judgment, and standards that stay useful as priorities shift.",
-      href: "fractional-analytics.html",
-      cta: "Explore fractional support"
-    },
-    lab: {
-      title: "Intelligence Lab",
-      copy: "Best when the foundation is stable enough for predictive, governed, or executive intelligence products.",
-      href: "intelligence-lab.html",
-      cta: "Explore Intelligence Lab"
-    }
-  };
-
-  const pathOrder = ["fit", "health", "reset", "fractional", "lab"];
-
-  function parseWeights(value) {
-    return value.split(",").reduce((weights, item) => {
-      const [path, score] = item.split(":");
-      const cleanPath = path?.trim();
-      const parsedScore = Number(score);
-      if (cleanPath && Number.isFinite(parsedScore)) {
-        weights[cleanPath] = parsedScore;
+    {
+      "@type": "WebSite",
+      "@id": "https://parallaxdatalab.com/#website",
+      "name": "Parallax Data Lab",
+      "url": "https://parallaxdatalab.com/",
+      "publisher": {
+        "@id": "https://parallaxdatalab.com/#organization"
       }
-      return weights;
-    }, {});
-  }
-
-  function updateRecommendation() {
-    const selected = buttons.filter((button) => button.getAttribute("aria-pressed") === "true");
-    const scores = Object.fromEntries(pathOrder.map((path) => [path, 0]));
-
-    selected.forEach((button) => {
-      const weights = parseWeights(button.dataset.fitWeights || "");
-      Object.entries(weights).forEach(([path, score]) => {
-        if (path in scores) {
-          scores[path] += score;
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://parallaxdatalab.com/thank-you/#webpage",
+      "url": "https://parallaxdatalab.com/thank-you/",
+      "name": "Thank You | Parallax Data Lab",
+      "description": "Thank you for contacting Parallax Data Lab. We will review your request and follow up with the clearest next step.",
+      "isPartOf": {
+        "@id": "https://parallaxdatalab.com/#website"
+      },
+      "about": {
+        "@id": "https://parallaxdatalab.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://parallaxdatalab.com/thank-you/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://parallaxdatalab.com/thank-you/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://parallaxdatalab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Thank You",
+          "item": "https://parallaxdatalab.com/thank-you/"
         }
-      });
-    });
-
-    if (!selected.length) {
-      cards.forEach((card) => {
-        card.classList.remove("is-fit-match", "is-fit-dimmed");
-      });
-      if (resultTitle) resultTitle.textContent = "Select your needs above";
-      if (resultCopy) resultCopy.textContent = "The matching card below will light up once you choose what best describes your situation.";
-      if (resultLink) {
-        resultLink.href = "analytics-health-check.html#assessment-form-title";
-        resultLink.textContent = "Start Free Fit Check";
-      }
-      return;
+      ]
     }
-
-    const bestPath = pathOrder.reduce((best, path) => {
-      if (scores[path] > scores[best]) return path;
-      return best;
-    }, pathOrder[0]);
-
-    cards.forEach((card) => {
-      const isMatch = card.dataset.offeringPath === bestPath;
-      card.classList.toggle("is-fit-match", isMatch);
-      card.classList.toggle("is-fit-dimmed", !isMatch);
-    });
-
-    const detail = pathDetails[bestPath];
-    if (resultTitle) resultTitle.textContent = detail.title;
-    if (resultCopy) resultCopy.textContent = detail.copy;
-    if (resultLink) {
-      resultLink.href = detail.href;
-      resultLink.textContent = detail.cta;
-    }
-  }
-
-  buttons.forEach((button) => {
-    button.setAttribute("aria-pressed", "false");
-    button.addEventListener("click", () => {
-      const isPressed = button.getAttribute("aria-pressed") === "true";
-      button.setAttribute("aria-pressed", String(!isPressed));
-      updateRecommendation();
-    });
-  });
-
-  updateRecommendation();
+  ]
 }
+</script><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK9PM083W7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-GK9PM083W7');
+</script>
+</head>
+<body>
+<canvas aria-hidden="true" id="constellation"></canvas>
+<header aria-label="Parallax site navigation" class="site-header">
+<a aria-label="Parallax Data Lab home" class="site-brand" href="index.html"><img alt="Parallax Data Lab" src="assets/parallax_data_lab_original_transparent.png"/></a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="mobile-nav-toggle" type="button"><span></span><span></span><span></span><em>Menu</em></button>
+<nav id="primary-navigation" aria-label="Primary navigation">
+<a href="index.html">Home</a>
+<a href="how-we-help.html">How We Help</a>
+<div class="nav-dropdown nav-dropdown-offerings">
+<a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
+<div aria-label="Offerings sections" class="nav-dropdown-menu nav-menu-hierarchy">
+<a class="nav-menu-parent" href="our-offerings.html"><span>Offerings Overview</span></a>
+<a class="nav-menu-parent" href="analytics-health-check.html"><span>Analytics Health Check</span></a>
+<a class="nav-menu-child nav-menu-fit-check" href="analytics-health-check.html#assessment-form-title"><span>Free Fit Check</span><em>Free</em></a>
+<a class="nav-menu-parent" href="decision-system-reset.html"><span>Decision System Reset</span></a>
+<a class="nav-menu-parent" href="fractional-analytics.html"><span>Fractional Analytics Consulting</span></a>
+</div>
+</div>
+<div class="nav-dropdown nav-dropdown-intelligence">
+<a class="nav-dropdown-toggle" href="intelligence-lab.html">Intelligence Lab</a>
+<div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
+<a class="nav-menu-parent" href="intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#predictive-risk-intelligence"><span>Predictive Risk Intelligence</span></a>
+</div>
+</div>
+<a href="insights.html">Insights</a>
+<a href="about.html">About</a>
+</nav>
+</header>
+<main class="thank-you-page assessment-page assessment-page-refined">
+<section class="assessment-hero">
+<div class="assessment-hero-inner motion-layer" data-depth="0.08">
+<div class="assessment-hero-copy">
+<p class="page-kicker">Request received</p>
+<h1>Thanks. We'll review your context and follow up with the clearest next step.</h1>
+<p>You should hear back within three business days. In the meantime, you can review the engagement paths or book time directly below without leaving the site.</p>
+<div class="assessment-hero-actions">
+<a class="primary-action" href="#schedule-intro-call">Schedule Intro Call</a>
+<a class="secondary-action" href="our-offerings.html">Compare Engagement Paths</a>
+</div>
+</div>
+<aside aria-label="What happens next" class="assessment-glance reset-glance-refined">
+<p class="page-kicker">What happens next</p>
+<dl>
+<div><dt>Step 1</dt><dd>We review the context you submitted.</dd></div>
+<div><dt>Step 2</dt><dd>We identify the likely best starting point.</dd></div>
+<div><dt>Step 3</dt><dd>You get a recommended next step before any paid scope begins.</dd></div>
+</dl>
+</aside>
+</div>
+</section>
+<section class="after-submit-scheduler reveal-card" id="schedule-intro-call" aria-labelledby="after-submit-scheduler-title">
+<div class="after-submit-scheduler-copy">
+<p class="page-kicker">After you submit</p>
+<h2 id="after-submit-scheduler-title">Want to talk through the Fit Check sooner?</h2>
+<p>Choose a time below for a Parallax Data Lab intro call. The submitted context still gets reviewed first, so the conversation can stay focused on the clearest next step.</p>
+<ul>
+<li>Review the analytics issue you submitted</li>
+<li>Clarify whether this is a fit check, health check, reset, or fractional path</li>
+<li>Leave with the next useful move before any paid scope begins</li>
+</ul>
+<a class="assessment-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call" target="_blank" rel="noopener noreferrer">Open scheduler in a new tab</a>
+</div>
+<div class="calendly-embed-card" aria-label="Calendly scheduler for Parallax Data Lab intro call">
+<div class="calendly-inline-widget" data-url="https://calendly.com/jonahnr/parallax-data-lab-intro-call?hide_landing_page_details=1&hide_gdpr_banner=1"></div>
+<noscript><p>Calendly requires JavaScript. <a href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Open the scheduler directly</a>.</p></noscript>
+</div>
+</section>
+</main>
+<footer aria-label="Site footer" class="site-footer site-footer-refined">
+<div class="site-footer-inner">
+<div class="site-footer-col site-footer-about">
+<a class="site-footer-brand" href="index.html">Parallax Data Lab</a>
+<p>Analytics trust, decision systems, and senior data strategy for teams ready to make reporting useful again.</p>
+<a class="site-footer-email" href="mailto:jonahnr@gmail.com?subject=Parallax%20Data%20Lab%20Inquiry">jonahnr@gmail.com</a>
+</div>
+<div class="site-footer-col"><h3>Core pages</h3><a href="index.html">Home</a><a href="how-we-help.html">How We Help</a><a href="our-offerings.html">Our Offerings</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a></div>
+<div class="site-footer-col"><h3>Services</h3><a href="analytics-health-check.html">Analytics Health Check</a><a href="decision-system-reset.html">Decision System Reset</a><a href="fractional-analytics.html">Fractional Analytics</a><a href="intelligence-lab.html">Intelligence Lab</a></div>
+<div class="site-footer-col site-footer-cta"><h3>Contact</h3><p>Start with a free fit check or schedule an intro call.</p><a class="site-footer-primary" href="analytics-health-check.html">Request a Free Fit Check</a><a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a><a class="site-footer-secondary" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+</div>
+<div class="site-footer-bottom"><span>&copy; 2026 Parallax Data Lab</span><span>Analytics foundation, decision systems, and intelligence design.</span></div>
+</footer>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="home.js?v=108"></script>
+</body>
+</html>
 
-function setupAnalyticsEventTracking() {
-  function sendAnalyticsEvent(eventName, params = {}) {
-    if (typeof window.gtag !== "function") {
-      return;
-    }
-
-    window.gtag("event", eventName, {
-      page_path: window.location.pathname,
-      page_title: document.title,
-      ...params
-    });
-  }
-
-  document.addEventListener("click", (event) => {
-    const link = event.target.closest("a");
-    if (!link) {
-      return;
-    }
-
-    const href = link.getAttribute("href") || "";
-    const text = (link.textContent || "").replace(/\s+/g, " ").trim();
-    const destination = link.href || href;
-    const classes = link.className || "";
-    const eventParams = {
-      link_text: text,
-      link_url: destination,
-      link_classes: String(classes)
-    };
-
-    if (/calendly\.com/i.test(destination)) {
-      sendAnalyticsEvent("calendly_click", eventParams);
-      return;
-    }
-
-    if (/mailto:/i.test(href)) {
-      sendAnalyticsEvent("email_click", eventParams);
-      return;
-    }
-
-    if (/analytics-health-check\.html/i.test(destination) || /Free Fit Check|Fit Check/i.test(text)) {
-      sendAnalyticsEvent("fit_check_cta_click", eventParams);
-      return;
-    }
-
-    if (/our-offerings\.html#offer-chooser|Compare Engagement Paths/i.test(destination + " " + text)) {
-      sendAnalyticsEvent("offering_compare_click", eventParams);
-      return;
-    }
-
-    if (/enterprise-outcome-studio|Predictive-Risk-Intelligence/i.test(destination)) {
-      sendAnalyticsEvent("external_demo_click", eventParams);
-    }
-  });
-
-  document.addEventListener("submit", (event) => {
-    const form = event.target;
-    if (!(form instanceof HTMLFormElement)) {
-      return;
-    }
-
-    const action = form.getAttribute("action") || "";
-    if (/formsubmit\.co/i.test(action)) {
-      sendAnalyticsEvent("fit_check_form_submit", {
-        form_class: form.className || "",
-        form_action: action
-      });
-    }
-  }, true);
-
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-fit-option]");
-    if (!button) {
-      return;
-    }
-
-    sendAnalyticsEvent("fit_path_finder_used", {
-      option_label: (button.textContent || "").replace(/\s+/g, " ").trim(),
-      option_weights: button.dataset.weights || ""
-    });
-  });
-
-  window.addEventListener("message", (event) => {
-    const calendlyOrigin = /^https:\/\/(.+\.)?calendly\.com$/i.test(event.origin || "");
-    const calendlyEvent = event.data && typeof event.data.event === "string" && event.data.event.indexOf("calendly.") === 0;
-    if (!calendlyOrigin || !calendlyEvent) {
-      return;
-    }
-
-    sendAnalyticsEvent(event.data.event.replace("calendly.", "calendly_"), {
-      calendly_event: event.data.event
-    });
-  });
-}
-
-resizeCanvas();
-drawConstellation();
-updateMotion();
-updateRealParallax();
-revealOnScroll();
-setupDropdowns();
-setupCarousel("symptom");
-setupCarousel("quote");
-setupCarousel("failure");
-setupCarousel("pattern");
-setupCarousel("proof");
-setupCarousel("healthSample");
-setupFractionalFlipCards();
-setupFitPathFinder();
-setupAnalyticsEventTracking();
-
-
-
-
-
-
-function setupMobileNavigation() {
-  const header = document.querySelector('.site-header');
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const nav = document.querySelector('#primary-navigation');
-
-  if (!header || !toggle || !nav) {
-    return;
-  }
-
-  toggle.addEventListener('click', () => {
-    const willOpen = !header.classList.contains('is-nav-open');
-    header.classList.toggle('is-nav-open', willOpen);
-    toggle.setAttribute('aria-expanded', String(willOpen));
-  });
-
-  nav.addEventListener('click', (event) => {
-    const link = event.target.closest('a');
-    if (!link || window.innerWidth > 760) {
-      return;
-    }
-    header.classList.remove('is-nav-open');
-    toggle.setAttribute('aria-expanded', 'false');
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) {
-      header.classList.remove('is-nav-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
-
-setupMobileNavigation();
-
-function getPageKey(pathname) {
-  let path = (pathname || "/").split("?")[0].split("#")[0];
-  path = path.replace(/\/+$/g, "");
-
-  if (!path || path === "/" || path.toLowerCase() === "/index.html") {
-    return "home";
-  }
-
-  const lastPart = path.split("/").filter(Boolean).pop() || "index";
-  return lastPart.replace(/\.html$/i, "").toLowerCase();
-}
-
-function setupActiveNavigation() {
-  const nav = document.querySelector("#primary-navigation");
-  if (!nav) {
-    return;
-  }
-
-  const page = getPageKey(window.location.pathname);
-  const hash = window.location.hash || "";
-  const offeringPages = new Set([
-    "our-offerings",
-    "analytics-health-check",
-    "decision-system-reset",
-    "fractional-analytics"
-  ]);
-
-  nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
-    link.removeAttribute("aria-current");
-    link.classList.remove("is-active");
-  });
-
-  nav.querySelectorAll("a").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
-      return;
-    }
-
-    const target = new URL(href, window.location.href);
-    const targetPage = getPageKey(target.pathname);
-    const targetHash = target.hash || "";
-    const isDropdownToggle = link.classList.contains("nav-dropdown-toggle");
-    const isDropdownMenuItem = Boolean(link.closest(".nav-dropdown-menu"));
-    let isCurrent = false;
-
-    if (isDropdownToggle && link.closest(".nav-dropdown-offerings")) {
-      isCurrent = offeringPages.has(page);
-    } else if (isDropdownToggle && link.closest(".nav-dropdown-intelligence")) {
-      isCurrent = page === "intelligence-lab";
-    } else if (isDropdownMenuItem && targetHash) {
-      isCurrent = targetPage === page && targetHash === hash;
-    } else if (isDropdownMenuItem && targetPage === "intelligence-lab") {
-      isCurrent = page === targetPage && !hash;
-    } else if (isDropdownMenuItem && targetPage === "our-offerings") {
-      isCurrent = page === targetPage;
-    } else if (isDropdownMenuItem) {
-      isCurrent = targetPage === page && !hash;
-    } else {
-      isCurrent = targetPage === page && !targetHash;
-    }
-
-    if (isCurrent) {
-      link.setAttribute("aria-current", "page");
-      link.classList.add("is-active");
-    }
-  });
-}
-
-setupActiveNavigation();
-setupInsightFilters();
-window.addEventListener("hashchange", setupActiveNavigation);
