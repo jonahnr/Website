@@ -66,14 +66,14 @@ const articles = [
     related: ["why-executive-teams-argue-about-numbers", "five-signs-your-reporting-environment-is-breaking-down", "how-to-build-metrics-people-actually-use"],
   },
   {
-    title: "The Hidden Cost of Reporting Misalignment",
+    title: "Reporting Misalignment: Hidden Costs",
     slug: "hidden-cost-of-reporting-misalignment",
     category: categories.trust,
     service: "reset",
     image: "reporting-misalignment-cost.png",
     alt: "Executive reporting paths diverging into duplicated work and delayed decisions",
     summary: "Reporting misalignment quietly taxes leadership attention, operating cadence, and strategic confidence.",
-    meta: "Reporting misalignment costs more than analyst time. See how conflicting reports slow decisions, weaken accountability, and create hidden operating drag.",
+    meta: "See how reporting misalignment slows decisions, weakens accountability, duplicates analytics work, and creates hidden operating drag.",
     lead: "Reporting misalignment looks like a data problem from the outside. Inside the business, it behaves like an attention tax.",
     meeting: "A weekly review starts with three teams presenting performance. Each uses a slightly different definition of active customer, recognized revenue, or delivery capacity. Nobody is trying to mislead anyone. The organization simply lacks one operating language.",
     cost: "The cost is not just duplicate reporting effort. It is delayed decisions, softened accountability, slower planning cycles, and executive energy spent negotiating definitions that should have been settled before the meeting began.",
@@ -89,14 +89,14 @@ const articles = [
     related: ["the-difference-between-reporting-and-decision-making", "single-source-of-truth-myth", "stop-measuring-everything-designing-executive-reporting-that-drives-action"],
   },
   {
-    title: "Your Dashboard Problem Is Actually a Leadership Problem",
+    title: "When Dashboards Reveal Leadership Gaps",
     slug: "dashboard-problem-leadership-problem",
     category: categories.trust,
     service: "reset",
     image: "dashboard-leadership-problem.png",
     alt: "Leadership decision system sitting beneath a dashboard interface",
     summary: "Many dashboard failures start with unclear executive decisions, ownership, and operating rhythm.",
-    meta: "A dashboard problem is often a leadership problem. Learn why unclear decisions and ownership make even well-built reports fail.",
+    meta: "Learn why dashboard problems often come from unclear decisions, weak ownership, and leadership cadence gaps instead of visual design.",
     lead: "Most dashboard requests start with a sentence that sounds harmless: we just need better visibility. Sometimes that is true. Often, visibility is the polite version of a leadership problem no one has named yet.",
     meeting: "Executives want a dashboard that will make performance obvious, but the team has not agreed what performance means, who owns movement, or what action follows when the number changes.",
     cost: "Without leadership clarity, the analytics team becomes the mediator. Analysts translate priorities, settle definition disputes, and absorb frustration that belongs in the operating model.",
@@ -112,14 +112,14 @@ const articles = [
     related: ["why-executive-dashboards-fail", "building-executive-dashboards-that-create-accountability", "the-difference-between-reporting-and-decision-making"],
   },
   {
-    title: "The Single Source of Truth Myth",
+    title: "Single Source of Truth: Why It Fails",
     slug: "single-source-of-truth-myth",
     category: categories.trust,
     service: "health",
     image: "single-source-truth-myth.png",
     alt: "One certified metric spine supporting several business views",
     summary: "A single source of truth is useful only when leaders define the truths the business actually needs.",
-    meta: "The single source of truth promise often fails. Learn a more practical way to govern metrics across finance, operations, and executive reporting.",
+    meta: "Learn why single source of truth projects fail and how governed metric views can support finance, operations, and executive reporting.",
     lead: "The phrase single source of truth sounds decisive. It promises one clean place where every number lives and every argument ends. In practice, it can become a slogan that hides hard operating choices.",
     meeting: "Finance, sales, operations, and customer success often need different views of the same business reality. The problem is not that multiple views exist. The problem is that nobody has defined which view is authoritative for which decision.",
     cost: "When a company chases one universal truth without governance, it either creates a rigid model nobody can use or a crowded warehouse where every team still rebuilds its own version.",
@@ -135,14 +135,14 @@ const articles = [
     related: ["hidden-cost-of-reporting-misalignment", "kpi-governance-explained-growing-organizations", "who-owns-this-metric-most-expensive-question-in-analytics"],
   },
   {
-    title: "Five Signs Your Reporting Environment Is Breaking Down",
+    title: "Reporting Environment Breakdown: 5 Signs",
     slug: "five-signs-your-reporting-environment-is-breaking-down",
     category: categories.trust,
     service: "health",
     image: "reporting-environment-breaking-down.png",
     alt: "Reporting environment showing cracks across dashboards, spreadsheets, and metric definitions",
     summary: "Reporting breakdown shows up in meetings, ownership gaps, duplicated logic, and quiet workarounds.",
-    meta: "Spot the five signs of reporting environment breakdown before dashboard trust, leadership cadence, and decision quality erode.",
+    meta: "Spot the signs of reporting environment breakdown before dashboard trust, leadership cadence, manual workarounds, and decision quality erode.",
     lead: "Reporting environments rarely break all at once. They fray. At first, the symptoms look manageable: a spreadsheet here, a manual adjustment there, one extra dashboard for a special case.",
     meeting: "Then the exceptions become the system. Leaders ask for pre-meeting reconciliations. Analysts maintain too many versions. Teams trust their own extracts more than shared reporting.",
     cost: "The cost is not only messy reporting. It is the loss of operating confidence. When leaders do not believe the system, they build side channels, and those side channels make the system less trustworthy.",
@@ -158,14 +158,14 @@ const articles = [
     related: ["why-nobody-trusts-your-dashboard", "why-executive-dashboards-fail", "the-hidden-cost-of-reporting-misalignment"],
   },
   {
-    title: "Who Owns This Metric? The Most Expensive Question in Analytics",
+    title: "Metric Ownership: Who Owns the KPI?",
     slug: "who-owns-this-metric-most-expensive-question-in-analytics",
     category: categories.governance,
     service: "reset",
     image: "metric-ownership-question.png",
     alt: "A critical KPI moving from ambiguity into named business ownership",
     summary: "Metric ownership is where analytics governance becomes business accountability.",
-    meta: "Metric ownership is one of the most expensive gaps in analytics. Learn how to assign KPI owners without creating bureaucracy.",
+    meta: "Learn how metric ownership closes one of the most expensive analytics gaps by assigning KPI accountability without creating bureaucracy.",
     lead: "The most expensive analytics question is not whether the number is correct. It is who owns it.",
     meeting: "A metric can be technically accurate and still operationally useless if no leader is accountable for its definition, movement, interpretation, and response.",
     cost: "When ownership is missing, analytics teams become unpaid referees. They explain why the number changed, defend logic they did not choose, and chase consensus across teams with different incentives.",
@@ -181,14 +181,14 @@ const articles = [
     related: ["kpi-ownership-framework-every-leadership-team-needs", "kpi-governance-explained-growing-organizations", "building-executive-dashboards-that-create-accountability"],
   },
   {
-    title: "KPI Governance Explained for Growing Organizations",
+    title: "KPI Governance for Growing Teams",
     slug: "kpi-governance-explained-growing-organizations",
     category: categories.governance,
     service: "reset",
     image: "kpi-governance-growing-organizations.png",
     alt: "KPI governance framework connecting owners, definitions, cadence, and decisions",
     summary: "KPI governance gives growing companies a lightweight way to keep metrics useful as complexity increases.",
-    meta: "KPI governance explained for growing companies: owners, definitions, decision cadence, metric changes, and practical operating rules.",
+    meta: "KPI governance for growing teams: owners, definitions, decision cadence, metric changes, and practical rules that keep reporting useful.",
     lead: "KPI governance sounds heavier than it needs to be. For a growing company, it should not mean committees, binders, or a slow approval queue.",
     meeting: "Good governance is the set of agreements that keeps leadership metrics usable as the company adds products, teams, systems, and exceptions.",
     cost: "Without governance, every new report can quietly create a new version of the business. That feels flexible at first. Later it becomes expensive confusion.",
@@ -227,14 +227,14 @@ const articles = [
     related: ["why-nobody-trusts-your-dashboard", "hidden-cost-of-reporting-misalignment", "single-source-of-truth-myth"],
   },
   {
-    title: "The KPI Ownership Framework Every Leadership Team Needs",
+    title: "KPI Ownership Framework for Leaders",
     slug: "kpi-ownership-framework-every-leadership-team-needs",
     category: categories.governance,
     service: "reset",
     image: "kpi-ownership-framework.png",
     alt: "KPI ownership framework showing accountable owner, contributors, cadence, and action thresholds",
     summary: "A practical KPI ownership framework connects metrics to accountability without creating blame.",
-    meta: "Use this KPI ownership framework to assign accountable owners, contributors, definitions, thresholds, and decision cadence.",
+    meta: "Use a KPI ownership framework to assign accountable owners, contributors, definitions, thresholds, and decision cadence for leadership metrics.",
     lead: "KPI ownership fails when it is treated as a label in a spreadsheet. It works when it becomes part of how the leadership team manages the business.",
     meeting: "An owner is not the person who built the dashboard. An owner is the leader accountable for whether the metric is defined correctly, reviewed at the right cadence, and connected to action.",
     cost: "Without a framework, ownership becomes vague. Everyone cares about net revenue retention, margin, cycle time, or customer acquisition cost, which often means no one can make the hard call when definitions conflict.",
@@ -296,14 +296,14 @@ const articles = [
     related: ["stop-measuring-everything-designing-executive-reporting-that-drives-action", "building-executive-dashboards-that-create-accountability", "dashboard-problem-leadership-problem"],
   },
   {
-    title: "Stop Measuring Everything: Designing Executive Reporting That Drives Action",
+    title: "Executive Reporting That Drives Action",
     slug: "stop-measuring-everything-designing-executive-reporting-that-drives-action",
     category: categories.reporting,
     service: "powerbi",
     image: "executive-reporting-drives-action.png",
     alt: "Executive reporting narrowed from many metrics into a focused action system",
     summary: "Executive reporting gets stronger when leaders stop measuring everything and start measuring what drives action.",
-    meta: "Design executive reporting that drives action by narrowing metrics, clarifying owners, and aligning reports to leadership decisions.",
+    meta: "Design executive reporting that cuts through data noise by narrowing metrics, clarifying owners, and aligning reports to leadership decisions.",
     lead: "The easiest way to weaken executive reporting is to measure everything. It feels responsible, but it usually creates a wall of numbers that protects the organization from focus.",
     meeting: "When every metric is visible, no metric is clearly important. Leaders scan, comment, and move on. The report is busy, but the operating system is passive.",
     cost: "Too many metrics create hidden costs: slower meetings, diluted accountability, shallow commentary, and a culture where teams can always point to a different number that supports their preferred story.",
@@ -319,14 +319,14 @@ const articles = [
     related: ["how-to-build-metrics-people-actually-use", "why-executive-dashboards-fail", "what-should-be-included-in-weekly-business-review"],
   },
   {
-    title: "What Should Be Included in a Weekly Business Review?",
+    title: "Weekly Business Review: What to Include",
     slug: "what-should-be-included-in-weekly-business-review",
     category: categories.reporting,
     service: "reset",
     image: "weekly-business-review.png",
     alt: "Weekly business review dashboard structured around decisions, risks, and accountable owners",
     summary: "A weekly business review should focus leadership attention on movement, risk, commitments, and action.",
-    meta: "Learn what to include in a weekly business review so leadership meetings move from status updates to decisions and accountability.",
+    meta: "Learn what to include in a weekly business review so leadership meetings move beyond status updates into decisions, risks, and accountability.",
     lead: "A weekly business review should not be a parade of updates. It should be the operating meeting where leaders see what changed, what matters, who owns it, and what decision is needed.",
     meeting: "Many WBRs become department readouts because the reporting pack mirrors the org chart. Sales talks sales, operations talks operations, finance talks finance, and the cross-functional issues arrive too late.",
     cost: "The cost is a meeting that consumes leadership time without creating operating leverage. People leave informed but not aligned.",
@@ -342,14 +342,14 @@ const articles = [
     related: ["the-difference-between-reporting-and-decision-making", "building-executive-dashboards-that-create-accountability", "stop-measuring-everything-designing-executive-reporting-that-drives-action"],
   },
   {
-    title: "The Difference Between Reporting and Decision Making",
+    title: "Reporting vs Decision-Making",
     slug: "the-difference-between-reporting-and-decision-making",
     category: categories.reporting,
     service: "reset",
     image: "reporting-vs-decision-making.png",
     alt: "Reporting layer connecting into an executive decision-making loop",
     summary: "Reporting tells leaders what happened. Decision systems help them decide what to do next.",
-    meta: "Understand the difference between reporting and decision making, and how to turn dashboards into decision systems leaders actually use.",
+    meta: "Understand the difference between reporting and decision-making, and how to turn dashboards into decision systems leaders actually use.",
     lead: "Reporting and decision making are related, but they are not the same job.",
     meeting: "Reporting describes performance. Decision making chooses a response. A company can have a large reporting environment and still have weak decision flow if dashboards do not connect to ownership, thresholds, and action.",
     cost: "When the distinction is blurred, leaders ask reports to do too much and ask meetings to compensate for the missing system. The result is more pages, more commentary, and still not enough clarity.",
@@ -365,14 +365,14 @@ const articles = [
     related: ["hidden-cost-of-reporting-misalignment", "what-should-be-included-in-weekly-business-review", "analytics-maturity-roadmap-reporting-to-decision-systems"],
   },
   {
-    title: "Building Executive Dashboards That Create Accountability",
+    title: "Executive Dashboards and Accountability",
     slug: "building-executive-dashboards-that-create-accountability",
     category: categories.reporting,
     service: "powerbi",
     image: "executive-dashboards-accountability.png",
     alt: "Executive dashboard linking KPI movement to owners, actions, and follow-up cadence",
     summary: "Accountability dashboards connect metric movement to owners, thresholds, and follow-through.",
-    meta: "Build executive dashboards that create accountability by tying KPIs to owners, thresholds, commitments, and action paths.",
+    meta: "Build executive dashboards that create accountability by tying KPIs to owners, thresholds, commitments, operating cadence, and action paths.",
     lead: "An executive dashboard should make accountability easier, not more political.",
     meeting: "The problem with many dashboards is that they show performance without showing responsibility. A number turns red, everyone sees it, and no one is sure who is supposed to do what next.",
     cost: "That gap creates either blame or avoidance. Teams debate whether the metric is fair, whether the data is complete, or whether another department caused the movement.",
@@ -411,14 +411,14 @@ const articles = [
     related: ["what-fractional-analytics-leadership-actually-means", "building-analytics-function-without-hiring-full-team", "why-data-teams-struggle-to-earn-trust"],
   },
   {
-    title: "What Fractional Analytics Leadership Actually Means",
+    title: "Fractional Analytics Leadership Explained",
     slug: "what-fractional-analytics-leadership-actually-means",
     category: categories.leadership,
     service: "fractional",
     image: "fractional-analytics-leadership.png",
     alt: "Fractional analytics leader guiding standards, cadence, and executive decision systems",
     summary: "Fractional analytics leadership provides senior judgment and operating structure without a full-time hire.",
-    meta: "Fractional analytics leadership explained: what it means, when it works, and how it helps companies restore reporting trust.",
+    meta: "Fractional analytics leadership explained: what it means, when it works, and how it helps teams improve reporting standards and decisions.",
     lead: "Fractional analytics leadership is not a part-time dashboard builder. It is senior analytics judgment applied at the cadence and scale the business actually needs.",
     meeting: "For many growing companies, the problem is not a lack of effort. It is a lack of experienced analytics leadership to set standards, push back on low-value requests, align executives, and help the team build systems that survive scale.",
     cost: "Without that leadership, the company may keep adding reports while avoiding the harder questions: what should be governed, who owns the metric, which reporting assets are trusted, and how analytics priorities connect to business strategy.",
@@ -434,14 +434,14 @@ const articles = [
     related: ["when-to-hire-head-of-analytics", "building-analytics-function-without-hiring-full-team", "analytics-maturity-roadmap-reporting-to-decision-systems"],
   },
   {
-    title: "Building an Analytics Function Without Hiring a Full Team",
+    title: "Build Analytics Without a Full Team",
     slug: "building-analytics-function-without-hiring-full-team",
     category: categories.leadership,
     service: "fractional",
     image: "analytics-function-without-full-team.png",
     alt: "Lean analytics function built with leadership, standards, tooling, and focused execution",
     summary: "A company can build a credible analytics function by sequencing leadership, governance, systems, and selective execution.",
-    meta: "Build an analytics function without hiring a full team by focusing on standards, ownership, decision cadence, and fractional leadership.",
+    meta: "Build an analytics function without hiring a full team by focusing on standards, metric ownership, decision cadence, and fractional leadership.",
     lead: "Not every growing company needs a full analytics team right now. Many need the benefits of an analytics function before the budget, workload, or operating model supports multiple hires.",
     meeting: "The mistake is to treat the choice as binary: hire a full team or live with scattered reporting. There is a middle path.",
     cost: "Without structure, lean analytics becomes heroic. One analyst, finance manager, or operations lead carries dashboards, ad-hoc analysis, metric disputes, and system cleanup with no clear mandate.",
@@ -480,14 +480,14 @@ const articles = [
     related: ["when-to-hire-head-of-analytics", "who-owns-this-metric-most-expensive-question-in-analytics", "how-to-build-metrics-people-actually-use"],
   },
   {
-    title: "The Analytics Maturity Roadmap: From Reporting to Decision Systems",
+    title: "Analytics Maturity Roadmap",
     slug: "analytics-maturity-roadmap-reporting-to-decision-systems",
     category: categories.leadership,
     service: "fractional",
     image: "analytics-maturity-roadmap.png",
     alt: "Analytics maturity roadmap moving from reporting cleanup to trusted decision systems",
     summary: "Analytics maturity is the progression from scattered reporting to trusted decision systems that guide action.",
-    meta: "Use this analytics maturity roadmap to move from broken reporting and dashboard sprawl toward trusted decision systems.",
+    meta: "Use this analytics maturity roadmap to move from scattered reports and dashboard sprawl toward governed metrics and trusted decision systems.",
     lead: "Analytics maturity is not measured by the number of dashboards, tools, or data sources a company has. It is measured by whether leaders can use information to make better decisions with less friction.",
     meeting: "Many companies move through predictable stages: scattered reporting, dashboard consolidation, metric governance, executive decision cadence, and eventually decision systems that connect signals to action.",
     cost: "Skipping stages creates instability. A company that buys advanced tooling before defining metric ownership will still argue about numbers. A company that builds predictive models before fixing trust will struggle to get leaders to act on them.",
@@ -503,14 +503,14 @@ const articles = [
     related: ["the-difference-between-reporting-and-decision-making", "what-fractional-analytics-leadership-actually-means", "building-analytics-function-without-hiring-full-team"],
   },
   {
-    title: "AI Enablement Starts With Trusted Business Data",
+    title: "AI Enablement Needs Trusted Business Data",
     slug: "ai-enablement-starts-with-trusted-business-data",
     category: categories.ai,
     service: "fractional",
     image: "ai-enablement-trusted-business-data.png",
     alt: "Executive team planning AI enablement around governed business data and trusted metrics",
     summary: "AI enablement depends on trusted definitions, clean operating context, and business owners who know how decisions should change.",
-    meta: "AI enablement starts with trusted business data. Learn why growing companies need metric governance and decision clarity before AI tools create value.",
+    meta: "AI enablement needs trusted business data. Learn why metric governance, decision clarity, and clean reporting context matter before AI tools create value.",
     lead: "AI enablement does not start with a model. It starts with whether the business can trust the data, definitions, and decisions the model is supposed to support.",
     meeting: "Many leadership teams want AI to summarize performance, flag risk, or recommend action. Those use cases are reasonable. But if the company already argues about core metrics, AI will amplify the confusion faster than a dashboard ever could.",
     cost: "The hidden cost is false confidence. A polished AI answer can sound decisive even when the underlying metric logic is fragmented, undocumented, or owned by no one.",
@@ -526,7 +526,7 @@ const articles = [
     related: ["single-source-of-truth-myth", "kpi-governance-explained-growing-organizations", "analytics-maturity-roadmap-reporting-to-decision-systems"],
   },
   {
-    title: "How to Prepare Your Reporting Environment for AI",
+    title: "Prepare Reporting for AI",
     slug: "prepare-reporting-environment-for-ai",
     category: categories.ai,
     service: "health",
@@ -549,14 +549,14 @@ const articles = [
     related: ["five-signs-your-reporting-environment-is-breaking-down", "why-nobody-trusts-your-dashboard", "building-executive-dashboards-that-create-accountability"],
   },
   {
-    title: "Where AI Actually Helps in Analytics Operations",
+    title: "Where AI Helps Analytics Operations",
     slug: "where-ai-actually-helps-in-analytics-operations",
     category: categories.ai,
     service: "fractional",
     image: "ai-analytics-operations.png",
     alt: "Analytics operations team using AI to summarize risks, documentation, and reporting workflows",
     summary: "AI helps analytics operations most when it reduces friction around documentation, triage, summaries, and decision preparation.",
-    meta: "See where AI actually helps analytics operations, from reporting triage and metric documentation to executive summaries and decision prep.",
+    meta: "See where AI helps analytics operations: reporting triage, metric documentation, executive summaries, operating digests, and decision prep.",
     lead: "AI is most useful in analytics operations when it removes friction from work the team already understands.",
     meeting: "The tempting use case is to ask AI to make the decision. The better first use case is to help humans prepare for the decision with cleaner context, faster triage, and better documentation.",
     cost: "Teams that chase broad AI transformation often miss practical wins. Analysts still answer repetitive questions, executives still need weekly summaries, and metric definitions still live in scattered documents.",
@@ -572,14 +572,14 @@ const articles = [
     related: ["what-fractional-analytics-leadership-actually-means", "the-difference-between-reporting-and-decision-making", "how-to-build-metrics-people-actually-use"],
   },
   {
-    title: "What an Operations Intelligence Digest Can Do for Leadership",
+    title: "Operations Intelligence Digest for Leaders",
     slug: "operations-intelligence-digest-for-leadership",
     category: categories.lab,
     service: "lab",
     image: "operations-intelligence-digest-leadership.png",
     alt: "Leadership team reviewing a concise operations intelligence digest with risks and actions",
     summary: "An Operations Intelligence Digest turns scattered operational signals into a concise leadership brief focused on risk, movement, and action.",
-    meta: "Learn how an Operations Intelligence Digest helps leadership teams turn scattered signals into a focused weekly operating brief.",
+    meta: "Learn how an Operations Intelligence Digest turns scattered data, risks, and operating signals into a focused weekly leadership brief.",
     lead: "Executives do not need more places to look. They need a better way to see what changed, why it matters, and who needs to act.",
     meeting: "An Operations Intelligence Digest is not another dashboard. It is a structured brief that pulls the most important operating signals into a concise leadership-ready view.",
     cost: "Without that kind of synthesis, leaders rely on function-by-function updates. The cross-functional story arrives late, and operational risk hides between reports.",
@@ -595,14 +595,14 @@ const articles = [
     related: ["what-should-be-included-in-weekly-business-review", "stop-measuring-everything-designing-executive-reporting-that-drives-action", "the-difference-between-reporting-and-decision-making"],
   },
   {
-    title: "Governance and RLS Architecture: Why Access Design Is a Business Issue",
+    title: "RLS Governance and Access Design",
     slug: "governance-rls-architecture-business-issue",
     category: categories.lab,
     service: "lab",
     image: "governance-rls-architecture-business-issue.png",
     alt: "Secure analytics access architecture with governed reporting layers and executive oversight",
     summary: "Governance and RLS architecture protect trust by making access rules, metric visibility, and business responsibility explicit.",
-    meta: "Governance and RLS architecture are business issues, not just technical setup. Learn how access design affects trust, accountability, and reporting scale.",
+    meta: "Learn why RLS governance and access design are business decisions that shape reporting trust, accountability, security, and scale.",
     lead: "Row-level security sounds technical until the wrong person sees the wrong number, or the right person cannot see the context needed to make a decision.",
     meeting: "Access design shapes trust. It determines which leaders can see which customers, regions, margins, forecasts, and exceptions. When those rules are unclear, reporting becomes both risky and frustrating.",
     cost: "Poor access architecture creates two costs at once: exposure risk and decision friction. Teams either see too much, see too little, or build side exports to get around the system.",
@@ -618,7 +618,7 @@ const articles = [
     related: ["kpi-governance-explained-growing-organizations", "who-owns-this-metric-most-expensive-question-in-analytics", "prepare-reporting-environment-for-ai"],
   },
   {
-    title: "From Dashboards to Predictive Risk Intelligence",
+    title: "Predictive Risk Intelligence",
     slug: "dashboards-to-predictive-risk-intelligence",
     category: categories.lab,
     service: "lab",
@@ -1776,7 +1776,7 @@ function hubPage(options = {}) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Insights and Articles | Parallax Data Lab",
-    description: "Executive articles on analytics trust, KPI governance, executive reporting, analytics leadership, AI enablement, and Intelligence Lab initiatives.",
+    description: "Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership.",
     url: `${site}/insights/`,
   };
   return `<!DOCTYPE html>
@@ -1784,14 +1784,14 @@ function hubPage(options = {}) {
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Insights and Articles | Parallax Data Lab</title>
-<meta content="Executive articles on analytics trust, KPI governance, executive reporting, KPI ownership, AI enablement, Intelligence Lab initiatives, Power BI advisory, and fractional analytics leadership." name="description"/>
+<title>Analytics Insights for Reporting Overload | Parallax Data Lab</title>
+<meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="description"/>
 <link rel="canonical" href="${site}/insights/"/>
 <link href="${prefix}home.css?v=106" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=106" rel="icon" sizes="any"/>
-<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Insights and Articles | Parallax Data Lab" property="og:title"/><meta content="Executive articles on analytics trust, KPI governance, executive reporting, analytics leadership, AI enablement, and Intelligence Lab initiatives." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.png" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/><meta content="Insights and Articles | Parallax Data Lab" name="twitter:title"/><meta content="Executive articles on analytics trust, KPI governance, executive reporting, analytics leadership, AI enablement, and Intelligence Lab initiatives." name="twitter:description"/><meta content="${site}/social-preview.png" name="twitter:image"/>
+<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" name="twitter:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="twitter:description"/><meta content="${site}/social-preview.png" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
 </head>
 <body>
@@ -1800,8 +1800,8 @@ ${header(prefix)}
 <main class="insights-page" data-active-filter="all">
 <section class="insights-hero">
 <p class="page-kicker">Insights</p>
-<h1>Executive articles for leaders rebuilding trust in analytics.</h1>
-<p>Practical guidance on dashboard trust, KPI ownership, executive reporting, Power BI environments, analytics leadership, AI enablement, and Intelligence Lab initiatives for growing companies.</p>
+<h1>Executive articles for leaders turning data noise into decision clarity.</h1>
+<p>Practical guidance on reporting overload, dashboard trust, KPI ownership, executive reporting, AI readiness, operational intelligence digests, and analytics leadership for growing companies.</p>
 </section>
 <section class="insights-filter-band" aria-label="Article categories">
 <button class="is-active" type="button" data-insight-filter="all">All</button>
