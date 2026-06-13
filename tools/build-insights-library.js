@@ -2364,6 +2364,15 @@ function updateRedirects() {
 /:slug/apple-touch-icon.png /apple-touch-icon.png 200
 /:slug/social-preview.png /social-preview.png 200
 
+# Shared asset rewrites for insight article paths that use ../ relative assets
+/insights/home.css /home.css 200
+/insights/home.js /home.js 200
+/insights/assets/* /assets/:splat 200
+/insights/favicon.svg /favicon.svg 200
+/insights/favicon.ico /favicon.ico 200
+/insights/apple-touch-icon.png /apple-touch-icon.png 200
+/insights/social-preview.png /social-preview.png 200
+
 # Shared asset rewrites for nested insight article clean URLs
 /insights/:slug/home.css /home.css 200
 /insights/:slug/home.js /home.js 200
@@ -2436,6 +2445,22 @@ function main() {
   });
   write("insights.html", hubHtml);
   write(path.join("insights", "index.html"), cleanHubHtml);
+  [
+    ["how-we-help", "how-we-help.html"],
+    ["our-offerings", "our-offerings.html"],
+    ["analytics-health-check", "analytics-health-check.html"],
+    ["decision-system-reset", "decision-system-reset.html"],
+    ["fractional-analytics", "fractional-analytics.html"],
+    ["intelligence-lab", "intelligence-lab.html"],
+    ["about", "about.html"],
+    ["privacy-policy", "privacy-policy.html"],
+    ["thank-you", "thank-you.html"],
+  ].forEach(([clean, file]) => {
+    const source = fs.readFileSync(path.join(root, file), "utf8");
+    const cleanHtml = source.replace(/<head>/, '<head>\n<base href="../">');
+    ensureDir(clean);
+    write(path.join(clean, "index.html"), cleanHtml);
+  });
   appendStyles();
   updateShellNavigation();
   updateSitemap();
