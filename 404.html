@@ -4,22 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found | Parallax Data Lab</title>
-<link rel="stylesheet" href="home.css?v=106">
+<link rel="stylesheet" href="/home.css?v=106">
 <script>
   const cleanMap = {
-    "/how-we-help": "/how-we-help/",
-    "/our-offerings": "/our-offerings/",
-    "/analytics-health-check": "/analytics-health-check/",
-    "/decision-system-reset": "/decision-system-reset/",
-    "/fractional-analytics": "/fractional-analytics/",
-    "/intelligence-lab": "/intelligence-lab/",
-    "/about": "/about/",
-    "/privacy-policy": "/privacy-policy/",
-    "/thank-you": "/thank-you/"
+    "/how-we-help": "/how-we-help.html",
+    "/our-offerings": "/our-offerings.html",
+    "/analytics-health-check": "/analytics-health-check.html",
+    "/decision-system-reset": "/decision-system-reset.html",
+    "/fractional-analytics": "/fractional-analytics.html",
+    "/intelligence-lab": "/intelligence-lab.html",
+    "/insights": "/insights.html",
+    "/about": "/about.html",
+    "/privacy-policy": "/privacy-policy.html",
+    "/thank-you": "/thank-you.html"
   };
-  const path = window.location.pathname.replace(/\.html$/i, "");
+  const path = window.location.pathname.replace(/\/$/, "").replace(/\.html$/i, "");
+  const insightMatch = path.match(/^\/insights\/([^/.]+)$/);
   if (cleanMap[path]) {
     window.location.replace(cleanMap[path] + window.location.search + window.location.hash);
+  } else if (insightMatch) {
+    window.location.replace(path + ".html" + window.location.search + window.location.hash);
   }
 </script>
 </head>
@@ -30,7 +34,7 @@
 <p class="page-kicker">Page not found</p>
 <h1>That page is not available.</h1>
 <p>Return to the homepage or use the navigation to find the right section.</p>
-<a class="primary-action" href="index.html">Go Home</a>
+<a class="primary-action" href="/index.html">Go Home</a>
 </div>
 </section>
 </main>
