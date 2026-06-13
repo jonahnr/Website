@@ -17,33 +17,27 @@ const categories = {
 const services = {
   health: {
     label: "Analytics Health Check",
-    href: "../analytics-health-check.html",
-    rootHref: "analytics-health-check.html",
+    path: "analytics-health-check.html",
   },
   reset: {
     label: "Decision System Reset",
-    href: "../decision-system-reset.html",
-    rootHref: "decision-system-reset.html",
+    path: "decision-system-reset.html",
   },
   fractional: {
     label: "Fractional Analytics Leadership",
-    href: "../fractional-analytics.html",
-    rootHref: "fractional-analytics.html",
+    path: "fractional-analytics.html",
   },
   powerbi: {
     label: "Power BI Advisory",
-    href: "../intelligence-lab.html#enterprise-outcome-studio",
-    rootHref: "intelligence-lab.html#enterprise-outcome-studio",
+    path: "intelligence-lab.html#enterprise-outcome-studio",
   },
   lab: {
     label: "Intelligence Lab",
-    href: "../intelligence-lab.html",
-    rootHref: "intelligence-lab.html",
+    path: "intelligence-lab.html",
   },
   fitCheck: {
     label: "Free Fit Check",
-    href: "../analytics-health-check.html#assessment-form-title",
-    rootHref: "analytics-health-check.html#assessment-form-title",
+    path: "analytics-health-check.html#assessment-form-title",
   },
 };
 
@@ -1560,14 +1554,20 @@ function footer(prefix = "") {
 </footer>`;
 }
 
-function bodyCopy(a) {
+function serviceHref(service, prefix) {
+  return `${prefix}${service.path}`;
+}
+
+function bodyCopy(a, options = {}) {
+  const articleHref = options.articleHref || ((slug) => `${slug}.html`);
+  const servicePrefix = options.servicePrefix || "../";
   const service = services[a.service];
   const fitCheck = services.fitCheck;
   const relatedLinks = a.related
     .map((slug) => articles.find((item) => item.slug === slug))
     .filter(Boolean);
   const relatedText = relatedLinks
-    .map((r) => `<a href="${r.slug}.html">${esc(r.title)}</a>`)
+    .map((r) => `<a href="${articleHref(r.slug)}">${esc(r.title)}</a>`)
     .join(", ");
   const categoryNote = {
     [categories.trust]: "For analytics trust issues, the repair has to make uncertainty visible and manageable. Leaders need to see where the number comes from, which assumptions are approved, and which conversations still require judgment. Hiding that complexity behind a cleaner page only delays the next trust break.",
@@ -1607,7 +1607,7 @@ function bodyCopy(a) {
   };
   const conclusion = `For this specific problem, the important move is to stop treating "${a.title}" as an isolated reporting request. ${a.summary} ${a.shift}`;
   const resourceNote = service && service.label !== fitCheck.label
-    ? `<p>For a deeper look at the related Parallax capability, see <a href="${service.href}">${esc(service.label)}</a>. Use it as context for the kind of work that may follow once the initial fit and diagnosis are clear.</p>`
+    ? `<p>For a deeper look at the related Parallax capability, see <a href="${serviceHref(service, servicePrefix)}">${esc(service.label)}</a>. Use it as context for the kind of work that may follow once the initial fit and diagnosis are clear.</p>`
     : "";
   const sectionHtml = depth.sections
     .map((section) => `<h2>${esc(section.heading)}</h2>
@@ -1654,20 +1654,27 @@ ${questionHtml}
 ${resourceNote}
 <h2>Conclusion</h2>
 <p>${esc(conclusion)}</p>
-<p>If this article describes what is happening inside your reporting environment, Parallax Data Lab can help. Start with the <a href="${fitCheck.href}">${esc(fitCheck.label)}</a> to clarify where trust is breaking, what should be governed, and what kind of decision system your leadership team actually needs.</p>`;
+<p>If this article describes what is happening inside your reporting environment, Parallax Data Lab can help. Start with the <a href="${serviceHref(fitCheck, servicePrefix)}">${esc(fitCheck.label)}</a> to clarify where trust is breaking, what should be governed, and what kind of decision system your leadership team actually needs.</p>`;
 }
 
-function articlePage(a) {
+function articlePage(a, options = {}) {
+  const prefix = options.prefix || "../";
+  const backHref = options.backHref || "../insights.html";
+  const returnHref = options.returnHref || "../insights.html";
+  const articleHref = options.articleHref || ((slug) => `${slug}.html`);
   const service = services[a.service];
   const fitCheck = services.fitCheck;
   const url = `${site}/insights/${a.slug}/`;
-  const copy = bodyCopy(a);
+  const copy = bodyCopy(a, {
+    articleHref,
+    servicePrefix: prefix,
+  });
   const wc = words(copy);
   const readTime = readingMinutes(a, wc);
   const relatedLinks = a.related
     .map((slug) => articles.find((item) => item.slug === slug))
     .filter(Boolean)
-    .map((r) => `<a href="${r.slug}.html">${esc(r.title)}</a>`)
+    .map((r) => `<a href="${articleHref(r.slug)}">${esc(r.title)}</a>`)
     .join("\n");
   const schema = {
     "@context": "https://schema.org",
@@ -1696,35 +1703,35 @@ function articlePage(a) {
 <title>${esc(a.title)} | Parallax Data Lab</title>
 <meta content="${esc(a.meta)}" name="description"/>
 <link rel="canonical" href="${url}"/>
-<link href="../home.css?v=106" rel="stylesheet"/>
+<link href="${prefix}home.css?v=106" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
-<link href="../apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="../favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="../favicon.ico?v=106" rel="icon" sizes="any"/>
+<link href="${prefix}apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=106" rel="icon" sizes="any"/>
 <meta content="article" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="${esc(a.title)} | Parallax Data Lab" property="og:title"/><meta content="${esc(a.meta)}" property="og:description"/><meta content="${url}" property="og:url"/><meta content="${site}/assets/insights/${a.image}" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/><meta content="${esc(a.title)} | Parallax Data Lab" name="twitter:title"/><meta content="${esc(a.meta)}" name="twitter:description"/><meta content="${site}/assets/insights/${a.image}" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
 </head>
 <body>
 <canvas aria-hidden="true" id="constellation"></canvas>
-${header("../")}
+${header(prefix)}
 <main class="article-page">
 <article class="insight-article">
 <header class="article-hero">
 <div class="article-hero-copy">
-<a class="article-back-link" href="../insights.html"><span aria-hidden="true">&larr;</span> Back to Insights</a>
+<a class="article-back-link" href="${backHref}"><span aria-hidden="true">&larr;</span> Back to Insights</a>
 <p class="article-category">${esc(a.category)}</p>
 <h1>${esc(a.title)}</h1>
 <p class="article-summary">${esc(a.summary)}</p>
 <div class="article-meta"><span>${readTime} min read</span><span>Updated ${today}</span></div>
 </div>
 <figure class="article-hero-media">
-<img src="../assets/insights/${a.image}" alt="${esc(a.alt)}"/>
+<img src="${prefix}assets/insights/${a.image}" alt="${esc(a.alt)}"/>
 </figure>
 </header>
 <div class="article-shell">
 <aside class="article-sidebar" aria-label="Article details">
 <p><strong>Summary</strong>${esc(a.summary)}</p>
-<p><strong>Best next step</strong><a href="${fitCheck.href}">${esc(fitCheck.label)}</a></p>
-${service && service.label !== fitCheck.label ? `<p><strong>Relevant service</strong><a href="${service.href}">${esc(service.label)}</a></p>` : ""}
+<p><strong>Best next step</strong><a href="${serviceHref(fitCheck, prefix)}">${esc(fitCheck.label)}</a></p>
+${service && service.label !== fitCheck.label ? `<p><strong>Relevant service</strong><a href="${serviceHref(service, prefix)}">${esc(service.label)}</a></p>` : ""}
 <nav aria-label="Related articles">
 <strong>Related</strong>
 ${relatedLinks}
@@ -1732,30 +1739,35 @@ ${relatedLinks}
 </aside>
 <div class="article-content">
 ${copy}
-<p class="article-return-link"><a href="../insights.html">Back to Insights Library</a></p>
+<p class="article-return-link"><a href="${returnHref}">Back to Insights Library</a></p>
 </div>
 </div>
 </article>
 </main>
-${footer("../")}
-<script src="../home.js?v=106"></script>
+${footer(prefix)}
+<script src="${prefix}home.js?v=106"></script>
 </body>
 </html>
 `;
 }
 
-function hubPage() {
+function hubPage(options = {}) {
+  const prefix = options.prefix || "";
+  const articleHref = options.articleHref || ((slug) => `insights/${slug}/`);
   const cards = articles
     .map((a) => {
-      const wc = words(bodyCopy(a));
+      const wc = words(bodyCopy(a, {
+        articleHref,
+        servicePrefix: prefix,
+      }));
       const readTime = readingMinutes(a, wc);
       return `<article class="insight-card" data-category="${esc(a.category)}">
-<img src="assets/insights/${a.image}" alt="${esc(a.alt)}"/>
+<img src="${prefix}assets/insights/${a.image}" alt="${esc(a.alt)}"/>
 <div class="insight-card-body">
 <span>${esc(a.category)}</span>
-<h2><a href="insights/${a.slug}.html">${esc(a.title)}</a></h2>
+<h2><a href="${articleHref(a.slug)}">${esc(a.title)}</a></h2>
 <p>${esc(a.summary)}</p>
-<footer><em>${readTime} min read</em><a href="insights/${a.slug}.html">Read article</a></footer>
+<footer><em>${readTime} min read</em><a href="${articleHref(a.slug)}">Read article</a></footer>
 </div>
 </article>`;
     })
@@ -1775,16 +1787,16 @@ function hubPage() {
 <title>Insights and Articles | Parallax Data Lab</title>
 <meta content="Executive articles on analytics trust, KPI governance, executive reporting, KPI ownership, AI enablement, Intelligence Lab initiatives, Power BI advisory, and fractional analytics leadership." name="description"/>
 <link rel="canonical" href="${site}/insights/"/>
-<link href="home.css?v=106" rel="stylesheet"/>
+<link href="${prefix}home.css?v=106" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
-<link href="apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="favicon.ico?v=106" rel="icon" sizes="any"/>
+<link href="${prefix}apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=106" rel="icon" sizes="any"/>
 <meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Insights and Articles | Parallax Data Lab" property="og:title"/><meta content="Executive articles on analytics trust, KPI governance, executive reporting, analytics leadership, AI enablement, and Intelligence Lab initiatives." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/><meta content="Insights and Articles | Parallax Data Lab" name="twitter:title"/><meta content="Executive articles on analytics trust, KPI governance, executive reporting, analytics leadership, AI enablement, and Intelligence Lab initiatives." name="twitter:description"/><meta content="${site}/social-preview.png" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
 </head>
 <body>
 <canvas aria-hidden="true" id="constellation"></canvas>
-${header("")}
+${header(prefix)}
 <main class="insights-page" data-active-filter="all">
 <section class="insights-hero">
 <p class="page-kicker">Insights</p>
@@ -1804,8 +1816,8 @@ ${Object.values(categories).map((category) => `<button type="button" data-insigh
 ${cards}
 </section>
 </main>
-${footer("")}
-<script src="home.js?v=106"></script>
+${footer(prefix)}
+<script src="${prefix}home.js?v=106"></script>
 </body>
 </html>
 `;
@@ -2398,9 +2410,32 @@ function main() {
   ensureDir("insights");
   ensureDir(path.join("assets", "insights"));
   articles.forEach((article) => {
-    write(path.join("insights", `${article.slug}.html`), articlePage(article));
+    const articleHtml = articlePage(article, {
+      prefix: "../",
+      backHref: "../insights.html",
+      returnHref: "../insights.html",
+      articleHref: (slug) => `${slug}.html`,
+    });
+    const cleanArticleHtml = articlePage(article, {
+      prefix: "../../",
+      backHref: "../",
+      returnHref: "../",
+      articleHref: (slug) => `../${slug}/`,
+    });
+    write(path.join("insights", `${article.slug}.html`), articleHtml);
+    ensureDir(path.join("insights", article.slug));
+    write(path.join("insights", article.slug, "index.html"), cleanArticleHtml);
   });
-  write("insights.html", hubPage());
+  const hubHtml = hubPage({
+    prefix: "",
+    articleHref: (slug) => `insights/${slug}/`,
+  });
+  const cleanHubHtml = hubPage({
+    prefix: "../",
+    articleHref: (slug) => `${slug}/`,
+  });
+  write("insights.html", hubHtml);
+  write(path.join("insights", "index.html"), cleanHubHtml);
   appendStyles();
   updateShellNavigation();
   updateSitemap();
