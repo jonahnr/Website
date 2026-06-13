@@ -7,6 +7,10 @@ const revealCards = Array.from(document.querySelectorAll(".reveal-card"));
 const dropdowns = Array.from(document.querySelectorAll(".nav-dropdown"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const carousels = new Map();
+const insightFilterButtons = Array.from(document.querySelectorAll("[data-insight-filter]"));
+const insightCards = Array.from(document.querySelectorAll(".insight-card[data-category]"));
+const insightsResults = document.querySelector("[data-insights-results]");
+const insightsSearch = document.querySelector("[data-insights-search]");
 
 let width = 0;
 let height = 0;
@@ -145,6 +149,53 @@ function setupCarousel(name) {
   });
 
   render();
+}
+
+function setupInsightFilters() {
+  if (!insightFilterButtons.length || !insightCards.length) {
+    return;
+  }
+
+  let activeCategory = "all";
+
+  function renderFilter(category) {
+    activeCategory = category;
+    const query = (insightsSearch?.value || "").trim().toLowerCase();
+    let visibleCount = 0;
+    insightCards.forEach((card) => {
+      const categoryMatches = category === "all" || card.dataset.category === category;
+      const textMatches = !query || card.textContent.toLowerCase().includes(query);
+      const isVisible = categoryMatches && textMatches;
+      card.classList.toggle("is-filtered-out", !isVisible);
+      card.setAttribute("aria-hidden", String(!isVisible));
+      if (isVisible) {
+        visibleCount += 1;
+      }
+    });
+
+    const insightsPage = document.querySelector(".insights-page");
+    if (insightsPage) {
+      insightsPage.dataset.activeFilter = category;
+    }
+
+    if (insightsResults) {
+      const categoryLabel = category === "all" ? "articles" : `${category} articles`;
+      insightsResults.textContent = query ? `${visibleCount} matching ${categoryLabel}` : `${visibleCount} ${categoryLabel}`;
+    }
+  }
+
+  insightFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      insightFilterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      renderFilter(button.dataset.insightFilter || "all");
+    });
+  });
+
+  if (insightsSearch) {
+    insightsSearch.addEventListener("input", () => renderFilter(activeCategory));
+  }
+
+  renderFilter("all");
 }
 
 function closeDropdowns(except = null) {
@@ -620,4 +671,5 @@ function setupActiveNavigation() {
 }
 
 setupActiveNavigation();
+setupInsightFilters();
 window.addEventListener("hashchange", setupActiveNavigation);

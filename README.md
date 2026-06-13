@@ -14,6 +14,8 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 
 - `index.html` - Main homepage content and section structure.
 - `how-we-help.html` - How We Help page.
+- `insights.html` - Filterable SEO article hub with executive analytics articles.
+- `insights/*.html` - Individual article pages for analytics trust, KPI governance, executive reporting, analytics leadership, AI enablement, and Intelligence Lab initiatives.
 - `intelligence-lab.html` - Intelligence Lab page.
 - `our-offerings.html` - Offerings overview and path chooser.
 - `analytics-health-check.html` - Internal Analytics Health Check request page with a FormSubmit-powered context form.
@@ -21,6 +23,7 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `fractional-analytics.html` - Fractional Analytics Consulting page.
 - `about.html` - About page and founder context.
 - `privacy-policy.html` - Privacy policy for analytics, forms, scheduling, and contact data.
+- `assets/insights/*.png` - Generated article hero photos in the Parallax visual style.
 - `home.css` - Shared styling, responsive layout, navigation, card visuals, subpage layouts, and carousel states.
 - `home.js` - Animated background, scroll reveals, pointer motion, dropdown handling, and carousel transitions.
 - `ASSET-CHECKLIST.md` - Full list of every asset path referenced by the HTML and CSS.
@@ -68,6 +71,7 @@ Ribbon navigation:
 - Home: `index.html`
 - How We Help: `how-we-help.html`
 - Intelligence Lab: `intelligence-lab.html`
+- Insights: `insights.html`
 - Our Offerings: `our-offerings.html`
 - Analytics Health Check: `analytics-health-check.html`
 - Decision System Reset: `decision-system-reset.html`
