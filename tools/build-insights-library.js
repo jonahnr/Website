@@ -2313,6 +2313,72 @@ ${urls
   write("sitemap.xml", xml);
 }
 
+function updateRedirects() {
+  const staticNoSlash = [
+    "how-we-help",
+    "our-offerings",
+    "analytics-health-check",
+    "decision-system-reset",
+    "fractional-analytics",
+    "intelligence-lab",
+    "insights",
+    "about",
+    "privacy-policy",
+    "thank-you",
+  ];
+  const staticClean = [
+    ["how-we-help", "how-we-help.html"],
+    ["our-offerings", "our-offerings.html"],
+    ["analytics-health-check", "analytics-health-check.html"],
+    ["decision-system-reset", "decision-system-reset.html"],
+    ["fractional-analytics", "fractional-analytics.html"],
+    ["intelligence-lab", "intelligence-lab.html"],
+    ["insights", "insights.html"],
+    ["about", "about.html"],
+    ["privacy-policy", "privacy-policy.html"],
+    ["thank-you", "thank-you.html"],
+  ];
+  const articleRoutes = articles.map((article) => article.slug);
+  const redirects = `# Cloudflare Pages clean URL routing for Parallax Data Lab
+# This package keeps flat .html files and relative asset paths so files are easy to open locally.
+# Cloudflare serves the clean public URLs and rewrites nested asset requests back to root assets.
+
+# Shared asset rewrites for clean URL pages using relative paths
+/:slug/home.css /home.css 200
+/:slug/home.js /home.js 200
+/:slug/assets/* /assets/:splat 200
+/:slug/favicon.svg /favicon.svg 200
+/:slug/favicon.ico /favicon.ico 200
+/:slug/apple-touch-icon.png /apple-touch-icon.png 200
+/:slug/social-preview.png /social-preview.png 200
+
+# Shared asset rewrites for nested insight article clean URLs
+/insights/:slug/home.css /home.css 200
+/insights/:slug/home.js /home.js 200
+/insights/:slug/assets/* /assets/:splat 200
+/insights/:slug/favicon.svg /favicon.svg 200
+/insights/:slug/favicon.ico /favicon.ico 200
+/insights/:slug/apple-touch-icon.png /apple-touch-icon.png 200
+/insights/:slug/social-preview.png /social-preview.png 200
+
+# No-trailing-slash cleanup
+${staticNoSlash.map((slug) => `/${slug} /${slug}/ 301`).join("\n")}
+${articleRoutes.map((slug) => `/insights/${slug} /insights/${slug}/ 301`).join("\n")}
+
+# Clean URL rewrites
+${staticClean.map(([clean, file]) => `/${clean}/ /${file} 200`).join("\n")}
+${articleRoutes.map((slug) => `/insights/${slug}/ /insights/${slug}.html 200`).join("\n")}
+
+# Redirect old .html URLs to clean URLs
+${staticClean.map(([clean, file]) => `/${file} /${clean}/ 301`).join("\n")}
+${articleRoutes.map((slug) => `/insights/${slug}.html /insights/${slug}/ 301`).join("\n")}
+
+# Homepage cleanup
+/index.html / 301
+`;
+  write("_redirects", redirects);
+}
+
 function updateReadme() {
   const readmePath = path.join(root, "README.md");
   let readme = fs.readFileSync(readmePath, "utf8");
@@ -2338,6 +2404,7 @@ function main() {
   appendStyles();
   updateShellNavigation();
   updateSitemap();
+  updateRedirects();
   updateReadme();
 
   const counts = articles.map((a) => ({ slug: a.slug, words: words(bodyCopy(a)) }));
