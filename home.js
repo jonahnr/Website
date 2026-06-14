@@ -697,7 +697,7 @@ function setupLocalFormFallbacks() {
       const scorecardUrl = "https://parallaxdatalab.com/dashboard-trust-scorecard-download.html";
       const body = values
         ? `${values}\n\nScorecard link: ${scorecardUrl}`
-        : `Please send me the Dashboard Trust & Decision Clarity Scorecard.\n\nScorecard link: ${scorecardUrl}`;
+        : `I requested the Dashboard Trust & Decision Clarity Scorecard.\n\nScorecard link: ${scorecardUrl}`;
       window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   });
