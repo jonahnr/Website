@@ -670,6 +670,37 @@ function setupActiveNavigation() {
   });
 }
 
+function setupLocalFormFallbacks() {
+  const isLocalHtml = window.location.protocol === "file:";
+  if (!isLocalHtml) {
+    return;
+  }
+
+  document.querySelectorAll("form[data-local-mail-fallback]").forEach((form) => {
+    const recipient = form.dataset.localMailFallback;
+    if (!recipient) {
+      return;
+    }
+
+    const note = document.createElement("p");
+    note.className = "local-form-note";
+    note.textContent = "Local preview mode: this form will open an email draft because FormSubmit only works from the hosted site.";
+    form.prepend(note);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const subject = form.dataset.localMailSubject || "Website form request";
+      const values = Array.from(form.elements)
+        .filter((field) => field.name && !field.name.startsWith("_") && field.type !== "submit")
+        .map((field) => `${field.name}: ${field.value || ""}`)
+        .join("\n");
+      const body = values || "Please send me the Dashboard Trust & Decision Clarity Scorecard.";
+      window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  });
+}
+
 setupActiveNavigation();
+setupLocalFormFallbacks();
 setupInsightFilters();
 window.addEventListener("hashchange", setupActiveNavigation);
