@@ -703,7 +703,39 @@ function setupLocalFormFallbacks() {
   });
 }
 
+function setupScorecardDelivery() {
+  document.querySelectorAll('form[data-scorecard-delivery="true"]').forEach((form) => {
+    form.addEventListener("submit", () => {
+      const email = form.querySelector('input[name="email"]');
+      const replyTo = form.querySelector('input[name="_replyto"]');
+      const cc = form.querySelector('input[name="_cc"]');
+      const value = email ? email.value.trim() : "";
+
+      if (value) {
+        if (replyTo) {
+          replyTo.value = value;
+        }
+        if (cc) {
+          cc.value = value;
+        }
+      }
+    }, true);
+  });
+}
+
+function setupEnvironmentLinks() {
+  if (window.location.protocol === "file:") {
+    return;
+  }
+
+  document.querySelectorAll("[data-clean-href]").forEach((link) => {
+    link.setAttribute("href", link.dataset.cleanHref);
+  });
+}
+
 setupActiveNavigation();
+setupScorecardDelivery();
+setupEnvironmentLinks();
 setupLocalFormFallbacks();
 setupInsightFilters();
 window.addEventListener("hashchange", setupActiveNavigation);

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found | Parallax Data Lab</title>
 <meta name="description" content="The requested Parallax Data Lab page was not found. Return home or use the site navigation to find analytics consulting resources.">
-<link rel="stylesheet" href="/home.css?v=106">
+<link rel="stylesheet" href="home.css?v=107">
 <script>
   const cleanMap = {
     "/how-we-help": "/how-we-help.html",
@@ -32,14 +32,17 @@
   }
 </script>
 </head>
-<body>
-<main class="subpage-main privacy-page">
-<section class="subpage-hero">
-<div class="subpage-hero-inner">
-<p class="page-kicker">Page not found</p>
-<h1>That page is not available.</h1>
-<p>Return to the homepage or use the navigation to find the right section.</p>
-<a class="primary-action" href="/index.html">Go Home</a>
+<body class="not-found-body">
+<main class="not-found-page" aria-labelledby="not-found-title">
+<a class="not-found-brand" href="index.html">Parallax Data Lab</a>
+<section class="not-found-panel">
+<p class="page-kicker">404</p>
+<h1 id="not-found-title">This page is not available.</h1>
+<p>The link may have moved, or the page may not be part of the current site. Use one of the links below to get back to the main paths.</p>
+<div class="not-found-actions" aria-label="Helpful pages">
+<a class="primary-action" href="index.html">Go Home</a>
+<a class="secondary-action" href="our-offerings.html">View Offerings</a>
+<a class="secondary-action" href="dashboard-trust-scorecard.html">Get the Scorecard</a>
 </div>
 </section>
 </main>
