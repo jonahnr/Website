@@ -1,0 +1,35 @@
+{
+  "businessProblem": "Too much reporting, not enough trusted signal for decisions.",
+  "productLadder": [
+    {
+      "stage": "Self-diagnose",
+      "name": "Dashboard Trust Scorecard",
+      "definition": "Free self-assessment that helps buyers identify whether the issue is metric trust, ownership, decision cadence, or operational signal quality."
+    },
+    {
+      "stage": "Route",
+      "name": "Free Fit Check",
+      "definition": "Free 15-minute routing conversation to identify the smallest useful next step."
+    },
+    {
+      "stage": "Diagnose",
+      "name": "Analytics Health Check",
+      "definition": "1-2 week paid diagnostic that reviews dashboards, metric definitions, data models, reporting processes, pain points, and decision friction to produce a foundation issue map and recommended next step."
+    },
+    {
+      "stage": "Rebuild",
+      "name": "Decision System Reset",
+      "definition": "4-8 week rebuild of the decision system: decisions, metrics, owners, triggers, cadence, and escalation."
+    },
+    {
+      "stage": "Steward",
+      "name": "Fractional Analytics",
+      "definition": "Ongoing senior ownership and governance that maintains and evolves the decision system as priorities shift."
+    },
+    {
+      "stage": "Advance",
+      "name": "Intelligence Lab",
+      "definition": "Advanced operational intelligence products, especially the Weekly Operational Intelligence Digest, built after the foundation is trusted."
+    }
+  ]
+}

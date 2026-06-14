@@ -17488,7 +17488,7 @@ body::after {
 
 .sample-output-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
   margin-top: 30px;
 }
@@ -22563,6 +22563,69 @@ nav {
   border-color: rgba(24, 55, 103, 0.2);
 }
 
+/* Focused UX polish: Home proof heading and How We Help layout alignment */
+.proof-section .proof-intro,
+.proof-section .proof-intro h2 {
+  max-width: none !important;
+}
+.proof-section .proof-intro h2 {
+  white-space: nowrap;
+  font-size: clamp(1.9rem, 3.4vw, 3.35rem);
+}
+.help-page .help-hero-actions {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+}
+.help-page .help-hero-actions .primary-action,
+.help-page .help-hero-actions .secondary-action {
+  width: auto !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+.help-page .next-grid.next-grid-three .help-card-image,
+.help-page .next-premium-path .help-card-image {
+  height: 190px !important;
+  object-fit: contain !important;
+  padding: 10px !important;
+  background: rgba(4, 12, 36, 0.42) !important;
+}
+.help-page .help-intelligence-visual {
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+.help-page .next-grid.next-grid-three .primary-action,
+.help-page .next-premium-path .primary-action {
+  width: auto !important;
+  min-width: 0 !important;
+  align-self: flex-start !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  padding: 13px 20px !important;
+  background: linear-gradient(135deg, #45beff, #54d1d8) !important;
+  color: #061326 !important;
+  box-shadow: 0 14px 34px rgba(69, 190, 255, 0.22) !important;
+}
+.help-page .next-grid.next-grid-three .primary-action:hover,
+.help-page .next-grid.next-grid-three .primary-action:focus-visible,
+.help-page .next-premium-path .primary-action:hover,
+.help-page .next-premium-path .primary-action:focus-visible {
+  transform: translateY(-2px);
+}
+@media (max-width: 760px) {
+  .proof-section .proof-intro h2 {
+    white-space: normal;
+  }
+  .help-page .help-hero-actions {
+    flex-wrap: wrap !important;
+  }
+}
+
 .scorecard-download-page {
   min-height: 100vh;
   padding-top: 108px;
@@ -22906,6 +22969,12 @@ nav {
 .offerings-page-refined .offer-chooser-grid a,
 .offer-chooser-grid-balanced .offer-chooser-core {
   min-height: 178px !important;
+}
+.offer-chooser-grid-balanced .offer-path-scorecard {
+  border-color: rgba(95, 215, 229, 0.28);
+}
+.offer-chooser-grid-balanced .offer-path-lab {
+  border-color: rgba(38, 126, 205, 0.32);
 }
 .offerings-page-refined .lead-magnet-strip,
 .offerings-page-refined .offerings-method-section {
