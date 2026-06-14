@@ -2356,6 +2356,7 @@ function updateRedirects() {
     "our-offerings",
     "free-fit-check",
     "dashboard-trust-scorecard",
+    "dashboard-trust-scorecard-download",
     "analytics-health-check",
     "decision-system-reset",
     "fractional-analytics",
@@ -2363,6 +2364,7 @@ function updateRedirects() {
     "insights",
     "about",
     "privacy-policy",
+    "scorecard-thank-you",
     "thank-you",
   ];
   const staticClean = [
@@ -2370,6 +2372,7 @@ function updateRedirects() {
     ["our-offerings", "our-offerings.html"],
     ["free-fit-check", "free-fit-check.html"],
     ["dashboard-trust-scorecard", "dashboard-trust-scorecard.html"],
+    ["dashboard-trust-scorecard-download", "dashboard-trust-scorecard-download.html"],
     ["analytics-health-check", "analytics-health-check.html"],
     ["decision-system-reset", "decision-system-reset.html"],
     ["fractional-analytics", "fractional-analytics.html"],
@@ -2377,6 +2380,7 @@ function updateRedirects() {
     ["insights", "insights.html"],
     ["about", "about.html"],
     ["privacy-policy", "privacy-policy.html"],
+    ["scorecard-thank-you", "scorecard-thank-you.html"],
     ["thank-you", "thank-you.html"],
   ];
   const articleRoutes = articles.map((article) => article.slug);
@@ -2479,12 +2483,14 @@ function main() {
     ["our-offerings", "our-offerings.html"],
     ["free-fit-check", "free-fit-check.html"],
     ["dashboard-trust-scorecard", "dashboard-trust-scorecard.html"],
+    ["dashboard-trust-scorecard-download", "dashboard-trust-scorecard-download.html"],
     ["analytics-health-check", "analytics-health-check.html"],
     ["decision-system-reset", "decision-system-reset.html"],
     ["fractional-analytics", "fractional-analytics.html"],
     ["intelligence-lab", "intelligence-lab.html"],
     ["about", "about.html"],
     ["privacy-policy", "privacy-policy.html"],
+    ["scorecard-thank-you", "scorecard-thank-you.html"],
     ["thank-you", "thank-you.html"],
   ].forEach(([clean, file]) => {
     const source = fs.readFileSync(path.join(root, file), "utf8");
