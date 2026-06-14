@@ -37,7 +37,7 @@ const services = {
   },
   fitCheck: {
     label: "Free Fit Check",
-    path: "analytics-health-check.html#assessment-form-title",
+    path: "free-fit-check.html",
   },
 };
 
@@ -1486,10 +1486,10 @@ function header(prefix = "") {
 <a class="nav-dropdown-toggle" href="${prefix}our-offerings.html">Our Offerings</a>
 <div aria-label="Offerings sections" class="nav-dropdown-menu nav-menu-hierarchy">
 <a class="nav-menu-parent" href="${prefix}our-offerings.html"><span>Offerings Overview</span></a>
-<a class="nav-menu-parent" href="${prefix}analytics-health-check.html"><span>Analytics Health Check</span></a>
-<a class="nav-menu-child nav-menu-fit-check" href="${prefix}analytics-health-check.html#assessment-form-title"><span>Free Fit Check</span><em>Free</em></a>
-<a class="nav-menu-parent" href="${prefix}decision-system-reset.html"><span>Decision System Reset</span></a>
-<a class="nav-menu-parent" href="${prefix}fractional-analytics.html"><span>Fractional Analytics Consulting</span></a>
+<a class="nav-menu-child nav-menu-fit-check nav-menu-path-01" href="${prefix}free-fit-check.html"><span>Free Fit Check</span><em>Free</em></a>
+<a class="nav-menu-child nav-menu-path-02" href="${prefix}analytics-health-check.html"><span>Analytics Health Check</span></a>
+<a class="nav-menu-child nav-menu-path-03" href="${prefix}decision-system-reset.html"><span>Decision System Reset</span></a>
+<a class="nav-menu-child nav-menu-path-04" href="${prefix}fractional-analytics.html"><span>Fractional Analytics Consulting</span></a>
 </div>
 </div>
 <div class="nav-dropdown nav-dropdown-intelligence">
@@ -1529,7 +1529,8 @@ function footer(prefix = "") {
     </nav>
     <nav aria-label="Footer core services" class="site-footer-col">
       <h3>Services</h3>
-      <a href="${prefix}analytics-health-check.html#assessment-form-title">Free Fit Check</a>
+      <a href="${prefix}dashboard-trust-scorecard.html">Dashboard Trust Scorecard</a>
+      <a href="${prefix}free-fit-check.html">Free Fit Check</a>
       <a href="${prefix}analytics-health-check.html">Analytics Health Check</a>
       <a href="${prefix}decision-system-reset.html">Decision System Reset</a>
       <a href="${prefix}fractional-analytics.html">Fractional Analytics Consulting</a>
@@ -1654,7 +1655,7 @@ ${questionHtml}
 ${resourceNote}
 <h2>Conclusion</h2>
 <p>${esc(conclusion)}</p>
-<p>If this article describes what is happening inside your reporting environment, Parallax Data Lab can help. Start with the <a href="${serviceHref(fitCheck, servicePrefix)}">${esc(fitCheck.label)}</a> to clarify where trust is breaking, what should be governed, and what kind of decision system your leadership team actually needs.</p>`;
+<p>If this article describes what is happening inside your reporting environment, Parallax Data Lab can help. Start with the <a href="${serviceHref(fitCheck, servicePrefix)}">${esc(fitCheck.label)}</a>, a free 15-minute meeting to clarify where trust is breaking, what should be governed, and what kind of decision system your leadership team actually needs.</p>`;
 }
 
 function articlePage(a, options = {}) {
@@ -1743,6 +1744,17 @@ ${copy}
 </div>
 </div>
 </article>
+<section class="insights-conversion-cta reveal-card" aria-labelledby="article-fit-check-title">
+<div>
+<p class="page-kicker">Free 15-minute fit check</p>
+<h2 id="article-fit-check-title">Turn this article into the right next analytics move.</h2>
+<p>If this issue is showing up in your dashboards, reporting cadence, or leadership meetings, use the free Fit Check to clarify the problem, the likely root cause, and whether an assessment, reset, or operating digest is the right path.</p>
+</div>
+<div class="insights-cta-actions">
+<a class="secondary-action" href="${prefix}dashboard-trust-scorecard.html">Get the Scorecard</a>
+<a class="primary-action" href="${serviceHref(fitCheck, prefix)}">Request the 15-Minute Fit Check</a>
+</div>
+</section>
 </main>
 ${footer(prefix)}
 <script src="${prefix}home.js?v=106"></script>
@@ -1802,6 +1814,17 @@ ${header(prefix)}
 <p class="page-kicker">Insights</p>
 <h1>Executive articles for leaders turning data noise into decision clarity.</h1>
 <p>Practical guidance on reporting overload, dashboard trust, KPI ownership, executive reporting, AI readiness, operational intelligence digests, and analytics leadership for growing companies.</p>
+</section>
+<section class="insights-conversion-cta insights-hub-cta reveal-card" aria-labelledby="insights-fit-check-title">
+<div>
+<p class="page-kicker">Free 15-minute fit check</p>
+<h2 id="insights-fit-check-title">Not sure which analytics problem is actually costing you time?</h2>
+<p>Use the free Fit Check to pressure-test whether the issue is dashboard trust, reporting overload, KPI ownership, decision cadence, or a missing operational digest.</p>
+</div>
+<div class="insights-cta-actions">
+<a class="secondary-action" href="${prefix}dashboard-trust-scorecard.html">Get the Scorecard</a>
+<a class="primary-action" href="${prefix}free-fit-check.html">Request the 15-Minute Fit Check</a>
+</div>
 </section>
 <section class="insights-filter-band" aria-label="Article categories">
 <button class="is-active" type="button" data-insight-filter="all">All</button>
@@ -2301,7 +2324,9 @@ function updateSitemap() {
     ["", "1.00", "weekly"],
     ["how-we-help/", "0.85", "monthly"],
     ["our-offerings/", "0.95", "weekly"],
-    ["analytics-health-check/", "0.95", "weekly"],
+    ["free-fit-check/", "0.98", "weekly"],
+    ["dashboard-trust-scorecard/", "0.92", "weekly"],
+    ["analytics-health-check/", "0.92", "weekly"],
     ["decision-system-reset/", "0.90", "monthly"],
     ["fractional-analytics/", "0.90", "monthly"],
     ["intelligence-lab/", "0.85", "monthly"],
@@ -2329,6 +2354,8 @@ function updateRedirects() {
   const staticNoSlash = [
     "how-we-help",
     "our-offerings",
+    "free-fit-check",
+    "dashboard-trust-scorecard",
     "analytics-health-check",
     "decision-system-reset",
     "fractional-analytics",
@@ -2341,6 +2368,8 @@ function updateRedirects() {
   const staticClean = [
     ["how-we-help", "how-we-help.html"],
     ["our-offerings", "our-offerings.html"],
+    ["free-fit-check", "free-fit-check.html"],
+    ["dashboard-trust-scorecard", "dashboard-trust-scorecard.html"],
     ["analytics-health-check", "analytics-health-check.html"],
     ["decision-system-reset", "decision-system-reset.html"],
     ["fractional-analytics", "fractional-analytics.html"],
@@ -2448,6 +2477,8 @@ function main() {
   [
     ["how-we-help", "how-we-help.html"],
     ["our-offerings", "our-offerings.html"],
+    ["free-fit-check", "free-fit-check.html"],
+    ["dashboard-trust-scorecard", "dashboard-trust-scorecard.html"],
     ["analytics-health-check", "analytics-health-check.html"],
     ["decision-system-reset", "decision-system-reset.html"],
     ["fractional-analytics", "fractional-analytics.html"],
@@ -2457,7 +2488,9 @@ function main() {
     ["thank-you", "thank-you.html"],
   ].forEach(([clean, file]) => {
     const source = fs.readFileSync(path.join(root, file), "utf8");
-    const cleanHtml = source.replace(/<head>/, '<head>\n<base href="../">');
+    const cleanHtml = source
+      .replace(/<head>/, '<head>\n<base href="../">')
+      .replace(/href="#/g, `href="${file}#`);
     ensureDir(clean);
     write(path.join(clean, "index.html"), cleanHtml);
   });
