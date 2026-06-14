@@ -694,7 +694,10 @@ function setupLocalFormFallbacks() {
         .filter((field) => field.name && !field.name.startsWith("_") && field.type !== "submit")
         .map((field) => `${field.name}: ${field.value || ""}`)
         .join("\n");
-      const body = values || "Please send me the Dashboard Trust & Decision Clarity Scorecard.";
+      const scorecardUrl = "https://parallaxdatalab.com/dashboard-trust-scorecard-download/";
+      const body = values
+        ? `${values}\n\nScorecard link: ${scorecardUrl}`
+        : `Please send me the Dashboard Trust & Decision Clarity Scorecard.\n\nScorecard link: ${scorecardUrl}`;
       window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   });

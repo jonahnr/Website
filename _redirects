@@ -34,6 +34,7 @@
 /our-offerings /our-offerings/ 301
 /free-fit-check /free-fit-check/ 301
 /dashboard-trust-scorecard /dashboard-trust-scorecard/ 301
+/dashboard-trust-scorecard-download /dashboard-trust-scorecard-download/ 301
 /analytics-health-check /analytics-health-check/ 301
 /decision-system-reset /decision-system-reset/ 301
 /fractional-analytics /fractional-analytics/ 301
@@ -41,6 +42,7 @@
 /insights /insights/ 301
 /about /about/ 301
 /privacy-policy /privacy-policy/ 301
+/scorecard-thank-you /scorecard-thank-you/ 301
 /thank-you /thank-you/ 301
 /insights/why-nobody-trusts-your-dashboard /insights/why-nobody-trusts-your-dashboard/ 301
 /insights/hidden-cost-of-reporting-misalignment /insights/hidden-cost-of-reporting-misalignment/ 301
@@ -74,6 +76,7 @@
 /our-offerings/ /our-offerings.html 200
 /free-fit-check/ /free-fit-check.html 200
 /dashboard-trust-scorecard/ /dashboard-trust-scorecard.html 200
+/dashboard-trust-scorecard-download/ /dashboard-trust-scorecard-download.html 200
 /analytics-health-check/ /analytics-health-check.html 200
 /decision-system-reset/ /decision-system-reset.html 200
 /fractional-analytics/ /fractional-analytics.html 200
@@ -81,6 +84,7 @@
 /insights/ /insights.html 200
 /about/ /about.html 200
 /privacy-policy/ /privacy-policy.html 200
+/scorecard-thank-you/ /scorecard-thank-you.html 200
 /thank-you/ /thank-you.html 200
 /insights/why-nobody-trusts-your-dashboard/ /insights/why-nobody-trusts-your-dashboard.html 200
 /insights/hidden-cost-of-reporting-misalignment/ /insights/hidden-cost-of-reporting-misalignment.html 200
@@ -114,6 +118,7 @@
 /our-offerings.html /our-offerings/ 301
 /free-fit-check.html /free-fit-check/ 301
 /dashboard-trust-scorecard.html /dashboard-trust-scorecard/ 301
+/dashboard-trust-scorecard-download.html /dashboard-trust-scorecard-download/ 301
 /analytics-health-check.html /analytics-health-check/ 301
 /decision-system-reset.html /decision-system-reset/ 301
 /fractional-analytics.html /fractional-analytics/ 301
@@ -121,6 +126,7 @@
 /insights.html /insights/ 301
 /about.html /about/ 301
 /privacy-policy.html /privacy-policy/ 301
+/scorecard-thank-you.html /scorecard-thank-you/ 301
 /thank-you.html /thank-you/ 301
 /insights/why-nobody-trusts-your-dashboard.html /insights/why-nobody-trusts-your-dashboard/ 301
 /insights/hidden-cost-of-reporting-misalignment.html /insights/hidden-cost-of-reporting-misalignment/ 301
