@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Trust Scorecard | Parallax Data Lab</title>
+<meta content="Use the Dashboard Trust & Decision Clarity Scorecard to find where reporting trust, KPI ownership, metric definitions, or operational signal quality is breaking down." name="description"/>
+<link rel="canonical" href="https://parallaxdatalab.com/dashboard-trust-scorecard/"/>
+<link href="home.css?v=106" rel="stylesheet"/>
+<meta name="theme-color" content="#0b1745"/>
+<link href="apple-touch-icon.png?v=106" rel="apple-touch-icon"/><link href="favicon.svg?v=106" rel="icon" type="image/svg+xml"/><link href="favicon.ico?v=106" rel="icon" sizes="any"/>
+<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Dashboard Trust Scorecard | Parallax Data Lab" property="og:title"/><meta content="Find where reporting trust, KPI ownership, metric definitions, or operational signal quality is breaking down." property="og:description"/><meta content="https://parallaxdatalab.com/dashboard-trust-scorecard/" property="og:url"/><meta content="https://parallaxdatalab.com/social-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Dashboard Trust Scorecard | Parallax Data Lab" name="twitter:title"/><meta content="Find where reporting trust, KPI ownership, metric definitions, or operational signal quality is breaking down." name="twitter:description"/><meta content="https://parallaxdatalab.com/social-preview.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dashboard Trust Scorecard",
+  "description": "A practical scorecard for diagnosing reporting trust, KPI ownership, decision cadence, and operational signal quality.",
+  "url": "https://parallaxdatalab.com/dashboard-trust-scorecard/"
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK9PM083W7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GK9PM083W7');
+</script>
+</head>
+<body>
+<canvas aria-hidden="true" id="constellation"></canvas>
+<header aria-label="Parallax site navigation" class="site-header">
+<a aria-label="Parallax Data Lab home" class="site-brand" href="index.html"><img alt="Parallax Data Lab" src="assets/parallax_data_lab_original_transparent.png"/></a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="mobile-nav-toggle" type="button"><span></span><span></span><span></span><em>Menu</em></button>
+<nav id="primary-navigation" aria-label="Primary navigation">
+<a href="index.html">Home</a>
+<a href="how-we-help.html">How We Help</a>
+<div class="nav-dropdown nav-dropdown-offerings">
+<a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
+<div aria-label="Offerings sections" class="nav-dropdown-menu nav-menu-hierarchy">
+<a class="nav-menu-parent" href="our-offerings.html"><span>Offerings Overview</span></a>
+<a class="nav-menu-child nav-menu-fit-check nav-menu-path-01" href="free-fit-check.html"><span>Free Fit Check</span><em>Free</em></a>
+<a class="nav-menu-child nav-menu-path-02" href="analytics-health-check.html"><span>Analytics Health Check</span></a>
+<a class="nav-menu-child nav-menu-path-03" href="decision-system-reset.html"><span>Decision System Reset</span></a>
+<a class="nav-menu-child nav-menu-path-04" href="fractional-analytics.html"><span>Fractional Analytics Consulting</span></a>
+</div>
+</div>
+<div class="nav-dropdown nav-dropdown-intelligence">
+<a class="nav-dropdown-toggle" href="intelligence-lab.html">Intelligence Lab</a>
+<div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
+<a class="nav-menu-parent" href="intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
+<a class="nav-menu-child" href="intelligence-lab.html#predictive-risk-intelligence"><span>Predictive Risk Intelligence</span></a>
+</div>
+</div>
+<a href="insights.html">Insights</a>
+<a href="about.html">About</a>
+</nav>
+</header>
+<main class="lead-magnet-page">
+<section class="lead-magnet-hero">
+<div class="lead-magnet-copy">
+<p class="page-kicker">Lead Magnet</p>
+<h1>Dashboard Trust & Decision Clarity Scorecard</h1>
+<p>Use this scorecard to identify whether your reporting problem is really a dashboard issue, a KPI ownership issue, a decision cadence issue, or a missing operational signal issue.</p>
+<div class="assessment-hero-actions">
+<a class="primary-action" href="#scorecard-form-title">Get the Scorecard</a>
+<a class="secondary-action" href="free-fit-check.html">Request the Fit Check</a>
+</div>
+</div>
+<aside class="lead-magnet-preview" aria-label="Scorecard preview">
+<p class="page-kicker">What it helps diagnose</p>
+<ul>
+<li>Dashboard trust breaks</li>
+<li>Metric definition drift</li>
+<li>Leadership decision friction</li>
+<li>Too much data, not enough signal</li>
+</ul>
+</aside>
+</section>
+<section class="lead-magnet-scorecard reveal-card" aria-labelledby="scorecard-title">
+<p class="page-kicker">Self-assessment</p>
+<h2 id="scorecard-title">Score the four places analytics trust usually breaks.</h2>
+<div class="lead-score-grid">
+<article><span>01</span><h3>Metric trust</h3><p>Leaders agree on what the KPI means, where it comes from, and when it is safe to use.</p><strong>Weak signal: meetings debate the number before the decision.</strong></article>
+<article><span>02</span><h3>Ownership</h3><p>Every important metric has a business owner, logic owner, and decision owner.</p><strong>Weak signal: no one can approve a definition change quickly.</strong></article>
+<article><span>03</span><h3>Decision cadence</h3><p>Reports are tied to recurring decisions, thresholds, and follow-up ownership.</p><strong>Weak signal: dashboards are reviewed but action is unclear.</strong></article>
+<article><span>04</span><h3>Operational signal</h3><p>Leadership can see what changed, why it matters, and what needs attention next.</p><strong>Weak signal: there is a lot of data but no weekly narrative.</strong></article>
+</div>
+</section>
+<section class="lead-magnet-form-section reveal-card" aria-labelledby="scorecard-form-title">
+<div>
+<p class="page-kicker">Get the working copy</p>
+<h2 id="scorecard-form-title">Request the scorecard and use it before your 15-minute Fit Check.</h2>
+<p>The scorecard is designed to make the Fit Check more useful: you can bring the weakest category, the decision it affects, and the reporting workflow that is creating friction.</p>
+</div>
+<form action="https://formsubmit.co/jonahnr@gmail.com" class="assessment-form" method="POST">
+<input name="_subject" type="hidden" value="Dashboard Trust Scorecard Request"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_next" type="hidden" value="https://parallaxdatalab.com/thank-you/"/>
+<input aria-hidden="true" autocomplete="off" name="_honey" tabindex="-1" type="text"/>
+<div class="assessment-field-row">
+<div>
+<label for="scorecard-name">Name</label>
+<input autocomplete="name" id="scorecard-name" name="Name" required type="text"/>
+</div>
+<div>
+<label for="scorecard-email">Work Email</label>
+<input autocomplete="email" id="scorecard-email" name="Work Email" required type="email"/>
+</div>
+</div>
+<label for="scorecard-friction">Which category feels weakest right now?</label>
+<select id="scorecard-friction" name="Weakest Scorecard Area" required>
+<option value="">Choose one</option>
+<option>Metric trust</option>
+<option>Ownership</option>
+<option>Decision cadence</option>
+<option>Operational signal</option>
+<option>Not sure yet</option>
+</select>
+<button type="submit">Send Me the Scorecard</button>
+</form>
+</section>
+</main>
+<footer aria-label="Site footer" class="site-footer site-footer-refined">
+  <div class="site-footer-inner">
+    <div class="site-footer-col site-footer-about">
+      <a class="site-footer-brand" href="index.html">Parallax Data Lab</a>
+      <p>Analytics trust, decision systems, and senior data strategy for teams ready to make reporting useful again.</p>
+      <a class="site-footer-email" href="mailto:jonahnr@gmail.com?subject=Parallax%20Data%20Lab%20Inquiry">jonahnr@gmail.com</a>
+      <a class="site-footer-contact-button" href="about.html#contact-us">Contact Us</a>
+    </div>
+    <nav aria-label="Footer core pages" class="site-footer-col">
+      <h3>Core pages</h3>
+      <a href="index.html">Home</a>
+      <a href="how-we-help.html">How We Help</a>
+      <a href="our-offerings.html">Our Offerings</a>
+      <a href="intelligence-lab.html">Intelligence Lab</a>
+      <a href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+    <nav aria-label="Footer core services" class="site-footer-col">
+      <h3>Services</h3>
+      <a href="dashboard-trust-scorecard.html">Dashboard Trust Scorecard</a>
+      <a href="free-fit-check.html">Free Fit Check</a>
+      <a href="analytics-health-check.html">Analytics Health Check</a>
+      <a href="decision-system-reset.html">Decision System Reset</a>
+      <a href="fractional-analytics.html">Fractional Analytics Consulting</a>
+    </nav>
+    <nav aria-label="Footer intelligence lab services" class="site-footer-col site-footer-intel">
+      <h3>Intelligence Lab Services</h3>
+      <a href="intelligence-lab.html#operations-intelligence-digest">Operations Intelligence Digest</a>
+      <a href="intelligence-lab.html#governance-rls-architecture">Governance &amp; RLS Architecture</a>
+      <a href="intelligence-lab.html#enterprise-outcome-studio">Enterprise Outcome Studio</a>
+      <a href="intelligence-lab.html#predictive-risk-intelligence">Predictive Risk Intelligence</a>
+    </nav>
+    <div class="site-footer-col site-footer-contact">
+      <h3>Contact</h3>
+      <a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a>
+      <a class="site-footer-secondary" href="about.html#contact-us">Email Jonah</a>
+      <a class="site-footer-secondary" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+  <div class="site-footer-bottom">
+    <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
+  </div>
+</footer>
+<script src="home.js?v=106"></script>
+</body>
+</html>

@@ -19,10 +19,22 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://parallaxdatalab.com/free-fit-check/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.98</priority>
+  </url>
+  <url>
+    <loc>https://parallaxdatalab.com/dashboard-trust-scorecard/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
     <loc>https://parallaxdatalab.com/analytics-health-check/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.92</priority>
   </url>
   <url>
     <loc>https://parallaxdatalab.com/decision-system-reset/</loc>

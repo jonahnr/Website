@@ -32,6 +32,8 @@
 # No-trailing-slash cleanup
 /how-we-help /how-we-help/ 301
 /our-offerings /our-offerings/ 301
+/free-fit-check /free-fit-check/ 301
+/dashboard-trust-scorecard /dashboard-trust-scorecard/ 301
 /analytics-health-check /analytics-health-check/ 301
 /decision-system-reset /decision-system-reset/ 301
 /fractional-analytics /fractional-analytics/ 301
@@ -70,6 +72,8 @@
 # Clean URL rewrites
 /how-we-help/ /how-we-help.html 200
 /our-offerings/ /our-offerings.html 200
+/free-fit-check/ /free-fit-check.html 200
+/dashboard-trust-scorecard/ /dashboard-trust-scorecard.html 200
 /analytics-health-check/ /analytics-health-check.html 200
 /decision-system-reset/ /decision-system-reset.html 200
 /fractional-analytics/ /fractional-analytics.html 200
@@ -108,6 +112,8 @@
 # Redirect old .html URLs to clean URLs
 /how-we-help.html /how-we-help/ 301
 /our-offerings.html /our-offerings/ 301
+/free-fit-check.html /free-fit-check/ 301
+/dashboard-trust-scorecard.html /dashboard-trust-scorecard/ 301
 /analytics-health-check.html /analytics-health-check/ 301
 /decision-system-reset.html /decision-system-reset/ 301
 /fractional-analytics.html /fractional-analytics/ 301
