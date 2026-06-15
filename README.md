@@ -154,8 +154,8 @@ Before publishing, make sure these files and folders are committed and pushed:
 
 All HTML pages currently reference:
 
-- `home.css?v=118`
-- `home.js?v=118`
+- `home.css?v=119`
+- `home.js?v=119`
 
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 

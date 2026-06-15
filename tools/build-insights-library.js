@@ -1705,7 +1705,7 @@ function articlePage(a, options = {}) {
 <title>${esc(a.title)} | Parallax Data Lab</title>
 <meta content="${esc(a.meta)}" name="description"/>
 <link rel="canonical" href="${url}"/>
-<link href="${prefix}home.css?v=118" rel="stylesheet"/>
+<link href="${prefix}home.css?v=119" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
 <meta content="article" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="${esc(a.title)} | Parallax Data Lab" property="og:title"/><meta content="${esc(a.meta)}" property="og:description"/><meta content="${url}" property="og:url"/><meta content="${site}/assets/insights/${a.image}" property="og:image"/>
@@ -1758,7 +1758,7 @@ ${copy}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=118"></script>
+<script src="${prefix}home.js?v=119"></script>
 </body>
 </html>
 `;
@@ -1800,7 +1800,7 @@ function hubPage(options = {}) {
 <title>Analytics Insights for Reporting Overload | Parallax Data Lab</title>
 <meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="description"/>
 <link rel="canonical" href="${site}/insights/"/>
-<link href="${prefix}home.css?v=118" rel="stylesheet"/>
+<link href="${prefix}home.css?v=119" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
 <meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.png" property="og:image"/>
@@ -1841,7 +1841,7 @@ ${cards}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=118"></script>
+<script src="${prefix}home.js?v=119"></script>
 </body>
 </html>
 `;
