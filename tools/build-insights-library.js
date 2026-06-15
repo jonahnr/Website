@@ -1640,7 +1640,7 @@ ${sectionHtml}
 <ul>
 ${a.moves.map((move) => `<li>${esc(move)}</li>`).join("\n")}
 </ul>
-<h2>Implementation notes for ${esc(a.title.toLowerCase())}</h2>
+<h2>How to implement the first useful change</h2>
 ${implementationHtml}
 <p>There is also a sequencing issue leaders should take seriously. If the team starts with tooling, the work can look productive while the same decision friction survives underneath. If the team starts with ownership, definitions, and cadence, the eventual reporting changes have a much better chance of being adopted.</p>
 <p>This is especially important in small and mid-sized companies because informal context can hide system weakness for a long time. A finance leader, operator, or founder may know which number is safe because they remember how the report was built. That knowledge does not scale cleanly when new leaders join, when the company adds locations or business lines, or when a board asks for more consistent operating visibility.</p>
@@ -1653,7 +1653,7 @@ ${questionHtml}
 </ul>
 <p>Related reading from the Parallax Data Lab library: ${relatedText}.</p>
 ${resourceNote}
-<h2>Conclusion</h2>
+<h2>What to do next</h2>
 <p>${esc(conclusion)}</p>
 <p>If this article describes what is happening inside your reporting environment, Parallax Data Lab can help. Start with the <a href="${serviceHref(fitCheck, servicePrefix)}">${esc(fitCheck.label)}</a>, a free 15-minute meeting to clarify where trust is breaking, what should be governed, and what kind of decision system your leadership team actually needs.</p>`;
 }
@@ -1704,9 +1704,9 @@ function articlePage(a, options = {}) {
 <title>${esc(a.title)} | Parallax Data Lab</title>
 <meta content="${esc(a.meta)}" name="description"/>
 <link rel="canonical" href="${url}"/>
-<link href="${prefix}home.css?v=107" rel="stylesheet"/>
+<link href="${prefix}home.css?v=112" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
-<link href="${prefix}apple-touch-icon.png?v=107" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=107" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=107" rel="icon" sizes="any"/>
+<link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
 <meta content="article" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="${esc(a.title)} | Parallax Data Lab" property="og:title"/><meta content="${esc(a.meta)}" property="og:description"/><meta content="${url}" property="og:url"/><meta content="${site}/assets/insights/${a.image}" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/><meta content="${esc(a.title)} | Parallax Data Lab" name="twitter:title"/><meta content="${esc(a.meta)}" name="twitter:description"/><meta content="${site}/assets/insights/${a.image}" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
@@ -1757,7 +1757,7 @@ ${copy}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=107"></script>
+<script src="${prefix}home.js?v=112"></script>
 </body>
 </html>
 `;
@@ -1799,9 +1799,9 @@ function hubPage(options = {}) {
 <title>Analytics Insights for Reporting Overload | Parallax Data Lab</title>
 <meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="description"/>
 <link rel="canonical" href="${site}/insights/"/>
-<link href="${prefix}home.css?v=107" rel="stylesheet"/>
+<link href="${prefix}home.css?v=112" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
-<link href="${prefix}apple-touch-icon.png?v=107" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=107" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=107" rel="icon" sizes="any"/>
+<link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
 <meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" name="twitter:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="twitter:description"/><meta content="${site}/social-preview.png" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
@@ -1840,7 +1840,7 @@ ${cards}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=107"></script>
+<script src="${prefix}home.js?v=112"></script>
 </body>
 </html>
 `;
