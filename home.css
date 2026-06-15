@@ -23205,12 +23205,13 @@ nav {
 
 .entry-path-mini {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   width: min(100%, 1040px);
   margin: 0 auto clamp(10px, 1.8vh, 16px);
+  overflow: visible;
 }
 
 .offerings-hero-refined .entry-path-mini,
@@ -23224,12 +23225,13 @@ nav {
   position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
+  min-height: 30px;
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 900;
   line-height: 1;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .entry-path-mini span:not(:last-child)::after,
@@ -23244,7 +23246,7 @@ nav {
 }
 
 .entry-path-mini span {
-  padding: 0 9px;
+  padding: 0 8px;
   color: #ffd66b;
   text-transform: uppercase;
   background: rgba(6, 18, 55, 0.58);
@@ -23252,7 +23254,7 @@ nav {
 }
 
 .entry-path-mini a {
-  padding: 0 11px;
+  padding: 0 8px;
   color: #f7fbff;
   background: rgba(8, 25, 70, 0.68);
   border: 1px solid rgba(112, 190, 255, 0.28);
@@ -23631,6 +23633,7 @@ nav {
   .entry-path-mini,
   .offerings-hero-refined .entry-path-mini,
   .lab-hero-refined .entry-path-mini {
+    flex-wrap: wrap;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;

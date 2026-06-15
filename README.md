@@ -73,6 +73,7 @@ Lead magnet:
 
 - Dashboard Trust Scorecard CTA linking to `dashboard-trust-scorecard.html`
 - Scorecard request form stores the selected weakest dimension locally.
+- Scorecard request form submits to FormSubmit in the background and then opens `dashboard-trust-scorecard-download.html` directly.
 - The printable scorecard page uses that selected dimension, and any lowest score selected on the working sheet, to tailor the guidance panel before printing or saving as PDF.
 
 Secondary CTA:
@@ -153,8 +154,8 @@ Before publishing, make sure these files and folders are committed and pushed:
 
 All HTML pages currently reference:
 
-- `home.css?v=116`
-- `home.js?v=116`
+- `home.css?v=118`
+- `home.js?v=118`
 
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 

@@ -669,6 +669,43 @@ function setupAnalyticsEventTracking() {
   });
 }
 
+function setupScorecardDirectDelivery() {
+  document.querySelectorAll('form[data-scorecard-delivery="direct"]').forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const action = form.getAttribute("action");
+      const successUrl = form.dataset.successUrl || "dashboard-trust-scorecard-download.html";
+      if (scorecardAreaSelect?.value) {
+        window.localStorage?.setItem("parallaxScorecardWeakestArea", scorecardAreaSelect.value);
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Opening scorecard...";
+      }
+
+      const goToScorecard = () => {
+        window.location.href = successUrl;
+      };
+
+      if (!action) {
+        goToScorecard();
+        return;
+      }
+
+      const delivery = fetch(action, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+      });
+      const fallback = new Promise((resolve) => window.setTimeout(resolve, 1200));
+      Promise.race([delivery, fallback]).finally(goToScorecard);
+    });
+  });
+}
+
 resizeCanvas();
 drawConstellation();
 updateMotion();
@@ -684,6 +721,7 @@ setupCarousel("healthSample");
 setupFractionalFlipCards();
 setupFitPathFinder();
 setupAnalyticsEventTracking();
+setupScorecardDirectDelivery();
 
 
 
