@@ -1,15 +1,15 @@
 # Parallax Data Lab Website
 
-Static website for Parallax Data Lab at parallaxdatalab.com, centered on the Analytics Health Check, Decision System Reset, Fractional Analytics Consulting, and Intelligence Lab paths.
+Static website for Parallax Data Lab at parallaxdatalab.com, centered on the Free Fit Check entry path, Analytics Health Check diagnostic, deeper decision-system services, and Intelligence Lab paths.
 
-The current buyer entry path is:
+The compact buyer entry path shown under the relevant heroes is:
 
-1. `dashboard-trust-scorecard.html` - free self-diagnosis and printable scorecard.
-2. `free-fit-check.html` - free 15-minute routing conversation.
-3. `analytics-health-check.html` - paid diagnostic when the foundation needs deeper review.
-4. `decision-system-reset.html` - rebuild decisions, owners, triggers, cadence, and escalation.
-5. `fractional-analytics.html` - ongoing senior analytics stewardship.
-6. `intelligence-lab.html` - advanced operational intelligence products after the foundation is trusted.
+- `dashboard-trust-scorecard.html` - optional free self-diagnosis and printable scorecard for buyers who want to think before requesting a conversation.
+- `free-fit-check.html` - core free 15-minute routing conversation and the main starting point for intentional buyers.
+- `analytics-health-check.html` - entry paid diagnostic when the foundation needs deeper review.
+- `intelligence-lab.html` - advanced operational intelligence products after the foundation is trusted.
+
+Decision System Reset and Fractional Analytics Consulting stay in the Offerings ladder and dropdown, but they are intentionally not in the compact entry path. They are deeper engagement shapes after the first routing and diagnostic work clarifies the problem.
 
 ## GitHub Pages Entry Point
 
@@ -28,8 +28,8 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `intelligence-lab.html` - Intelligence Lab page.
 - `our-offerings.html` - Offerings overview and path chooser.
 - `analytics-health-check.html` - Internal Analytics Health Check request page with a FormSubmit-powered context form.
-- `dashboard-trust-scorecard.html` - Lead magnet request page with five diagnostic areas and weakest-area capture.
-- `dashboard-trust-scorecard-download.html` - Printable scorecard page that can be printed or saved as a PDF.
+- `dashboard-trust-scorecard.html` - Optional lead magnet request page that previews the five diagnostic areas, captures one matching weakest dimension, and includes an optional context field for secondary symptoms.
+- `dashboard-trust-scorecard-download.html` - Interactive printable scorecard page with five 1-5 scored dimensions, five evidence checks per dimension that can drive scoring, diagnostic snapshot, compact evidence notes, tailored guidance, and print/PDF buttons.
 - `decision-system-reset.html` - Decision System Reset service page.
 - `fractional-analytics.html` - Fractional Analytics Consulting page.
 - `about.html` - About page and founder context.
@@ -72,8 +72,8 @@ Primary CTA:
 Lead magnet:
 
 - Dashboard Trust Scorecard CTA linking to `dashboard-trust-scorecard.html`
-- Scorecard request form stores the selected weakest area locally.
-- The printable scorecard page uses that selected area to tailor the guidance panel before printing or saving as PDF.
+- Scorecard request form stores the selected weakest dimension locally.
+- The printable scorecard page uses that selected dimension, and any lowest score selected on the working sheet, to tailor the guidance panel before printing or saving as PDF.
 
 Secondary CTA:
 
@@ -153,10 +153,9 @@ Before publishing, make sure these files and folders are committed and pushed:
 
 All HTML pages currently reference:
 
-- `home.css?v=112`
-- `home.js?v=112`
+- `home.css?v=116`
+- `home.js?v=116`
 
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 
 If the page shows a 404, confirm GitHub Pages is pointed at the branch and folder containing `index.html`.
-

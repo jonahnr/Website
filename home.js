@@ -227,6 +227,7 @@ function setupScorecardPersonalization() {
       copy: "If no single area is obvious, score all five areas and circle where the conversation gets stuck first. The Free Fit Check is built for this situation: it separates a trust issue from an ownership, data reliability, cadence, or signal problem."
     }
   };
+  const scorecardDimensions = new Set(Object.keys(guidance));
 
   if (scorecardAreaSelect) {
     scorecardAreaSelect.addEventListener("change", () => {
@@ -249,11 +250,74 @@ function setupScorecardPersonalization() {
   }
 
   const selected = window.localStorage?.getItem(storageKey) || "";
-  const match = guidance[selected];
+  const match = scorecardDimensions.has(selected) ? guidance[selected] : null;
   if (match) {
     titleTarget.textContent = match.title;
     copyTarget.textContent = match.copy;
   }
+
+  const scoreInputs = Array.from(document.querySelectorAll("[data-scorecard-score]"));
+  if (!scoreInputs.length) {
+    return;
+  }
+
+  function applyGuidance(area, score) {
+    if (score >= 4) {
+      titleTarget.textContent = "Pattern: mostly healthy";
+      copyTarget.textContent = "The lowest selected score is still strong. Use the evidence notes to confirm the area is consistently trusted, then look for the lowest remaining score or use the Fit Check to decide whether there is a meaningful next step.";
+      return;
+    }
+
+    const areaGuidance = guidance[area] || guidance["Not sure yet"];
+    titleTarget.textContent = `${areaGuidance.title} (${score}/5)`;
+    copyTarget.textContent = areaGuidance.copy;
+    window.localStorage?.setItem(storageKey, area);
+  }
+
+  function updateFromScores() {
+    const checked = scoreInputs
+      .filter((input) => input.checked)
+      .map((input) => ({
+        area: input.closest("[data-scorecard-area]")?.dataset.scorecardArea || "",
+        score: Number(input.value)
+      }))
+      .filter((item) => item.area && Number.isFinite(item.score));
+
+    if (!checked.length) {
+      return;
+    }
+
+    checked.sort((a, b) => a.score - b.score);
+    applyGuidance(checked[0].area, checked[0].score);
+  }
+
+  scoreInputs.forEach((input) => {
+    input.addEventListener("change", updateFromScores);
+  });
+
+  const assistGroups = Array.from(document.querySelectorAll("[data-scorecard-assist]"));
+  assistGroups.forEach((group) => {
+    const card = group.closest(".scorecard-area-card");
+    const checks = Array.from(group.querySelectorAll('input[type="checkbox"]'));
+    if (!card || checks.length !== 5) {
+      return;
+    }
+
+    checks.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        const checkedCount = checks.filter((item) => item.checked).length;
+        if (!checkedCount) {
+          return;
+        }
+
+        const score = card.querySelector(`[data-scorecard-score][value="${checkedCount}"]`);
+        if (score) {
+          score.checked = true;
+          score.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    });
+  });
 }
 
 function closeDropdowns(except = null) {
@@ -682,6 +746,10 @@ function setupActiveNavigation() {
   const hash = window.location.hash || "";
   const offeringPages = new Set([
     "our-offerings",
+    "dashboard-trust-scorecard",
+    "dashboard-trust-scorecard-download",
+    "scorecard-thank-you",
+    "free-fit-check",
     "analytics-health-check",
     "decision-system-reset",
     "fractional-analytics"
