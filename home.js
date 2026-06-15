@@ -11,6 +11,7 @@ const insightFilterButtons = Array.from(document.querySelectorAll("[data-insight
 const insightCards = Array.from(document.querySelectorAll(".insight-card[data-category]"));
 const insightsResults = document.querySelector("[data-insights-results]");
 const insightsSearch = document.querySelector("[data-insights-search]");
+const scorecardAreaSelect = document.querySelector("#scorecard-friction");
 
 let width = 0;
 let height = 0;
@@ -196,6 +197,63 @@ function setupInsightFilters() {
   }
 
   renderFilter("all");
+}
+
+function setupScorecardPersonalization() {
+  const storageKey = "parallaxScorecardWeakestArea";
+  const guidance = {
+    "Metric trust": {
+      title: "Focus: metric trust",
+      copy: "Bring the KPI leaders debate most, every current definition, the dashboard where it appears, and the decision it is supposed to support. The next step is usually a metric-definition and lineage diagnostic before redesigning the report."
+    },
+    "Ownership": {
+      title: "Focus: ownership",
+      copy: "Bring the metrics that matter most and list who owns the definition, source logic, business interpretation, and follow-up action. If those names are unclear, the next step is usually a Decision System Reset."
+    },
+    "Source reliability": {
+      title: "Focus: source reliability",
+      copy: "Bring the report people distrust, the source system behind it, the refresh schedule, known manual adjustments, and any side spreadsheets teams use instead. The next step is usually a Health Check focused on lineage and data reliability."
+    },
+    "Decision cadence": {
+      title: "Focus: decision cadence",
+      copy: "Bring the recurring meeting where dashboards are reviewed, the decisions that should happen there, and the actions that fail to get assigned. The next step is usually a Decision System Reset around thresholds, owners, and escalation."
+    },
+    "Operational signal": {
+      title: "Focus: operational signal",
+      copy: "Bring the weekly questions leaders ask, the signals that change fastest, and the risks that currently surface too late. The next step may be an Intelligence Lab digest once the underlying metrics are trusted."
+    },
+    "Not sure yet": {
+      title: "Focus: routing the problem",
+      copy: "If no single area is obvious, score all five areas and circle where the conversation gets stuck first. The Free Fit Check is built for this situation: it separates a trust issue from an ownership, data reliability, cadence, or signal problem."
+    }
+  };
+
+  if (scorecardAreaSelect) {
+    scorecardAreaSelect.addEventListener("change", () => {
+      if (scorecardAreaSelect.value) {
+        window.localStorage?.setItem(storageKey, scorecardAreaSelect.value);
+      }
+    });
+
+    scorecardAreaSelect.form?.addEventListener("submit", () => {
+      if (scorecardAreaSelect.value) {
+        window.localStorage?.setItem(storageKey, scorecardAreaSelect.value);
+      }
+    });
+  }
+
+  const titleTarget = document.querySelector("[data-scorecard-focus-title]");
+  const copyTarget = document.querySelector("[data-scorecard-focus-copy]");
+  if (!titleTarget || !copyTarget) {
+    return;
+  }
+
+  const selected = window.localStorage?.getItem(storageKey) || "";
+  const match = guidance[selected];
+  if (match) {
+    titleTarget.textContent = match.title;
+    copyTarget.textContent = match.copy;
+  }
 }
 
 function closeDropdowns(except = null) {
@@ -706,4 +764,5 @@ function setupLocalFormFallbacks() {
 setupActiveNavigation();
 setupLocalFormFallbacks();
 setupInsightFilters();
+setupScorecardPersonalization();
 window.addEventListener("hashchange", setupActiveNavigation);
