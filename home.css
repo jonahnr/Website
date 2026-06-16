@@ -6757,7 +6757,7 @@ main,
     linear-gradient(180deg, rgba(5, 9, 22, 0.56), rgba(11, 23, 69, 0.88)),
     radial-gradient(circle at 76% 20%, rgba(69, 190, 255, 0.18), transparent 24rem),
     radial-gradient(circle at 20% 18%, rgba(245, 181, 68, 0.10), transparent 18rem),
-    url("assets/data-contours-bbc.avif") !important;
+    image-set(url("assets/parallax-customer-intelligence-hero.webp") type("image/webp"), url("assets/parallax-customer-intelligence-hero.png") type("image/png")) !important;
   background-position: center center;
   background-size: cover;
 }
@@ -6793,7 +6793,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.66), rgba(11, 23, 69, 0.88)),
     radial-gradient(circle at 78% 20%, rgba(69, 190, 255, 0.18), transparent 22rem),
-    url("assets/data-contours-bbc.avif") !important;
+    image-set(url("assets/parallax-customer-intelligence-hero.webp") type("image/webp"), url("assets/parallax-customer-intelligence-hero.png") type("image/png")) !important;
   background-position: center center;
   background-size: cover;
 }
@@ -6809,7 +6809,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
-    url("assets/data-contours-bbc.avif") !important;
+    image-set(url("assets/parallax-customer-intelligence-hero.webp") type("image/webp"), url("assets/parallax-customer-intelligence-hero.png") type("image/png")) !important;
   background-position: center 42%;
   background-size: cover;
 }
@@ -6844,7 +6844,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
-    url("assets/data-contours-bbc.avif") !important;
+    image-set(url("assets/parallax-customer-intelligence-hero.webp") type("image/webp"), url("assets/parallax-customer-intelligence-hero.png") type("image/png")) !important;
   background-position: center 42%;
   background-size: cover;
 }
@@ -6874,7 +6874,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.60), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
-    url("assets/data-contours-bbc.avif") !important;
+    image-set(url("assets/parallax-customer-intelligence-hero.webp") type("image/webp"), url("assets/parallax-customer-intelligence-hero.png") type("image/png")) !important;
   background-position: center 42%;
   background-size: cover;
 }
@@ -6920,7 +6920,7 @@ main,
   background-image:
     linear-gradient(90deg, rgba(5, 9, 22, 0.88), rgba(11, 23, 69, 0.72) 48%, rgba(5, 9, 22, 0.84)),
     radial-gradient(circle at 76% 35%, rgba(69, 190, 255, 0.18), transparent 22rem),
-    url("assets/data-contours-bbc.avif") !important;
+    image-set(url("assets/parallax-customer-intelligence-hero.webp") type("image/webp"), url("assets/parallax-customer-intelligence-hero.png") type("image/png")) !important;
   background-position: center center;
   background-size: cover;
 }
