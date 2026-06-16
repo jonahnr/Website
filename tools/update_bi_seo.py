@@ -4,8 +4,8 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 SOCIAL = "https://parallaxdatalab.com/assets/social-preview.png"
-CSS = "home.css?v=120"
-JS = "home.js?v=120"
+CSS = "home.css?v=125"
+JS = "home.js?v=125"
 
 META = {
     "index.html": (
@@ -82,7 +82,7 @@ FOOTER = """<footer aria-label="Site footer" class="site-footer site-footer-refi
       <a class="site-footer-brand" href="index.html">Parallax Data Lab</a>
       <p>Parallax Data Lab provides business intelligence consulting, Power BI dashboard development, reporting automation, and analytics support for teams that need clearer data.</p>
       <p class="site-footer-location">Cincinnati, Ohio. Based in Cincinnati and serving teams across the United States.</p>
-      <a class="site-footer-email" href="mailto:jonahnr@gmail.com?subject=Parallax%20Data%20Lab%20Inquiry">jonahnr@gmail.com</a>
+      <a class="site-footer-email" href="#" data-mail-user="jonahnr" data-mail-domain="gmail.com" data-mail-subject="Parallax Data Lab Inquiry">Email us</a>
       <a class="site-footer-contact-button" href="about.html#contact-us">Contact Parallax Data Lab</a>
     </div>
     <nav aria-label="Footer navigation" class="site-footer-col">

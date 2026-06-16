@@ -790,7 +790,14 @@ function setupActiveNavigation() {
     "free-fit-check",
     "analytics-health-check",
     "decision-system-reset",
-    "fractional-analytics"
+    "fractional-analytics",
+    "expertise",
+    "power-bi-consultant-cincinnati",
+    "business-intelligence-consultant-cincinnati",
+    "kpi-reporting-consulting",
+    "reporting-automation-consulting",
+    "data-quality-review",
+    "dashboard-trust-governance"
   ]);
 
   nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
@@ -877,8 +884,52 @@ function setupProtectedEmailLinks() {
   });
 }
 
+function setupPowerBiEmbedPlaceholder() {
+  document.querySelectorAll("[data-power-bi-embed-placeholder]").forEach((shell) => {
+    const toggle = shell.querySelector("[data-power-bi-preview-toggle]");
+    const notes = shell.querySelector(".power-bi-report-notes");
+
+    if (!toggle || !notes) {
+      return;
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = notes.hasAttribute("hidden");
+      notes.toggleAttribute("hidden", !isOpen);
+      toggle.setAttribute("aria-pressed", String(isOpen));
+      toggle.textContent = isOpen ? "Hide Embed Notes" : "Show Embed Notes";
+    });
+  });
+}
+
+function setupOfferingMenuGroups() {
+  document.querySelectorAll(".nav-menu-offerings .nav-menu-group").forEach((group) => {
+    const closeGroup = () => {
+      if (!group.matches(":focus-within")) {
+        group.removeAttribute("open");
+      }
+    };
+
+    group.addEventListener("mouseenter", () => {
+      group.setAttribute("open", "");
+    });
+
+    group.addEventListener("mouseleave", closeGroup);
+
+    group.addEventListener("focusin", () => {
+      group.setAttribute("open", "");
+    });
+
+    group.addEventListener("focusout", () => {
+      window.setTimeout(closeGroup, 0);
+    });
+  });
+}
+
 setupActiveNavigation();
 setupProtectedEmailLinks();
+setupPowerBiEmbedPlaceholder();
+setupOfferingMenuGroups();
 setupLocalFormFallbacks();
 setupInsightFilters();
 setupScorecardPersonalization();
