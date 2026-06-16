@@ -836,13 +836,15 @@ function setupActiveNavigation() {
 
 function setupLocalFormFallbacks() {
   const isLocalHtml = window.location.protocol === "file:";
-  if (!isLocalHtml) {
-    return;
-  }
-
-  document.querySelectorAll("form[data-local-mail-fallback]").forEach((form) => {
-    const recipient = form.dataset.localMailFallback;
+  document.querySelectorAll("form[data-form-user][data-form-domain]").forEach((form) => {
+    const recipient = `${form.dataset.formUser}@${form.dataset.formDomain}`;
     if (!recipient) {
+      return;
+    }
+
+    form.action = `https://formsubmit.co/${recipient}`;
+
+    if (!isLocalHtml) {
       return;
     }
 
@@ -867,7 +869,16 @@ function setupLocalFormFallbacks() {
   });
 }
 
+function setupProtectedEmailLinks() {
+  document.querySelectorAll("[data-mail-user][data-mail-domain]").forEach((link) => {
+    const recipient = `${link.dataset.mailUser}@${link.dataset.mailDomain}`;
+    const subject = link.dataset.mailSubject || "Parallax Data Lab Inquiry";
+    link.setAttribute("href", `mailto:${recipient}?subject=${encodeURIComponent(subject)}`);
+  });
+}
+
 setupActiveNavigation();
+setupProtectedEmailLinks();
 setupLocalFormFallbacks();
 setupInsightFilters();
 setupScorecardPersonalization();
