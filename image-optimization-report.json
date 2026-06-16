@@ -1,0 +1,3354 @@
+{
+  "optimized": [
+    {
+      "source": "assets/about-founder-cube-glow.png",
+      "width": 1254,
+      "height": 1254,
+      "source_bytes": 1611759,
+      "webp": "assets/about-founder-cube-glow.webp",
+      "webp_bytes": 53930,
+      "variants": [
+        {
+          "path": "assets/about-founder-cube-glow-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 12692
+        },
+        {
+          "path": "assets/about-founder-cube-glow-768.webp",
+          "width": 768,
+          "height": 768,
+          "bytes": 26466
+        },
+        {
+          "path": "assets/about-founder-cube-glow-1200.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 50146
+        }
+      ]
+    },
+    {
+      "source": "assets/about-pov-definitions.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1576079,
+      "webp": "assets/about-pov-definitions.webp",
+      "webp_bytes": 94344,
+      "variants": [
+        {
+          "path": "assets/about-pov-definitions-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18716
+        },
+        {
+          "path": "assets/about-pov-definitions-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 38444
+        },
+        {
+          "path": "assets/about-pov-definitions-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 72344
+        }
+      ]
+    },
+    {
+      "source": "assets/about-pov-ownership.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1669214,
+      "webp": "assets/about-pov-ownership.webp",
+      "webp_bytes": 90686,
+      "variants": [
+        {
+          "path": "assets/about-pov-ownership-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18220
+        },
+        {
+          "path": "assets/about-pov-ownership-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 36260
+        },
+        {
+          "path": "assets/about-pov-ownership-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 68922
+        }
+      ]
+    },
+    {
+      "source": "assets/about-pov-structure.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1786704,
+      "webp": "assets/about-pov-structure.webp",
+      "webp_bytes": 113938,
+      "variants": [
+        {
+          "path": "assets/about-pov-structure-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18210
+        },
+        {
+          "path": "assets/about-pov-structure-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 40210
+        },
+        {
+          "path": "assets/about-pov-structure-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 85400
+        }
+      ]
+    },
+    {
+      "source": "assets/about-systems-automate-reporting.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1743961,
+      "webp": "assets/about-systems-automate-reporting.webp",
+      "webp_bytes": 104366,
+      "variants": [
+        {
+          "path": "assets/about-systems-automate-reporting-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 20816
+        },
+        {
+          "path": "assets/about-systems-automate-reporting-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 43408
+        },
+        {
+          "path": "assets/about-systems-automate-reporting-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 81516
+        }
+      ]
+    },
+    {
+      "source": "assets/about-systems-dashboard-sprawl.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1791316,
+      "webp": "assets/about-systems-dashboard-sprawl.webp",
+      "webp_bytes": 121350,
+      "variants": [
+        {
+          "path": "assets/about-systems-dashboard-sprawl-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 21258
+        },
+        {
+          "path": "assets/about-systems-dashboard-sprawl-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 46400
+        },
+        {
+          "path": "assets/about-systems-dashboard-sprawl-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 93736
+        }
+      ]
+    },
+    {
+      "source": "assets/about-systems-data-model-scale.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1900876,
+      "webp": "assets/about-systems-data-model-scale.webp",
+      "webp_bytes": 136768,
+      "variants": [
+        {
+          "path": "assets/about-systems-data-model-scale-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 24980
+        },
+        {
+          "path": "assets/about-systems-data-model-scale-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 52496
+        },
+        {
+          "path": "assets/about-systems-data-model-scale-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 105592
+        }
+      ]
+    },
+    {
+      "source": "assets/about-why-foundation-shift.png",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes": 1748296,
+      "webp": "assets/about-why-foundation-shift.webp",
+      "webp_bytes": 109642,
+      "variants": [
+        {
+          "path": "assets/about-why-foundation-shift-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18458
+        },
+        {
+          "path": "assets/about-why-foundation-shift-768.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 41874
+        },
+        {
+          "path": "assets/about-why-foundation-shift-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 83950
+        }
+      ]
+    },
+    {
+      "source": "assets/fractional-hero-terrain.png",
+      "width": 512,
+      "height": 512,
+      "source_bytes": 21022,
+      "webp": "assets/fractional-hero-terrain.webp",
+      "webp_bytes": 4074,
+      "variants": [
+        {
+          "path": "assets/fractional-hero-terrain-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 4018
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/assessment-decision-clarity.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2104286,
+      "webp": "assets/home-generated/assessment-decision-clarity.webp",
+      "webp_bytes": 149428,
+      "variants": [
+        {
+          "path": "assets/home-generated/assessment-decision-clarity-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 23934
+        },
+        {
+          "path": "assets/home-generated/assessment-decision-clarity-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 51928
+        },
+        {
+          "path": "assets/home-generated/assessment-decision-clarity-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 103948
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/assessment-hero-foundation.png",
+      "width": 1695,
+      "height": 928,
+      "source_bytes": 1682656,
+      "webp": "assets/home-generated/assessment-hero-foundation.webp",
+      "webp_bytes": 93738,
+      "variants": [
+        {
+          "path": "assets/home-generated/assessment-hero-foundation-480.webp",
+          "width": 480,
+          "height": 263,
+          "bytes": 13080
+        },
+        {
+          "path": "assets/home-generated/assessment-hero-foundation-768.webp",
+          "width": 768,
+          "height": 420,
+          "bytes": 28638
+        },
+        {
+          "path": "assets/home-generated/assessment-hero-foundation-1200.webp",
+          "width": 1200,
+          "height": 657,
+          "bytes": 57398
+        },
+        {
+          "path": "assets/home-generated/assessment-hero-foundation-1600.webp",
+          "width": 1600,
+          "height": 876,
+          "bytes": 85792
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/assessment-routing-path.png",
+      "width": 1662,
+      "height": 946,
+      "source_bytes": 1893236,
+      "webp": "assets/home-generated/assessment-routing-path.webp",
+      "webp_bytes": 123358,
+      "variants": [
+        {
+          "path": "assets/home-generated/assessment-routing-path-480.webp",
+          "width": 480,
+          "height": 273,
+          "bytes": 16618
+        },
+        {
+          "path": "assets/home-generated/assessment-routing-path-768.webp",
+          "width": 768,
+          "height": 437,
+          "bytes": 37032
+        },
+        {
+          "path": "assets/home-generated/assessment-routing-path-1200.webp",
+          "width": 1200,
+          "height": 683,
+          "bytes": 77044
+        },
+        {
+          "path": "assets/home-generated/assessment-routing-path-1600.webp",
+          "width": 1600,
+          "height": 911,
+          "bytes": 116590
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/assessment-trust-map.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2042847,
+      "webp": "assets/home-generated/assessment-trust-map.webp",
+      "webp_bytes": 132568,
+      "variants": [
+        {
+          "path": "assets/home-generated/assessment-trust-map-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 21400
+        },
+        {
+          "path": "assets/home-generated/assessment-trust-map-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 45860
+        },
+        {
+          "path": "assets/home-generated/assessment-trust-map-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 91538
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/diagnostic-owner-drift.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1787669,
+      "webp": "assets/home-generated/diagnostic-owner-drift.webp",
+      "webp_bytes": 123102,
+      "variants": [
+        {
+          "path": "assets/home-generated/diagnostic-owner-drift-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 22704
+        },
+        {
+          "path": "assets/home-generated/diagnostic-owner-drift-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 45746
+        },
+        {
+          "path": "assets/home-generated/diagnostic-owner-drift-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 84860
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/diagnostic-structural-balance.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1948256,
+      "webp": "assets/home-generated/diagnostic-structural-balance.webp",
+      "webp_bytes": 164112,
+      "variants": [
+        {
+          "path": "assets/home-generated/diagnostic-structural-balance-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 21822
+        },
+        {
+          "path": "assets/home-generated/diagnostic-structural-balance-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 51162
+        },
+        {
+          "path": "assets/home-generated/diagnostic-structural-balance-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 108824
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/failure-conflicting-numbers.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1780767,
+      "webp": "assets/home-generated/failure-conflicting-numbers.webp",
+      "webp_bytes": 119340,
+      "variants": [
+        {
+          "path": "assets/home-generated/failure-conflicting-numbers-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 17878
+        },
+        {
+          "path": "assets/home-generated/failure-conflicting-numbers-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 38594
+        },
+        {
+          "path": "assets/home-generated/failure-conflicting-numbers-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 78220
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/failure-definition-drift.png",
+      "width": 1662,
+      "height": 946,
+      "source_bytes": 1752527,
+      "webp": "assets/home-generated/failure-definition-drift.webp",
+      "webp_bytes": 110366,
+      "variants": [
+        {
+          "path": "assets/home-generated/failure-definition-drift-480.webp",
+          "width": 480,
+          "height": 273,
+          "bytes": 12468
+        },
+        {
+          "path": "assets/home-generated/failure-definition-drift-768.webp",
+          "width": 768,
+          "height": 437,
+          "bytes": 29506
+        },
+        {
+          "path": "assets/home-generated/failure-definition-drift-1200.webp",
+          "width": 1200,
+          "height": 683,
+          "bytes": 66080
+        },
+        {
+          "path": "assets/home-generated/failure-definition-drift-1600.webp",
+          "width": 1600,
+          "height": 911,
+          "bytes": 103272
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/failure-duplicate-logic.png",
+      "width": 1619,
+      "height": 972,
+      "source_bytes": 2169672,
+      "webp": "assets/home-generated/failure-duplicate-logic.webp",
+      "webp_bytes": 188420,
+      "variants": [
+        {
+          "path": "assets/home-generated/failure-duplicate-logic-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 26266
+        },
+        {
+          "path": "assets/home-generated/failure-duplicate-logic-768.webp",
+          "width": 768,
+          "height": 461,
+          "bytes": 59220
+        },
+        {
+          "path": "assets/home-generated/failure-duplicate-logic-1200.webp",
+          "width": 1200,
+          "height": 720,
+          "bytes": 122518
+        },
+        {
+          "path": "assets/home-generated/failure-duplicate-logic-1600.webp",
+          "width": 1600,
+          "height": 961,
+          "bytes": 183686
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/failure-number-debates.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2069796,
+      "webp": "assets/home-generated/failure-number-debates.webp",
+      "webp_bytes": 152764,
+      "variants": [
+        {
+          "path": "assets/home-generated/failure-number-debates-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21174
+        },
+        {
+          "path": "assets/home-generated/failure-number-debates-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 46426
+        },
+        {
+          "path": "assets/home-generated/failure-number-debates-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 96272
+        },
+        {
+          "path": "assets/home-generated/failure-number-debates-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 143206
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/failure-scale-breaks.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2346110,
+      "webp": "assets/home-generated/failure-scale-breaks.webp",
+      "webp_bytes": 215956,
+      "variants": [
+        {
+          "path": "assets/home-generated/failure-scale-breaks-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 24262
+        },
+        {
+          "path": "assets/home-generated/failure-scale-breaks-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 59394
+        },
+        {
+          "path": "assets/home-generated/failure-scale-breaks-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 129466
+        },
+        {
+          "path": "assets/home-generated/failure-scale-breaks-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 200214
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/failure-source-of-truth.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 2032699,
+      "webp": "assets/home-generated/failure-source-of-truth.webp",
+      "webp_bytes": 150012,
+      "variants": [
+        {
+          "path": "assets/home-generated/failure-source-of-truth-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 19670
+        },
+        {
+          "path": "assets/home-generated/failure-source-of-truth-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 47052
+        },
+        {
+          "path": "assets/home-generated/failure-source-of-truth-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 100446
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/fractional-analytics-hero.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2169832,
+      "webp": "assets/home-generated/fractional-analytics-hero.webp",
+      "webp_bytes": 175464,
+      "variants": [
+        {
+          "path": "assets/home-generated/fractional-analytics-hero-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 26302
+        },
+        {
+          "path": "assets/home-generated/fractional-analytics-hero-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 56226
+        },
+        {
+          "path": "assets/home-generated/fractional-analytics-hero-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 111412
+        },
+        {
+          "path": "assets/home-generated/fractional-analytics-hero-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 166014
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/fractional-cadence-v2.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1974819,
+      "webp": "assets/home-generated/fractional-cadence-v2.webp",
+      "webp_bytes": 117244,
+      "variants": [
+        {
+          "path": "assets/home-generated/fractional-cadence-v2-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16404
+        },
+        {
+          "path": "assets/home-generated/fractional-cadence-v2-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 36000
+        },
+        {
+          "path": "assets/home-generated/fractional-cadence-v2-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 74188
+        },
+        {
+          "path": "assets/home-generated/fractional-cadence-v2-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 109312
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/fractional-leadership-v2.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2003017,
+      "webp": "assets/home-generated/fractional-leadership-v2.webp",
+      "webp_bytes": 134250,
+      "variants": [
+        {
+          "path": "assets/home-generated/fractional-leadership-v2-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17480
+        },
+        {
+          "path": "assets/home-generated/fractional-leadership-v2-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 38372
+        },
+        {
+          "path": "assets/home-generated/fractional-leadership-v2-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 80854
+        },
+        {
+          "path": "assets/home-generated/fractional-leadership-v2-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 124730
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/fractional-maintenance-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2039801,
+      "webp": "assets/home-generated/fractional-maintenance-v2.webp",
+      "webp_bytes": 124470,
+      "variants": [
+        {
+          "path": "assets/home-generated/fractional-maintenance-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18852
+        },
+        {
+          "path": "assets/home-generated/fractional-maintenance-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 41872
+        },
+        {
+          "path": "assets/home-generated/fractional-maintenance-v2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 86776
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/fractional-reliability-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 1991854,
+      "webp": "assets/home-generated/fractional-reliability-v2.webp",
+      "webp_bytes": 110588,
+      "variants": [
+        {
+          "path": "assets/home-generated/fractional-reliability-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 16162
+        },
+        {
+          "path": "assets/home-generated/fractional-reliability-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 36080
+        },
+        {
+          "path": "assets/home-generated/fractional-reliability-v2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 76260
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/fractional-stewardship-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2049452,
+      "webp": "assets/home-generated/fractional-stewardship-v2.webp",
+      "webp_bytes": 142982,
+      "variants": [
+        {
+          "path": "assets/home-generated/fractional-stewardship-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 19682
+        },
+        {
+          "path": "assets/home-generated/fractional-stewardship-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 43894
+        },
+        {
+          "path": "assets/home-generated/fractional-stewardship-v2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 94592
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-foundation-to-intelligence-advanced.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2047510,
+      "webp": "assets/home-generated/help-foundation-to-intelligence-advanced.webp",
+      "webp_bytes": 169126,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-foundation-to-intelligence-advanced-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19914
+        },
+        {
+          "path": "assets/home-generated/help-foundation-to-intelligence-advanced-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 47376
+        },
+        {
+          "path": "assets/home-generated/help-foundation-to-intelligence-advanced-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 103012
+        },
+        {
+          "path": "assets/home-generated/help-foundation-to-intelligence-advanced-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 156846
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-hero-foundation.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1937019,
+      "webp": "assets/home-generated/help-hero-foundation.webp",
+      "webp_bytes": 148294,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-hero-foundation-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18576
+        },
+        {
+          "path": "assets/home-generated/help-hero-foundation-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 42742
+        },
+        {
+          "path": "assets/home-generated/help-hero-foundation-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 89562
+        },
+        {
+          "path": "assets/home-generated/help-hero-foundation-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 138432
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-outcome-clearer-answers.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1716019,
+      "webp": "assets/home-generated/help-outcome-clearer-answers.webp",
+      "webp_bytes": 101628,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-outcome-clearer-answers-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 13190
+        },
+        {
+          "path": "assets/home-generated/help-outcome-clearer-answers-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 29250
+        },
+        {
+          "path": "assets/home-generated/help-outcome-clearer-answers-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 62802
+        },
+        {
+          "path": "assets/home-generated/help-outcome-clearer-answers-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 94588
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-outcome-faster-performance.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1908816,
+      "webp": "assets/home-generated/help-outcome-faster-performance.webp",
+      "webp_bytes": 144022,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-outcome-faster-performance-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19368
+        },
+        {
+          "path": "assets/home-generated/help-outcome-faster-performance-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 43484
+        },
+        {
+          "path": "assets/home-generated/help-outcome-faster-performance-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 90474
+        },
+        {
+          "path": "assets/home-generated/help-outcome-faster-performance-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 136958
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-outcome-fewer-reports.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1852279,
+      "webp": "assets/home-generated/help-outcome-fewer-reports.webp",
+      "webp_bytes": 113432,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-outcome-fewer-reports-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 15924
+        },
+        {
+          "path": "assets/home-generated/help-outcome-fewer-reports-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 35202
+        },
+        {
+          "path": "assets/home-generated/help-outcome-fewer-reports-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 72204
+        },
+        {
+          "path": "assets/home-generated/help-outcome-fewer-reports-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 107506
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-outcome-intelligence-lab-enablement.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1536891,
+      "webp": "assets/home-generated/help-outcome-intelligence-lab-enablement.webp",
+      "webp_bytes": 76134,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-outcome-intelligence-lab-enablement-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 11474
+        },
+        {
+          "path": "assets/home-generated/help-outcome-intelligence-lab-enablement-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 23964
+        },
+        {
+          "path": "assets/home-generated/help-outcome-intelligence-lab-enablement-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 47704
+        },
+        {
+          "path": "assets/home-generated/help-outcome-intelligence-lab-enablement-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 71440
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-outcome-renewed-confidence.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1643056,
+      "webp": "assets/home-generated/help-outcome-renewed-confidence.webp",
+      "webp_bytes": 82134,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-outcome-renewed-confidence-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 13984
+        },
+        {
+          "path": "assets/home-generated/help-outcome-renewed-confidence-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 28356
+        },
+        {
+          "path": "assets/home-generated/help-outcome-renewed-confidence-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 53566
+        },
+        {
+          "path": "assets/home-generated/help-outcome-renewed-confidence-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 77746
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-process-build-guide.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2016538,
+      "webp": "assets/home-generated/help-process-build-guide.webp",
+      "webp_bytes": 164100,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-process-build-guide-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19152
+        },
+        {
+          "path": "assets/home-generated/help-process-build-guide-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 45232
+        },
+        {
+          "path": "assets/home-generated/help-process-build-guide-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 100394
+        },
+        {
+          "path": "assets/home-generated/help-process-build-guide-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 153896
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-process-design.png",
+      "width": 1672,
+      "height": 940,
+      "source_bytes": 2067767,
+      "webp": "assets/home-generated/help-process-design.webp",
+      "webp_bytes": 131048,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-process-design-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17890
+        },
+        {
+          "path": "assets/home-generated/help-process-design-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 39906
+        },
+        {
+          "path": "assets/home-generated/help-process-design-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 81622
+        },
+        {
+          "path": "assets/home-generated/help-process-design-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 122234
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-process-diagnose.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1913639,
+      "webp": "assets/home-generated/help-process-diagnose.webp",
+      "webp_bytes": 146206,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-process-diagnose-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18532
+        },
+        {
+          "path": "assets/home-generated/help-process-diagnose-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 42310
+        },
+        {
+          "path": "assets/home-generated/help-process-diagnose-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 89282
+        },
+        {
+          "path": "assets/home-generated/help-process-diagnose-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 134822
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-situation-bottleneck.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1786977,
+      "webp": "assets/home-generated/help-situation-bottleneck.webp",
+      "webp_bytes": 107848,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-situation-bottleneck-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 15674
+        },
+        {
+          "path": "assets/home-generated/help-situation-bottleneck-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 34360
+        },
+        {
+          "path": "assets/home-generated/help-situation-bottleneck-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 68012
+        },
+        {
+          "path": "assets/home-generated/help-situation-bottleneck-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 101412
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-situation-dashboard-trust.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1784818,
+      "webp": "assets/home-generated/help-situation-dashboard-trust.webp",
+      "webp_bytes": 116344,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-situation-dashboard-trust-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16364
+        },
+        {
+          "path": "assets/home-generated/help-situation-dashboard-trust-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 36774
+        },
+        {
+          "path": "assets/home-generated/help-situation-dashboard-trust-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 74340
+        },
+        {
+          "path": "assets/home-generated/help-situation-dashboard-trust-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 109906
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-situation-scale-foundation.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2160544,
+      "webp": "assets/home-generated/help-situation-scale-foundation.webp",
+      "webp_bytes": 203144,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-situation-scale-foundation-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 22514
+        },
+        {
+          "path": "assets/home-generated/help-situation-scale-foundation-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 56326
+        },
+        {
+          "path": "assets/home-generated/help-situation-scale-foundation-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 124518
+        },
+        {
+          "path": "assets/home-generated/help-situation-scale-foundation-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 191070
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/help-situation-senior-judgment.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1866435,
+      "webp": "assets/home-generated/help-situation-senior-judgment.webp",
+      "webp_bytes": 129200,
+      "variants": [
+        {
+          "path": "assets/home-generated/help-situation-senior-judgment-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17168
+        },
+        {
+          "path": "assets/home-generated/help-situation-senior-judgment-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 38404
+        },
+        {
+          "path": "assets/home-generated/help-situation-senior-judgment-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 80550
+        },
+        {
+          "path": "assets/home-generated/help-situation-senior-judgment-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 121428
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/lab-customer-health.png",
+      "width": 1659,
+      "height": 948,
+      "source_bytes": 1814940,
+      "webp": "assets/home-generated/lab-customer-health.webp",
+      "webp_bytes": 93184,
+      "variants": [
+        {
+          "path": "assets/home-generated/lab-customer-health-480.webp",
+          "width": 480,
+          "height": 274,
+          "bytes": 10158
+        },
+        {
+          "path": "assets/home-generated/lab-customer-health-768.webp",
+          "width": 768,
+          "height": 439,
+          "bytes": 25360
+        },
+        {
+          "path": "assets/home-generated/lab-customer-health-1200.webp",
+          "width": 1200,
+          "height": 686,
+          "bytes": 57730
+        },
+        {
+          "path": "assets/home-generated/lab-customer-health-1600.webp",
+          "width": 1600,
+          "height": 914,
+          "bytes": 87896
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/lab-governance-rls.png",
+      "width": 1577,
+      "height": 997,
+      "source_bytes": 2065347,
+      "webp": "assets/home-generated/lab-governance-rls.webp",
+      "webp_bytes": 158388,
+      "variants": [
+        {
+          "path": "assets/home-generated/lab-governance-rls-480.webp",
+          "width": 480,
+          "height": 303,
+          "bytes": 22304
+        },
+        {
+          "path": "assets/home-generated/lab-governance-rls-768.webp",
+          "width": 768,
+          "height": 486,
+          "bytes": 51938
+        },
+        {
+          "path": "assets/home-generated/lab-governance-rls-1200.webp",
+          "width": 1200,
+          "height": 759,
+          "bytes": 107984
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/lab-hero-intelligence.png",
+      "width": 1666,
+      "height": 944,
+      "source_bytes": 1679597,
+      "webp": "assets/home-generated/lab-hero-intelligence.webp",
+      "webp_bytes": 108068,
+      "variants": [
+        {
+          "path": "assets/home-generated/lab-hero-intelligence-480.webp",
+          "width": 480,
+          "height": 272,
+          "bytes": 14296
+        },
+        {
+          "path": "assets/home-generated/lab-hero-intelligence-768.webp",
+          "width": 768,
+          "height": 435,
+          "bytes": 32244
+        },
+        {
+          "path": "assets/home-generated/lab-hero-intelligence-1200.webp",
+          "width": 1200,
+          "height": 680,
+          "bytes": 66088
+        },
+        {
+          "path": "assets/home-generated/lab-hero-intelligence-1600.webp",
+          "width": 1600,
+          "height": 907,
+          "bytes": 100812
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/lab-operational-risk.png",
+      "width": 1666,
+      "height": 944,
+      "source_bytes": 1865294,
+      "webp": "assets/home-generated/lab-operational-risk.webp",
+      "webp_bytes": 129432,
+      "variants": [
+        {
+          "path": "assets/home-generated/lab-operational-risk-480.webp",
+          "width": 480,
+          "height": 272,
+          "bytes": 14502
+        },
+        {
+          "path": "assets/home-generated/lab-operational-risk-768.webp",
+          "width": 768,
+          "height": 435,
+          "bytes": 34336
+        },
+        {
+          "path": "assets/home-generated/lab-operational-risk-1200.webp",
+          "width": 1200,
+          "height": 680,
+          "bytes": 77476
+        },
+        {
+          "path": "assets/home-generated/lab-operational-risk-1600.webp",
+          "width": 1600,
+          "height": 907,
+          "bytes": 120522
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/offerings-decision-reset.png",
+      "width": 1635,
+      "height": 962,
+      "source_bytes": 1821557,
+      "webp": "assets/home-generated/offerings-decision-reset.webp",
+      "webp_bytes": 135348,
+      "variants": [
+        {
+          "path": "assets/home-generated/offerings-decision-reset-480.webp",
+          "width": 480,
+          "height": 282,
+          "bytes": 16988
+        },
+        {
+          "path": "assets/home-generated/offerings-decision-reset-768.webp",
+          "width": 768,
+          "height": 452,
+          "bytes": 39970
+        },
+        {
+          "path": "assets/home-generated/offerings-decision-reset-1200.webp",
+          "width": 1200,
+          "height": 706,
+          "bytes": 84186
+        },
+        {
+          "path": "assets/home-generated/offerings-decision-reset-1600.webp",
+          "width": 1600,
+          "height": 941,
+          "bytes": 129126
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/offerings-fit-check.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1597471,
+      "webp": "assets/home-generated/offerings-fit-check.webp",
+      "webp_bytes": 64662,
+      "variants": [
+        {
+          "path": "assets/home-generated/offerings-fit-check-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 10738
+        },
+        {
+          "path": "assets/home-generated/offerings-fit-check-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 21526
+        },
+        {
+          "path": "assets/home-generated/offerings-fit-check-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 40614
+        },
+        {
+          "path": "assets/home-generated/offerings-fit-check-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 60894
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/offerings-fractional.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1981998,
+      "webp": "assets/home-generated/offerings-fractional.webp",
+      "webp_bytes": 143632,
+      "variants": [
+        {
+          "path": "assets/home-generated/offerings-fractional-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19752
+        },
+        {
+          "path": "assets/home-generated/offerings-fractional-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 43818
+        },
+        {
+          "path": "assets/home-generated/offerings-fractional-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 89324
+        },
+        {
+          "path": "assets/home-generated/offerings-fractional-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 135600
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/offerings-health-check.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 1938922,
+      "webp": "assets/home-generated/offerings-health-check.webp",
+      "webp_bytes": 106902,
+      "variants": [
+        {
+          "path": "assets/home-generated/offerings-health-check-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 15012
+        },
+        {
+          "path": "assets/home-generated/offerings-health-check-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 34604
+        },
+        {
+          "path": "assets/home-generated/offerings-health-check-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 73046
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/offerings-hero.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 1525253,
+      "webp": "assets/home-generated/offerings-hero.webp",
+      "webp_bytes": 106266,
+      "variants": [
+        {
+          "path": "assets/home-generated/offerings-hero-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18844
+        },
+        {
+          "path": "assets/home-generated/offerings-hero-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 41386
+        },
+        {
+          "path": "assets/home-generated/offerings-hero-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 79534
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/quote-leadership-decisions.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1687358,
+      "webp": "assets/home-generated/quote-leadership-decisions.webp",
+      "webp_bytes": 84738,
+      "variants": [
+        {
+          "path": "assets/home-generated/quote-leadership-decisions-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 12672
+        },
+        {
+          "path": "assets/home-generated/quote-leadership-decisions-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 27776
+        },
+        {
+          "path": "assets/home-generated/quote-leadership-decisions-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 55358
+        },
+        {
+          "path": "assets/home-generated/quote-leadership-decisions-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 79248
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/quote-ownership-definitions.png",
+      "width": 1662,
+      "height": 946,
+      "source_bytes": 1704962,
+      "webp": "assets/home-generated/quote-ownership-definitions.webp",
+      "webp_bytes": 104224,
+      "variants": [
+        {
+          "path": "assets/home-generated/quote-ownership-definitions-480.webp",
+          "width": 480,
+          "height": 273,
+          "bytes": 16202
+        },
+        {
+          "path": "assets/home-generated/quote-ownership-definitions-768.webp",
+          "width": 768,
+          "height": 437,
+          "bytes": 34032
+        },
+        {
+          "path": "assets/home-generated/quote-ownership-definitions-1200.webp",
+          "width": 1200,
+          "height": 683,
+          "bytes": 65998
+        },
+        {
+          "path": "assets/home-generated/quote-ownership-definitions-1600.webp",
+          "width": 1600,
+          "height": 911,
+          "bytes": 98320
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/quote-trust-restored.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1643056,
+      "webp": "assets/home-generated/quote-trust-restored.webp",
+      "webp_bytes": 82134,
+      "variants": [
+        {
+          "path": "assets/home-generated/quote-trust-restored-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 13984
+        },
+        {
+          "path": "assets/home-generated/quote-trust-restored-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 28356
+        },
+        {
+          "path": "assets/home-generated/quote-trust-restored-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 53566
+        },
+        {
+          "path": "assets/home-generated/quote-trust-restored-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 77746
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/quote-useful-metrics.png",
+      "width": 1659,
+      "height": 948,
+      "source_bytes": 1660392,
+      "webp": "assets/home-generated/quote-useful-metrics.webp",
+      "webp_bytes": 90948,
+      "variants": [
+        {
+          "path": "assets/home-generated/quote-useful-metrics-480.webp",
+          "width": 480,
+          "height": 274,
+          "bytes": 12382
+        },
+        {
+          "path": "assets/home-generated/quote-useful-metrics-768.webp",
+          "width": 768,
+          "height": 439,
+          "bytes": 28520
+        },
+        {
+          "path": "assets/home-generated/quote-useful-metrics-1200.webp",
+          "width": 1200,
+          "height": 686,
+          "bytes": 57822
+        },
+        {
+          "path": "assets/home-generated/quote-useful-metrics-1600.webp",
+          "width": 1600,
+          "height": 914,
+          "bytes": 85314
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/reset-cadence-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 1765173,
+      "webp": "assets/home-generated/reset-cadence-v2.webp",
+      "webp_bytes": 92448,
+      "variants": [
+        {
+          "path": "assets/home-generated/reset-cadence-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 14792
+        },
+        {
+          "path": "assets/home-generated/reset-cadence-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 32634
+        },
+        {
+          "path": "assets/home-generated/reset-cadence-v2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 65562
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/reset-decision-inventory-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 1871309,
+      "webp": "assets/home-generated/reset-decision-inventory-v2.webp",
+      "webp_bytes": 120460,
+      "variants": [
+        {
+          "path": "assets/home-generated/reset-decision-inventory-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18558
+        },
+        {
+          "path": "assets/home-generated/reset-decision-inventory-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 40864
+        },
+        {
+          "path": "assets/home-generated/reset-decision-inventory-v2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 83478
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/reset-metric-mapping-v2.png",
+      "width": 1535,
+      "height": 1024,
+      "source_bytes": 1868430,
+      "webp": "assets/home-generated/reset-metric-mapping-v2.webp",
+      "webp_bytes": 134044,
+      "variants": [
+        {
+          "path": "assets/home-generated/reset-metric-mapping-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18854
+        },
+        {
+          "path": "assets/home-generated/reset-metric-mapping-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 43458
+        },
+        {
+          "path": "assets/home-generated/reset-metric-mapping-v2-1200.webp",
+          "width": 1200,
+          "height": 801,
+          "bytes": 92752
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/reset-ownership-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2136474,
+      "webp": "assets/home-generated/reset-ownership-v2.webp",
+      "webp_bytes": 147260,
+      "variants": [
+        {
+          "path": "assets/home-generated/reset-ownership-v2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18920
+        },
+        {
+          "path": "assets/home-generated/reset-ownership-v2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 44618
+        },
+        {
+          "path": "assets/home-generated/reset-ownership-v2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 97942
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/reset-sample-artifact.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1532911,
+      "webp": "assets/home-generated/reset-sample-artifact.webp",
+      "webp_bytes": 126178,
+      "variants": [
+        {
+          "path": "assets/home-generated/reset-sample-artifact-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17828
+        },
+        {
+          "path": "assets/home-generated/reset-sample-artifact-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 39404
+        },
+        {
+          "path": "assets/home-generated/reset-sample-artifact-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 78282
+        },
+        {
+          "path": "assets/home-generated/reset-sample-artifact-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 118484
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/reset-trigger-action-v2.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1762249,
+      "webp": "assets/home-generated/reset-trigger-action-v2.webp",
+      "webp_bytes": 101796,
+      "variants": [
+        {
+          "path": "assets/home-generated/reset-trigger-action-v2-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 14536
+        },
+        {
+          "path": "assets/home-generated/reset-trigger-action-v2-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 33050
+        },
+        {
+          "path": "assets/home-generated/reset-trigger-action-v2-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 68356
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/symptom-business-logic-everywhere.png",
+      "width": 1568,
+      "height": 1003,
+      "source_bytes": 1724987,
+      "webp": "assets/home-generated/symptom-business-logic-everywhere.webp",
+      "webp_bytes": 101658,
+      "variants": [
+        {
+          "path": "assets/home-generated/symptom-business-logic-everywhere-480.webp",
+          "width": 480,
+          "height": 307,
+          "bytes": 18262
+        },
+        {
+          "path": "assets/home-generated/symptom-business-logic-everywhere-768.webp",
+          "width": 768,
+          "height": 491,
+          "bytes": 37126
+        },
+        {
+          "path": "assets/home-generated/symptom-business-logic-everywhere-1200.webp",
+          "width": 1200,
+          "height": 768,
+          "bytes": 71922
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/symptom-confidence-erodes.png",
+      "width": 1568,
+      "height": 1003,
+      "source_bytes": 1863392,
+      "webp": "assets/home-generated/symptom-confidence-erodes.webp",
+      "webp_bytes": 102606,
+      "variants": [
+        {
+          "path": "assets/home-generated/symptom-confidence-erodes-480.webp",
+          "width": 480,
+          "height": 307,
+          "bytes": 18414
+        },
+        {
+          "path": "assets/home-generated/symptom-confidence-erodes-768.webp",
+          "width": 768,
+          "height": 491,
+          "bytes": 37164
+        },
+        {
+          "path": "assets/home-generated/symptom-confidence-erodes-1200.webp",
+          "width": 1200,
+          "height": 768,
+          "bytes": 70682
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/symptom-decisions-slow.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1907455,
+      "webp": "assets/home-generated/symptom-decisions-slow.webp",
+      "webp_bytes": 139490,
+      "variants": [
+        {
+          "path": "assets/home-generated/symptom-decisions-slow-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 18762
+        },
+        {
+          "path": "assets/home-generated/symptom-decisions-slow-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 44144
+        },
+        {
+          "path": "assets/home-generated/symptom-decisions-slow-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 92566
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/symptom-metrics-shared-meaning.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1780969,
+      "webp": "assets/home-generated/symptom-metrics-shared-meaning.webp",
+      "webp_bytes": 93292,
+      "variants": [
+        {
+          "path": "assets/home-generated/symptom-metrics-shared-meaning-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 15960
+        },
+        {
+          "path": "assets/home-generated/symptom-metrics-shared-meaning-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 33486
+        },
+        {
+          "path": "assets/home-generated/symptom-metrics-shared-meaning-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 65376
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/symptom-reports-wrong-questions.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 1667397,
+      "webp": "assets/home-generated/symptom-reports-wrong-questions.webp",
+      "webp_bytes": 85338,
+      "variants": [
+        {
+          "path": "assets/home-generated/symptom-reports-wrong-questions-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 13738
+        },
+        {
+          "path": "assets/home-generated/symptom-reports-wrong-questions-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 28870
+        },
+        {
+          "path": "assets/home-generated/symptom-reports-wrong-questions-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 56774
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/symptom-systems-scale.png",
+      "width": 1586,
+      "height": 992,
+      "source_bytes": 2138974,
+      "webp": "assets/home-generated/symptom-systems-scale.webp",
+      "webp_bytes": 205292,
+      "variants": [
+        {
+          "path": "assets/home-generated/symptom-systems-scale-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 23138
+        },
+        {
+          "path": "assets/home-generated/symptom-systems-scale-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 58004
+        },
+        {
+          "path": "assets/home-generated/symptom-systems-scale-1200.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 130472
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/work-clear-results.png",
+      "width": 1660,
+      "height": 948,
+      "source_bytes": 1753077,
+      "webp": "assets/home-generated/work-clear-results.webp",
+      "webp_bytes": 105172,
+      "variants": [
+        {
+          "path": "assets/home-generated/work-clear-results-480.webp",
+          "width": 480,
+          "height": 274,
+          "bytes": 16782
+        },
+        {
+          "path": "assets/home-generated/work-clear-results-768.webp",
+          "width": 768,
+          "height": 439,
+          "bytes": 34762
+        },
+        {
+          "path": "assets/home-generated/work-clear-results-1200.webp",
+          "width": 1200,
+          "height": 685,
+          "bytes": 67898
+        },
+        {
+          "path": "assets/home-generated/work-clear-results-1600.webp",
+          "width": 1600,
+          "height": 914,
+          "bytes": 99612
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/work-empower-team.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1753558,
+      "webp": "assets/home-generated/work-empower-team.webp",
+      "webp_bytes": 115862,
+      "variants": [
+        {
+          "path": "assets/home-generated/work-empower-team-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20734
+        },
+        {
+          "path": "assets/home-generated/work-empower-team-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 41222
+        },
+        {
+          "path": "assets/home-generated/work-empower-team-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 76802
+        },
+        {
+          "path": "assets/home-generated/work-empower-team-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 109756
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/work-health-check.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2048417,
+      "webp": "assets/home-generated/work-health-check.webp",
+      "webp_bytes": 163172,
+      "variants": [
+        {
+          "path": "assets/home-generated/work-health-check-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 23578
+        },
+        {
+          "path": "assets/home-generated/work-health-check-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 51922
+        },
+        {
+          "path": "assets/home-generated/work-health-check-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 104302
+        },
+        {
+          "path": "assets/home-generated/work-health-check-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 155008
+        }
+      ]
+    },
+    {
+      "source": "assets/home-generated/work-ongoing-optimization.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2022705,
+      "webp": "assets/home-generated/work-ongoing-optimization.webp",
+      "webp_bytes": 143076,
+      "variants": [
+        {
+          "path": "assets/home-generated/work-ongoing-optimization-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17248
+        },
+        {
+          "path": "assets/home-generated/work-ongoing-optimization-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 40432
+        },
+        {
+          "path": "assets/home-generated/work-ongoing-optimization-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 87050
+        },
+        {
+          "path": "assets/home-generated/work-ongoing-optimization-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 133154
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/ai-analytics-operations.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1735368,
+      "webp": "assets/insights/ai-analytics-operations.webp",
+      "webp_bytes": 87206,
+      "variants": [
+        {
+          "path": "assets/insights/ai-analytics-operations-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 15482
+        },
+        {
+          "path": "assets/insights/ai-analytics-operations-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 29990
+        },
+        {
+          "path": "assets/insights/ai-analytics-operations-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 56962
+        },
+        {
+          "path": "assets/insights/ai-analytics-operations-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 81464
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/ai-enablement-trusted-business-data.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 2060091,
+      "webp": "assets/insights/ai-enablement-trusted-business-data.webp",
+      "webp_bytes": 138468,
+      "variants": [
+        {
+          "path": "assets/insights/ai-enablement-trusted-business-data-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21560
+        },
+        {
+          "path": "assets/insights/ai-enablement-trusted-business-data-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 45170
+        },
+        {
+          "path": "assets/insights/ai-enablement-trusted-business-data-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 89432
+        },
+        {
+          "path": "assets/insights/ai-enablement-trusted-business-data-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 131094
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/analytics-function-without-full-team.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1716182,
+      "webp": "assets/insights/analytics-function-without-full-team.webp",
+      "webp_bytes": 85202,
+      "variants": [
+        {
+          "path": "assets/insights/analytics-function-without-full-team-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17836
+        },
+        {
+          "path": "assets/insights/analytics-function-without-full-team-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 32150
+        },
+        {
+          "path": "assets/insights/analytics-function-without-full-team-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 57726
+        },
+        {
+          "path": "assets/insights/analytics-function-without-full-team-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 81536
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/analytics-maturity-roadmap.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1693992,
+      "webp": "assets/insights/analytics-maturity-roadmap.webp",
+      "webp_bytes": 90882,
+      "variants": [
+        {
+          "path": "assets/insights/analytics-maturity-roadmap-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16008
+        },
+        {
+          "path": "assets/insights/analytics-maturity-roadmap-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 31298
+        },
+        {
+          "path": "assets/insights/analytics-maturity-roadmap-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 58300
+        },
+        {
+          "path": "assets/insights/analytics-maturity-roadmap-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 85430
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/dashboard-leadership-problem.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1817774,
+      "webp": "assets/insights/dashboard-leadership-problem.webp",
+      "webp_bytes": 87648,
+      "variants": [
+        {
+          "path": "assets/insights/dashboard-leadership-problem-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16734
+        },
+        {
+          "path": "assets/insights/dashboard-leadership-problem-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 31202
+        },
+        {
+          "path": "assets/insights/dashboard-leadership-problem-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 57040
+        },
+        {
+          "path": "assets/insights/dashboard-leadership-problem-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 83336
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/dashboard-trust-breakdown.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1537657,
+      "webp": "assets/insights/dashboard-trust-breakdown.webp",
+      "webp_bytes": 53250,
+      "variants": [
+        {
+          "path": "assets/insights/dashboard-trust-breakdown-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 11300
+        },
+        {
+          "path": "assets/insights/dashboard-trust-breakdown-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 20054
+        },
+        {
+          "path": "assets/insights/dashboard-trust-breakdown-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 35122
+        },
+        {
+          "path": "assets/insights/dashboard-trust-breakdown-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 50468
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/dashboards-to-predictive-risk-intelligence.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1839925,
+      "webp": "assets/insights/dashboards-to-predictive-risk-intelligence.webp",
+      "webp_bytes": 110938,
+      "variants": [
+        {
+          "path": "assets/insights/dashboards-to-predictive-risk-intelligence-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18700
+        },
+        {
+          "path": "assets/insights/dashboards-to-predictive-risk-intelligence-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 37656
+        },
+        {
+          "path": "assets/insights/dashboards-to-predictive-risk-intelligence-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 72320
+        },
+        {
+          "path": "assets/insights/dashboards-to-predictive-risk-intelligence-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 105072
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/data-teams-earn-trust.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1791484,
+      "webp": "assets/insights/data-teams-earn-trust.webp",
+      "webp_bytes": 99772,
+      "variants": [
+        {
+          "path": "assets/insights/data-teams-earn-trust-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21322
+        },
+        {
+          "path": "assets/insights/data-teams-earn-trust-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 38378
+        },
+        {
+          "path": "assets/insights/data-teams-earn-trust-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 67610
+        },
+        {
+          "path": "assets/insights/data-teams-earn-trust-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 94660
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/executive-dashboards-accountability.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1890213,
+      "webp": "assets/insights/executive-dashboards-accountability.webp",
+      "webp_bytes": 106158,
+      "variants": [
+        {
+          "path": "assets/insights/executive-dashboards-accountability-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 22568
+        },
+        {
+          "path": "assets/insights/executive-dashboards-accountability-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 41048
+        },
+        {
+          "path": "assets/insights/executive-dashboards-accountability-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 72266
+        },
+        {
+          "path": "assets/insights/executive-dashboards-accountability-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 100580
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/executive-reporting-drives-action.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1619381,
+      "webp": "assets/insights/executive-reporting-drives-action.webp",
+      "webp_bytes": 58600,
+      "variants": [
+        {
+          "path": "assets/insights/executive-reporting-drives-action-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 12618
+        },
+        {
+          "path": "assets/insights/executive-reporting-drives-action-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 22886
+        },
+        {
+          "path": "assets/insights/executive-reporting-drives-action-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 39170
+        },
+        {
+          "path": "assets/insights/executive-reporting-drives-action-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 55270
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/executive-teams-argue-about-numbers.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1822084,
+      "webp": "assets/insights/executive-teams-argue-about-numbers.webp",
+      "webp_bytes": 91754,
+      "variants": [
+        {
+          "path": "assets/insights/executive-teams-argue-about-numbers-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19416
+        },
+        {
+          "path": "assets/insights/executive-teams-argue-about-numbers-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 34944
+        },
+        {
+          "path": "assets/insights/executive-teams-argue-about-numbers-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 61372
+        },
+        {
+          "path": "assets/insights/executive-teams-argue-about-numbers-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 86706
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/fractional-analytics-leadership.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1813882,
+      "webp": "assets/insights/fractional-analytics-leadership.webp",
+      "webp_bytes": 83574,
+      "variants": [
+        {
+          "path": "assets/insights/fractional-analytics-leadership-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18570
+        },
+        {
+          "path": "assets/insights/fractional-analytics-leadership-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 32902
+        },
+        {
+          "path": "assets/insights/fractional-analytics-leadership-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 56798
+        },
+        {
+          "path": "assets/insights/fractional-analytics-leadership-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 80102
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/governance-rls-architecture-business-issue.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1708288,
+      "webp": "assets/insights/governance-rls-architecture-business-issue.webp",
+      "webp_bytes": 80924,
+      "variants": [
+        {
+          "path": "assets/insights/governance-rls-architecture-business-issue-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 13862
+        },
+        {
+          "path": "assets/insights/governance-rls-architecture-business-issue-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 27768
+        },
+        {
+          "path": "assets/insights/governance-rls-architecture-business-issue-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 51812
+        },
+        {
+          "path": "assets/insights/governance-rls-architecture-business-issue-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 75842
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/hire-head-of-analytics.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1614721,
+      "webp": "assets/insights/hire-head-of-analytics.webp",
+      "webp_bytes": 79752,
+      "variants": [
+        {
+          "path": "assets/insights/hire-head-of-analytics-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 15838
+        },
+        {
+          "path": "assets/insights/hire-head-of-analytics-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 30444
+        },
+        {
+          "path": "assets/insights/hire-head-of-analytics-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 53956
+        },
+        {
+          "path": "assets/insights/hire-head-of-analytics-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 76114
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/kpi-governance-growing-organizations.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1801706,
+      "webp": "assets/insights/kpi-governance-growing-organizations.webp",
+      "webp_bytes": 92808,
+      "variants": [
+        {
+          "path": "assets/insights/kpi-governance-growing-organizations-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18030
+        },
+        {
+          "path": "assets/insights/kpi-governance-growing-organizations-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 34048
+        },
+        {
+          "path": "assets/insights/kpi-governance-growing-organizations-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 62328
+        },
+        {
+          "path": "assets/insights/kpi-governance-growing-organizations-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 87818
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/kpi-ownership-framework.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1690088,
+      "webp": "assets/insights/kpi-ownership-framework.webp",
+      "webp_bytes": 85630,
+      "variants": [
+        {
+          "path": "assets/insights/kpi-ownership-framework-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 14268
+        },
+        {
+          "path": "assets/insights/kpi-ownership-framework-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 29374
+        },
+        {
+          "path": "assets/insights/kpi-ownership-framework-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 55994
+        },
+        {
+          "path": "assets/insights/kpi-ownership-framework-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 83110
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/metric-ownership-question.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1935976,
+      "webp": "assets/insights/metric-ownership-question.webp",
+      "webp_bytes": 101634,
+      "variants": [
+        {
+          "path": "assets/insights/metric-ownership-question-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18492
+        },
+        {
+          "path": "assets/insights/metric-ownership-question-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 35556
+        },
+        {
+          "path": "assets/insights/metric-ownership-question-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 65884
+        },
+        {
+          "path": "assets/insights/metric-ownership-question-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 95518
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/metrics-people-actually-use.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1850687,
+      "webp": "assets/insights/metrics-people-actually-use.webp",
+      "webp_bytes": 97288,
+      "variants": [
+        {
+          "path": "assets/insights/metrics-people-actually-use-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21046
+        },
+        {
+          "path": "assets/insights/metrics-people-actually-use-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 38508
+        },
+        {
+          "path": "assets/insights/metrics-people-actually-use-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 67244
+        },
+        {
+          "path": "assets/insights/metrics-people-actually-use-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 91818
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/operations-intelligence-digest-leadership.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1722268,
+      "webp": "assets/insights/operations-intelligence-digest-leadership.webp",
+      "webp_bytes": 84044,
+      "variants": [
+        {
+          "path": "assets/insights/operations-intelligence-digest-leadership-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19532
+        },
+        {
+          "path": "assets/insights/operations-intelligence-digest-leadership-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 34356
+        },
+        {
+          "path": "assets/insights/operations-intelligence-digest-leadership-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 58234
+        },
+        {
+          "path": "assets/insights/operations-intelligence-digest-leadership-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 79580
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/prepare-reporting-environment-for-ai.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1734748,
+      "webp": "assets/insights/prepare-reporting-environment-for-ai.webp",
+      "webp_bytes": 96196,
+      "variants": [
+        {
+          "path": "assets/insights/prepare-reporting-environment-for-ai-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18098
+        },
+        {
+          "path": "assets/insights/prepare-reporting-environment-for-ai-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 35332
+        },
+        {
+          "path": "assets/insights/prepare-reporting-environment-for-ai-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 63448
+        },
+        {
+          "path": "assets/insights/prepare-reporting-environment-for-ai-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 91254
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/reporting-environment-breaking-down.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1839411,
+      "webp": "assets/insights/reporting-environment-breaking-down.webp",
+      "webp_bytes": 102704,
+      "variants": [
+        {
+          "path": "assets/insights/reporting-environment-breaking-down-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19368
+        },
+        {
+          "path": "assets/insights/reporting-environment-breaking-down-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 37466
+        },
+        {
+          "path": "assets/insights/reporting-environment-breaking-down-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 67848
+        },
+        {
+          "path": "assets/insights/reporting-environment-breaking-down-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 96902
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/reporting-misalignment-cost.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1770829,
+      "webp": "assets/insights/reporting-misalignment-cost.webp",
+      "webp_bytes": 81274,
+      "variants": [
+        {
+          "path": "assets/insights/reporting-misalignment-cost-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16374
+        },
+        {
+          "path": "assets/insights/reporting-misalignment-cost-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 30222
+        },
+        {
+          "path": "assets/insights/reporting-misalignment-cost-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 54012
+        },
+        {
+          "path": "assets/insights/reporting-misalignment-cost-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 76190
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/reporting-vs-decision-making.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1715491,
+      "webp": "assets/insights/reporting-vs-decision-making.webp",
+      "webp_bytes": 88756,
+      "variants": [
+        {
+          "path": "assets/insights/reporting-vs-decision-making-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16234
+        },
+        {
+          "path": "assets/insights/reporting-vs-decision-making-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 31482
+        },
+        {
+          "path": "assets/insights/reporting-vs-decision-making-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 58302
+        },
+        {
+          "path": "assets/insights/reporting-vs-decision-making-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 83910
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/single-source-truth-myth.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1754242,
+      "webp": "assets/insights/single-source-truth-myth.webp",
+      "webp_bytes": 98864,
+      "variants": [
+        {
+          "path": "assets/insights/single-source-truth-myth-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20536
+        },
+        {
+          "path": "assets/insights/single-source-truth-myth-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 38364
+        },
+        {
+          "path": "assets/insights/single-source-truth-myth-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 66764
+        },
+        {
+          "path": "assets/insights/single-source-truth-myth-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 94742
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/weekly-business-review.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1980123,
+      "webp": "assets/insights/weekly-business-review.webp",
+      "webp_bytes": 109288,
+      "variants": [
+        {
+          "path": "assets/insights/weekly-business-review-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20284
+        },
+        {
+          "path": "assets/insights/weekly-business-review-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 38278
+        },
+        {
+          "path": "assets/insights/weekly-business-review-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 71638
+        },
+        {
+          "path": "assets/insights/weekly-business-review-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 103124
+        }
+      ]
+    },
+    {
+      "source": "assets/insights/why-executive-dashboards-fail.png",
+      "width": 1672,
+      "height": 941,
+      "source_bytes": 1800850,
+      "webp": "assets/insights/why-executive-dashboards-fail.webp",
+      "webp_bytes": 107630,
+      "variants": [
+        {
+          "path": "assets/insights/why-executive-dashboards-fail-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21916
+        },
+        {
+          "path": "assets/insights/why-executive-dashboards-fail-768.webp",
+          "width": 768,
+          "height": 432,
+          "bytes": 41594
+        },
+        {
+          "path": "assets/insights/why-executive-dashboards-fail-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 73316
+        },
+        {
+          "path": "assets/insights/why-executive-dashboards-fail-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 102972
+        }
+      ]
+    },
+    {
+      "source": "assets/Jonah.png",
+      "width": 1024,
+      "height": 1536,
+      "source_bytes": 2165596,
+      "webp": "assets/Jonah.webp",
+      "webp_bytes": 116804,
+      "variants": [
+        {
+          "path": "assets/Jonah-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 29966
+        },
+        {
+          "path": "assets/Jonah-768.webp",
+          "width": 768,
+          "height": 1152,
+          "bytes": 73206
+        }
+      ]
+    },
+    {
+      "source": "assets/new2.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2326229,
+      "webp": "assets/new2.webp",
+      "webp_bytes": 217896,
+      "variants": [
+        {
+          "path": "assets/new2-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 33288
+        },
+        {
+          "path": "assets/new2-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 74976
+        },
+        {
+          "path": "assets/new2-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 153402
+        }
+      ]
+    },
+    {
+      "source": "assets/parallax-customer-intelligence-hero.png",
+      "width": 1800,
+      "height": 900,
+      "source_bytes": 42948,
+      "webp": "assets/parallax-customer-intelligence-hero.webp",
+      "webp_bytes": 22316,
+      "variants": [
+        {
+          "path": "assets/parallax-customer-intelligence-hero-480.webp",
+          "width": 480,
+          "height": 240,
+          "bytes": 4016
+        },
+        {
+          "path": "assets/parallax-customer-intelligence-hero-768.webp",
+          "width": 768,
+          "height": 384,
+          "bytes": 8074
+        },
+        {
+          "path": "assets/parallax-customer-intelligence-hero-1200.webp",
+          "width": 1200,
+          "height": 600,
+          "bytes": 13698
+        },
+        {
+          "path": "assets/parallax-customer-intelligence-hero-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 18676
+        }
+      ]
+    },
+    {
+      "source": "assets/parallax_data_lab_original_transparent.png",
+      "width": 500,
+      "height": 208,
+      "source_bytes": 35359,
+      "webp": "assets/parallax_data_lab_original_transparent.webp",
+      "webp_bytes": 11850,
+      "variants": [
+        {
+          "path": "assets/parallax_data_lab_original_transparent-480.webp",
+          "width": 480,
+          "height": 200,
+          "bytes": 19472
+        }
+      ]
+    },
+    {
+      "source": "assets/social-preview.png",
+      "width": 1200,
+      "height": 630,
+      "source_bytes": 970085,
+      "webp": "assets/social-preview.webp",
+      "webp_bytes": 70278,
+      "variants": [
+        {
+          "path": "assets/social-preview-480.webp",
+          "width": 480,
+          "height": 252,
+          "bytes": 19076
+        },
+        {
+          "path": "assets/social-preview-768.webp",
+          "width": 768,
+          "height": 403,
+          "bytes": 37022
+        }
+      ]
+    },
+    {
+      "source": "assets/z.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2658199,
+      "webp": "assets/z.webp",
+      "webp_bytes": 111852,
+      "variants": [
+        {
+          "path": "assets/z-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 26896
+        },
+        {
+          "path": "assets/z-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 49388
+        },
+        {
+          "path": "assets/z-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 84988
+        }
+      ]
+    },
+    {
+      "source": "assets/zz.png",
+      "width": 1536,
+      "height": 1024,
+      "source_bytes": 2180826,
+      "webp": "assets/zz.webp",
+      "webp_bytes": 178758,
+      "variants": [
+        {
+          "path": "assets/zz-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 38108
+        },
+        {
+          "path": "assets/zz-768.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 75724
+        },
+        {
+          "path": "assets/zz-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 135000
+        }
+      ]
+    },
+    {
+      "source": "assets/zzz.jpg",
+      "width": 768,
+      "height": 432,
+      "source_bytes": 31488,
+      "webp": "assets/zzz.webp",
+      "webp_bytes": 28228,
+      "variants": [
+        {
+          "path": "assets/zzz-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 15718
+        }
+      ]
+    },
+    {
+      "source": "social-preview.png",
+      "width": 1200,
+      "height": 630,
+      "source_bytes": 866208,
+      "webp": "social-preview.webp",
+      "webp_bytes": 54738,
+      "variants": [
+        {
+          "path": "social-preview-480.webp",
+          "width": 480,
+          "height": 252,
+          "bytes": 12416
+        },
+        {
+          "path": "social-preview-768.webp",
+          "width": 768,
+          "height": 403,
+          "bytes": 25120
+        }
+      ]
+    }
+  ],
+  "social_preview": {
+    "social-preview.png": {
+      "png_bytes": 866208,
+      "webp": "social-preview.webp",
+      "webp_bytes": 54738,
+      "size": [
+        1200,
+        630
+      ]
+    },
+    "assets/social-preview.png": {
+      "png_bytes": 970085,
+      "webp": "assets/social-preview.webp",
+      "webp_bytes": 70278,
+      "size": [
+        1200,
+        630
+      ]
+    }
+  },
+  "social_preview_final": {
+    "social-preview": {
+      "png": {
+        "bytes": 491289,
+        "size": [
+          1200,
+          630
+        ],
+        "path": "social-preview.png"
+      },
+      "jpg": {
+        "bytes": 91807,
+        "size": [
+          1200,
+          630
+        ],
+        "path": "social-preview.jpg"
+      },
+      "webp": {
+        "bytes": 54738,
+        "size": [
+          1200,
+          630
+        ],
+        "path": "social-preview.webp"
+      }
+    },
+    "assets/social-preview": {
+      "png": {
+        "bytes": 422653,
+        "size": [
+          1200,
+          630
+        ],
+        "path": "assets/social-preview.png"
+      },
+      "jpg": {
+        "bytes": 126553,
+        "size": [
+          1200,
+          630
+        ],
+        "path": "assets/social-preview.jpg"
+      },
+      "webp": {
+        "bytes": 70278,
+        "size": [
+          1200,
+          630
+        ],
+        "path": "assets/social-preview.webp"
+      }
+    }
+  }
+}
