@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 YEAR = "2026"
-VERSION = "126"
+VERSION = "127"
 
 
 SOCIAL_SVG = """<a class="site-social-link site-social-linkedin" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="Parallax Data Lab on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg></a>
