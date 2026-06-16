@@ -348,6 +348,30 @@ function setupDropdowns() {
     const isLinkToggle = toggle.tagName.toLowerCase() === "a" && toggle.getAttribute("href");
     if (isLinkToggle) {
       toggle.setAttribute("aria-haspopup", "true");
+      toggle.setAttribute("aria-expanded", "false");
+      let closeTimer = null;
+
+      const openDropdown = () => {
+        window.clearTimeout(closeTimer);
+        closeDropdowns(dropdown);
+        dropdown.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+      };
+
+      const closeDropdown = () => {
+        window.clearTimeout(closeTimer);
+        closeTimer = window.setTimeout(() => {
+          if (!dropdown.matches(":hover") && !dropdown.matches(":focus-within")) {
+            dropdown.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        }, 220);
+      };
+
+      dropdown.addEventListener("mouseenter", openDropdown);
+      dropdown.addEventListener("mouseleave", closeDropdown);
+      dropdown.addEventListener("focusin", openDropdown);
+      dropdown.addEventListener("focusout", closeDropdown);
       return;
     }
 
@@ -903,25 +927,37 @@ function setupPowerBiEmbedPlaceholder() {
 }
 
 function setupOfferingMenuGroups() {
-  document.querySelectorAll(".nav-menu-offerings .nav-menu-group").forEach((group) => {
-    const closeGroup = () => {
-      if (!group.matches(":focus-within")) {
-        group.removeAttribute("open");
-      }
+  document.querySelectorAll(".nav-menu-hierarchy .nav-menu-group").forEach((group) => {
+    let groupCloseTimer = null;
+
+    const openGroup = () => {
+      window.clearTimeout(groupCloseTimer);
+      group.setAttribute("open", "");
     };
 
-    group.addEventListener("mouseenter", () => {
-      group.setAttribute("open", "");
-    });
+    const closeGroup = () => {
+      window.clearTimeout(groupCloseTimer);
+      groupCloseTimer = window.setTimeout(() => {
+        if (!group.matches(":hover") && !group.matches(":focus-within")) {
+          group.removeAttribute("open");
+        }
+      }, 160);
+    };
 
+    group.addEventListener("mouseenter", openGroup);
     group.addEventListener("mouseleave", closeGroup);
-
-    group.addEventListener("focusin", () => {
-      group.setAttribute("open", "");
-    });
+    group.addEventListener("focusin", openGroup);
 
     group.addEventListener("focusout", () => {
       window.setTimeout(closeGroup, 0);
+    });
+
+    group.querySelector("summary")?.addEventListener("click", () => {
+      window.setTimeout(() => {
+        if (!group.open && (group.matches(":hover") || group.matches(":focus-within"))) {
+          group.setAttribute("open", "");
+        }
+      }, 0);
     });
   });
 }

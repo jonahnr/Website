@@ -6920,7 +6920,7 @@ main,
   background-image:
     linear-gradient(90deg, rgba(5, 9, 22, 0.88), rgba(11, 23, 69, 0.72) 48%, rgba(5, 9, 22, 0.84)),
     radial-gradient(circle at 76% 35%, rgba(69, 190, 255, 0.18), transparent 22rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/data-contours-bbc.avif") !important;
   background-position: center center;
   background-size: cover;
 }
@@ -11840,7 +11840,7 @@ body:has(.help-page) {
   left: -10px !important;
   right: -10px !important;
   top: 100% !important;
-  height: 16px !important;
+  height: 28px !important;
   pointer-events: auto !important;
 }
 
@@ -12137,7 +12137,7 @@ body::after {
   background:
     linear-gradient(90deg, rgba(5, 9, 22, 0.84), rgba(11, 23, 69, 0.58) 48%, rgba(5, 9, 22, 0.84)),
     radial-gradient(circle at 78% 26%, rgba(69, 190, 255, 0.14), transparent 18rem),
-    url("assets/new2.png") center center / cover no-repeat,
+    url("assets/data-contours-bbc.avif") center center / cover no-repeat,
     #020718;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -24614,7 +24614,8 @@ nav {
 }
 
 /* Current expertise hub pass: organized offering menu and capability pages */
-.site-header .nav-dropdown-menu.nav-menu-offerings {
+.site-header .nav-dropdown-menu.nav-menu-offerings,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence {
   width: min(430px, calc(100vw - 32px));
   grid-template-columns: 1fr;
   gap: 12px;
@@ -24665,7 +24666,9 @@ nav {
 .site-header .nav-menu-section-title:hover,
 .site-header .nav-menu-section-title:focus-visible,
 .site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
-.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible {
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible {
   background: rgba(69, 190, 255, 0.15);
   box-shadow: inset 3px 0 0 rgba(245, 181, 68, 0.86);
   color: #ffffff;
@@ -24682,7 +24685,8 @@ nav {
   content: "-";
 }
 
-.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child {
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child {
   min-height: 38px;
 }
 

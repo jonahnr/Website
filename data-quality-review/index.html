@@ -6,7 +6,7 @@
 <title>Data Quality Review | Find Why Reports Are Not Trusted</title>
 <meta name="description" content="Data quality review for teams dealing with inconsistent metrics, source system issues, manual reporting patches, reconciliation work, and dashboard trust problems."/>
 <link rel="canonical" href="https://parallaxdatalab.com/data-quality-review/"/>
-<link href="../home.css?v=125" rel="stylesheet"/>
+<link href="../home.css?v=126" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="../favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" href="../favicon.png"/>
@@ -76,11 +76,17 @@
 <div class="nav-dropdown nav-dropdown-intelligence">
 <a class="nav-dropdown-toggle" href="../intelligence-lab.html">Intelligence Lab</a>
 <div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Overview</summary>
 <a class="nav-menu-parent" href="../intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Lab Initiatives</summary>
 <a class="nav-menu-child" href="../intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#predictive-risk-intelligence"><span>Predictive Risk Intelligence</span></a>
+</details>
 </div>
 </div>
 <a href="../insights.html">Insights</a>
@@ -111,7 +117,7 @@
 </section>
 <section class="expertise-content-block reveal-card">
 <h2>What Data Quality Means In Reporting</h2>
-<p>Data quality is not only whether a table has blanks. It includes whether data is accurate enough for the decision, complete enough for the audience, consistent across systems, timely enough for the meeting, and traceable enough for leaders to understand. IBM describes data quality as a measure of how well data serves its intended purpose, with dimensions such as accuracy, completeness, consistency, timeliness, and validity. In a business intelligence environment, those dimensions become visible every time a dashboard is challenged.</p>
+<p>Data quality is not only whether a table has blanks. In reporting, quality means the data is accurate enough for the decision, complete enough for the audience, consistent across systems, timely enough for the meeting, and traceable enough for leaders to understand. A late order status, duplicated customer record, unowned mapping table, or manually corrected spreadsheet can each break trust in a different way.</p>
 </section>
 <section class="expertise-content-block reveal-card">
 <h2>Where Quality Breaks</h2>
@@ -119,22 +125,22 @@
 </section>
 <section class="expertise-content-block reveal-card">
 <h2>How Parallax Helps</h2>
-<p>Parallax reviews key reports, source extracts, transformations, metric definitions, and exception handling. The output is a clear map of the trust breaks: what is wrong, why it matters, who needs to own it, and which fixes should happen before more reporting automation or dashboard development. The work is practical, not academic. The goal is to restore enough confidence that leaders can act without rebuilding the answer in every meeting.</p>
+<p>Parallax reviews key reports, source extracts, transformations, metric definitions, and exception handling. The output is a clear map of the trust breaks: what is wrong, why it matters, who needs to own it, and which fixes should happen before more reporting automation or dashboard development. The goal is not perfect data. It is known confidence: what can be trusted now, what has limits, and what needs a fix before leaders rely on it.</p>
 </section>
 <section class="expertise-card-section reveal-card" aria-label="Data Quality Review related expertise">
 <h2>Related Expertise</h2>
 <div class="expertise-card-grid">
 <a class="expertise-card" href="#source-trace">
 <img alt="Conflicting source numbers traced for data quality review" src="../assets/home-generated/failure-conflicting-numbers.png" loading="lazy" decoding="async">
-<div><h2>Source Trace</h2><p>Source Trace work helps teams move from scattered reporting symptoms into clearer data logic, stronger ownership, and a better path from insight to action.</p><span>Explore Source Trace</span></div>
+<div><h2>Source Trace</h2><p>Follows a disputed number from source entry through extracts, transformations, manual edits, semantic logic, and final dashboard display.</p><span>Explore Source Trace</span></div>
 </a>
 <a class="expertise-card" href="#exception-review">
 <img alt="Definition drift and reporting exceptions reviewed" src="../assets/home-generated/failure-definition-drift.png" loading="lazy" decoding="async">
-<div><h2>Exception Review</h2><p>Exception Review work helps teams move from scattered reporting symptoms into clearer data logic, stronger ownership, and a better path from insight to action.</p><span>Explore Exception Review</span></div>
+<div><h2>Exception Review</h2><p>Separates normal business exceptions from hidden patches, one-off overrides, late entries, and rules nobody has documented.</p><span>Explore Exception Review</span></div>
 </a>
 <a class="expertise-card" href="#trust-map">
 <img alt="Trust map for data quality and reporting confidence" src="../assets/home-generated/assessment-trust-map.png" loading="lazy" decoding="async">
-<div><h2>Trust Map</h2><p>Trust Map work helps teams move from scattered reporting symptoms into clearer data logic, stronger ownership, and a better path from insight to action.</p><span>Explore Trust Map</span></div>
+<div><h2>Trust Map</h2><p>Ranks trust breaks by decision impact so teams can fix the issues that matter before chasing cosmetic cleanup.</p><span>Explore Trust Map</span></div>
 </a>
 </div>
 </section>
@@ -142,8 +148,8 @@
 <div>
 <p class="page-kicker">Source Trace</p>
 <h2>Source Trace in practice</h2>
-<p>Source Trace connects to the operating questions behind the report: what decision the work supports, what data can be trusted, who owns the logic, how the result will be reviewed, and what action should follow.</p>
-<p>The useful version is specific, documented, and tied to leadership behavior. It should reduce repeated reconciliation, make assumptions visible, and help the team decide whether the right next step is a focused cleanup, a diagnostic, a governance reset, or a broader analytics operating model change.</p>
+<p>Source tracing is useful when leaders ask why a dashboard, spreadsheet, and source system all show different answers. The work follows the number through each handoff and names where the logic changes.</p>
+<p>That produces a practical lineage view: source, extract, transformation, model logic, report filter, manual adjustment, and owner.</p>
 </div>
 <img alt="Conflicting source numbers traced for data quality review" src="../assets/home-generated/failure-conflicting-numbers.png" loading="lazy" decoding="async">
 </section>
@@ -151,8 +157,8 @@
 <div>
 <p class="page-kicker">Exception Review</p>
 <h2>Exception Review in practice</h2>
-<p>Exception Review connects to the operating questions behind the report: what decision the work supports, what data can be trusted, who owns the logic, how the result will be reviewed, and what action should follow.</p>
-<p>The useful version is specific, documented, and tied to leadership behavior. It should reduce repeated reconciliation, make assumptions visible, and help the team decide whether the right next step is a focused cleanup, a diagnostic, a governance reset, or a broader analytics operating model change.</p>
+<p>Exception review looks for the business cases that quietly bend the rules: late orders, merged customers, manual credits, incomplete jobs, reclassified products, or one-off leadership adjustments.</p>
+<p>The point is not to eliminate every exception. It is to make exceptions visible enough that recurring reporting can handle them without rebuilding trust each month.</p>
 </div>
 <img alt="Definition drift and reporting exceptions reviewed" src="../assets/home-generated/failure-definition-drift.png" loading="lazy" decoding="async">
 </section>
@@ -160,8 +166,8 @@
 <div>
 <p class="page-kicker">Trust Map</p>
 <h2>Trust Map in practice</h2>
-<p>Trust Map connects to the operating questions behind the report: what decision the work supports, what data can be trusted, who owns the logic, how the result will be reviewed, and what action should follow.</p>
-<p>The useful version is specific, documented, and tied to leadership behavior. It should reduce repeated reconciliation, make assumptions visible, and help the team decide whether the right next step is a focused cleanup, a diagnostic, a governance reset, or a broader analytics operating model change.</p>
+<p>A trust map separates issues that affect leadership decisions from issues that are annoying but low impact. This keeps the cleanup effort from spreading into everything at once.</p>
+<p>The map usually identifies quick fixes, owner decisions, structural source problems, and items that should be monitored rather than immediately rebuilt.</p>
 </div>
 <img alt="Trust map for data quality and reporting confidence" src="../assets/home-generated/assessment-trust-map.png" loading="lazy" decoding="async">
 </section>
@@ -263,6 +269,6 @@
     <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
   </div>
 </footer>
-<script src="../home.js?v=125"></script>
+<script src="../home.js?v=126"></script>
 </body>
 </html>

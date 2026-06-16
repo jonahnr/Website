@@ -107,6 +107,7 @@ def power_bi_main(prefix: str) -> str:
 <p class="page-kicker">When this page is the right fit</p>
 <h2 id="local-seo-fit-title">Use this path when Power BI is the visible layer, but the operating problem sits underneath.</h2>
 <p>Power BI work is rarely just a visual redesign. The useful work usually lives in the semantic model, DAX measures, data preparation steps, refresh reliability, row-level security rules, KPI definitions, and the decision workflow leaders expect the dashboard to support.</p>
+<p>Common examples include a leadership dashboard where every page uses a slightly different revenue measure, a model where relationship direction makes totals unpredictable, a report that refreshes successfully but still reflects late source data, or a dashboard that gives every stakeholder a view but gives nobody ownership of the metric logic.</p>
 </section>
 <section class="local-seo-section power-bi-platform-strip reveal-card" aria-labelledby="power-bi-platform-title">
 <div>
@@ -122,7 +123,7 @@ def power_bi_main(prefix: str) -> str:
 <div>
 <p class="page-kicker">Power BI Dashboards</p>
 <h2>Clean up dashboards without hiding the logic leaders need to trust.</h2>
-<p>We review report purpose, KPI definitions, visual clutter, page structure, drill paths, refresh expectations, and decision use. The goal is a smaller, clearer Power BI environment that gives leaders confidence without forcing them to decode the model.</p>
+<p>We review report purpose, KPI definitions, visual clutter, page structure, drill paths, refresh expectations, and decision use. The goal is a smaller, clearer Power BI environment that gives leaders confidence without forcing them to decode the model. That can mean retiring duplicate pages, separating executive and operational views, adding confidence notes for known data limits, or changing a page so the first question is answered before the user starts filtering.</p>
 </div>
 </article>
 <article>
@@ -130,7 +131,7 @@ def power_bi_main(prefix: str) -> str:
 <div>
 <p class="page-kicker">Semantic Models &amp; DAX</p>
 <h2>Stabilize the measures and model beneath the report surface.</h2>
-<p>Deep Power BI work often means untangling DAX measures, reducing duplicate logic, improving model relationships, clarifying grain, separating certified metrics from exploration, and making the model easier for the business to maintain.</p>
+<p>Deep Power BI work often means untangling DAX measures, reducing duplicate logic, improving model relationships, clarifying grain, separating certified metrics from exploration, and making the model easier for the business to maintain. The priority is not clever DAX; it is measures that can be explained, reused, tested, and trusted when leadership asks why the number moved.</p>
 </div>
 </article>
 <article>
@@ -138,7 +139,7 @@ def power_bi_main(prefix: str) -> str:
 <div>
 <p class="page-kicker">Data Prep, RLS &amp; Refresh</p>
 <h2>Protect the data path before automation spreads bad assumptions faster.</h2>
-<p>Data preparation choices, refresh schedules, data quality checks, permissions, and row-level security shape whether people trust the report. We look for fragile steps, hidden manual patches, and access rules that need business ownership.</p>
+<p>Data preparation choices, refresh schedules, data quality checks, permissions, and row-level security shape whether people trust the report. We look for fragile steps, hidden manual patches, source timing issues, role definitions, and access rules that need business ownership before the report becomes a wider operating tool.</p>
 </div>
 </article>
 </section>
@@ -152,6 +153,15 @@ def power_bi_main(prefix: str) -> str:
 <article><strong>Data quality review</strong><p>Trace the issues that create reconciliation, duplicate versions, manual edits, and conflicting dashboard outputs.</p></article>
 <article><strong>Executive reporting cadence</strong><p>Align dashboards and weekly operating reviews so reports lead to action, not another round of questions.</p></article>
 <article><strong>Power BI governance</strong><p>Create practical rules for certified datasets, workspace structure, ownership, security, refresh expectations, and change control.</p></article>
+</div>
+</section>
+<section class="expertise-related-articles reveal-card" aria-labelledby="power-bi-related-title">
+<p class="page-kicker">Related Reading</p>
+<h2 id="power-bi-related-title">Articles that connect Power BI work to reporting trust.</h2>
+<div class="expertise-article-grid">
+<a class="expertise-article-card" href="{href(prefix, 'insights/why-nobody-trusts-your-dashboard.html')}"><span>Related Insight</span><strong>Why Nobody Trusts Your Dashboard</strong><em>Read article</em></a>
+<a class="expertise-article-card" href="{href(prefix, 'insights/building-executive-dashboards-that-create-accountability.html')}"><span>Related Insight</span><strong>Building Executive Dashboards That Create Accountability</strong><em>Read article</em></a>
+<a class="expertise-article-card" href="{href(prefix, 'insights/governance-rls-architecture-business-issue.html')}"><span>Related Insight</span><strong>Governance And RLS Architecture Is A Business Issue</strong><em>Read article</em></a>
 </div>
 </section>
 <section class="local-seo-section power-bi-embed-section reveal-card" aria-labelledby="power-bi-embed-title">
@@ -222,7 +232,8 @@ def cincinnati_main(prefix: str) -> str:
 <p class="page-kicker">Why local context matters</p>
 <h2 id="cincinnati-bi-fit-title">Cincinnati teams do not all operate the same way, and their reporting systems should not pretend they do.</h2>
 <p>With more than 10 years in Cincinnati, Parallax Data Lab understands the practical mix of businesses that operate here and across the Midwest: manufacturing, logistics, healthcare, professional services, distribution, finance, and growing mid-market teams where reporting has to match real operating rhythm.</p>
-<p>Local context matters because BI work is not only technical. A useful business intelligence consultant has to understand how leaders review numbers, how plant-floor and back-office teams define success, how seasonality or service commitments affect KPIs, and why a clean dashboard still fails if it does not fit the way the business actually runs.</p>
+<p>Local context matters because BI work is not only technical. A useful data analytics consultant has to understand how leaders review numbers, how plant-floor and back-office teams define success, how seasonality or service commitments affect KPIs, and why a clean dashboard still fails if it does not fit the way the business actually runs.</p>
+<p>For a Cincinnati manufacturer, that may mean connecting production, quality, labor, inventory, and customer commitments without pretending every metric belongs to one department. For a professional services or distribution team, it may mean clarifying utilization, backlog, margin, pipeline, and service performance so leaders can see the tradeoffs instead of chasing separate reports.</p>
 </section>
 <section class="local-seo-section local-seo-card-grid reveal-card" aria-label="Cincinnati BI consulting focus">
 <article>
@@ -230,7 +241,7 @@ def cincinnati_main(prefix: str) -> str:
 <div>
 <p class="page-kicker">BI Foundation</p>
 <h2>Turn scattered reporting into a business intelligence system leaders can use.</h2>
-<p>The work starts by identifying which reports matter, where definitions conflict, which owners can resolve disputes, and how dashboard outputs should connect to operating decisions.</p>
+<p>The work starts by identifying which reports matter, where definitions conflict, which owners can resolve disputes, and how dashboard outputs should connect to operating decisions. A useful BI foundation might consolidate duplicate sales reports, define a certified margin measure, document the difference between booked and shipped activity, or retire a dashboard that nobody trusts but everyone still updates.</p>
 </div>
 </article>
 <article>
@@ -238,7 +249,7 @@ def cincinnati_main(prefix: str) -> str:
 <div>
 <p class="page-kicker">Midwest Operating Rhythm</p>
 <h2>Make reporting useful for teams managing production, service, growth, and accountability.</h2>
-<p>Cincinnati and Midwest companies often need analytics that connects finance, sales, operations, inventory, capacity, labor, and customer commitments. The reporting layer should help teams see what changed, why it matters, and what action is required next.</p>
+<p>Cincinnati and Midwest companies often need analytics that connects finance, sales, operations, inventory, capacity, labor, and customer commitments. The reporting layer should help teams see what changed, why it matters, and what action is required next. That means reports should match the weekly operating rhythm, not force leaders to translate a generic dashboard into local business reality.</p>
 </div>
 </article>
 <article>
@@ -246,7 +257,7 @@ def cincinnati_main(prefix: str) -> str:
 <div>
 <p class="page-kicker">Data Analytics Consulting</p>
 <h2>Use analytics consulting to fix the operating problem beneath the reporting request.</h2>
-<p>Data analytics consulting can include dashboard review, reporting automation, data quality checks, metric governance, and decision cadence design. The point is not more data; it is better signal for the decisions that repeat every week.</p>
+<p>Data analytics consulting can include dashboard review, reporting automation, data quality checks, metric governance, and decision cadence design. The point is not more data; it is better signal for the decisions that repeat every week, especially where local teams need to balance customer commitments, operating capacity, quality, cash, and growth.</p>
 </div>
 </article>
 </section>
@@ -260,6 +271,15 @@ def cincinnati_main(prefix: str) -> str:
 <article><strong>Data quality review</strong><p>Trace the source issues, manual patches, and exception rules that cause leaders to distrust analytics outputs.</p></article>
 <article><strong>Reporting automation</strong><p>Automate recurring reporting only after the inputs, definitions, and responsibilities are stable enough to scale.</p></article>
 <article><strong>Power BI support</strong><p>Improve dashboards, semantic models, DAX measures, refresh reliability, and report usability when Power BI is the main layer.</p></article>
+</div>
+</section>
+<section class="expertise-related-articles reveal-card" aria-labelledby="cincinnati-related-title">
+<p class="page-kicker">Related Reading</p>
+<h2 id="cincinnati-related-title">Articles for teams building a stronger analytics foundation.</h2>
+<div class="expertise-article-grid">
+<a class="expertise-article-card" href="{href(prefix, 'insights/analytics-maturity-roadmap-reporting-to-decision-systems.html')}"><span>Related Insight</span><strong>Analytics Maturity Roadmap</strong><em>Read article</em></a>
+<a class="expertise-article-card" href="{href(prefix, 'insights/the-difference-between-reporting-and-decision-making.html')}"><span>Related Insight</span><strong>The Difference Between Reporting And Decision Making</strong><em>Read article</em></a>
+<a class="expertise-article-card" href="{href(prefix, 'insights/five-signs-your-reporting-environment-is-breaking-down.html')}"><span>Related Insight</span><strong>Five Signs Your Reporting Environment Is Breaking Down</strong><em>Read article</em></a>
 </div>
 </section>
 <section class="local-seo-section local-seo-faq reveal-card" aria-labelledby="cincinnati-bi-faq-title">
@@ -334,8 +354,8 @@ for path in sorted(ROOT.rglob("*.html")):
         text = update_how_we_help(text, prefix)
 
     text = rewrite_footer(text, path)
-    text = re.sub(r'home\.css\?v=\d+', 'home.css?v=125', text)
-    text = re.sub(r'home\.js\?v=\d+', 'home.js?v=125', text)
+    text = re.sub(r'home\.css\?v=\d+', 'home.css?v=126', text)
+    text = re.sub(r'home\.js\?v=\d+', 'home.js?v=126', text)
 
     if text != original:
         path.write_text(text, encoding="utf-8", newline="\n")

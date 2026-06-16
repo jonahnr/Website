@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 YEAR = "2026"
-VERSION = "125"
+VERSION = "126"
 
 
 SOCIAL_SVG = """<a class="site-social-link site-social-linkedin" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="Parallax Data Lab on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg></a>
@@ -27,9 +27,9 @@ PAGES = {
         "hero_alt": "Analytics expertise map connecting Power BI reporting data quality and governance",
         "proof": ["Power BI", "KPI Reporting", "Reporting Automation", "Data Quality", "Dashboard Trust"],
         "sections": [
-            ("Related Experience", "The same problems tend to show up through different doors. A Power BI request may actually be a metric-definition problem. A reporting automation request may expose weak source logic. A data quality review may reveal that nobody owns the dashboard people argue about every week. Parallax Data Lab brings those threads together so the work does not stop at a prettier report."),
-            ("What Connects The Work", "The common thread is trust. Reports earn trust when the data path is understandable, the metric definitions are owned, the dashboard answers a real operating question, and the review cadence turns the number into action. The platform matters, but the business layer above the platform matters more: source logic, ownership, governance, automation readiness, and the decision rhythm leaders actually use."),
-            ("Where The Details Live", "Each expertise page goes deeper on a specific pattern: Power BI systems that need clearer models and reporting structure, KPI reporting that needs shared meaning, automation that needs clean business rules before it scales, data quality problems that create reconciliation work, dashboard governance that restores confidence, and Cincinnati analytics support shaped by local operating context.")
+            ("Where Reporting Problems Usually Start", "A dashboard request often starts with the symptom instead of the cause. One team may ask for a cleaner Power BI report because the executive view is too busy. Another may ask for automation because a recurring spreadsheet takes five hours every Monday. Another may ask for a data quality review because sales, finance, and operations keep showing different answers for the same metric. The expertise pages separate those patterns so the work starts with the real constraint, not the loudest surface complaint."),
+            ("What Connects The Work", "The common thread is trust in the operating number. Reports earn that trust when the data path is understandable, metric definitions are owned, the reporting layer answers a real business question, and the review cadence turns the number into action. The platform still matters, but the business layer above it matters more: source logic, ownership, governance, automation readiness, and the decision rhythm leaders actually use."),
+            ("How To Choose The Right Path", "Start with the pain that keeps repeating. If leaders debate the number, KPI reporting or data quality is usually the better entry point. If the report works but the Power BI model is fragile, start with platform expertise. If manual work is consuming analyst time, start with automation readiness. If every team has its own version of the truth, dashboard trust and governance should come first.")
         ],
         "cards": [
             ("Power BI Consulting", "power-bi-consultant-cincinnati.html", "assets/home-generated/power-bi-report-hero.jpg", "Power BI dashboard and semantic model consulting"),
@@ -49,6 +49,14 @@ PAGES = {
             ("The Difference Between Reporting And Decision Making", "insights/the-difference-between-reporting-and-decision-making.html"),
             ("Analytics Maturity Roadmap", "insights/analytics-maturity-roadmap-reporting-to-decision-systems.html"),
         ],
+        "card_blurbs": {
+            "Power BI Consulting": "Use this path when the report layer is visible, but the real work may be model structure, DAX logic, refresh behavior, KPI definition, or report governance.",
+            "KPI Reporting": "Use this path when leaders have metrics but not shared meaning, ownership, thresholds, or a reporting cadence that turns movement into action.",
+            "Reporting Automation": "Use this path when recurring report assembly is wasting time and the team needs to decide what can safely repeat before automation scales the work.",
+            "Data Quality Review": "Use this path when people keep reconciling the same numbers, tracing exceptions, or explaining why dashboards and spreadsheets do not agree.",
+            "Dashboard Trust & BI Governance": "Use this path when there are too many reports, unclear certified sources, loose access rules, and no practical change process for BI assets.",
+            "Data Analytics Consulting Cincinnati": "Use this path when local operating context, Midwest industry patterns, and practical leadership reporting expectations matter to the engagement."
+        },
     },
     "kpi-reporting-consulting": {
         "title": "KPI Reporting Consulting | Metrics Leaders Can Trust",
@@ -60,9 +68,9 @@ PAGES = {
         "hero_alt": "KPI reporting governance dashboard with trusted executive metrics",
         "proof": ["KPI Definitions", "Metric Ownership", "Executive Cadence", "Scorecards", "Dashboard Trust"],
         "sections": [
-            ("Why KPI Reporting Fails", "KPI reporting is often treated like a visualization problem. The deeper issue is usually structural. Different teams calculate the same metric differently, source systems use different timing, manual adjustments are undocumented, and executives inherit a dashboard without knowing the operating question behind each number. The result is a familiar meeting pattern: people spend the first half reconciling the number and the second half running out of time to decide what to do."),
-            ("What Good KPI Reporting Includes", "Useful KPI reporting defines the business question first. It names the owner, source, refresh timing, grain, inclusion rules, exclusions, threshold logic, and expected action path. In Power BI or any other reporting layer, the visual should make those choices easier to understand instead of hiding them. The point is not a bigger metric library. It is a smaller set of measures leaders can use without stopping the meeting to reconstruct the math."),
-            ("How Parallax Helps", "The engagement can start with a narrow review of one leadership scorecard or expand into a broader KPI governance reset. We identify where definitions drift, which metrics need owners, where reports should be retired, and how the weekly or monthly review should change. The goal is not to measure everything. The goal is to create a smaller set of metrics that leaders understand, use, and maintain.")
+            ("Why KPI Reporting Fails", "KPI reporting is often treated like a visualization problem. The deeper issue is usually structural. Sales may count booked revenue while finance reports recognized revenue. Operations may track units produced while leadership wants shipped units, margin, or backlog risk. A dashboard can display all of those numbers cleanly and still fail if nobody has agreed which number belongs in the leadership review."),
+            ("What Good KPI Reporting Includes", "Useful KPI reporting defines the business question first. It names the owner, source, refresh timing, grain, inclusion rules, exclusions, threshold logic, and expected action path. A strong scorecard also shows what changed since the last review, whether the movement is material, what context explains it, and who is responsible for follow-up."),
+            ("How Parallax Helps", "The engagement can start with a narrow review of one leadership scorecard or expand into a broader KPI governance reset. We identify where definitions drift, which metrics need owners, where reports should be retired, and how the weekly or monthly review should change. The output should make meetings shorter: fewer debates about the math, more time deciding what to do.")
         ],
         "cards": [
             ("Metric Definition Review", "#metric-definition-review", "assets/home-generated/quote-useful-metrics.png", "Useful KPI definitions organized for leadership reporting"),
@@ -87,6 +95,16 @@ PAGES = {
             ("KPI Governance Explained For Growing Organizations", "insights/kpi-governance-explained-growing-organizations.html"),
             ("The KPI Ownership Framework Every Leadership Team Needs", "insights/kpi-ownership-framework-every-leadership-team-needs.html"),
         ],
+        "card_blurbs": {
+            "Metric Definition Review": "Clarifies the calculation, timing, exclusions, grain, source, and business interpretation for metrics leaders keep challenging.",
+            "Ownership Mapping": "Names who owns the definition, who approves changes, who explains movement, and who is accountable for the response.",
+            "Executive Scorecard Design": "Turns a scattered metric set into a leadership view with trend, target, confidence, context, and next-action clarity."
+        },
+        "card_details": {
+            "Metric Definition Review": ["A definition review is useful when the same KPI appears in multiple dashboards or spreadsheets with slightly different math. The work compares the calculation against source data, timing rules, exclusions, and the decision the metric is supposed to support.", "The output is a practical definition record: source, grain, owner, refresh cadence, business rule, known limitations, and when the metric should trigger attention."],
+            "Ownership Mapping": ["Ownership mapping separates technical ownership from business ownership. The person who maintains a dataset may not be the person who can approve a change to revenue logic, service-level rules, or inventory classification.", "This prevents metric changes from drifting through side conversations and gives leaders a clear escalation path when a KPI is disputed."],
+            "Executive Scorecard Design": ["A scorecard should not be a warehouse of every available measure. It should show the few measures that matter for a recurring leadership decision and include enough context to make interpretation faster.", "That usually means trend, target, threshold, owner, commentary, confidence, and a clear link to the action path for exceptions."]
+        },
     },
     "reporting-automation-consulting": {
         "title": "Reporting Automation Consulting | Faster Trusted Reporting",
@@ -98,8 +116,8 @@ PAGES = {
         "hero_alt": "Reporting automation pipeline turning source data into trusted dashboards",
         "proof": ["Manual Reporting", "Refresh Reliability", "Workflow Design", "Data Quality", "Decision Cadence"],
         "sections": [
-            ("The Right Automation Starting Point", "Many reporting automation requests begin with a spreadsheet that someone rebuilds every week. The visible request is speed, but the real issue may be inconsistent source pulls, hidden copy-paste logic, late-arriving data, fragile joins, or a metric that nobody owns. Automation should be designed a layer above the tool first: what business rule repeats, what exception needs judgment, what source can be trusted, and what review cadence the output supports."),
-            ("What Should Be Automated", "Good candidates for automation are recurring reports with stable inputs, clear definitions, known owners, and a predictable review cycle. Poor candidates are reports where every period requires judgment, exceptions are undocumented, or leaders still disagree about what the metric means. We separate repetitive preparation from business interpretation, so automation removes waste without removing accountability."),
+            ("The Right Automation Starting Point", "Many reporting automation requests begin with a spreadsheet that someone rebuilds every week. The visible request is speed, but the real issue may be inconsistent source pulls, hidden copy-paste logic, late-arriving data, fragile joins, or a metric that nobody owns. The first question is not which tool should run the job. It is which business rule is stable enough to repeat."),
+            ("What Should Be Automated", "Good candidates for automation are recurring reports with stable inputs, clear definitions, known owners, and a predictable review cycle. Examples include weekly pipeline snapshots, inventory exception lists, monthly operating packs, and refresh checks where the rules are clear. Poor candidates are reports where every period requires judgment, exceptions are undocumented, or leaders still disagree about what the metric means."),
             ("How Parallax Helps", "Parallax reviews the current reporting workflow from source to audience. We map the manual steps, identify fragile transformations, document the business logic, and recommend the smallest automation path that reduces effort while protecting trust. That might mean upstream data cleanup, Power BI refresh improvement, a documented reporting calendar, a data quality checkpoint, or a new dashboard that replaces recurring spreadsheet assembly.")
         ],
         "cards": [
@@ -125,6 +143,16 @@ PAGES = {
             ("Where AI Actually Helps In Analytics Operations", "insights/where-ai-actually-helps-in-analytics-operations.html"),
             ("Prepare Your Reporting Environment For AI", "insights/prepare-reporting-environment-for-ai.html"),
         ],
+        "card_blurbs": {
+            "Manual Step Audit": "Documents the exports, pivots, lookups, copy-paste steps, judgment calls, and undocumented checks that keep the current report alive.",
+            "Repeatable Data Prep": "Moves repeatable cleanup rules into a maintainable path while keeping business interpretation visible to the owners.",
+            "Refresh Reliability": "Checks whether automated reporting is actually current, complete, monitored, and owned when something fails."
+        },
+        "card_details": {
+            "Manual Step Audit": ["A manual step audit is useful when a report depends on one person knowing which export to run, which rows to delete, which lookup to refresh, and which exception to ignore.", "The audit turns that hidden process into an explicit workflow so the team can decide what to automate, what to retire, and what still requires judgment."],
+            "Repeatable Data Prep": ["Repeatable data prep does not mean pushing every transformation into the dashboard layer. Heavy business logic should be placed where it is easier to govern, test, and maintain.", "The goal is a simpler path from source to report, with fewer hidden edits and clearer ownership for each business rule."],
+            "Refresh Reliability": ["Refresh reliability includes schedules, source permissions, late data, failure alerts, downstream dependencies, and whether anyone owns the response when a refresh breaks.", "This matters because an automated report can look polished while quietly serving stale or incomplete data."]
+        },
     },
     "data-quality-review": {
         "title": "Data Quality Review | Find Why Reports Are Not Trusted",
@@ -136,9 +164,9 @@ PAGES = {
         "hero_alt": "Data quality review tracing conflicting source systems into trusted reporting",
         "proof": ["Source Systems", "Manual Patches", "Metric Drift", "Reconciliation", "Trust Review"],
         "sections": [
-            ("What Data Quality Means In Reporting", "Data quality is not only whether a table has blanks. It includes whether data is accurate enough for the decision, complete enough for the audience, consistent across systems, timely enough for the meeting, and traceable enough for leaders to understand. IBM describes data quality as a measure of how well data serves its intended purpose, with dimensions such as accuracy, completeness, consistency, timeliness, and validity. In a business intelligence environment, those dimensions become visible every time a dashboard is challenged."),
+            ("What Data Quality Means In Reporting", "Data quality is not only whether a table has blanks. In reporting, quality means the data is accurate enough for the decision, complete enough for the audience, consistent across systems, timely enough for the meeting, and traceable enough for leaders to understand. A late order status, duplicated customer record, unowned mapping table, or manually corrected spreadsheet can each break trust in a different way."),
             ("Where Quality Breaks", "Quality issues often begin upstream: duplicated customer records, inconsistent product hierarchies, late operational entries, manual spreadsheet patches, unowned mapping tables, or business rules that changed without documentation. By the time the issue reaches Power BI or an executive scorecard, the dashboard is blamed for a problem that started much earlier. A review traces the path instead of guessing at the symptom."),
-            ("How Parallax Helps", "Parallax reviews key reports, source extracts, transformations, metric definitions, and exception handling. The output is a clear map of the trust breaks: what is wrong, why it matters, who needs to own it, and which fixes should happen before more reporting automation or dashboard development. The work is practical, not academic. The goal is to restore enough confidence that leaders can act without rebuilding the answer in every meeting.")
+            ("How Parallax Helps", "Parallax reviews key reports, source extracts, transformations, metric definitions, and exception handling. The output is a clear map of the trust breaks: what is wrong, why it matters, who needs to own it, and which fixes should happen before more reporting automation or dashboard development. The goal is not perfect data. It is known confidence: what can be trusted now, what has limits, and what needs a fix before leaders rely on it.")
         ],
         "cards": [
             ("Source Trace", "#source-trace", "assets/home-generated/failure-conflicting-numbers.png", "Conflicting source numbers traced for data quality review"),
@@ -163,6 +191,16 @@ PAGES = {
             ("Why Data Teams Struggle To Earn Trust", "insights/why-data-teams-struggle-to-earn-trust.html"),
             ("Who Owns This Metric?", "insights/who-owns-this-metric-most-expensive-question-in-analytics.html"),
         ],
+        "card_blurbs": {
+            "Source Trace": "Follows a disputed number from source entry through extracts, transformations, manual edits, semantic logic, and final dashboard display.",
+            "Exception Review": "Separates normal business exceptions from hidden patches, one-off overrides, late entries, and rules nobody has documented.",
+            "Trust Map": "Ranks trust breaks by decision impact so teams can fix the issues that matter before chasing cosmetic cleanup."
+        },
+        "card_details": {
+            "Source Trace": ["Source tracing is useful when leaders ask why a dashboard, spreadsheet, and source system all show different answers. The work follows the number through each handoff and names where the logic changes.", "That produces a practical lineage view: source, extract, transformation, model logic, report filter, manual adjustment, and owner."],
+            "Exception Review": ["Exception review looks for the business cases that quietly bend the rules: late orders, merged customers, manual credits, incomplete jobs, reclassified products, or one-off leadership adjustments.", "The point is not to eliminate every exception. It is to make exceptions visible enough that recurring reporting can handle them without rebuilding trust each month."],
+            "Trust Map": ["A trust map separates issues that affect leadership decisions from issues that are annoying but low impact. This keeps the cleanup effort from spreading into everything at once.", "The map usually identifies quick fixes, owner decisions, structural source problems, and items that should be monitored rather than immediately rebuilt."]
+        },
     },
     "dashboard-trust-governance": {
         "title": "Dashboard Trust & BI Governance Consulting",
@@ -174,8 +212,8 @@ PAGES = {
         "hero_alt": "Dashboard trust and BI governance system for executive reporting",
         "proof": ["Certified Metrics", "Workspace Structure", "Access Rules", "RLS", "Change Control"],
         "sections": [
-            ("Governance Should Make Reporting Easier", "BI governance is not a policy binder. It is the operating layer that helps teams know which reports are official, which metrics are certified, who can change logic, how access is granted, and when a dashboard should be retired. Microsoft notes that Power BI includes sharing, collaboration, workspaces, security, usage metrics, audit logs, and row-level security. Those capabilities are useful only when the business has clear rules for how they should be used."),
-            ("Where Trust Breaks", "Trust breaks when the business has no report inventory, no definition owner, no certified metric process, no workspace standards, no refresh expectations, or no access model. Row-level security can restrict data access for specific users, but it still needs role definitions, testing, and ownership. A governance review turns these scattered decisions into a practical model people can follow."),
+            ("Governance Should Make Reporting Easier", "BI governance is not a policy binder. It is the operating layer that helps teams know which reports are official, which metrics are certified, who can change logic, how access is granted, and when a dashboard should be retired. Good governance reduces friction because people stop hunting through five versions of the same report."),
+            ("Where Trust Breaks", "Trust breaks when the business has no report inventory, no definition owner, no certified metric process, no workspace standards, no refresh expectations, or no access model. A sales manager may build a helpful report that becomes unofficially official. Finance may keep a cleaner version in a spreadsheet. Operations may use a dashboard with a filter nobody else knows about. Governance turns those scattered decisions into a practical model people can follow."),
             ("How Parallax Helps", "Parallax maps the current dashboard environment, identifies duplicate reports, clarifies certified sources, reviews ownership, and recommends standards that fit the team's maturity. The work can include Power BI workspace structure, report lifecycle rules, RLS review, metric governance, dashboard retirement, and executive reporting cadence. The aim is not bureaucracy. The aim is a reporting environment where people can move faster because they know what to trust.")
         ],
         "cards": [
@@ -201,6 +239,16 @@ PAGES = {
             ("Governance And RLS Architecture Is A Business Issue", "insights/governance-rls-architecture-business-issue.html"),
             ("Why Executive Dashboards Fail", "insights/why-executive-dashboards-fail.html"),
         ],
+        "card_blurbs": {
+            "Report Inventory": "Finds active reports, duplicate dashboards, unused assets, owners, audiences, and candidates for retirement or certification.",
+            "Access And Security": "Reviews whether permissions, RLS roles, sensitive data paths, and approval rules match the way the business actually operates.",
+            "Certified Metrics": "Defines which measures are official, where they live, who can change them, and how changes are communicated."
+        },
+        "card_details": {
+            "Report Inventory": ["A report inventory gives the team a current map of what exists: official dashboards, shadow reports, duplicates, inactive assets, owners, audiences, and refresh expectations.", "This is often the fastest way to reduce confusion because it shows which reports should be trusted, retired, merged, or rebuilt."],
+            "Access And Security": ["Access review looks beyond whether a user can open a report. It checks which roles exist, how row-level security is tested, who approves access, and whether sensitive data is exposed through workspaces or exports.", "The result should be a practical access model that can be maintained without blocking normal reporting work."],
+            "Certified Metrics": ["Certified metrics give teams a known place to look for official logic. Certification should include owner, definition, source, refresh cadence, usage expectation, and change process.", "This helps analysts move faster because they can reuse trusted measures instead of rebuilding the same logic in every report."]
+        },
     },
 }
 
@@ -250,11 +298,17 @@ def nav_html(prefix: str) -> str:
 <div class="nav-dropdown nav-dropdown-intelligence">
 <a class="nav-dropdown-toggle" href="{href(prefix, 'intelligence-lab.html')}">Intelligence Lab</a>
 <div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Overview</summary>
 <a class="nav-menu-parent" href="{href(prefix, 'intelligence-lab.html')}"><span>Intelligence Lab Overview</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Lab Initiatives</summary>
 <a class="nav-menu-child" href="{href(prefix, 'intelligence-lab.html#operations-intelligence-digest')}"><span>Operations Intelligence Digest</span></a>
 <a class="nav-menu-child" href="{href(prefix, 'intelligence-lab.html#governance-rls-architecture')}"><span>Governance &amp; RLS Architecture</span></a>
 <a class="nav-menu-child" href="{href(prefix, 'intelligence-lab.html#enterprise-outcome-studio')}"><span>Enterprise Outcome Studio</span></a>
 <a class="nav-menu-child" href="{href(prefix, 'intelligence-lab.html#predictive-risk-intelligence')}"><span>Predictive Risk Intelligence</span></a>
+</details>
 </div>
 </div>
 <a href="{href(prefix, 'insights.html')}">Insights</a>
@@ -343,7 +397,7 @@ def render_page(slug: str, data: dict, prefix: str) -> str:
     cards = "\n".join(
         f'''<a class="expertise-card" href="{href(prefix, link)}">
 <img alt="{alt}" src="{href(prefix, img)}" loading="lazy" decoding="async">
-<div><h2>{title}</h2><p>{title} work helps teams move from scattered reporting symptoms into clearer data logic, stronger ownership, and a better path from insight to action.</p><span>Explore {title}</span></div>
+<div><h2>{title}</h2><p>{data.get("card_blurbs", {}).get(title, "Use this path when the reporting problem needs clearer definitions, stronger ownership, and a practical route from insight to action.")}</p><span>Explore {title}</span></div>
 </a>'''
         for title, link, img, alt in data["cards"]
     )
@@ -360,8 +414,8 @@ def render_page(slug: str, data: dict, prefix: str) -> str:
 <div>
 <p class="page-kicker">{title}</p>
 <h2>{title} in practice</h2>
-<p>{title} connects to the operating questions behind the report: what decision the work supports, what data can be trusted, who owns the logic, how the result will be reviewed, and what action should follow.</p>
-<p>The useful version is specific, documented, and tied to leadership behavior. It should reduce repeated reconciliation, make assumptions visible, and help the team decide whether the right next step is a focused cleanup, a diagnostic, a governance reset, or a broader analytics operating model change.</p>
+<p>{data.get("card_details", {}).get(title, ["This focus area connects the visible reporting request to the operating questions behind it: what decision the work supports, what data can be trusted, who owns the logic, how the result will be reviewed, and what action should follow.", "The useful version is specific, documented, and tied to leadership behavior. It should reduce repeated reconciliation, make assumptions visible, and clarify the smallest useful next step."])[0]}</p>
+<p>{data.get("card_details", {}).get(title, ["This focus area connects the visible reporting request to the operating questions behind it: what decision the work supports, what data can be trusted, who owns the logic, how the result will be reviewed, and what action should follow.", "The useful version is specific, documented, and tied to leadership behavior. It should reduce repeated reconciliation, make assumptions visible, and clarify the smallest useful next step."])[1]}</p>
 </div>
 <img alt="{alt}" src="{href(prefix, img)}" loading="lazy" decoding="async">
 </section>'''
