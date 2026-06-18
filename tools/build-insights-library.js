@@ -1785,7 +1785,7 @@ ${copy}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=133"></script>
+<script src="${prefix}home.js?v=136"></script>
 </body>
 </html>
 `;
@@ -1868,7 +1868,7 @@ ${cards}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=133"></script>
+<script src="${prefix}home.js?v=136"></script>
 </body>
 </html>
 `;

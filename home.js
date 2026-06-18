@@ -876,7 +876,7 @@ function setupScorecardDirectDelivery() {
       event.preventDefault();
 
       const action = form.getAttribute("action") || "/api/scorecard-submit";
-      const successUrl = form.dataset.successUrl || "dashboard-trust-scorecard-download.html";
+      const successUrl = form.dataset.successUrl || "/dashboard-trust-scorecard-download/";
       if (scorecardAreaSelect?.value) {
         window.localStorage?.setItem("parallaxScorecardWeakestArea", scorecardAreaSelect.value);
       }
