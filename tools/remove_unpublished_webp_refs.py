@@ -39,7 +39,7 @@ def main() -> None:
         if path.suffix.lower() == ".html":
             new = strip_webp_srcsets(new)
         new = replace_image_set(new)
-        new = new.replace("assets/social-preview.jpg", "assets/social-preview.png")
+        new = new.replace("assets/social-preview.jpg", "assets/social-preview.webp")
         if new != text:
             path.write_text(new, encoding="utf-8", newline="\n")
             changed.append(path.relative_to(ROOT).as_posix())

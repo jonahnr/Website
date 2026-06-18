@@ -40,7 +40,7 @@ def normalize_url(url: str) -> str:
     normalized = PAGE_MAP.get(base, clean_article(base))
     if normalized.startswith("assets/"):
         normalized = "/" + normalized
-    if normalized in {"home.css", "home.js", "favicon.ico", "favicon.png", "apple-touch-icon.png", "social-preview.png"}:
+    if normalized in {"home.css", "home.js", "favicon.ico", "favicon.png", "apple-touch-icon.png", "social-preview.webp"}:
         normalized = "/" + normalized
     return normalized + query + (("#" + anchor) if anchor else "")
 

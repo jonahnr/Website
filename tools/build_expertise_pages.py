@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 YEAR = "2026"
-VERSION = "127"
+VERSION = "128"
 
 
 SOCIAL_SVG = """<a class="site-social-link site-social-linkedin" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="Parallax Data Lab on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg></a>
@@ -23,7 +23,7 @@ PAGES = {
         "kicker": "Analytics Expertise",
         "h1": "Expertise for the reporting problems that sit underneath the dashboard request.",
         "intro": "Some teams arrive with a broad reporting problem. Others know the pain by name: Power BI reports are hard to trust, KPI reporting has drifted, manual reporting eats too much time, data quality breaks confidence, or the business needs data analytics consulting in Cincinnati from someone who understands Midwest operating context.",
-        "hero_image": "assets/home-generated/help-foundation-to-intelligence-advanced.png",
+        "hero_image": "assets/home-generated/help-foundation-to-intelligence-advanced.webp",
         "hero_alt": "Analytics expertise map connecting Power BI reporting data quality and governance",
         "proof": ["Power BI", "KPI Reporting", "Reporting Automation", "Data Quality", "Dashboard Trust"],
         "sections": [
@@ -35,8 +35,8 @@ PAGES = {
             ("Power BI Consulting", "power-bi-consultant-cincinnati.html", "assets/home-generated/power-bi-report-hero.jpg", "Power BI dashboard and semantic model consulting"),
             ("KPI Reporting", "kpi-reporting-consulting.html", "assets/home-generated/power-bi-cincinnati-kpi-governance.jpg", "KPI reporting and metric governance workflow"),
             ("Reporting Automation", "reporting-automation-consulting.html", "assets/home-generated/power-bi-cincinnati-data-quality.jpg", "Reporting automation pipeline for trusted business reporting"),
-            ("Data Quality Review", "data-quality-review.html", "assets/home-generated/failure-source-of-truth.png", "Data quality review tracing reporting source issues"),
-            ("Dashboard Trust & BI Governance", "dashboard-trust-governance.html", "assets/home-generated/help-situation-dashboard-trust.png", "Dashboard trust and BI governance system"),
+            ("Data Quality Review", "data-quality-review.html", "assets/home-generated/failure-source-of-truth.webp", "Data quality review tracing reporting source issues"),
+            ("Dashboard Trust & BI Governance", "dashboard-trust-governance.html", "assets/home-generated/help-situation-dashboard-trust.webp", "Dashboard trust and BI governance system"),
             ("Data Analytics Consulting Cincinnati", "business-intelligence-consultant-cincinnati.html", "assets/home-generated/cincinnati-skyline-hero.jpg", "Cincinnati skyline for local data analytics consulting")
         ],
         "faq": [
@@ -73,9 +73,9 @@ PAGES = {
             ("How Parallax Helps", "The engagement can start with a narrow review of one leadership scorecard or expand into a broader KPI governance reset. We identify where definitions drift, which metrics need owners, where reports should be retired, and how the weekly or monthly review should change. The output should make meetings shorter: fewer debates about the math, more time deciding what to do.")
         ],
         "cards": [
-            ("Metric Definition Review", "#metric-definition-review", "assets/home-generated/quote-useful-metrics.png", "Useful KPI definitions organized for leadership reporting"),
-            ("Ownership Mapping", "#ownership-mapping", "assets/home-generated/quote-ownership-definitions.png", "Metric ownership definitions for KPI governance"),
-            ("Executive Scorecard Design", "#executive-scorecard-design", "assets/home-generated/help-outcome-renewed-confidence.png", "Executive scorecard showing renewed trust in reporting")
+            ("Metric Definition Review", "#metric-definition-review", "assets/home-generated/quote-useful-metrics.webp", "Useful KPI definitions organized for leadership reporting"),
+            ("Ownership Mapping", "#ownership-mapping", "assets/home-generated/quote-ownership-definitions.webp", "Metric ownership definitions for KPI governance"),
+            ("Executive Scorecard Design", "#executive-scorecard-design", "assets/home-generated/help-outcome-renewed-confidence.webp", "Executive scorecard showing renewed trust in reporting")
         ],
         "service_blocks": [
             ("Metric Definition Review", "Clarify calculations, source systems, timing, exclusions, and interpretation rules for the KPIs that drive decisions."),
@@ -121,9 +121,9 @@ PAGES = {
             ("How Parallax Helps", "Parallax reviews the current reporting workflow from source to audience. We map the manual steps, identify fragile transformations, document the business logic, and recommend the smallest automation path that reduces effort while protecting trust. That might mean upstream data cleanup, Power BI refresh improvement, a documented reporting calendar, a data quality checkpoint, or a new dashboard that replaces recurring spreadsheet assembly.")
         ],
         "cards": [
-            ("Manual Step Audit", "#manual-step-audit", "assets/home-generated/help-situation-bottleneck.png", "Manual reporting bottleneck being analyzed for automation"),
-            ("Repeatable Data Prep", "#repeatable-data-prep", "assets/home-generated/help-process-build-guide.png", "Repeatable data preparation and reporting workflow"),
-            ("Refresh Reliability", "#refresh-reliability", "assets/home-generated/work-ongoing-optimization.png", "Reporting automation refresh reliability monitoring")
+            ("Manual Step Audit", "#manual-step-audit", "assets/home-generated/help-situation-bottleneck.webp", "Manual reporting bottleneck being analyzed for automation"),
+            ("Repeatable Data Prep", "#repeatable-data-prep", "assets/home-generated/help-process-build-guide.webp", "Repeatable data preparation and reporting workflow"),
+            ("Refresh Reliability", "#refresh-reliability", "assets/home-generated/work-ongoing-optimization.webp", "Reporting automation refresh reliability monitoring")
         ],
         "service_blocks": [
             ("Manual Step Audit", "Identify copy-paste work, recurring exports, fragile formulas, and hidden assumptions inside the current reporting process."),
@@ -160,7 +160,7 @@ PAGES = {
         "kicker": "Data Quality Review",
         "h1": "Data quality review for teams tired of reconciling the same numbers.",
         "intro": "Data quality problems show up as reporting problems: dashboards do not match, leaders question the numbers, teams keep offline spreadsheets, and analysts spend too much time explaining exceptions. Parallax Data Lab reviews the path from source systems to reporting outputs so teams can find where trust is breaking and what needs to be fixed first.",
-        "hero_image": "assets/home-generated/failure-source-of-truth.png",
+        "hero_image": "assets/home-generated/failure-source-of-truth.webp",
         "hero_alt": "Data quality review tracing conflicting source systems into trusted reporting",
         "proof": ["Source Systems", "Manual Patches", "Metric Drift", "Reconciliation", "Trust Review"],
         "sections": [
@@ -169,9 +169,9 @@ PAGES = {
             ("How Parallax Helps", "Parallax reviews key reports, source extracts, transformations, metric definitions, and exception handling. The output is a clear map of the trust breaks: what is wrong, why it matters, who needs to own it, and which fixes should happen before more reporting automation or dashboard development. The goal is not perfect data. It is known confidence: what can be trusted now, what has limits, and what needs a fix before leaders rely on it.")
         ],
         "cards": [
-            ("Source Trace", "#source-trace", "assets/home-generated/failure-conflicting-numbers.png", "Conflicting source numbers traced for data quality review"),
-            ("Exception Review", "#exception-review", "assets/home-generated/failure-definition-drift.png", "Definition drift and reporting exceptions reviewed"),
-            ("Trust Map", "#trust-map", "assets/home-generated/assessment-trust-map.png", "Trust map for data quality and reporting confidence")
+            ("Source Trace", "#source-trace", "assets/home-generated/failure-conflicting-numbers.webp", "Conflicting source numbers traced for data quality review"),
+            ("Exception Review", "#exception-review", "assets/home-generated/failure-definition-drift.webp", "Definition drift and reporting exceptions reviewed"),
+            ("Trust Map", "#trust-map", "assets/home-generated/assessment-trust-map.webp", "Trust map for data quality and reporting confidence")
         ],
         "service_blocks": [
             ("Source Trace", "Follow critical numbers from source systems through transformations, manual edits, semantic models, and final reports."),
@@ -208,7 +208,7 @@ PAGES = {
         "kicker": "Dashboard Trust & BI Governance",
         "h1": "Dashboard trust and BI governance for teams with too many reports and not enough confidence.",
         "intro": "Dashboard trust breaks when reports multiply faster than standards. Teams create their own versions, certified datasets are unclear, access rules are informal, and leaders no longer know which report should be treated as the source of truth. Parallax Data Lab helps teams build practical BI governance that supports speed instead of burying people in process.",
-        "hero_image": "assets/home-generated/help-situation-dashboard-trust.png",
+        "hero_image": "assets/home-generated/help-situation-dashboard-trust.webp",
         "hero_alt": "Dashboard trust and BI governance system for executive reporting",
         "proof": ["Certified Metrics", "Workspace Structure", "Access Rules", "RLS", "Change Control"],
         "sections": [
@@ -217,9 +217,9 @@ PAGES = {
             ("How Parallax Helps", "Parallax maps the current dashboard environment, identifies duplicate reports, clarifies certified sources, reviews ownership, and recommends standards that fit the team's maturity. The work can include Power BI workspace structure, report lifecycle rules, RLS review, metric governance, dashboard retirement, and executive reporting cadence. The aim is not bureaucracy. The aim is a reporting environment where people can move faster because they know what to trust.")
         ],
         "cards": [
-            ("Report Inventory", "#report-inventory", "assets/home-generated/help-outcome-fewer-reports.png", "Reports consolidating into fewer trusted dashboards"),
-            ("Access And Security", "#access-and-security", "assets/home-generated/lab-governance-rls.png", "Governance and row level security architecture"),
-            ("Certified Metrics", "#certified-metrics", "assets/home-generated/reset-metric-mapping-v2.png", "Certified metric mapping for BI governance")
+            ("Report Inventory", "#report-inventory", "assets/home-generated/help-outcome-fewer-reports.webp", "Reports consolidating into fewer trusted dashboards"),
+            ("Access And Security", "#access-and-security", "assets/home-generated/lab-governance-rls.webp", "Governance and row level security architecture"),
+            ("Certified Metrics", "#certified-metrics", "assets/home-generated/reset-metric-mapping-v2.webp", "Certified metric mapping for BI governance")
         ],
         "service_blocks": [
             ("Report Inventory", "Identify active reports, owners, audiences, duplicate dashboards, and assets that should be consolidated or retired."),
@@ -464,11 +464,11 @@ def render_page(slug: str, data: dict, prefix: str) -> str:
 <meta property="og:title" content="{data["title"]}"/>
 <meta property="og:description" content="{data["description"]}"/>
 <meta property="og:url" content="{page_url(slug)}"/>
-<meta property="og:image" content="https://parallaxdatalab.com/assets/social-preview.png"/>
+<meta property="og:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="{data["title"]}"/>
 <meta name="twitter:description" content="{data["description"]}"/>
-<meta name="twitter:image" content="https://parallaxdatalab.com/assets/social-preview.png"/>
+<meta name="twitter:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
 <script type="application/ld+json">{json_ld(slug, data)}</script>
 </head>
 <body>
@@ -545,7 +545,7 @@ def update_how_we_help(text: str, prefix: str) -> str:
 <p class="help-lede">The core offerings remain the main engagement ladder. The Expertise hub organizes platform, KPI, automation, data quality, dashboard governance, and Cincinnati analytics paths for teams that arrive with a specific problem in mind.</p>
 <div class="expertise-path-grid expertise-path-grid-wide">
 <a class="expertise-path-card" href="{href(prefix, 'expertise.html')}">
-<img alt="Analytics expertise hub connecting Power BI KPI reporting automation and data quality" class="help-card-image" src="{href(prefix, 'assets/home-generated/help-foundation-to-intelligence-advanced.png')}" loading="lazy" decoding="async">
+<img alt="Analytics expertise hub connecting Power BI KPI reporting automation and data quality" class="help-card-image" src="{href(prefix, 'assets/home-generated/help-foundation-to-intelligence-advanced.webp')}" loading="lazy" decoding="async">
 <div>
 <p class="page-kicker">Expertise Hub</p>
 <h3>Explore Analytics Expertise</h3>

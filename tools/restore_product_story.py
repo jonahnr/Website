@@ -42,14 +42,14 @@ HOME_MAIN = r'''<main class="home-page">
 <h3>Reports multiply faster than ownership.</h3>
 <p>Each report solves a local need, but definitions, logic, and ownership drift unless the foundation is governed.</p>
 </div>
-<img alt="Abstract analytics network expanding without a clear owner" class="diagnostic-image" src="assets/home-generated/diagnostic-owner-drift.png"/>
+<img alt="Abstract analytics network expanding without a clear owner" class="diagnostic-image" src="assets/home-generated/diagnostic-owner-drift.webp"/>
 </article>
 <article>
 <div>
 <h3>The fix is structural, not cosmetic.</h3>
 <p>Shared definitions, reusable logic, and clear owners turn dashboards back into decision tools.</p>
 </div>
-<img alt="Balanced analytics structure connecting dashboards and decisions" class="diagnostic-image" src="assets/home-generated/diagnostic-structural-balance.png"/>
+<img alt="Balanced analytics structure connecting dashboards and decisions" class="diagnostic-image" src="assets/home-generated/diagnostic-structural-balance.webp"/>
 </article>
 </div>
 </section>
@@ -64,7 +64,7 @@ HOME_MAIN = r'''<main class="home-page">
 <button aria-label="Show next problem set" data-carousel-next="symptom" type="button">Next</button>
 </div>
 <article class="symptom-card" data-carousel-item="symptom" data-page="0">
-<img alt="Business logic duplicated across analytics systems" class="symptom-image" src="assets/home-generated/symptom-business-logic-everywhere.png"/>
+<img alt="Business logic duplicated across analytics systems" class="symptom-image" src="assets/home-generated/symptom-business-logic-everywhere.webp"/>
 <div class="symptom-copy">
 <h3>Business logic lives everywhere</h3>
 <p>Core calculations are copied across dashboards, spreadsheets, and ad-hoc queries.</p>
@@ -72,7 +72,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article class="symptom-card" data-carousel-item="symptom" data-page="0">
-<img alt="Shared metric meaning organized across teams" class="symptom-image" src="assets/home-generated/symptom-metrics-shared-meaning.png"/>
+<img alt="Shared metric meaning organized across teams" class="symptom-image" src="assets/home-generated/symptom-metrics-shared-meaning.webp"/>
 <div class="symptom-copy">
 <h3>Metrics lack shared meaning</h3>
 <p>The same KPI means different things depending on who built the report.</p>
@@ -80,7 +80,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article class="symptom-card" data-carousel-item="symptom" data-page="0">
-<img alt="Reports disconnected from leadership questions" class="symptom-image" src="assets/home-generated/symptom-reports-wrong-questions.png"/>
+<img alt="Reports disconnected from leadership questions" class="symptom-image" src="assets/home-generated/symptom-reports-wrong-questions.webp"/>
 <div class="symptom-copy">
 <h3>Reports answer wrong questions</h3>
 <p>Reports look polished, but miss the decisions leaders actually need to make.</p>
@@ -88,7 +88,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article class="symptom-card" data-carousel-item="symptom" data-page="1">
-<img alt="Analytics confidence gauge surrounded by dashboards" class="symptom-image" src="assets/home-generated/symptom-confidence-erodes.png"/>
+<img alt="Analytics confidence gauge surrounded by dashboards" class="symptom-image" src="assets/home-generated/symptom-confidence-erodes.webp"/>
 <div class="symptom-copy">
 <h3>Confidence erodes silently</h3>
 <p>Meetings turn into number debates instead of action.</p>
@@ -96,7 +96,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article class="symptom-card" data-carousel-item="symptom" data-page="1">
-<img alt="Analytics systems under pressure as the business scales" class="symptom-image" src="assets/home-generated/symptom-systems-scale.png"/>
+<img alt="Analytics systems under pressure as the business scales" class="symptom-image" src="assets/home-generated/symptom-systems-scale.webp"/>
 <div class="symptom-copy">
 <h3>Systems don't scale with the business</h3>
 <p>As teams grow, every change gets slower because the foundation is unclear.</p>
@@ -104,7 +104,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article class="symptom-card" data-carousel-item="symptom" data-page="1">
-<img alt="Decisions slowing as data and reports multiply" class="symptom-image" src="assets/home-generated/symptom-decisions-slow.png"/>
+<img alt="Decisions slowing as data and reports multiply" class="symptom-image" src="assets/home-generated/symptom-decisions-slow.webp"/>
 <div class="symptom-copy">
 <h3>Decisions slow down as data grows</h3>
 <p>As reports multiply, simple questions take longer and teams default back to instinct.</p>
@@ -117,22 +117,22 @@ HOME_MAIN = r'''<main class="home-page">
 <h2>How Teams Work With Parallax</h2>
 <div class="work-grid">
 <article>
-<img alt="Analytics foundation health scan with connected dashboards and data pipelines" class="work-card-image" src="assets/home-generated/work-health-check.png"/>
+<img alt="Analytics foundation health scan with connected dashboards and data pipelines" class="work-card-image" src="assets/home-generated/work-health-check.webp"/>
 <h3>Free Fit Check</h3>
 <p>Start with a quick dashboard and reporting Fit Check. After you submit it, you can schedule a 1:1 review to walk through reporting gaps, dashboard opportunities, and highest-value next steps.</p>
 </article>
 <article>
-<img alt="Scattered metrics converging into one aligned decision layer" class="work-card-image" src="assets/home-generated/work-clear-results.png"/>
+<img alt="Scattered metrics converging into one aligned decision layer" class="work-card-image" src="assets/home-generated/work-clear-results.webp"/>
 <h3>Clear &amp; Custom Results</h3>
 <p>We align the core metrics, logic, and ownership behind the reports leaders already use.</p>
 </article>
 <article>
-<img alt="Trusted metric nodes aligning across connected teams" class="work-card-image" src="assets/home-generated/work-empower-team.png"/>
+<img alt="Trusted metric nodes aligning across connected teams" class="work-card-image" src="assets/home-generated/work-empower-team.webp"/>
 <h3>Empower Your Team</h3>
 <p>Teams understand which numbers to trust, where they come from, and how to use them.</p>
 </article>
 <article>
-<img alt="Continuous optimization loop around monitored analytics systems" class="work-card-image" src="assets/home-generated/work-ongoing-optimization.png"/>
+<img alt="Continuous optimization loop around monitored analytics systems" class="work-card-image" src="assets/home-generated/work-ongoing-optimization.webp"/>
 <h3>Ongoing Support &amp; Optimization</h3>
 <p>Ongoing oversight keeps reporting accurate as priorities, teams, and workflows change.</p>
 </article>
@@ -227,32 +227,32 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 <div class="stat-grid failure-grid">
 <article data-carousel-item="failure" data-page="0">
-<img alt="Disconnected systems creating uncertainty about the source of truth" class="failure-image" src="assets/home-generated/failure-source-of-truth.png"/>
+<img alt="Disconnected systems creating uncertainty about the source of truth" class="failure-image" src="assets/home-generated/failure-source-of-truth.webp"/>
 <strong>Unclear source of truth</strong>
 <p>Teams are not sure which source, dashboard, or definition should win.</p>
 </article>
 <article data-carousel-item="failure" data-page="0">
-<img alt="Conflicting dashboards showing different versions of the same metric" class="failure-image" src="assets/home-generated/failure-conflicting-numbers.png"/>
+<img alt="Conflicting dashboards showing different versions of the same metric" class="failure-image" src="assets/home-generated/failure-conflicting-numbers.webp"/>
 <strong>Conflicting numbers</strong>
 <p>The same metric shows up differently across reports, teams, and meetings.</p>
 </article>
 <article data-carousel-item="failure" data-page="0">
-<img alt="Analytics system bending under growing reporting complexity" class="failure-image" src="assets/home-generated/failure-scale-breaks.png"/>
+<img alt="Analytics system bending under growing reporting complexity" class="failure-image" src="assets/home-generated/failure-scale-breaks.webp"/>
 <strong>Fragile scale</strong>
 <p>Every new team, region, or workflow adds reporting debt and slows change.</p>
 </article>
 <article data-carousel-item="failure" data-page="1">
-<img alt="Repeated logic copied across dashboards and spreadsheets" class="failure-image" src="assets/home-generated/failure-duplicate-logic.png"/>
+<img alt="Repeated logic copied across dashboards and spreadsheets" class="failure-image" src="assets/home-generated/failure-duplicate-logic.webp"/>
 <strong>Duplicated logic</strong>
 <p>Calculations get copied into dashboards, spreadsheets, and one-off queries.</p>
 </article>
 <article data-carousel-item="failure" data-page="1">
-<img alt="Metric definitions drifting across connected reports" class="failure-image" src="assets/home-generated/failure-definition-drift.png"/>
+<img alt="Metric definitions drifting across connected reports" class="failure-image" src="assets/home-generated/failure-definition-drift.webp"/>
 <strong>Definition drift</strong>
 <p>Metric meaning changes by team, timeframe, tool, or report builder.</p>
 </article>
 <article data-carousel-item="failure" data-page="1">
-<img alt="Decision meeting turning into a debate over analytics numbers" class="failure-image" src="assets/home-generated/failure-number-debates.png"/>
+<img alt="Decision meeting turning into a debate over analytics numbers" class="failure-image" src="assets/home-generated/failure-number-debates.webp"/>
 <strong>Decision debate</strong>
 <p>Meetings shift from choosing action to defending which numbers are right.</p>
 </article>
@@ -268,7 +268,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 <div class="quote-grid">
 <article data-carousel-item="quote" data-page="0">
-<img alt="Verified decision signal in a trusted analytics network" class="quote-image" src="assets/home-generated/quote-trust-restored.png"/>
+<img alt="Verified decision signal in a trusted analytics network" class="quote-image" src="assets/home-generated/quote-trust-restored.webp"/>
 <blockquote>Teams stop arguing about which numbers are right. The biggest change is not always a new dashboard. It is shared confidence in the operating metrics.</blockquote>
 <div class="quote-person">
 <strong>Director of Analytics</strong>
@@ -277,7 +277,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article data-carousel-item="quote" data-page="0">
-<img alt="Governed metric definitions resolving into one analytics path" class="quote-image" src="assets/home-generated/quote-ownership-definitions.png"/>
+<img alt="Governed metric definitions resolving into one analytics path" class="quote-image" src="assets/home-generated/quote-ownership-definitions.webp"/>
 <blockquote>The visible dashboard problem often resolves once metric ownership, definitions, and decision use cases become explicit.</blockquote>
 <div class="quote-person">
 <strong>VP of Operations</strong>
@@ -286,7 +286,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article data-carousel-item="quote" data-page="0">
-<img alt="Dashboards connecting to a clear leadership decision target" class="quote-image" src="assets/home-generated/quote-leadership-decisions.png"/>
+<img alt="Dashboards connecting to a clear leadership decision target" class="quote-image" src="assets/home-generated/quote-leadership-decisions.webp"/>
 <blockquote>Analytics becomes more useful when reports are rebuilt around the way leadership actually makes tradeoffs and decisions.</blockquote>
 <div class="quote-person">
 <strong>Product Leader</strong>
@@ -295,7 +295,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article data-carousel-item="quote" data-page="1">
-<img alt="Verified decision signal in a trusted analytics network" class="quote-image" src="assets/home-generated/quote-trust-restored.png"/>
+<img alt="Verified decision signal in a trusted analytics network" class="quote-image" src="assets/home-generated/quote-trust-restored.webp"/>
 <blockquote>Follow-up questions move faster because the model, logic, and definitions are stable enough to support deeper analysis.</blockquote>
 <div class="quote-person">
 <strong>Revenue Operations Lead</strong>
@@ -304,7 +304,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article data-carousel-item="quote" data-page="1">
-<img alt="Governed metric definitions resolving into one analytics path" class="quote-image" src="assets/home-generated/quote-ownership-definitions.png"/>
+<img alt="Governed metric definitions resolving into one analytics path" class="quote-image" src="assets/home-generated/quote-ownership-definitions.webp"/>
 <blockquote>Teams separate operating signals from legacy noise and assign clear ownership to the metrics that should guide action.</blockquote>
 <div class="quote-person">
 <strong>Chief Operating Officer</strong>
@@ -313,7 +313,7 @@ HOME_MAIN = r'''<main class="home-page">
 </div>
 </article>
 <article data-carousel-item="quote" data-page="1">
-<img alt="Dashboards connecting to a clear leadership decision target" class="quote-image" src="assets/home-generated/quote-leadership-decisions.png"/>
+<img alt="Dashboards connecting to a clear leadership decision target" class="quote-image" src="assets/home-generated/quote-leadership-decisions.webp"/>
 <blockquote>Analytics shifts from a dashboard queue into operating infrastructure with standards, ownership, and repeatable logic.</blockquote>
 <div class="quote-person">
 <strong>Head of Product</strong>

@@ -1,0 +1,1737 @@
+{
+  "converted_count": 106,
+  "removed_original_count": 106,
+  "source_bytes": 193394222,
+  "webp_bytes": 8324396,
+  "saved_bytes": 185069826,
+  "converted": [
+    {
+      "source": "assets/about-fit-dashboards-disagree.png",
+      "source_bytes": 1629699,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-fit-dashboards-disagree.webp",
+      "webp_bytes": 53096,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1576603
+    },
+    {
+      "source": "assets/about-fit-definitions-drift.png",
+      "source_bytes": 1692131,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-fit-definitions-drift.webp",
+      "webp_bytes": 43614,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1648517
+    },
+    {
+      "source": "assets/about-fit-logic-traceability.png",
+      "source_bytes": 1589761,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-fit-logic-traceability.webp",
+      "webp_bytes": 50052,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1539709
+    },
+    {
+      "source": "assets/about-fit-scale-friction.png",
+      "source_bytes": 2019726,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-fit-scale-friction.webp",
+      "webp_bytes": 107534,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1912192
+    },
+    {
+      "source": "assets/about-founder-cube-glow.png",
+      "source_bytes": 1611759,
+      "source_width": 1254,
+      "source_height": 1254,
+      "webp": "assets/about-founder-cube-glow.webp",
+      "webp_bytes": 42298,
+      "webp_width": 1200,
+      "webp_height": 1200,
+      "saved_bytes": 1569461
+    },
+    {
+      "source": "assets/about-pov-definitions.png",
+      "source_bytes": 1576079,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-pov-definitions.webp",
+      "webp_bytes": 62432,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1513647
+    },
+    {
+      "source": "assets/about-pov-ownership.png",
+      "source_bytes": 1669214,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-pov-ownership.webp",
+      "webp_bytes": 59454,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1609760
+    },
+    {
+      "source": "assets/about-pov-structure.png",
+      "source_bytes": 1786704,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-pov-structure.webp",
+      "webp_bytes": 71258,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1715446
+    },
+    {
+      "source": "assets/about-systems-automate-reporting.png",
+      "source_bytes": 1743961,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-systems-automate-reporting.webp",
+      "webp_bytes": 69662,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1674299
+    },
+    {
+      "source": "assets/about-systems-dashboard-sprawl.png",
+      "source_bytes": 1791316,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-systems-dashboard-sprawl.webp",
+      "webp_bytes": 80544,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1710772
+    },
+    {
+      "source": "assets/about-systems-data-model-scale.png",
+      "source_bytes": 1900876,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-systems-data-model-scale.webp",
+      "webp_bytes": 90796,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1810080
+    },
+    {
+      "source": "assets/about-systems-operating-layer.png",
+      "source_bytes": 1748296,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-systems-operating-layer.webp",
+      "webp_bytes": 70456,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1677840
+    },
+    {
+      "source": "assets/about-why-foundation-shift.png",
+      "source_bytes": 1748296,
+      "source_width": 1448,
+      "source_height": 1086,
+      "webp": "assets/about-why-foundation-shift.webp",
+      "webp_bytes": 70456,
+      "webp_width": 1200,
+      "webp_height": 900,
+      "saved_bytes": 1677840
+    },
+    {
+      "source": "assets/home-generated/assessment-decision-clarity.png",
+      "source_bytes": 2104286,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/assessment-decision-clarity.webp",
+      "webp_bytes": 103948,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 2000338
+    },
+    {
+      "source": "assets/home-generated/assessment-hero-foundation.png",
+      "source_bytes": 1682656,
+      "source_width": 1695,
+      "source_height": 928,
+      "webp": "assets/home-generated/assessment-hero-foundation.webp",
+      "webp_bytes": 93278,
+      "webp_width": 1600,
+      "webp_height": 876,
+      "saved_bytes": 1589378
+    },
+    {
+      "source": "assets/home-generated/assessment-routing-path.png",
+      "source_bytes": 1893236,
+      "source_width": 1662,
+      "source_height": 946,
+      "webp": "assets/home-generated/assessment-routing-path.webp",
+      "webp_bytes": 77044,
+      "webp_width": 1200,
+      "webp_height": 683,
+      "saved_bytes": 1816192
+    },
+    {
+      "source": "assets/home-generated/assessment-trust-map.png",
+      "source_bytes": 2042847,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/assessment-trust-map.webp",
+      "webp_bytes": 91538,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1951309
+    },
+    {
+      "source": "assets/home-generated/diagnostic-owner-drift.png",
+      "source_bytes": 1787669,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/diagnostic-owner-drift.webp",
+      "webp_bytes": 84860,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1702809
+    },
+    {
+      "source": "assets/home-generated/diagnostic-structural-balance.png",
+      "source_bytes": 1948256,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/diagnostic-structural-balance.webp",
+      "webp_bytes": 108824,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1839432
+    },
+    {
+      "source": "assets/home-generated/failure-conflicting-numbers.png",
+      "source_bytes": 1780767,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/failure-conflicting-numbers.webp",
+      "webp_bytes": 78220,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1702547
+    },
+    {
+      "source": "assets/home-generated/failure-definition-drift.png",
+      "source_bytes": 1752527,
+      "source_width": 1662,
+      "source_height": 946,
+      "webp": "assets/home-generated/failure-definition-drift.webp",
+      "webp_bytes": 66080,
+      "webp_width": 1200,
+      "webp_height": 683,
+      "saved_bytes": 1686447
+    },
+    {
+      "source": "assets/home-generated/failure-duplicate-logic.png",
+      "source_bytes": 2169672,
+      "source_width": 1619,
+      "source_height": 972,
+      "webp": "assets/home-generated/failure-duplicate-logic.webp",
+      "webp_bytes": 122518,
+      "webp_width": 1200,
+      "webp_height": 720,
+      "saved_bytes": 2047154
+    },
+    {
+      "source": "assets/home-generated/failure-number-debates.png",
+      "source_bytes": 2069796,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/failure-number-debates.webp",
+      "webp_bytes": 96272,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1973524
+    },
+    {
+      "source": "assets/home-generated/failure-scale-breaks.png",
+      "source_bytes": 2346110,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/failure-scale-breaks.webp",
+      "webp_bytes": 129466,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 2216644
+    },
+    {
+      "source": "assets/home-generated/failure-source-of-truth.png",
+      "source_bytes": 2032699,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/failure-source-of-truth.webp",
+      "webp_bytes": 100446,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1932253
+    },
+    {
+      "source": "assets/home-generated/fractional-analytics-hero.png",
+      "source_bytes": 2169832,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/fractional-analytics-hero.webp",
+      "webp_bytes": 177108,
+      "webp_width": 1600,
+      "webp_height": 900,
+      "saved_bytes": 1992724
+    },
+    {
+      "source": "assets/home-generated/fractional-cadence-v2.png",
+      "source_bytes": 1974819,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/fractional-cadence-v2.webp",
+      "webp_bytes": 74188,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1900631
+    },
+    {
+      "source": "assets/home-generated/fractional-leadership-v2.png",
+      "source_bytes": 2003017,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/fractional-leadership-v2.webp",
+      "webp_bytes": 80854,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1922163
+    },
+    {
+      "source": "assets/home-generated/fractional-maintenance-v2.png",
+      "source_bytes": 2039801,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/fractional-maintenance-v2.webp",
+      "webp_bytes": 86776,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1953025
+    },
+    {
+      "source": "assets/home-generated/fractional-reliability-v2.png",
+      "source_bytes": 1991854,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/fractional-reliability-v2.webp",
+      "webp_bytes": 76260,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1915594
+    },
+    {
+      "source": "assets/home-generated/fractional-stewardship-v2.png",
+      "source_bytes": 2049452,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/fractional-stewardship-v2.webp",
+      "webp_bytes": 94592,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1954860
+    },
+    {
+      "source": "assets/home-generated/help-foundation-to-intelligence-advanced.png",
+      "source_bytes": 2047510,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-foundation-to-intelligence-advanced.webp",
+      "webp_bytes": 103012,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1944498
+    },
+    {
+      "source": "assets/home-generated/help-hero-foundation.png",
+      "source_bytes": 1937019,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-hero-foundation.webp",
+      "webp_bytes": 150584,
+      "webp_width": 1600,
+      "webp_height": 900,
+      "saved_bytes": 1786435
+    },
+    {
+      "source": "assets/home-generated/help-outcome-clearer-answers.png",
+      "source_bytes": 1716019,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-outcome-clearer-answers.webp",
+      "webp_bytes": 62802,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1653217
+    },
+    {
+      "source": "assets/home-generated/help-outcome-faster-performance.png",
+      "source_bytes": 1908816,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-outcome-faster-performance.webp",
+      "webp_bytes": 90474,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1818342
+    },
+    {
+      "source": "assets/home-generated/help-outcome-fewer-reports.png",
+      "source_bytes": 1852279,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-outcome-fewer-reports.webp",
+      "webp_bytes": 72204,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1780075
+    },
+    {
+      "source": "assets/home-generated/help-outcome-intelligence-lab-enablement.png",
+      "source_bytes": 1536891,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-outcome-intelligence-lab-enablement.webp",
+      "webp_bytes": 47704,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1489187
+    },
+    {
+      "source": "assets/home-generated/help-outcome-renewed-confidence.png",
+      "source_bytes": 1643056,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-outcome-renewed-confidence.webp",
+      "webp_bytes": 53566,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1589490
+    },
+    {
+      "source": "assets/home-generated/help-process-build-guide.png",
+      "source_bytes": 2016538,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-process-build-guide.webp",
+      "webp_bytes": 100394,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1916144
+    },
+    {
+      "source": "assets/home-generated/help-process-design.png",
+      "source_bytes": 2067767,
+      "source_width": 1672,
+      "source_height": 940,
+      "webp": "assets/home-generated/help-process-design.webp",
+      "webp_bytes": 81622,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1986145
+    },
+    {
+      "source": "assets/home-generated/help-process-diagnose.png",
+      "source_bytes": 1913639,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-process-diagnose.webp",
+      "webp_bytes": 89282,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1824357
+    },
+    {
+      "source": "assets/home-generated/help-situation-bottleneck.png",
+      "source_bytes": 1786977,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-situation-bottleneck.webp",
+      "webp_bytes": 68012,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1718965
+    },
+    {
+      "source": "assets/home-generated/help-situation-dashboard-trust.png",
+      "source_bytes": 1784818,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-situation-dashboard-trust.webp",
+      "webp_bytes": 74340,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1710478
+    },
+    {
+      "source": "assets/home-generated/help-situation-scale-foundation.png",
+      "source_bytes": 2160544,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-situation-scale-foundation.webp",
+      "webp_bytes": 124518,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 2036026
+    },
+    {
+      "source": "assets/home-generated/help-situation-senior-judgment.png",
+      "source_bytes": 1866435,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/help-situation-senior-judgment.webp",
+      "webp_bytes": 80550,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1785885
+    },
+    {
+      "source": "assets/home-generated/lab-customer-health.png",
+      "source_bytes": 1814940,
+      "source_width": 1659,
+      "source_height": 948,
+      "webp": "assets/home-generated/lab-customer-health.webp",
+      "webp_bytes": 57730,
+      "webp_width": 1200,
+      "webp_height": 686,
+      "saved_bytes": 1757210
+    },
+    {
+      "source": "assets/home-generated/lab-governance-rls.png",
+      "source_bytes": 2065347,
+      "source_width": 1577,
+      "source_height": 997,
+      "webp": "assets/home-generated/lab-governance-rls.webp",
+      "webp_bytes": 107984,
+      "webp_width": 1200,
+      "webp_height": 759,
+      "saved_bytes": 1957363
+    },
+    {
+      "source": "assets/home-generated/lab-hero-intelligence.png",
+      "source_bytes": 1679597,
+      "source_width": 1666,
+      "source_height": 944,
+      "webp": "assets/home-generated/lab-hero-intelligence.webp",
+      "webp_bytes": 110328,
+      "webp_width": 1600,
+      "webp_height": 907,
+      "saved_bytes": 1569269
+    },
+    {
+      "source": "assets/home-generated/lab-operational-risk.png",
+      "source_bytes": 1865294,
+      "source_width": 1666,
+      "source_height": 944,
+      "webp": "assets/home-generated/lab-operational-risk.webp",
+      "webp_bytes": 77476,
+      "webp_width": 1200,
+      "webp_height": 680,
+      "saved_bytes": 1787818
+    },
+    {
+      "source": "assets/home-generated/offerings-decision-reset.png",
+      "source_bytes": 1821557,
+      "source_width": 1635,
+      "source_height": 962,
+      "webp": "assets/home-generated/offerings-decision-reset.webp",
+      "webp_bytes": 84186,
+      "webp_width": 1200,
+      "webp_height": 706,
+      "saved_bytes": 1737371
+    },
+    {
+      "source": "assets/home-generated/offerings-fit-check.png",
+      "source_bytes": 1597471,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/offerings-fit-check.webp",
+      "webp_bytes": 40614,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1556857
+    },
+    {
+      "source": "assets/home-generated/offerings-fractional.png",
+      "source_bytes": 1981998,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/offerings-fractional.webp",
+      "webp_bytes": 89324,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1892674
+    },
+    {
+      "source": "assets/home-generated/offerings-health-check.png",
+      "source_bytes": 1938922,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/offerings-health-check.webp",
+      "webp_bytes": 73046,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1865876
+    },
+    {
+      "source": "assets/home-generated/offerings-hero.png",
+      "source_bytes": 1525253,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/offerings-hero.webp",
+      "webp_bytes": 114336,
+      "webp_width": 1536,
+      "webp_height": 1024,
+      "saved_bytes": 1410917
+    },
+    {
+      "source": "assets/home-generated/power-bi-cincinnati-bi-model.jpg",
+      "source_bytes": 214212,
+      "source_width": 1400,
+      "source_height": 933,
+      "webp": "assets/home-generated/power-bi-cincinnati-bi-model.webp",
+      "webp_bytes": 158498,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 55714
+    },
+    {
+      "source": "assets/home-generated/quote-leadership-decisions.png",
+      "source_bytes": 1687358,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/quote-leadership-decisions.webp",
+      "webp_bytes": 55358,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1632000
+    },
+    {
+      "source": "assets/home-generated/quote-ownership-definitions.png",
+      "source_bytes": 1704962,
+      "source_width": 1662,
+      "source_height": 946,
+      "webp": "assets/home-generated/quote-ownership-definitions.webp",
+      "webp_bytes": 65998,
+      "webp_width": 1200,
+      "webp_height": 683,
+      "saved_bytes": 1638964
+    },
+    {
+      "source": "assets/home-generated/quote-trust-restored.png",
+      "source_bytes": 1643056,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/quote-trust-restored.webp",
+      "webp_bytes": 53566,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1589490
+    },
+    {
+      "source": "assets/home-generated/quote-useful-metrics.png",
+      "source_bytes": 1660392,
+      "source_width": 1659,
+      "source_height": 948,
+      "webp": "assets/home-generated/quote-useful-metrics.webp",
+      "webp_bytes": 57822,
+      "webp_width": 1200,
+      "webp_height": 686,
+      "saved_bytes": 1602570
+    },
+    {
+      "source": "assets/home-generated/reset-cadence-v2.png",
+      "source_bytes": 1765173,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/reset-cadence-v2.webp",
+      "webp_bytes": 65562,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1699611
+    },
+    {
+      "source": "assets/home-generated/reset-decision-inventory-v2.png",
+      "source_bytes": 1871309,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/reset-decision-inventory-v2.webp",
+      "webp_bytes": 83478,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 1787831
+    },
+    {
+      "source": "assets/home-generated/reset-metric-mapping-v2.png",
+      "source_bytes": 1868430,
+      "source_width": 1535,
+      "source_height": 1024,
+      "webp": "assets/home-generated/reset-metric-mapping-v2.webp",
+      "webp_bytes": 92752,
+      "webp_width": 1200,
+      "webp_height": 801,
+      "saved_bytes": 1775678
+    },
+    {
+      "source": "assets/home-generated/reset-ownership-v2.png",
+      "source_bytes": 2136474,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/home-generated/reset-ownership-v2.webp",
+      "webp_bytes": 97942,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 2038532
+    },
+    {
+      "source": "assets/home-generated/reset-sample-artifact.png",
+      "source_bytes": 1532911,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/reset-sample-artifact.webp",
+      "webp_bytes": 78282,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1454629
+    },
+    {
+      "source": "assets/home-generated/reset-trigger-action-v2.png",
+      "source_bytes": 1762249,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/reset-trigger-action-v2.webp",
+      "webp_bytes": 68356,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1693893
+    },
+    {
+      "source": "assets/home-generated/symptom-business-logic-everywhere.png",
+      "source_bytes": 1724987,
+      "source_width": 1568,
+      "source_height": 1003,
+      "webp": "assets/home-generated/symptom-business-logic-everywhere.webp",
+      "webp_bytes": 71922,
+      "webp_width": 1200,
+      "webp_height": 768,
+      "saved_bytes": 1653065
+    },
+    {
+      "source": "assets/home-generated/symptom-confidence-erodes.png",
+      "source_bytes": 1863392,
+      "source_width": 1568,
+      "source_height": 1003,
+      "webp": "assets/home-generated/symptom-confidence-erodes.webp",
+      "webp_bytes": 70682,
+      "webp_width": 1200,
+      "webp_height": 768,
+      "saved_bytes": 1792710
+    },
+    {
+      "source": "assets/home-generated/symptom-decisions-slow.png",
+      "source_bytes": 1907455,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/symptom-decisions-slow.webp",
+      "webp_bytes": 92566,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1814889
+    },
+    {
+      "source": "assets/home-generated/symptom-metrics-shared-meaning.png",
+      "source_bytes": 1780969,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/symptom-metrics-shared-meaning.webp",
+      "webp_bytes": 65376,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1715593
+    },
+    {
+      "source": "assets/home-generated/symptom-reports-wrong-questions.png",
+      "source_bytes": 1667397,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/symptom-reports-wrong-questions.webp",
+      "webp_bytes": 56774,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 1610623
+    },
+    {
+      "source": "assets/home-generated/symptom-systems-scale.png",
+      "source_bytes": 2138974,
+      "source_width": 1586,
+      "source_height": 992,
+      "webp": "assets/home-generated/symptom-systems-scale.webp",
+      "webp_bytes": 130472,
+      "webp_width": 1200,
+      "webp_height": 751,
+      "saved_bytes": 2008502
+    },
+    {
+      "source": "assets/home-generated/work-clear-results.png",
+      "source_bytes": 1753077,
+      "source_width": 1660,
+      "source_height": 948,
+      "webp": "assets/home-generated/work-clear-results.webp",
+      "webp_bytes": 67898,
+      "webp_width": 1200,
+      "webp_height": 685,
+      "saved_bytes": 1685179
+    },
+    {
+      "source": "assets/home-generated/work-empower-team.png",
+      "source_bytes": 1753558,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/work-empower-team.webp",
+      "webp_bytes": 76802,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1676756
+    },
+    {
+      "source": "assets/home-generated/work-health-check.png",
+      "source_bytes": 2048417,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/work-health-check.webp",
+      "webp_bytes": 104302,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1944115
+    },
+    {
+      "source": "assets/home-generated/work-ongoing-optimization.png",
+      "source_bytes": 2022705,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/home-generated/work-ongoing-optimization.webp",
+      "webp_bytes": 87050,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1935655
+    },
+    {
+      "source": "assets/insights/ai-analytics-operations.png",
+      "source_bytes": 1735368,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/ai-analytics-operations.webp",
+      "webp_bytes": 56962,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1678406
+    },
+    {
+      "source": "assets/insights/ai-enablement-trusted-business-data.png",
+      "source_bytes": 2060091,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/ai-enablement-trusted-business-data.webp",
+      "webp_bytes": 89432,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1970659
+    },
+    {
+      "source": "assets/insights/analytics-function-without-full-team.png",
+      "source_bytes": 1716182,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/analytics-function-without-full-team.webp",
+      "webp_bytes": 57726,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1658456
+    },
+    {
+      "source": "assets/insights/analytics-maturity-roadmap.png",
+      "source_bytes": 1693992,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/analytics-maturity-roadmap.webp",
+      "webp_bytes": 58300,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1635692
+    },
+    {
+      "source": "assets/insights/dashboard-leadership-problem.png",
+      "source_bytes": 1817774,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/dashboard-leadership-problem.webp",
+      "webp_bytes": 57040,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1760734
+    },
+    {
+      "source": "assets/insights/dashboard-trust-breakdown.png",
+      "source_bytes": 1537657,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/dashboard-trust-breakdown.webp",
+      "webp_bytes": 35122,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1502535
+    },
+    {
+      "source": "assets/insights/dashboards-to-predictive-risk-intelligence.png",
+      "source_bytes": 1839925,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/dashboards-to-predictive-risk-intelligence.webp",
+      "webp_bytes": 72320,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1767605
+    },
+    {
+      "source": "assets/insights/data-teams-earn-trust.png",
+      "source_bytes": 1791484,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/data-teams-earn-trust.webp",
+      "webp_bytes": 67610,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1723874
+    },
+    {
+      "source": "assets/insights/executive-dashboards-accountability.png",
+      "source_bytes": 1890213,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/executive-dashboards-accountability.webp",
+      "webp_bytes": 72266,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1817947
+    },
+    {
+      "source": "assets/insights/executive-reporting-drives-action.png",
+      "source_bytes": 1619381,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/executive-reporting-drives-action.webp",
+      "webp_bytes": 39170,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1580211
+    },
+    {
+      "source": "assets/insights/executive-teams-argue-about-numbers.png",
+      "source_bytes": 1822084,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/executive-teams-argue-about-numbers.webp",
+      "webp_bytes": 61372,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1760712
+    },
+    {
+      "source": "assets/insights/fractional-analytics-leadership.png",
+      "source_bytes": 1813882,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/fractional-analytics-leadership.webp",
+      "webp_bytes": 56798,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1757084
+    },
+    {
+      "source": "assets/insights/governance-rls-architecture-business-issue.png",
+      "source_bytes": 1708288,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/governance-rls-architecture-business-issue.webp",
+      "webp_bytes": 51812,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1656476
+    },
+    {
+      "source": "assets/insights/hire-head-of-analytics.png",
+      "source_bytes": 1614721,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/hire-head-of-analytics.webp",
+      "webp_bytes": 53956,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1560765
+    },
+    {
+      "source": "assets/insights/kpi-governance-growing-organizations.png",
+      "source_bytes": 1801706,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/kpi-governance-growing-organizations.webp",
+      "webp_bytes": 62328,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1739378
+    },
+    {
+      "source": "assets/insights/kpi-ownership-framework.png",
+      "source_bytes": 1690088,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/kpi-ownership-framework.webp",
+      "webp_bytes": 55994,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1634094
+    },
+    {
+      "source": "assets/insights/metric-ownership-question.png",
+      "source_bytes": 1935976,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/metric-ownership-question.webp",
+      "webp_bytes": 65884,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1870092
+    },
+    {
+      "source": "assets/insights/metrics-people-actually-use.png",
+      "source_bytes": 1850687,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/metrics-people-actually-use.webp",
+      "webp_bytes": 67244,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1783443
+    },
+    {
+      "source": "assets/insights/operations-intelligence-digest-leadership.png",
+      "source_bytes": 1722268,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/operations-intelligence-digest-leadership.webp",
+      "webp_bytes": 58234,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1664034
+    },
+    {
+      "source": "assets/insights/prepare-reporting-environment-for-ai.png",
+      "source_bytes": 1734748,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/prepare-reporting-environment-for-ai.webp",
+      "webp_bytes": 63448,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1671300
+    },
+    {
+      "source": "assets/insights/reporting-environment-breaking-down.png",
+      "source_bytes": 1839411,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/reporting-environment-breaking-down.webp",
+      "webp_bytes": 67848,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1771563
+    },
+    {
+      "source": "assets/insights/reporting-misalignment-cost.png",
+      "source_bytes": 1770829,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/reporting-misalignment-cost.webp",
+      "webp_bytes": 54012,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1716817
+    },
+    {
+      "source": "assets/insights/reporting-vs-decision-making.png",
+      "source_bytes": 1715491,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/reporting-vs-decision-making.webp",
+      "webp_bytes": 58302,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1657189
+    },
+    {
+      "source": "assets/insights/single-source-truth-myth.png",
+      "source_bytes": 1754242,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/single-source-truth-myth.webp",
+      "webp_bytes": 66764,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1687478
+    },
+    {
+      "source": "assets/insights/weekly-business-review.png",
+      "source_bytes": 1980123,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/weekly-business-review.webp",
+      "webp_bytes": 71638,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1908485
+    },
+    {
+      "source": "assets/insights/why-executive-dashboards-fail.png",
+      "source_bytes": 1800850,
+      "source_width": 1672,
+      "source_height": 941,
+      "webp": "assets/insights/why-executive-dashboards-fail.webp",
+      "webp_bytes": 73316,
+      "webp_width": 1200,
+      "webp_height": 675,
+      "saved_bytes": 1727534
+    },
+    {
+      "source": "assets/Jonah.png",
+      "source_bytes": 2165596,
+      "source_width": 1024,
+      "source_height": 1536,
+      "webp": "assets/Jonah.webp",
+      "webp_bytes": 78838,
+      "webp_width": 900,
+      "webp_height": 1350,
+      "saved_bytes": 2086758
+    },
+    {
+      "source": "assets/new2.png",
+      "source_bytes": 2326229,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/new2.webp",
+      "webp_bytes": 128430,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 2197799
+    },
+    {
+      "source": "assets/social-preview.png",
+      "source_bytes": 422653,
+      "source_width": 1200,
+      "source_height": 630,
+      "webp": "assets/social-preview.webp",
+      "webp_bytes": 66830,
+      "webp_width": 1200,
+      "webp_height": 630,
+      "saved_bytes": 355823
+    },
+    {
+      "source": "assets/z.png",
+      "source_bytes": 2658199,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/z.webp",
+      "webp_bytes": 72702,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 2585497
+    },
+    {
+      "source": "assets/zz.png",
+      "source_bytes": 2180826,
+      "source_width": 1536,
+      "source_height": 1024,
+      "webp": "assets/zz.webp",
+      "webp_bytes": 113228,
+      "webp_width": 1200,
+      "webp_height": 800,
+      "saved_bytes": 2067598
+    }
+  ],
+  "updated_files": [
+    {
+      "file": "404.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "about.html",
+      "bytes_delta": 12
+    },
+    {
+      "file": "analytics-health-check.html",
+      "bytes_delta": 6
+    },
+    {
+      "file": "ASSET-CHECKLIST.md",
+      "bytes_delta": 84
+    },
+    {
+      "file": "dashboard-trust-governance.html",
+      "bytes_delta": 7
+    },
+    {
+      "file": "dashboard-trust-scorecard-download.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "dashboard-trust-scorecard.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "data-quality-review.html",
+      "bytes_delta": 7
+    },
+    {
+      "file": "decision-system-reset.html",
+      "bytes_delta": 9
+    },
+    {
+      "file": "expertise.html",
+      "bytes_delta": 3
+    },
+    {
+      "file": "fractional-analytics.html",
+      "bytes_delta": 8
+    },
+    {
+      "file": "free-fit-check.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "home.css",
+      "bytes_delta": 16
+    },
+    {
+      "file": "how-we-help.html",
+      "bytes_delta": 26
+    },
+    {
+      "file": "image-optimization-report.json",
+      "bytes_delta": 105
+    },
+    {
+      "file": "index.html",
+      "bytes_delta": 24
+    },
+    {
+      "file": "insights.html",
+      "bytes_delta": 26
+    },
+    {
+      "file": "intelligence-lab.html",
+      "bytes_delta": 8
+    },
+    {
+      "file": "kpi-reporting-consulting.html",
+      "bytes_delta": 6
+    },
+    {
+      "file": "our-offerings.html",
+      "bytes_delta": 5
+    },
+    {
+      "file": "power-bi-consultant-cincinnati.html",
+      "bytes_delta": 1
+    },
+    {
+      "file": "privacy-policy.html",
+      "bytes_delta": 3
+    },
+    {
+      "file": "README.md",
+      "bytes_delta": 1
+    },
+    {
+      "file": "reporting-automation-consulting.html",
+      "bytes_delta": 6
+    },
+    {
+      "file": "scorecard-thank-you.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "seo-page-metadata-audit-final.csv",
+      "bytes_delta": 78
+    },
+    {
+      "file": "seo-page-metadata-audit-final.md",
+      "bytes_delta": 39
+    },
+    {
+      "file": "thank-you.html",
+      "bytes_delta": 3
+    },
+    {
+      "file": "unused-raster-removal-manifest.csv",
+      "bytes_delta": 48
+    },
+    {
+      "file": "about/index.html",
+      "bytes_delta": 12
+    },
+    {
+      "file": "analytics-health-check/index.html",
+      "bytes_delta": 6
+    },
+    {
+      "file": "dashboard-trust-governance/index.html",
+      "bytes_delta": 7
+    },
+    {
+      "file": "dashboard-trust-scorecard/index.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "dashboard-trust-scorecard-download/index.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "data-quality-review/index.html",
+      "bytes_delta": 7
+    },
+    {
+      "file": "decision-system-reset/index.html",
+      "bytes_delta": 9
+    },
+    {
+      "file": "expertise/index.html",
+      "bytes_delta": 3
+    },
+    {
+      "file": "fractional-analytics/index.html",
+      "bytes_delta": 8
+    },
+    {
+      "file": "free-fit-check/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "how-we-help/index.html",
+      "bytes_delta": 26
+    },
+    {
+      "file": "insights/ai-enablement-starts-with-trusted-business-data.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/analytics-maturity-roadmap-reporting-to-decision-systems.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/building-analytics-function-without-hiring-full-team.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/building-executive-dashboards-that-create-accountability.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/dashboard-problem-leadership-problem.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/dashboards-to-predictive-risk-intelligence.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/five-signs-your-reporting-environment-is-breaking-down.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/governance-rls-architecture-business-issue.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/hidden-cost-of-reporting-misalignment.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/how-to-build-metrics-people-actually-use.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/index.html",
+      "bytes_delta": 26
+    },
+    {
+      "file": "insights/kpi-governance-explained-growing-organizations.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/kpi-ownership-framework-every-leadership-team-needs.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/operations-intelligence-digest-for-leadership.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/prepare-reporting-environment-for-ai.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/single-source-of-truth-myth.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/stop-measuring-everything-designing-executive-reporting-that-drives-action.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/the-difference-between-reporting-and-decision-making.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/what-fractional-analytics-leadership-actually-means.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/what-should-be-included-in-weekly-business-review.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/when-to-hire-head-of-analytics.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/where-ai-actually-helps-in-analytics-operations.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/who-owns-this-metric-most-expensive-question-in-analytics.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-data-teams-struggle-to-earn-trust.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-executive-dashboards-fail.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-executive-teams-argue-about-numbers.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-nobody-trusts-your-dashboard.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "intelligence-lab/index.html",
+      "bytes_delta": 8
+    },
+    {
+      "file": "kpi-reporting-consulting/index.html",
+      "bytes_delta": 6
+    },
+    {
+      "file": "our-offerings/index.html",
+      "bytes_delta": 5
+    },
+    {
+      "file": "power-bi-consultant-cincinnati/index.html",
+      "bytes_delta": 1
+    },
+    {
+      "file": "privacy-policy/index.html",
+      "bytes_delta": 3
+    },
+    {
+      "file": "reporting-automation-consulting/index.html",
+      "bytes_delta": 6
+    },
+    {
+      "file": "scorecard-thank-you/index.html",
+      "bytes_delta": 2
+    },
+    {
+      "file": "thank-you/index.html",
+      "bytes_delta": 3
+    },
+    {
+      "file": "tools/build-insights-library.js",
+      "bytes_delta": 34
+    },
+    {
+      "file": "tools/build_expertise_pages.py",
+      "bytes_delta": 20
+    },
+    {
+      "file": "tools/create_social_jpg.py",
+      "bytes_delta": 2
+    },
+    {
+      "file": "tools/normalize_internal_urls.py",
+      "bytes_delta": 1
+    },
+    {
+      "file": "tools/optimize_images.py",
+      "bytes_delta": 4
+    },
+    {
+      "file": "tools/optimize_social_png.py",
+      "bytes_delta": 2
+    },
+    {
+      "file": "tools/remove_unpublished_webp_refs.py",
+      "bytes_delta": 1
+    },
+    {
+      "file": "tools/restore_local_links.py",
+      "bytes_delta": 1
+    },
+    {
+      "file": "tools/restore_product_story.py",
+      "bytes_delta": 24
+    },
+    {
+      "file": "tools/update_bi_seo.py",
+      "bytes_delta": 8
+    },
+    {
+      "file": "tools/update_local_expertise_pages.py",
+      "bytes_delta": 1
+    },
+    {
+      "file": "tools/update_social_metadata.py",
+      "bytes_delta": 2
+    },
+    {
+      "file": "insights/ai-enablement-starts-with-trusted-business-data/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/analytics-maturity-roadmap-reporting-to-decision-systems/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/building-analytics-function-without-hiring-full-team/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/building-executive-dashboards-that-create-accountability/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/dashboard-problem-leadership-problem/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/dashboards-to-predictive-risk-intelligence/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/five-signs-your-reporting-environment-is-breaking-down/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/governance-rls-architecture-business-issue/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/hidden-cost-of-reporting-misalignment/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/how-to-build-metrics-people-actually-use/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/kpi-governance-explained-growing-organizations/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/kpi-ownership-framework-every-leadership-team-needs/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/operations-intelligence-digest-for-leadership/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/prepare-reporting-environment-for-ai/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/single-source-of-truth-myth/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/stop-measuring-everything-designing-executive-reporting-that-drives-action/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/the-difference-between-reporting-and-decision-making/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/what-fractional-analytics-leadership-actually-means/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/what-should-be-included-in-weekly-business-review/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/when-to-hire-head-of-analytics/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/where-ai-actually-helps-in-analytics-operations/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/who-owns-this-metric-most-expensive-question-in-analytics/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-data-teams-struggle-to-earn-trust/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-executive-dashboards-fail/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-executive-teams-argue-about-numbers/index.html",
+      "bytes_delta": 4
+    },
+    {
+      "file": "insights/why-nobody-trusts-your-dashboard/index.html",
+      "bytes_delta": 4
+    }
+  ],
+  "removed_originals": [
+    "assets/about-fit-dashboards-disagree.png",
+    "assets/about-fit-definitions-drift.png",
+    "assets/about-fit-logic-traceability.png",
+    "assets/about-fit-scale-friction.png",
+    "assets/about-founder-cube-glow.png",
+    "assets/about-pov-definitions.png",
+    "assets/about-pov-ownership.png",
+    "assets/about-pov-structure.png",
+    "assets/about-systems-automate-reporting.png",
+    "assets/about-systems-dashboard-sprawl.png",
+    "assets/about-systems-data-model-scale.png",
+    "assets/about-systems-operating-layer.png",
+    "assets/about-why-foundation-shift.png",
+    "assets/home-generated/assessment-decision-clarity.png",
+    "assets/home-generated/assessment-hero-foundation.png",
+    "assets/home-generated/assessment-routing-path.png",
+    "assets/home-generated/assessment-trust-map.png",
+    "assets/home-generated/diagnostic-owner-drift.png",
+    "assets/home-generated/diagnostic-structural-balance.png",
+    "assets/home-generated/failure-conflicting-numbers.png",
+    "assets/home-generated/failure-definition-drift.png",
+    "assets/home-generated/failure-duplicate-logic.png",
+    "assets/home-generated/failure-number-debates.png",
+    "assets/home-generated/failure-scale-breaks.png",
+    "assets/home-generated/failure-source-of-truth.png",
+    "assets/home-generated/fractional-analytics-hero.png",
+    "assets/home-generated/fractional-cadence-v2.png",
+    "assets/home-generated/fractional-leadership-v2.png",
+    "assets/home-generated/fractional-maintenance-v2.png",
+    "assets/home-generated/fractional-reliability-v2.png",
+    "assets/home-generated/fractional-stewardship-v2.png",
+    "assets/home-generated/help-foundation-to-intelligence-advanced.png",
+    "assets/home-generated/help-hero-foundation.png",
+    "assets/home-generated/help-outcome-clearer-answers.png",
+    "assets/home-generated/help-outcome-faster-performance.png",
+    "assets/home-generated/help-outcome-fewer-reports.png",
+    "assets/home-generated/help-outcome-intelligence-lab-enablement.png",
+    "assets/home-generated/help-outcome-renewed-confidence.png",
+    "assets/home-generated/help-process-build-guide.png",
+    "assets/home-generated/help-process-design.png",
+    "assets/home-generated/help-process-diagnose.png",
+    "assets/home-generated/help-situation-bottleneck.png",
+    "assets/home-generated/help-situation-dashboard-trust.png",
+    "assets/home-generated/help-situation-scale-foundation.png",
+    "assets/home-generated/help-situation-senior-judgment.png",
+    "assets/home-generated/lab-customer-health.png",
+    "assets/home-generated/lab-governance-rls.png",
+    "assets/home-generated/lab-hero-intelligence.png",
+    "assets/home-generated/lab-operational-risk.png",
+    "assets/home-generated/offerings-decision-reset.png",
+    "assets/home-generated/offerings-fit-check.png",
+    "assets/home-generated/offerings-fractional.png",
+    "assets/home-generated/offerings-health-check.png",
+    "assets/home-generated/offerings-hero.png",
+    "assets/home-generated/power-bi-cincinnati-bi-model.jpg",
+    "assets/home-generated/quote-leadership-decisions.png",
+    "assets/home-generated/quote-ownership-definitions.png",
+    "assets/home-generated/quote-trust-restored.png",
+    "assets/home-generated/quote-useful-metrics.png",
+    "assets/home-generated/reset-cadence-v2.png",
+    "assets/home-generated/reset-decision-inventory-v2.png",
+    "assets/home-generated/reset-metric-mapping-v2.png",
+    "assets/home-generated/reset-ownership-v2.png",
+    "assets/home-generated/reset-sample-artifact.png",
+    "assets/home-generated/reset-trigger-action-v2.png",
+    "assets/home-generated/symptom-business-logic-everywhere.png",
+    "assets/home-generated/symptom-confidence-erodes.png",
+    "assets/home-generated/symptom-decisions-slow.png",
+    "assets/home-generated/symptom-metrics-shared-meaning.png",
+    "assets/home-generated/symptom-reports-wrong-questions.png",
+    "assets/home-generated/symptom-systems-scale.png",
+    "assets/home-generated/work-clear-results.png",
+    "assets/home-generated/work-empower-team.png",
+    "assets/home-generated/work-health-check.png",
+    "assets/home-generated/work-ongoing-optimization.png",
+    "assets/insights/ai-analytics-operations.png",
+    "assets/insights/ai-enablement-trusted-business-data.png",
+    "assets/insights/analytics-function-without-full-team.png",
+    "assets/insights/analytics-maturity-roadmap.png",
+    "assets/insights/dashboard-leadership-problem.png",
+    "assets/insights/dashboard-trust-breakdown.png",
+    "assets/insights/dashboards-to-predictive-risk-intelligence.png",
+    "assets/insights/data-teams-earn-trust.png",
+    "assets/insights/executive-dashboards-accountability.png",
+    "assets/insights/executive-reporting-drives-action.png",
+    "assets/insights/executive-teams-argue-about-numbers.png",
+    "assets/insights/fractional-analytics-leadership.png",
+    "assets/insights/governance-rls-architecture-business-issue.png",
+    "assets/insights/hire-head-of-analytics.png",
+    "assets/insights/kpi-governance-growing-organizations.png",
+    "assets/insights/kpi-ownership-framework.png",
+    "assets/insights/metric-ownership-question.png",
+    "assets/insights/metrics-people-actually-use.png",
+    "assets/insights/operations-intelligence-digest-leadership.png",
+    "assets/insights/prepare-reporting-environment-for-ai.png",
+    "assets/insights/reporting-environment-breaking-down.png",
+    "assets/insights/reporting-misalignment-cost.png",
+    "assets/insights/reporting-vs-decision-making.png",
+    "assets/insights/single-source-truth-myth.png",
+    "assets/insights/weekly-business-review.png",
+    "assets/insights/why-executive-dashboards-fail.png",
+    "assets/Jonah.png",
+    "assets/new2.png",
+    "assets/social-preview.png",
+    "assets/z.png",
+    "assets/zz.png"
+  ]
+}

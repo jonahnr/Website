@@ -2,8 +2,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-OLD = "https://parallaxdatalab.com/assets/social-preview.png"
-OLD_ROOT = "https://parallaxdatalab.com/social-preview.png"
+OLD = "https://parallaxdatalab.com/assets/social-preview.webp"
+OLD_ROOT = "https://parallaxdatalab.com/social-preview.webp"
 NEW = "https://parallaxdatalab.com/assets/social-preview.jpg"
 
 for html in ROOT.rglob("*.html"):

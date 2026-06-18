@@ -78,7 +78,7 @@ def referenced_rasters() -> set[Path]:
             if path and path.exists() and path.suffix.lower() in RASTER_EXTS and path.name not in SKIP_NAMES:
                 refs.add(path)
     # Metadata social image may be absolute but maps to the local file.
-    for p in [ROOT / "social-preview.png", ROOT / "assets" / "social-preview.png"]:
+    for p in [ROOT / "social-preview.webp", ROOT / "assets" / "social-preview.webp"]:
         if p.exists():
             refs.add(p)
     return refs
@@ -211,7 +211,7 @@ def update_css_images(css_path: Path) -> None:
 def update_social_preview() -> dict:
     # Ensure both social preview files are 1200x630 and below the original size; keep PNG metadata references stable.
     changed = {}
-    for path in [ROOT / "social-preview.png", ROOT / "assets" / "social-preview.png"]:
+    for path in [ROOT / "social-preview.webp", ROOT / "assets" / "social-preview.webp"]:
         if not path.exists():
             continue
         img = load_image(path)

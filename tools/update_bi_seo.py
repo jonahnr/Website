@@ -3,7 +3,7 @@ import re
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
-SOCIAL = "https://parallaxdatalab.com/assets/social-preview.png"
+SOCIAL = "https://parallaxdatalab.com/assets/social-preview.webp"
 CSS = "home.css?v=125"
 JS = "home.js?v=125"
 
@@ -147,14 +147,14 @@ HOME_MAIN = """<main class="home-page">
 <h3>Manual reports become the operating system.</h3>
 <p>Teams copy numbers between spreadsheets, dashboards, and slide decks until no one is sure which version is current.</p>
 </div>
-<img alt="Business intelligence dashboard example" class="diagnostic-image" src="assets/home-generated/diagnostic-owner-drift.png"/>
+<img alt="Business intelligence dashboard example" class="diagnostic-image" src="assets/home-generated/diagnostic-owner-drift.webp"/>
 </article>
 <article>
 <div>
 <h3>Metrics lose shared meaning.</h3>
 <p>Parallax helps clean up analytics reporting, define trusted KPIs, and build dashboards that answer the questions leaders ask every week.</p>
 </div>
-<img alt="KPI reporting system organized into trusted metrics" class="diagnostic-image" src="assets/home-generated/diagnostic-structural-balance.png"/>
+<img alt="KPI reporting system organized into trusted metrics" class="diagnostic-image" src="assets/home-generated/diagnostic-structural-balance.webp"/>
 </article>
 </div>
 </section>
@@ -342,7 +342,7 @@ def replace_or_insert_meta(text: str, title: str, desc: str, url: str, is_home: 
             text = text.replace('<script type="application/ld+json">', og_block + '\n<script type="application/ld+json">', 1)
         else:
             text = text.replace("</head>", og_block + "\n</head>", 1)
-    text = text.replace("https://parallaxdatalab.com/social-preview.png", SOCIAL)
+    text = text.replace("https://parallaxdatalab.com/social-preview.webp", SOCIAL)
     text = re.sub(
         r"<link href=\"apple-touch-icon\.png\?v=\d+\" rel=\"apple-touch-icon\"/><link href=\"favicon\.svg\?v=\d+\" rel=\"icon\" type=\"image/svg\+xml\"/><link href=\"favicon\.ico\?v=\d+\" rel=\"icon\" sizes=\"any\"/>",
         '<link rel="icon" href="/favicon.ico" sizes="any"/>\n<link rel="icon" type="image/png" href="/favicon.png"/>\n<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>',
@@ -558,8 +558,8 @@ def main():
 
     # Keep the social preview and favicon files available at the paths used by metadata.
     assets = ROOT / "assets"
-    if (ROOT / "social-preview.png").exists() and not (assets / "social-preview.png").exists():
-        shutil.copy2(ROOT / "social-preview.png", assets / "social-preview.png")
+    if (ROOT / "social-preview.webp").exists() and not (assets / "social-preview.webp").exists():
+        shutil.copy2(ROOT / "social-preview.webp", assets / "social-preview.webp")
     if (ROOT / "apple-touch-icon.png").exists() and not (assets / "apple-touch-icon.png").exists():
         shutil.copy2(ROOT / "apple-touch-icon.png", assets / "apple-touch-icon.png")
 

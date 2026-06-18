@@ -3,7 +3,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 
-for path in [ROOT / "social-preview.png", ROOT / "assets" / "social-preview.png"]:
+for path in [ROOT / "social-preview.webp", ROOT / "assets" / "social-preview.webp"]:
     if not path.exists():
         continue
     img = Image.open(path).convert("RGB")

@@ -47,7 +47,7 @@ Root favicon files:
 - `favicon.svg`
 - `favicon.ico`
 - `apple-touch-icon.png`
-- `social-preview.png`
+- `social-preview.webp`
 
 ## Live Page Behavior
 

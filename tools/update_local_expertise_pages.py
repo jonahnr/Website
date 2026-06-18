@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 import re
 import os
 
@@ -127,7 +127,7 @@ def power_bi_main(prefix: str) -> str:
 </div>
 </article>
 <article>
-<img alt="Power BI semantic model connecting business systems into trusted executive reporting" src="{href(prefix, 'assets/home-generated/power-bi-cincinnati-bi-model.jpg')}" loading="lazy" decoding="async">
+<img alt="Power BI semantic model connecting business systems into trusted executive reporting" src="{href(prefix, 'assets/home-generated/power-bi-cincinnati-bi-model.webp')}" loading="lazy" decoding="async">
 <div>
 <p class="page-kicker">Semantic Models &amp; DAX</p>
 <h2>Stabilize the measures and model beneath the report surface.</h2>
@@ -354,8 +354,10 @@ for path in sorted(ROOT.rglob("*.html")):
         text = update_how_we_help(text, prefix)
 
     text = rewrite_footer(text, path)
-    text = re.sub(r'home\.css\?v=\d+', 'home.css?v=126', text)
-    text = re.sub(r'home\.js\?v=\d+', 'home.js?v=126', text)
+    text = re.sub(r'home\.css\?v=\d+', 'home.css?v=132', text)
+    text = re.sub(r'home\.js\?v=\d+', 'home.js?v=132', text)
 
     if text != original:
         path.write_text(text, encoding="utf-8", newline="\n")
+
+

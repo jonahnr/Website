@@ -1,7 +1,7 @@
 {
   "optimized": [
     {
-      "source": "assets/about-founder-cube-glow.png",
+      "source": "assets/about-founder-cube-glow.webp",
       "width": 1254,
       "height": 1254,
       "source_bytes": 1611759,
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "source": "assets/about-pov-definitions.png",
+      "source": "assets/about-pov-definitions.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1576079,
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "source": "assets/about-pov-ownership.png",
+      "source": "assets/about-pov-ownership.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1669214,
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "source": "assets/about-pov-structure.png",
+      "source": "assets/about-pov-structure.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1786704,
@@ -113,7 +113,7 @@
       ]
     },
     {
-      "source": "assets/about-systems-automate-reporting.png",
+      "source": "assets/about-systems-automate-reporting.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1743961,
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "source": "assets/about-systems-dashboard-sprawl.png",
+      "source": "assets/about-systems-dashboard-sprawl.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1791316,
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "source": "assets/about-systems-data-model-scale.png",
+      "source": "assets/about-systems-data-model-scale.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1900876,
@@ -197,7 +197,7 @@
       ]
     },
     {
-      "source": "assets/about-why-foundation-shift.png",
+      "source": "assets/about-why-foundation-shift.webp",
       "width": 1448,
       "height": 1086,
       "source_bytes": 1748296,
@@ -241,7 +241,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/assessment-decision-clarity.png",
+      "source": "assets/home-generated/assessment-decision-clarity.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2104286,
@@ -269,7 +269,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/assessment-hero-foundation.png",
+      "source": "assets/home-generated/assessment-hero-foundation.webp",
       "width": 1695,
       "height": 928,
       "source_bytes": 1682656,
@@ -303,7 +303,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/assessment-routing-path.png",
+      "source": "assets/home-generated/assessment-routing-path.webp",
       "width": 1662,
       "height": 946,
       "source_bytes": 1893236,
@@ -337,7 +337,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/assessment-trust-map.png",
+      "source": "assets/home-generated/assessment-trust-map.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2042847,
@@ -365,7 +365,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/diagnostic-owner-drift.png",
+      "source": "assets/home-generated/diagnostic-owner-drift.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1787669,
@@ -393,7 +393,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/diagnostic-structural-balance.png",
+      "source": "assets/home-generated/diagnostic-structural-balance.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1948256,
@@ -421,7 +421,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/failure-conflicting-numbers.png",
+      "source": "assets/home-generated/failure-conflicting-numbers.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1780767,
@@ -449,7 +449,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/failure-definition-drift.png",
+      "source": "assets/home-generated/failure-definition-drift.webp",
       "width": 1662,
       "height": 946,
       "source_bytes": 1752527,
@@ -483,7 +483,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/failure-duplicate-logic.png",
+      "source": "assets/home-generated/failure-duplicate-logic.webp",
       "width": 1619,
       "height": 972,
       "source_bytes": 2169672,
@@ -517,7 +517,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/failure-number-debates.png",
+      "source": "assets/home-generated/failure-number-debates.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2069796,
@@ -551,7 +551,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/failure-scale-breaks.png",
+      "source": "assets/home-generated/failure-scale-breaks.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2346110,
@@ -585,7 +585,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/failure-source-of-truth.png",
+      "source": "assets/home-generated/failure-source-of-truth.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 2032699,
@@ -613,7 +613,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/fractional-analytics-hero.png",
+      "source": "assets/home-generated/fractional-analytics-hero.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2169832,
@@ -647,7 +647,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/fractional-cadence-v2.png",
+      "source": "assets/home-generated/fractional-cadence-v2.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1974819,
@@ -681,7 +681,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/fractional-leadership-v2.png",
+      "source": "assets/home-generated/fractional-leadership-v2.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2003017,
@@ -715,7 +715,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/fractional-maintenance-v2.png",
+      "source": "assets/home-generated/fractional-maintenance-v2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2039801,
@@ -743,7 +743,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/fractional-reliability-v2.png",
+      "source": "assets/home-generated/fractional-reliability-v2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 1991854,
@@ -771,7 +771,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/fractional-stewardship-v2.png",
+      "source": "assets/home-generated/fractional-stewardship-v2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2049452,
@@ -799,7 +799,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-foundation-to-intelligence-advanced.png",
+      "source": "assets/home-generated/help-foundation-to-intelligence-advanced.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2047510,
@@ -833,7 +833,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-hero-foundation.png",
+      "source": "assets/home-generated/help-hero-foundation.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1937019,
@@ -867,7 +867,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-outcome-clearer-answers.png",
+      "source": "assets/home-generated/help-outcome-clearer-answers.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1716019,
@@ -901,7 +901,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-outcome-faster-performance.png",
+      "source": "assets/home-generated/help-outcome-faster-performance.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1908816,
@@ -935,7 +935,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-outcome-fewer-reports.png",
+      "source": "assets/home-generated/help-outcome-fewer-reports.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1852279,
@@ -969,7 +969,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-outcome-intelligence-lab-enablement.png",
+      "source": "assets/home-generated/help-outcome-intelligence-lab-enablement.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1536891,
@@ -1003,7 +1003,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-outcome-renewed-confidence.png",
+      "source": "assets/home-generated/help-outcome-renewed-confidence.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1643056,
@@ -1037,7 +1037,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-process-build-guide.png",
+      "source": "assets/home-generated/help-process-build-guide.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2016538,
@@ -1071,7 +1071,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-process-design.png",
+      "source": "assets/home-generated/help-process-design.webp",
       "width": 1672,
       "height": 940,
       "source_bytes": 2067767,
@@ -1105,7 +1105,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-process-diagnose.png",
+      "source": "assets/home-generated/help-process-diagnose.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1913639,
@@ -1139,7 +1139,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-situation-bottleneck.png",
+      "source": "assets/home-generated/help-situation-bottleneck.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1786977,
@@ -1173,7 +1173,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-situation-dashboard-trust.png",
+      "source": "assets/home-generated/help-situation-dashboard-trust.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1784818,
@@ -1207,7 +1207,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-situation-scale-foundation.png",
+      "source": "assets/home-generated/help-situation-scale-foundation.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2160544,
@@ -1241,7 +1241,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/help-situation-senior-judgment.png",
+      "source": "assets/home-generated/help-situation-senior-judgment.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1866435,
@@ -1275,7 +1275,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/lab-customer-health.png",
+      "source": "assets/home-generated/lab-customer-health.webp",
       "width": 1659,
       "height": 948,
       "source_bytes": 1814940,
@@ -1309,7 +1309,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/lab-governance-rls.png",
+      "source": "assets/home-generated/lab-governance-rls.webp",
       "width": 1577,
       "height": 997,
       "source_bytes": 2065347,
@@ -1337,7 +1337,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/lab-hero-intelligence.png",
+      "source": "assets/home-generated/lab-hero-intelligence.webp",
       "width": 1666,
       "height": 944,
       "source_bytes": 1679597,
@@ -1371,7 +1371,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/lab-operational-risk.png",
+      "source": "assets/home-generated/lab-operational-risk.webp",
       "width": 1666,
       "height": 944,
       "source_bytes": 1865294,
@@ -1405,7 +1405,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/offerings-decision-reset.png",
+      "source": "assets/home-generated/offerings-decision-reset.webp",
       "width": 1635,
       "height": 962,
       "source_bytes": 1821557,
@@ -1439,7 +1439,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/offerings-fit-check.png",
+      "source": "assets/home-generated/offerings-fit-check.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1597471,
@@ -1473,7 +1473,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/offerings-fractional.png",
+      "source": "assets/home-generated/offerings-fractional.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1981998,
@@ -1507,7 +1507,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/offerings-health-check.png",
+      "source": "assets/home-generated/offerings-health-check.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 1938922,
@@ -1535,7 +1535,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/offerings-hero.png",
+      "source": "assets/home-generated/offerings-hero.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 1525253,
@@ -1563,7 +1563,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/quote-leadership-decisions.png",
+      "source": "assets/home-generated/quote-leadership-decisions.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1687358,
@@ -1597,7 +1597,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/quote-ownership-definitions.png",
+      "source": "assets/home-generated/quote-ownership-definitions.webp",
       "width": 1662,
       "height": 946,
       "source_bytes": 1704962,
@@ -1631,7 +1631,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/quote-trust-restored.png",
+      "source": "assets/home-generated/quote-trust-restored.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1643056,
@@ -1665,7 +1665,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/quote-useful-metrics.png",
+      "source": "assets/home-generated/quote-useful-metrics.webp",
       "width": 1659,
       "height": 948,
       "source_bytes": 1660392,
@@ -1699,7 +1699,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/reset-cadence-v2.png",
+      "source": "assets/home-generated/reset-cadence-v2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 1765173,
@@ -1727,7 +1727,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/reset-decision-inventory-v2.png",
+      "source": "assets/home-generated/reset-decision-inventory-v2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 1871309,
@@ -1755,7 +1755,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/reset-metric-mapping-v2.png",
+      "source": "assets/home-generated/reset-metric-mapping-v2.webp",
       "width": 1535,
       "height": 1024,
       "source_bytes": 1868430,
@@ -1783,7 +1783,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/reset-ownership-v2.png",
+      "source": "assets/home-generated/reset-ownership-v2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2136474,
@@ -1811,7 +1811,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/reset-sample-artifact.png",
+      "source": "assets/home-generated/reset-sample-artifact.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1532911,
@@ -1845,7 +1845,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/reset-trigger-action-v2.png",
+      "source": "assets/home-generated/reset-trigger-action-v2.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1762249,
@@ -1873,7 +1873,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/symptom-business-logic-everywhere.png",
+      "source": "assets/home-generated/symptom-business-logic-everywhere.webp",
       "width": 1568,
       "height": 1003,
       "source_bytes": 1724987,
@@ -1901,7 +1901,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/symptom-confidence-erodes.png",
+      "source": "assets/home-generated/symptom-confidence-erodes.webp",
       "width": 1568,
       "height": 1003,
       "source_bytes": 1863392,
@@ -1929,7 +1929,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/symptom-decisions-slow.png",
+      "source": "assets/home-generated/symptom-decisions-slow.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1907455,
@@ -1957,7 +1957,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/symptom-metrics-shared-meaning.png",
+      "source": "assets/home-generated/symptom-metrics-shared-meaning.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1780969,
@@ -1985,7 +1985,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/symptom-reports-wrong-questions.png",
+      "source": "assets/home-generated/symptom-reports-wrong-questions.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 1667397,
@@ -2013,7 +2013,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/symptom-systems-scale.png",
+      "source": "assets/home-generated/symptom-systems-scale.webp",
       "width": 1586,
       "height": 992,
       "source_bytes": 2138974,
@@ -2041,7 +2041,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/work-clear-results.png",
+      "source": "assets/home-generated/work-clear-results.webp",
       "width": 1660,
       "height": 948,
       "source_bytes": 1753077,
@@ -2075,7 +2075,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/work-empower-team.png",
+      "source": "assets/home-generated/work-empower-team.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1753558,
@@ -2109,7 +2109,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/work-health-check.png",
+      "source": "assets/home-generated/work-health-check.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2048417,
@@ -2143,7 +2143,7 @@
       ]
     },
     {
-      "source": "assets/home-generated/work-ongoing-optimization.png",
+      "source": "assets/home-generated/work-ongoing-optimization.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2022705,
@@ -2177,7 +2177,7 @@
       ]
     },
     {
-      "source": "assets/insights/ai-analytics-operations.png",
+      "source": "assets/insights/ai-analytics-operations.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1735368,
@@ -2211,7 +2211,7 @@
       ]
     },
     {
-      "source": "assets/insights/ai-enablement-trusted-business-data.png",
+      "source": "assets/insights/ai-enablement-trusted-business-data.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 2060091,
@@ -2245,7 +2245,7 @@
       ]
     },
     {
-      "source": "assets/insights/analytics-function-without-full-team.png",
+      "source": "assets/insights/analytics-function-without-full-team.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1716182,
@@ -2279,7 +2279,7 @@
       ]
     },
     {
-      "source": "assets/insights/analytics-maturity-roadmap.png",
+      "source": "assets/insights/analytics-maturity-roadmap.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1693992,
@@ -2313,7 +2313,7 @@
       ]
     },
     {
-      "source": "assets/insights/dashboard-leadership-problem.png",
+      "source": "assets/insights/dashboard-leadership-problem.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1817774,
@@ -2347,7 +2347,7 @@
       ]
     },
     {
-      "source": "assets/insights/dashboard-trust-breakdown.png",
+      "source": "assets/insights/dashboard-trust-breakdown.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1537657,
@@ -2381,7 +2381,7 @@
       ]
     },
     {
-      "source": "assets/insights/dashboards-to-predictive-risk-intelligence.png",
+      "source": "assets/insights/dashboards-to-predictive-risk-intelligence.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1839925,
@@ -2415,7 +2415,7 @@
       ]
     },
     {
-      "source": "assets/insights/data-teams-earn-trust.png",
+      "source": "assets/insights/data-teams-earn-trust.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1791484,
@@ -2449,7 +2449,7 @@
       ]
     },
     {
-      "source": "assets/insights/executive-dashboards-accountability.png",
+      "source": "assets/insights/executive-dashboards-accountability.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1890213,
@@ -2483,7 +2483,7 @@
       ]
     },
     {
-      "source": "assets/insights/executive-reporting-drives-action.png",
+      "source": "assets/insights/executive-reporting-drives-action.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1619381,
@@ -2517,7 +2517,7 @@
       ]
     },
     {
-      "source": "assets/insights/executive-teams-argue-about-numbers.png",
+      "source": "assets/insights/executive-teams-argue-about-numbers.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1822084,
@@ -2551,7 +2551,7 @@
       ]
     },
     {
-      "source": "assets/insights/fractional-analytics-leadership.png",
+      "source": "assets/insights/fractional-analytics-leadership.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1813882,
@@ -2585,7 +2585,7 @@
       ]
     },
     {
-      "source": "assets/insights/governance-rls-architecture-business-issue.png",
+      "source": "assets/insights/governance-rls-architecture-business-issue.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1708288,
@@ -2619,7 +2619,7 @@
       ]
     },
     {
-      "source": "assets/insights/hire-head-of-analytics.png",
+      "source": "assets/insights/hire-head-of-analytics.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1614721,
@@ -2653,7 +2653,7 @@
       ]
     },
     {
-      "source": "assets/insights/kpi-governance-growing-organizations.png",
+      "source": "assets/insights/kpi-governance-growing-organizations.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1801706,
@@ -2687,7 +2687,7 @@
       ]
     },
     {
-      "source": "assets/insights/kpi-ownership-framework.png",
+      "source": "assets/insights/kpi-ownership-framework.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1690088,
@@ -2721,7 +2721,7 @@
       ]
     },
     {
-      "source": "assets/insights/metric-ownership-question.png",
+      "source": "assets/insights/metric-ownership-question.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1935976,
@@ -2755,7 +2755,7 @@
       ]
     },
     {
-      "source": "assets/insights/metrics-people-actually-use.png",
+      "source": "assets/insights/metrics-people-actually-use.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1850687,
@@ -2789,7 +2789,7 @@
       ]
     },
     {
-      "source": "assets/insights/operations-intelligence-digest-leadership.png",
+      "source": "assets/insights/operations-intelligence-digest-leadership.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1722268,
@@ -2823,7 +2823,7 @@
       ]
     },
     {
-      "source": "assets/insights/prepare-reporting-environment-for-ai.png",
+      "source": "assets/insights/prepare-reporting-environment-for-ai.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1734748,
@@ -2857,7 +2857,7 @@
       ]
     },
     {
-      "source": "assets/insights/reporting-environment-breaking-down.png",
+      "source": "assets/insights/reporting-environment-breaking-down.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1839411,
@@ -2891,7 +2891,7 @@
       ]
     },
     {
-      "source": "assets/insights/reporting-misalignment-cost.png",
+      "source": "assets/insights/reporting-misalignment-cost.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1770829,
@@ -2925,7 +2925,7 @@
       ]
     },
     {
-      "source": "assets/insights/reporting-vs-decision-making.png",
+      "source": "assets/insights/reporting-vs-decision-making.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1715491,
@@ -2959,7 +2959,7 @@
       ]
     },
     {
-      "source": "assets/insights/single-source-truth-myth.png",
+      "source": "assets/insights/single-source-truth-myth.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1754242,
@@ -2993,7 +2993,7 @@
       ]
     },
     {
-      "source": "assets/insights/weekly-business-review.png",
+      "source": "assets/insights/weekly-business-review.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1980123,
@@ -3027,7 +3027,7 @@
       ]
     },
     {
-      "source": "assets/insights/why-executive-dashboards-fail.png",
+      "source": "assets/insights/why-executive-dashboards-fail.webp",
       "width": 1672,
       "height": 941,
       "source_bytes": 1800850,
@@ -3061,7 +3061,7 @@
       ]
     },
     {
-      "source": "assets/Jonah.png",
+      "source": "assets/Jonah.webp",
       "width": 1024,
       "height": 1536,
       "source_bytes": 2165596,
@@ -3083,7 +3083,7 @@
       ]
     },
     {
-      "source": "assets/new2.png",
+      "source": "assets/new2.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2326229,
@@ -3161,7 +3161,7 @@
       ]
     },
     {
-      "source": "assets/social-preview.png",
+      "source": "assets/social-preview.webp",
       "width": 1200,
       "height": 630,
       "source_bytes": 970085,
@@ -3183,7 +3183,7 @@
       ]
     },
     {
-      "source": "assets/z.png",
+      "source": "assets/z.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2658199,
@@ -3211,7 +3211,7 @@
       ]
     },
     {
-      "source": "assets/zz.png",
+      "source": "assets/zz.webp",
       "width": 1536,
       "height": 1024,
       "source_bytes": 2180826,
@@ -3255,7 +3255,7 @@
       ]
     },
     {
-      "source": "social-preview.png",
+      "source": "social-preview.webp",
       "width": 1200,
       "height": 630,
       "source_bytes": 866208,
@@ -3278,7 +3278,7 @@
     }
   ],
   "social_preview": {
-    "social-preview.png": {
+    "social-preview.webp": {
       "png_bytes": 866208,
       "webp": "social-preview.webp",
       "webp_bytes": 54738,
@@ -3287,7 +3287,7 @@
         630
       ]
     },
-    "assets/social-preview.png": {
+    "assets/social-preview.webp": {
       "png_bytes": 970085,
       "webp": "assets/social-preview.webp",
       "webp_bytes": 70278,
@@ -3305,7 +3305,7 @@
           1200,
           630
         ],
-        "path": "social-preview.png"
+        "path": "social-preview.webp"
       },
       "jpg": {
         "bytes": 91807,
@@ -3331,7 +3331,7 @@
           1200,
           630
         ],
-        "path": "assets/social-preview.png"
+        "path": "assets/social-preview.webp"
       },
       "jpg": {
         "bytes": 126553,

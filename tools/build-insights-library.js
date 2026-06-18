@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
@@ -47,7 +47,7 @@ const articles = [
     slug: "why-nobody-trusts-your-dashboard",
     category: categories.trust,
     service: "health",
-    image: "dashboard-trust-breakdown.png",
+    image: "dashboard-trust-breakdown.webp",
     alt: "Layered executive dashboard signals splitting into competing metric paths",
     summary: "Dashboard trust breaks when leaders cannot trace definitions, owners, and decisions behind the numbers.",
     meta: "Learn why executives stop trusting dashboards, how reporting trust breaks, and what growing companies can do to rebuild confidence in metrics.",
@@ -70,7 +70,7 @@ const articles = [
     slug: "hidden-cost-of-reporting-misalignment",
     category: categories.trust,
     service: "reset",
-    image: "reporting-misalignment-cost.png",
+    image: "reporting-misalignment-cost.webp",
     alt: "Executive reporting paths diverging into duplicated work and delayed decisions",
     summary: "Reporting misalignment quietly taxes leadership attention, operating cadence, and strategic confidence.",
     meta: "See how reporting misalignment slows decisions, weakens accountability, duplicates analytics work, and creates hidden operating drag.",
@@ -93,7 +93,7 @@ const articles = [
     slug: "dashboard-problem-leadership-problem",
     category: categories.trust,
     service: "reset",
-    image: "dashboard-leadership-problem.png",
+    image: "dashboard-leadership-problem.webp",
     alt: "Leadership decision system sitting beneath a dashboard interface",
     summary: "Many dashboard failures start with unclear executive decisions, ownership, and operating rhythm.",
     meta: "Learn why dashboard problems often come from unclear decisions, weak ownership, and leadership cadence gaps instead of visual design.",
@@ -116,7 +116,7 @@ const articles = [
     slug: "single-source-of-truth-myth",
     category: categories.trust,
     service: "health",
-    image: "single-source-truth-myth.png",
+    image: "single-source-truth-myth.webp",
     alt: "One certified metric spine supporting several business views",
     summary: "A single source of truth is useful only when leaders define the truths the business actually needs.",
     meta: "Learn why single source of truth projects fail and how governed metric views can support finance, operations, and executive reporting.",
@@ -139,7 +139,7 @@ const articles = [
     slug: "five-signs-your-reporting-environment-is-breaking-down",
     category: categories.trust,
     service: "health",
-    image: "reporting-environment-breaking-down.png",
+    image: "reporting-environment-breaking-down.webp",
     alt: "Reporting environment showing cracks across dashboards, spreadsheets, and metric definitions",
     summary: "Reporting breakdown shows up in meetings, ownership gaps, duplicated logic, and quiet workarounds.",
     meta: "Spot the signs of reporting environment breakdown before dashboard trust, leadership cadence, manual workarounds, and decision quality erode.",
@@ -162,7 +162,7 @@ const articles = [
     slug: "who-owns-this-metric-most-expensive-question-in-analytics",
     category: categories.governance,
     service: "reset",
-    image: "metric-ownership-question.png",
+    image: "metric-ownership-question.webp",
     alt: "A critical KPI moving from ambiguity into named business ownership",
     summary: "Metric ownership is where analytics governance becomes business accountability.",
     meta: "Learn how metric ownership closes one of the most expensive analytics gaps by assigning KPI accountability without creating bureaucracy.",
@@ -185,7 +185,7 @@ const articles = [
     slug: "kpi-governance-explained-growing-organizations",
     category: categories.governance,
     service: "reset",
-    image: "kpi-governance-growing-organizations.png",
+    image: "kpi-governance-growing-organizations.webp",
     alt: "KPI governance framework connecting owners, definitions, cadence, and decisions",
     summary: "KPI governance gives growing companies a lightweight way to keep metrics useful as complexity increases.",
     meta: "KPI governance for growing teams: owners, definitions, decision cadence, metric changes, and practical rules that keep reporting useful.",
@@ -208,7 +208,7 @@ const articles = [
     slug: "why-executive-teams-argue-about-numbers",
     category: categories.governance,
     service: "health",
-    image: "executive-teams-argue-about-numbers.png",
+    image: "executive-teams-argue-about-numbers.webp",
     alt: "Executive metrics splitting into competing interpretations across leadership roles",
     summary: "Number debates are usually symptoms of unclear definitions, incentives, and decision rights.",
     meta: "Executive teams argue about numbers when metrics lack shared definitions, ownership, and decision context. Learn how to stop the cycle.",
@@ -231,7 +231,7 @@ const articles = [
     slug: "kpi-ownership-framework-every-leadership-team-needs",
     category: categories.governance,
     service: "reset",
-    image: "kpi-ownership-framework.png",
+    image: "kpi-ownership-framework.webp",
     alt: "KPI ownership framework showing accountable owner, contributors, cadence, and action thresholds",
     summary: "A practical KPI ownership framework connects metrics to accountability without creating blame.",
     meta: "Use a KPI ownership framework to assign accountable owners, contributors, definitions, thresholds, and decision cadence for leadership metrics.",
@@ -254,7 +254,7 @@ const articles = [
     slug: "how-to-build-metrics-people-actually-use",
     category: categories.governance,
     service: "reset",
-    image: "metrics-people-actually-use.png",
+    image: "metrics-people-actually-use.webp",
     alt: "Useful metrics flowing from executive decisions into team actions",
     summary: "Useful metrics are built around decisions, ownership, and behavior change, not reporting inventory.",
     meta: "Learn how to build metrics people actually use by connecting KPIs to decisions, owners, thresholds, and operating routines.",
@@ -277,7 +277,7 @@ const articles = [
     slug: "why-executive-dashboards-fail",
     category: categories.reporting,
     service: "powerbi",
-    image: "why-executive-dashboards-fail.png",
+    image: "why-executive-dashboards-fail.webp",
     alt: "Executive dashboard failing because visuals are disconnected from ownership and action",
     summary: "Executive dashboards fail when they report activity but do not support leadership decisions.",
     meta: "Executive dashboards fail for predictable reasons: unclear audience, too many metrics, weak ownership, and no decision cadence.",
@@ -300,7 +300,7 @@ const articles = [
     slug: "stop-measuring-everything-designing-executive-reporting-that-drives-action",
     category: categories.reporting,
     service: "powerbi",
-    image: "executive-reporting-drives-action.png",
+    image: "executive-reporting-drives-action.webp",
     alt: "Executive reporting narrowed from many metrics into a focused action system",
     summary: "Executive reporting gets stronger when leaders stop measuring everything and start measuring what drives action.",
     meta: "Design executive reporting that cuts through data noise by narrowing metrics, clarifying owners, and aligning reports to leadership decisions.",
@@ -323,7 +323,7 @@ const articles = [
     slug: "what-should-be-included-in-weekly-business-review",
     category: categories.reporting,
     service: "reset",
-    image: "weekly-business-review.png",
+    image: "weekly-business-review.webp",
     alt: "Weekly business review dashboard structured around decisions, risks, and accountable owners",
     summary: "A weekly business review should focus leadership attention on movement, risk, commitments, and action.",
     meta: "Learn what to include in a weekly business review so leadership meetings move beyond status updates into decisions, risks, and accountability.",
@@ -346,7 +346,7 @@ const articles = [
     slug: "the-difference-between-reporting-and-decision-making",
     category: categories.reporting,
     service: "reset",
-    image: "reporting-vs-decision-making.png",
+    image: "reporting-vs-decision-making.webp",
     alt: "Reporting layer connecting into an executive decision-making loop",
     summary: "Reporting tells leaders what happened. Decision systems help them decide what to do next.",
     meta: "Understand the difference between reporting and decision-making, and how to turn dashboards into decision systems leaders actually use.",
@@ -369,7 +369,7 @@ const articles = [
     slug: "building-executive-dashboards-that-create-accountability",
     category: categories.reporting,
     service: "powerbi",
-    image: "executive-dashboards-accountability.png",
+    image: "executive-dashboards-accountability.webp",
     alt: "Executive dashboard linking KPI movement to owners, actions, and follow-up cadence",
     summary: "Accountability dashboards connect metric movement to owners, thresholds, and follow-through.",
     meta: "Build executive dashboards that create accountability by tying KPIs to owners, thresholds, commitments, operating cadence, and action paths.",
@@ -392,7 +392,7 @@ const articles = [
     slug: "when-to-hire-head-of-analytics",
     category: categories.leadership,
     service: "fractional",
-    image: "hire-head-of-analytics.png",
+    image: "hire-head-of-analytics.webp",
     alt: "Analytics leadership role emerging as reporting demand, governance, and decision needs increase",
     summary: "The right time to hire analytics leadership is when the business needs standards, prioritization, and judgment, not just more reports.",
     meta: "Learn when growing companies should hire a Head of Analytics, and when fractional analytics leadership is the better next step.",
@@ -415,7 +415,7 @@ const articles = [
     slug: "what-fractional-analytics-leadership-actually-means",
     category: categories.leadership,
     service: "fractional",
-    image: "fractional-analytics-leadership.png",
+    image: "fractional-analytics-leadership.webp",
     alt: "Fractional analytics leader guiding standards, cadence, and executive decision systems",
     summary: "Fractional analytics leadership provides senior judgment and operating structure without a full-time hire.",
     meta: "Fractional analytics leadership explained: what it means, when it works, and how it helps teams improve reporting standards and decisions.",
@@ -438,7 +438,7 @@ const articles = [
     slug: "building-analytics-function-without-hiring-full-team",
     category: categories.leadership,
     service: "fractional",
-    image: "analytics-function-without-full-team.png",
+    image: "analytics-function-without-full-team.webp",
     alt: "Lean analytics function built with leadership, standards, tooling, and focused execution",
     summary: "A company can build a credible analytics function by sequencing leadership, governance, systems, and selective execution.",
     meta: "Build an analytics function without hiring a full team by focusing on standards, metric ownership, decision cadence, and fractional leadership.",
@@ -461,7 +461,7 @@ const articles = [
     slug: "why-data-teams-struggle-to-earn-trust",
     category: categories.leadership,
     service: "fractional",
-    image: "data-teams-earn-trust.png",
+    image: "data-teams-earn-trust.webp",
     alt: "Data team trust growing through clearer priorities, metric ownership, and executive alignment",
     summary: "Data teams earn trust when their work is connected to business decisions, standards, and visible follow-through.",
     meta: "Data teams struggle to earn trust when they are trapped in report queues, unclear priorities, and metric disputes. Learn how to fix it.",
@@ -484,7 +484,7 @@ const articles = [
     slug: "analytics-maturity-roadmap-reporting-to-decision-systems",
     category: categories.leadership,
     service: "fractional",
-    image: "analytics-maturity-roadmap.png",
+    image: "analytics-maturity-roadmap.webp",
     alt: "Analytics maturity roadmap moving from reporting cleanup to trusted decision systems",
     summary: "Analytics maturity is the progression from scattered reporting to trusted decision systems that guide action.",
     meta: "Use this analytics maturity roadmap to move from scattered reports and dashboard sprawl toward governed metrics and trusted decision systems.",
@@ -507,7 +507,7 @@ const articles = [
     slug: "ai-enablement-starts-with-trusted-business-data",
     category: categories.ai,
     service: "fractional",
-    image: "ai-enablement-trusted-business-data.png",
+    image: "ai-enablement-trusted-business-data.webp",
     alt: "Executive team planning AI enablement around governed business data and trusted metrics",
     summary: "AI enablement depends on trusted definitions, clean operating context, and business owners who know how decisions should change.",
     meta: "AI enablement needs trusted business data. Learn why metric governance, decision clarity, and clean reporting context matter before AI tools create value.",
@@ -530,7 +530,7 @@ const articles = [
     slug: "prepare-reporting-environment-for-ai",
     category: categories.ai,
     service: "health",
-    image: "prepare-reporting-environment-for-ai.png",
+    image: "prepare-reporting-environment-for-ai.webp",
     alt: "Modern reporting environment being prepared for AI with governed dashboards and data context",
     summary: "Preparing reporting for AI means cleaning up definitions, lineage, access, and decision context before automation scales the noise.",
     meta: "Prepare your reporting environment for AI with practical steps around data trust, metric definitions, lineage, permissions, and executive decision context.",
@@ -553,7 +553,7 @@ const articles = [
     slug: "where-ai-actually-helps-in-analytics-operations",
     category: categories.ai,
     service: "fractional",
-    image: "ai-analytics-operations.png",
+    image: "ai-analytics-operations.webp",
     alt: "Analytics operations team using AI to summarize risks, documentation, and reporting workflows",
     summary: "AI helps analytics operations most when it reduces friction around documentation, triage, summaries, and decision preparation.",
     meta: "See where AI helps analytics operations: reporting triage, metric documentation, executive summaries, operating digests, and decision prep.",
@@ -576,7 +576,7 @@ const articles = [
     slug: "operations-intelligence-digest-for-leadership",
     category: categories.lab,
     service: "lab",
-    image: "operations-intelligence-digest-leadership.png",
+    image: "operations-intelligence-digest-leadership.webp",
     alt: "Leadership team reviewing a concise operations intelligence digest with risks and actions",
     summary: "An Operations Intelligence Digest turns scattered operational signals into a concise leadership brief focused on risk, movement, and action.",
     meta: "Learn how an Operations Intelligence Digest turns scattered data, risks, and operating signals into a focused weekly leadership brief.",
@@ -599,7 +599,7 @@ const articles = [
     slug: "governance-rls-architecture-business-issue",
     category: categories.lab,
     service: "lab",
-    image: "governance-rls-architecture-business-issue.png",
+    image: "governance-rls-architecture-business-issue.webp",
     alt: "Secure analytics access architecture with governed reporting layers and executive oversight",
     summary: "Governance and RLS architecture protect trust by making access rules, metric visibility, and business responsibility explicit.",
     meta: "Learn why RLS governance and access design are business decisions that shape reporting trust, accountability, security, and scale.",
@@ -622,7 +622,7 @@ const articles = [
     slug: "dashboards-to-predictive-risk-intelligence",
     category: categories.lab,
     service: "lab",
-    image: "dashboards-to-predictive-risk-intelligence.png",
+    image: "dashboards-to-predictive-risk-intelligence.webp",
     alt: "Predictive risk intelligence system connecting dashboards, alerts, customer signals, and executive action",
     summary: "Predictive risk intelligence works when dashboards, operating signals, ownership, and response paths are already connected.",
     meta: "Move from dashboards to predictive risk intelligence by connecting trusted metrics, leading indicators, owners, and intervention workflows.",
@@ -1514,9 +1514,10 @@ function footer(prefix = "") {
   <div class="site-footer-inner">
     <div class="site-footer-col site-footer-about">
       <a class="site-footer-brand" href="${prefix}index.html">Parallax Data Lab</a>
-      <p>Analytics trust, decision systems, and senior data strategy for teams ready to make reporting useful again.</p>
-      <a class="site-footer-email" href="mailto:jonahnr@gmail.com?subject=Parallax%20Data%20Lab%20Inquiry">jonahnr@gmail.com</a>
-      <a class="site-footer-contact-button" href="${prefix}about.html#contact-us">Contact Us</a>
+      <p>Parallax Data Lab provides business intelligence consulting, Power BI dashboard development, reporting automation, and analytics support for teams that need clearer data.</p>
+      <p class="site-footer-location">Cincinnati, Ohio. Based in Cincinnati and serving teams across the United States.</p>
+      <a class="site-footer-email" href="#" data-mail-user="jonahnr" data-mail-domain="gmail.com" data-mail-subject="Parallax Data Lab Inquiry">Email us</a>
+      <a class="site-footer-contact-button" href="${prefix}about.html#contact-us">Contact Parallax Data Lab</a>
     </div>
     <nav aria-label="Footer core pages" class="site-footer-col">
       <h3>Core pages</h3>
@@ -1705,7 +1706,7 @@ function articlePage(a, options = {}) {
 <title>${esc(a.title)} | Parallax Data Lab</title>
 <meta content="${esc(a.meta)}" name="description"/>
 <link rel="canonical" href="${url}"/>
-<link href="${prefix}home.css?v=119" rel="stylesheet"/>
+<link href="${prefix}home.css?v=132" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
 <meta content="article" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="${esc(a.title)} | Parallax Data Lab" property="og:title"/><meta content="${esc(a.meta)}" property="og:description"/><meta content="${url}" property="og:url"/><meta content="${site}/assets/insights/${a.image}" property="og:image"/>
@@ -1758,7 +1759,7 @@ ${copy}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=119"></script>
+<script src="${prefix}home.js?v=132"></script>
 </body>
 </html>
 `;
@@ -1766,7 +1767,7 @@ ${footer(prefix)}
 
 function hubPage(options = {}) {
   const prefix = options.prefix || "";
-  const articleHref = options.articleHref || ((slug) => `insights/${slug}/`);
+  const articleHref = options.articleHref || ((slug) => `insights/${slug}.html`);
   const cards = articles
     .map((a) => {
       const wc = words(bodyCopy(a, {
@@ -1800,11 +1801,11 @@ function hubPage(options = {}) {
 <title>Analytics Insights for Reporting Overload | Parallax Data Lab</title>
 <meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="description"/>
 <link rel="canonical" href="${site}/insights/"/>
-<link href="${prefix}home.css?v=119" rel="stylesheet"/>
+<link href="${prefix}home.css?v=132" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
-<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.png" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" name="twitter:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="twitter:description"/><meta content="${site}/social-preview.png" name="twitter:image"/>
+<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" name="twitter:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="twitter:description"/><meta content="${site}/social-preview.webp" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
 </head>
 <body>
@@ -2396,7 +2397,7 @@ function updateRedirects() {
 /:slug/favicon.svg /favicon.svg 200
 /:slug/favicon.ico /favicon.ico 200
 /:slug/apple-touch-icon.png /apple-touch-icon.png 200
-/:slug/social-preview.png /social-preview.png 200
+/:slug/social-preview.webp /social-preview.webp 200
 
 # Shared asset rewrites for insight article paths that use ../ relative assets
 /insights/home.css /home.css 200
@@ -2405,7 +2406,7 @@ function updateRedirects() {
 /insights/favicon.svg /favicon.svg 200
 /insights/favicon.ico /favicon.ico 200
 /insights/apple-touch-icon.png /apple-touch-icon.png 200
-/insights/social-preview.png /social-preview.png 200
+/insights/social-preview.webp /social-preview.webp 200
 
 # Shared asset rewrites for nested insight article clean URLs
 /insights/:slug/home.css /home.css 200
@@ -2414,7 +2415,7 @@ function updateRedirects() {
 /insights/:slug/favicon.svg /favicon.svg 200
 /insights/:slug/favicon.ico /favicon.ico 200
 /insights/:slug/apple-touch-icon.png /apple-touch-icon.png 200
-/insights/:slug/social-preview.png /social-preview.png 200
+/insights/:slug/social-preview.webp /social-preview.webp 200
 
 # No-trailing-slash cleanup
 ${staticNoSlash.map((slug) => `/${slug} /${slug}/ 301`).join("\n")}
@@ -2461,9 +2462,9 @@ function main() {
     });
     const cleanArticleHtml = articlePage(article, {
       prefix: "../../",
-      backHref: "../",
-      returnHref: "../",
-      articleHref: (slug) => `../${slug}/`,
+      backHref: "../index.html",
+      returnHref: "../index.html",
+      articleHref: (slug) => `../${slug}/index.html`,
     });
     write(path.join("insights", `${article.slug}.html`), articleHtml);
     ensureDir(path.join("insights", article.slug));
@@ -2471,11 +2472,11 @@ function main() {
   });
   const hubHtml = hubPage({
     prefix: "",
-    articleHref: (slug) => `insights/${slug}/`,
+    articleHref: (slug) => `insights/${slug}.html`,
   });
   const cleanHubHtml = hubPage({
     prefix: "../",
-    articleHref: (slug) => `${slug}/`,
+    articleHref: (slug) => `${slug}/index.html`,
   });
   write("insights.html", hubHtml);
   write(path.join("insights", "index.html"), cleanHubHtml);
@@ -2512,4 +2513,6 @@ function main() {
 }
 
 main();
+
+
 

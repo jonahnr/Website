@@ -3,8 +3,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sources = [
-    (ROOT / "social-preview.png", ROOT / "social-preview.jpg"),
-    (ROOT / "assets" / "social-preview.png", ROOT / "assets" / "social-preview.jpg"),
+    (ROOT / "social-preview.webp", ROOT / "social-preview.jpg"),
+    (ROOT / "assets" / "social-preview.webp", ROOT / "assets" / "social-preview.jpg"),
 ]
 
 for src, dest in sources:

@@ -51,7 +51,7 @@ def convert_href(href: str, prefix: str) -> str:
 def convert_asset(value: str, prefix: str) -> str:
     if value.startswith("/assets/"):
         return prefix + value.lstrip("/")
-    if value in {"/home.css", "/home.js", "/favicon.ico", "/favicon.png", "/apple-touch-icon.png", "/social-preview.png"}:
+    if value in {"/home.css", "/home.js", "/favicon.ico", "/favicon.png", "/apple-touch-icon.png", "/social-preview.webp"}:
         return prefix + value.lstrip("/")
     if value.startswith("/home.css?"):
         return prefix + value.lstrip("/")

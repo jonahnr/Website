@@ -1,0 +1,138 @@
+﻿{
+    "used_count":  608,
+    "unused_count":  12,
+    "used_bytes":  227216444,
+    "unused_bytes":  10819,
+    "largest_used":  [
+                         {
+                             "path":  "assets/z.png",
+                             "size":  2658199
+                         },
+                         {
+                             "path":  "assets/home-generated/failure-scale-breaks.png",
+                             "size":  2346110
+                         },
+                         {
+                             "path":  "assets/new2.png",
+                             "size":  2326229
+                         },
+                         {
+                             "path":  "assets/zz.png",
+                             "size":  2180826
+                         },
+                         {
+                             "path":  "assets/home-generated/fractional-analytics-hero.png",
+                             "size":  2169832
+                         },
+                         {
+                             "path":  "assets/home-generated/failure-duplicate-logic.png",
+                             "size":  2169672
+                         },
+                         {
+                             "path":  "assets/Jonah.png",
+                             "size":  2165596
+                         },
+                         {
+                             "path":  "assets/home-generated/help-situation-scale-foundation.png",
+                             "size":  2160544
+                         },
+                         {
+                             "path":  "assets/home-generated/symptom-systems-scale.png",
+                             "size":  2138974
+                         },
+                         {
+                             "path":  "assets/home-generated/reset-ownership-v2.png",
+                             "size":  2136474
+                         },
+                         {
+                             "path":  "assets/home-generated/assessment-decision-clarity.png",
+                             "size":  2104286
+                         },
+                         {
+                             "path":  "assets/home-generated/failure-number-debates.png",
+                             "size":  2069796
+                         },
+                         {
+                             "path":  "assets/home-generated/help-process-design.png",
+                             "size":  2067767
+                         },
+                         {
+                             "path":  "assets/home-generated/lab-governance-rls.png",
+                             "size":  2065347
+                         },
+                         {
+                             "path":  "assets/insights/ai-enablement-trusted-business-data.png",
+                             "size":  2060091
+                         },
+                         {
+                             "path":  "assets/home-generated/fractional-stewardship-v2.png",
+                             "size":  2049452
+                         },
+                         {
+                             "path":  "assets/home-generated/work-health-check.png",
+                             "size":  2048417
+                         },
+                         {
+                             "path":  "assets/home-generated/help-foundation-to-intelligence-advanced.png",
+                             "size":  2047510
+                         },
+                         {
+                             "path":  "assets/home-generated/assessment-trust-map.png",
+                             "size":  2042847
+                         },
+                         {
+                             "path":  "assets/home-generated/fractional-maintenance-v2.png",
+                             "size":  2039801
+                         }
+                     ],
+    "largest_unused":  [
+                           {
+                               "path":  "assets/fractional-hero-terrain.png.svg",
+                               "size":  1300
+                           },
+                           {
+                               "path":  "assets/fractional-decision-maintenance.svg",
+                               "size":  872
+                           },
+                           {
+                               "path":  "assets/fractional-execution-enablement.svg",
+                               "size":  872
+                           },
+                           {
+                               "path":  "assets/fractional-data-reliability.svg",
+                               "size":  868
+                           },
+                           {
+                               "path":  "assets/fractional-cadence-support.svg",
+                               "size":  867
+                           },
+                           {
+                               "path":  "assets/fractional-quarterly-reset.svg",
+                               "size":  867
+                           },
+                           {
+                               "path":  "assets/fractional-monthly-review.svg",
+                               "size":  866
+                           },
+                           {
+                               "path":  "assets/fractional-weekly-cadence.svg",
+                               "size":  866
+                           },
+                           {
+                               "path":  "assets/fractional-stewardship.svg",
+                               "size":  863
+                           },
+                           {
+                               "path":  "assets/fractional-embedded.svg",
+                               "size":  860
+                           },
+                           {
+                               "path":  "assets/fractional-advisor.svg",
+                               "size":  859
+                           },
+                           {
+                               "path":  "assets/fractional-not-fit.svg",
+                               "size":  859
+                           }
+                       ]
+}

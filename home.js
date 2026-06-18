@@ -350,6 +350,7 @@ function setupDropdowns() {
       toggle.setAttribute("aria-haspopup", "true");
       toggle.setAttribute("aria-expanded", "false");
       let closeTimer = null;
+      const prefersTapMenu = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 980px)");
 
       const openDropdown = () => {
         window.clearTimeout(closeTimer);
@@ -361,17 +362,35 @@ function setupDropdowns() {
       const closeDropdown = () => {
         window.clearTimeout(closeTimer);
         closeTimer = window.setTimeout(() => {
-          if (!dropdown.matches(":hover") && !dropdown.matches(":focus-within")) {
+          const navStillActive = dropdown.parentElement?.matches(":hover") || dropdown.parentElement?.matches(":focus-within");
+          if (!dropdown.matches(":hover") && !dropdown.matches(":focus-within") && !navStillActive) {
             dropdown.classList.remove("is-open");
             toggle.setAttribute("aria-expanded", "false");
           }
-        }, 220);
+        }, 520);
       };
 
       dropdown.addEventListener("mouseenter", openDropdown);
       dropdown.addEventListener("mouseleave", closeDropdown);
       dropdown.addEventListener("focusin", openDropdown);
       dropdown.addEventListener("focusout", closeDropdown);
+      toggle.addEventListener("click", (event) => {
+        if (!prefersTapMenu.matches) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        const willOpen = !dropdown.classList.contains("is-open");
+        closeDropdowns(dropdown);
+        if (willOpen) {
+          dropdown.classList.add("is-open");
+          toggle.setAttribute("aria-expanded", "true");
+        } else {
+          dropdown.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
       return;
     }
 
@@ -392,6 +411,103 @@ function setupDropdowns() {
     if (event.key === "Escape") {
       closeDropdowns();
     }
+  });
+}
+
+function setupShareLinkCopy() {
+  document.querySelectorAll("[data-copy-share]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const originalLabel = button.textContent;
+      const value = button.dataset.copyShare || button.previousElementSibling?.value || window.location.href;
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = originalLabel;
+        }, 1600);
+      } catch {
+        const input = button.previousElementSibling;
+        if (input && "select" in input) {
+          input.select();
+        }
+        button.textContent = "Select Link";
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-native-share]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const originalLabel = button.textContent;
+      const url = button.dataset.nativeShare || window.location.href;
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: button.dataset.shareTitle || document.title,
+            url
+          });
+          button.textContent = "Shared";
+        } else {
+          await navigator.clipboard.writeText(url);
+          button.textContent = "Copied";
+        }
+      } catch {
+        button.textContent = originalLabel;
+      }
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 1400);
+    });
+  });
+}
+
+function scorecardArchiveRows() {
+  try {
+    return JSON.parse(window.localStorage?.getItem("parallaxScorecardSubmissions") || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveScorecardSubmission(form) {
+  const row = {
+    submitted_at: new Date().toISOString(),
+    name: form.querySelector('[name="Name"]')?.value || "",
+    work_email: form.querySelector('[name="Work Email"]')?.value || "",
+    weakest_dimension: form.querySelector('[name="Weakest Scorecard Dimension"]')?.value || "",
+    additional_context: form.querySelector('[name="Additional Context"]')?.value || "",
+    source: window.location.href
+  };
+  const rows = scorecardArchiveRows();
+  rows.push(row);
+  window.localStorage?.setItem("parallaxScorecardSubmissions", JSON.stringify(rows));
+}
+
+function downloadScorecardSubmissionCsv() {
+  const rows = scorecardArchiveRows();
+  const headers = ["submitted_at", "name", "work_email", "weakest_dimension", "additional_context", "source"];
+  const escapeCsv = (value) => `"${String(value || "").replaceAll('"', '""')}"`;
+  const csv = [headers.join(","), ...rows.map((row) => headers.map((key) => escapeCsv(row[key])).join(","))].join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "scorecard-submissions.csv";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function setupScorecardSubmissionArchive() {
+  document.querySelectorAll('form[data-scorecard-archive="true"]').forEach((form) => {
+    form.addEventListener("submit", () => saveScorecardSubmission(form));
+  });
+
+  document.querySelectorAll("[data-download-scorecard-submissions]").forEach((button) => {
+    const rows = scorecardArchiveRows();
+    button.disabled = rows.length === 0;
+    button.textContent = rows.length ? `Download CSV Backup (${rows.length})` : "No Local Submissions Yet";
+    button.addEventListener("click", downloadScorecardSubmissionCsv);
   });
 }
 
@@ -941,7 +1057,7 @@ function setupOfferingMenuGroups() {
         if (!group.matches(":hover") && !group.matches(":focus-within")) {
           group.removeAttribute("open");
         }
-      }, 160);
+      }, 360);
     };
 
     group.addEventListener("mouseenter", openGroup);
@@ -967,6 +1083,8 @@ setupProtectedEmailLinks();
 setupPowerBiEmbedPlaceholder();
 setupOfferingMenuGroups();
 setupLocalFormFallbacks();
+setupShareLinkCopy();
+setupScorecardSubmissionArchive();
 setupInsightFilters();
 setupScorecardPersonalization();
 window.addEventListener("hashchange", setupActiveNavigation);
