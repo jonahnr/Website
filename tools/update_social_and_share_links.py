@@ -118,7 +118,7 @@ def add_article_share_block(path: Path, text: str) -> str:
     share = f"""<div class="article-share" aria-label="Share this article">
 <strong>Share</strong>
 <a href="https://www.linkedin.com/sharing/share-offsite/?url={encoded_url}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a href="https://twitter.com/intent/tweet?url={encoded_url}&amp;text={encoded_title}" target="_blank" rel="noopener noreferrer">X</a>
+<a href="https://x.com/intent/post?text={encoded_title}%20{encoded_url}" target="_blank" rel="noopener noreferrer">X</a>
 </div>"""
     return text.replace('<nav aria-label="Related articles">', share + '\n<nav aria-label="Related articles">', 1)
 

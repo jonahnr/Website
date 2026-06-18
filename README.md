@@ -28,7 +28,7 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `intelligence-lab.html` - Intelligence Lab page.
 - `our-offerings.html` - Offerings overview and path chooser.
 - `analytics-health-check.html` - Internal Analytics Health Check request page with a FormSubmit-powered context form.
-- `dashboard-trust-scorecard.html` - Optional lead magnet request page that previews the five diagnostic areas, captures one matching weakest dimension, and includes an optional context field for secondary symptoms.
+- `dashboard-trust-scorecard.html` - Optional lead magnet request page that previews the five diagnostic areas, captures one matching weakest dimension, submits through the `/api/scorecard-submit` backend, and includes an optional context field for secondary symptoms.
 - `dashboard-trust-scorecard-download.html` - Interactive printable scorecard page with five 1-5 scored dimensions, five evidence checks per dimension that can drive scoring, diagnostic snapshot, compact evidence notes, tailored guidance, and print/PDF buttons.
 - `decision-system-reset.html` - Decision System Reset service page.
 - `fractional-analytics.html` - Fractional Analytics Consulting page.
@@ -56,6 +56,7 @@ The site includes:
 - Sticky top navigation linking to all local pages.
 - Clickable Our Offerings dropdown linking to the offerings overview and three engagement pages.
 - Analytics Health Check request form that posts to `jonahnr@gmail.com` through FormSubmit.
+- Dashboard Trust Scorecard request form that posts to the Cloudflare Pages Function at `/api/scorecard-submit`, emails the request, archives it when KV is configured, and then routes the visitor to the downloadable scorecard.
 - Homepage diagnostic carousel for analytics foundation problems.
 - How We Help process, outcome, and diagnostic disclosure sections.
 - Offerings page that routes visitors to the right engagement path.
@@ -73,7 +74,7 @@ Lead magnet:
 
 - Dashboard Trust Scorecard CTA linking to `dashboard-trust-scorecard.html`
 - Scorecard request form stores the selected weakest dimension locally.
-- Scorecard request form submits to FormSubmit in the background and then opens `dashboard-trust-scorecard-download.html` directly.
+- Scorecard request form submits to `/api/scorecard-submit` in the background and then opens `dashboard-trust-scorecard-download.html` directly.
 - The printable scorecard page uses that selected dimension, and any lowest score selected on the working sheet, to tailor the guidance panel before printing or saving as PDF.
 
 Secondary CTA:
@@ -84,6 +85,16 @@ Assessment form delivery:
 
 - Form action: `https://formsubmit.co/jonahnr@gmail.com`
 - FormSubmit may require first-time email activation for the recipient address before live submissions are delivered.
+
+Scorecard backend delivery:
+
+- Function path: `functions/api/scorecard-submit.js`
+- Hosted endpoint: `/api/scorecard-submit`
+- Required environment variable: `RESEND_API_KEY`
+- Optional environment variable: `SCORECARD_TO_EMAIL` defaults to `jonahnr@gmail.com`
+- Optional environment variable: `SCORECARD_FROM_EMAIL` defaults to `Parallax Data Lab <scorecard@parallaxdatalab.com>` and must be a verified sender in Resend.
+- Optional Cloudflare KV binding: `SCORECARD_SUBMISSIONS` stores each scorecard request as a JSON record for later reference.
+- Local static preview will still redirect to the scorecard download page, but email delivery only runs where the Cloudflare Pages Function is deployed.
 
 Ribbon navigation:
 
@@ -154,8 +165,8 @@ Before publishing, make sure these files and folders are committed and pushed:
 
 All HTML pages currently reference:
 
-- `home.css?v=119`
-- `home.js?v=119`
+- `home.css?v=135`
+- `home.js?v=133`
 
 If styling or JavaScript looks old after deployment, bump the version number consistently across every HTML file.
 

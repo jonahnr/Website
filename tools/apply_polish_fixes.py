@@ -43,7 +43,7 @@ def share_markup(url: str, title: str) -> str:
     safe_url = escape(url, quote=True)
     safe_title = escape(title, quote=True)
     linkedin = f"https://www.linkedin.com/sharing/share-offsite/?url={safe_url}"
-    x_url = f"https://x.com/intent/tweet?url={safe_url}&text={safe_title}"
+    x_url = f"https://x.com/intent/post?text={safe_title}%20{safe_url}"
     mail = f"mailto:?subject={safe_title}&body={safe_url}"
     return f'''<section class="share-link-panel share-link-compact" aria-label="Share this page">
 <span class="share-link-label">Share</span>

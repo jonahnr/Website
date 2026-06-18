@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
@@ -641,6 +641,20 @@ const articles = [
     related: ["analytics-maturity-roadmap-reporting-to-decision-systems", "operations-intelligence-digest-for-leadership", "ai-enablement-starts-with-trusted-business-data"],
   },
 ];
+
+const articlePublishedDates = [
+  "2026-03-12", "2026-03-18", "2026-03-25", "2026-04-02", "2026-04-09",
+  "2026-04-15", "2026-04-22", "2026-04-29", "2026-05-05", "2026-05-08",
+  "2026-05-13", "2026-05-16", "2026-05-20", "2026-05-23", "2026-05-28",
+  "2026-06-02", "2026-06-04", "2026-06-06", "2026-06-08", "2026-06-10",
+  "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15",
+  "2026-06-16",
+];
+
+function publishedDateFor(article) {
+  const index = Math.max(0, articles.findIndex((item) => item.slug === article.slug));
+  return articlePublishedDates[index % articlePublishedDates.length] || today;
+}
 
 function words(text) {
   return text.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
@@ -1516,7 +1530,6 @@ function footer(prefix = "") {
       <a class="site-footer-brand" href="${prefix}index.html">Parallax Data Lab</a>
       <p>Parallax Data Lab provides business intelligence consulting, Power BI dashboard development, reporting automation, and analytics support for teams that need clearer data.</p>
       <p class="site-footer-location">Cincinnati, Ohio. Based in Cincinnati and serving teams across the United States.</p>
-      <a class="site-footer-email" href="#" data-mail-user="jonahnr" data-mail-domain="gmail.com" data-mail-subject="Parallax Data Lab Inquiry">Email us</a>
       <a class="site-footer-contact-button" href="${prefix}about.html#contact-us">Contact Parallax Data Lab</a>
     </div>
     <nav aria-label="Footer core pages" class="site-footer-col">
@@ -1548,6 +1561,7 @@ function footer(prefix = "") {
       <h3>Contact</h3>
       <a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Schedule Intro Call</a>
       <a class="site-footer-secondary" href="${prefix}about.html#contact-us">Email Jonah</a>
+      <a class="site-footer-email site-footer-contact-email" href="#" data-mail-user="jonahnr" data-mail-domain="gmail.com" data-mail-subject="Parallax Data Lab Inquiry">Email us</a>
       <a class="site-footer-secondary" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
@@ -1668,12 +1682,17 @@ function articlePage(a, options = {}) {
   const service = services[a.service];
   const fitCheck = services.fitCheck;
   const url = `${site}/insights/${a.slug}/`;
+  const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(`${a.title} | Parallax Data Lab`);
+  const xShare = `https://x.com/intent/post?text=${encodeURIComponent(`${a.title} | Parallax Data Lab ${url}`)}`;
+  const emailShare = `mailto:?subject=${encodedTitle}&body=${encodedUrl}`;
   const copy = bodyCopy(a, {
     articleHref,
     servicePrefix: prefix,
   });
   const wc = words(copy);
   const readTime = readingMinutes(a, wc);
+  const datePublished = a.datePublished || publishedDateFor(a);
   const relatedLinks = a.related
     .map((slug) => articles.find((item) => item.slug === slug))
     .filter(Boolean)
@@ -1695,7 +1714,7 @@ function articlePage(a, options = {}) {
       },
     },
     mainEntityOfPage: url,
-    datePublished: today,
+    datePublished,
     dateModified: today,
   };
   return `<!DOCTYPE html>
@@ -1706,7 +1725,7 @@ function articlePage(a, options = {}) {
 <title>${esc(a.title)} | Parallax Data Lab</title>
 <meta content="${esc(a.meta)}" name="description"/>
 <link rel="canonical" href="${url}"/>
-<link href="${prefix}home.css?v=132" rel="stylesheet"/>
+<link href="${prefix}home.css?v=135" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
 <meta content="article" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="${esc(a.title)} | Parallax Data Lab" property="og:title"/><meta content="${esc(a.meta)}" property="og:description"/><meta content="${url}" property="og:url"/><meta content="${site}/assets/insights/${a.image}" property="og:image"/>
@@ -1724,7 +1743,7 @@ ${header(prefix)}
 <p class="article-category">${esc(a.category)}</p>
 <h1>${esc(a.title)}</h1>
 <p class="article-summary">${esc(a.summary)}</p>
-<div class="article-meta"><span>${readTime} min read</span><span>Updated ${today}</span></div>
+<div class="article-meta"><span>Written by Jonah Robinson</span> <span>Published ${datePublished}</span></div>
 </div>
 <figure class="article-hero-media">
 <img src="${prefix}assets/insights/${a.image}" alt="${esc(a.alt)}"/>
@@ -1735,6 +1754,13 @@ ${header(prefix)}
 <p><strong>Summary</strong>${esc(a.summary)}</p>
 <p><strong>Best next step</strong><a href="${serviceHref(fitCheck, prefix)}">${esc(fitCheck.label)}</a></p>
 ${service && service.label !== fitCheck.label ? `<p><strong>Relevant service</strong><a href="${serviceHref(service, prefix)}">${esc(service.label)}</a></p>` : ""}
+<div class="article-share" aria-label="Share this article">
+<strong>Share</strong>
+<button type="button" data-copy-share="${url}">Copy Link</button>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="${xShare}" target="_blank" rel="noopener noreferrer">X</a>
+<a href="${emailShare}">Email</a>
+</div>
 <nav aria-label="Related articles">
 <strong>Related</strong>
 ${relatedLinks}
@@ -1759,7 +1785,7 @@ ${copy}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=132"></script>
+<script src="${prefix}home.js?v=133"></script>
 </body>
 </html>
 `;
@@ -1801,11 +1827,11 @@ function hubPage(options = {}) {
 <title>Analytics Insights for Reporting Overload | Parallax Data Lab</title>
 <meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="description"/>
 <link rel="canonical" href="${site}/insights/"/>
-<link href="${prefix}home.css?v=132" rel="stylesheet"/>
+<link href="${prefix}home.css?v=135" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link href="${prefix}apple-touch-icon.png?v=111" rel="apple-touch-icon"/><link href="${prefix}favicon.svg?v=111" rel="icon" type="image/svg+xml"/><link href="${prefix}favicon.ico?v=111" rel="icon" sizes="any"/>
-<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/social-preview.webp" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" name="twitter:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="twitter:description"/><meta content="${site}/social-preview.webp" name="twitter:image"/>
+<meta content="website" property="og:type"/><meta content="Parallax Data Lab" property="og:site_name"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" property="og:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." property="og:description"/><meta content="${site}/insights/" property="og:url"/><meta content="${site}/assets/social/insights-social.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Analytics Insights for Reporting Overload | Parallax Data Lab" name="twitter:title"/><meta content="Articles on reporting overload, dashboard trust, KPI ownership, executive decision systems, AI readiness, operational intelligence, and analytics leadership." name="twitter:description"/><meta content="${site}/assets/social/insights-social.jpg" name="twitter:image"/>
 <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
 </head>
 <body>
@@ -1842,7 +1868,7 @@ ${cards}
 </section>
 </main>
 ${footer(prefix)}
-<script src="${prefix}home.js?v=119"></script>
+<script src="${prefix}home.js?v=133"></script>
 </body>
 </html>
 `;

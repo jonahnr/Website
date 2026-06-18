@@ -415,7 +415,67 @@ function setupDropdowns() {
 }
 
 function setupShareLinkCopy() {
+  const iconPaths = {
+    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg>',
+    x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 10.4 21.1 2h-1.7l-6.3 7.2L8 2H2.2l7.7 11-7.7 9h1.7l6.8-7.8 5.5 7.8H22l-8.2-11.6Zm-2.4 2.8-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.5 9.2h-2.8l-5.3-7.5Z"/></svg>',
+    email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 5h16.4c1 0 1.8.8 1.8 1.8v10.4c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V6.8C2 5.8 2.8 5 3.8 5Zm.7 2 7.5 5.2L19.5 7h-15Zm15.5 2.1-7.4 5.1a1 1 0 0 1-1.2 0L4 9.1V17h16V9.1Z"/></svg>'
+  };
+
+  function normalizeShareUrl(url) {
+    try {
+      const parsed = new URL(url, window.location.href);
+      if (/twitter\.com$/i.test(parsed.hostname) && parsed.pathname.includes("/intent/tweet")) {
+        parsed.hostname = "x.com";
+      }
+      if (/x\.com$/i.test(parsed.hostname) && parsed.pathname.includes("/intent/post") && parsed.searchParams.get("text")) {
+        return parsed.toString();
+      }
+      if (/x\.com$/i.test(parsed.hostname) && parsed.pathname.includes("/intent/tweet")) {
+        const shareUrl = parsed.searchParams.get("url") || window.location.href;
+        const text = parsed.searchParams.get("text") || document.title;
+        return `https://x.com/intent/post?text=${encodeURIComponent(`${text} ${shareUrl}`)}`;
+      }
+      return parsed.toString();
+    } catch {
+      return url;
+    }
+  }
+
+  function enhanceShareAnchor(anchor) {
+    const href = anchor.getAttribute("href") || "";
+    const text = (anchor.textContent || "").trim().toLowerCase();
+    let icon = "";
+    let label = "";
+
+    if (/linkedin\.com/i.test(href) || text === "linkedin") {
+      icon = iconPaths.linkedin;
+      label = "Share on LinkedIn";
+      anchor.classList.add("share-icon-link", "share-icon-linkedin");
+    } else if (/twitter\.com|x\.com/i.test(href) || text === "x") {
+      icon = iconPaths.x;
+      label = "Share on X";
+      anchor.classList.add("share-icon-link", "share-icon-x");
+      anchor.href = normalizeShareUrl(href);
+    } else if (/^mailto:/i.test(href) || text === "email") {
+      icon = iconPaths.email;
+      label = "Share by email";
+      anchor.classList.add("share-icon-link", "share-icon-email");
+      if (!href || href === "#") {
+        anchor.href = `mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`;
+      }
+    }
+
+    if (icon) {
+      anchor.innerHTML = `${icon}<span>${label}</span>`;
+      anchor.setAttribute("aria-label", label);
+      anchor.setAttribute("title", label);
+    }
+  }
+
+  document.querySelectorAll(".share-link-panel a, .article-share a").forEach(enhanceShareAnchor);
+
   document.querySelectorAll("[data-copy-share]").forEach((button) => {
+    button.classList.add("share-copy-button");
     button.addEventListener("click", async () => {
       const originalLabel = button.textContent;
       const value = button.dataset.copyShare || button.previousElementSibling?.value || window.location.href;
@@ -436,6 +496,7 @@ function setupShareLinkCopy() {
   });
 
   document.querySelectorAll("[data-native-share]").forEach((button) => {
+    button.classList.add("share-native-button");
     button.addEventListener("click", async () => {
       const originalLabel = button.textContent;
       const url = button.dataset.nativeShare || window.location.href;
@@ -810,11 +871,11 @@ function setupAnalyticsEventTracking() {
 }
 
 function setupScorecardDirectDelivery() {
-  document.querySelectorAll('form[data-scorecard-delivery="direct"]').forEach((form) => {
-    form.addEventListener("submit", (event) => {
+  document.querySelectorAll('form[data-scorecard-delivery="direct"], form[data-scorecard-delivery="backend"]').forEach((form) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      const action = form.getAttribute("action");
+      const action = form.getAttribute("action") || "/api/scorecard-submit";
       const successUrl = form.dataset.successUrl || "dashboard-trust-scorecard-download.html";
       if (scorecardAreaSelect?.value) {
         window.localStorage?.setItem("parallaxScorecardWeakestArea", scorecardAreaSelect.value);
@@ -835,13 +896,33 @@ function setupScorecardDirectDelivery() {
         return;
       }
 
-      const delivery = fetch(action, {
-        method: "POST",
-        body: new FormData(form),
-        mode: "no-cors"
-      });
-      const fallback = new Promise((resolve) => window.setTimeout(resolve, 1200));
-      Promise.race([delivery, fallback]).finally(goToScorecard);
+      const formData = new FormData(form);
+      formData.set("source", window.location.href);
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { accept: "application/json" }
+        });
+        if (!response.ok) {
+          throw new Error("Scorecard submission failed");
+        }
+      } catch {
+        const recipient = form.dataset.formUser && form.dataset.formDomain
+          ? `${form.dataset.formUser}@${form.dataset.formDomain}`
+          : "";
+        if (recipient && window.location.protocol === "file:") {
+          const subject = form.dataset.localMailSubject || "Dashboard Trust Scorecard Request";
+          const values = Array.from(formData.entries())
+            .filter(([key]) => key && !key.startsWith("_"))
+            .map(([key, value]) => `${key}: ${value || ""}`)
+            .join("\n");
+          window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(values)}`;
+        }
+      } finally {
+        goToScorecard();
+      }
     });
   });
 }
@@ -984,6 +1065,10 @@ function setupActiveNavigation() {
 function setupLocalFormFallbacks() {
   const isLocalHtml = window.location.protocol === "file:";
   document.querySelectorAll("form[data-form-user][data-form-domain]").forEach((form) => {
+    if (form.dataset.scorecardDelivery === "backend" || form.dataset.scorecardDelivery === "direct") {
+      return;
+    }
+
     const recipient = `${form.dataset.formUser}@${form.dataset.formDomain}`;
     if (!recipient) {
       return;

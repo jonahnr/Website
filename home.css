@@ -25223,14 +25223,15 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
   width: min(1180px, calc(100% - 40px));
-  margin: 12px auto 0;
-  padding: 10px 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  margin: 16px auto 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(69, 190, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(5, 14, 42, 0.38);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+  font-family: inherit;
 }
 
 .share-link-label {
@@ -25249,12 +25250,15 @@ body {
   justify-content: center;
   border: 1px solid rgba(69, 190, 255, 0.32);
   border-radius: 999px;
-  padding: 0 12px;
+  padding: 0 13px;
   color: #f7fbff;
   background: rgba(7, 19, 58, 0.52);
   cursor: pointer;
+  font-family: inherit;
   font-size: 0.78rem;
   font-weight: 850;
+  letter-spacing: 0;
+  line-height: 1;
   text-decoration: none;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
 }
@@ -25268,6 +25272,35 @@ body {
   box-shadow: 0 0 0 3px rgba(69, 190, 255, 0.12);
   transform: translateY(-1px);
   outline: none;
+}
+
+.share-icon-link {
+  width: 36px;
+  padding: 0 !important;
+  color: #061431 !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+}
+
+.share-icon-link svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.share-icon-link span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.share-icon-link:hover,
+.share-icon-link:focus-visible {
+  color: #061431 !important;
+  background: var(--gold) !important;
 }
 
 .local-seo-page .share-link-panel.share-link-compact,
@@ -25527,7 +25560,12 @@ body {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 8px !important;
-  padding-top: 2px !important;
+  align-items: center !important;
+  padding: 12px !important;
+  border: 1px solid rgba(69, 190, 255, 0.22) !important;
+  border-radius: 999px !important;
+  background: rgba(5, 14, 42, 0.42) !important;
+  font-family: inherit !important;
 }
 
 .article-share strong {
@@ -25546,9 +25584,23 @@ body {
   color: #f7fbff !important;
   background: rgba(7, 19, 58, 0.72) !important;
   cursor: pointer !important;
+  font-family: inherit !important;
   font-size: 0.78rem !important;
   font-weight: 850 !important;
+  letter-spacing: 0 !important;
   text-decoration: none !important;
+}
+
+.article-share .share-icon-link {
+  width: 34px !important;
+  padding: 0 !important;
+  color: #061431 !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+}
+
+.article-share .share-icon-link svg {
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .article-share button:hover,
@@ -25624,6 +25676,180 @@ body {
 
   .article-hero h1 {
     font-size: clamp(2rem, 12vw, 3.1rem) !important;
+  }
+}
+
+/* Final polish: share controls, scorecard form comfort, and About media balance */
+.lead-magnet-page .lead-magnet-form-section .assessment-form {
+  padding: clamp(24px, 4vw, 34px) !important;
+  gap: 20px !important;
+  border-radius: 12px !important;
+}
+
+.lead-magnet-page .lead-magnet-form-section .assessment-field-row {
+  gap: 20px !important;
+}
+
+.lead-magnet-page .lead-magnet-form-section .assessment-form label {
+  margin-bottom: 11px !important;
+}
+
+.lead-magnet-page .lead-magnet-form-section .assessment-form input,
+.lead-magnet-page .lead-magnet-form-section .assessment-form select,
+.lead-magnet-page .lead-magnet-form-section .assessment-form textarea {
+  padding: 15px 16px !important;
+}
+
+.lead-magnet-page .lead-magnet-form-section .scorecard-archive-note {
+  margin-top: 4px !important;
+  padding: 12px 14px !important;
+  border: 1px solid rgba(69, 190, 255, 0.18) !important;
+  border-radius: 8px !important;
+  background: rgba(5, 14, 42, 0.42) !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean {
+  width: 100% !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: clamp(6px, 1.2vw, 12px) !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait-card,
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-artifact-panel {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  min-height: 420px !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  min-height: 390px !important;
+  object-fit: cover !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-artifact-panel {
+  padding: 8px !important;
+}
+
+.about-page-modern .about-founder-artifact-panel .about-founder-cube,
+.about-page-modern .about-founder-cube {
+  width: min(100%, 380px) !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  height: 100% !important;
+  min-height: 390px !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 900px) {
+  .about-page-modern .about-founder-media.about-founder-media-clean {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait-card,
+  .about-page-modern .about-founder-media.about-founder-media-clean .about-founder-artifact-panel {
+    min-height: auto !important;
+  }
+
+  .about-page-modern .about-founder-artifact-panel .about-founder-cube,
+  .about-page-modern .about-founder-cube {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
+
+/* Final correction: stack founder portrait above the cube without cropping the portrait. */
+.about-page-modern .about-founder {
+  grid-template-columns: minmax(420px, 0.95fr) minmax(0, 1.05fr) !important;
+  align-items: start !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: clamp(10px, 1.6vw, 16px) !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: clamp(14px, 2vw, 20px) !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait-card {
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  min-height: clamp(390px, 38vw, 500px) !important;
+  height: auto !important;
+  padding: clamp(10px, 1.6vw, 16px) !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait {
+  display: block !important;
+  width: 100% !important;
+  max-width: 390px !important;
+  height: clamp(360px, 35vw, 470px) !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+}
+
+.about-page-modern .about-founder-media.about-founder-media-clean .about-founder-artifact-panel {
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  min-height: clamp(260px, 34vw, 420px) !important;
+  height: auto !important;
+  padding: clamp(10px, 1.6vw, 18px) !important;
+}
+
+.about-page-modern .about-founder-artifact-panel .about-founder-cube,
+.about-page-modern .about-founder-cube {
+  width: min(100%, 420px) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: clamp(240px, 32vw, 400px) !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 980px) {
+  .about-page-modern .about-founder {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page-modern .about-founder-media.about-founder-media-clean {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+
+  .about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait-card {
+    min-height: clamp(320px, 86vw, 460px) !important;
+  }
+
+  .about-page-modern .about-founder-media.about-founder-media-clean .about-founder-artifact-panel {
+    min-height: clamp(220px, 64vw, 340px) !important;
+  }
+
+  .about-page-modern .about-founder-media.about-founder-media-clean .about-founder-portrait {
+    height: clamp(300px, 80vw, 430px) !important;
+  }
+
+  .about-page-modern .about-founder-artifact-panel .about-founder-cube,
+  .about-page-modern .about-founder-cube {
+    width: min(100%, 320px) !important;
+    height: auto !important;
   }
 }
 

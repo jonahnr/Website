@@ -28,9 +28,8 @@ def resolve(page: Path, value: str) -> Path | None:
     path = value.split("#", 1)[0].split("?", 1)[0]
     if not path:
         return None
-    # In file:// previews, leading slash means drive root, which is what broke.
     if path.startswith("/"):
-        return Path(path)
+        return (ROOT / path.lstrip("/")).resolve()
     return (page.parent / unquote(path)).resolve()
 
 
