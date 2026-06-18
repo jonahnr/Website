@@ -73,48 +73,6 @@
 /insights/governance-rls-architecture-business-issue /insights/governance-rls-architecture-business-issue/ 301
 /insights/dashboards-to-predictive-risk-intelligence /insights/dashboards-to-predictive-risk-intelligence/ 301
 
-# Clean URL rewrites
-/how-we-help/ /how-we-help.html 200
-/our-offerings/ /our-offerings.html 200
-/free-fit-check/ /free-fit-check.html 200
-/dashboard-trust-scorecard/ /dashboard-trust-scorecard.html 200
-/dashboard-trust-scorecard-download/ /dashboard-trust-scorecard-download.html 200
-/analytics-health-check/ /analytics-health-check.html 200
-/decision-system-reset/ /decision-system-reset.html 200
-/fractional-analytics/ /fractional-analytics.html 200
-/intelligence-lab/ /intelligence-lab.html 200
-/insights/ /insights.html 200
-/about/ /about.html 200
-/privacy-policy/ /privacy-policy.html 200
-/scorecard-thank-you/ /scorecard-thank-you.html 200
-/thank-you/ /thank-you.html 200
-/insights/why-nobody-trusts-your-dashboard/ /insights/why-nobody-trusts-your-dashboard.html 200
-/insights/hidden-cost-of-reporting-misalignment/ /insights/hidden-cost-of-reporting-misalignment.html 200
-/insights/dashboard-problem-leadership-problem/ /insights/dashboard-problem-leadership-problem.html 200
-/insights/single-source-of-truth-myth/ /insights/single-source-of-truth-myth.html 200
-/insights/five-signs-your-reporting-environment-is-breaking-down/ /insights/five-signs-your-reporting-environment-is-breaking-down.html 200
-/insights/who-owns-this-metric-most-expensive-question-in-analytics/ /insights/who-owns-this-metric-most-expensive-question-in-analytics.html 200
-/insights/kpi-governance-explained-growing-organizations/ /insights/kpi-governance-explained-growing-organizations.html 200
-/insights/why-executive-teams-argue-about-numbers/ /insights/why-executive-teams-argue-about-numbers.html 200
-/insights/kpi-ownership-framework-every-leadership-team-needs/ /insights/kpi-ownership-framework-every-leadership-team-needs.html 200
-/insights/how-to-build-metrics-people-actually-use/ /insights/how-to-build-metrics-people-actually-use.html 200
-/insights/why-executive-dashboards-fail/ /insights/why-executive-dashboards-fail.html 200
-/insights/stop-measuring-everything-designing-executive-reporting-that-drives-action/ /insights/stop-measuring-everything-designing-executive-reporting-that-drives-action.html 200
-/insights/what-should-be-included-in-weekly-business-review/ /insights/what-should-be-included-in-weekly-business-review.html 200
-/insights/the-difference-between-reporting-and-decision-making/ /insights/the-difference-between-reporting-and-decision-making.html 200
-/insights/building-executive-dashboards-that-create-accountability/ /insights/building-executive-dashboards-that-create-accountability.html 200
-/insights/when-to-hire-head-of-analytics/ /insights/when-to-hire-head-of-analytics.html 200
-/insights/what-fractional-analytics-leadership-actually-means/ /insights/what-fractional-analytics-leadership-actually-means.html 200
-/insights/building-analytics-function-without-hiring-full-team/ /insights/building-analytics-function-without-hiring-full-team.html 200
-/insights/why-data-teams-struggle-to-earn-trust/ /insights/why-data-teams-struggle-to-earn-trust.html 200
-/insights/analytics-maturity-roadmap-reporting-to-decision-systems/ /insights/analytics-maturity-roadmap-reporting-to-decision-systems.html 200
-/insights/ai-enablement-starts-with-trusted-business-data/ /insights/ai-enablement-starts-with-trusted-business-data.html 200
-/insights/prepare-reporting-environment-for-ai/ /insights/prepare-reporting-environment-for-ai.html 200
-/insights/where-ai-actually-helps-in-analytics-operations/ /insights/where-ai-actually-helps-in-analytics-operations.html 200
-/insights/operations-intelligence-digest-for-leadership/ /insights/operations-intelligence-digest-for-leadership.html 200
-/insights/governance-rls-architecture-business-issue/ /insights/governance-rls-architecture-business-issue.html 200
-/insights/dashboards-to-predictive-risk-intelligence/ /insights/dashboards-to-predictive-risk-intelligence.html 200
-
 # Redirect old .html URLs to clean URLs
 /how-we-help.html /how-we-help/ 301
 /our-offerings.html /our-offerings/ 301
