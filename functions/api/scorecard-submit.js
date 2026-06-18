@@ -43,6 +43,9 @@ async function sendEmail({ env, submission }) {
       <tr><td><strong>Name</strong></td><td>${escapeHtml(submission.name)}</td></tr>
       <tr><td><strong>Work Email</strong></td><td>${escapeHtml(submission.email)}</td></tr>
       <tr><td><strong>Weakest Dimension</strong></td><td>${escapeHtml(submission.weakest_dimension)}</td></tr>
+      <tr><td><strong>Live Score Lowest Dimension</strong></td><td>${escapeHtml(submission.scorecard_lowest_dimension)}</td></tr>
+      <tr><td><strong>Live Score Average</strong></td><td>${escapeHtml(submission.scorecard_average_score)}</td></tr>
+      <tr><td><strong>Live Score Details</strong></td><td>${escapeHtml(submission.scorecard_scores)}</td></tr>
       <tr><td><strong>Additional Context</strong></td><td>${escapeHtml(submission.additional_context)}</td></tr>
       <tr><td><strong>Source</strong></td><td>${escapeHtml(submission.source)}</td></tr>
       <tr><td><strong>Submitted At</strong></td><td>${escapeHtml(submission.submitted_at)}</td></tr>
@@ -98,9 +101,16 @@ export async function onRequestPost({ request, env }) {
       name: data.Name || data.name || "",
       email: data["Work Email"] || data.email || "",
       weakest_dimension: data["Weakest Scorecard Dimension"] || data.weakest_dimension || "",
+      scorecard_lowest_dimension: data["Scorecard Lowest Dimension"] || data.scorecard_lowest_dimension || "",
+      scorecard_average_score: data["Scorecard Average Score"] || data.scorecard_average_score || "",
+      scorecard_scores: data["Scorecard Scores"] || data.scorecard_scores || "",
       additional_context: data["Additional Context"] || data.additional_context || "",
       source: data["Submitted From"] || data.source || request.headers.get("referer") || "Dashboard Trust Scorecard"
     };
+
+    if (!submission.weakest_dimension && submission.scorecard_lowest_dimension) {
+      submission.weakest_dimension = submission.scorecard_lowest_dimension;
+    }
 
     if (!submission.name || !submission.email || !submission.weakest_dimension) {
       return jsonResponse({ ok: false, error: "missing_required_fields" }, 400);

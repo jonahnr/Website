@@ -6,8 +6,13 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "128"
+VERSION = "138"
 SITE = "https://parallaxdatalab.com"
+
+try:
+    from apply_faq_scorecard_cleanup import deliverable_copy as DELIVERABLE_COPY
+except Exception:
+    DELIVERABLE_COPY = {}
 
 
 SOCIAL_PAGES = {
@@ -242,7 +247,10 @@ def deliverable_section(page: str) -> str:
     if not content:
         return ""
     heading, items = content
-    cards = "\n".join(f"<article><strong>{item}</strong><p>A practical artifact the team can review, reuse, and maintain after the engagement.</p></article>" for item in items)
+    cards = "\n".join(
+        f"<article><strong>{item}</strong><p>{DELIVERABLE_COPY.get(item, 'A focused artifact with the owner, decision use, evidence, and next step documented clearly enough for the team to maintain after the engagement.')}</p></article>"
+        for item in items
+    )
     return f'''<section class="deliverable-proof-section reveal-card" aria-labelledby="{page}-deliverables-title">
 <p class="page-kicker">What you get</p>
 <h2 id="{page}-deliverables-title">{heading}</h2>

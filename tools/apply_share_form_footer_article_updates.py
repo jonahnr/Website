@@ -43,7 +43,7 @@ def update_scorecard_form(html: str) -> str:
     html = html.replace('data-scorecard-delivery="formsubmit"', 'data-scorecard-delivery="backend"')
     html = html.replace(
         "Submissions are emailed through FormSubmit on the hosted site. A browser-side CSV backup is also stored after submit so you can download a local archive from the scorecard page if needed.",
-        "Submissions are sent through the Parallax backend and the next screen opens immediately. A local CSV backup is also stored in this browser for your records."
+        ""
     )
     return html
 
@@ -54,8 +54,8 @@ def update_share_urls(html: str) -> str:
 
 
 def update_versions(html: str) -> str:
-    html = re.sub(r"home\.css\?v=\d+", "home.css?v=133", html)
-    html = re.sub(r"home\.js\?v=\d+", "home.js?v=133", html)
+    html = re.sub(r"home\.css\?v=\d+", "home.css?v=138", html)
+    html = re.sub(r"home\.js\?v=\d+", "home.js?v=138", html)
     return html
 
 

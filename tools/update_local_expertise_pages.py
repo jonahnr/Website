@@ -164,26 +164,24 @@ def power_bi_main(prefix: str) -> str:
 <a class="expertise-article-card" href="{href(prefix, 'insights/governance-rls-architecture-business-issue.html')}"><span>Related Insight</span><strong>Governance And RLS Architecture Is A Business Issue</strong><em>Read article</em></a>
 </div>
 </section>
-<section class="local-seo-section power-bi-embed-section reveal-card" aria-labelledby="power-bi-embed-title">
+<section class="local-seo-section power-bi-mock-section reveal-card" aria-labelledby="power-bi-mock-title">
 <div class="power-bi-embed-copy">
-<p class="page-kicker">Future Report Embed</p>
-<h2 id="power-bi-embed-title">A reserved space for an embedded Power BI report.</h2>
-<p>This block is ready for a secure Power BI report embed URL when you want to publish one. Replace the placeholder iframe source with the report link later; the surrounding copy, sizing, and responsive frame are already in place.</p>
+<p class="page-kicker">Mock dashboard preview</p>
+<h2 id="power-bi-mock-title">A simulated Power BI-style dashboard for the kind of cleanup this page describes.</h2>
+<p>This is a lightweight Parallax-style mockup, not an embedded report. It shows the kind of operating view a Power BI engagement can move toward: fewer vanity visuals, clearer KPI ownership, visible data confidence, and a direct path from metric movement to action.</p>
 </div>
-<div class="power-bi-report-shell" data-power-bi-embed-placeholder>
-<div class="power-bi-report-toolbar">
-<span>Power BI report placeholder</span>
-<button type="button" data-power-bi-preview-toggle aria-pressed="false">Show Embed Notes</button>
+<div class="power-bi-dashboard-mock" role="img" aria-label="Simulated Power BI dashboard showing KPI cards, trend chart, confidence indicators, and operating exceptions">
+<div class="mock-dashboard-topbar"><span>Executive Operations</span><strong>Trusted KPI View</strong></div>
+<div class="mock-kpi-row">
+<article><span>Revenue</span><strong>$4.8M</strong><em>+8.4%</em></article>
+<article><span>Margin</span><strong>31.2%</strong><em class="warning">Review</em></article>
+<article><span>On-Time</span><strong>94.6%</strong><em>Stable</em></article>
+<article><span>Data Trust</span><strong>82</strong><em class="warning">2 gaps</em></article>
 </div>
-<div class="power-bi-report-frame">
-<iframe title="Power BI report embed placeholder" data-power-bi-report-frame loading="lazy"></iframe>
-<div class="power-bi-report-empty">
-<strong>Paste the Power BI embed URL here later.</strong>
-<p>Use the iframe already in this frame and add the secure report URL when the report is ready.</p>
-</div>
-</div>
-<div class="power-bi-report-notes" hidden>
-<p>When the report is ready, keep the iframe title descriptive, use the secure Power BI embed URL, and test the page on mobile so the report controls remain usable.</p>
+<div class="mock-dashboard-body">
+<div class="mock-chart-card"><span>Weekly operating signal</span><div class="mock-bars"><i style="height:42%"></i><i style="height:58%"></i><i style="height:49%"></i><i style="height:72%"></i><i style="height:66%"></i><i style="height:83%"></i><i style="height:78%"></i></div></div>
+<div class="mock-chart-card"><span>Metric confidence</span><div class="mock-confidence"><b style="--v:82%">Certified KPI</b><b style="--v:63%">Source freshness</b><b style="--v:54%">Owner clarity</b></div></div>
+<div class="mock-exception-card"><span>Exceptions to review</span><p>Margin variance uses two definitions across sales and finance.</p><p>Late order adjustments arrive after Monday refresh.</p><p>Backlog owner missing for regional rollup.</p></div>
 </div>
 </div>
 </section>

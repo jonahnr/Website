@@ -418,7 +418,8 @@ function setupShareLinkCopy() {
   const iconPaths = {
     linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg>',
     x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 10.4 21.1 2h-1.7l-6.3 7.2L8 2H2.2l7.7 11-7.7 9h1.7l6.8-7.8 5.5 7.8H22l-8.2-11.6Zm-2.4 2.8-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.5 9.2h-2.8l-5.3-7.5Z"/></svg>',
-    email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 5h16.4c1 0 1.8.8 1.8 1.8v10.4c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V6.8C2 5.8 2.8 5 3.8 5Zm.7 2 7.5 5.2L19.5 7h-15Zm15.5 2.1-7.4 5.1a1 1 0 0 1-1.2 0L4 9.1V17h16V9.1Z"/></svg>'
+    email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 5h16.4c1 0 1.8.8 1.8 1.8v10.4c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V6.8C2 5.8 2.8 5 3.8 5Zm.7 2 7.5 5.2L19.5 7h-15Zm15.5 2.1-7.4 5.1a1 1 0 0 1-1.2 0L4 9.1V17h16V9.1Z"/></svg>',
+    paperclip: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.35 20.1a5.45 5.45 0 0 1-3.86-9.31l7.72-7.72a4.25 4.25 0 1 1 6.01 6.01l-7.68 7.68a3.02 3.02 0 0 1-4.27-4.27l7.32-7.32a1 1 0 1 1 1.41 1.41l-7.32 7.32a1.02 1.02 0 0 0 1.44 1.44l7.68-7.68a2.25 2.25 0 0 0-3.18-3.18L5.9 12.2a3.45 3.45 0 0 0 4.88 4.88l7.77-7.77a1 1 0 0 1 1.41 1.41l-7.77 7.77a5.42 5.42 0 0 1-3.84 1.61Z"/></svg>'
   };
 
   function normalizeShareUrl(url) {
@@ -444,21 +445,26 @@ function setupShareLinkCopy() {
   function enhanceShareAnchor(anchor) {
     const href = anchor.getAttribute("href") || "";
     const text = (anchor.textContent || "").trim().toLowerCase();
+    const isArticleShare = !!anchor.closest(".article-share");
     let icon = "";
     let label = "";
+    let visibleLabel = "";
 
     if (/linkedin\.com/i.test(href) || text === "linkedin") {
       icon = iconPaths.linkedin;
       label = "Share on LinkedIn";
+      visibleLabel = isArticleShare ? "LinkedIn" : label;
       anchor.classList.add("share-icon-link", "share-icon-linkedin");
     } else if (/twitter\.com|x\.com/i.test(href) || text === "x") {
       icon = iconPaths.x;
       label = "Share on X";
+      visibleLabel = isArticleShare ? "X" : label;
       anchor.classList.add("share-icon-link", "share-icon-x");
       anchor.href = normalizeShareUrl(href);
     } else if (/^mailto:/i.test(href) || text === "email") {
       icon = iconPaths.email;
       label = "Share by email";
+      visibleLabel = isArticleShare ? "Email" : label;
       anchor.classList.add("share-icon-link", "share-icon-email");
       if (!href || href === "#") {
         anchor.href = `mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`;
@@ -466,7 +472,7 @@ function setupShareLinkCopy() {
     }
 
     if (icon) {
-      anchor.innerHTML = `${icon}<span>${label}</span>`;
+      anchor.innerHTML = `${icon}<span>${visibleLabel || label}</span>`;
       anchor.setAttribute("aria-label", label);
       anchor.setAttribute("title", label);
     }
@@ -476,21 +482,46 @@ function setupShareLinkCopy() {
 
   document.querySelectorAll("[data-copy-share]").forEach((button) => {
     button.classList.add("share-copy-button");
+    if (button.closest(".article-share")) {
+      button.classList.add("share-icon-link", "share-article-link-button");
+      button.innerHTML = `${iconPaths.paperclip}<span>Share Link</span>`;
+      button.setAttribute("aria-label", "Share link");
+      button.setAttribute("title", "Share link");
+    }
     button.addEventListener("click", async () => {
-      const originalLabel = button.textContent;
+      const originalLabel = button.innerHTML;
       const value = button.dataset.copyShare || button.previousElementSibling?.value || window.location.href;
       try {
-        await navigator.clipboard.writeText(value);
-        button.textContent = "Copied";
+        if (button.classList.contains("share-article-link-button") && navigator.share) {
+          await navigator.share({
+            title: document.title,
+            url: value
+          });
+          button.setAttribute("aria-label", "Shared");
+          button.setAttribute("title", "Shared");
+        } else if (button.classList.contains("share-article-link-button")) {
+          await navigator.clipboard.writeText(value);
+          button.setAttribute("aria-label", "Copied");
+          button.setAttribute("title", "Copied");
+        } else {
+          await navigator.clipboard.writeText(value);
+          button.textContent = "Copied";
+        }
         window.setTimeout(() => {
-          button.textContent = originalLabel;
+          button.innerHTML = originalLabel;
+          if (button.classList.contains("share-article-link-button")) {
+            button.setAttribute("aria-label", "Share link");
+            button.setAttribute("title", "Share link");
+          }
         }, 1600);
       } catch {
         const input = button.previousElementSibling;
         if (input && "select" in input) {
           input.select();
         }
-        button.textContent = "Select Link";
+        if (!button.classList.contains("share-article-link-button")) {
+          button.textContent = "Select Link";
+        }
       }
     });
   });
@@ -927,6 +958,202 @@ function setupScorecardDirectDelivery() {
   });
 }
 
+function trackLeadMagnetEvent(eventName, params = {}) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
+}
+
+function setupLeadMagnetScorecard() {
+  const scorecard = document.querySelector("[data-lead-scorecard]");
+  if (!scorecard) {
+    return;
+  }
+
+  const areas = Array.from(scorecard.querySelectorAll("[data-lead-score-area]"));
+  const lowestTarget = scorecard.querySelector("[data-lead-score-lowest]");
+  const averageTarget = scorecard.querySelector("[data-lead-score-average]");
+  const nextTarget = scorecard.querySelector("[data-lead-score-next]");
+  const copyTarget = scorecard.querySelector("[data-lead-score-copy]");
+  const lowestInput = document.querySelector("[data-lead-score-lowest-input]");
+  const averageInput = document.querySelector("[data-lead-score-average-input]");
+  const summaryInput = document.querySelector("[data-lead-score-summary-input]");
+  const resultCopy = {
+    "Metric trust": "Metric trust is the visible break: leaders are likely debating definitions before they can debate action.",
+    "Ownership": "Ownership is the visible break: the business may not have a clear final owner for definition, interpretation, or follow-up.",
+    "Source reliability": "Source reliability is the visible break: teams may be reconciling exports, refresh timing, manual edits, or side spreadsheets before trusting the report.",
+    "Decision cadence": "Decision cadence is the visible break: dashboards exist, but thresholds, owners, and recurring decisions may not be explicit enough.",
+    "Operational signal": "Operational signal is the visible break: leaders may see activity without a clear view of what changed, why it matters, and what should happen next."
+  };
+  const nextSteps = {
+    "Metric trust": "Recommended next step: Free Fit Check or Analytics Health Check.",
+    "Ownership": "Recommended next step: Decision System Reset.",
+    "Source reliability": "Recommended next step: Data Quality Review or Analytics Health Check.",
+    "Decision cadence": "Recommended next step: Decision System Reset.",
+    "Operational signal": "Recommended next step: Fit Check now; Intelligence Lab once the foundation holds."
+  };
+
+  const pairedPatterns = [
+    {
+      areas: ["Metric trust", "Ownership"],
+      label: "Definition and ownership break",
+      copy: "The pattern is bigger than one weak area: metrics appear to lack both a trusted definition and a clear decision owner. A dashboard rebuild would likely inherit the same debate.",
+      next: "Recommended path: start with the Fit Check, then scope a Decision System Reset or Analytics Health Check around KPI ownership."
+    },
+    {
+      areas: ["Source reliability", "Metric trust"],
+      label: "Lineage and metric trust break",
+      copy: "The pattern points to a source-to-KPI trust issue. Leaders may not believe the number because the path from source system, transformation, and measure logic is not clear enough.",
+      next: "Recommended path: Data Quality Review or Analytics Health Check before redesigning the dashboard."
+    },
+    {
+      areas: ["Decision cadence", "Operational signal"],
+      label: "Signal-to-action break",
+      copy: "The pattern suggests reports are showing activity but not translating into recurring decisions, thresholds, owners, and next actions.",
+      next: "Recommended path: Decision System Reset; Intelligence Lab becomes useful after the decision cadence is stable."
+    },
+    {
+      areas: ["Source reliability", "Operational signal"],
+      label: "Input quality and signal break",
+      copy: "The pattern suggests the team may be trying to create operational intelligence from inputs that are not yet reliable enough for confident action.",
+      next: "Recommended path: Data Quality Review first, then revisit operational intelligence once the signal layer holds."
+    }
+  ];
+  let started = false;
+  let completed = false;
+
+  function readScores() {
+    return areas.map((area) => {
+      const selected = area.querySelector("input[type='radio']:checked");
+      return {
+        name: area.dataset.leadScoreArea || "",
+        value: selected ? Number(selected.value) : null
+      };
+    });
+  }
+
+  function updateSelect(lowestName) {
+    if (!scorecardAreaSelect || !lowestName) {
+      return;
+    }
+    const current = scorecardAreaSelect.value;
+    if (current && current !== "Not sure yet") {
+      return;
+    }
+    const option = Array.from(scorecardAreaSelect.options).find((item) => item.value === lowestName || item.textContent === lowestName);
+    if (option) {
+      scorecardAreaSelect.value = option.value || option.textContent;
+      scorecardAreaSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  }
+
+  function renderResult() {
+    const scores = readScores();
+    const scored = scores.filter((item) => Number.isFinite(item.value));
+    if (!scored.length) {
+      return;
+    }
+
+    if (!started) {
+      started = true;
+      trackLeadMagnetEvent("scorecard_started", { page_path: window.location.pathname });
+    }
+
+    const lowest = scored.reduce((winner, item) => item.value < winner.value ? item : winner, scored[0]);
+    const average = scored.reduce((sum, item) => sum + item.value, 0) / scored.length;
+    const summary = scores.map((item) => `${item.name}: ${item.value || "not scored"}`).join("; ");
+    const weakAreas = scored.filter((item) => item.value <= 2).sort((a, b) => a.value - b.value);
+    const riskAreas = scored.filter((item) => item.value <= 3).sort((a, b) => a.value - b.value);
+    const matchedPair = pairedPatterns.find((pattern) => pattern.areas.every((areaName) => riskAreas.some((item) => item.name === areaName)));
+    const tiedLowest = scored.filter((item) => item.value === lowest.value);
+    const isIncomplete = scored.length < areas.length;
+    let patternLabel = matchedPair?.label || lowest.name;
+    let patternCopy = matchedPair?.copy || resultCopy[lowest.name] || "The working copy will turn your scores into a printable diagnostic snapshot, evidence prompts, and a recommended next step.";
+    let patternNext = matchedPair?.next || nextSteps[lowest.name] || "Recommended next step: Free Fit Check.";
+
+    if (!matchedPair && tiedLowest.length > 1) {
+      patternLabel = "Multiple tied weak points";
+      patternCopy = `${tiedLowest.map((item) => item.name).join(", ")} are tied as the weakest areas. That usually means the reporting issue is systemic enough that a single dashboard fix will not fully solve it.`;
+      patternNext = "Recommended path: Fit Check first, then decide whether the right scoped next step is a Health Check or Decision System Reset.";
+    } else if (!matchedPair && weakAreas.length >= 3) {
+      patternLabel = "System-level trust break";
+      patternCopy = "Three or more dimensions scored weak. That usually means reporting trust is breaking across definition, source, ownership, cadence, or signal quality at the same time.";
+      patternNext = "Recommended path: Analytics Health Check before selecting a build, automation, or reset.";
+    } else if (!matchedPair && average >= 4 && lowest.value >= 3) {
+      patternLabel = "Mostly stable foundation";
+      patternCopy = "The foundation appears healthier than most scorecard patterns. The next move is likely a focused improvement, not a broad reset.";
+      patternNext = "Recommended path: use the Fit Check to isolate one Power BI, KPI, automation, or Intelligence Lab opportunity.";
+    }
+
+    if (isIncomplete) {
+      patternCopy = `${patternCopy} Finish all five scores to strengthen the recommendation.`;
+    }
+
+    if (lowestTarget) {
+      lowestTarget.textContent = patternLabel;
+    }
+    if (averageTarget) {
+      averageTarget.textContent = average.toFixed(1);
+    }
+    if (nextTarget) {
+      nextTarget.textContent = patternNext;
+    }
+    if (copyTarget) {
+      copyTarget.textContent = patternCopy;
+    }
+    if (lowestInput) {
+      lowestInput.value = lowest.name;
+    }
+    if (averageInput) {
+      averageInput.value = average.toFixed(1);
+    }
+    if (summaryInput) {
+      summaryInput.value = summary;
+    }
+
+    window.localStorage?.setItem("parallaxScorecardWeakestArea", lowest.name);
+    updateSelect(lowest.name);
+
+    if (!completed && scored.length === areas.length) {
+      completed = true;
+      trackLeadMagnetEvent("scorecard_completed", {
+        lowest_dimension: lowest.name,
+        pattern_label: patternLabel,
+        average_score: average.toFixed(1)
+      });
+    }
+  }
+
+  scorecard.addEventListener("change", (event) => {
+    if (event.target.matches("input[type='radio']")) {
+      renderResult();
+    }
+  });
+
+  document.querySelectorAll('form[data-scorecard-delivery="backend"], form[data-scorecard-delivery="direct"]').forEach((form) => {
+    form.addEventListener("submit", () => {
+      renderResult();
+      trackLeadMagnetEvent("scorecard_email_submitted", {
+        lowest_dimension: lowestInput?.value || scorecardAreaSelect?.value || ""
+      });
+    }, true);
+  });
+
+  document.querySelectorAll("[data-print-scorecard]").forEach((button) => {
+    button.addEventListener("click", () => trackLeadMagnetEvent("scorecard_pdf_click", {
+      page_path: window.location.pathname
+    }));
+  });
+
+  document.querySelectorAll('a[href*="free-fit-check"]').forEach((link) => {
+    if (/scorecard/i.test(window.location.pathname + " " + document.title)) {
+      link.addEventListener("click", () => trackLeadMagnetEvent("scorecard_fit_check_click", {
+        link_text: (link.textContent || "").replace(/\s+/g, " ").trim()
+      }));
+    }
+  });
+}
+
 resizeCanvas();
 drawConstellation();
 updateMotion();
@@ -942,6 +1169,7 @@ setupCarousel("healthSample");
 setupFractionalFlipCards();
 setupFitPathFinder();
 setupAnalyticsEventTracking();
+setupLeadMagnetScorecard();
 setupScorecardDirectDelivery();
 
 
@@ -1109,20 +1337,21 @@ function setupProtectedEmailLinks() {
   });
 }
 
-function setupPowerBiEmbedPlaceholder() {
-  document.querySelectorAll("[data-power-bi-embed-placeholder]").forEach((shell) => {
-    const toggle = shell.querySelector("[data-power-bi-preview-toggle]");
-    const notes = shell.querySelector(".power-bi-report-notes");
+function setupHealthOutputFlipCards() {
+  document.querySelectorAll(".health-flip-card").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("a, button")) {
+        return;
+      }
+      card.classList.toggle("is-flipped");
+    });
 
-    if (!toggle || !notes) {
-      return;
-    }
-
-    toggle.addEventListener("click", () => {
-      const isOpen = notes.hasAttribute("hidden");
-      notes.toggleAttribute("hidden", !isOpen);
-      toggle.setAttribute("aria-pressed", String(isOpen));
-      toggle.textContent = isOpen ? "Hide Embed Notes" : "Show Embed Notes";
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+      event.preventDefault();
+      card.classList.toggle("is-flipped");
     });
   });
 }
@@ -1165,7 +1394,7 @@ function setupOfferingMenuGroups() {
 
 setupActiveNavigation();
 setupProtectedEmailLinks();
-setupPowerBiEmbedPlaceholder();
+setupHealthOutputFlipCards();
 setupOfferingMenuGroups();
 setupLocalFormFallbacks();
 setupShareLinkCopy();

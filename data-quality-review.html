@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -6,7 +6,7 @@
 <title>Data Quality Review | Find Why Reports Are Not Trusted</title>
 <meta name="description" content="Data quality review for teams dealing with inconsistent metrics, source system issues, manual reporting patches, reconciliation work, and dashboard trust problems."/>
 <link rel="canonical" href="https://parallaxdatalab.com/data-quality-review/"/>
-<link href="home.css?v=135" rel="stylesheet"/>
+<link href="home.css?v=143" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
@@ -219,6 +219,17 @@
 <article id="service-ownership-recommendations"><strong>Ownership Recommendations</strong><p>Clarify who owns source fixes, transformation logic, definitions, and ongoing monitoring.</p></article>
 <article id="service-priority-fix-map"><strong>Priority Fix Map</strong><p>Separate urgent trust breaks from nice-to-have cleanup so the team can make progress without boiling the ocean.</p></article>
 </section>
+<section class="exception-review-artifact reveal-card" aria-labelledby="quality-artifact-title">
+<p class="page-kicker">Sample trust artifact</p>
+<h2 id="quality-artifact-title">A Data Quality Review turns vague distrust into a prioritized exception map.</h2>
+<p>The review is useful because it names the specific data issue, the business decision affected, who owns the fix, and how often the issue should be reviewed.</p>
+<div class="exception-artifact-table" role="table" aria-label="Sample exception review artifact">
+<div role="row" class="artifact-header"><span>Source issue</span><span>Business impact</span><span>Owner</span><span>Severity</span><span>Recommended fix</span><span>Follow-up cadence</span></div>
+<div role="row"><span>Late order adjustments entered after dashboard refresh</span><span>Weekly shipped revenue is understated during leadership review</span><span>Operations + Finance</span><span>High</span><span>Document adjustment window and refresh dependency; expose freshness note in Power BI.</span><span>Weekly until stable</span></div>
+<div role="row"><span>Customer hierarchy maintained in spreadsheet outside source system</span><span>Margin and account rollups differ by team</span><span>Sales Ops</span><span>Medium</span><span>Assign hierarchy owner and move approved mapping into governed source or model table.</span><span>Biweekly review</span></div>
+<div role="row"><span>Manual exception rules not visible in report logic</span><span>Leaders cannot explain why dashboard totals differ from exported detail</span><span>Analytics Owner</span><span>High</span><span>Trace exceptions, document rules, and certify which overrides are allowed.</span><span>Weekly until resolved</span></div>
+</div>
+</section>
 <section class="expertise-related-articles reveal-card" aria-labelledby="related-articles-title">
 <p class="page-kicker">Related Reading</p>
 <h2 id="related-articles-title">Articles that go deeper on this problem.</h2>
@@ -244,19 +255,20 @@
 <p class="page-kicker">Questions</p>
 <h2 id="expertise-faq-title">What teams usually ask.</h2>
 <div class="local-seo-faq-grid">
-<article><h3>Is this the same as a technical data audit?</h3><p>Not exactly. The review includes technical tracing, but it is focused on reporting trust and business decision impact.</p></article>
-<article><h3>Do we need perfect data before improving dashboards?</h3><p>No. You need known data. Leaders can act with imperfect data when the limits, owners, and confidence level are clear.</p></article>
-<article><h3>Can this come before automation?</h3><p>Often it should. Automating a low-quality process can make unreliable reporting spread faster.</p></article>
+<details><summary>Is this the same as a technical data audit?</summary><p>Not exactly. The review includes technical tracing, but it is focused on reporting trust and business decision impact.</p></details>
+<details><summary>Do we need perfect data before improving dashboards?</summary><p>No. You need known data. Leaders can act with imperfect data when the limits, owners, and confidence level are clear.</p></details>
+<details><summary>Can this come before automation?</summary><p>Often it should. Automating a low-quality process can make unreliable reporting spread faster.</p></details>
+<details><summary>What should we bring into the first conversation?</summary><p>Bring the report, metric, manual workflow, or decision meeting where the issue shows up most clearly. A concrete example makes it easier to separate a dashboard problem from a definition, source, ownership, or cadence problem.</p></details>
 </div>
 </section>
 <section class="deliverable-proof-section reveal-card" aria-labelledby="data-quality-review-deliverables-title">
 <p class="page-kicker">What you get</p>
 <h2 id="data-quality-review-deliverables-title">What the review produces</h2>
 <div class="deliverable-proof-grid">
-<article><strong>Source trace map</strong><p>A practical artifact the team can review, reuse, and maintain after the engagement.</p></article>
-<article><strong>Exception register</strong><p>A practical artifact the team can review, reuse, and maintain after the engagement.</p></article>
-<article><strong>Trust break priority list</strong><p>A practical artifact the team can review, reuse, and maintain after the engagement.</p></article>
-<article><strong>Ownership recommendations</strong><p>A practical artifact the team can review, reuse, and maintain after the engagement.</p></article>
+<article><strong>Source trace map</strong><p>A source-to-report trace showing where fields, joins, exports, transformations, manual edits, or refresh timing can weaken confidence.</p></article>
+<article><strong>Exception register</strong><p>A working register of known exceptions, impact, owner, severity, recommended fix, and review cadence.</p></article>
+<article><strong>Trust break priority list</strong><p>A ranked list of the issues most likely to affect leadership decisions, so cleanup does not sprawl into low-value work.</p></article>
+<article><strong>Ownership recommendations</strong><p>A practical owner model for source fixes, metric definitions, exception handling, monitoring, and ongoing change control.</p></article>
 </div>
 </section>
 <section class="local-seo-cta reveal-card" aria-labelledby="expertise-cta-title">
@@ -317,7 +329,7 @@
     <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
   </div>
 </footer>
-<script src="home.js?v=136"></script>
+<script src="home.js?v=143"></script>
 </body>
 </html>
 
