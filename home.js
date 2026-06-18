@@ -7,6 +7,11 @@ const revealCards = Array.from(document.querySelectorAll(".reveal-card"));
 const dropdowns = Array.from(document.querySelectorAll(".nav-dropdown"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const carousels = new Map();
+const insightFilterButtons = Array.from(document.querySelectorAll("[data-insight-filter]"));
+const insightCards = Array.from(document.querySelectorAll(".insight-card[data-category]"));
+const insightsResults = document.querySelector("[data-insights-results]");
+const insightsSearch = document.querySelector("[data-insights-search]");
+const scorecardAreaSelect = document.querySelector("#scorecard-friction");
 
 let width = 0;
 let height = 0;
@@ -147,6 +152,174 @@ function setupCarousel(name) {
   render();
 }
 
+function setupInsightFilters() {
+  if (!insightFilterButtons.length || !insightCards.length) {
+    return;
+  }
+
+  let activeCategory = "all";
+
+  function renderFilter(category) {
+    activeCategory = category;
+    const query = (insightsSearch?.value || "").trim().toLowerCase();
+    let visibleCount = 0;
+    insightCards.forEach((card) => {
+      const categoryMatches = category === "all" || card.dataset.category === category;
+      const textMatches = !query || card.textContent.toLowerCase().includes(query);
+      const isVisible = categoryMatches && textMatches;
+      card.classList.toggle("is-filtered-out", !isVisible);
+      card.setAttribute("aria-hidden", String(!isVisible));
+      if (isVisible) {
+        visibleCount += 1;
+      }
+    });
+
+    const insightsPage = document.querySelector(".insights-page");
+    if (insightsPage) {
+      insightsPage.dataset.activeFilter = category;
+    }
+
+    if (insightsResults) {
+      const categoryLabel = category === "all" ? "articles" : `${category} articles`;
+      insightsResults.textContent = query ? `${visibleCount} matching ${categoryLabel}` : `${visibleCount} ${categoryLabel}`;
+    }
+  }
+
+  insightFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      insightFilterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      renderFilter(button.dataset.insightFilter || "all");
+    });
+  });
+
+  if (insightsSearch) {
+    insightsSearch.addEventListener("input", () => renderFilter(activeCategory));
+  }
+
+  renderFilter("all");
+}
+
+function setupScorecardPersonalization() {
+  const storageKey = "parallaxScorecardWeakestArea";
+  const guidance = {
+    "Metric trust": {
+      title: "Focus: metric trust",
+      copy: "Bring the KPI leaders debate most, every current definition, the dashboard where it appears, and the decision it is supposed to support. The next step is usually a metric-definition and lineage diagnostic before redesigning the report."
+    },
+    "Ownership": {
+      title: "Focus: ownership",
+      copy: "Bring the metrics that matter most and list who owns the definition, source logic, business interpretation, and follow-up action. If those names are unclear, the next step is usually a Decision System Reset."
+    },
+    "Source reliability": {
+      title: "Focus: source reliability",
+      copy: "Bring the report people distrust, the source system behind it, the refresh schedule, known manual adjustments, and any side spreadsheets teams use instead. The next step is usually a Health Check focused on lineage and data reliability."
+    },
+    "Decision cadence": {
+      title: "Focus: decision cadence",
+      copy: "Bring the recurring meeting where dashboards are reviewed, the decisions that should happen there, and the actions that fail to get assigned. The next step is usually a Decision System Reset around thresholds, owners, and escalation."
+    },
+    "Operational signal": {
+      title: "Focus: operational signal",
+      copy: "Bring the weekly questions leaders ask, the signals that change fastest, and the risks that currently surface too late. The next step may be an Intelligence Lab digest once the underlying metrics are trusted."
+    },
+    "Not sure yet": {
+      title: "Focus: routing the problem",
+      copy: "If no single area is obvious, score all five areas and circle where the conversation gets stuck first. The Free Fit Check is built for this situation: it separates a trust issue from an ownership, data reliability, cadence, or signal problem."
+    }
+  };
+  const scorecardDimensions = new Set(Object.keys(guidance));
+
+  if (scorecardAreaSelect) {
+    scorecardAreaSelect.addEventListener("change", () => {
+      if (scorecardAreaSelect.value) {
+        window.localStorage?.setItem(storageKey, scorecardAreaSelect.value);
+      }
+    });
+
+    scorecardAreaSelect.form?.addEventListener("submit", () => {
+      if (scorecardAreaSelect.value) {
+        window.localStorage?.setItem(storageKey, scorecardAreaSelect.value);
+      }
+    });
+  }
+
+  const titleTarget = document.querySelector("[data-scorecard-focus-title]");
+  const copyTarget = document.querySelector("[data-scorecard-focus-copy]");
+  if (!titleTarget || !copyTarget) {
+    return;
+  }
+
+  const selected = window.localStorage?.getItem(storageKey) || "";
+  const match = scorecardDimensions.has(selected) ? guidance[selected] : null;
+  if (match) {
+    titleTarget.textContent = match.title;
+    copyTarget.textContent = match.copy;
+  }
+
+  const scoreInputs = Array.from(document.querySelectorAll("[data-scorecard-score]"));
+  if (!scoreInputs.length) {
+    return;
+  }
+
+  function applyGuidance(area, score) {
+    if (score >= 4) {
+      titleTarget.textContent = "Pattern: mostly healthy";
+      copyTarget.textContent = "The lowest selected score is still strong. Use the evidence notes to confirm the area is consistently trusted, then look for the lowest remaining score or use the Fit Check to decide whether there is a meaningful next step.";
+      return;
+    }
+
+    const areaGuidance = guidance[area] || guidance["Not sure yet"];
+    titleTarget.textContent = `${areaGuidance.title} (${score}/5)`;
+    copyTarget.textContent = areaGuidance.copy;
+    window.localStorage?.setItem(storageKey, area);
+  }
+
+  function updateFromScores() {
+    const checked = scoreInputs
+      .filter((input) => input.checked)
+      .map((input) => ({
+        area: input.closest("[data-scorecard-area]")?.dataset.scorecardArea || "",
+        score: Number(input.value)
+      }))
+      .filter((item) => item.area && Number.isFinite(item.score));
+
+    if (!checked.length) {
+      return;
+    }
+
+    checked.sort((a, b) => a.score - b.score);
+    applyGuidance(checked[0].area, checked[0].score);
+  }
+
+  scoreInputs.forEach((input) => {
+    input.addEventListener("change", updateFromScores);
+  });
+
+  const assistGroups = Array.from(document.querySelectorAll("[data-scorecard-assist]"));
+  assistGroups.forEach((group) => {
+    const card = group.closest(".scorecard-area-card");
+    const checks = Array.from(group.querySelectorAll('input[type="checkbox"]'));
+    if (!card || checks.length !== 5) {
+      return;
+    }
+
+    checks.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        const checkedCount = checks.filter((item) => item.checked).length;
+        if (!checkedCount) {
+          return;
+        }
+
+        const score = card.querySelector(`[data-scorecard-score][value="${checkedCount}"]`);
+        if (score) {
+          score.checked = true;
+          score.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    });
+  });
+}
+
 function closeDropdowns(except = null) {
   dropdowns.forEach((dropdown) => {
     if (dropdown === except) {
@@ -175,6 +348,49 @@ function setupDropdowns() {
     const isLinkToggle = toggle.tagName.toLowerCase() === "a" && toggle.getAttribute("href");
     if (isLinkToggle) {
       toggle.setAttribute("aria-haspopup", "true");
+      toggle.setAttribute("aria-expanded", "false");
+      let closeTimer = null;
+      const prefersTapMenu = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 980px)");
+
+      const openDropdown = () => {
+        window.clearTimeout(closeTimer);
+        closeDropdowns(dropdown);
+        dropdown.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+      };
+
+      const closeDropdown = () => {
+        window.clearTimeout(closeTimer);
+        closeTimer = window.setTimeout(() => {
+          const navStillActive = dropdown.parentElement?.matches(":hover") || dropdown.parentElement?.matches(":focus-within");
+          if (!dropdown.matches(":hover") && !dropdown.matches(":focus-within") && !navStillActive) {
+            dropdown.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        }, 520);
+      };
+
+      dropdown.addEventListener("mouseenter", openDropdown);
+      dropdown.addEventListener("mouseleave", closeDropdown);
+      dropdown.addEventListener("focusin", openDropdown);
+      dropdown.addEventListener("focusout", closeDropdown);
+      toggle.addEventListener("click", (event) => {
+        if (!prefersTapMenu.matches) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        const willOpen = !dropdown.classList.contains("is-open");
+        closeDropdowns(dropdown);
+        if (willOpen) {
+          dropdown.classList.add("is-open");
+          toggle.setAttribute("aria-expanded", "true");
+        } else {
+          dropdown.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
       return;
     }
 
@@ -195,6 +411,103 @@ function setupDropdowns() {
     if (event.key === "Escape") {
       closeDropdowns();
     }
+  });
+}
+
+function setupShareLinkCopy() {
+  document.querySelectorAll("[data-copy-share]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const originalLabel = button.textContent;
+      const value = button.dataset.copyShare || button.previousElementSibling?.value || window.location.href;
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = originalLabel;
+        }, 1600);
+      } catch {
+        const input = button.previousElementSibling;
+        if (input && "select" in input) {
+          input.select();
+        }
+        button.textContent = "Select Link";
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-native-share]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const originalLabel = button.textContent;
+      const url = button.dataset.nativeShare || window.location.href;
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: button.dataset.shareTitle || document.title,
+            url
+          });
+          button.textContent = "Shared";
+        } else {
+          await navigator.clipboard.writeText(url);
+          button.textContent = "Copied";
+        }
+      } catch {
+        button.textContent = originalLabel;
+      }
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 1400);
+    });
+  });
+}
+
+function scorecardArchiveRows() {
+  try {
+    return JSON.parse(window.localStorage?.getItem("parallaxScorecardSubmissions") || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveScorecardSubmission(form) {
+  const row = {
+    submitted_at: new Date().toISOString(),
+    name: form.querySelector('[name="Name"]')?.value || "",
+    work_email: form.querySelector('[name="Work Email"]')?.value || "",
+    weakest_dimension: form.querySelector('[name="Weakest Scorecard Dimension"]')?.value || "",
+    additional_context: form.querySelector('[name="Additional Context"]')?.value || "",
+    source: window.location.href
+  };
+  const rows = scorecardArchiveRows();
+  rows.push(row);
+  window.localStorage?.setItem("parallaxScorecardSubmissions", JSON.stringify(rows));
+}
+
+function downloadScorecardSubmissionCsv() {
+  const rows = scorecardArchiveRows();
+  const headers = ["submitted_at", "name", "work_email", "weakest_dimension", "additional_context", "source"];
+  const escapeCsv = (value) => `"${String(value || "").replaceAll('"', '""')}"`;
+  const csv = [headers.join(","), ...rows.map((row) => headers.map((key) => escapeCsv(row[key])).join(","))].join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "scorecard-submissions.csv";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function setupScorecardSubmissionArchive() {
+  document.querySelectorAll('form[data-scorecard-archive="true"]').forEach((form) => {
+    form.addEventListener("submit", () => saveScorecardSubmission(form));
+  });
+
+  document.querySelectorAll("[data-download-scorecard-submissions]").forEach((button) => {
+    const rows = scorecardArchiveRows();
+    button.disabled = rows.length === 0;
+    button.textContent = rows.length ? `Download CSV Backup (${rows.length})` : "No Local Submissions Yet";
+    button.addEventListener("click", downloadScorecardSubmissionCsv);
   });
 }
 
@@ -496,6 +809,43 @@ function setupAnalyticsEventTracking() {
   });
 }
 
+function setupScorecardDirectDelivery() {
+  document.querySelectorAll('form[data-scorecard-delivery="direct"]').forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const action = form.getAttribute("action");
+      const successUrl = form.dataset.successUrl || "dashboard-trust-scorecard-download.html";
+      if (scorecardAreaSelect?.value) {
+        window.localStorage?.setItem("parallaxScorecardWeakestArea", scorecardAreaSelect.value);
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Opening scorecard...";
+      }
+
+      const goToScorecard = () => {
+        window.location.href = successUrl;
+      };
+
+      if (!action) {
+        goToScorecard();
+        return;
+      }
+
+      const delivery = fetch(action, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+      });
+      const fallback = new Promise((resolve) => window.setTimeout(resolve, 1200));
+      Promise.race([delivery, fallback]).finally(goToScorecard);
+    });
+  });
+}
+
 resizeCanvas();
 drawConstellation();
 updateMotion();
@@ -511,6 +861,7 @@ setupCarousel("healthSample");
 setupFractionalFlipCards();
 setupFitPathFinder();
 setupAnalyticsEventTracking();
+setupScorecardDirectDelivery();
 
 
 
@@ -551,48 +902,71 @@ function setupMobileNavigation() {
 
 setupMobileNavigation();
 
+function getPageKey(pathname) {
+  let path = (pathname || "/").split("?")[0].split("#")[0];
+  path = path.replace(/\/+$/g, "");
+
+  if (!path || path === "/" || path.toLowerCase() === "/index.html") {
+    return "home";
+  }
+
+  const lastPart = path.split("/").filter(Boolean).pop() || "index";
+  return lastPart.replace(/\.html$/i, "").toLowerCase();
+}
+
 function setupActiveNavigation() {
-  const nav = document.querySelector('#primary-navigation');
+  const nav = document.querySelector("#primary-navigation");
   if (!nav) {
     return;
   }
 
-  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  const hash = window.location.hash || '';
+  const page = getPageKey(window.location.pathname);
+  const hash = window.location.hash || "";
   const offeringPages = new Set([
-    'our-offerings.html',
-    'analytics-health-check.html',
-    'decision-system-reset.html',
-    'fractional-analytics.html'
+    "our-offerings",
+    "dashboard-trust-scorecard",
+    "dashboard-trust-scorecard-download",
+    "scorecard-thank-you",
+    "free-fit-check",
+    "analytics-health-check",
+    "decision-system-reset",
+    "fractional-analytics",
+    "expertise",
+    "power-bi-consultant-cincinnati",
+    "business-intelligence-consultant-cincinnati",
+    "kpi-reporting-consulting",
+    "reporting-automation-consulting",
+    "data-quality-review",
+    "dashboard-trust-governance"
   ]);
 
   nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
-    link.removeAttribute('aria-current');
-    link.classList.remove('is-active');
+    link.removeAttribute("aria-current");
+    link.classList.remove("is-active");
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
-    const href = link.getAttribute('href');
-    if (!href) {
+  nav.querySelectorAll("a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
       return;
     }
 
     const target = new URL(href, window.location.href);
-    const targetPage = (target.pathname.split('/').pop() || 'index.html').toLowerCase();
-    const targetHash = target.hash || '';
-    const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
-    const isDropdownMenuItem = Boolean(link.closest('.nav-dropdown-menu'));
+    const targetPage = getPageKey(target.pathname);
+    const targetHash = target.hash || "";
+    const isDropdownToggle = link.classList.contains("nav-dropdown-toggle");
+    const isDropdownMenuItem = Boolean(link.closest(".nav-dropdown-menu"));
     let isCurrent = false;
 
-    if (isDropdownToggle && link.closest('.nav-dropdown-offerings')) {
+    if (isDropdownToggle && link.closest(".nav-dropdown-offerings")) {
       isCurrent = offeringPages.has(page);
-    } else if (isDropdownToggle && link.closest('.nav-dropdown-intelligence')) {
-      isCurrent = page === 'intelligence-lab.html';
+    } else if (isDropdownToggle && link.closest(".nav-dropdown-intelligence")) {
+      isCurrent = page === "intelligence-lab";
     } else if (isDropdownMenuItem && targetHash) {
       isCurrent = targetPage === page && targetHash === hash;
-    } else if (isDropdownMenuItem && targetPage === 'intelligence-lab.html') {
+    } else if (isDropdownMenuItem && targetPage === "intelligence-lab") {
       isCurrent = page === targetPage && !hash;
-    } else if (isDropdownMenuItem && targetPage === 'our-offerings.html') {
+    } else if (isDropdownMenuItem && targetPage === "our-offerings") {
       isCurrent = page === targetPage;
     } else if (isDropdownMenuItem) {
       isCurrent = targetPage === page && !hash;
@@ -601,11 +975,116 @@ function setupActiveNavigation() {
     }
 
     if (isCurrent) {
-      link.setAttribute('aria-current', 'page');
-      link.classList.add('is-active');
+      link.setAttribute("aria-current", "page");
+      link.classList.add("is-active");
     }
   });
 }
 
+function setupLocalFormFallbacks() {
+  const isLocalHtml = window.location.protocol === "file:";
+  document.querySelectorAll("form[data-form-user][data-form-domain]").forEach((form) => {
+    const recipient = `${form.dataset.formUser}@${form.dataset.formDomain}`;
+    if (!recipient) {
+      return;
+    }
+
+    form.action = `https://formsubmit.co/${recipient}`;
+
+    if (!isLocalHtml) {
+      return;
+    }
+
+    const note = document.createElement("p");
+    note.className = "local-form-note";
+    note.textContent = "Local preview mode: this form will open an email draft because FormSubmit only works from the hosted site.";
+    form.prepend(note);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const subject = form.dataset.localMailSubject || "Website form request";
+      const values = Array.from(form.elements)
+        .filter((field) => field.name && !field.name.startsWith("_") && field.type !== "submit")
+        .map((field) => `${field.name}: ${field.value || ""}`)
+        .join("\n");
+      const scorecardUrl = "https://parallaxdatalab.com/dashboard-trust-scorecard-download.html";
+      const body = values
+        ? `${values}\n\nScorecard link: ${scorecardUrl}`
+        : `I requested the Dashboard Trust & Decision Clarity Scorecard.\n\nScorecard link: ${scorecardUrl}`;
+      window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  });
+}
+
+function setupProtectedEmailLinks() {
+  document.querySelectorAll("[data-mail-user][data-mail-domain]").forEach((link) => {
+    const recipient = `${link.dataset.mailUser}@${link.dataset.mailDomain}`;
+    const subject = link.dataset.mailSubject || "Parallax Data Lab Inquiry";
+    link.setAttribute("href", `mailto:${recipient}?subject=${encodeURIComponent(subject)}`);
+  });
+}
+
+function setupPowerBiEmbedPlaceholder() {
+  document.querySelectorAll("[data-power-bi-embed-placeholder]").forEach((shell) => {
+    const toggle = shell.querySelector("[data-power-bi-preview-toggle]");
+    const notes = shell.querySelector(".power-bi-report-notes");
+
+    if (!toggle || !notes) {
+      return;
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = notes.hasAttribute("hidden");
+      notes.toggleAttribute("hidden", !isOpen);
+      toggle.setAttribute("aria-pressed", String(isOpen));
+      toggle.textContent = isOpen ? "Hide Embed Notes" : "Show Embed Notes";
+    });
+  });
+}
+
+function setupOfferingMenuGroups() {
+  document.querySelectorAll(".nav-menu-hierarchy .nav-menu-group").forEach((group) => {
+    let groupCloseTimer = null;
+
+    const openGroup = () => {
+      window.clearTimeout(groupCloseTimer);
+      group.setAttribute("open", "");
+    };
+
+    const closeGroup = () => {
+      window.clearTimeout(groupCloseTimer);
+      groupCloseTimer = window.setTimeout(() => {
+        if (!group.matches(":hover") && !group.matches(":focus-within")) {
+          group.removeAttribute("open");
+        }
+      }, 360);
+    };
+
+    group.addEventListener("mouseenter", openGroup);
+    group.addEventListener("mouseleave", closeGroup);
+    group.addEventListener("focusin", openGroup);
+
+    group.addEventListener("focusout", () => {
+      window.setTimeout(closeGroup, 0);
+    });
+
+    group.querySelector("summary")?.addEventListener("click", () => {
+      window.setTimeout(() => {
+        if (!group.open && (group.matches(":hover") || group.matches(":focus-within"))) {
+          group.setAttribute("open", "");
+        }
+      }, 0);
+    });
+  });
+}
+
 setupActiveNavigation();
-window.addEventListener('hashchange', setupActiveNavigation);
+setupProtectedEmailLinks();
+setupPowerBiEmbedPlaceholder();
+setupOfferingMenuGroups();
+setupLocalFormFallbacks();
+setupShareLinkCopy();
+setupScorecardSubmissionArchive();
+setupInsightFilters();
+setupScorecardPersonalization();
+window.addEventListener("hashchange", setupActiveNavigation);
