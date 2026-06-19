@@ -5,6 +5,8 @@
 # Shared asset rewrites for clean URL pages using relative paths
 /:slug/home.css /home.css 200
 /:slug/home.js /home.js 200
+/:slug/decision-workspace.css /decision-workspace.css 200
+/:slug/decision-workspace.js /decision-workspace.js 200
 /:slug/assets/* /assets/:splat 200
 /:slug/favicon.svg /favicon.svg 200
 /:slug/favicon.ico /favicon.ico 200
@@ -37,6 +39,7 @@
 /dashboard-trust-scorecard-download /dashboard-trust-scorecard-download/ 301
 /analytics-health-check /analytics-health-check/ 301
 /decision-system-reset /decision-system-reset/ 301
+/decision-workspace /decision-workspace/ 301
 /fractional-analytics /fractional-analytics/ 301
 /power-bi-consultant-cincinnati /power-bi-consultant-cincinnati/ 301
 /business-intelligence-consultant-cincinnati /business-intelligence-consultant-cincinnati/ 301
@@ -81,6 +84,7 @@
 /dashboard-trust-scorecard-download.html /dashboard-trust-scorecard-download/ 301
 /analytics-health-check.html /analytics-health-check/ 301
 /decision-system-reset.html /decision-system-reset/ 301
+/decision-workspace.html /decision-workspace/ 301
 /fractional-analytics.html /fractional-analytics/ 301
 /power-bi-consultant-cincinnati.html /power-bi-consultant-cincinnati/ 301
 /business-intelligence-consultant-cincinnati.html /business-intelligence-consultant-cincinnati/ 301
@@ -119,6 +123,7 @@
 
 # Homepage cleanup
 /index.html / 301
+/decision-workspace/ /decision-workspace.html 200
 /expertise /expertise/ 301
 /expertise.html /expertise/ 301
 /kpi-reporting-consulting /kpi-reporting-consulting/ 301

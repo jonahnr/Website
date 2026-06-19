@@ -31,6 +31,10 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `dashboard-trust-scorecard.html` - Optional lead magnet page that lets visitors score the five trust dimensions first, shows a live weakest-area result, then submits through the `/api/scorecard-submit` backend to open the working scorecard.
 - `dashboard-trust-scorecard-download.html` - Interactive printable scorecard page with five 1-5 scored dimensions, five evidence checks per dimension that can drive scoring, diagnostic snapshot, compact evidence notes, tailored guidance, and print/PDF buttons.
 - `decision-system-reset.html` - Decision System Reset service page.
+- `decision-workspace.html` - Prototype client login/sign-up workspace for org-scoped decision, metric, dashboard, recommendation, user, and export artifacts.
+- `decision-workspace-backend-plan.md` - Production auth/database migration plan for the workspace.
+- `decision-workspace-schema.sql` - Draft Postgres/Supabase schema for organizations, users, memberships, artifacts, and audit events.
+- `decision-workspace-api-contract.md` - API route, payload, permission, and deletion behavior contract for wiring the workspace to a backend.
 - `fractional-analytics.html` - Fractional Analytics Consulting page.
 - `about.html` - About page and founder context.
 - `privacy-policy.html` - Privacy policy for analytics, forms, scheduling, and contact data.
@@ -63,6 +67,51 @@ The site includes:
 - Decision System Reset and Fractional Analytics Consulting pages for deeper offer detail.
 - Intelligence Lab examples framed as proof/example work rather than the primary conversion path.
 - About page with consistent logo navigation and founder positioning.
+- Decision Workspace prototype with demo Parallax admin access, org-scoped access, local user creation, metric ownership map, decision map, dashboard trust register, recommendation action plan, and printable Decision System Reset artifact.
+
+## Decision Workspace Prototype
+
+Open locally at:
+
+```text
+http://127.0.0.1:8014/decision-workspace.html
+```
+
+The workspace defaults to Sign up so a first-time organization can create an org admin account. Returning demo accounts:
+
+- Parallax admin: `admin@parallaxdatalab.com` / `parallax-admin`
+- Org admin: `alex@acmeops.com` / `decision123`
+- Contributor: `morgan@acmeops.com` / `decision123`
+- Viewer: `taylor@northstar.com` / `decision123`
+
+The current workspace is a static prototype. It stores orgs, users, and artifacts in browser `localStorage` and stores the active session in `sessionStorage`. It is useful for product testing and sales demos, but it is not production authentication. Before using it with real client data, replace the local demo auth with a real backend/auth layer such as Supabase, Clerk, Auth0, Cloudflare Access, or a custom Cloudflare Pages/Workers backend.
+
+Current workspace artifacts:
+
+- Recommendation Action Plan
+- Metric Ownership Map
+- Decision Map
+- Dashboard Trust Register
+- Users and org access
+- Printable Decision System Reset export
+
+Recent workspace capabilities:
+
+- Site-wide Log in and Sign up controls point into the Decision Workspace, with Sign up as the default for first-time users.
+- Sign up requires password confirmation, then creates a new organization and first org admin in the local prototype.
+- Workspace forms include hover/focus help prompts on each field so users know what to enter.
+- Parallax admins can delete the active organization only after two confirmations in the prototype.
+- Dashboard names can link to a report URL.
+- Dashboards include reporting source/platform and workspace/location.
+- Decisions include concrete decision options, criteria, and current/default option.
+- Editable rows include delete actions for permitted users.
+- Viewer users remain read-only.
+
+Production prep files:
+
+- `decision-workspace-backend-plan.md`
+- `decision-workspace-api-contract.md`
+- `decision-workspace-schema.sql`
 
 ## Important Links
 
@@ -152,6 +201,7 @@ Before publishing, make sure these files and folders are committed and pushed:
 - `index.html`
 - `how-we-help.html`
 - `intelligence-lab.html`
+- `decision-workspace.html`
 - `our-offerings.html`
 - `analytics-health-check.html`
 - `decision-system-reset.html`
