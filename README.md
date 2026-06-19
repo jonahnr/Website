@@ -67,9 +67,9 @@ The site includes:
 - Decision System Reset and Fractional Analytics Consulting pages for deeper offer detail.
 - Intelligence Lab examples framed as proof/example work rather than the primary conversion path.
 - About page with consistent logo navigation and founder positioning.
-- Decision Workspace prototype with demo Parallax admin access, org-scoped access, local user creation, metric ownership map, decision map, dashboard trust register, recommendation action plan, and printable Decision System Reset artifact.
+- Decision Workspace with Supabase email/password authentication, verified account creation, password recovery, metric ownership map, decision map, dashboard trust register, recommendation action plan, and printable Decision System Reset artifact.
 
-## Decision Workspace Prototype
+## Decision Workspace
 
 Open locally at:
 
@@ -77,14 +77,16 @@ Open locally at:
 http://127.0.0.1:8014/decision-workspace.html
 ```
 
-The workspace defaults to Sign up so a first-time organization can create an org admin account. Returning demo accounts:
+The workspace defaults to Sign up so a first-time organization can create an account. Authentication, email verification, persistent sessions, login, logout, password-reset emails, and password updates run through Supabase Auth. There are no browser-stored demo passwords or published demo accounts.
 
-- Parallax admin: `admin@parallaxdatalab.com` / `parallax-admin`
-- Org admin: `alex@acmeops.com` / `decision123`
-- Contributor: `morgan@acmeops.com` / `decision123`
-- Viewer: `taylor@northstar.com` / `decision123`
+Supabase Auth deployment settings must include:
 
-The current workspace is a static prototype. It stores orgs, users, and artifacts in browser `localStorage` and stores the active session in `sessionStorage`. It is useful for product testing and sales demos, but it is not production authentication. Before using it with real client data, replace the local demo auth with a real backend/auth layer such as Supabase, Clerk, Auth0, Cloudflare Access, or a custom Cloudflare Pages/Workers backend.
+- Site URL: `https://parallaxdatalab.com`
+- Allowed redirect URL: `https://parallaxdatalab.com/decision-workspace/`
+- A production SMTP provider and sender identity for verification and password-recovery delivery
+- Recovery email template link using Supabase's confirmation URL variable
+
+Workspace artifacts currently remain isolated in browser `localStorage` under the authenticated Supabase user ID. Move artifact persistence to the supplied Postgres schema and row-level security policies before storing sensitive client data or sharing one organization workspace between multiple users.
 
 Current workspace artifacts:
 
@@ -98,9 +100,9 @@ Current workspace artifacts:
 Recent workspace capabilities:
 
 - Site-wide Log in and Sign up controls point into the Decision Workspace, with Sign up as the default for first-time users.
-- Sign up requires password confirmation, then creates a new organization and first org admin in the local prototype.
+- Sign up requires password confirmation and Supabase email verification, then initializes the authenticated user's organization workspace.
 - Login and sign-up render Google reCAPTCHA v2 and verify its token through `/api/verify-recaptcha`. Configure the server-only `RECAPTCHA_SECRET_KEY` environment variable in the deployment platform; never commit the secret key to this repository.
-- Login includes a Forgot password action that calls Supabase password reset when Supabase Auth is available.
+- Forgot password sends a Supabase recovery email; the recovery return state now lets the user choose and save a new password before returning to login.
 - Workspace forms include hover/focus help prompts on each field so users know what to enter.
 - Parallax admins can delete the active organization only after two confirmations in the prototype.
 - Dashboard names can link to a report URL.

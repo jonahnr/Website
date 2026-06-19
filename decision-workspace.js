@@ -1,6 +1,6 @@
 (function () {
-  const storageKey = "parallaxDecisionWorkspace.v1";
-  const sessionKey = "parallaxDecisionWorkspace.session";
+  const storageKeyBase = "parallaxDecisionWorkspace.customer.v1";
+  let storageKey = `${storageKeyBase}.signed-out`;
 
   const fieldSets = {
     recommendations: [
@@ -57,8 +57,7 @@
     users: [
       ["name", "Name", "text", true],
       ["email", "Email", "email", true],
-      ["role", "Role", "select", true, ["Org Admin", "Owner", "Contributor", "Viewer"]],
-      ["password", "Temporary password", "text", true]
+      ["role", "Role", "select", true, ["Org Admin", "Owner", "Contributor", "Viewer"]]
     ]
   };
 
@@ -150,13 +149,13 @@
     issues: "Capture known trust, ownership, definition, refresh, or duplication problems.",
     action: "Choose whether the dashboard should stay, be repaired, merged, or retired.",
     email: "Use the user's work email address.",
-    role: "Choose the access level this person should have in the organization workspace.",
-    password: "Create a temporary password for this prototype user."
+    role: "Choose the access level this person should have in the organization workspace."
   };
 
   const state = {
     data: loadData(),
-    session: loadSession(),
+    session: null,
+    authUser: null,
     authMode: initialAuthMode(),
     activeTab: "home",
     editing: null
@@ -168,40 +167,17 @@
 
   function initialAuthMode() {
     const mode = new URLSearchParams(window.location.search).get("auth");
-    return mode === "login" ? "login" : "signup";
+    return mode === "login" ? "login" : mode === "recovery" ? "recovery" : "signup";
   }
 
   function defaultData() {
-    const org1 = "org-acme";
-    const org2 = "org-northstar";
-    const users = [
-      { id: "u-admin", orgId: null, name: "Jonah / Parallax Admin", email: "admin@parallaxdatalab.com", password: "parallax-admin", role: "Parallax Admin" },
-      { id: "u-alex", orgId: org1, name: "Alex Rivera", email: "alex@acmeops.com", password: "decision123", role: "Org Admin" },
-      { id: "u-morgan", orgId: org1, name: "Morgan Lee", email: "morgan@acmeops.com", password: "decision123", role: "Contributor" },
-      { id: "u-taylor", orgId: org2, name: "Taylor Grant", email: "taylor@northstar.com", password: "decision123", role: "Viewer" }
-    ];
-
     return {
-      organizations: [
-        { id: org1, name: "Acme Operations Group", industry: "Distribution and field services" },
-        { id: org2, name: "Northstar Manufacturing", industry: "Manufacturing" }
-      ],
-      users,
-      recommendations: [
-        { id: id("rec"), orgId: org1, title: "Assign owners to the five executive KPIs", why: "Leaders currently debate definitions before they can discuss action.", ownerId: "u-alex", priority: "High", effort: "Small", status: "In progress", dueDate: "2026-07-10", related: "Metric Ownership Map", evidence: "Current KPI list and recurring leadership meeting agenda", nextStep: "Confirm one accountable owner and one finance/data contributor per metric." },
-        { id: id("rec"), orgId: org1, title: "Retire duplicate weekly operations reports", why: "Three versions of the same weekly report are creating reconciliation work.", ownerId: "u-morgan", priority: "High", effort: "Medium", status: "Not started", dueDate: "2026-07-17", related: "Dashboard Trust Register", evidence: "Screenshots or links for each duplicate report", nextStep: "Identify the report of record and mark the other two for retirement." }
-      ],
-      metrics: [
-        { id: id("met"), orgId: org1, name: "On-time completion rate", definition: "Percent of scheduled jobs completed within the committed service window.", ownerId: "u-alex", contributors: "Operations, Dispatch, Finance", source: "Service platform", logic: "Completed on time / completed jobs", refresh: "Weekly", decision: "Where to add capacity or change routing", disputes: "Exception handling for customer reschedules", trust: "Needs review" },
-        { id: id("met"), orgId: org1, name: "Gross margin by customer", definition: "Customer revenue less labor, materials, and direct service costs.", ownerId: "u-morgan", contributors: "Finance, Sales Ops", source: "ERP + payroll export", logic: "Revenue - direct costs", refresh: "Monthly", decision: "Which accounts require pricing or service model changes", disputes: "Labor allocation logic", trust: "Disputed" }
-      ],
-      decisions: [
-        { id: id("dec"), orgId: org1, name: "Weekly capacity adjustment", ownerId: "u-alex", cadence: "Weekly", metrics: "On-time completion rate, backlog, overtime hours", options: "Approve overtime; rebalance routes; defer low-priority work; add temporary vendor capacity", criteria: "Use overtime when backlog is short-term. Rebalance routes when one region is below 90% on-time completion. Add vendor capacity when backlog exceeds two weeks.", selectedOption: "Rebalance routes first", trigger: "On-time rate below 92% for two weeks", forum: "Monday operations review", escalation: "Ops director decides routing or overtime changes", friction: "Leaders see the lagging metric but not the capacity trigger." }
-      ],
-      dashboards: [
-        { id: id("dash"), orgId: org1, name: "Weekly Ops Scorecard", reportUrl: "https://app.powerbi.com/groups/sample/reports/weekly-ops-scorecard", audience: "COO, operations directors, finance", ownerId: "u-morgan", platform: "Power BI", location: "Executive Operations workspace", purpose: "Show capacity, service reliability, and margin pressure by region.", sources: "Service platform, ERP, payroll export", trustScore: "3", issues: "Definitions are good, but cost allocation and exception handling need approval.", action: "Fix", priority: "High" },
-        { id: id("dash"), orgId: org1, name: "Legacy Regional Report", reportUrl: "", audience: "Regional managers", ownerId: "u-alex", platform: "Excel / Sheets", location: "Regional manager shared drive", purpose: "Old weekly report used before the scorecard existed.", sources: "Spreadsheet export", trustScore: "2", issues: "Duplicates several scorecard metrics with different filters.", action: "Merge", priority: "Medium" }
-      ]
+      organizations: [],
+      users: [],
+      recommendations: [],
+      metrics: [],
+      decisions: [],
+      dashboards: []
     };
   }
 
@@ -245,19 +221,11 @@
   }
 
   function loadSession() {
-    try {
-      return JSON.parse(sessionStorage.getItem(sessionKey));
-    } catch (error) {
-      return null;
-    }
+    return null;
   }
 
   function saveSession() {
-    if (state.session) {
-      sessionStorage.setItem(sessionKey, JSON.stringify(state.session));
-    } else {
-      sessionStorage.removeItem(sessionKey);
-    }
+    return state.session;
   }
 
   function currentUser() {
@@ -297,9 +265,71 @@
     return state.data.users.find((user) => user.id === userId)?.name || "Unassigned";
   }
 
-  function boot() {
+  async function boot() {
     setupEvents();
+    await initializeAuth();
     render();
+  }
+
+  async function initializeAuth() {
+    const client = window.decisionWorkspaceSupabase?.client;
+    const error = document.querySelector("[data-login-error]");
+    if (!client?.auth) {
+      if (error) error.textContent = "Secure account access is temporarily unavailable. Please try again shortly.";
+      return;
+    }
+
+    client.auth.onAuthStateChange((event, session) => {
+      if (event === "PASSWORD_RECOVERY") {
+        state.authMode = "recovery";
+        state.authUser = session?.user || null;
+        state.session = null;
+        render();
+        return;
+      }
+      if (event === "SIGNED_OUT") {
+        state.authUser = null;
+        state.session = null;
+        render();
+      }
+    });
+
+    const { data, error: sessionError } = await client.auth.getSession();
+    if (sessionError) {
+      if (error) error.textContent = sessionError.message;
+      return;
+    }
+    if (data?.session?.user && state.authMode !== "recovery") {
+      hydrateAuthenticatedWorkspace(data.session.user);
+    }
+  }
+
+  function hydrateAuthenticatedWorkspace(authUser, signupContext = {}) {
+    state.authUser = authUser;
+    storageKey = `${storageKeyBase}.${authUser.id}`;
+    state.data = loadData();
+
+    let user = state.data.users.find((item) => item.id === authUser.id);
+    if (!user) {
+      const metadata = authUser.user_metadata || {};
+      const orgId = id("org");
+      user = {
+        id: authUser.id,
+        orgId,
+        name: signupContext.name || metadata.full_name || metadata.name || authUser.email,
+        email: authUser.email,
+        role: "Org Admin"
+      };
+      state.data.organizations.push({
+        id: orgId,
+        name: signupContext.orgName || metadata.organization_name || "My organization",
+        industry: "Client workspace"
+      });
+      state.data.users.push(user);
+      saveData();
+    }
+
+    state.session = { userId: user.id, activeOrgId: user.orgId };
   }
 
   function setupEvents() {
@@ -307,17 +337,13 @@
     document.querySelectorAll("[data-auth-mode]").forEach((button) => {
       button.addEventListener("click", () => {
         setAuthMode(button.dataset.authMode || "signup");
-        if (currentUser()) {
-          state.session = null;
-          saveSession();
-          render();
-        }
         document.querySelector("[data-view='login']")?.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
-    document.querySelector("[data-logout]")?.addEventListener("click", () => {
+    document.querySelector("[data-logout]")?.addEventListener("click", async () => {
+      await window.decisionWorkspaceSupabase?.client?.auth?.signOut();
       state.session = null;
-      saveSession();
+      state.authUser = null;
       render();
     });
     document.querySelector("[data-reset-demo]")?.addEventListener("click", () => {
@@ -359,27 +385,33 @@
     const form = new FormData(event.currentTarget);
     const email = String(form.get("email") || "").trim().toLowerCase();
     const password = String(form.get("password") || "");
-    if (!(await validateRecaptcha())) return;
+    const error = document.querySelector("[data-login-error]");
 
-    if (state.authMode === "signup") {
-      handleSignup(form, email, password);
+    if (state.authMode === "recovery") {
+      await handlePasswordUpdate(form);
       return;
     }
 
-    const user = state.data.users.find((item) => item.email.toLowerCase() === email && item.password === password);
-    const error = document.querySelector("[data-login-error]");
-    if (!user) {
-      if (error) error.textContent = "Email or password did not match a demo account.";
+    if (!(await validateRecaptcha(state.authMode === "signup" ? "signup" : "login"))) return;
+
+    if (state.authMode === "signup") {
+      await handleSignup(form, email, password);
+      return;
+    }
+
+    const client = window.decisionWorkspaceSupabase?.client;
+    const { data, error: loginError } = await client.auth.signInWithPassword({ email, password });
+    if (loginError || !data?.user) {
+      if (error) error.textContent = loginError?.message || "Unable to log in with those credentials.";
       resetRecaptcha();
       return;
     }
-    const activeOrgId = user.role === "Parallax Admin" ? state.data.organizations[0]?.id : user.orgId;
-    state.session = { userId: user.id, activeOrgId };
-    saveSession();
+    hydrateAuthenticatedWorkspace(data.user);
+    if (error) error.textContent = "";
     render();
   }
 
-  function handleSignup(form, email, password) {
+  async function handleSignup(form, email, password) {
     const error = document.querySelector("[data-login-error]");
     const orgName = String(form.get("orgName") || "").trim();
     const name = String(form.get("name") || "").trim();
@@ -393,48 +425,82 @@
       resetRecaptcha();
       return;
     }
-    if (state.data.users.some((item) => item.email.toLowerCase() === email)) {
-      if (error) error.textContent = "That email already has an account. Switch to log in.";
+    const redirectTo = authReturnUrl("login");
+    const client = window.decisionWorkspaceSupabase?.client;
+    const { data, error: signupError } = await client.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: redirectTo,
+        data: { full_name: name, organization_name: orgName }
+      }
+    });
+    if (signupError) {
+      if (error) error.textContent = signupError.message;
       resetRecaptcha();
       return;
     }
-    const orgId = id("org");
-    const userId = id("user");
-    state.data.organizations.push({ id: orgId, name: orgName, industry: "New client workspace" });
-    state.data.users.push({ id: userId, orgId, name, email, password, role: "Org Admin" });
-    state.data.recommendations.push({
-      id: id("rec"),
-      orgId,
-      title: "Review Parallax recommendations and assign owners",
-      why: "A recommendation only changes operations when a person owns the next step.",
-      ownerId: userId,
-      priority: "High",
-      effort: "Small",
-      status: "Not started",
-      dueDate: "",
-      related: "Decision System Reset",
-      evidence: "Fit Check, Health Check, or Reset notes",
-      nextStep: "Add the first three recommendations and assign a responsible owner."
-    });
-    saveData();
-    state.session = { userId, activeOrgId: orgId };
-    saveSession();
-    if (error) error.textContent = "";
-    render();
+    if (data?.session?.user) {
+      hydrateAuthenticatedWorkspace(data.session.user, { name, orgName });
+      if (error) error.textContent = "";
+      render();
+      return;
+    }
+    if (error) error.textContent = "Account created. Check your email to verify the account, then log in.";
+    setAuthMode("login", { preserveMessage: true });
   }
 
-  async function validateRecaptcha() {
+  async function handlePasswordUpdate(form) {
     const error = document.querySelector("[data-login-error]");
-    const token = window.grecaptcha?.getResponse?.() || "";
-    if (!token) {
-      if (error) error.textContent = "Complete the reCAPTCHA before continuing.";
+    const password = String(form.get("password") || "");
+    const confirmPassword = String(form.get("confirmPassword") || "");
+    if (password.length < 8) {
+      if (error) error.textContent = "Use at least 8 characters for the new password.";
+      return;
+    }
+    if (password !== confirmPassword) {
+      if (error) error.textContent = "Password and confirmation must match.";
+      return;
+    }
+    const client = window.decisionWorkspaceSupabase?.client;
+    const { error: updateError } = await client.auth.updateUser({ password });
+    if (updateError) {
+      if (error) error.textContent = updateError.message;
+      return;
+    }
+    await client.auth.signOut();
+    state.authMode = "login";
+    renderAuthMode();
+    if (error) error.textContent = "Password updated. Log in with your new password.";
+    window.history.replaceState({}, "", `${window.location.pathname}?auth=login`);
+  }
+
+  function authReturnUrl(mode) {
+    if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+      const cleanPath = window.location.pathname.includes("/decision-workspace/")
+        ? window.location.pathname
+        : "/decision-workspace/";
+      return `${window.location.origin}${cleanPath}?auth=${mode}`;
+    }
+    return `https://parallaxdatalab.com/decision-workspace/?auth=${mode}`;
+  }
+
+  async function validateRecaptcha(action) {
+    const error = document.querySelector("[data-login-error]");
+    if (!window.grecaptcha?.execute) {
+      if (error) error.textContent = "reCAPTCHA is still loading. Please try again in a moment.";
       return false;
     }
     try {
+      const token = await new Promise((resolve, reject) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha.execute("6LezmygtAAAAAO3kIUbPdYzX20TgkJ7T1WLLNKFN", { action }).then(resolve, reject);
+        });
+      });
       const response = await fetch("/api/verify-recaptcha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token })
+        body: JSON.stringify({ token, action })
       });
       const result = await response.json();
       if (!response.ok || !result.success) {
@@ -452,7 +518,7 @@
   }
 
   function resetRecaptcha() {
-    window.grecaptcha?.reset?.();
+    return;
   }
 
   async function handleForgotPassword() {
@@ -462,17 +528,18 @@
       if (error) error.textContent = "Enter your email first, then request a password reset.";
       return;
     }
+    if (!(await validateRecaptcha("password_reset"))) return;
     const supabaseClient = window.decisionWorkspaceSupabase?.client;
     if (!supabaseClient?.auth?.resetPasswordForEmail) {
       if (error) error.textContent = "Password reset is available after Supabase Auth is fully deployed.";
       return;
     }
-    const redirectTo = `${window.location.origin}${window.location.pathname}?auth=login`;
+    const redirectTo = authReturnUrl("recovery");
     const { error: resetError } = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo });
     if (error) {
       error.textContent = resetError
         ? resetError.message
-        : "Password reset email sent. Check your inbox.";
+        : "Password reset email sent. Open the link in that email to choose a new password.";
     }
   }
 
@@ -490,31 +557,39 @@
     renderReport();
   }
 
-  function setAuthMode(mode) {
-    state.authMode = mode === "login" ? "login" : "signup";
+  function setAuthMode(mode, options = {}) {
+    state.authMode = mode === "login" ? "login" : mode === "recovery" ? "recovery" : "signup";
     const error = document.querySelector("[data-login-error]");
-    if (error) error.textContent = "";
+    if (error && !options.preserveMessage) error.textContent = "";
     resetRecaptcha();
     renderAuthMode();
   }
 
   function renderAuthMode() {
-    const isSignup = state.authMode !== "login";
+    const isRecovery = state.authMode === "recovery";
+    const isSignup = state.authMode === "signup";
     const eyebrow = document.querySelector("[data-auth-eyebrow]");
     const title = document.querySelector("[data-auth-title]");
-    const copy = document.querySelector("[data-auth-copy]");
+    const copy = document.querySelector(".workspace-login-copy");
     const submit = document.querySelector("[data-auth-submit]");
-    if (eyebrow) eyebrow.textContent = isSignup ? "New client workspace" : "Returning workspace";
-    if (title) title.textContent = isSignup ? "Create your reporting action workspace." : "Log in to your decision workspace.";
+    if (eyebrow) eyebrow.textContent = isRecovery ? "Secure password recovery" : isSignup ? "New client workspace" : "Returning workspace";
+    if (title) title.textContent = isRecovery ? "Choose your new password." : isSignup ? "Create your reporting action workspace." : "Log in to your decision workspace.";
     if (copy) {
-      copy.textContent = isSignup
+      copy.textContent = isRecovery
+        ? "Enter and confirm a new password for your account."
+        : isSignup
         ? "Start an organization account to turn recommendations into owned decisions, metrics, dashboards, and action plans."
-        : "Access your organization workspace or Parallax admin view.";
+        : "Access your organization workspace securely.";
     }
     document.querySelector("[data-signup-fields]")?.classList.toggle("is-hidden", !isSignup);
-    document.querySelector("[data-confirm-password-wrap]")?.classList.toggle("is-hidden", !isSignup);
-    if (submit) submit.textContent = isSignup ? "Create organization" : "Log in";
-    document.querySelector("[data-forgot-password]")?.classList.toggle("is-hidden", isSignup);
+    document.querySelector("[data-email-wrap]")?.classList.toggle("is-hidden", isRecovery);
+    document.querySelector("[data-confirm-password-wrap]")?.classList.toggle("is-hidden", !(isSignup || isRecovery));
+    document.querySelector("[data-human-check]")?.classList.toggle("is-hidden", isRecovery);
+    document.querySelector(".workspace-auth-toggle")?.classList.toggle("is-hidden", isRecovery);
+    const passwordLabel = document.querySelector("[data-password-label]");
+    if (passwordLabel) passwordLabel.textContent = isRecovery ? "New password" : "Password";
+    if (submit) submit.textContent = isRecovery ? "Set new password" : isSignup ? "Create organization" : "Log in";
+    document.querySelector("[data-forgot-password]")?.classList.toggle("is-hidden", isSignup || isRecovery);
     document.querySelectorAll("[data-auth-mode]").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.authMode === state.authMode);
     });
@@ -522,14 +597,14 @@
     const password = document.querySelector("[name='password']");
     const confirmPassword = document.querySelector("[name='confirmPassword']");
     if (email && password) {
-      email.value = isSignup ? "client@example.com" : "admin@parallaxdatalab.com";
-      password.value = isSignup ? "decision123" : "parallax-admin";
-      password.setAttribute("autocomplete", isSignup ? "new-password" : "current-password");
+      if (!isRecovery) email.value = "";
+      password.value = "";
+      password.setAttribute("autocomplete", isSignup || isRecovery ? "new-password" : "current-password");
       password.type = "password";
     }
     if (confirmPassword) {
-      confirmPassword.value = isSignup ? "decision123" : "";
-      confirmPassword.required = isSignup;
+      confirmPassword.value = "";
+      confirmPassword.required = isSignup || isRecovery;
     }
   }
 

@@ -7,8 +7,8 @@
 <meta name="description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="canonical" href="https://parallaxdatalab.com/decision-workspace/"/>
-<link href="home.css?v=145" rel="stylesheet"/>
-<link href="decision-workspace.css?v=3" rel="stylesheet"/>
+<link href="home.css?v=146" rel="stylesheet"/>
+<link href="decision-workspace.css?v=5" rel="stylesheet"/>
 <meta content="website" property="og:type"/>
 <meta content="Parallax Data Lab" property="og:site_name"/>
 <meta property="og:title" content="Decision Workspace | Parallax Data Lab"/>
@@ -95,39 +95,38 @@
       <form action="#" class="workspace-login-form" data-login-form method="post">
         <div class="workspace-signup-fields" data-signup-fields>
           <label>Organization name
-            <input autocomplete="organization" name="orgName" type="text" value="New Client Organization"/>
+            <input autocomplete="organization" name="orgName" type="text"/>
           </label>
           <label>Your name
-            <input autocomplete="name" name="name" type="text" value="Client Admin"/>
+            <input autocomplete="name" name="name" type="text"/>
           </label>
         </div>
-        <label>Email
-          <input autocomplete="email" name="email" required type="email" value="client@example.com"/>
+        <label data-email-wrap>Email
+          <input autocomplete="email" name="email" required type="email"/>
         </label>
-        <label>Password
-          <input autocomplete="new-password" name="password" required type="password" value="decision123"/>
+        <label><span data-password-label>Password</span>
+          <input autocomplete="new-password" name="password" required type="password"/>
         </label>
         <label data-confirm-password-wrap>Confirm password
-          <input autocomplete="new-password" name="confirmPassword" required type="password" value="decision123"/>
+          <input autocomplete="new-password" name="confirmPassword" required type="password"/>
         </label>
         <div class="workspace-human-check" data-human-check>
-          <div class="g-recaptcha" data-sitekey="6LezmygtAAAAAO3kIUbPdYzX20TgkJ7T1WLLNKFN" data-theme="dark"></div>
-          <p>Google reCAPTCHA is required before login or sign up.</p>
+          <p>Protected by Google reCAPTCHA. Google’s Privacy Policy and Terms of Service apply.</p>
         </div>
         <button class="workspace-primary-button" data-auth-submit type="submit">Create organization</button>
         <button class="workspace-link-button is-hidden" data-forgot-password type="button">Forgot password?</button>
         <p class="workspace-login-error" data-login-error role="alert"></p>
       </form>
     </div>
-    <aside class="workspace-demo-panel" aria-label="Demo credentials">
-      <h2>Demo access</h2>
-      <dl>
-        <div><dt>Parallax admin</dt><dd>admin@parallaxdatalab.com / parallax-admin</dd></div>
-        <div><dt>Org admin</dt><dd>alex@acmeops.com / decision123</dd></div>
-        <div><dt>Contributor</dt><dd>morgan@acmeops.com / decision123</dd></div>
-        <div><dt>Viewer</dt><dd>taylor@northstar.com / decision123</dd></div>
-      </dl>
-      <p>This prototype stores data in this browser so you can test the workflow before wiring production authentication and a database.</p>
+    <aside class="workspace-demo-panel workspace-access-panel" aria-label="Secure workspace access">
+      <p class="workspace-eyebrow">Secure client access</p>
+      <h2>Your reporting work, behind a real account.</h2>
+      <ul>
+        <li>Email verification for new accounts</li>
+        <li>Secure Supabase password authentication</li>
+        <li>Self-service password recovery</li>
+      </ul>
+      <p>Need help accessing an existing workspace? Email <a href="mailto:jonahnr@gmail.com?subject=Decision%20Workspace%20Access">Parallax Data Lab</a>.</p>
     </aside>
   </section>
 
@@ -159,7 +158,6 @@
           <p class="workspace-eyebrow" data-active-tab-label>Home</p>
           <div class="workspace-page-title" data-page-title>Reporting system command center</div>
         </div>
-        <button class="workspace-secondary-button" data-reset-demo type="button">Reset demo data</button>
       </div>
 
       <section class="workspace-tab-panel" data-tab-panel="home">
@@ -246,13 +244,13 @@
   </div>
 </div>
 
-<script src="home.js?v=143"></script>
+<script src="home.js?v=144"></script>
 
-<script async defer src="https://www.google.com/recaptcha/api.js"></script>
+<script async defer src="https://www.google.com/recaptcha/api.js?render=6LezmygtAAAAAO3kIUbPdYzX20TgkJ7T1WLLNKFN"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="decision-workspace-supabase.js?v=1"></script>
+<script src="decision-workspace-supabase.js?v=2"></script>
 
-<script src="decision-workspace.js?v=4"></script>
+<script src="decision-workspace.js?v=7"></script>
 </body>
 </html>

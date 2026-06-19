@@ -1335,6 +1335,16 @@ function setupProtectedEmailLinks() {
     const subject = link.dataset.mailSubject || "Parallax Data Lab Inquiry";
     link.setAttribute("href", `mailto:${recipient}?subject=${encodeURIComponent(subject)}`);
   });
+
+  document.querySelectorAll(".site-footer-contact-email").forEach((link) => {
+    const email = "jonahnr@gmail.com";
+    const subject = "Parallax Data Lab Inquiry";
+    const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}`;
+    link.setAttribute("href", composeUrl);
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+    link.setAttribute("aria-label", "Email Parallax Data Lab in Gmail");
+  });
 }
 
 function setupHealthOutputFlipCards() {

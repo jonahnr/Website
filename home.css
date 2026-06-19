@@ -26974,6 +26974,18 @@ body {
   object-fit: cover;
 }
 
+/* Footer contact alignment and a consistent, actionable email affordance. */
+.site-footer-refined .site-footer-contact .site-footer-contact-email {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: fit-content !important;
+  min-height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.35 !important;
+}
+
 .technology-stack-copy .page-kicker {
   margin-bottom: 10px;
   color: #7a4f00;

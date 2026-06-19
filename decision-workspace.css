@@ -14,6 +14,18 @@
   margin-left: auto;
 }
 
+.workspace-auth-actions .site-auth-link:not(.is-primary) {
+  color: #f8fbff;
+  border-color: rgba(125, 211, 252, 0.52);
+  background: rgba(30, 112, 232, 0.14);
+}
+
+.workspace-auth-actions .site-auth-link.is-primary {
+  color: #06112e;
+  border-color: #f7c94b;
+  background: #f7c94b;
+}
+
 .workspace-shell {
   width: min(1460px, calc(100% - 32px));
   margin: 0 auto;
@@ -119,6 +131,11 @@
   color: #06112e;
 }
 
+.workspace-auth-toggle button[data-auth-mode="login"].is-active {
+  color: #ffffff;
+  background: #1e70e8;
+}
+
 .workspace-human-check {
   display: grid;
   gap: 6px;
@@ -126,19 +143,6 @@
   border: 1px solid rgba(247, 201, 75, 0.28);
   border-radius: 6px;
   background: rgba(247, 201, 75, 0.08);
-}
-
-.workspace-human-check .g-recaptcha {
-  min-height: 78px;
-}
-
-@media (max-width: 390px) {
-  .workspace-human-check .g-recaptcha {
-    transform: scale(0.84);
-    transform-origin: left top;
-    width: 255px;
-    margin-bottom: -12px;
-  }
 }
 
 .workspace-human-check p {
@@ -337,6 +341,37 @@
 .workspace-demo-panel dd {
   margin: 5px 0 0;
   color: rgba(248, 251, 255, 0.72);
+}
+
+.workspace-access-panel ul {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workspace-access-panel li {
+  position: relative;
+  padding: 13px 14px 13px 42px;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(248, 251, 255, 0.82);
+  font-weight: 800;
+}
+
+.workspace-access-panel li::before {
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  content: "✓";
+  color: #f7c94b;
+  font-weight: 950;
+}
+
+.workspace-access-panel a {
+  color: #93c5fd;
+  font-weight: 900;
 }
 
 .workspace-app {
