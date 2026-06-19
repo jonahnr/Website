@@ -5,8 +5,6 @@
 # Shared asset rewrites for clean URL pages using relative paths
 /:slug/home.css /home.css 200
 /:slug/home.js /home.js 200
-/:slug/decision-workspace.css /decision-workspace.css 200
-/:slug/decision-workspace.js /decision-workspace.js 200
 /:slug/assets/* /assets/:splat 200
 /:slug/favicon.svg /favicon.svg 200
 /:slug/favicon.ico /favicon.ico 200
