@@ -26958,25 +26958,23 @@ body {
   box-shadow: 0 24px 70px rgba(2, 8, 28, 0.24);
 }
 
-.technology-wordmarks {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 38px) 18px;
-  align-items: center;
+.technology-logo-crop {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+  border-radius: 8px;
+  background: #f4f4f4;
 }
 
-.technology-wordmarks span {
-  color: #6d7480;
-  font-size: clamp(0.9rem, 1.7vw, 1.35rem);
-  font-weight: 850;
-  line-height: 1;
-  text-align: center;
-  letter-spacing: -0.03em;
-  opacity: 0.82;
-}
-
-.technology-wordmarks span:nth-child(3n + 2) {
-  font-weight: 650;
+.technology-logo-crop img {
+  position: absolute;
+  top: -15.2%;
+  left: -50%;
+  display: block;
+  width: 301.4%;
+  max-width: none;
+  height: auto;
 }
 
 .technology-stack-copy .page-kicker {
@@ -27027,13 +27025,8 @@ body {
     padding-top: 92px;
   }
 
-  .hero-expertise-links,
-  .technology-wordmarks {
+  .hero-expertise-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .technology-wordmarks span:last-child {
-    grid-column: 1 / -1;
   }
 }
 
