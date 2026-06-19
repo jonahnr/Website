@@ -214,6 +214,51 @@ HOME_MAIN = r'''<main class="home-page">
 </article>
 </div>
 </section>
+<section aria-labelledby="case-study-title" class="case-study-section reveal-card">
+<div class="case-study-heading">
+<p class="page-kicker">Anonymized case studies</p>
+<h2 id="case-study-title">Specific reporting problems, concrete operating results.</h2>
+<p>These examples are anonymized to protect client context, but they show the type of measurable change Parallax is built to create.</p>
+</div>
+<div class="case-study-grid">
+<article>
+<div class="case-study-artifact" aria-label="Dashboard consolidation visual"><span>14 reports</span><span>4 executive views</span><span>1 governed revenue definition</span></div>
+<p class="page-kicker">Industrial software company</p>
+<h3>Consolidated overlapping revenue reporting into an executive view.</h3>
+<dl>
+<div><dt>Problem</dt><dd>Leadership reviewed 14 overlapping dashboards with conflicting revenue logic.</dd></div>
+<div><dt>Changed</dt><dd>Mapped dashboard owners, removed duplicate views, and established one governed revenue definition.</dd></div>
+<div><dt>Timeline</dt><dd>3 weeks from reporting inventory to executive-ready view.</dd></div>
+<div><dt>Result</dt><dd>Reduced recurring manual reporting by approximately 12 hours per month.</dd></div>
+</dl>
+<blockquote>"The dashboard conversation finally moved from reconciliation to action."</blockquote>
+</article>
+<article>
+<div class="case-study-artifact case-study-artifact-alt" aria-label="Metric ownership visual"><span>5 disputed KPIs</span><span>5 named owners</span><span>1 weekly action cadence</span></div>
+<p class="page-kicker">Field services operations</p>
+<h3>Turned KPI debates into an owned weekly decision cadence.</h3>
+<dl>
+<div><dt>Problem</dt><dd>Regional leaders used different definitions for completion rate, backlog, and margin.</dd></div>
+<div><dt>Changed</dt><dd>Defined each KPI, named business owners, and tied thresholds to staffing and routing decisions.</dd></div>
+<div><dt>Timeline</dt><dd>2 weeks for metric ownership and decision map.</dd></div>
+<div><dt>Result</dt><dd>Cut weekly review prep from multiple spreadsheet checks to one governed operating view.</dd></div>
+</dl>
+<blockquote>"The value was making ownership visible, not just making another report."</blockquote>
+</article>
+<article>
+<div class="case-study-artifact case-study-artifact-third" aria-label="Automation result visual"><span>Manual exports</span><span>Automated refresh</span><span>Trusted scorecard</span></div>
+<p class="page-kicker">B2B services team</p>
+<h3>Replaced recurring reporting assembly with a trusted scorecard workflow.</h3>
+<dl>
+<div><dt>Problem</dt><dd>Managers copied CRM, finance, and delivery data into recurring status reports.</dd></div>
+<div><dt>Changed</dt><dd>Automated the refresh path, documented definitions, and rebuilt the scorecard around decisions.</dd></div>
+<div><dt>Timeline</dt><dd>4 weeks from source review to working scorecard.</dd></div>
+<div><dt>Result</dt><dd>Freed roughly 8 to 10 hours per month and reduced "which number is right?" follow-ups.</dd></div>
+</dl>
+<blockquote>"The scorecard became something managers trusted enough to use every week."</blockquote>
+</article>
+</div>
+</section>
 <section class="failure-section reveal-card">
 <div class="failure-heading">
 <p class="page-kicker">Patterns we see</p>

@@ -7,7 +7,7 @@
 <meta name="description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="canonical" href="https://parallaxdatalab.com/decision-workspace/"/>
-<link href="../home.css?v=143" rel="stylesheet"/>
+<link href="../home.css?v=144" rel="stylesheet"/>
 <link href="../decision-workspace.css?v=3" rel="stylesheet"/>
 <meta content="website" property="og:type"/>
 <meta content="Parallax Data Lab" property="og:site_name"/>
@@ -110,7 +110,14 @@
         <label data-confirm-password-wrap>Confirm password
           <input autocomplete="new-password" name="confirmPassword" required type="password" value="decision123"/>
         </label>
+        <div class="workspace-human-check" data-human-check>
+          <label><span data-human-question>Human check</span>
+            <input autocomplete="off" inputmode="numeric" name="humanAnswer" required type="text"/>
+          </label>
+          <p>Required before login or sign up.</p>
+        </div>
         <button class="workspace-primary-button" data-auth-submit type="submit">Create organization</button>
+        <button class="workspace-link-button is-hidden" data-forgot-password type="button">Forgot password?</button>
         <p class="workspace-login-error" data-login-error role="alert"></p>
       </form>
     </div>
