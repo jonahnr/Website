@@ -158,19 +158,12 @@
     data: loadData(),
     session: loadSession(),
     authMode: initialAuthMode(),
-    humanChallenge: createHumanChallenge(),
     activeTab: "home",
     editing: null
   };
 
   function id(prefix) {
     return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
-  }
-
-  function createHumanChallenge() {
-    const left = Math.floor(Math.random() * 8) + 2;
-    const right = Math.floor(Math.random() * 7) + 3;
-    return { left, right, answer: left + right };
   }
 
   function initialAuthMode() {
@@ -361,12 +354,12 @@
     document.querySelector("[data-forgot-password]")?.addEventListener("click", handleForgotPassword);
   }
 
-  function handleLogin(event) {
+  async function handleLogin(event) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const email = String(form.get("email") || "").trim().toLowerCase();
     const password = String(form.get("password") || "");
-    if (!validateHumanCheck(form)) return;
+    if (!(await validateRecaptcha())) return;
 
     if (state.authMode === "signup") {
       handleSignup(form, email, password);
@@ -377,7 +370,7 @@
     const error = document.querySelector("[data-login-error]");
     if (!user) {
       if (error) error.textContent = "Email or password did not match a demo account.";
-      resetHumanCheck();
+      resetRecaptcha();
       return;
     }
     const activeOrgId = user.role === "Parallax Admin" ? state.data.organizations[0]?.id : user.orgId;
@@ -397,12 +390,12 @@
     }
     if (password !== confirmPassword) {
       if (error) error.textContent = "Password and confirmation must match.";
-      resetHumanCheck();
+      resetRecaptcha();
       return;
     }
     if (state.data.users.some((item) => item.email.toLowerCase() === email)) {
       if (error) error.textContent = "That email already has an account. Switch to log in.";
-      resetHumanCheck();
+      resetRecaptcha();
       return;
     }
     const orgId = id("org");
@@ -430,21 +423,36 @@
     render();
   }
 
-  function validateHumanCheck(form) {
+  async function validateRecaptcha() {
     const error = document.querySelector("[data-login-error]");
-    const answer = Number(String(form.get("humanAnswer") || "").trim());
-    if (answer !== state.humanChallenge.answer) {
-      if (error) error.textContent = "Human check did not match. Try the new question.";
-      resetHumanCheck();
+    const token = window.grecaptcha?.getResponse?.() || "";
+    if (!token) {
+      if (error) error.textContent = "Complete the reCAPTCHA before continuing.";
       return false;
     }
-    if (error) error.textContent = "";
-    return true;
+    try {
+      const response = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token })
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        if (error) error.textContent = "reCAPTCHA verification failed. Please try again.";
+        resetRecaptcha();
+        return false;
+      }
+      if (error) error.textContent = "";
+      return true;
+    } catch (verificationError) {
+      if (error) error.textContent = "reCAPTCHA could not be verified. Please try again shortly.";
+      resetRecaptcha();
+      return false;
+    }
   }
 
-  function resetHumanCheck() {
-    state.humanChallenge = createHumanChallenge();
-    renderHumanCheck();
+  function resetRecaptcha() {
+    window.grecaptcha?.reset?.();
   }
 
   async function handleForgotPassword() {
@@ -486,7 +494,7 @@
     state.authMode = mode === "login" ? "login" : "signup";
     const error = document.querySelector("[data-login-error]");
     if (error) error.textContent = "";
-    resetHumanCheck();
+    resetRecaptcha();
     renderAuthMode();
   }
 
@@ -507,7 +515,6 @@
     document.querySelector("[data-confirm-password-wrap]")?.classList.toggle("is-hidden", !isSignup);
     if (submit) submit.textContent = isSignup ? "Create organization" : "Log in";
     document.querySelector("[data-forgot-password]")?.classList.toggle("is-hidden", isSignup);
-    renderHumanCheck();
     document.querySelectorAll("[data-auth-mode]").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.authMode === state.authMode);
     });
@@ -524,13 +531,6 @@
       confirmPassword.value = isSignup ? "decision123" : "";
       confirmPassword.required = isSignup;
     }
-  }
-
-  function renderHumanCheck() {
-    const question = document.querySelector("[data-human-question]");
-    const answer = document.querySelector("[name='humanAnswer']");
-    if (question) question.textContent = `Human check: what is ${state.humanChallenge.left} + ${state.humanChallenge.right}?`;
-    if (answer) answer.value = "";
   }
 
   function renderShell() {

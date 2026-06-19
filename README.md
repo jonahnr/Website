@@ -99,7 +99,7 @@ Recent workspace capabilities:
 
 - Site-wide Log in and Sign up controls point into the Decision Workspace, with Sign up as the default for first-time users.
 - Sign up requires password confirmation, then creates a new organization and first org admin in the local prototype.
-- Login and sign-up require a simple human-check challenge in the prototype; use Cloudflare Turnstile or Supabase CAPTCHA before real client launch.
+- Login and sign-up render Google reCAPTCHA v2 and verify its token through `/api/verify-recaptcha`. Configure the server-only `RECAPTCHA_SECRET_KEY` environment variable in the deployment platform; never commit the secret key to this repository.
 - Login includes a Forgot password action that calls Supabase password reset when Supabase Auth is available.
 - Workspace forms include hover/focus help prompts on each field so users know what to enter.
 - Parallax admins can delete the active organization only after two confirmations in the prototype.
