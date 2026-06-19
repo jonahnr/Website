@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Decision Workspace | Parallax Data Lab</title>
+<meta name="description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="canonical" href="https://parallaxdatalab.com/decision-workspace/"/>
+<link href="../home.css?v=143" rel="stylesheet"/>
+<link href="../decision-workspace.css?v=3" rel="stylesheet"/>
+<meta content="website" property="og:type"/>
+<meta content="Parallax Data Lab" property="og:site_name"/>
+<meta property="og:title" content="Decision Workspace | Parallax Data Lab"/>
+<meta property="og:description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
+<meta property="og:url" content="https://parallaxdatalab.com/decision-workspace/"/>
+<meta property="og:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Decision Workspace | Parallax Data Lab"/>
+<meta name="twitter:description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
+<meta name="twitter:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
+<meta name="theme-color" content="#0b1745"/>
+<link rel="icon" href="../favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" href="../favicon.png"/>
+<link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+</head>
+<body class="workspace-body">
+<canvas aria-hidden="true" id="constellation"></canvas>
+<header aria-label="Parallax site navigation" class="site-header workspace-header">
+<a aria-label="Parallax Data Lab home" class="site-brand" href="../index.html"><img alt="Parallax Data Lab logo" src="../assets/parallax_data_lab_original_transparent.png" decoding="async"></a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="mobile-nav-toggle" type="button"><span></span><span></span><span></span><em>Menu</em></button>
+<nav id="primary-navigation" aria-label="Primary navigation">
+<a href="../index.html">Home</a>
+<a href="../how-we-help.html">How We Help</a>
+<div class="nav-dropdown nav-dropdown-offerings nav-dropdown-wide">
+<a class="nav-dropdown-toggle" href="../our-offerings.html">Our Offerings</a>
+<div aria-label="Offerings and expertise sections" class="nav-dropdown-menu nav-menu-hierarchy nav-menu-offerings">
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Core Offerings</summary>
+<a class="nav-menu-parent" href="../our-offerings.html"><span>Offerings Overview</span></a>
+<a class="nav-menu-child nav-menu-scorecard nav-menu-path-00" href="../dashboard-trust-scorecard.html"><span>Diagnostic Scorecard</span><em>Optional</em></a>
+<a class="nav-menu-child nav-menu-fit-check nav-menu-path-01" href="../free-fit-check.html"><span>Free Fit Check</span><em>Free</em></a>
+<a class="nav-menu-child nav-menu-path-02" href="../analytics-health-check.html"><span>Analytics Health Check</span></a>
+<a class="nav-menu-child nav-menu-path-03" href="../decision-system-reset.html"><span>Decision System Reset</span></a>
+<a class="nav-menu-child nav-menu-path-04" href="../fractional-analytics.html"><span>Fractional Analytics</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Expertise</summary>
+<a class="nav-menu-parent" href="../expertise.html"><span>Expertise Overview</span></a>
+<a class="nav-menu-child" href="../power-bi-consultant-cincinnati.html"><span>Power BI Consulting</span></a>
+<a class="nav-menu-child" href="../kpi-reporting-consulting.html"><span>KPI Reporting</span></a>
+<a class="nav-menu-child" href="../reporting-automation-consulting.html"><span>Reporting Automation</span></a>
+<a class="nav-menu-child" href="../data-quality-review.html"><span>Data Quality Review</span></a>
+<a class="nav-menu-child" href="../dashboard-trust-governance.html"><span>Dashboard Trust &amp; Governance</span></a>
+<a class="nav-menu-child" href="../business-intelligence-consultant-cincinnati.html"><span>Data Analytics Consulting Cincinnati</span></a>
+</details>
+</div>
+</div>
+<div class="nav-dropdown nav-dropdown-intelligence">
+<a class="nav-dropdown-toggle" href="../intelligence-lab.html">Intelligence Lab</a>
+<div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Overview</summary>
+<a class="nav-menu-parent" href="../intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Lab Initiatives</summary>
+<a class="nav-menu-child" href="../intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
+<a class="nav-menu-child" href="../intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
+<a class="nav-menu-child" href="../intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
+<a class="nav-menu-child" href="../intelligence-lab.html#predictive-risk-intelligence"><span>Predictive Risk Intelligence</span></a>
+</details>
+</div>
+</div>
+<a href="../insights.html">Insights</a>
+<a href="../about.html">About</a>
+<a class="is-active" href="../decision-workspace.html">Workspace</a>
+</nav>
+<div class="site-auth-actions workspace-auth-actions" data-auth-actions>
+  <button class="site-auth-link" data-auth-mode="login" type="button">Log in</button>
+  <button class="site-auth-link is-primary" data-auth-mode="signup" type="button">Sign up</button>
+</div>
+</header>
+
+<main class="workspace-shell" id="workspace-app">
+  <section class="workspace-login" data-view="login">
+    <div class="workspace-login-panel">
+      <p class="workspace-eyebrow" data-auth-eyebrow>New client workspace</p>
+      <h1 data-auth-title>Create your reporting action workspace.</h1>
+      <p class="workspace-login-copy" data-auth-copy">Start an organization account to turn recommendations into owned decisions, metrics, dashboards, and action plans.</p>
+      <div class="workspace-auth-toggle" aria-label="Authentication mode">
+        <button class="is-active" data-auth-mode="signup" type="button">Sign up</button>
+        <button data-auth-mode="login" type="button">Log in</button>
+      </div>
+      <form action="#" class="workspace-login-form" data-login-form method="post">
+        <div class="workspace-signup-fields" data-signup-fields>
+          <label>Organization name
+            <input autocomplete="organization" name="orgName" type="text" value="New Client Organization"/>
+          </label>
+          <label>Your name
+            <input autocomplete="name" name="name" type="text" value="Client Admin"/>
+          </label>
+        </div>
+        <label>Email
+          <input autocomplete="email" name="email" required type="email" value="client@example.com"/>
+        </label>
+        <label>Password
+          <input autocomplete="new-password" name="password" required type="password" value="decision123"/>
+        </label>
+        <label data-confirm-password-wrap>Confirm password
+          <input autocomplete="new-password" name="confirmPassword" required type="password" value="decision123"/>
+        </label>
+        <button class="workspace-primary-button" data-auth-submit type="submit">Create organization</button>
+        <p class="workspace-login-error" data-login-error role="alert"></p>
+      </form>
+    </div>
+    <aside class="workspace-demo-panel" aria-label="Demo credentials">
+      <h2>Demo access</h2>
+      <dl>
+        <div><dt>Parallax admin</dt><dd>admin@parallaxdatalab.com / parallax-admin</dd></div>
+        <div><dt>Org admin</dt><dd>alex@acmeops.com / decision123</dd></div>
+        <div><dt>Contributor</dt><dd>morgan@acmeops.com / decision123</dd></div>
+        <div><dt>Viewer</dt><dd>taylor@northstar.com / decision123</dd></div>
+      </dl>
+      <p>This prototype stores data in this browser so you can test the workflow before wiring production authentication and a database.</p>
+    </aside>
+  </section>
+
+  <section class="workspace-app is-hidden" data-view="app">
+    <aside class="workspace-sidebar">
+      <div>
+        <p class="workspace-eyebrow">Decision Workspace</p>
+        <h2 data-active-org-name>Organization</h2>
+        <p data-active-user-summary></p>
+      </div>
+      <label class="workspace-org-switch is-hidden" data-org-switch-wrap>Org access
+        <select data-org-switch></select>
+      </label>
+      <nav class="workspace-tabs" aria-label="Workspace sections">
+        <button class="is-active" data-tab-target="home" type="button">Home</button>
+        <button data-tab-target="recommendations" type="button">Recommendations</button>
+        <button data-tab-target="metrics" type="button">Metrics</button>
+        <button data-tab-target="decisions" type="button">Decisions</button>
+        <button data-tab-target="dashboards" type="button">Dashboards</button>
+        <button data-tab-target="users" type="button">Users</button>
+        <button data-tab-target="export" type="button">Export</button>
+      </nav>
+      <button class="workspace-secondary-button" data-logout type="button">Log out</button>
+    </aside>
+
+    <section class="workspace-content">
+      <div class="workspace-topbar">
+        <div>
+          <p class="workspace-eyebrow" data-active-tab-label>Home</p>
+          <div class="workspace-page-title" data-page-title>Reporting system command center</div>
+        </div>
+        <button class="workspace-secondary-button" data-reset-demo type="button">Reset demo data</button>
+      </div>
+
+      <section class="workspace-tab-panel" data-tab-panel="home">
+        <div class="workspace-kpi-grid" data-kpi-grid></div>
+        <div class="workspace-two-column">
+          <article class="workspace-card">
+            <h2>Next actions</h2>
+            <div data-next-actions></div>
+          </article>
+          <article class="workspace-card">
+            <h2>Decision system health</h2>
+            <div class="workspace-health-meter" data-health-meter></div>
+            <p class="workspace-muted">Health improves when recommendations are closed, metrics have owners, decisions have supporting metrics, and dashboards have a clear keep/fix/merge/retire action.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace-tab-panel is-hidden" data-tab-panel="recommendations">
+        <div class="workspace-section-head">
+          <div><h2>Recommendation Action Plan</h2><p>Turn Parallax suggestions into owned execution.</p></div>
+          <button class="workspace-primary-button" data-open-form="recommendations" type="button">Add recommendation</button>
+        </div>
+        <div class="workspace-table-wrap"><table data-table="recommendations"></table></div>
+      </section>
+
+      <section class="workspace-tab-panel is-hidden" data-tab-panel="metrics">
+        <div class="workspace-section-head">
+          <div><h2>Metric Ownership Map</h2><p>Clarify what each KPI means, who owns it, and where it is used.</p></div>
+          <button class="workspace-primary-button" data-open-form="metrics" type="button">Add metric</button>
+        </div>
+        <div class="workspace-table-wrap"><table data-table="metrics"></table></div>
+      </section>
+
+      <section class="workspace-tab-panel is-hidden" data-tab-panel="decisions">
+        <div class="workspace-section-head">
+          <div><h2>Decision Map</h2><p>Connect recurring decisions to owners, cadence, triggers, and supporting metrics.</p></div>
+          <button class="workspace-primary-button" data-open-form="decisions" type="button">Add decision</button>
+        </div>
+        <div class="workspace-table-wrap"><table data-table="decisions"></table></div>
+      </section>
+
+      <section class="workspace-tab-panel is-hidden" data-tab-panel="dashboards">
+        <div class="workspace-section-head">
+          <div><h2>Dashboard Trust Register</h2><p>Decide which reports to keep, fix, merge, or retire.</p></div>
+          <button class="workspace-primary-button" data-open-form="dashboards" type="button">Add dashboard</button>
+        </div>
+        <div class="workspace-table-wrap"><table data-table="dashboards"></table></div>
+      </section>
+
+      <section class="workspace-tab-panel is-hidden" data-tab-panel="users">
+        <div class="workspace-section-head">
+          <div><h2>Users and org access</h2><p>Admin users can create people for the current organization. Parallax admins can switch organizations.</p></div>
+          <button class="workspace-primary-button" data-open-form="users" type="button">Add user</button>
+        </div>
+        <article class="workspace-org-admin is-hidden" data-org-admin-panel>
+          <div>
+            <p class="workspace-eyebrow">Parallax admin</p>
+            <h3>Organization danger zone</h3>
+            <p class="workspace-muted">Delete the active organization only after confirming twice. This removes its users, recommendations, metrics, decisions, and dashboards from the local prototype.</p>
+          </div>
+          <button class="workspace-row-action is-danger" data-delete-org type="button">Delete active org</button>
+        </article>
+        <div class="workspace-table-wrap"><table data-table="users"></table></div>
+      </section>
+
+      <section class="workspace-tab-panel is-hidden" data-tab-panel="export">
+        <div class="workspace-section-head">
+          <div><h2>Decision System Reset Export</h2><p>Generate a client-ready reset artifact from the workspace.</p></div>
+          <button class="workspace-primary-button" data-print-report type="button">Print / save PDF</button>
+        </div>
+        <article class="workspace-report" data-export-report></article>
+      </section>
+    </section>
+  </section>
+</main>
+
+<div class="workspace-modal is-hidden" data-modal aria-hidden="true">
+  <div class="workspace-modal-panel" role="dialog" aria-modal="true" aria-labelledby="workspace-modal-title">
+    <div class="workspace-modal-head">
+      <h2 id="workspace-modal-title" data-modal-title>Add item</h2>
+      <button aria-label="Close" class="workspace-icon-button" data-close-modal type="button">x</button>
+    </div>
+    <form action="#" data-item-form class="workspace-item-form" method="post"></form>
+  </div>
+</div>
+
+<script src="../home.js?v=143"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../decision-workspace-supabase.js?v=1"></script>
+
+<script src="../decision-workspace.js?v=3"></script>
+</body>
+</html>

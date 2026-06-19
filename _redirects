@@ -121,7 +121,6 @@
 
 # Homepage cleanup
 /index.html / 301
-/decision-workspace/ /decision-workspace.html 200
 /expertise /expertise/ 301
 /expertise.html /expertise/ 301
 /kpi-reporting-consulting /kpi-reporting-consulting/ 301
