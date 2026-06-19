@@ -99,4 +99,5 @@ Do not invite real clients until all of these are true:
 - Viewer/editor/admin roles are enforced server-side.
 - Deletions are soft-deleted or audit logged.
 - Password reset or magic link flow exists.
+- Cloudflare Turnstile, hCaptcha, or Supabase CAPTCHA is verified server-side for signup and sensitive auth actions.
 - Exported artifacts do not expose another organization's data.

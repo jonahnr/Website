@@ -158,12 +158,19 @@
     data: loadData(),
     session: loadSession(),
     authMode: initialAuthMode(),
+    humanChallenge: createHumanChallenge(),
     activeTab: "home",
     editing: null
   };
 
   function id(prefix) {
     return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  }
+
+  function createHumanChallenge() {
+    const left = Math.floor(Math.random() * 8) + 2;
+    const right = Math.floor(Math.random() * 7) + 3;
+    return { left, right, answer: left + right };
   }
 
   function initialAuthMode() {
@@ -351,6 +358,7 @@
     });
     document.querySelector("[data-print-report]")?.addEventListener("click", () => window.print());
     document.querySelector("[data-delete-org]")?.addEventListener("click", deleteActiveOrg);
+    document.querySelector("[data-forgot-password]")?.addEventListener("click", handleForgotPassword);
   }
 
   function handleLogin(event) {
@@ -358,6 +366,7 @@
     const form = new FormData(event.currentTarget);
     const email = String(form.get("email") || "").trim().toLowerCase();
     const password = String(form.get("password") || "");
+    if (!validateHumanCheck(form)) return;
 
     if (state.authMode === "signup") {
       handleSignup(form, email, password);
@@ -368,6 +377,7 @@
     const error = document.querySelector("[data-login-error]");
     if (!user) {
       if (error) error.textContent = "Email or password did not match a demo account.";
+      resetHumanCheck();
       return;
     }
     const activeOrgId = user.role === "Parallax Admin" ? state.data.organizations[0]?.id : user.orgId;
@@ -387,10 +397,12 @@
     }
     if (password !== confirmPassword) {
       if (error) error.textContent = "Password and confirmation must match.";
+      resetHumanCheck();
       return;
     }
     if (state.data.users.some((item) => item.email.toLowerCase() === email)) {
       if (error) error.textContent = "That email already has an account. Switch to log in.";
+      resetHumanCheck();
       return;
     }
     const orgId = id("org");
@@ -418,6 +430,44 @@
     render();
   }
 
+  function validateHumanCheck(form) {
+    const error = document.querySelector("[data-login-error]");
+    const answer = Number(String(form.get("humanAnswer") || "").trim());
+    if (answer !== state.humanChallenge.answer) {
+      if (error) error.textContent = "Human check did not match. Try the new question.";
+      resetHumanCheck();
+      return false;
+    }
+    if (error) error.textContent = "";
+    return true;
+  }
+
+  function resetHumanCheck() {
+    state.humanChallenge = createHumanChallenge();
+    renderHumanCheck();
+  }
+
+  async function handleForgotPassword() {
+    const error = document.querySelector("[data-login-error]");
+    const email = String(document.querySelector("[name='email']")?.value || "").trim().toLowerCase();
+    if (!email) {
+      if (error) error.textContent = "Enter your email first, then request a password reset.";
+      return;
+    }
+    const supabaseClient = window.decisionWorkspaceSupabase?.client;
+    if (!supabaseClient?.auth?.resetPasswordForEmail) {
+      if (error) error.textContent = "Password reset is available after Supabase Auth is fully deployed.";
+      return;
+    }
+    const redirectTo = `${window.location.origin}${window.location.pathname}?auth=login`;
+    const { error: resetError } = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo });
+    if (error) {
+      error.textContent = resetError
+        ? resetError.message
+        : "Password reset email sent. Check your inbox.";
+    }
+  }
+
   function render() {
     const loggedIn = Boolean(currentUser() && activeOrg());
     document.querySelector('[data-view="login"]')?.classList.toggle("is-hidden", loggedIn);
@@ -436,6 +486,7 @@
     state.authMode = mode === "login" ? "login" : "signup";
     const error = document.querySelector("[data-login-error]");
     if (error) error.textContent = "";
+    resetHumanCheck();
     renderAuthMode();
   }
 
@@ -455,6 +506,8 @@
     document.querySelector("[data-signup-fields]")?.classList.toggle("is-hidden", !isSignup);
     document.querySelector("[data-confirm-password-wrap]")?.classList.toggle("is-hidden", !isSignup);
     if (submit) submit.textContent = isSignup ? "Create organization" : "Log in";
+    document.querySelector("[data-forgot-password]")?.classList.toggle("is-hidden", isSignup);
+    renderHumanCheck();
     document.querySelectorAll("[data-auth-mode]").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.authMode === state.authMode);
     });
@@ -471,6 +524,13 @@
       confirmPassword.value = isSignup ? "decision123" : "";
       confirmPassword.required = isSignup;
     }
+  }
+
+  function renderHumanCheck() {
+    const question = document.querySelector("[data-human-question]");
+    const answer = document.querySelector("[name='humanAnswer']");
+    if (question) question.textContent = `Human check: what is ${state.humanChallenge.left} + ${state.humanChallenge.right}?`;
+    if (answer) answer.value = "";
   }
 
   function renderShell() {
