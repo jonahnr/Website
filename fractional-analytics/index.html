@@ -7,7 +7,7 @@
 <title>Fractional Analytics Leadership | Parallax Data Lab</title>
 <meta name="description" content="Ongoing senior analytics ownership and governance that maintains and evolves the decision system as priorities shift, without hiring full-time leadership yet."/>
 <link rel="canonical" href="https://parallaxdatalab.com/fractional-analytics/"/>
-<link href="../home.css?v=146" rel="stylesheet"/>
+<link href="../home.css?v=163" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="../favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" href="../favicon.png"/>
@@ -117,7 +117,7 @@
 <a class="nav-dropdown-toggle" href="../our-offerings.html">Our Offerings</a>
 <div aria-label="Offerings and expertise sections" class="nav-dropdown-menu nav-menu-hierarchy nav-menu-offerings">
 <details class="nav-menu-group">
-<summary class="nav-menu-section-title">Core Offerings</summary>
+<summary class="nav-menu-section-title">Core engagement paths</summary>
 <a class="nav-menu-parent" href="../our-offerings.html"><span>Offerings Overview</span></a>
 <a class="nav-menu-child nav-menu-scorecard nav-menu-path-00" href="../dashboard-trust-scorecard.html"><span>Diagnostic Scorecard</span><em>Optional</em></a>
 <a class="nav-menu-child nav-menu-fit-check nav-menu-path-01" href="../free-fit-check.html"><span>Free Fit Check</span><em>Free</em></a>
@@ -126,14 +126,14 @@
 <a class="nav-menu-child nav-menu-path-04" href="../fractional-analytics.html"><span>Fractional Analytics</span></a>
 </details>
 <details class="nav-menu-group">
-<summary class="nav-menu-section-title">Expertise</summary>
+<summary class="nav-menu-section-title">Expertise by problem</summary>
 <a class="nav-menu-parent" href="../expertise.html"><span>Expertise Overview</span></a>
 <a class="nav-menu-child" href="../power-bi-consultant-cincinnati.html"><span>Power BI Consulting</span></a>
-<a class="nav-menu-child" href="../kpi-reporting-consulting.html"><span>KPI Reporting</span></a>
+<a class="nav-menu-child" href="../kpi-reporting-consulting.html"><span>KPI Strategy &amp; Executive Reporting</span></a>
 <a class="nav-menu-child" href="../reporting-automation-consulting.html"><span>Reporting Automation</span></a>
-<a class="nav-menu-child" href="../data-quality-review.html"><span>Data Quality Review</span></a>
-<a class="nav-menu-child" href="../dashboard-trust-governance.html"><span>Dashboard Trust &amp; Governance</span></a>
-<a class="nav-menu-child" href="../business-intelligence-consultant-cincinnati.html"><span>Data Analytics Consulting Cincinnati</span></a>
+<a class="nav-menu-child" href="../data-quality-review.html"><span>Data Quality &amp; Reporting Reliability</span></a>
+<a class="nav-menu-child" href="../dashboard-trust-governance.html"><span>BI Governance &amp; Dashboard Trust</span></a>
+<a class="nav-menu-child" href="../data-integration-analytics-architecture.html"><span>Data Integration &amp; Analytics Architecture</span></a>
 </details>
 </div>
 </div>
@@ -141,11 +141,11 @@
 <a class="nav-dropdown-toggle" href="../intelligence-lab.html">Intelligence Lab</a>
 <div aria-label="Intelligence Lab services" class="nav-dropdown-menu nav-dropdown-menu-intelligence nav-menu-hierarchy">
 <details class="nav-menu-group">
-<summary class="nav-menu-section-title">Overview</summary>
+<summary class="nav-menu-section-title">Intelligence Lab</summary>
 <a class="nav-menu-parent" href="../intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
 </details>
 <details class="nav-menu-group">
-<summary class="nav-menu-section-title">Lab Initiatives</summary>
+<summary class="nav-menu-section-title">Initiatives</summary>
 <a class="nav-menu-child" href="../intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
@@ -154,9 +154,15 @@
 </div>
 </div>
 <a href="../insights.html">Insights</a>
-<a href="../about.html">About</a>
+<div class="nav-dropdown nav-dropdown-about">
+<a class="nav-dropdown-toggle" href="../about.html">About</a>
+<div aria-label="About Parallax Data Lab" class="nav-dropdown-menu nav-menu-hierarchy nav-dropdown-menu-about">
+<a class="nav-menu-parent" href="../about.html"><span>About Parallax</span></a>
+<a class="nav-menu-child" href="../business-intelligence-consultant-cincinnati.html"><span>Cincinnati Analytics Consulting</span></a>
+</div>
+</div>
 </nav>
-<div class="site-auth-actions" data-site-auth-actions>
+<div class="site-auth-actions">
 <a class="site-auth-link" href="../decision-workspace.html?auth=login">Log in</a>
 <a class="site-auth-link is-primary" href="../decision-workspace.html?auth=signup">Sign up</a>
 </div>
@@ -262,7 +268,7 @@
 <span>01</span>
 <h3>Monthly decision system review</h3>
 <p>Review the highest-priority decisions, owners, triggers, and open follow-ups so reporting stays tied to action.</p>
-<strong>Typical output</strong>
+<strong class="monthly-output-label" tabindex="0" data-tooltip="The working documents updated during the monthly decision review—not a generic presentation deck.">Typical output</strong>
 <ul>
 <li>Decision inventory updates</li>
 <li>Owner and escalation cleanup</li>
@@ -273,7 +279,7 @@
 <span>02</span>
 <h3>Metric reliability and definition pass</h3>
 <p>Audit key metrics for drift, duplicated logic, unclear filters, and definitions that no longer match how the business operates.</p>
-<strong>Typical output</strong>
+<strong class="monthly-output-label" tabindex="0" data-tooltip="Specific definition changes, logic fixes, and trust risks documented so builders know what to change.">Typical output</strong>
 <ul>
 <li>Metric definition notes</li>
 <li>Logic fixes or cleanup requests</li>
@@ -284,7 +290,7 @@
 <span>03</span>
 <h3>Analytics priority backlog</h3>
 <p>Convert scattered reporting requests into a ranked backlog based on business value, urgency, complexity, and decision impact.</p>
-<strong>Typical output</strong>
+<strong class="monthly-output-label" tabindex="0" data-tooltip="A prioritized, scoped queue that tells the team what to build now, defer, or stop.">Typical output</strong>
 <ul>
 <li>Ranked analytics backlog</li>
 <li>Build vs defer recommendations</li>
@@ -295,7 +301,7 @@
 <span>04</span>
 <h3>Executive signal readout</h3>
 <p>Summarize what changed, why it matters, and which decisions need attention before leaders get buried in dashboards.</p>
-<strong>Typical output</strong>
+<strong class="monthly-output-label" tabindex="0" data-tooltip="A concise leadership brief that separates meaningful signals from routine dashboard movement.">Typical output</strong>
 <ul>
 <li>Signal summary</li>
 <li>Decision risks and blockers</li>
@@ -306,7 +312,7 @@
 <span>05</span>
 <h3>Action log and ownership follow-up</h3>
 <p>Track which actions were assigned, what moved, what stalled, and where escalation is needed to keep analytics useful.</p>
-<strong>Typical output</strong>
+<strong class="monthly-output-label" tabindex="0" data-tooltip="A live accountability record showing the action, owner, due point, blocker, and escalation status.">Typical output</strong>
 <ul>
 <li>Action register</li>
 <li>Owner follow-up notes</li>
@@ -317,7 +323,7 @@
 <span>06</span>
 <h3>Standards and enablement updates</h3>
 <p>Document the rules, naming conventions, metric decisions, and operating standards your team needs to keep the system stable.</p>
-<strong>Typical output</strong>
+<strong class="monthly-output-label" tabindex="0" data-tooltip="Reusable standards and enablement notes that help the internal team maintain the system consistently.">Typical output</strong>
 <ul>
 <li>Standards updates</li>
 <li>Team enablement notes</li>
@@ -374,7 +380,6 @@
 <section aria-labelledby="fractional-options-title" class="fractional-options-refined reveal-card pdl-engagement-shape-section">
 <p class="page-kicker">Engagement shape</p>
 <h2 id="fractional-options-title">The role flexes based on how much ownership your team needs.</h2>
-<p class="pdl-engagement-helper">Click or tap a card to flip it. The back side shows the role-specific context and what comes with that engagement shape.</p>
 <div aria-label="Fractional analytics engagement shape options" class="pdl-engagement-grid">
 <article aria-expanded="false" aria-label="Advisor engagement shape card" aria-pressed="false" class="pdl-flip-card" role="button" tabindex="0">
 <div class="pdl-flip-inner">
@@ -382,7 +387,7 @@
 <span class="pdl-flip-kicker">Advisor</span>
 <h3>Senior direction without taking over daily operations.</h3>
 <p>Best when your team needs sharper judgment, prioritization, standards, and a reliable outside lens.</p>
-<em>Flip for role example</em>
+<em>Hover to see a role example</em>
 </div>
 <div class="pdl-flip-face pdl-flip-back">
 <span class="pdl-flip-kicker">Advisor example</span>
@@ -401,17 +406,17 @@
 </ul>
 </div>
 </div>
-<em>Click to return to summary</em>
+<em>Move away to return to summary</em>
 </div>
 </div>
-<div aria-hidden="true" class="pdl-flip-back-failsafe" data-role="Advisor"><span class="pdl-flip-kicker">Advisor example</span><h3>Quarterly analytics direction without taking over execution.</h3><div class="pdl-example-grid"><div class="pdl-example-panel"><strong>Context</strong><p>A leadership team has dashboards and internal analysts, but the backlog keeps growing and no one is sure which analytics work should matter most.</p></div><div class="pdl-example-panel"><strong>What comes with it</strong><ul><li>Priority scoring for analytics requests</li><li>Metric definition and dashboard standards review</li><li>Leadership recommendation on what to fix, defer, or stop</li></ul></div></div><em>Click to return to summary</em></div></article>
+<div aria-hidden="true" class="pdl-flip-back-failsafe" data-role="Advisor"><span class="pdl-flip-kicker">Advisor example</span><h3>Quarterly analytics direction without taking over execution.</h3><div class="pdl-example-grid"><div class="pdl-example-panel"><strong>Context</strong><p>A leadership team has dashboards and internal analysts, but the backlog keeps growing and no one is sure which analytics work should matter most.</p></div><div class="pdl-example-panel"><strong>What comes with it</strong><ul><li>Priority scoring for analytics requests</li><li>Metric definition and dashboard standards review</li><li>Leadership recommendation on what to fix, defer, or stop</li></ul></div></div><em>Move away to return to summary</em></div></article>
 <article aria-expanded="false" aria-label="Operator engagement shape card" aria-pressed="false" class="pdl-flip-card" role="button" tabindex="0">
 <div class="pdl-flip-inner">
 <div class="pdl-flip-face pdl-flip-front">
 <span class="pdl-flip-kicker">Operator</span>
 <h3>Active support across cadence, metrics, and execution.</h3>
 <p>Best when analytics needs help moving from advice into repeatable operating discipline.</p>
-<em>Flip for role example</em>
+<em>Hover to see a role example</em>
 </div>
 <div class="pdl-flip-face pdl-flip-back">
 <span class="pdl-flip-kicker">Operator example</span>
@@ -430,17 +435,17 @@
 </ul>
 </div>
 </div>
-<em>Click to return to summary</em>
+<em>Move away to return to summary</em>
 </div>
 </div>
-<div aria-hidden="true" class="pdl-flip-back-failsafe" data-role="Operator"><span class="pdl-flip-kicker">Operator example</span><h3>Active operating support across cadence, metrics, and execution.</h3><div class="pdl-example-grid"><div class="pdl-example-panel"><strong>Context</strong><p>The team has recurring reporting issues, inconsistent follow-through, and too many loose requests moving through informal channels.</p></div><div class="pdl-example-panel"><strong>What comes with it</strong><ul><li>Weekly or biweekly analytics operating cadence</li><li>Ownership cleanup for definitions, blockers, and fixes</li><li>Managed action log, roadmap, and follow-up rhythm</li></ul></div></div><em>Click to return to summary</em></div></article>
+<div aria-hidden="true" class="pdl-flip-back-failsafe" data-role="Operator"><span class="pdl-flip-kicker">Operator example</span><h3>Active operating support across cadence, metrics, and execution.</h3><div class="pdl-example-grid"><div class="pdl-example-panel"><strong>Context</strong><p>The team has recurring reporting issues, inconsistent follow-through, and too many loose requests moving through informal channels.</p></div><div class="pdl-example-panel"><strong>What comes with it</strong><ul><li>Weekly or biweekly analytics operating cadence</li><li>Ownership cleanup for definitions, blockers, and fixes</li><li>Managed action log, roadmap, and follow-up rhythm</li></ul></div></div><em>Move away to return to summary</em></div></article>
 <article aria-expanded="false" aria-label="Embedded Partner engagement shape card" aria-pressed="false" class="pdl-flip-card" role="button" tabindex="0">
 <div class="pdl-flip-inner">
 <div class="pdl-flip-face pdl-flip-front">
 <span class="pdl-flip-kicker">Embedded Partner</span>
 <h3>Recurring analytics leadership integrated into how the business runs.</h3>
 <p>Best when the organization needs senior ownership close to leadership rhythms and decision workflows.</p>
-<em>Flip for role example</em>
+<em>Hover to see a role example</em>
 </div>
 <div class="pdl-flip-face pdl-flip-back">
 <span class="pdl-flip-kicker">Embedded Partner example</span>
@@ -459,13 +464,14 @@
 </ul>
 </div>
 </div>
-<em>Click to return to summary</em>
+<em>Move away to return to summary</em>
 </div>
 </div>
-<div aria-hidden="true" class="pdl-flip-back-failsafe" data-role="Embedded Partner"><span class="pdl-flip-kicker">Embedded Partner example</span><h3>Recurring senior analytics ownership inside leadership rhythms.</h3><div class="pdl-example-grid"><div class="pdl-example-panel"><strong>Context</strong><p>Leadership needs analytics close to operating decisions, but a full-time senior analytics leader is not the right move yet.</p></div><div class="pdl-example-panel"><strong>What comes with it</strong><ul><li>Recurring leadership readouts and decision support</li><li>Governance upkeep for metrics, owners, and standards</li><li>Ongoing roadmap alignment across priorities and reporting owners</li></ul></div></div><em>Click to return to summary</em></div></article>
+<div aria-hidden="true" class="pdl-flip-back-failsafe" data-role="Embedded Partner"><span class="pdl-flip-kicker">Embedded Partner example</span><h3>Recurring senior analytics ownership inside leadership rhythms.</h3><div class="pdl-example-grid"><div class="pdl-example-panel"><strong>Context</strong><p>Leadership needs analytics close to operating decisions, but a full-time senior analytics leader is not the right move yet.</p></div><div class="pdl-example-panel"><strong>What comes with it</strong><ul><li>Recurring leadership readouts and decision support</li><li>Governance upkeep for metrics, owners, and standards</li><li>Ongoing roadmap alignment across priorities and reporting owners</li></ul></div></div><em>Move away to return to summary</em></div></article>
 </div>
 </section>
 <section aria-labelledby="fractional-outcomes-title" class="fractional-outcomes-refined reveal-card">
+<img class="fractional-outcomes-growth" src="../assets/fractional-outcomes-growth.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
 <div>
 <p class="page-kicker">Outcomes</p>
 <h2 id="fractional-outcomes-title">Analytics becomes a managed operating discipline instead of a recurring scramble.</h2>
@@ -508,9 +514,10 @@
       <a href="../index.html">Home</a>
       <a href="../how-we-help.html">How We Help</a>
       <a href="../our-offerings.html">Offerings</a>
+      <a href="../expertise.html">Expertise</a>
       <a href="../insights.html">Insights</a>
       <a href="../about.html">About</a>
-      <a href="../about.html#contact-us">Contact</a>
+      <a href="../business-intelligence-consultant-cincinnati.html">Cincinnati Analytics Consulting</a>
       <a href="../privacy-policy.html">Privacy Policy</a>
     </nav>
     <nav aria-label="Footer core work" class="site-footer-col site-footer-core-work">
@@ -523,11 +530,13 @@
     </nav>
     <nav aria-label="Footer expertise" class="site-footer-col site-footer-intel">
       <h3>Expertise</h3>
+      <a href="../expertise.html">Expertise Overview</a>
       <a href="../power-bi-consultant-cincinnati.html">Power BI Consulting</a>
-      <a href="../business-intelligence-consultant-cincinnati.html">Data Analytics Consulting Cincinnati</a>
-      <a href="../power-bi-consultant-cincinnati.html#power-bi-kpi-reporting">KPI Reporting</a>
-      <a href="../our-offerings.html#reporting-automation">Reporting Automation</a>
-      <a href="../business-intelligence-consultant-cincinnati.html#cincinnati-bi-services-title">Data Quality Review</a>
+      <a href="../kpi-reporting-consulting.html">KPI Strategy &amp; Executive Reporting</a>
+      <a href="../reporting-automation-consulting.html">Reporting Automation</a>
+      <a href="../data-quality-review.html">Data Quality &amp; Reporting Reliability</a>
+      <a href="../dashboard-trust-governance.html">BI Governance &amp; Dashboard Trust</a>
+      <a href="../data-integration-analytics-architecture.html">Data Integration &amp; Analytics Architecture</a>
     </nav>
     <div class="site-footer-col site-footer-contact">
       <h3>Contact</h3>
@@ -545,8 +554,6 @@
   <div class="site-footer-bottom">
     <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
   </div>
-</footer><script src="../home.js?v=144"></script>
+</footer><script src="../home.js?v=163"></script>
 </body>
 </html>
-
-
