@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Positive analytics outcomes trend</title>
+  <desc id="desc">A rising line graph moving up and to the right across a subtle decision grid.</desc>
+  <defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#45beff"/><stop offset="1" stop-color="#ffd77a"/></linearGradient></defs>
+  <g fill="none" stroke="#7dd3fc" stroke-opacity=".18"><path d="M80 80v360M300 80v360M520 80v360M740 80v360M960 80v360M1180 80v360"/><path d="M80 440h1100M80 350h1100M80 260h1100M80 170h1100M80 80h1100"/></g>
+  <path d="M90 420C210 402 260 350 360 362S520 292 610 305 760 210 850 232 1010 132 1150 92" fill="none" stroke="url(#line)" stroke-width="14" stroke-linecap="round"/>
+  <path d="m1100 84 60 4-30 52" fill="none" stroke="#ffd77a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#fff"><circle cx="360" cy="362" r="10"/><circle cx="610" cy="305" r="10"/><circle cx="850" cy="232" r="10"/></g>
+</svg>
