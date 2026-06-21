@@ -320,6 +320,15 @@ function setupScorecardPersonalization() {
   });
 }
 
+function setDropdownVisibility(dropdown, isVisible) {
+  const menu = dropdown.querySelector(".nav-dropdown-menu");
+  if (!menu) return;
+  menu.style.setProperty("display", "grid", "important");
+  menu.style.setProperty("opacity", isVisible ? "1" : "0", "important");
+  menu.style.setProperty("visibility", isVisible ? "visible" : "hidden", "important");
+  menu.style.setProperty("pointer-events", isVisible ? "auto" : "none", "important");
+}
+
 function closeDropdowns(except = null) {
   dropdowns.forEach((dropdown) => {
     if (dropdown === except) {
@@ -327,6 +336,7 @@ function closeDropdowns(except = null) {
     }
 
     dropdown.classList.remove("is-open");
+    setDropdownVisibility(dropdown, false);
     const toggle = dropdown.querySelector(".nav-dropdown-toggle");
     if (toggle) {
       toggle.setAttribute("aria-expanded", "false");
@@ -335,6 +345,31 @@ function closeDropdowns(except = null) {
 }
 
 function setupDropdowns() {
+  const tapMenuQuery = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 920px)");
+
+  document.addEventListener("click", (event) => {
+    const toggle = event.target.closest(".nav-dropdown-toggle");
+    const dropdown = toggle?.closest(".nav-dropdown");
+    const header = document.querySelector(".site-header");
+    const shouldUseTapMenu = tapMenuQuery.matches || window.innerWidth <= 920 || header?.classList.contains("is-nav-open");
+    if (toggle?.closest("#primary-navigation")) {
+      return;
+    }
+
+    if (!toggle || !dropdown || !shouldUseTapMenu) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation?.();
+    const willOpen = !dropdown.classList.contains("is-open");
+    closeDropdowns(dropdown);
+    dropdown.classList.toggle("is-open", willOpen);
+    setDropdownVisibility(dropdown, willOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+  }, true);
+
   dropdowns.forEach((dropdown) => {
     if (dropdown.tagName === "DETAILS") {
       return;
@@ -350,32 +385,43 @@ function setupDropdowns() {
       toggle.setAttribute("aria-haspopup", "true");
       toggle.setAttribute("aria-expanded", "false");
       let closeTimer = null;
-      const prefersTapMenu = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 980px)");
+      setDropdownVisibility(dropdown, false);
 
       const openDropdown = () => {
         window.clearTimeout(closeTimer);
         closeDropdowns(dropdown);
         dropdown.classList.add("is-open");
+        setDropdownVisibility(dropdown, true);
         toggle.setAttribute("aria-expanded", "true");
       };
 
       const closeDropdown = () => {
         window.clearTimeout(closeTimer);
         closeTimer = window.setTimeout(() => {
-          const navStillActive = dropdown.parentElement?.matches(":hover") || dropdown.parentElement?.matches(":focus-within");
-          if (!dropdown.matches(":hover") && !dropdown.matches(":focus-within") && !navStillActive) {
+          if (!dropdown.matches(":hover") && !dropdown.matches(":focus-within")) {
             dropdown.classList.remove("is-open");
+            setDropdownVisibility(dropdown, false);
             toggle.setAttribute("aria-expanded", "false");
           }
-        }, 520);
+        }, 120);
       };
 
-      dropdown.addEventListener("mouseenter", openDropdown);
+      dropdown.addEventListener("mouseenter", () => {
+        if (!tapMenuQuery.matches) {
+          openDropdown();
+        }
+      });
       dropdown.addEventListener("mouseleave", closeDropdown);
       dropdown.addEventListener("focusin", openDropdown);
       dropdown.addEventListener("focusout", closeDropdown);
       toggle.addEventListener("click", (event) => {
-        if (!prefersTapMenu.matches) {
+        if (event.defaultPrevented) {
+          return;
+        }
+
+        const header = document.querySelector(".site-header");
+        const shouldUseTapMenu = tapMenuQuery.matches || window.innerWidth <= 920 || header?.classList.contains("is-nav-open");
+        if (!shouldUseTapMenu) {
           return;
         }
 
@@ -385,9 +431,11 @@ function setupDropdowns() {
         closeDropdowns(dropdown);
         if (willOpen) {
           dropdown.classList.add("is-open");
+          setDropdownVisibility(dropdown, true);
           toggle.setAttribute("aria-expanded", "true");
         } else {
           dropdown.classList.remove("is-open");
+          setDropdownVisibility(dropdown, false);
           toggle.setAttribute("aria-expanded", "false");
         }
       });
@@ -395,6 +443,10 @@ function setupDropdowns() {
     }
 
     function toggleDropdown(event) {
+      if (event.defaultPrevented) {
+        return;
+      }
+
       event.stopPropagation();
       event.preventDefault();
       const willOpen = !dropdown.classList.contains("is-open");
@@ -406,12 +458,27 @@ function setupDropdowns() {
     toggle.addEventListener("click", toggleDropdown);
   });
 
-  document.addEventListener("click", () => closeDropdowns());
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("#primary-navigation") || event.target.closest(".mobile-nav-toggle")) {
+      return;
+    }
+    closeDropdowns();
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeDropdowns();
     }
   });
+  document.querySelector("#primary-navigation")?.addEventListener("pointermove", (event) => {
+    if (tapMenuQuery.matches) {
+      return;
+    }
+    const activeDropdown = event.target.closest(".nav-dropdown");
+    if (!activeDropdown) {
+      closeDropdowns();
+    }
+  });
+  tapMenuQuery.addEventListener?.("change", () => closeDropdowns());
 }
 
 function setupShareLinkCopy() {
@@ -452,19 +519,19 @@ function setupShareLinkCopy() {
 
     if (/linkedin\.com/i.test(href) || text === "linkedin") {
       icon = iconPaths.linkedin;
-      label = "Share on LinkedIn";
-      visibleLabel = isArticleShare ? "LinkedIn" : label;
+      label = "LinkedIn";
+      visibleLabel = "";
       anchor.classList.add("share-icon-link", "share-icon-linkedin");
     } else if (/twitter\.com|x\.com/i.test(href) || text === "x") {
       icon = iconPaths.x;
-      label = "Share on X";
-      visibleLabel = isArticleShare ? "X" : label;
+      label = "X";
+      visibleLabel = "";
       anchor.classList.add("share-icon-link", "share-icon-x");
       anchor.href = normalizeShareUrl(href);
     } else if (/^mailto:/i.test(href) || text === "email") {
       icon = iconPaths.email;
-      label = "Share by email";
-      visibleLabel = isArticleShare ? "Email" : label;
+      label = "Email";
+      visibleLabel = "";
       anchor.classList.add("share-icon-link", "share-icon-email");
       if (!href || href === "#") {
         anchor.href = `mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`;
@@ -472,9 +539,9 @@ function setupShareLinkCopy() {
     }
 
     if (icon) {
-      anchor.innerHTML = `${icon}<span>${visibleLabel || label}</span>`;
+      anchor.innerHTML = `${icon}<span class="sr-only">${label}</span>`;
       anchor.setAttribute("aria-label", label);
-      anchor.setAttribute("title", label);
+      anchor.removeAttribute("title");
     }
   }
 
@@ -484,9 +551,9 @@ function setupShareLinkCopy() {
     button.classList.add("share-copy-button");
     if (button.closest(".article-share")) {
       button.classList.add("share-icon-link", "share-article-link-button");
-      button.innerHTML = `${iconPaths.paperclip}<span>Share Link</span>`;
+      button.innerHTML = `${iconPaths.paperclip}<span class="sr-only">Share link</span>`;
       button.setAttribute("aria-label", "Share link");
-      button.setAttribute("title", "Share link");
+      button.removeAttribute("title");
     }
     button.addEventListener("click", async () => {
       const originalLabel = button.innerHTML;
@@ -498,11 +565,11 @@ function setupShareLinkCopy() {
             url: value
           });
           button.setAttribute("aria-label", "Shared");
-          button.setAttribute("title", "Shared");
+          button.removeAttribute("title");
         } else if (button.classList.contains("share-article-link-button")) {
           await navigator.clipboard.writeText(value);
           button.setAttribute("aria-label", "Copied");
-          button.setAttribute("title", "Copied");
+          button.removeAttribute("title");
         } else {
           await navigator.clipboard.writeText(value);
           button.textContent = "Copied";
@@ -511,7 +578,7 @@ function setupShareLinkCopy() {
           button.innerHTML = originalLabel;
           if (button.classList.contains("share-article-link-button")) {
             button.setAttribute("aria-label", "Share link");
-            button.setAttribute("title", "Share link");
+            button.removeAttribute("title");
           }
         }, 1600);
       } catch {
@@ -639,11 +706,35 @@ function setupFractionalFlipCards() {
       card.classList.toggle("is-flipped", isFlipped);
       card.setAttribute("aria-pressed", String(isFlipped));
       card.setAttribute("aria-expanded", String(isFlipped));
+      const inner = card.querySelector(".pdl-flip-inner");
+      const fallback = card.querySelector(".pdl-flip-back-failsafe");
+      inner?.style.setProperty("transform", isFlipped ? "rotateY(180deg)" : "rotateY(0deg)", "important");
+      fallback?.style.setProperty("opacity", isFlipped ? "1" : "0", "important");
+      fallback?.style.setProperty("visibility", isFlipped ? "visible" : "hidden", "important");
+      fallback?.style.setProperty("pointer-events", isFlipped ? "auto" : "none", "important");
     }
+
+    const hoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    card.addEventListener("mouseenter", () => {
+      if (hoverCapable.matches) setFlipped(true);
+    });
+
+    card.addEventListener("mouseleave", () => {
+      if (hoverCapable.matches) setFlipped(false);
+    });
+
+    card.addEventListener("focusin", () => {
+      if (hoverCapable.matches) setFlipped(true);
+    });
+
+    card.addEventListener("focusout", () => {
+      if (hoverCapable.matches) setFlipped(false);
+    });
 
     card.addEventListener("click", (event) => {
       const interactive = event.target.closest("a, button, input, textarea, select");
-      if (interactive) {
+      if (interactive || hoverCapable.matches) {
         return;
       }
       setFlipped(!card.classList.contains("is-flipped"));
@@ -988,7 +1079,7 @@ function setupLeadMagnetScorecard() {
   const nextSteps = {
     "Metric trust": "Recommended next step: Free Fit Check or Analytics Health Check.",
     "Ownership": "Recommended next step: Decision System Reset.",
-    "Source reliability": "Recommended next step: Data Quality Review or Analytics Health Check.",
+    "Source reliability": "Recommended next step: Data Quality & Reporting Reliability or Analytics Health Check.",
     "Decision cadence": "Recommended next step: Decision System Reset.",
     "Operational signal": "Recommended next step: Fit Check now; Intelligence Lab once the foundation holds."
   };
@@ -1004,7 +1095,7 @@ function setupLeadMagnetScorecard() {
       areas: ["Source reliability", "Metric trust"],
       label: "Lineage and metric trust break",
       copy: "The pattern points to a source-to-KPI trust issue. Leaders may not believe the number because the path from source system, transformation, and measure logic is not clear enough.",
-      next: "Recommended path: Data Quality Review or Analytics Health Check before redesigning the dashboard."
+      next: "Recommended path: Data Quality & Reporting Reliability or Analytics Health Check before redesigning the dashboard."
     },
     {
       areas: ["Decision cadence", "Operational signal"],
@@ -1016,7 +1107,7 @@ function setupLeadMagnetScorecard() {
       areas: ["Source reliability", "Operational signal"],
       label: "Input quality and signal break",
       copy: "The pattern suggests the team may be trying to create operational intelligence from inputs that are not yet reliable enough for confident action.",
-      next: "Recommended path: Data Quality Review first, then revisit operational intelligence once the signal layer holds."
+      next: "Recommended path: Data Quality & Reporting Reliability first, then revisit operational intelligence once the signal layer holds."
     }
   ];
   let started = false;
@@ -1186,15 +1277,61 @@ function setupMobileNavigation() {
     return;
   }
 
+  nav.addEventListener('click', (event) => {
+    const link = event.target.closest('.nav-dropdown-toggle');
+    const shouldUseTapMenu = window.innerWidth <= 920 || header.classList.contains('is-nav-open');
+    if (!link || !shouldUseTapMenu) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation?.();
+    const dropdown = link.closest('.nav-dropdown');
+    if (!dropdown) {
+      return;
+    }
+
+    const willOpen = !dropdown.classList.contains('is-open');
+    closeDropdowns(dropdown);
+    dropdown.classList.toggle('is-open', willOpen);
+    setDropdownVisibility(dropdown, willOpen);
+    link.setAttribute('aria-expanded', String(willOpen));
+  }, true);
+
   toggle.addEventListener('click', () => {
     const willOpen = !header.classList.contains('is-nav-open');
     header.classList.toggle('is-nav-open', willOpen);
     toggle.setAttribute('aria-expanded', String(willOpen));
+    if (window.innerWidth <= 920) {
+      dropdowns.forEach((dropdown) => {
+        dropdown.classList.remove('is-open');
+        setDropdownVisibility(dropdown, false);
+        dropdown.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    }
   });
 
   nav.addEventListener('click', (event) => {
+    if (event.defaultPrevented) {
+      return;
+    }
+
     const link = event.target.closest('a');
     if (!link || window.innerWidth > 760) {
+      return;
+    }
+    if (link.classList.contains('nav-dropdown-toggle')) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = link.closest('.nav-dropdown');
+      if (dropdown) {
+        const willOpen = !dropdown.classList.contains('is-open');
+        closeDropdowns(dropdown);
+        dropdown.classList.toggle('is-open', willOpen);
+        setDropdownVisibility(dropdown, willOpen);
+        link.setAttribute('aria-expanded', String(willOpen));
+      }
       return;
     }
     header.classList.remove('is-nav-open');
@@ -1271,6 +1408,8 @@ function setupActiveNavigation() {
       isCurrent = offeringPages.has(page);
     } else if (isDropdownToggle && link.closest(".nav-dropdown-intelligence")) {
       isCurrent = page === "intelligence-lab";
+    } else if (isDropdownToggle && link.closest(".nav-dropdown-about")) {
+      isCurrent = page === "about" || page === "business-intelligence-consultant-cincinnati";
     } else if (isDropdownMenuItem && targetHash) {
       isCurrent = targetPage === page && targetHash === hash;
     } else if (isDropdownMenuItem && targetPage === "intelligence-lab") {
@@ -1367,8 +1506,16 @@ function setupHealthOutputFlipCards() {
 }
 
 function setupOfferingMenuGroups() {
+  const desktopMenu = window.matchMedia("(min-width: 921px)");
+
   document.querySelectorAll(".nav-menu-hierarchy .nav-menu-group").forEach((group) => {
     let groupCloseTimer = null;
+
+    const syncDesktopState = () => {
+      if (desktopMenu.matches) {
+        group.setAttribute("open", "");
+      }
+    };
 
     const openGroup = () => {
       window.clearTimeout(groupCloseTimer);
@@ -1376,6 +1523,9 @@ function setupOfferingMenuGroups() {
     };
 
     const closeGroup = () => {
+      if (desktopMenu.matches) {
+        return;
+      }
       window.clearTimeout(groupCloseTimer);
       groupCloseTimer = window.setTimeout(() => {
         if (!group.matches(":hover") && !group.matches(":focus-within")) {
@@ -1399,6 +1549,9 @@ function setupOfferingMenuGroups() {
         }
       }, 0);
     });
+
+    syncDesktopState();
+    desktopMenu.addEventListener?.("change", syncDesktopState);
   });
 }
 

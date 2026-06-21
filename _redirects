@@ -2,6 +2,11 @@
 # This package keeps flat .html files and relative asset paths so files are easy to open locally.
 # Cloudflare serves the clean public URLs and rewrites nested asset requests back to root assets.
 
+# Canonical host and scheme consolidation
+http://parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
+http://www.parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
+https://www.parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
+
 # Shared asset rewrites for clean URL pages using relative paths
 /:slug/home.css /home.css 200
 /:slug/home.js /home.js 200
@@ -30,7 +35,6 @@
 /insights/:slug/social-preview.png /social-preview.png 200
 
 # No-trailing-slash cleanup
-/how-we-help /how-we-help/ 301
 /our-offerings /our-offerings/ 301
 /free-fit-check /free-fit-check/ 301
 /dashboard-trust-scorecard /dashboard-trust-scorecard/ 301
@@ -75,7 +79,6 @@
 /insights/dashboards-to-predictive-risk-intelligence /insights/dashboards-to-predictive-risk-intelligence/ 301
 
 # Redirect old .html URLs to clean URLs
-/how-we-help.html /how-we-help/ 301
 /our-offerings.html /our-offerings/ 301
 /free-fit-check.html /free-fit-check/ 301
 /dashboard-trust-scorecard.html /dashboard-trust-scorecard/ 301
@@ -131,3 +134,8 @@
 /data-quality-review.html /data-quality-review/ 301
 /dashboard-trust-governance /dashboard-trust-governance/ 301
 /dashboard-trust-governance.html /dashboard-trust-governance/ 301
+/data-integration-analytics-architecture /data-integration-analytics-architecture/ 301
+/data-integration-analytics-architecture.html /data-integration-analytics-architecture/ 301
+/how-we-help /our-offerings/ 301
+/how-we-help/ /our-offerings/ 301
+/how-we-help.html /our-offerings/ 301

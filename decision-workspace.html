@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Decision Workspace | Parallax Data Lab</title>
-<meta name="description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
+<title>Interactive Decision Workspace Demo | Parallax Data Lab</title>
+<meta name="description" content="A noindex interactive prototype demonstrating how Parallax Data Lab recommendations can be organized into decisions, metrics, dashboards, and action plans."/>
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="canonical" href="https://parallaxdatalab.com/decision-workspace/"/>
-<link href="home.css?v=163" rel="stylesheet"/>
+<link href="home.css?v=179" rel="stylesheet"/>
 <link href="decision-workspace.css?v=5" rel="stylesheet"/>
 <meta content="website" property="og:type"/>
 <meta content="Parallax Data Lab" property="og:site_name"/>
-<meta property="og:title" content="Decision Workspace | Parallax Data Lab"/>
-<meta property="og:description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
+<meta property="og:title" content="Interactive Decision Workspace Demo | Parallax Data Lab"/>
+<meta property="og:description" content="A noindex interactive prototype demonstrating how Parallax Data Lab recommendations can be organized into decisions, metrics, dashboards, and action plans."/>
 <meta property="og:url" content="https://parallaxdatalab.com/decision-workspace/"/>
 <meta property="og:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Decision Workspace | Parallax Data Lab"/>
-<meta name="twitter:description" content="A client workspace for turning Parallax Data Lab recommendations into owned decisions, metrics, dashboards, and action plans."/>
+<meta name="twitter:title" content="Interactive Decision Workspace Demo | Parallax Data Lab"/>
+<meta name="twitter:description" content="A noindex interactive prototype demonstrating how Parallax Data Lab recommendations can be organized into decisions, metrics, dashboards, and action plans."/>
 <meta name="twitter:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
@@ -31,7 +31,6 @@
 <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="mobile-nav-toggle" type="button"><span></span><span></span><span></span><em>Menu</em></button>
 <nav id="primary-navigation" aria-label="Primary navigation">
 <a href="index.html">Home</a>
-<a href="how-we-help.html">How We Help</a>
 <div class="nav-dropdown nav-dropdown-offerings nav-dropdown-wide">
 <a class="nav-dropdown-toggle" href="our-offerings.html">Our Offerings</a>
 <div aria-label="Offerings and expertise sections" class="nav-dropdown-menu nav-menu-hierarchy nav-menu-offerings">
@@ -47,7 +46,7 @@
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Expertise</summary>
 <a class="nav-menu-parent" href="expertise.html"><span>Expertise Overview</span></a>
-<a class="nav-menu-child" href="power-bi-consultant-cincinnati.html"><span>Power BI Consulting</span></a>
+<a class="nav-menu-child" href="power-bi-consultant-cincinnati.html"><span>Power BI & Microsoft Fabric</span></a>
 <a class="nav-menu-child" href="kpi-reporting-consulting.html"><span>KPI Strategy &amp; Executive Reporting</span></a>
 <a class="nav-menu-child" href="reporting-automation-consulting.html"><span>Reporting Automation</span></a>
 <a class="nav-menu-child" href="data-quality-review.html"><span>Data Quality &amp; Reporting Reliability</span></a>
@@ -62,6 +61,7 @@
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Overview</summary>
 <a class="nav-menu-parent" href="intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+<a class="nav-menu-child" href="decision-workspace.html"><span>Interactive Decision Workspace Demo</span></a>
 </details>
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Lab Initiatives</summary>
@@ -72,12 +72,41 @@
 </details>
 </div>
 </div>
+<div class="nav-dropdown nav-dropdown-case-studies">
+<a class="nav-dropdown-toggle" href="case-studies.html">Case Studies</a>
+<div aria-label="Case studies by industry" class="nav-dropdown-menu nav-menu-hierarchy nav-dropdown-menu-case-studies">
+<a class="nav-menu-parent" href="case-studies.html"><span>Case Studies Overview</span></a>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Industrial operations</summary>
+<a class="nav-menu-child" href="case-studies.html#manufacturing-throughput"><span>Manufacturing</span></a>
+<a class="nav-menu-child" href="case-studies.html#utilities-reliability"><span>Utilities</span></a>
+<a class="nav-menu-child" href="case-studies.html#energy-operations"><span>Energy</span></a>
+<a class="nav-menu-child" href="case-studies.html#construction-project-controls"><span>Construction</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Distributed operations</summary>
+<a class="nav-menu-child" href="case-studies.html#logistics-service-level"><span>Logistics & Transportation</span></a>
+<a class="nav-menu-child" href="case-studies.html#field-services-kpis"><span>Field Services</span></a>
+<a class="nav-menu-child" href="case-studies.html#retail-multi-location"><span>Retail & Multi-Location</span></a>
+<a class="nav-menu-child" href="case-studies.html#facilities-maintenance"><span>Facilities & Maintenance</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Commercial and supply chain</summary>
+<a class="nav-menu-child" href="case-studies.html#healthcare-utilization"><span>Healthcare Operations</span></a>
+<a class="nav-menu-child" href="case-studies.html#industrial-software-revenue"><span>Industrial Software</span></a>
+<a class="nav-menu-child" href="case-studies.html#b2b-services-scorecard"><span>B2B Services</span></a>
+<a class="nav-menu-child" href="case-studies.html#distribution-supply-chain"><span>Distribution & Supply Chain</span></a>
+</details>
+</div>
+</div>
 <a href="insights.html">Insights</a>
 <div class="nav-dropdown nav-dropdown-about">
 <a class="nav-dropdown-toggle" href="about.html">About</a>
 <div aria-label="About Parallax Data Lab" class="nav-dropdown-menu nav-menu-hierarchy nav-dropdown-menu-about">
+<span class="nav-menu-section-title nav-menu-static-title">About</span>
 <a class="nav-menu-parent" href="about.html"><span>About Parallax</span></a>
-<a class="nav-menu-child" href="business-intelligence-consultant-cincinnati.html"><span>Cincinnati Analytics Consulting</span></a>
+<a class="nav-menu-child" href="contact.html"><span>Contact</span></a>
+<a class="nav-menu-child" href="business-intelligence-consultant-cincinnati.html"><span>Local Analytics Consulting</span></a>
 </div>
 </div>
 <a class="is-active" href="decision-workspace.html">Workspace</a>
@@ -91,9 +120,9 @@
 <main class="workspace-shell" id="workspace-app">
   <section class="workspace-login" data-view="login">
     <div class="workspace-login-panel">
-      <p class="workspace-eyebrow" data-auth-eyebrow>New client workspace</p>
-      <h1 data-auth-title>Create your reporting action workspace.</h1>
-      <p class="workspace-login-copy" data-auth-copy">Start an organization account to turn recommendations into owned decisions, metrics, dashboards, and action plans.</p>
+      <p class="workspace-eyebrow" data-auth-eyebrow>Interactive prototype</p>
+      <h1 data-auth-title>Explore the Interactive Decision Workspace Demo.</h1>
+      <p class="workspace-login-copy" data-auth-copy">This noindex prototype demonstrates decision, metric, dashboard, and action-plan workflows. Do not enter confidential production data.</p>
       <div class="workspace-auth-toggle" aria-label="Authentication mode">
         <button class="is-active" data-auth-mode="signup" type="button">Sign up</button>
         <button data-auth-mode="login" type="button">Log in</button>
@@ -125,21 +154,21 @@
       </form>
     </div>
     <aside class="workspace-demo-panel workspace-access-panel" aria-label="Secure workspace access">
-      <p class="workspace-eyebrow">Secure client access</p>
-      <h2>Your reporting work, behind a real account.</h2>
+      <p class="workspace-eyebrow">Prototype access</p>
+      <h2>A demonstration workspace, separated from production consulting delivery.</h2>
       <ul>
-        <li>Email verification for new accounts</li>
-        <li>Secure Supabase password authentication</li>
-        <li>Self-service password recovery</li>
+        <li>Demonstration workflow for account-based access</li>
+        <li>No public production security promise</li>
+        <li>No confidential or persistent client data should be entered</li>
       </ul>
-      <p>Need help accessing an existing workspace? Email <a href="mailto:jonahnr@gmail.com?subject=Decision%20Workspace%20Access">Parallax Data Lab</a>.</p>
+      <p>Want to discuss a production-ready workspace? Email <a href="mailto:jonahnr@gmail.com?subject=Decision%20Workspace%20Access">Parallax Data Lab</a>.</p>
     </aside>
   </section>
 
   <section class="workspace-app is-hidden" data-view="app">
     <aside class="workspace-sidebar">
       <div>
-        <p class="workspace-eyebrow">Decision Workspace</p>
+        <p class="workspace-eyebrow">Interactive Decision Workspace Demo</p>
         <h2 data-active-org-name>Organization</h2>
         <p data-active-user-summary></p>
       </div>
@@ -222,7 +251,7 @@
           <div>
             <p class="workspace-eyebrow">Parallax admin</p>
             <h3>Organization danger zone</h3>
-            <p class="workspace-muted">Delete the active organization only after confirming twice. This removes its users, recommendations, metrics, decisions, and dashboards from the local prototype.</p>
+            <p class="workspace-muted">Delete the active demo organization only after confirming twice. This removes its users, recommendations, metrics, decisions, and dashboards from the prototype.</p>
           </div>
           <button class="workspace-row-action is-danger" data-delete-org type="button">Delete active org</button>
         </article>
@@ -250,13 +279,13 @@
   </div>
 </div>
 
-<script src="home.js?v=163"></script>
+<script src="home.js?v=179"></script>
 
 <script async defer src="https://www.google.com/recaptcha/api.js?render=6LezmygtAAAAAO3kIUbPdYzX20TgkJ7T1WLLNKFN"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="decision-workspace-supabase.js?v=2"></script>
 
-<script src="decision-workspace.js?v=7"></script>
+<script src="decision-workspace.js?v=8"></script>
 </body>
 </html>
