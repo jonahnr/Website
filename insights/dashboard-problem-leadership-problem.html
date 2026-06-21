@@ -6,7 +6,7 @@
 <title>When Dashboards Reveal Leadership Gaps | Parallax Data Lab</title>
 <meta name="description" content="Learn why dashboard problems often come from unclear decisions, weak ownership, and leadership cadence gaps instead of visual design."/>
 <link rel="canonical" href="https://parallaxdatalab.com/insights/dashboard-problem-leadership-problem/"/>
-<link href="../home.css?v=163" rel="stylesheet"/>
+<link href="../home.css?v=179" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="../favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" href="../favicon.png"/>
@@ -56,7 +56,6 @@
 <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="mobile-nav-toggle" type="button"><span></span><span></span><span></span><em>Menu</em></button>
 <nav id="primary-navigation" aria-label="Primary navigation">
 <a href="../index.html">Home</a>
-<a href="../how-we-help.html">How We Help</a>
 <div class="nav-dropdown nav-dropdown-offerings nav-dropdown-wide">
 <a class="nav-dropdown-toggle" href="../our-offerings.html">Our Offerings</a>
 <div aria-label="Offerings and expertise sections" class="nav-dropdown-menu nav-menu-hierarchy nav-menu-offerings">
@@ -72,7 +71,7 @@
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Expertise by problem</summary>
 <a class="nav-menu-parent" href="../expertise.html"><span>Expertise Overview</span></a>
-<a class="nav-menu-child" href="../power-bi-consultant-cincinnati.html"><span>Power BI Consulting</span></a>
+<a class="nav-menu-child" href="../power-bi-consultant-cincinnati.html"><span>Power BI & Microsoft Fabric</span></a>
 <a class="nav-menu-child" href="../kpi-reporting-consulting.html"><span>KPI Strategy &amp; Executive Reporting</span></a>
 <a class="nav-menu-child" href="../reporting-automation-consulting.html"><span>Reporting Automation</span></a>
 <a class="nav-menu-child" href="../data-quality-review.html"><span>Data Quality &amp; Reporting Reliability</span></a>
@@ -87,9 +86,10 @@
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Intelligence Lab</summary>
 <a class="nav-menu-parent" href="../intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
+<a class="nav-menu-child" href="../decision-workspace.html"><span>Interactive Decision Workspace Demo</span></a>
 </details>
 <details class="nav-menu-group">
-<summary class="nav-menu-section-title">Initiatives</summary>
+<summary class="nav-menu-section-title">Lab initiatives</summary>
 <a class="nav-menu-child" href="../intelligence-lab.html#operations-intelligence-digest"><span>Operations Intelligence Digest</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#governance-rls-architecture"><span>Governance &amp; RLS Architecture</span></a>
 <a class="nav-menu-child" href="../intelligence-lab.html#enterprise-outcome-studio"><span>Enterprise Outcome Studio</span></a>
@@ -97,19 +97,44 @@
 </details>
 </div>
 </div>
+<div class="nav-dropdown nav-dropdown-case-studies">
+<a class="nav-dropdown-toggle" href="../case-studies.html">Case Studies</a>
+<div aria-label="Case studies by industry" class="nav-dropdown-menu nav-menu-hierarchy nav-dropdown-menu-case-studies">
+<a class="nav-menu-parent" href="../case-studies.html"><span>Case Studies Overview</span></a>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Industrial operations</summary>
+<a class="nav-menu-child" href="../case-studies.html#manufacturing-throughput"><span>Manufacturing</span></a>
+<a class="nav-menu-child" href="../case-studies.html#utilities-reliability"><span>Utilities</span></a>
+<a class="nav-menu-child" href="../case-studies.html#energy-operations"><span>Energy</span></a>
+<a class="nav-menu-child" href="../case-studies.html#construction-project-controls"><span>Construction</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Distributed operations</summary>
+<a class="nav-menu-child" href="../case-studies.html#logistics-service-level"><span>Logistics & Transportation</span></a>
+<a class="nav-menu-child" href="../case-studies.html#field-services-kpis"><span>Field Services</span></a>
+<a class="nav-menu-child" href="../case-studies.html#retail-multi-location"><span>Retail & Multi-Location</span></a>
+<a class="nav-menu-child" href="../case-studies.html#facilities-maintenance"><span>Facilities & Maintenance</span></a>
+</details>
+<details class="nav-menu-group">
+<summary class="nav-menu-section-title">Commercial and supply chain</summary>
+<a class="nav-menu-child" href="../case-studies.html#healthcare-utilization"><span>Healthcare Operations</span></a>
+<a class="nav-menu-child" href="../case-studies.html#industrial-software-revenue"><span>Industrial Software</span></a>
+<a class="nav-menu-child" href="../case-studies.html#b2b-services-scorecard"><span>B2B Services</span></a>
+<a class="nav-menu-child" href="../case-studies.html#distribution-supply-chain"><span>Distribution & Supply Chain</span></a>
+</details>
+</div>
+</div>
 <a href="../insights.html">Insights</a>
 <div class="nav-dropdown nav-dropdown-about">
 <a class="nav-dropdown-toggle" href="../about.html">About</a>
 <div aria-label="About Parallax Data Lab" class="nav-dropdown-menu nav-menu-hierarchy nav-dropdown-menu-about">
+<span class="nav-menu-section-title nav-menu-static-title">About</span>
 <a class="nav-menu-parent" href="../about.html"><span>About Parallax</span></a>
-<a class="nav-menu-child" href="../business-intelligence-consultant-cincinnati.html"><span>Cincinnati Analytics Consulting</span></a>
+<a class="nav-menu-child" href="../contact.html"><span>Contact</span></a>
+<a class="nav-menu-child" href="../business-intelligence-consultant-cincinnati.html"><span>Local Analytics Consulting</span></a>
 </div>
 </div>
 </nav>
-<div class="site-auth-actions">
-<a class="site-auth-link" href="../decision-workspace.html?auth=login">Log in</a>
-<a class="site-auth-link is-primary" href="../decision-workspace.html?auth=signup">Sign up</a>
-</div>
 </header>
 <main class="article-page">
 <article class="insight-article">
@@ -120,7 +145,7 @@
 <p class="article-category">Analytics Trust</p>
 <h1>When Dashboards Reveal Leadership Gaps</h1>
 <p class="article-summary">Many dashboard failures start with unclear executive decisions, ownership, and operating rhythm.</p>
-<div class="article-meta"><span>Written by Jonah Robinson</span> <span>Published 2026-04-09</span></div>
+<div class="article-meta article-meta-author"><span class="article-author-chip"><img src="../assets/jonah-founder-credibility.webp" alt="Jonah Robinson" loading="lazy" decoding="async">Written by Jonah Robinson</span> <span>Published 2026-04-09</span></div>
 </div>
 <figure class="article-hero-media">
 <img src="../assets/insights/dashboard-leadership-problem.webp" alt="Leadership decision system sitting beneath a dashboard interface" loading="lazy" decoding="async">
@@ -133,10 +158,9 @@
 <p><strong>Relevant service</strong><a href="../decision-system-reset.html">Decision System Reset</a></p>
 <div class="article-share" aria-label="Share this article">
 <strong>Share</strong>
-<button type="button" data-copy-share="https://parallaxdatalab.com/insights/dashboard-problem-leadership-problem/">Share Link</button>
-<a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fparallaxdatalab.com%2Finsights%2Fdashboard-problem-leadership-problem%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a href="https://x.com/intent/post?text=When%20Dashboards%20Reveal%20Leadership%20Gaps%20%7C%20Parallax%20Data%20Lab%20https%3A%2F%2Fparallaxdatalab.com%2Finsights%2Fdashboard-problem-leadership-problem%2F" target="_blank" rel="noopener noreferrer">X</a>
-<a href="mailto:?subject=When Dashboards Reveal Leadership Gaps | Parallax Data Lab&amp;body=https://parallaxdatalab.com/insights/dashboard-problem-leadership-problem/">Email</a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fparallaxdatalab.com%2Finsights%2Fdashboard-problem-leadership-problem%2F" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a>
+<a href="https://x.com/intent/post?text=When%20Dashboards%20Reveal%20Leadership%20Gaps%20%7C%20Parallax%20Data%20Lab%20https%3A%2F%2Fparallaxdatalab.com%2Finsights%2Fdashboard-problem-leadership-problem%2F" target="_blank" rel="noopener noreferrer" aria-label="X"></a>
+<a href="mailto:?subject=When Dashboards Reveal Leadership Gaps | Parallax Data Lab&amp;body=https://parallaxdatalab.com/insights/dashboard-problem-leadership-problem/" aria-label="Email"></a>
 </div>
 <nav aria-label="Related articles">
 <strong>Related</strong>
@@ -195,14 +219,13 @@
 <h2>What to do next</h2>
 <p>For this specific problem, the important move is to stop treating &quot;When Dashboards Reveal Leadership Gaps&quot; as an isolated reporting request. Many dashboard failures start with unclear executive decisions, ownership, and operating rhythm. A useful dashboard begins with executive choices. Which decisions happen weekly? Which metrics trigger intervention? Who owns the response? What threshold creates escalation? Those answers shape the report.</p>
 <p>If this article describes what is happening inside your reporting environment, Parallax Data Lab can help. Start with the <a href="../free-fit-check.html">Free Fit Check</a>, a free 15-minute meeting to clarify where trust is breaking, what should be governed, and what kind of decision system your leadership team actually needs.</p>
-<section class="article-service-cta-block">
-<p class="page-kicker">Turn the idea into action</p>
-<h2>Use the right Parallax path for this reporting problem.</h2>
-<p>Articles are useful when they clarify the issue. The next step is deciding whether the problem needs a Fit Check, a diagnostic, a Decision System Reset, Power BI support, data quality review, or governance work.</p>
-<div>
-<a class="primary-action" href="../free-fit-check.html">Request the Fit Check</a>
-<a class="secondary-action" href="../expertise.html">Explore Expertise</a>
-</div>
+<section class="article-framework callout-section">
+<h2>Parallax field framework: Leadership System Check</h2>
+<p>When dashboards fail, inspect leadership alignment: decision rights, operating cadence, metric tradeoffs, and willingness to retire low-value reporting.</p>
+<h3>Where this advice does not apply</h3>
+<p>A dashboard can still be the main issue when the business logic is sound and the usability is genuinely poor.</p>
+<h3>Practical next step</h3>
+<p>Pick one recurring leadership decision and trace the source, definition, owner, refresh expectation, and action path behind it. That single trace usually reveals whether the problem is reporting, governance, architecture, or decision design.</p>
 </section>
 <p class="article-return-link"><a href="../insights.html">Back to Insights Library</a></p>
 </div>
@@ -226,17 +249,17 @@
       <a class="site-footer-brand" href="../index.html">Parallax Data Lab</a>
       <p>Parallax Data Lab provides business intelligence consulting, Power BI dashboard development, reporting automation, and analytics support for teams that need clearer data.</p>
       <p class="site-footer-location">Cincinnati, Ohio. Based in Cincinnati and serving teams across the United States.</p>
-      <a class="site-footer-contact-button" href="../about.html#contact-us">Contact Parallax Data Lab</a>
+      <a class="site-footer-contact-button" href="../contact.html">Contact Parallax Data Lab</a>
     </div>
     <nav aria-label="Footer navigation" class="site-footer-col">
       <h3>Pages</h3>
       <a href="../index.html">Home</a>
-      <a href="../how-we-help.html">How We Help</a>
-      <a href="../our-offerings.html">Offerings</a>
+            <a href="../our-offerings.html">Offerings</a>
       <a href="../expertise.html">Expertise</a>
       <a href="../insights.html">Insights</a>
+      <a href="../case-studies.html">Case Studies</a>
       <a href="../about.html">About</a>
-      <a href="../business-intelligence-consultant-cincinnati.html">Cincinnati Analytics Consulting</a>
+      <a href="../business-intelligence-consultant-cincinnati.html">Local Analytics Consulting</a>
       <a href="../privacy-policy.html">Privacy Policy</a>
     </nav>
     <nav aria-label="Footer core work" class="site-footer-col site-footer-core-work">
@@ -250,7 +273,7 @@
     <nav aria-label="Footer expertise" class="site-footer-col site-footer-intel">
       <h3>Expertise</h3>
       <a href="../expertise.html">Expertise Overview</a>
-      <a href="../power-bi-consultant-cincinnati.html">Power BI Consulting</a>
+      <a href="../power-bi-consultant-cincinnati.html">Power BI & Microsoft Fabric</a>
       <a href="../kpi-reporting-consulting.html">KPI Strategy &amp; Executive Reporting</a>
       <a href="../reporting-automation-consulting.html">Reporting Automation</a>
       <a href="../data-quality-review.html">Data Quality &amp; Reporting Reliability</a>
@@ -259,8 +282,8 @@
     </nav>
     <div class="site-footer-col site-footer-contact">
       <h3>Contact</h3>
-      <a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Book a Fit Check</a>
-      <a class="site-footer-secondary" href="../about.html#contact-us">Contact Parallax Data Lab</a>
+      <a class="site-footer-secondary" href="https://calendly.com/jonahnr/parallax-data-lab-intro-call">Book a 15-Minute Fit Check</a>
+      <a class="site-footer-secondary" href="../contact.html">Contact Parallax Data Lab</a>
       <a class="site-footer-email site-footer-contact-email" href="mailto:jonahnr@gmail.com?subject=Parallax%20Data%20Lab%20Inquiry">Email us</a>
       <div class="site-footer-social" aria-label="Parallax Data Lab social profiles">
         <a class="site-social-link site-social-linkedin" href="https://www.linkedin.com/company/129543938/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="Parallax Data Lab on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg></a>
@@ -274,7 +297,7 @@
     <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
   </div>
 </footer>
-<script src="../home.js?v=163"></script>
+<script src="../home.js?v=179"></script>
 </body>
 </html>
 
