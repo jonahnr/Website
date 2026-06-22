@@ -486,6 +486,7 @@ function setupShareLinkCopy() {
     linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4h3.8v11.5H5.1V8.4Zm1.9-5.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm4.1 5.7h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.8v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6h-3.8V8.4Z"/></svg>',
     x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 10.4 21.1 2h-1.7l-6.3 7.2L8 2H2.2l7.7 11-7.7 9h1.7l6.8-7.8 5.5 7.8H22l-8.2-11.6Zm-2.4 2.8-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.5 9.2h-2.8l-5.3-7.5Z"/></svg>',
     email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 5h16.4c1 0 1.8.8 1.8 1.8v10.4c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V6.8C2 5.8 2.8 5 3.8 5Zm.7 2 7.5 5.2L19.5 7h-15Zm15.5 2.1-7.4 5.1a1 1 0 0 1-1.2 0L4 9.1V17h16V9.1Z"/></svg>',
+    share: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V6.41l-8.29 8.3a1 1 0 0 1-1.42-1.42L17.59 5H15a1 1 0 0 1-1-1ZM5 7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5a1 1 0 1 0-2 0v5H5V9h5a1 1 0 1 0 0-2H5Z"/></svg>',
     paperclip: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.35 20.1a5.45 5.45 0 0 1-3.86-9.31l7.72-7.72a4.25 4.25 0 1 1 6.01 6.01l-7.68 7.68a3.02 3.02 0 0 1-4.27-4.27l7.32-7.32a1 1 0 1 1 1.41 1.41l-7.32 7.32a1.02 1.02 0 0 0 1.44 1.44l7.68-7.68a2.25 2.25 0 0 0-3.18-3.18L5.9 12.2a3.45 3.45 0 0 0 4.88 4.88l7.77-7.77a1 1 0 0 1 1.41 1.41l-7.77 7.77a5.42 5.42 0 0 1-3.84 1.61Z"/></svg>'
   };
 
@@ -546,6 +547,26 @@ function setupShareLinkCopy() {
   }
 
   document.querySelectorAll(".share-link-panel a, .article-share a").forEach(enhanceShareAnchor);
+
+  document.querySelectorAll("[data-native-share]").forEach((button) => {
+    button.classList.add("share-icon-link", "share-icon-share");
+    button.innerHTML = `${iconPaths.share}<span class="sr-only">Share</span>`;
+    button.setAttribute("aria-label", button.getAttribute("aria-label") || "Share");
+    button.addEventListener("click", async () => {
+      const shareUrl = button.dataset.nativeShare || window.location.href;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: document.title, url: shareUrl });
+          return;
+        }
+        await navigator.clipboard.writeText(shareUrl);
+        button.setAttribute("aria-label", "Copied link");
+        window.setTimeout(() => button.setAttribute("aria-label", "Share"), 1500);
+      } catch {
+        window.location.href = shareUrl;
+      }
+    });
+  });
 
   document.querySelectorAll("[data-copy-share]").forEach((button) => {
     button.classList.add("share-copy-button");
@@ -1079,7 +1100,7 @@ function setupLeadMagnetScorecard() {
   const nextSteps = {
     "Metric trust": "Recommended next step: Free Fit Check or Analytics Health Check.",
     "Ownership": "Recommended next step: Decision System Reset.",
-    "Source reliability": "Recommended next step: Data Quality & Reporting Reliability or Analytics Health Check.",
+    "Source reliability": "Recommended next step: Data Quality & Analytics Reliability or Analytics Health Check.",
     "Decision cadence": "Recommended next step: Decision System Reset.",
     "Operational signal": "Recommended next step: Fit Check now; Intelligence Lab once the foundation holds."
   };
@@ -1095,7 +1116,7 @@ function setupLeadMagnetScorecard() {
       areas: ["Source reliability", "Metric trust"],
       label: "Lineage and metric trust break",
       copy: "The pattern points to a source-to-KPI trust issue. Leaders may not believe the number because the path from source system, transformation, and measure logic is not clear enough.",
-      next: "Recommended path: Data Quality & Reporting Reliability or Analytics Health Check before redesigning the dashboard."
+      next: "Recommended path: Data Quality & Analytics Reliability or Analytics Health Check before redesigning the dashboard."
     },
     {
       areas: ["Decision cadence", "Operational signal"],
@@ -1107,7 +1128,7 @@ function setupLeadMagnetScorecard() {
       areas: ["Source reliability", "Operational signal"],
       label: "Input quality and signal break",
       copy: "The pattern suggests the team may be trying to create operational intelligence from inputs that are not yet reliable enough for confident action.",
-      next: "Recommended path: Data Quality & Reporting Reliability first, then revisit operational intelligence once the signal layer holds."
+      next: "Recommended path: Data Quality & Analytics Reliability first, then revisit operational intelligence once the signal layer holds."
     }
   ];
   let started = false;
@@ -1382,7 +1403,7 @@ function setupActiveNavigation() {
     "business-intelligence-consultant-cincinnati",
     "kpi-reporting-consulting",
     "reporting-automation-consulting",
-    "data-quality-review",
+    "data-quality-analytics-reliability",
     "dashboard-trust-governance"
   ]);
 
