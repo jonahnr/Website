@@ -32,6 +32,7 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `dashboard-trust-scorecard-download.html` - Interactive printable scorecard page with five 1-5 scored dimensions, five evidence checks per dimension that can drive scoring, diagnostic snapshot, compact evidence notes, tailored guidance, and print/PDF buttons.
 - `decision-system-reset.html` - Decision System Reset service page.
 - `decision-workspace.html` - Prototype client login/sign-up workspace for org-scoped decision, metric, dashboard, recommendation, user, and export artifacts.
+- `data-integration-analytics-architecture.html` - Expertise page for source integration, analytics modeling, pipeline reliability, governance, and AI readiness.
 - `decision-workspace-backend-plan.md` - Production auth/database migration plan for the workspace.
 - `decision-workspace-schema.sql` - Draft Postgres/Supabase schema for organizations, users, memberships, artifacts, and audit events.
 - `decision-workspace-api-contract.md` - API route, payload, permission, and deletion behavior contract for wiring the workspace to a backend.
@@ -39,6 +40,7 @@ Do not link to `home.html`; this project currently uses `index.html` as the live
 - `about.html` - About page and founder context.
 - `privacy-policy.html` - Privacy policy for analytics, forms, scheduling, and contact data.
 - `assets/insights/*.png` - Generated article hero photos in the Parallax visual style.
+- `assets/jonah-founder-credibility.webp` - Optimized founder portrait used in the homepage credibility block.
 - `home.css` - Shared styling, responsive layout, navigation, card visuals, subpage layouts, and carousel states.
 - `home.js` - Animated background, scroll reveals, pointer motion, dropdown handling, and carousel transitions.
 - `tools/optimize-assets.py` - Repeatable PNG optimization pass for oversized generated imagery.
@@ -62,6 +64,7 @@ The site includes:
 - Analytics Health Check request form that posts to `jonahnr@gmail.com` through FormSubmit.
 - Dashboard Trust Scorecard flow that gives a partially ungated live result first, then posts the request and live score details to the Cloudflare Pages Function at `/api/scorecard-submit`, emails the request, archives it when KV is configured, and routes the visitor to the downloadable scorecard.
 - Homepage diagnostic carousel for analytics foundation problems.
+- Homepage reporting-need navigation, puzzle-piece engagement strategy, concrete Fit Check outputs, four anonymized scale-aware case studies, and founder credibility.
 - How We Help process, outcome, and diagnostic disclosure sections.
 - Offerings page that routes visitors to the right engagement path.
 - Decision System Reset and Fractional Analytics Consulting pages for deeper offer detail.
