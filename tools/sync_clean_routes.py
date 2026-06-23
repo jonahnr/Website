@@ -7,6 +7,8 @@ PAGES = [
     "about",
     "analytics-health-check",
     "business-intelligence-consultant-cincinnati",
+    "case-studies",
+    "contact",
     "dashboard-trust-scorecard",
     "dashboard-trust-scorecard-download",
     "data-quality-review",
@@ -16,6 +18,8 @@ PAGES = [
     "fractional-analytics",
     "how-we-help",
     "dashboard-trust-governance",
+    "insights",
+    "intelligence-lab",
     "kpi-reporting-consulting",
     "our-offerings",
     "power-bi-consultant-cincinnati",
@@ -25,7 +29,7 @@ PAGES = [
 
 def prefix_nested_paths(html: str) -> str:
     html = re.sub(r'(href|src)="(assets/[^"]*)"', r'\1="../\2"', html)
-    html = re.sub(r'(href|src)="(home\.(?:css|js)\?v=\d+)"', r'\1="../\2"', html)
+    html = re.sub(r'(href|src)="(home(?:\.min)?\.(?:css|js)\?v=\d+)"', r'\1="../\2"', html)
     html = re.sub(r'(href)="((?:favicon|apple-touch-icon|social-preview)[^"]*)"', r'\1="../\2"', html)
     html = re.sub(r"url\('assets/", "url('../assets/", html)
 

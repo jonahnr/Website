@@ -29121,15 +29121,18 @@ body {
 
 .case-transformation-visual {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 18px 0 8px;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 16px 0 8px;
+  width: 100%;
+  min-width: 0;
 }
 
 .case-transformation-visual div {
   display: grid;
-  gap: 8px;
-  padding: 14px;
+  gap: 6px;
+  min-width: 0;
+  padding: 12px 13px;
   border: 1px solid rgba(125, 211, 252, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
@@ -29139,12 +29142,17 @@ body {
   color: #f7c94b;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
 }
 
 .case-transformation-visual span {
+  display: block;
   color: rgba(246, 248, 255, 0.9);
   font-weight: 800;
+  font-size: 0.92rem;
+  line-height: 1.28;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .research-perspectives-section {
@@ -29310,7 +29318,7 @@ body {
 @media (min-width: 980px) {
   .case-study-expanded.industry-case-story .case-story-copy {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.45fr);
     gap: 0 clamp(22px, 3vw, 34px);
     align-items: start;
   }
@@ -29334,5 +29342,181 @@ body {
 @media (max-width: 640px) {
   .case-study-expanded.industry-case-story .case-story-copy > .primary-action {
     width: 100%;
+  }
+}
+
+/* Request refinements: case studies hero, About story pacing, dropdown behavior, and flagship card normalization. */
+.case-studies-page .case-studies-hero {
+  position: relative;
+  min-height: clamp(520px, 68vh, 760px);
+  display: grid;
+  align-items: center;
+  padding: clamp(112px, 15vw, 184px) clamp(20px, 5vw, 72px) clamp(84px, 11vw, 140px);
+  overflow: hidden;
+  border-radius: 0;
+  background: #040a1e;
+}
+
+.case-studies-page .case-studies-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 22% 48%, rgba(3, 9, 28, 0.56) 0%, rgba(3, 9, 28, 0.32) 28%, transparent 58%),
+    linear-gradient(90deg, rgba(3, 8, 24, 0.94) 0%, rgba(4, 12, 36, 0.78) 44%, rgba(4, 12, 34, 0.46) 100%),
+    linear-gradient(180deg, rgba(2, 6, 20, 0.18), rgba(2, 6, 20, 0.34));
+  pointer-events: none;
+}
+
+.case-studies-page .case-studies-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.72) saturate(0.95);
+}
+
+.case-studies-page .case-studies-hero .hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(860px, 100%);
+  max-width: 860px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.case-studies-page .case-studies-hero .hero-copy p:not(.page-kicker) {
+  max-width: 760px;
+}
+
+.about-founder-story {
+  margin-bottom: clamp(14px, 2.5vw, 24px) !important;
+}
+
+.about-philosophy {
+  margin-top: clamp(14px, 2.5vw, 24px) !important;
+}
+
+.about-philosophy-lede {
+  max-width: 760px;
+  margin: 0 0 22px;
+  color: rgba(246, 248, 255, 0.82);
+  font-size: 1.02rem;
+  line-height: 1.68;
+}
+
+.about-belief-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-belief-grid article {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  min-height: 176px;
+  padding: 22px;
+  align-content: start;
+}
+
+.about-belief-grid article span {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 9px;
+  border: 1px solid rgba(247, 201, 75, 0.38);
+  border-radius: 999px;
+  color: #f7c94b;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.about-belief-grid article strong {
+  margin: 4px 0 0;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  line-height: 1.12;
+}
+
+.about-belief-grid article p {
+  margin: 0;
+  color: rgba(246, 248, 255, 0.78);
+  line-height: 1.58;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+    width: min(380px, calc(100vw - 32px)) !important;
+    max-width: 380px !important;
+    min-width: 0 !important;
+    padding: 14px !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 10px !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a {
+    min-height: 0 !important;
+    padding: 8px 10px !important;
+  }
+}
+
+@media (max-width: 920px), (hover: none), (pointer: coarse) {
+  .site-header.site-header.is-nav-open .nav-dropdown.nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .site-header.site-header.is-nav-open .nav-dropdown.nav-dropdown.is-open > .nav-dropdown-menu.nav-dropdown-menu {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .about-belief-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-perspectives-section {
+  grid-template-columns: 1fr !important;
+  align-items: stretch;
+}
+
+.research-feature-card {
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr) !important;
+  align-items: center;
+  width: 100%;
+}
+
+.research-feature-card img {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 760px) {
+  .case-studies-page .case-studies-hero {
+    min-height: 560px;
+  }
+
+  .case-studies-page .case-studies-hero-image {
+    object-position: 39% center;
+  }
+
+  .research-feature-card {
+    grid-template-columns: 1fr !important;
   }
 }
