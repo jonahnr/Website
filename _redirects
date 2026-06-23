@@ -130,8 +130,8 @@ https://www.parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
 /kpi-reporting-consulting.html /kpi-reporting-consulting/ 301
 /reporting-automation-consulting /reporting-automation-consulting/ 301
 /reporting-automation-consulting.html /reporting-automation-consulting/ 301
-/data-quality-review /data-quality-review/ 301
-/data-quality-review.html /data-quality-review/ 301
+/data-quality-review /data-quality-analytics-reliability/ 301
+/data-quality-review.html /data-quality-analytics-reliability/ 301
 /dashboard-trust-governance /dashboard-trust-governance/ 301
 /dashboard-trust-governance.html /dashboard-trust-governance/ 301
 /data-integration-analytics-architecture /data-integration-analytics-architecture/ 301
@@ -139,3 +139,6 @@ https://www.parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
 /how-we-help /our-offerings/ 301
 /how-we-help/ /our-offerings/ 301
 /how-we-help.html /our-offerings/ 301
+
+/data-quality-analytics-reliability /data-quality-analytics-reliability/ 301
+/data-quality-analytics-reliability.html /data-quality-analytics-reliability/ 301

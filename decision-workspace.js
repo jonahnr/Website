@@ -572,14 +572,14 @@
     const title = document.querySelector("[data-auth-title]");
     const copy = document.querySelector(".workspace-login-copy");
     const submit = document.querySelector("[data-auth-submit]");
-    if (eyebrow) eyebrow.textContent = isRecovery ? "Secure password recovery" : isSignup ? "New client workspace" : "Returning workspace";
-    if (title) title.textContent = isRecovery ? "Choose your new password." : isSignup ? "Create your reporting action workspace." : "Log in to your decision workspace.";
+    if (eyebrow) eyebrow.textContent = isRecovery ? "Prototype password recovery" : isSignup ? "Interactive prototype" : "Interactive prototype";
+    if (title) title.textContent = isRecovery ? "Choose a prototype password." : isSignup ? "Explore the Interactive Decision Workspace Demo." : "Open the Interactive Decision Workspace Demo.";
     if (copy) {
       copy.textContent = isRecovery
-        ? "Enter and confirm a new password for your account."
+        ? "Enter and confirm a new password for this demonstration account."
         : isSignup
-        ? "Start an organization account to turn recommendations into owned decisions, metrics, dashboards, and action plans."
-        : "Access your organization workspace securely.";
+        ? "This noindex prototype demonstrates how recommendations can become owned decisions, metrics, dashboards, and action plans. Do not enter confidential production data."
+        : "Access the demonstration workspace. Do not enter confidential production data.";
     }
     document.querySelector("[data-signup-fields]")?.classList.toggle("is-hidden", !isSignup);
     document.querySelector("[data-email-wrap]")?.classList.toggle("is-hidden", isRecovery);

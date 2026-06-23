@@ -323,7 +323,7 @@ function setupScorecardPersonalization() {
 function setDropdownVisibility(dropdown, isVisible) {
   const menu = dropdown.querySelector(".nav-dropdown-menu");
   if (!menu) return;
-  menu.style.setProperty("display", "grid", "important");
+  menu.style.setProperty("display", isVisible ? "grid" : "none", "important");
   menu.style.setProperty("opacity", isVisible ? "1" : "0", "important");
   menu.style.setProperty("visibility", isVisible ? "visible" : "hidden", "important");
   menu.style.setProperty("pointer-events", isVisible ? "auto" : "none", "important");
