@@ -109,7 +109,7 @@ Still expected from your asset folder:
 - `assets/social-preview.webp` — Open Graph / Twitter preview image
 - `assets/parallax_data_lab_original_transparent.png` — included fallback logo for local preview
 
-Note: this package now includes generated placeholder files for missing referenced paths so local preview does not show broken images. Replace placeholders with final art where you already have branded assets, especially `assets/Jonah.webp` if you have the actual founder photo.
+Note: this package includes generated support assets for referenced paths so local preview does not show broken images. Replace any temporary brand art with final approved assets where available, especially `assets/Jonah.webp` if you have the actual founder photo.
 
 
 ## Favicon and social preview assets
