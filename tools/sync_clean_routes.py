@@ -14,6 +14,7 @@ PAGES = [
     "data-quality-review",
     "data-integration-analytics-architecture",
     "decision-system-reset",
+    "decision-workspace",
     "expertise",
     "fractional-analytics",
     "how-we-help",
