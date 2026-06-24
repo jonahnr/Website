@@ -1,7 +1,7 @@
 document.body.classList.add("has-js");
 
 const canvas = document.querySelector("#signal-canvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas ? canvas.getContext("2d") : null;
 const layers = Array.from(document.querySelectorAll(".parallax-layer"));
 const cards = Array.from(document.querySelectorAll(".model-card, .signal-grid article, .intelligence-board article"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -14,6 +14,10 @@ let pointerY = 0.5;
 let animationFrame = null;
 
 function resizeCanvas() {
+  if (!canvas || !ctx) {
+    return;
+  }
+
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
   width = window.innerWidth;
   height = window.innerHeight;
@@ -35,7 +39,7 @@ function resizeCanvas() {
 }
 
 function drawSignals() {
-  if (reduceMotion.matches) {
+  if (!canvas || !ctx || reduceMotion.matches) {
     return;
   }
 
@@ -109,16 +113,24 @@ window.addEventListener("pointermove", (event) => {
   updateParallax();
 }, { passive: true });
 
-reduceMotion.addEventListener("change", () => {
+const handleMotionPreferenceChange = () => {
   if (reduceMotion.matches && animationFrame) {
     cancelAnimationFrame(animationFrame);
     animationFrame = null;
-    ctx.clearRect(0, 0, width, height);
+    if (ctx) {
+      ctx.clearRect(0, 0, width, height);
+    }
   } else if (!animationFrame) {
     drawSignals();
   }
   updateParallax();
-});
+};
+
+if (typeof reduceMotion.addEventListener === "function") {
+  reduceMotion.addEventListener("change", handleMotionPreferenceChange);
+} else if (typeof reduceMotion.addListener === "function") {
+  reduceMotion.addListener(handleMotionPreferenceChange);
+}
 
 resizeCanvas();
 drawSignals();

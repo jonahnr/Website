@@ -28910,6 +28910,67 @@ body {
   gap: 14px !important;
 }
 
+/* Deployment polish: route-safe project pages and full-width trust visuals. */
+.about-page-modern .about-hero-modern {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  border-inline: 0 !important;
+  border-radius: 0 !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+.insights-page .insights-hero {
+  display: grid !important;
+  align-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: clamp(390px, 52vh, 600px) !important;
+  margin: 0 !important;
+  padding: clamp(88px, 11vw, 132px) max(20px, calc((100vw - 1180px) / 2)) clamp(64px, 8vw, 94px) !important;
+  background:
+    linear-gradient(90deg, rgba(3, 8, 25, 0.92), rgba(7, 19, 58, 0.72) 48%, rgba(3, 8, 25, 0.48)),
+    radial-gradient(circle at 78% 22%, rgba(69, 190, 255, 0.18), transparent 20rem),
+    url("assets/insights/ai-enablement-trusted-business-data.webp") center center / cover no-repeat,
+    #050916 !important;
+  color: #ffffff !important;
+}
+
+.insights-page .insights-hero > * {
+  max-width: 880px;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence {
+    width: min(390px, calc(100vw - 32px)) !important;
+    max-width: min(390px, calc(100vw - 32px)) !important;
+    min-width: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-group {
+    min-width: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-child,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-parent {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    padding: 8px 10px !important;
+  }
+}
+
 .hero-text-link {
   color: #9bdcff;
   font-weight: 850;
