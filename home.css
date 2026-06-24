@@ -29965,3 +29965,56 @@ section.about-hero.about-hero-modern {
     max-width: min(230px, 66vw) !important;
   }
 }
+
+/* Mobile accessibility: keep links and controls at a reliable tap target size. */
+@media (max-width: 760px) {
+  .home-page a,
+  .home-page button,
+  .site-footer a,
+  .site-footer button {
+    min-height: 44px;
+  }
+
+  .home-page .primary-action,
+  .home-page .secondary-action,
+  .home-page .hero-text-link,
+  .home-page .work-fit-link,
+  .site-footer-contact-button,
+  .site-footer-secondary,
+  .site-footer-email,
+  .site-footer nav a,
+  .site-footer-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 44px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  .home-page .primary-action,
+  .home-page .secondary-action,
+  .home-page .hero-text-link,
+  .home-page .work-fit-link {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .home-page .case-study-grid article,
+  .home-page .hero-actions,
+  .site-footer-refined nav,
+  .site-footer-col,
+  .site-footer-contact {
+    gap: 12px !important;
+  }
+
+  .site-footer-social {
+    gap: 12px !important;
+  }
+
+  .site-social-link {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+  }
+}
