@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RLS Governance Demo | Parallax Data Lab</title>
+<meta name="description" content="Interactive RLS governance demo showing role-based access scenarios, data visibility controls, and analytics governance design patterns."/>
+<link rel="canonical" href="https://parallaxdatalab.com/rls-demo-webapp/"/>
+<meta property="og:title" content="RLS Governance Demo | Parallax Data Lab"/>
+<meta property="og:description" content="Interactive RLS governance demo showing role-based access scenarios, data visibility controls, and analytics governance design patterns."/>
+<meta property="og:url" content="https://parallaxdatalab.com/rls-demo-webapp/"/>
+<meta property="og:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="RLS Governance Demo | Parallax Data Lab"/>
+<meta name="twitter:description" content="Interactive RLS governance demo showing role-based access scenarios, data visibility controls, and analytics governance design patterns."/>
+<meta name="twitter:image" content="https://parallaxdatalab.com/assets/social-preview.webp"/>
+    <link rel="stylesheet" href="styles.css" />
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbq2h65cll");
+</script>
+</head>
+  <body>
+    <main class="shell">
+      <header class="brand-bar" aria-label="Parallax Data Lab brand">
+        <img src="assets/parallax-logo.png" alt="Parallax Data Lab" />
+        <div>
+          <span>Customer demo</span>
+          <strong>Governed analytics command center</strong>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Parallax Data Lab governed access simulator</p>
+          <h1 id="heroTitle">
+            Show how Row Level Security (RLS) changes
+            <span id="heroLensWord">operational risk</span>
+            reporting by
+            <span id="heroByWord">site</span>.
+          </h1>
+          <p class="lede">
+            Build one governed report experience instead of maintaining a separate dashboard for every user, team, or permission pattern.
+          </p>
+        </div>
+        <div class="hero-stack">
+          <div class="hero-panel" aria-label="RLS status summary">
+            <div>
+              <span class="status-dot active"></span>
+              <span id="heroMode">RLS enabled</span>
+            </div>
+            <strong id="heroVisibleRows">0 of 0 rows visible</strong>
+            <p id="heroSummary">Policies are filtering the report.</p>
+          </div>
+          <div class="presenter-card" aria-label="Presenter path summary">
+            <span>Demo path</span>
+            <strong>Show the same report through different permissions.</strong>
+            <p>Start with Andre, turn RLS off, then open Access audit to explain the decision trail.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-path" aria-label="Guided demo path">
+        <button class="path-step active" data-guide="viewer" type="button">
+          <span>1</span>
+          <div>
+            <strong>Choose a viewer</strong>
+            <p>Start with a site manager or account owner to show scoped access.</p>
+          </div>
+        </button>
+        <button class="path-step" data-guide="compare" type="button">
+          <span>2</span>
+          <div>
+            <strong>Toggle RLS off</strong>
+            <p>Reveal the risk of an unrestricted report in one click.</p>
+          </div>
+        </button>
+        <button class="path-step" data-guide="lens" type="button">
+          <span>3</span>
+          <div>
+            <strong>Switch lenses</strong>
+            <p>Show the same policy pattern across finance, compliance, AI, and customer data.</p>
+          </div>
+        </button>
+        <button class="path-step" data-guide="audit" type="button">
+          <span>4</span>
+          <div>
+            <strong>Open Access audit</strong>
+            <p>Close with explainable allow, deny, and mask decisions.</p>
+          </div>
+        </button>
+      </section>
+
+      <section class="workspace" aria-label="Interactive RLS demo">
+        <aside class="control-panel">
+          <div class="panel-header">
+            <p class="eyebrow">Identity</p>
+            <h2>Viewer context</h2>
+            <p class="context-note" id="viewerContext">Lens-specific access context will appear here.</p>
+          </div>
+          <div class="user-list" id="userList"></div>
+
+          <div class="divider"></div>
+
+          <div class="panel-header compact">
+            <p class="eyebrow">Policy engine</p>
+            <h2>RLS enablement</h2>
+          </div>
+
+          <label class="toggle-row">
+            <span>
+              <strong>Apply row-level security</strong>
+              <small>Filter report rows by governed entitlement rules.</small>
+            </span>
+            <input id="rlsToggle" type="checkbox" checked />
+          </label>
+
+          <label class="toggle-row">
+            <span>
+              <strong>Mask restricted values</strong>
+              <small>Keep rows visible while protecting sensitive fields.</small>
+            </span>
+            <input id="maskToggle" type="checkbox" checked />
+          </label>
+
+          <label class="toggle-row">
+            <span>
+              <strong>Show blocked records</strong>
+              <small>Reveal what governance removed from the report.</small>
+            </span>
+            <input id="blockedToggle" type="checkbox" />
+          </label>
+        </aside>
+
+        <section class="demo-stage">
+          <div class="value-strip" aria-label="Customer value summary">
+            <article>
+              <span>Without RLS</span>
+              <strong>Many copied reports</strong>
+              <p>Teams rebuild similar dashboards for executives, site leaders, finance, partners, and restricted audiences.</p>
+            </article>
+            <article class="value-primary">
+              <span>With RLS</span>
+              <strong>One governed report</strong>
+              <p>The same report adapts automatically based on identity, scope, domain entitlement, and sensitivity.</p>
+            </article>
+            <article>
+              <span>Result</span>
+              <strong>Less build, less confusion</strong>
+              <p>Developers maintain fewer assets and users get a cleaner, safer reporting experience.</p>
+            </article>
+          </div>
+
+          <div class="scenario-switch" aria-label="Business scenario selector">
+            <div>
+              <p class="eyebrow">Scenario</p>
+              <h2 id="scenarioTitle">Operational analytics</h2>
+            </div>
+            <div class="scenario-tabs" id="scenarioList"></div>
+          </div>
+
+          <div class="lens-panel" aria-label="Reporting lens selector">
+            <div>
+              <p class="eyebrow">Reporting lens</p>
+              <h2 id="lensTitle">Safety risk</h2>
+              <p id="lensNarrative">Select a lens to see how RLS changes the report.</p>
+            </div>
+            <div class="lens-list" id="lensList"></div>
+          </div>
+
+          <div class="insight-strip" id="insightStrip" aria-label="Governed analytics insight"></div>
+
+          <div class="tabs" role="tablist" aria-label="Demo views">
+            <button class="tab active" data-view="report" type="button">Report view</button>
+            <button class="tab" data-view="policies" type="button">Policy map</button>
+            <button class="tab" data-view="audit" type="button">Access audit</button>
+          </div>
+
+          <section class="view active" id="reportView">
+            <div class="metrics" id="metrics"></div>
+            <div class="report-layout">
+              <div class="chart-panel">
+                <div class="section-heading">
+                  <p class="eyebrow" id="chartEyebrow">Safety operations</p>
+                  <h2 id="chartTitle">Incident risk available to selected user</h2>
+                </div>
+                <div class="bar-chart" id="barChart" aria-label="Metric by site"></div>
+              </div>
+
+              <div class="table-panel">
+                <div class="section-heading row">
+                  <div>
+                    <p class="eyebrow">Data product</p>
+                    <h2 id="tableTitle">Site safety events</h2>
+                  </div>
+                  <span class="pill" id="tablePill">Filtered</span>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Record</th>
+                        <th>Site</th>
+                        <th>Domain</th>
+                        <th id="valueHeader">Risk score</th>
+                        <th>Sensitivity</th>
+                        <th>Policy result</th>
+                      </tr>
+                    </thead>
+                    <tbody id="reportRows"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="policiesView">
+            <div class="policy-grid" id="policyGrid"></div>
+            <div class="explain-panel">
+              <p class="eyebrow">How it gets applied</p>
+              <h2>RLS turns identity into report-specific filters</h2>
+              <div class="flow">
+                <div><strong>1. User signs in</strong><span>Role, site scope, domain, and clearance are resolved.</span></div>
+                <div><strong>2. Data is classified</strong><span>Rows carry site, business domain, owner, and sensitivity tags.</span></div>
+                <div><strong>3. Policies compile</strong><span>Rules translate those tags into filters and masks.</span></div>
+                <div><strong>4. Reports inherit controls</strong><span>Every dashboard query returns only approved records.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="auditView">
+            <div class="audit-header">
+              <div>
+                <p class="eyebrow">Access audit</p>
+                <h2>Policy decisions for the selected viewer</h2>
+              </div>
+              <button class="secondary-btn" id="resetDemo" type="button">Reset demo</button>
+            </div>
+            <div class="audit-list" id="auditList"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
