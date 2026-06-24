@@ -29651,6 +29651,12 @@ section.about-hero.about-hero-modern {
   max-width: 100% !important;
 }
 
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child {
+  width: calc(100% - 18px) !important;
+  max-width: calc(100% - 18px) !important;
+  flex: 0 1 calc(100% - 18px) !important;
+}
+
 @media (hover: hover) and (pointer: fine) and (min-width: 921px) {
   .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence {
     width: min(360px, calc(100vw - 28px)) !important;
@@ -29678,12 +29684,17 @@ section.about-hero.about-hero-modern {
 
   .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-group,
   .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
-  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-child,
   .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-parent,
   .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-section-title {
     width: 100% !important;
     max-width: 100% !important;
     white-space: normal !important;
     overflow-wrap: anywhere !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child {
+    width: calc(100% - 12px) !important;
+    max-width: calc(100% - 12px) !important;
+    flex-basis: calc(100% - 12px) !important;
   }
 }
