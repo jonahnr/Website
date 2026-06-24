@@ -6,6 +6,7 @@ const motionLayers = Array.from(document.querySelectorAll(".motion-layer"));
 const revealCards = Array.from(document.querySelectorAll(".reveal-card"));
 const dropdowns = Array.from(document.querySelectorAll(".nav-dropdown"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const deferDecorativeMotion = window.matchMedia("(max-width: 760px)");
 const carousels = new Map();
 const insightFilterButtons = Array.from(document.querySelectorAll("[data-insight-filter]"));
 const insightCards = Array.from(document.querySelectorAll(".insight-card[data-category]"));
@@ -775,7 +776,9 @@ function setupFractionalFlipCards() {
 }
 
 window.addEventListener("resize", () => {
-  resizeCanvas();
+  if (!deferDecorativeMotion.matches) {
+    resizeCanvas();
+  }
   updateParallaxScroll();
   updateRealParallax();
   revealOnScroll();
@@ -787,12 +790,14 @@ window.addEventListener("scroll", () => {
   revealOnScroll();
 }, { passive: true });
 
-window.addEventListener("pointermove", (event) => {
-  pointerX = event.clientX / Math.max(width, 1);
-  pointerY = event.clientY / Math.max(height, 1);
-  updateMotion();
-  updateRealParallax();
-}, { passive: true });
+if (!deferDecorativeMotion.matches) {
+  window.addEventListener("pointermove", (event) => {
+    pointerX = event.clientX / Math.max(width, 1);
+    pointerY = event.clientY / Math.max(height, 1);
+    updateMotion();
+    updateRealParallax();
+  }, { passive: true });
+}
 
 function handleMotionPreferenceChange() {
   if (reduceMotion.matches && frame) {
@@ -1266,9 +1271,13 @@ function setupLeadMagnetScorecard() {
   });
 }
 
-resizeCanvas();
-drawConstellation();
-updateMotion();
+if (!deferDecorativeMotion.matches) {
+  window.requestAnimationFrame(() => {
+    resizeCanvas();
+    drawConstellation();
+    updateMotion();
+  });
+}
 updateRealParallax();
 revealOnScroll();
 setupDropdowns();
@@ -1400,7 +1409,6 @@ function setupActiveNavigation() {
     "fractional-analytics",
     "expertise",
     "power-bi-consultant-cincinnati",
-    "business-intelligence-consultant-cincinnati",
     "kpi-reporting-consulting",
     "reporting-automation-consulting",
     "data-quality-analytics-reliability",

@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --navy: #0b1745;
   --deep: #050916;
   --royal: #1f6ae5;
@@ -39,7 +39,7 @@
   background:
     linear-gradient(180deg, rgba(1, 7, 22, 0.26), rgba(2, 8, 25, 0.78)),
     radial-gradient(circle at 50% 28%, rgba(247, 185, 53, 0.14), transparent 18rem),
-    url("assets/parallax-customer-intelligence-hero.png") center center / cover no-repeat,
+    url("assets/parallax-customer-intelligence-hero.webp") center center / cover no-repeat,
     #020718;
 }
 
@@ -707,7 +707,7 @@
 .handshake::after { right: 18px; transform: rotate(-16deg); }
 
 .next-section {
-  background: linear-gradient(180deg, rgba(2, 7, 24, 0.5), rgba(2, 7, 24, 0.78)), url("assets/parallax-customer-intelligence-hero.png") center center / cover no-repeat, #020718;
+  background: linear-gradient(180deg, rgba(2, 7, 24, 0.5), rgba(2, 7, 24, 0.78)), url("assets/parallax-customer-intelligence-hero.webp") center center / cover no-repeat, #020718;
 }
 
 .next-grid {
@@ -1102,7 +1102,7 @@ main {
   text-align: center;
   background:
     linear-gradient(180deg, rgba(1, 5, 22, 0.92) 0%, rgba(3, 14, 51, 0.82) 38%, rgba(4, 20, 70, 0.7) 100%),
-    url("assets/parallax-customer-intelligence-hero.png") center bottom / cover no-repeat,
+    url("assets/parallax-customer-intelligence-hero.webp") center bottom / cover no-repeat,
     #020718;
   overflow: hidden;
 }
@@ -1600,7 +1600,7 @@ h1 {
   padding: 16px 0 18px;
   background:
     linear-gradient(180deg, rgba(2, 7, 24, 0.5), rgba(2, 7, 24, 0.74)),
-    url("assets/parallax-customer-intelligence-hero.png") center center / cover no-repeat,
+    url("assets/parallax-customer-intelligence-hero.webp") center center / cover no-repeat,
     #050f32;
   border-top: 3px dashed rgba(255, 255, 255, 0.88);
 }
@@ -1980,7 +1980,7 @@ h1 {
   text-align: center;
   background:
     linear-gradient(180deg, rgba(7, 19, 58, 0.78), rgba(7, 19, 58, 0.9)),
-    url("assets/parallax-customer-intelligence-hero.png") center bottom / cover no-repeat,
+    url("assets/parallax-customer-intelligence-hero.webp") center bottom / cover no-repeat,
     #07133a;
 }
 
@@ -2016,7 +2016,7 @@ h1 {
   text-align: center;
   background:
     linear-gradient(180deg, rgba(1, 5, 22, 0.92), rgba(5, 22, 72, 0.78)),
-    url("assets/parallax-customer-intelligence-hero.png") center bottom / cover no-repeat,
+    url("assets/parallax-customer-intelligence-hero.webp") center bottom / cover no-repeat,
     #020718;
 }
 
@@ -3769,7 +3769,7 @@ h1 {
   padding: 34px 18px 62px;
   background:
     linear-gradient(180deg, rgba(7, 19, 58, 0.4), rgba(7, 19, 58, 0.82)),
-    url("assets/parallax-customer-intelligence-hero.png") center center / cover no-repeat,
+    url("assets/parallax-customer-intelligence-hero.webp") center center / cover no-repeat,
     var(--navy);
   text-align: center;
 }
@@ -5943,7 +5943,7 @@ p, li, blockquote {
 .hero-section {
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.78), rgba(11, 23, 69, 0.9)),
-    url("assets/parallax-customer-intelligence-hero.png");
+    url("assets/parallax-customer-intelligence-hero.webp");
   background-position: center bottom;
   background-size: cover;
 }
@@ -5952,7 +5952,7 @@ p, li, blockquote {
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.62), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 30%, rgba(245, 181, 68, 0.15), transparent 18rem),
-    url("assets/parallax-customer-intelligence-hero.png");
+    url("assets/parallax-customer-intelligence-hero.webp");
   background-position: center center;
   background-size: cover;
 }
@@ -6512,7 +6512,7 @@ textarea:focus {
   top: 50%;
   right: -22px;
   z-index: 2;
-  content: "→";
+  content: "?";
   color: #ffd77a;
   display: grid;
   width: 44px;
@@ -6655,7 +6655,7 @@ textarea:focus {
 }
 
 .expertise-delivery-section .expertise-detail-grid details[open] summary::after {
-  content: "−";
+  content: "-";
 }
 
 .expertise-delivery-section .expertise-detail-grid summary strong {
@@ -6789,7 +6789,7 @@ textarea:focus {
     right: auto;
     bottom: -12px;
     left: calc(50% - 22px);
-    content: "↓";
+    content: "?";
   }
 
   .expertise-case-study-stack dl {
@@ -7136,7 +7136,7 @@ main,
     linear-gradient(180deg, rgba(5, 9, 22, 0.56), rgba(11, 23, 69, 0.88)),
     radial-gradient(circle at 76% 20%, rgba(69, 190, 255, 0.18), transparent 24rem),
     radial-gradient(circle at 20% 18%, rgba(245, 181, 68, 0.10), transparent 18rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/parallax-customer-intelligence-hero.webp") !important;
   background-position: center center;
   background-size: cover;
 }
@@ -7172,7 +7172,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.66), rgba(11, 23, 69, 0.88)),
     radial-gradient(circle at 78% 20%, rgba(69, 190, 255, 0.18), transparent 22rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/parallax-customer-intelligence-hero.webp") !important;
   background-position: center center;
   background-size: cover;
 }
@@ -7188,7 +7188,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/parallax-customer-intelligence-hero.webp") !important;
   background-position: center 42%;
   background-size: cover;
 }
@@ -7214,7 +7214,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.70), rgba(11, 23, 69, 0.90)),
     radial-gradient(circle at 78% 20%, rgba(69, 190, 255, 0.16), transparent 22rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/parallax-customer-intelligence-hero.webp") !important;
   background-position: center bottom;
   background-size: cover;
 }
@@ -7223,7 +7223,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.58), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/parallax-customer-intelligence-hero.webp") !important;
   background-position: center 42%;
   background-size: cover;
 }
@@ -7253,7 +7253,7 @@ main,
   background-image:
     linear-gradient(180deg, rgba(5, 9, 22, 0.60), rgba(11, 23, 69, 0.92)),
     radial-gradient(circle at 50% 28%, rgba(245, 181, 68, 0.13), transparent 20rem),
-    url("assets/parallax-customer-intelligence-hero.png") !important;
+    url("assets/parallax-customer-intelligence-hero.webp") !important;
   background-position: center 42%;
   background-size: cover;
 }
@@ -29696,5 +29696,242 @@ section.about-hero.about-hero-modern {
     width: calc(100% - 12px) !important;
     max-width: calc(100% - 12px) !important;
     flex-basis: calc(100% - 12px) !important;
+  }
+}
+
+/* Canonical navigation dropdown map: keep the same menu structure and formatting on every page. */
+.site-header .nav-dropdown > .nav-dropdown-menu,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-about {
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  right: auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  min-width: 330px !important;
+  width: min(430px, calc(100vw - 32px)) !important;
+  max-width: min(430px, calc(100vw - 32px)) !important;
+  padding: 10px !important;
+  border: 1px solid rgba(49, 168, 255, 0.7) !important;
+  border-radius: 8px !important;
+  background: rgba(7, 19, 58, 0.98) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.32) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(-6px) !important;
+}
+
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings {
+  width: min(460px, calc(100vw - 32px)) !important;
+  max-width: min(460px, calc(100vw - 32px)) !important;
+}
+
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence {
+  width: min(520px, calc(100vw - 32px)) !important;
+  max-width: min(520px, calc(100vw - 32px)) !important;
+}
+
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+  width: min(680px, calc(100vw - 32px)) !important;
+  max-width: min(680px, calc(100vw - 32px)) !important;
+}
+
+.site-header .nav-dropdown-about > .nav-dropdown-menu.nav-dropdown-menu-about {
+  left: auto !important;
+  right: 0 !important;
+  width: min(340px, calc(100vw - 32px)) !important;
+  max-width: min(340px, calc(100vw - 32px)) !important;
+}
+
+.site-header .nav-dropdown:hover > .nav-dropdown-menu,
+.site-header .nav-dropdown:focus-within > .nav-dropdown-menu,
+.site-header .nav-dropdown.is-open > .nav-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy,
+.site-header .nav-dropdown-menu.nav-menu-offerings,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about {
+  grid-template-columns: 1fr !important;
+}
+
+.site-header .nav-menu-group,
+.site-header details.nav-menu-group {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  background: rgba(5, 14, 42, 0.58) !important;
+  overflow: hidden !important;
+  columns: auto !important;
+}
+
+.site-header .nav-menu-group > a,
+.site-header details.nav-menu-group > a {
+  display: flex !important;
+}
+
+.site-header .nav-menu-section-title,
+.site-header summary.nav-menu-section-title,
+.site-header .nav-menu-static-title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  border-radius: 6px !important;
+  color: rgba(245, 181, 68, 0.92) !important;
+  background: transparent !important;
+  cursor: default !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  list-style: none !important;
+  text-transform: uppercase !important;
+}
+
+.site-header .nav-menu-section-title::after,
+.site-header summary.nav-menu-section-title::after {
+  content: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a,
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  min-height: 42px !important;
+  padding: 11px 12px 11px 16px !important;
+  border: 1px solid rgba(49, 168, 255, 0.22) !important;
+  border-left-color: var(--gold, #f5b544) !important;
+  border-radius: 10px !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  font-size: 0.88rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-decoration: none !important;
+  white-space: normal !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-parent {
+  border-left-width: 6px !important;
+  font-weight: 900 !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child {
+  margin-left: 18px !important;
+  padding-left: 14px !important;
+  border-left-width: 3px !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child::before {
+  position: absolute !important;
+  left: -15px !important;
+  top: 50% !important;
+  width: 12px !important;
+  height: 1px !important;
+  content: "" !important;
+  background: rgba(245, 181, 68, 0.72) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a:hover,
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a:focus-visible,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  color: #ffffff !important;
+  border-color: rgba(245, 181, 68, 0.76) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.18), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
+  transform: translateX(2px) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-hierarchy a.is-active,
+.site-header .nav-dropdown-menu.nav-menu-offerings a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-offerings a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  color: #ffffff !important;
+  border-color: rgba(245, 181, 68, 0.95) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.24), rgba(31, 106, 229, 0.2)) !important;
+  box-shadow: inset 0 0 0 1px rgba(245, 181, 68, 0.18) !important;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group {
+    grid-template-columns: repeat(2, minmax(230px, 1fr)) !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-section-title,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 920px), (hover: none), (pointer: coarse) {
+  .site-header .nav-dropdown > .nav-dropdown-menu,
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings,
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence,
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies,
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-about {
+    position: static !important;
+    display: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-top: 8px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  .site-header .nav-dropdown.is-open > .nav-dropdown-menu,
+  .site-header.site-header.is-nav-open .nav-dropdown.is-open > .nav-dropdown-menu {
+    display: grid !important;
   }
 }
