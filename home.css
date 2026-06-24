@@ -29935,3 +29935,33 @@ section.about-hero.about-hero-modern {
     display: grid !important;
   }
 }
+
+/* Homepage performance lock: keep the mobile hero geometry identical to the inline critical CSS. */
+.home-page .hero-brand {
+  aspect-ratio: 500 / 208;
+}
+
+.home-page .hero-logo {
+  aspect-ratio: 500 / 208;
+  height: auto !important;
+}
+
+@media (max-width: 920px) {
+  .home-page .hero-section {
+    min-height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .home-page .hero-copy h1 {
+    font-size: clamp(2.35rem, 10vw, 3.3rem) !important;
+    line-height: 1.02 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .hero-logo {
+    width: min(230px, 66vw) !important;
+    max-width: min(230px, 66vw) !important;
+  }
+}
