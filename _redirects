@@ -8,6 +8,9 @@ http://www.parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
 https://www.parallaxdatalab.com/* https://parallaxdatalab.com/:splat 301
 
 # Shared asset rewrites for clean URL pages using relative paths
+/rls-demo-webapp/assets/* /rls-demo-webapp/assets/:splat 200
+/enterprise-outcome-studio/assets/* /enterprise-outcome-studio/assets/:splat 200
+/predictive-risk-intelligence/assets/* /predictive-risk-intelligence/assets/:splat 200
 /:slug/home.css /home.css 200
 /:slug/home.js /home.js 200
 /:slug/assets/* /assets/:splat 200
