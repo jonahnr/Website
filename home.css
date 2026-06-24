@@ -29966,6 +29966,44 @@ section.about-hero.about-hero-modern {
   }
 }
 
+/* Desktop accessibility: give compact homepage links a dependable target area. */
+.home-page .hero-expertise-links {
+  gap: 12px !important;
+}
+
+.home-page .hero-expertise-links a,
+.home-page .case-study-grid article .secondary-action,
+.home-page .case-study-heading .primary-action,
+.site-footer-brand,
+.site-footer-contact-button,
+.site-footer-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 44px !important;
+  line-height: 1.25 !important;
+}
+
+.home-page .hero-expertise-links a {
+  display: grid !important;
+  align-content: center !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.home-page .case-study-grid article .secondary-action,
+.home-page .case-study-heading .primary-action {
+  justify-content: center !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.site-footer-brand,
+.site-footer-contact-button,
+.site-footer-secondary {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
 /* Mobile accessibility: keep links and controls at a reliable tap target size. */
 @media (max-width: 760px) {
   .home-page a,
