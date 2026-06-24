@@ -31,6 +31,11 @@ PAGES = [
 def prefix_nested_paths(html: str) -> str:
     html = re.sub(r'(href|src)="(assets/[^"]*)"', r'\1="../\2"', html)
     html = re.sub(r'(href|src)="(home(?:\.min)?\.(?:css|js)\?v=\d+)"', r'\1="../\2"', html)
+    html = re.sub(
+        r'(href|src)="(decision-workspace(?:-supabase)?\.(?:css|js)\?v=\d+)"',
+        r'\1="../\2"',
+        html,
+    )
     html = re.sub(r'(href)="((?:favicon|apple-touch-icon|social-preview)[^"]*)"', r'\1="../\2"', html)
     html = re.sub(r"url\('assets/", "url('../assets/", html)
 
