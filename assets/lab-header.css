@@ -1,0 +1,387 @@
+.lab-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  min-height: 72px;
+  padding: 10px 18px 10px max(10px, env(safe-area-inset-left));
+  color: #ffffff;
+  background: rgba(11, 23, 69, 0.96);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+.lab-site-header *,
+.lab-site-header *::before,
+.lab-site-header *::after {
+  box-sizing: border-box;
+}
+
+.lab-site-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lab-site-brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: clamp(150px, 16vw, 220px);
+  min-width: 150px;
+  max-width: none;
+  margin-right: clamp(10px, 1.6vw, 22px);
+  padding: 0;
+  line-height: 0;
+}
+
+.lab-site-brand img {
+  display: block;
+  width: 100%;
+  max-height: 46px;
+  object-fit: contain;
+}
+
+.lab-mobile-nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 8px 12px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lab-mobile-nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+}
+
+.lab-mobile-nav-toggle em {
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2vw, 26px);
+  min-width: 0;
+  overflow: visible;
+}
+
+.lab-site-header nav > a,
+.lab-nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 10px 2px;
+  color: #ffffff;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.lab-site-header nav > a:hover,
+.lab-site-header nav > a:focus-visible,
+.lab-nav-dropdown-toggle:hover,
+.lab-nav-dropdown-toggle:focus-visible,
+.lab-nav-dropdown.is-open > .lab-nav-dropdown-toggle {
+  color: #ffffff;
+  background: transparent;
+  border-bottom-color: #f5b544;
+  outline: none;
+}
+
+.lab-nav-dropdown {
+  position: relative;
+}
+
+.lab-nav-dropdown-toggle::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  opacity: 0.78;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.lab-nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  display: grid;
+  gap: 6px;
+  min-width: 330px;
+  width: min(430px, calc(100vw - 32px));
+  max-width: min(430px, calc(100vw - 32px));
+  padding: 10px;
+  color: #f8fbff;
+  background: rgba(7, 19, 58, 0.98);
+  border: 1px solid rgba(49, 168, 255, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.lab-nav-dropdown-wide .lab-nav-dropdown-menu,
+.lab-nav-dropdown-menu.lab-nav-menu-offerings {
+  width: min(460px, calc(100vw - 32px));
+  max-width: min(460px, calc(100vw - 32px));
+}
+
+.lab-nav-dropdown-menu.lab-nav-dropdown-menu-case-studies {
+  left: 0;
+  right: auto;
+  width: min(680px, calc(100vw - 32px));
+  max-width: min(680px, calc(100vw - 32px));
+}
+
+.lab-nav-dropdown-menu.lab-nav-dropdown-menu-intelligence {
+  width: min(520px, calc(100vw - 32px));
+  max-width: min(520px, calc(100vw - 32px));
+}
+
+.lab-nav-dropdown-menu.lab-nav-dropdown-menu-about {
+  left: auto;
+  right: 0;
+  width: min(340px, calc(100vw - 32px));
+  max-width: min(340px, calc(100vw - 32px));
+}
+
+.lab-nav-dropdown:hover > .lab-nav-dropdown-menu,
+.lab-nav-dropdown:focus-within > .lab-nav-dropdown-menu,
+.lab-nav-dropdown.is-open > .lab-nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.lab-nav-menu-hierarchy {
+  grid-template-columns: 1fr;
+}
+
+.lab-nav-dropdown-menu-case-studies {
+  grid-template-columns: 1fr;
+}
+
+.lab-nav-menu-group {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 8px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(5, 14, 42, 0.58);
+  overflow: hidden;
+}
+
+.lab-nav-menu-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  color: rgba(245, 181, 68, 0.92);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-nav-menu-parent,
+.lab-nav-menu-child {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 42px;
+  padding: 11px 12px 11px 16px;
+  border: 1px solid rgba(49, 168, 255, 0.22);
+  border-left-color: #f5b544;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(7, 19, 58, 0.38);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.15;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.lab-nav-menu-child {
+  margin-left: 18px;
+  padding-left: 14px;
+  border-left-width: 3px;
+  color: rgba(255, 255, 255, 0.84);
+  background: rgba(7, 19, 58, 0.24);
+}
+
+.lab-nav-menu-parent {
+  border-left-width: 6px;
+  font-weight: 900;
+}
+
+.lab-nav-menu-child::before {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  width: 12px;
+  height: 1px;
+  content: "";
+  background: rgba(245, 181, 68, 0.72);
+}
+
+.lab-nav-menu-parent:hover,
+.lab-nav-menu-parent:focus-visible,
+.lab-nav-menu-child:hover,
+.lab-nav-menu-child:focus-visible {
+  color: #ffffff;
+  border-color: rgba(245, 181, 68, 0.76);
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.18), rgba(31, 106, 229, 0.18));
+  transform: translateX(2px);
+  outline: none;
+}
+
+.lab-nav-menu-child em {
+  flex: 0 0 auto;
+  color: #07133a;
+  background: #f5b544;
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 0.64rem;
+  font-style: normal;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lab-nav-current {
+  color: #ffffff;
+  border-color: rgba(245, 181, 68, 0.95);
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.24), rgba(31, 106, 229, 0.2));
+  box-shadow: inset 0 0 0 1px rgba(245, 181, 68, 0.18);
+}
+
+.lab-nav-dropdown-toggle.lab-nav-current {
+  color: #ffffff;
+  padding-inline: 16px;
+  background: rgba(31, 106, 229, 0.34);
+  border: 1px solid rgba(245, 181, 68, 0.86);
+  box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+  .lab-nav-dropdown-menu.lab-nav-dropdown-menu-case-studies .lab-nav-menu-group {
+    grid-template-columns: repeat(2, minmax(230px, 1fr));
+  }
+
+  .lab-nav-dropdown-menu.lab-nav-dropdown-menu-case-studies .lab-nav-menu-section-title,
+  .lab-nav-dropdown-menu.lab-nav-dropdown-menu-case-studies .lab-nav-menu-parent {
+    grid-column: 1 / -1;
+  }
+
+  .lab-nav-dropdown-menu.lab-nav-dropdown-menu-intelligence .lab-nav-menu-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 920px), (hover: none), (pointer: coarse) {
+  .lab-site-header {
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+  }
+
+  .lab-mobile-nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .lab-site-header nav {
+    display: none;
+    flex-basis: 100%;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 8px 0 2px;
+  }
+
+  .lab-site-header.is-nav-open nav {
+    display: grid;
+    gap: 8px;
+  }
+
+  .lab-site-header nav > a,
+  .lab-nav-dropdown-toggle {
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 12px;
+  }
+
+  .lab-nav-dropdown-menu,
+  .lab-nav-dropdown-menu.lab-nav-menu-offerings,
+  .lab-nav-dropdown-menu.lab-nav-dropdown-menu-case-studies,
+  .lab-nav-dropdown-menu.lab-nav-dropdown-menu-about {
+    position: static;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    margin-top: 8px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .lab-nav-dropdown.is-open > .lab-nav-dropdown-menu {
+    display: grid;
+  }
+
+  .lab-nav-menu-hierarchy,
+  .lab-nav-dropdown-menu-case-studies {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .lab-site-header {
+    padding-inline: 12px;
+  }
+
+  .lab-site-brand {
+    max-width: min(210px, 56vw);
+  }
+
+  .lab-nav-dropdown-menu {
+    padding: 10px;
+  }
+}
