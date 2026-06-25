@@ -13438,19 +13438,36 @@ body::after {
   color: rgba(255, 255, 255, 0.88) !important;
 }
 
+.site-footer-refined .site-footer-contact {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+  align-content: start !important;
+}
+
+.site-footer-refined .site-footer-contact h3 {
+  margin-bottom: 2px !important;
+}
+
+.site-footer-refined .site-footer-contact .site-footer-secondary,
+.site-footer-refined .site-footer-contact .site-footer-email {
+  min-height: 0 !important;
+  margin: 0 !important;
+}
+
 .site-footer-social {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 10px !important;
-  margin-top: 2px !important;
+  gap: 8px !important;
+  margin-top: 4px !important;
 }
 
 .site-social-link {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: 34px !important;
+  height: 34px !important;
   border: 1px solid rgba(255, 255, 255, 0.24) !important;
   border-radius: 50% !important;
   background: rgba(255, 255, 255, 0.92) !important;
@@ -27842,6 +27859,543 @@ body {
   }
 }
 
+/* Absolute final nav normalization: all main dropdowns follow the Our Offerings format. */
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: min(460px, calc(100vw - 32px)) !important;
+  max-width: min(460px, calc(100vw - 32px)) !important;
+  min-width: 330px !important;
+  padding: 10px !important;
+  border-color: rgba(49, 168, 255, 0.7) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-menu-offerings details.nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence details.nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies details.nav-menu-group {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  padding: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  background: rgba(5, 14, 42, 0.58) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings .nav-menu-section-title,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-section-title,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-section-title {
+  grid-column: auto !important;
+  color: rgba(245, 181, 68, 0.92) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a {
+  display: flex !important;
+  grid-column: auto !important;
+  min-height: 42px !important;
+  margin-left: 0 !important;
+  padding: 11px 12px 11px 16px !important;
+  border: 1px solid rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  border-radius: 10px !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  white-space: normal !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 18px !important;
+  padding-left: 14px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+  display: block !important;
+  content: "" !important;
+  position: absolute !important;
+  left: -15px !important;
+  top: 50% !important;
+  width: 12px !important;
+  height: 1px !important;
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  border-color: rgba(69, 190, 255, 0.76) !important;
+  border-left-color: rgba(69, 190, 255, 0.95) !important;
+  background: linear-gradient(90deg, rgba(69, 190, 255, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
+}
+
+/* True final no-gold dropdown state override. */
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active {
+  border-color: rgba(69, 190, 255, 0.72) !important;
+  border-left-color: rgba(69, 190, 255, 0.95) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle[aria-current="page"] {
+  border-color: rgba(69, 190, 255, 0.72) !important;
+  box-shadow: none !important;
+}
+
+/* Override every gold menu state on home/header dropdowns. */
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active {
+  border-color: rgba(69, 190, 255, 0.72) !important;
+  border-left-color: rgba(69, 190, 255, 0.95) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle[aria-current="page"] {
+  border-color: rgba(69, 190, 255, 0.72) !important;
+  box-shadow: none !important;
+}
+
+/* Final nav normalization: make every dropdown follow the Our Offerings format. */
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: min(460px, calc(100vw - 32px)) !important;
+  max-width: min(460px, calc(100vw - 32px)) !important;
+  min-width: 330px !important;
+  padding: 10px !important;
+  border-color: rgba(49, 168, 255, 0.7) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-menu-offerings details.nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence details.nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies details.nav-menu-group {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  padding: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  background: rgba(5, 14, 42, 0.58) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings .nav-menu-section-title,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-section-title,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-section-title {
+  grid-column: auto !important;
+  color: rgba(245, 181, 68, 0.92) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a {
+  display: flex !important;
+  grid-column: auto !important;
+  min-height: 42px !important;
+  margin-left: 0 !important;
+  padding: 11px 12px 11px 16px !important;
+  border: 1px solid rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  border-radius: 10px !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  white-space: normal !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 18px !important;
+  padding-left: 14px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+  display: block !important;
+  content: "" !important;
+  position: absolute !important;
+  left: -15px !important;
+  top: 50% !important;
+  width: 12px !important;
+  height: 1px !important;
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible {
+  border-color: rgba(69, 190, 255, 0.76) !important;
+  border-left-color: rgba(69, 190, 255, 0.95) !important;
+  background: linear-gradient(90deg, rgba(69, 190, 255, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
+}
+
+/* True final About dropdown cleanup. */
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-about {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  width: min(340px, calc(100vw - 32px)) !important;
+  max-width: min(340px, calc(100vw - 32px)) !important;
+  padding: 10px !important;
+  border-color: rgba(49, 168, 255, 0.7) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  border-color: rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child {
+  margin-left: 18px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  border-color: rgba(245, 181, 68, 0.78) !important;
+  border-left-color: rgba(245, 181, 68, 0.95) !important;
+  box-shadow: none !important;
+}
+
+/* EOF header consistency contract. */
+.site-header .nav-dropdown > .nav-dropdown-toggle {
+  border-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown:hover > .nav-dropdown-toggle,
+.site-header .nav-dropdown:focus-within > .nav-dropdown-toggle,
+.site-header .nav-dropdown.is-open > .nav-dropdown-toggle {
+  border: 1px solid rgba(245, 181, 68, 0.78) !important;
+  border-bottom: 2px solid var(--gold, #f5b544) !important;
+  border-bottom-color: var(--gold, #f5b544) !important;
+  background: rgba(245, 181, 68, 0.12) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a,
+.site-header .nav-dropdown-menu.nav-menu-offerings a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-offerings a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  border-color: rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child {
+  margin-left: 18px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  border-color: rgba(245, 181, 68, 0.78) !important;
+  border-left-color: rgba(245, 181, 68, 0.95) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
+}
+
+/* EOF selected/current header state consistency. */
+.site-header nav > a[aria-current="page"],
+.site-header nav > a.is-active,
+.site-header .nav-dropdown > .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown > .nav-dropdown-toggle.is-active {
+  border: 1px solid rgba(245, 181, 68, 0.78) !important;
+  border-bottom: 2px solid var(--gold, #f5b544) !important;
+  border-bottom-color: var(--gold, #f5b544) !important;
+  background: rgba(245, 181, 68, 0.12) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-offerings a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  border-color: rgba(245, 181, 68, 0.78) !important;
+  border-left-color: rgba(245, 181, 68, 0.95) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* EOF header consistency contract. */
+.site-header .nav-dropdown > .nav-dropdown-toggle {
+  border-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown:hover > .nav-dropdown-toggle,
+.site-header .nav-dropdown:focus-within > .nav-dropdown-toggle,
+.site-header .nav-dropdown.is-open > .nav-dropdown-toggle {
+  border-bottom: 2px solid var(--gold, #f5b544) !important;
+  border-bottom-color: var(--gold, #f5b544) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a,
+.site-header .nav-dropdown-menu.nav-menu-offerings a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-offerings a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  border-color: rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child {
+  margin-left: 18px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  border-color: rgba(245, 181, 68, 0.78) !important;
+  border-left-color: rgba(245, 181, 68, 0.95) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle,
+.site-header .nav-dropdown-about > .nav-dropdown-toggle,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-about > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-about > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown-about > .nav-dropdown-toggle[aria-current="page"] {
+  border-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle.is-active,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle.is-active,
+.site-header .nav-dropdown-about > .nav-dropdown-toggle.is-active {
+  border-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-intelligence:hover > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies:hover > .nav-dropdown-toggle,
+.site-header .nav-dropdown-about:hover > .nav-dropdown-toggle,
+.site-header .nav-dropdown-intelligence:focus-within > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies:focus-within > .nav-dropdown-toggle,
+.site-header .nav-dropdown-about:focus-within > .nav-dropdown-toggle,
+.site-header .nav-dropdown-intelligence.is-open > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies.is-open > .nav-dropdown-toggle,
+.site-header .nav-dropdown-about.is-open > .nav-dropdown-toggle {
+  border-bottom: 2px solid var(--gold, #f5b544) !important;
+  border-bottom-color: var(--gold, #f5b544) !important;
+}
+
+.home-page .case-study-section,
+.home-page .case-study-section.reveal-card,
+.home-page .case-study-grid article,
+.home-page .ai-foundation-section,
+.home-page .ai-foundation-section.reveal-card,
+.home-page .enterprise-architecture-flow span,
+.home-page .enterprise-architecture-flow strong {
+  border-color: rgba(69, 190, 255, 0.3) !important;
+  border-left-color: rgba(69, 190, 255, 0.3) !important;
+}
+
 @media (max-width: 520px) {
   .home-page .hero-expertise-links {
     grid-template-columns: 1fr 1fr !important;
@@ -29912,6 +30466,165 @@ section.about-hero.about-hero-modern {
   }
 }
 
+@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+    width: min(760px, calc(100vw - 32px)) !important;
+    max-width: min(760px, calc(100vw - 32px)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies > .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group {
+    grid-template-columns: repeat(2, minmax(140px, 1fr)) !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child {
+    margin-left: 0 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+    display: none !important;
+  }
+}
+
+.home-page .case-study-grid article,
+.home-page .ai-foundation-section,
+.home-page .enterprise-architecture-flow,
+.home-page .intelligence-lab-showcase {
+  border-color: rgba(69, 190, 255, 0.34) !important;
+  border-left-color: rgba(69, 190, 255, 0.34) !important;
+}
+
+.home-page .case-study-grid article:hover,
+.home-page .case-study-grid article:focus-within {
+  border-color: rgba(84, 209, 216, 0.56) !important;
+}
+
+.article-inline-visual {
+  margin: clamp(26px, 4vw, 44px) 0;
+  border: 1px solid rgba(69, 190, 255, 0.24);
+  border-radius: 8px;
+  padding: clamp(10px, 1.5vw, 14px);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 22px 52px rgba(2, 8, 28, 0.18);
+}
+
+.article-inline-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.article-inline-visual figcaption {
+  margin: 10px 4px 2px;
+  color: rgba(11, 23, 69, 0.72);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.article-content .article-lede {
+  color: #ffffff;
+  font-size: clamp(1.1rem, 1.7vw, 1.28rem);
+  font-weight: 850;
+  line-height: 1.62;
+}
+
+/* Final visual locks for the case-study dropdown, homepage borders, and compact footer contact. */
+.site-footer-refined .site-footer-contact {
+  gap: 4px !important;
+}
+
+.site-footer-refined .site-footer-contact h3 {
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.site-footer-refined .site-footer-contact .site-footer-secondary,
+.site-footer-refined .site-footer-contact .site-footer-contact-email {
+  display: inline-flex !important;
+  width: fit-content !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+}
+
+.site-footer-refined .site-footer-contact .site-footer-secondary + .site-footer-secondary,
+.site-footer-refined .site-footer-contact .site-footer-secondary + .site-footer-contact-email,
+.site-footer-refined .site-footer-contact .site-footer-contact-email + .site-footer-social {
+  margin-top: 2px !important;
+}
+
+.site-footer-refined .site-footer-contact .site-footer-social {
+  gap: 6px !important;
+  margin-top: 5px !important;
+}
+
+.site-footer-refined .site-footer-contact .site-social-link {
+  width: 31px !important;
+  height: 31px !important;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+    width: min(760px, calc(100vw - 32px)) !important;
+    max-width: min(760px, calc(100vw - 32px)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies > .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies details.nav-menu-group {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    columns: auto !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-section-title,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child {
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    border-left-color: rgba(69, 190, 255, 0.5) !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+.home-page .case-study-section,
+.home-page .case-study-section.reveal-card,
+.home-page .case-study-grid article,
+.home-page .ai-foundation-section,
+.home-page .ai-foundation-section.reveal-card,
+.home-page .intelligence-lab-showcase,
+.home-page .offer-card-grid-balanced .intelligence-lab-showcase {
+  border-color: rgba(69, 190, 255, 0.34) !important;
+  border-left-color: rgba(69, 190, 255, 0.34) !important;
+  box-shadow: 0 22px 60px rgba(2, 8, 28, 0.18) !important;
+}
+
+.home-page .case-study-grid article::before,
+.home-page .ai-foundation-section::before,
+.home-page .intelligence-lab-showcase::before {
+  border-color: rgba(69, 190, 255, 0.28) !important;
+  background: rgba(69, 190, 255, 0.1) !important;
+}
+
 @media (max-width: 920px), (hover: none), (pointer: coarse) {
   .site-header .nav-dropdown > .nav-dropdown-menu,
   .site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings,
@@ -30055,4 +30768,1601 @@ section.about-hero.about-hero-modern {
     height: 44px !important;
     min-width: 44px !important;
   }
+}
+
+/* Case study executive proof artifact system */
+.case-executive-proof {
+  display: grid;
+  gap: clamp(18px, 3vw, 28px);
+  margin: clamp(24px, 4vw, 42px) 0;
+}
+.case-summary-sidebar,
+.proof-panel,
+.proof-evidence-banner,
+.impact-strip article,
+.case-quote-panel {
+  border: 1px solid rgba(69, 190, 255, 0.34);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(5, 13, 42, 0.94), rgba(9, 31, 82, 0.9));
+  box-shadow: 0 22px 64px rgba(0, 0, 0, 0.28);
+}
+.case-summary-sidebar {
+  padding: clamp(18px, 2.4vw, 24px);
+}
+.case-summary-sidebar h3,
+.proof-panel h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+}
+.case-summary-sidebar svg,
+.proof-panel h3 svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.case-summary-sidebar dl {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.case-summary-sidebar dl div {
+  padding: 0 0 10px;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  display: grid;
+  grid-template-columns: minmax(94px, .34fr) 1fr;
+}
+.case-summary-sidebar dt {
+  color: var(--gold);
+  font-weight: 900;
+}
+.case-summary-sidebar dd {
+  margin: 0;
+  color: rgba(246,248,255,.86);
+}
+.impact-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+  gap: 12px;
+}
+.impact-strip article {
+  min-height: 118px;
+  padding: 18px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.impact-strip article::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 14px 18px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), #18d3b5);
+  border-radius: 999px;
+}
+.impact-strip strong {
+  color: #fff;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  line-height: 1;
+}
+.impact-strip span {
+  color: rgba(246,248,255,.82);
+  font-weight: 800;
+}
+.proof-evidence-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+}
+.proof-evidence-banner strong {
+  color: #fff;
+  margin-right: 4px;
+}
+.proof-evidence-banner span {
+  color: rgba(246,248,255,.84);
+  border: 1px solid rgba(24,211,181,.28);
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: rgba(24,211,181,.09);
+}
+.proof-evidence-banner span::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #18d3b5;
+}
+.proof-panel {
+  padding: clamp(22px, 3.2vw, 34px);
+}
+.before-after-comparison > div,
+.outcome-proof > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.before-after-comparison article,
+.outcome-proof article {
+  border-radius: 8px;
+  background: rgba(255,255,255,.075);
+  padding: clamp(16px, 2.3vw, 22px);
+}
+.before-after-comparison article:first-child {
+  border: 1px solid rgba(248,113,113,.34);
+}
+.before-after-comparison article:last-child {
+  border: 1px solid rgba(24,211,181,.34);
+}
+.before-after-comparison strong,
+.outcome-proof strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+}
+.before-after-comparison p {
+  display: flex;
+  gap: 9px;
+  margin: 12px 0;
+  color: rgba(246,248,255,.92);
+  line-height: 1.38;
+}
+.before-after-comparison p span {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 900;
+}
+.before-after-comparison article:first-child p span {
+  color: #fecaca;
+  background: rgba(248,113,113,.16);
+}
+.before-after-comparison article:last-child p span {
+  color: #bff8ee;
+  background: rgba(24,211,181,.16);
+}
+.visual-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(360px, 1fr));
+  gap: clamp(18px, 2.5vw, 24px);
+}
+.visual-proof-grid > article {
+  min-width: 0;
+  border-radius: 8px;
+  background: rgba(3, 10, 31, 0.62);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  padding: clamp(18px, 2.6vw, 26px);
+  overflow: hidden;
+}
+.proof-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  margin-top: 8px;
+  padding: 8px;
+}
+.proof-svg-node rect,
+.proof-svg-node circle {
+  fill: rgba(12, 43, 105, 0.96);
+  stroke: rgba(69, 190, 255, 0.9);
+  stroke-width: 2.8;
+  transition: fill .2s ease, stroke .2s ease, transform .2s ease;
+}
+.proof-svg-node text {
+  fill: #ffffff;
+  font: 900 16px Inter, Arial, sans-serif;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: rgba(5, 9, 22, 0.58);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.proof-svg-path {
+  fill: none;
+  stroke: #45f0d4;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+}
+.proof-svg-path.warning {
+  stroke: #ffd77a;
+}
+.case-executive-proof.is-visible .proof-svg-path {
+  animation: casePathDraw 1.2s ease forwards;
+}
+.proof-svg-node:hover rect,
+.proof-svg-node:hover circle,
+.proof-svg-node:focus rect,
+.proof-svg-node:focus circle {
+  fill: rgba(24,211,181,.18);
+  stroke: #18d3b5;
+}
+.dashboard-evolution {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.mock-dashboard {
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(2, 8, 26, 0.5);
+}
+.mock-dashboard span {
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: .76rem;
+}
+.mock-dashboard p {
+  color: rgba(246,248,255,.78);
+  margin: 10px 0 0;
+  font-size: .9rem;
+}
+.mock-grid {
+  margin-top: 10px;
+  height: 145px;
+  display: grid;
+  gap: 8px;
+}
+.mock-grid i,
+.mock-grid b,
+.mock-grid strong {
+  display: block;
+  border-radius: 6px;
+  min-width: 0;
+}
+.mock-grid.messy {
+  grid-template-columns: 1fr .7fr 1.2fr;
+  grid-auto-rows: 42px;
+}
+.mock-grid.messy i {
+  background: rgba(248,113,113,.23);
+}
+.mock-grid.clean {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 38px 72px 20px;
+}
+.mock-grid.clean b {
+  background: rgba(24,211,181,.28);
+}
+.mock-grid.clean i {
+  background: rgba(125,211,252,.2);
+}
+.mock-grid.clean strong {
+  grid-column: 1 / -1;
+  background: rgba(247,185,53,.28);
+}
+.kpi-governance {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.kpi-governance span {
+  padding: 16px;
+  border: 1px solid rgba(69, 240, 212, 0.34);
+  border-radius: 8px;
+  background: rgba(24,211,181,.12);
+}
+.kpi-governance strong,
+.kpi-governance em {
+  display: block;
+}
+.kpi-governance strong {
+  color: #fff;
+}
+.kpi-governance em {
+  color: rgba(246,248,255,.76);
+  font-style: normal;
+  margin-top: 6px;
+}
+.outcome-proof > div {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.outcome-proof p {
+  margin: 0;
+  color: rgba(246,248,255,.84);
+}
+.case-quote-panel {
+  margin: 0;
+  padding: clamp(20px, 3vw, 30px);
+  border-color: rgba(247,185,53,.36);
+  background: linear-gradient(135deg, rgba(247,185,53,.14), rgba(24,211,181,.08));
+}
+.case-quote-panel blockquote {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.05rem, 2vw, 1.42rem);
+  font-weight: 850;
+}
+.proof-library-section {
+  margin-top: clamp(36px, 6vw, 72px);
+}
+.proof-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+.proof-library-grid a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(125,211,252,.22);
+  border-radius: 8px;
+  background: rgba(7,19,58,.7);
+  padding: 12px;
+}
+.proof-library-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+.proof-library-grid span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 900;
+}
+@keyframes casePathDraw {
+  to { stroke-dashoffset: 0; }
+}
+@media (min-width: 1080px) {
+  .case-executive-proof {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
+  }
+  .case-summary-sidebar {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+    position: sticky;
+    top: 102px;
+  }
+  .case-executive-proof > :not(.case-summary-sidebar) {
+    grid-column: 1;
+  }
+}
+@media (max-width: 900px) {
+  .visual-proof-grid,
+  .before-after-comparison > div,
+  .dashboard-evolution,
+  .outcome-proof > div {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .case-summary-sidebar dl div,
+  .kpi-governance {
+    grid-template-columns: 1fr;
+  }
+  .proof-svg-node text {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-executive-proof.is-visible .proof-svg-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.before-after-comparison p span {
+  position: relative;
+  color: transparent !important;
+  font-size: 0;
+}
+
+.before-after-comparison p span::before,
+.before-after-comparison p span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.before-after-comparison article:first-child p span::before,
+.before-after-comparison article:first-child p span::after {
+  width: 11px;
+  height: 2px;
+  background: #fecaca;
+  border-radius: 999px;
+  transform-origin: center;
+}
+
+.before-after-comparison article:first-child p span::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.before-after-comparison article:first-child p span::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.before-after-comparison article:last-child p span::before {
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid #bff8ee;
+  border-bottom: 2px solid #bff8ee;
+  transform: translate(-48%, -62%) rotate(-45deg);
+}
+
+@media (prefers-color-scheme: light) {
+  .case-summary-sidebar,
+  .proof-panel,
+  .proof-evidence-banner,
+  .impact-strip article,
+  .case-quote-panel,
+  .proof-library-grid a {
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(11, 23, 69, 0.18);
+    box-shadow: 0 18px 48px rgba(11, 23, 69, 0.12);
+  }
+
+  .case-summary-sidebar h3,
+  .proof-panel h3,
+  .impact-strip strong,
+  .before-after-comparison strong,
+  .outcome-proof strong,
+  .kpi-governance strong,
+  .case-quote-panel blockquote,
+  .proof-library-grid a,
+  .proof-svg-node text {
+    color: #0b1745;
+    fill: #0b1745;
+  }
+
+  .case-summary-sidebar dd,
+  .impact-strip span,
+  .before-after-comparison p,
+  .outcome-proof p,
+  .kpi-governance em,
+  .mock-dashboard p {
+    color: rgba(11, 23, 69, 0.78);
+  }
+
+  .visual-proof-grid > article,
+  .before-after-comparison article,
+  .outcome-proof article,
+  .mock-dashboard,
+  .kpi-governance span {
+    background: rgba(11, 23, 69, 0.045);
+  }
+}
+
+/* Individual case-study pages: keep the overview compact and give detail pages room. */
+.case-study-detail-page {
+  padding: clamp(96px, 12vw, 140px) clamp(18px, 5vw, 72px) clamp(56px, 8vw, 96px);
+}
+
+.case-study-breadcrumb {
+  max-width: 1180px;
+  margin: 0 auto 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+  color: rgba(246, 248, 255, 0.72);
+  font-weight: 800;
+}
+
+.case-study-breadcrumb a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.case-study-breadcrumb span::before {
+  content: "/";
+  margin-right: 9px;
+  color: rgba(246, 248, 255, 0.42);
+}
+
+.case-study-detail-page .case-study-expanded.industry-case-story {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.case-study-detail-page .case-study-expanded.industry-case-story .case-story-copy.case-detail-copy {
+  display: block !important;
+  max-width: none;
+}
+
+.case-study-detail-page .case-study-expanded.industry-case-story .case-story-copy.case-detail-copy > * {
+  grid-column: auto !important;
+}
+
+.case-study-detail-page .case-story-image {
+  max-height: 520px !important;
+  object-fit: cover !important;
+}
+
+.case-detail-copy > h1 {
+  margin: 0 0 clamp(20px, 3vw, 32px);
+  max-width: 980px;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.case-detail-copy > dl {
+  margin-bottom: clamp(26px, 4vw, 44px);
+}
+
+.case-study-overview-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+}
+
+.case-study-index-summary.case-study-expanded.industry-case-story {
+  gap: 16px !important;
+}
+
+.case-study-index-summary .case-story-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover !important;
+}
+
+.case-study-index-summary .case-story-copy {
+  display: block !important;
+}
+
+.case-study-index-summary h2 {
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.18;
+}
+
+.case-study-index-summary dl {
+  margin: 16px 0;
+}
+
+.case-study-index-summary dl div {
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.case-study-index-summary .primary-action {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 980px) {
+  .case-study-index-summary.case-study-expanded.industry-case-story .case-story-copy > .page-kicker,
+  .case-study-index-summary.case-study-expanded.industry-case-story .case-story-copy > h2,
+  .case-study-index-summary.case-study-expanded.industry-case-story .case-story-copy > dl,
+  .case-study-index-summary.case-study-expanded.industry-case-story .case-story-copy > .primary-action {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-study-detail-page {
+    padding-top: 92px;
+  }
+
+  .case-detail-copy > h1 {
+    font-size: clamp(1.85rem, 11vw, 2.65rem);
+  }
+}
+
+/* Case-study overview filters and client proof band */
+.case-study-filter-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.5fr) repeat(2, minmax(180px, 0.75fr)) auto;
+  gap: 12px;
+  align-items: end;
+  margin: clamp(20px, 3vw, 30px) 0;
+  padding: clamp(16px, 2.5vw, 22px);
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 8px;
+  background: rgba(7, 19, 58, 0.74);
+}
+
+.case-study-filter-panel label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.case-study-filter-panel span {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-filter-panel input,
+.case-study-filter-panel select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  padding: 0 13px;
+}
+
+.case-study-filter-panel input::placeholder {
+  color: rgba(246, 248, 255, 0.52);
+}
+
+.case-study-filter-panel select option {
+  color: #0b1745;
+}
+
+.case-study-filter-panel p {
+  margin: 0;
+  min-height: 46px;
+  display: grid;
+  place-items: center;
+  white-space: nowrap;
+  color: rgba(246, 248, 255, 0.82);
+  font-weight: 900;
+}
+
+.case-studies-page .case-study-filter-panel {
+  background:
+    linear-gradient(135deg, rgba(7, 19, 58, 0.92), rgba(12, 43, 105, 0.78)),
+    rgba(7, 19, 58, 0.9);
+  border-color: rgba(69, 190, 255, 0.34);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.case-studies-page .case-study-filter-panel input,
+.case-studies-page .case-study-filter-panel select {
+  appearance: none;
+  -webkit-appearance: none;
+  color-scheme: dark;
+  background-color: rgba(3, 10, 31, 0.78) !important;
+  background-image: none !important;
+  border-color: rgba(125, 211, 252, 0.38);
+  color: #ffffff !important;
+}
+
+.case-studies-page .case-study-filter-panel select {
+  background-image: none !important;
+  padding-right: 34px;
+}
+
+.case-studies-page .case-study-filter-panel input:focus,
+.case-studies-page .case-study-filter-panel select:focus {
+  outline: 2px solid rgba(69, 240, 212, 0.45);
+  outline-offset: 2px;
+  border-color: rgba(69, 240, 212, 0.72);
+}
+
+.case-studies-page .case-study-filter-panel p {
+  color: rgba(246, 248, 255, 0.9);
+}
+
+.industry-case-card.is-filtered-out {
+  display: none;
+}
+
+.case-study-empty-state {
+  display: none;
+  padding: 18px;
+  border: 1px solid rgba(247, 185, 53, 0.26);
+  border-radius: 8px;
+  background: rgba(247, 185, 53, 0.08);
+  color: rgba(246, 248, 255, 0.84);
+  font-weight: 850;
+}
+
+.case-study-empty-state.is-visible {
+  display: block;
+}
+
+.client-proof-band {
+  text-align: center;
+}
+
+.client-proof-band .case-study-heading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client-proof-band h2 {
+  color: var(--blue);
+  font-size: clamp(2.1rem, 5vw, 4rem);
+}
+
+.client-logo-sheet {
+  display: block;
+  width: min(1120px, 100%);
+  height: auto;
+  max-width: 1120px;
+  margin: clamp(28px, 5vw, 54px) auto 0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 980px) {
+  .case-study-filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-filter-search,
+  .case-study-filter-panel p {
+    grid-column: 1 / -1;
+  }
+
+  .client-name-cloud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .case-study-filter-panel,
+  .client-name-cloud {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-filter-panel p {
+    place-items: start;
+    min-height: 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .case-study-filter-panel,
+  .case-study-empty-state {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(11, 23, 69, 0.16);
+  }
+
+  .case-study-filter-panel input,
+  .case-study-filter-panel select {
+    background: rgba(11, 23, 69, 0.045);
+    color: #0b1745;
+  }
+
+  .case-study-filter-panel p,
+  .case-study-empty-state {
+    color: rgba(11, 23, 69, 0.78);
+  }
+
+  .client-name-cloud span {
+    color: rgba(11, 23, 69, 0.46);
+  }
+
+  .case-studies-page .case-study-filter-panel {
+    background:
+      linear-gradient(135deg, rgba(7, 19, 58, 0.94), rgba(12, 43, 105, 0.82)),
+      rgba(7, 19, 58, 0.9);
+    border-color: rgba(69, 190, 255, 0.34);
+  }
+
+  .case-studies-page .case-study-filter-panel input,
+  .case-studies-page .case-study-filter-panel select {
+    background-color: rgba(3, 10, 31, 0.78) !important;
+    color: #ffffff !important;
+  }
+
+  .case-studies-page .case-study-filter-panel p {
+    color: rgba(246, 248, 255, 0.9);
+  }
+}
+
+/* Keep case-study proof diagrams readable regardless of system color mode. */
+.case-study-detail-page .proof-panel,
+.case-study-detail-page .case-summary-sidebar,
+.case-study-detail-page .proof-evidence-banner,
+.case-study-detail-page .impact-strip article,
+.case-study-detail-page .case-quote-panel {
+  background: linear-gradient(145deg, rgba(5, 13, 42, 0.96), rgba(9, 31, 82, 0.93));
+  border-color: rgba(69, 190, 255, 0.36);
+}
+
+.case-study-detail-page .visual-proof-grid > article {
+  background: rgba(3, 10, 31, 0.78);
+  border-color: rgba(125, 211, 252, 0.26);
+}
+
+.case-study-detail-page .proof-panel h3,
+.case-study-detail-page .case-summary-sidebar h3,
+.case-study-detail-page .impact-strip strong,
+.case-study-detail-page .before-after-comparison strong,
+.case-study-detail-page .outcome-proof strong,
+.case-study-detail-page .kpi-governance strong,
+.case-study-detail-page .case-quote-panel blockquote {
+  color: #ffffff;
+}
+
+.case-study-detail-page .case-summary-sidebar dd,
+.case-study-detail-page .impact-strip span,
+.case-study-detail-page .before-after-comparison p,
+.case-study-detail-page .outcome-proof p,
+.case-study-detail-page .kpi-governance em,
+.case-study-detail-page .mock-dashboard p {
+  color: rgba(246, 248, 255, 0.9);
+}
+
+.case-study-detail-page .proof-svg-node text {
+  fill: #ffffff;
+  color: #ffffff;
+}
+
+.case-study-detail-page .proof-svg-node rect,
+.case-study-detail-page .proof-svg-node circle {
+  fill: rgba(12, 43, 105, 0.98);
+  stroke: rgba(69, 190, 255, 0.95);
+}
+
+/* Case-study proof exhibits: larger, case-specific diagrams replacing generic mini widgets. */
+.case-proof-exhibits {
+  display: grid;
+  gap: clamp(22px, 3vw, 34px);
+}
+
+.case-study-detail-page .case-executive-proof > .case-proof-exhibits {
+  grid-column: 1 / -1;
+}
+
+.case-study-detail-page .case-executive-proof > .impact-strip,
+.case-study-detail-page .case-executive-proof > .outcome-proof,
+.case-study-detail-page .case-executive-proof > .case-quote-panel,
+.case-study-detail-page .case-executive-proof > .proof-evidence-banner {
+  grid-column: 1 / -1;
+}
+
+.case-study-detail-page .impact-strip {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.case-study-detail-page .impact-strip article {
+  min-height: 126px;
+  overflow: visible;
+}
+
+.case-study-detail-page .impact-strip strong {
+  max-width: 100%;
+  font-size: clamp(1.75rem, 2.25vw, 2.55rem);
+  overflow-wrap: anywhere;
+}
+
+.case-study-detail-page .outcome-proof {
+  justify-self: center;
+  width: 100%;
+  max-width: 1120px;
+  text-align: center;
+}
+
+.case-study-detail-page .before-after-comparison {
+  justify-self: center;
+  width: 100%;
+}
+
+.case-study-detail-page .outcome-proof > div {
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.case-study-detail-page .outcome-proof article {
+  min-height: 154px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  border: 1px solid rgba(69, 240, 212, 0.28);
+  background: radial-gradient(circle at 50% 0%, rgba(69, 240, 212, 0.15), rgba(3, 10, 31, 0.58) 58%);
+}
+
+.case-study-detail-page .outcome-proof strong {
+  color: #ffd77a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.case-study-detail-page .outcome-proof p {
+  max-width: 18ch;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.case-study-detail-page .case-quote-panel,
+.case-study-detail-page .proof-evidence-banner {
+  justify-self: center;
+  width: 100%;
+  max-width: 1120px;
+}
+
+.case-study-detail-page .case-quote-panel {
+  text-align: center;
+}
+
+.case-study-detail-page .proof-evidence-banner {
+  justify-content: center;
+}
+
+@media (min-width: 1080px) {
+  .case-study-detail-page .case-summary-sidebar {
+    grid-column: 2;
+    grid-row: 3;
+    position: static;
+    align-self: stretch;
+  }
+
+  .case-study-detail-page .case-executive-proof > .before-after-comparison {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: stretch;
+  }
+
+  .case-study-detail-page .case-executive-proof > .impact-strip {
+    grid-row: 1;
+  }
+
+  .case-study-detail-page .case-executive-proof > .proof-evidence-banner:first-of-type {
+    grid-row: 2;
+  }
+
+  .case-study-detail-page .case-executive-proof > .case-proof-exhibits {
+    grid-row: 4;
+  }
+}
+
+.case-proof-exhibit {
+  overflow: hidden;
+}
+
+.case-proof-note {
+  max-width: 860px;
+  margin: -4px 0 clamp(18px, 3vw, 26px);
+  color: rgba(246, 248, 255, 0.84);
+  font-weight: 750;
+  line-height: 1.42;
+}
+
+.case-proof-large-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 390px;
+}
+
+.case-proof-backplate {
+  fill: rgba(3, 10, 31, 0.72);
+  stroke: rgba(69, 190, 255, 0.18);
+  stroke-width: 2;
+}
+
+.case-proof-lane-title {
+  fill: #ffd77a;
+  font: 900 18px Inter, Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.case-proof-node rect {
+  fill: rgba(12, 43, 105, 0.98);
+  stroke: rgba(69, 190, 255, 0.9);
+  stroke-width: 2.8;
+}
+
+.case-proof-node.work-node rect {
+  fill: rgba(18, 66, 128, 0.98);
+  stroke: rgba(69, 240, 212, 0.9);
+}
+
+.case-proof-node.outcome-node rect {
+  fill: rgba(16, 70, 70, 0.98);
+  stroke: rgba(69, 240, 212, 0.92);
+}
+
+.case-proof-svg-label {
+  fill: #ffffff;
+  font: 900 16px Inter, Arial, sans-serif;
+  paint-order: stroke;
+  stroke: rgba(5, 9, 22, 0.66);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.case-proof-line {
+  fill: none;
+  stroke: #45f0d4;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+.case-proof-line.muted {
+  stroke: rgba(125, 211, 252, 0.7);
+  stroke-width: 3.5;
+}
+
+.case-proof-hub rect {
+  fill: rgba(247, 185, 53, 0.2);
+  stroke: rgba(255, 215, 122, 0.92);
+  stroke-width: 2.6;
+}
+
+.case-proof-hub.outcome-hub rect {
+  fill: rgba(69, 240, 212, 0.14);
+  stroke: rgba(69, 240, 212, 0.9);
+}
+
+.case-proof-hub text {
+  fill: #ffffff;
+  font: 900 13px Inter, Arial, sans-serif;
+  text-anchor: middle;
+}
+
+.case-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  position: relative;
+}
+
+.case-process-timeline::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 31px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), #45f0d4, var(--gold));
+  border-radius: 999px;
+}
+
+.case-process-timeline article {
+  position: relative;
+  z-index: 1;
+  min-height: 230px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 8px;
+  background: rgba(3, 10, 31, 0.68);
+}
+
+.case-process-timeline span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-weight: 950;
+  box-shadow: 0 0 0 7px rgba(31, 106, 229, 0.18);
+}
+
+.case-process-timeline strong {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.case-process-timeline p {
+  margin: 0;
+  color: rgba(246, 248, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.case-challenge-map {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.78fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.case-challenge-column,
+.case-challenge-center,
+.case-challenge-outcome {
+  border-radius: 8px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  background: rgba(3, 10, 31, 0.68);
+  padding: clamp(16px, 2.5vw, 22px);
+}
+
+.case-challenge-column {
+  display: grid;
+  gap: 10px;
+}
+
+.case-challenge-column strong,
+.case-challenge-outcome strong {
+  color: #ffffff;
+  font-size: 1.02rem;
+}
+
+.case-challenge-column span {
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(248, 113, 113, 0.13);
+  border: 1px solid rgba(248, 113, 113, 0.28);
+  color: rgba(246, 248, 255, 0.9);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.case-challenge-column.is-after span {
+  background: rgba(69, 240, 212, 0.12);
+  border-color: rgba(69, 240, 212, 0.32);
+}
+
+.case-challenge-center {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  text-align: center;
+  border-color: rgba(255, 215, 122, 0.38);
+  background: linear-gradient(180deg, rgba(247, 185, 53, 0.16), rgba(31, 106, 229, 0.12));
+}
+
+.case-challenge-center span,
+.case-challenge-center em {
+  color: #ffd77a;
+  font-weight: 950;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.case-challenge-center p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.02rem;
+  font-weight: 850;
+  line-height: 1.32;
+}
+
+.case-challenge-outcome {
+  grid-column: 1 / -1;
+  border-color: rgba(69, 240, 212, 0.34);
+  background: rgba(24, 211, 181, 0.1);
+}
+
+.case-challenge-outcome p {
+  margin: 8px 0 0;
+  color: rgba(246, 248, 255, 0.88);
+  font-weight: 800;
+  line-height: 1.36;
+}
+
+@media (max-width: 1080px) {
+  .case-process-timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-process-timeline::before {
+    display: none;
+  }
+
+  .case-challenge-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .case-proof-large-svg {
+    min-height: 0;
+  }
+
+  .architecture-large-svg {
+    width: 980px;
+    max-width: none;
+  }
+
+  .case-proof-architecture {
+    overflow-x: auto;
+  }
+
+  .case-process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .case-process-timeline article {
+    min-height: 0;
+  }
+}
+
+/* Final homepage/nav/footer lock so recent layout fixes win the full cascade. */
+.site-footer-refined .site-footer-contact {
+  gap: 10px !important;
+  align-content: start !important;
+}
+
+.site-footer-refined .site-footer-contact h3 {
+  margin: 0 0 6px !important;
+}
+
+.site-footer-refined .site-footer-contact .site-footer-secondary,
+.site-footer-refined .site-footer-contact .site-footer-contact-email {
+  margin: 0 !important;
+  min-height: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.site-footer-refined .site-footer-contact .site-footer-social {
+  gap: 8px !important;
+  margin-top: 2px !important;
+}
+
+.site-footer-refined .site-footer-contact .site-social-link {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 981px) {
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+    width: min(760px, calc(100vw - 32px)) !important;
+    max-width: min(760px, calc(100vw - 32px)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies > .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies details.nav-menu-group {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px 10px !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-section-title,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child {
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    border-left-color: rgba(69, 190, 255, 0.45) !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence {
+    width: min(720px, calc(100vw - 32px)) !important;
+    max-width: min(720px, calc(100vw - 32px)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-group,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence details.nav-menu-group {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px 10px !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-section-title,
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-parent {
+    grid-column: 1 / -1 !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child {
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+  }
+
+  .site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a {
+  border-color: rgba(69, 190, 255, 0.26) !important;
+  border-left-color: rgba(69, 190, 255, 0.52) !important;
+}
+
+.home-page .case-study-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.home-page .case-study-section,
+.home-page .case-study-section.reveal-card,
+.home-page .case-study-grid article,
+.home-page .case-study-artifact,
+.home-page .ai-foundation-section,
+.home-page .ai-foundation-section.reveal-card,
+.home-page .enterprise-architecture-flow span,
+.home-page .enterprise-architecture-flow strong,
+.home-page .intelligence-lab-showcase,
+.home-page .offer-card-grid-balanced .intelligence-lab-showcase {
+  border-color: rgba(69, 190, 255, 0.28) !important;
+  border-left-color: rgba(69, 190, 255, 0.28) !important;
+  box-shadow: 0 18px 52px rgba(1, 7, 24, 0.34), 0 0 0 1px rgba(69, 190, 255, 0.08) !important;
+}
+
+.home-page .case-study-section::before,
+.home-page .case-study-grid article::before,
+.home-page .ai-foundation-section::before,
+.home-page .intelligence-lab-showcase::before {
+  border-color: rgba(69, 190, 255, 0.3) !important;
+  background: linear-gradient(135deg, rgba(69, 190, 255, 0.11), rgba(24, 211, 181, 0.05)) !important;
+}
+
+.home-page .enterprise-architecture-flow span:not(:last-child)::after {
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.home-page .enterprise-architecture-flow strong {
+  background: linear-gradient(135deg, rgba(69, 190, 255, 0.22), rgba(24, 211, 181, 0.16)) !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 820px) {
+  .home-page .case-study-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* True final nav normalization: all main dropdowns follow the Our Offerings format. */
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active {
+  border-color: rgba(69, 190, 255, 0.72) !important;
+  border-left-color: rgba(69, 190, 255, 0.95) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:hover,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle:focus-visible,
+.site-header .nav-dropdown-intelligence > .nav-dropdown-toggle[aria-current="page"],
+.site-header .nav-dropdown-case-studies > .nav-dropdown-toggle[aria-current="page"] {
+  border-color: rgba(69, 190, 255, 0.72) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-menu-offerings,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-intelligence,
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-case-studies {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: min(460px, calc(100vw - 32px)) !important;
+  max-width: min(460px, calc(100vw - 32px)) !important;
+  min-width: 330px !important;
+  padding: 10px !important;
+  border-color: rgba(49, 168, 255, 0.7) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-group,
+.site-header .nav-dropdown-menu.nav-menu-offerings details.nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence details.nav-menu-group,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies details.nav-menu-group {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  padding: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  background: rgba(5, 14, 42, 0.58) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings .nav-menu-section-title,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence .nav-menu-section-title,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies .nav-menu-section-title {
+  grid-column: auto !important;
+  color: rgba(245, 181, 68, 0.92) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a {
+  display: flex !important;
+  grid-column: auto !important;
+  min-height: 42px !important;
+  margin-left: 0 !important;
+  padding: 11px 12px 11px 16px !important;
+  border: 1px solid rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  border-radius: 10px !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  white-space: normal !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 18px !important;
+  padding-left: 14px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before {
+  display: block !important;
+  content: "" !important;
+  position: absolute !important;
+  left: -15px !important;
+  top: 50% !important;
+  width: 12px !important;
+  height: 1px !important;
+  background: rgba(69, 190, 255, 0.72) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible {
+  border-color: rgba(69, 190, 255, 0.76) !important;
+  border-left-color: rgba(69, 190, 255, 0.95) !important;
+  background: linear-gradient(90deg, rgba(69, 190, 255, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
+}
+/* EOF dropdown cleanup: blue resting borders, no connector ticks, gold only on hover. */
+.site-header .nav-dropdown > .nav-dropdown-menu.nav-dropdown-menu-about {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  width: min(340px, calc(100vw - 32px)) !important;
+  max-width: min(340px, calc(100vw - 32px)) !important;
+  padding: 10px !important;
+  border-color: rgba(49, 168, 255, 0.7) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  border-color: rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child {
+  margin-left: 18px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  border-color: rgba(245, 181, 68, 0.78) !important;
+  border-left-color: rgba(245, 181, 68, 0.95) !important;
+  box-shadow: none !important;
+}
+/* EOF header consistency contract. */
+.site-header .nav-dropdown > .nav-dropdown-toggle {
+  border-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown:hover > .nav-dropdown-toggle,
+.site-header .nav-dropdown:focus-within > .nav-dropdown-toggle,
+.site-header .nav-dropdown.is-open > .nav-dropdown-toggle {
+  border-bottom: 2px solid var(--gold, #f5b544) !important;
+  border-bottom-color: var(--gold, #f5b544) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a,
+.site-header .nav-dropdown-menu.nav-menu-offerings a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],
+.site-header .nav-dropdown-menu.nav-menu-offerings a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active {
+  border-color: rgba(49, 168, 255, 0.22) !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.38) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child {
+  margin-left: 18px !important;
+  border-left-width: 3px !important;
+  border-left-color: rgba(69, 190, 255, 0.64) !important;
+  background: rgba(7, 19, 58, 0.24) !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-parent,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-parent {
+  border-left-width: 6px !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.nav-menu-child::before,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.nav-menu-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.site-header .nav-dropdown-menu.nav-menu-offerings a:hover,
+.site-header .nav-dropdown-menu.nav-menu-offerings a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a:focus-visible,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:hover,
+.site-header .nav-dropdown-menu.nav-dropdown-menu-about a:focus-visible {
+  border-color: rgba(245, 181, 68, 0.78) !important;
+  border-left-color: rgba(245, 181, 68, 0.95) !important;
+  background: linear-gradient(90deg, rgba(245, 181, 68, 0.16), rgba(31, 106, 229, 0.18)) !important;
+  box-shadow: none !important;
 }

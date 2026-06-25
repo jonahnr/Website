@@ -6,7 +6,7 @@
 <title>Case Studies | Parallax Data Lab</title>
 <meta name="description" content="Anonymized Parallax Data Lab case studies covering dashboard consolidation, KPI ownership, reporting automation, and analytics architecture."/>
 <link rel="canonical" href="https://parallaxdatalab.com/case-studies/"/>
-<link href="home.css?v=189" rel="stylesheet"/>
+<link href="home.css?v=214" rel="stylesheet"/>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
@@ -114,24 +114,24 @@
 <a class="nav-menu-parent" href="case-studies.html"><span>Case Studies Overview</span></a>
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Industrial operations</summary>
-<a class="nav-menu-child" href="case-studies.html#manufacturing-throughput"><span>Manufacturing</span></a>
-<a class="nav-menu-child" href="case-studies.html#utilities-reliability"><span>Utilities</span></a>
-<a class="nav-menu-child" href="case-studies.html#energy-operations"><span>Energy</span></a>
-<a class="nav-menu-child" href="case-studies.html#construction-project-controls"><span>Construction</span></a>
+<a class="nav-menu-child" href="case-studies/manufacturing-throughput/index.html"><span>Manufacturing</span></a>
+<a class="nav-menu-child" href="case-studies/utilities-reliability/index.html"><span>Utilities</span></a>
+<a class="nav-menu-child" href="case-studies/energy-operations/index.html"><span>Energy</span></a>
+<a class="nav-menu-child" href="case-studies/construction-project-controls/index.html"><span>Construction</span></a>
 </details>
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Distributed operations</summary>
-<a class="nav-menu-child" href="case-studies.html#logistics-service-level"><span>Logistics & Transportation</span></a>
-<a class="nav-menu-child" href="case-studies.html#field-services-kpis"><span>Field Services</span></a>
-<a class="nav-menu-child" href="case-studies.html#retail-multi-location"><span>Retail & Multi-Location</span></a>
-<a class="nav-menu-child" href="case-studies.html#facilities-maintenance"><span>Facilities & Maintenance</span></a>
+<a class="nav-menu-child" href="case-studies/logistics-service-level/index.html"><span>Logistics & Transportation</span></a>
+<a class="nav-menu-child" href="case-studies/field-services-kpis/index.html"><span>Field Services</span></a>
+<a class="nav-menu-child" href="case-studies/retail-multi-location/index.html"><span>Retail & Multi-Location</span></a>
+<a class="nav-menu-child" href="case-studies/facilities-maintenance/index.html"><span>Facilities & Maintenance</span></a>
 </details>
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Commercial and supply chain</summary>
-<a class="nav-menu-child" href="case-studies.html#healthcare-utilization"><span>Healthcare Operations</span></a>
-<a class="nav-menu-child" href="case-studies.html#industrial-software-revenue"><span>Industrial Software</span></a>
-<a class="nav-menu-child" href="case-studies.html#b2b-services-scorecard"><span>B2B Services</span></a>
-<a class="nav-menu-child" href="case-studies.html#distribution-supply-chain"><span>Distribution & Supply Chain</span></a>
+<a class="nav-menu-child" href="case-studies/healthcare-utilization/index.html"><span>Healthcare Operations</span></a>
+<a class="nav-menu-child" href="case-studies/industrial-software-revenue/index.html"><span>Industrial Software</span></a>
+<a class="nav-menu-child" href="case-studies/b2b-services-scorecard/index.html"><span>B2B Services</span></a>
+<a class="nav-menu-child" href="case-studies/distribution-supply-chain/index.html"><span>Distribution & Supply Chain</span></a>
 </details>
 </div>
 </div>
@@ -163,325 +163,91 @@
 <h2>Choose the operating environment closest to yours.</h2>
 <p>Each card opens an anonymized story built around reporting trust, KPI ownership, automation, reliability, governance, or architecture.</p>
 </div>
-<div class="industry-case-grid"><a class="industry-case-card" href="#manufacturing-throughput">
+<div class="case-study-filter-panel" data-case-study-filters>
+<label class="case-filter-search"><span>Search case studies</span><input type="search" data-case-search placeholder="Search by challenge, outcome, or keyword"></label>
+<label><span>Industry</span><select data-case-industry><option value="">All industries</option><option value="Manufacturing">Manufacturing</option><option value="Utilities">Utilities</option><option value="Energy">Energy</option><option value="Logistics & Transportation">Logistics & Transportation</option><option value="Field Services">Field Services</option><option value="Construction">Construction</option><option value="Healthcare Operations">Healthcare Operations</option><option value="Industrial Software">Industrial Software</option><option value="B2B Services">B2B Services</option><option value="Retail & Multi-Location">Retail & Multi-Location</option><option value="Distribution & Supply Chain">Distribution & Supply Chain</option><option value="Facilities & Maintenance">Facilities & Maintenance</option></select></label>
+<label><span>Technology</span><select data-case-technology><option value="">All technologies</option><option value="AWS">AWS</option><option value="Azure">Azure</option><option value="Databricks">Databricks</option><option value="Power BI">Power BI</option><option value="Power BI Embedded">Power BI Embedded</option><option value="Looker">Looker</option><option value="dbt">dbt</option><option value="Snowflake">Snowflake</option><option value="Microsoft Fabric">Microsoft Fabric</option></select></label>
+<p data-case-filter-count>Showing 12 case studies</p>
+</div>
+<div class="industry-case-grid"><a class="industry-case-card" href="case-studies/manufacturing-throughput/index.html" data-case-card data-industry="Manufacturing" data-technology="Power BI, Microsoft Fabric, Snowflake, dbt" data-keywords="manufacturing throughput finance operations quality ERP governed model">
 <img src="assets/case-studies/manufacturing-throughput.webp" alt="Manufacturing analytics case study visual" loading="lazy" decoding="async">
 <span>Manufacturing</span>
 <strong>Manufacturing throughput reporting moved from spreadsheet reconciliation to governed operating signal.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#utilities-reliability">
+<a class="industry-case-card" href="case-studies/utilities-reliability/index.html" data-case-card data-industry="Utilities" data-technology="Power BI, Azure, Microsoft Fabric, dbt" data-keywords="utilities reliability exceptions owner refresh confidence asset maintenance compliance">
 <img src="assets/case-studies/utilities-reliability.webp" alt="Utilities analytics case study visual" loading="lazy" decoding="async">
 <span>Utilities</span>
 <strong>Utility reliability reporting clarified exceptions, ownership, and refresh confidence.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#energy-operations">
+<a class="industry-case-card" href="case-studies/energy-operations/index.html" data-case-card data-industry="Energy" data-technology="Power BI, Databricks, Azure, Snowflake" data-keywords="energy operations field production safety risk weekly decision cadence">
 <img src="assets/case-studies/energy-operations.webp" alt="Energy analytics case study visual" loading="lazy" decoding="async">
 <span>Energy</span>
 <strong>Energy operations reporting connected field activity, production context, and executive review.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#logistics-service-level">
+<a class="industry-case-card" href="case-studies/logistics-service-level/index.html" data-case-card data-industry="Logistics & Transportation" data-technology="Power BI, AWS, Snowflake, dbt" data-keywords="logistics transportation service level bottlenecks routing customer service fleet delivery">
 <img src="assets/case-studies/logistics-service-level.webp" alt="Logistics & Transportation analytics case study visual" loading="lazy" decoding="async">
 <span>Logistics & Transportation</span>
 <strong>Logistics service-level reporting exposed bottlenecks before weekly review.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#field-services-kpis">
+<a class="industry-case-card" href="case-studies/field-services-kpis/index.html" data-case-card data-industry="Field Services" data-technology="Power BI, Power BI Embedded, Azure, dbt" data-keywords="field services kpi completion backlog margin staffing regional owners">
 <img src="assets/case-studies/field-services-kpis.webp" alt="Field Services analytics case study visual" loading="lazy" decoding="async">
 <span>Field Services</span>
 <strong>Field-service KPI debates became an owned weekly decision cadence.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#construction-project-controls">
+<a class="industry-case-card" href="case-studies/construction-project-controls/index.html" data-case-card data-industry="Construction" data-technology="Power BI, Azure, Snowflake" data-keywords="construction project controls status schedule cost risk subcontractor">
 <img src="assets/case-studies/construction-project-controls.webp" alt="Construction analytics case study visual" loading="lazy" decoding="async">
 <span>Construction</span>
 <strong>Construction project controls reporting reduced duplicated status work.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#healthcare-utilization">
+<a class="industry-case-card" href="case-studies/healthcare-utilization/index.html" data-case-card data-industry="Healthcare Operations" data-technology="Power BI, Azure, Databricks, Looker" data-keywords="healthcare utilization staffing appointments service lines refresh timing">
 <img src="assets/case-studies/healthcare-utilization.webp" alt="Healthcare Operations analytics case study visual" loading="lazy" decoding="async">
 <span>Healthcare Operations</span>
 <strong>Healthcare utilization reporting separated operational signal from reporting noise.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#industrial-software-revenue">
+<a class="industry-case-card" href="case-studies/industrial-software-revenue/index.html" data-case-card data-industry="Industrial Software" data-technology="Power BI, Power BI Embedded, Snowflake, dbt" data-keywords="industrial software revenue CRM finance customer billing executive dashboards">
 <img src="assets/case-studies/industrial-software-revenue.webp" alt="Industrial Software analytics case study visual" loading="lazy" decoding="async">
 <span>Industrial Software</span>
 <strong>Industrial software revenue reporting consolidated overlapping executive dashboards.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#b2b-services-scorecard">
+<a class="industry-case-card" href="case-studies/b2b-services-scorecard/index.html" data-case-card data-industry="B2B Services" data-technology="Power BI, Looker, dbt, Snowflake" data-keywords="b2b services scorecard CRM finance delivery management review automation">
 <img src="assets/case-studies/b2b-services-scorecard.webp" alt="B2B Services analytics case study visual" loading="lazy" decoding="async">
 <span>B2B Services</span>
 <strong>B2B services reporting automation replaced manual scorecard assembly.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#retail-multi-location">
+<a class="industry-case-card" href="case-studies/retail-multi-location/index.html" data-case-card data-industry="Retail & Multi-Location" data-technology="Power BI, Power BI Embedded, Snowflake, AWS" data-keywords="retail multi location POS labor inventory regional exceptions">
 <img src="assets/case-studies/retail-multi-location.webp" alt="Retail & Multi-Location analytics case study visual" loading="lazy" decoding="async">
 <span>Retail & Multi-Location</span>
 <strong>Retail operating reporting aligned location performance, exceptions, and leadership follow-up.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#distribution-supply-chain">
+<a class="industry-case-card" href="case-studies/distribution-supply-chain/index.html" data-case-card data-industry="Distribution & Supply Chain" data-technology="Power BI, Databricks, Snowflake, dbt" data-keywords="distribution supply chain inventory orders fulfillment suppliers source path">
 <img src="assets/case-studies/distribution-supply-chain.webp" alt="Distribution & Supply Chain analytics case study visual" loading="lazy" decoding="async">
 <span>Distribution & Supply Chain</span>
 <strong>Distribution reporting created a cleaner path from inventory signal to operating decision.</strong>
 <em>Read story</em>
 </a>
-<a class="industry-case-card" href="#facilities-maintenance">
+<a class="industry-case-card" href="case-studies/facilities-maintenance/index.html" data-case-card data-industry="Facilities & Maintenance" data-technology="Power BI, Azure, AWS, Looker" data-keywords="facilities maintenance work orders assets compliance backlog risk">
 <img src="assets/case-studies/facilities-maintenance.webp" alt="Facilities & Maintenance analytics case study visual" loading="lazy" decoding="async">
 <span>Facilities & Maintenance</span>
 <strong>Facilities maintenance reporting made recurring risk and backlog easier to review.</strong>
 <em>Read story</em>
 </a></div>
 </section>
-<section class="case-study-section reveal-card">
+<section class="case-study-section client-proof-band reveal-card">
 <div class="case-study-heading">
-<p class="page-kicker">Story details</p>
-<h2>Representative operating analytics work</h2>
-<p>Metrics are included only where they already existed in the site content. Otherwise outcomes are stated through concrete operating changes such as dashboards consolidated, sources integrated, ownership mapped, workflows standardized, and refresh processes stabilized.</p>
+<p class="page-kicker">Client proof</p>
+<h2>Over 50 clients served</h2>
 </div>
-<div class="case-study-expanded-grid"><article class="case-study-expanded industry-case-story reveal-card" id="manufacturing-throughput">
-<img class="case-story-image" src="assets/case-studies/manufacturing-throughput.webp" alt="Manufacturing operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Manufacturing / anonymized case study</p>
-<h2>Manufacturing throughput reporting moved from spreadsheet reconciliation to governed operating signal.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>$100M+ multi-entity manufacturer</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Plant operations, finance, quality, and throughput reporting across disconnected systems.</dd></div>
-<div><dt>Original challenge</dt><dd>Six source systems fed finance and operations reporting through undocumented extracts and copied transformations.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Mapped systems of record, defined reusable business entities, established one governed reporting path, and added daily reliability checks.</dd></div>
-<div><dt>Results and outcomes</dt><dd>Verified figures: 6 source systems organized into 1 governed data path with daily reliability checks. Leadership and operating teams gained a scalable foundation for trusted performance reporting.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>6 source systems</span><span>Manual extracts</span><span>Copied transformations</span></div>
-<div><strong>After</strong><span>6 source systems</span><span>Governed data path</span><span>Reusable semantic model</span></div>
-</div>
-<a class="primary-action" href="data-integration-analytics-architecture.html">View architecture work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="utilities-reliability">
-<img class="case-story-image" src="assets/case-studies/utilities-reliability.webp" alt="Utilities operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Utilities / anonymized case study</p>
-<h2>Utility reliability reporting clarified exceptions, ownership, and refresh confidence.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Regional utility operations team</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Asset maintenance, outage review, compliance reporting, and weekly operating updates.</dd></div>
-<div><dt>Original challenge</dt><dd>Reliability signals existed, but leaders could not see which exceptions were current, owned, or ready for escalation.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Designed an exception map, source reliability checklist, KPI owner model, and refresh-status layer for operating reviews.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Operations leaders could separate stale reporting noise from current reliability signals.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Reliability signals</span><span>Unclear exception age</span><span>Informal escalation</span></div>
-<div><strong>After</strong><span>Reliability signals</span><span>Owner response paths</span><span>Refresh confidence</span></div>
-</div>
-<a class="primary-action" href="data-quality-analytics-reliability.html">View reliability work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="energy-operations">
-<img class="case-story-image" src="assets/case-studies/energy-operations.webp" alt="Energy operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Energy / anonymized case study</p>
-<h2>Energy operations reporting connected field activity, production context, and executive review.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Energy operations group</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Distributed field operations, production monitoring, safety context, and leadership reporting.</dd></div>
-<div><dt>Original challenge</dt><dd>Operational updates arrived from several teams, but the review process lacked a concise view of risk, exceptions, and owner response.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Built an operating-signal model with ranked exceptions, confidence notes, and a weekly decision cadence.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Leaders gained a clearer attention queue for operational review without turning every signal into another dashboard.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Field updates</span><span>Production context</span><span>Separate reviews</span></div>
-<div><strong>After</strong><span>Field and production data</span><span>Risk-focused review</span><span>Executive action path</span></div>
-</div>
-<a class="primary-action" href="predictive-risk-intelligence/index.html">Explore Intelligence Lab</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="logistics-service-level">
-<img class="case-story-image" src="assets/case-studies/logistics-service-level.webp" alt="Logistics & Transportation operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Logistics & Transportation / anonymized case study</p>
-<h2>Logistics service-level reporting exposed bottlenecks before weekly review.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Multi-location logistics operator</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Fleet, delivery, exception, backlog, and customer service-level reporting.</dd></div>
-<div><dt>Original challenge</dt><dd>Teams could see activity volume, but the reporting did not clarify which service exceptions needed action first.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Reframed metrics around service-level thresholds, owner response, routing decisions, and refresh confidence.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Managers gained a clearer weekly path from exception to owner to action, with service-level thresholds and review workflow standardized.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Activity volume</span><span>Weekly bottleneck review</span><span>Unclear priority</span></div>
-<div><strong>After</strong><span>Service thresholds</span><span>Exception owners</span><span>Earlier bottleneck visibility</span></div>
-</div>
-<a class="primary-action" href="kpi-reporting-consulting.html">View KPI strategy</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="field-services-kpis">
-<img class="case-story-image" src="assets/case-studies/field-services-kpis.webp" alt="Field Services operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Field Services / anonymized case study</p>
-<h2>Field-service KPI debates became an owned weekly decision cadence.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>500+ employee, multi-region field services company</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Regional operations with completion, backlog, margin, staffing, and routing metrics.</dd></div>
-<div><dt>Original challenge</dt><dd>Regional leaders used different definitions for completion rate, backlog, and margin.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Defined each KPI, named business owners, documented thresholds, and tied metrics to weekly decisions.</dd></div>
-<div><dt>Results and outcomes</dt><dd>Verified figures: 5 disputed KPIs mapped to 5 named owners and 1 weekly action cadence. Leaders could see who owned interpretation and response for each priority signal.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Regional definitions</span><span>KPI debates</span><span>Delayed staffing calls</span></div>
-<div><strong>After</strong><span>5 priority KPIs</span><span>5 named owners</span><span>Weekly decision cadence</span></div>
-</div>
-<a class="primary-action" href="kpi-reporting-consulting.html">View KPI strategy</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="construction-project-controls">
-<img class="case-story-image" src="assets/case-studies/construction-project-controls.webp" alt="Construction operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Construction / anonymized case study</p>
-<h2>Construction project controls reporting reduced duplicated status work.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Construction project controls team</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Project status, schedule variance, cost updates, subcontractor status, and executive summaries.</dd></div>
-<div><dt>Original challenge</dt><dd>Project updates were assembled manually, with different teams maintaining overlapping versions of status and risk.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Mapped recurring reporting steps, standardized project status definitions, and designed a cleaner reporting workflow.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Project leaders gained a more consistent view of status, variance, and next actions.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Manual status updates</span><span>Overlapping risk logs</span><span>Duplicated summaries</span></div>
-<div><strong>After</strong><span>Standardized workflow</span><span>Single status structure</span><span>Cleaner executive summary</span></div>
-</div>
-<a class="primary-action" href="reporting-automation-consulting.html">View automation work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="healthcare-utilization">
-<img class="case-story-image" src="assets/case-studies/healthcare-utilization.webp" alt="Healthcare Operations operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Healthcare Operations / anonymized case study</p>
-<h2>Healthcare utilization reporting separated operational signal from reporting noise.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Healthcare operations and utilization team</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Utilization, staffing, appointment flow, service lines, and recurring operating review.</dd></div>
-<div><dt>Original challenge</dt><dd>Leaders had reports, but definitions and refresh timing made it hard to trust utilization movement.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Documented definitions, source timing, manual adjustments, and reporting confidence notes for review.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Operational teams could discuss exceptions with clearer context and fewer definition debates.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Utilization reports</span><span>Timing questions</span><span>Definition drift</span></div>
-<div><strong>After</strong><span>Governed definitions</span><span>Refresh checks</span><span>Clearer utilization signal</span></div>
-</div>
-<a class="primary-action" href="data-quality-analytics-reliability.html">View reliability work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="industrial-software-revenue">
-<img class="case-story-image" src="assets/case-studies/industrial-software-revenue.webp" alt="Industrial Software operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Industrial Software / anonymized case study</p>
-<h2>Industrial software revenue reporting consolidated overlapping executive dashboards.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>$50M-$100M industrial software company</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Recurring revenue, customer, finance, and executive dashboard reporting.</dd></div>
-<div><dt>Original challenge</dt><dd>Leadership reviewed overlapping dashboards with conflicting revenue logic.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Mapped report owners, inventoried revenue logic, consolidated duplicate views, and established one governed executive revenue definition.</dd></div>
-<div><dt>Results and outcomes</dt><dd>Verified figures: 14 reports consolidated into 4 executive views, with 1 governed revenue definition. Revenue conversations could move from reconciliation to action.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>14 reports</span><span>Conflicting revenue logic</span><span>Dashboard overlap</span></div>
-<div><strong>After</strong><span>4 executive views</span><span>1 governed revenue definition</span><span>Mapped dashboard owners</span></div>
-</div>
-<a class="primary-action" href="power-bi-consultant-cincinnati.html">View Power BI work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="b2b-services-scorecard">
-<img class="case-story-image" src="assets/case-studies/b2b-services-scorecard.webp" alt="B2B Services operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">B2B Services / anonymized case study</p>
-<h2>B2B services reporting automation replaced manual scorecard assembly.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>$25M-$50M B2B services company</dd></div>
-<div><dt>Industry or operating environment</dt><dd>CRM, finance, delivery, management scorecards, and recurring status reporting.</dd></div>
-<div><dt>Original challenge</dt><dd>Managers copied CRM, finance, and delivery data into recurring status reports.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Automated the refresh path, documented definitions, and rebuilt the scorecard around recurring decisions.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative savings available in project files; outcomes are qualitative. Reduced manual reporting effort and improved consistency around weekly management review.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>CRM and finance exports</span><span>Manual scorecard assembly</span><span>Duplicate report work</span></div>
-<div><strong>After</strong><span>Automated refresh</span><span>Documented definitions</span><span>Trusted scorecard workflow</span></div>
-</div>
-<a class="primary-action" href="reporting-automation-consulting.html">View automation work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="retail-multi-location">
-<img class="case-story-image" src="assets/case-studies/retail-multi-location.webp" alt="Retail & Multi-Location operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Retail & Multi-Location / anonymized case study</p>
-<h2>Retail operating reporting aligned location performance, exceptions, and leadership follow-up.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Multi-location retail operator</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Location performance, labor, margin, inventory exceptions, and regional operating review.</dd></div>
-<div><dt>Original challenge</dt><dd>Store and regional teams used similar metrics but interpreted performance movement differently.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Standardized KPI definitions, separated operating signals from context metrics, and clarified owner response.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Regional review became more focused on action thresholds and fewer competing interpretations.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Store metrics</span><span>Regional interpretation gaps</span><span>Scattered exceptions</span></div>
-<div><strong>After</strong><span>Aligned location metrics</span><span>Owner follow-up</span><span>Leadership exception review</span></div>
-</div>
-<a class="primary-action" href="kpi-reporting-consulting.html">View KPI strategy</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="distribution-supply-chain">
-<img class="case-story-image" src="assets/case-studies/distribution-supply-chain.webp" alt="Distribution & Supply Chain operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Distribution & Supply Chain / anonymized case study</p>
-<h2>Distribution reporting created a cleaner path from inventory signal to operating decision.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Distribution and supply-chain team</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Inventory, orders, fulfillment, supplier timing, service level, and exception reporting.</dd></div>
-<div><dt>Original challenge</dt><dd>Operational signals were available, but teams lacked a governed path from source data to decision review.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Mapped source dependencies, documented business entities, and designed a governed reporting foundation.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Teams gained a clearer foundation for reliable supply-chain reporting and future intelligence work.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Inventory and order signals</span><span>Ungoverned source path</span><span>Slow operating review</span></div>
-<div><strong>After</strong><span>Governed source path</span><span>Inventory exception signal</span><span>Decision-ready review</span></div>
-</div>
-<a class="primary-action" href="data-integration-analytics-architecture.html">View architecture work</a>
-</div>
-</article>
-<article class="case-study-expanded industry-case-story reveal-card" id="facilities-maintenance">
-<img class="case-story-image" src="assets/case-studies/facilities-maintenance.webp" alt="Facilities & Maintenance operations analytics case study image" loading="lazy" decoding="async">
-<div class="case-story-copy">
-<p class="page-kicker">Facilities & Maintenance / anonymized case study</p>
-<h2>Facilities maintenance reporting made recurring risk and backlog easier to review.</h2>
-<dl>
-<div><dt>Client or organization type</dt><dd>Facilities and maintenance operations team</dd></div>
-<div><dt>Industry or operating environment</dt><dd>Work orders, backlog, compliance checks, asset condition, and recurring management review.</dd></div>
-<div><dt>Original challenge</dt><dd>Backlog and risk reporting existed, but leaders could not quickly see what required intervention.</dd></div>
-<div><dt>Work completed by Parallax</dt><dd>Designed a decision-focused backlog view, exception thresholds, owner notes, and operating cadence.</dd></div>
-<div><dt>Results and outcomes</dt><dd>No verified quantitative client metrics available; outcomes are qualitative. Maintenance review became more explicit about priority, owner, and follow-up.</dd></div>
-<div><dt>Relevant expertise</dt><dd>Power BI &amp; Microsoft Fabric, KPI Strategy &amp; Executive Reporting, Reporting Automation, Data Quality &amp; Analytics Reliability, BI Governance &amp; Dashboard Trust, Data Integration &amp; Analytics Architecture</dd></div>
-</dl>
-<div class="case-transformation-visual" aria-label="Before and after analytics architecture">
-<div><strong>Before</strong><span>Work-order backlog</span><span>Risk lists</span><span>Manual intervention tracking</span></div>
-<div><strong>After</strong><span>Prioritized backlog view</span><span>Recurring risk review</span><span>Owner response path</span></div>
-</div>
-<a class="primary-action" href="decision-system-reset.html">View reset work</a>
-</div>
-</article></div>
+<img class="client-logo-sheet" src="assets/case-studies/client-proof-logo-cloud.webp" alt="Anonymized client logo sheet representing over 50 clients served" width="1440" height="520" loading="lazy" decoding="async">
 </section>
 </main>
 <footer aria-label="Site footer" class="site-footer site-footer-refined">
@@ -537,6 +303,6 @@
   <div class="site-footer-bottom">
     <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
   </div>
-</footer><script src="home.min.js?v=183"></script>
+</footer><script src="home.min.js?v=186"></script>
 </body>
 </html>

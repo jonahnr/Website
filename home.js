@@ -1622,3 +1622,83 @@ setupScorecardSubmissionArchive();
 setupInsightFilters();
 setupScorecardPersonalization();
 window.addEventListener("hashchange", setupActiveNavigation);
+
+/* Case study executive proof interactions */
+function setupCaseStudyProof() {
+  const proofBlocks = Array.from(document.querySelectorAll("[data-case-proof]"));
+  if (!proofBlocks.length) return;
+  const observer = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      entry.target.querySelectorAll("[data-countup]").forEach((item) => {
+        const value = item.dataset.countup || "";
+        const number = Number(value);
+        if (!Number.isFinite(number) || item.dataset.counted === "true") return;
+        item.dataset.counted = "true";
+        const duration = 760;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min(1, (now - start) / duration);
+          item.textContent = String(Math.round(number * progress));
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    });
+  }, { threshold: 0.18 }) : null;
+  proofBlocks.forEach((block) => {
+    if (observer) observer.observe(block);
+    else block.classList.add("is-visible");
+  });
+}
+setupCaseStudyProof();
+
+function setupCaseStudyFilters() {
+  const panel = document.querySelector("[data-case-study-filters]");
+  if (!panel) return;
+
+  const search = panel.querySelector("[data-case-search]");
+  const industry = panel.querySelector("[data-case-industry]");
+  const technology = panel.querySelector("[data-case-technology]");
+  const count = panel.querySelector("[data-case-filter-count]");
+  const cards = Array.from(document.querySelectorAll("[data-case-card]"));
+  const grid = document.querySelector(".industry-case-grid");
+  const empty = document.createElement("p");
+  empty.className = "case-study-empty-state";
+  empty.textContent = "No case studies match those filters yet.";
+  grid?.after(empty);
+
+  function normalize(value) {
+    return (value || "").trim().toLowerCase();
+  }
+
+  function render() {
+    const query = normalize(search?.value);
+    const selectedIndustry = normalize(industry?.value);
+    const selectedTechnology = normalize(technology?.value);
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const haystack = normalize(`${card.textContent} ${card.dataset.keywords || ""} ${card.dataset.technology || ""}`);
+      const matchesSearch = !query || haystack.includes(query);
+      const matchesIndustry = !selectedIndustry || normalize(card.dataset.industry) === selectedIndustry;
+      const matchesTechnology = !selectedTechnology || normalize(card.dataset.technology).includes(selectedTechnology);
+      const isVisible = matchesSearch && matchesIndustry && matchesTechnology;
+      card.classList.toggle("is-filtered-out", !isVisible);
+      if (isVisible) visible += 1;
+    });
+
+    if (count) {
+      count.textContent = `Showing ${visible} case ${visible === 1 ? "study" : "studies"}`;
+    }
+    empty.classList.toggle("is-visible", visible === 0);
+  }
+
+  [search, industry, technology].forEach((control) => {
+    control?.addEventListener("input", render);
+    control?.addEventListener("change", render);
+  });
+  render();
+}
+setupCaseStudyFilters();
