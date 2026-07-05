@@ -1046,6 +1046,36 @@ function setupAnalyticsEventTracking() {
   });
 }
 
+function setupCalendlyEmbedLoader() {
+  const widgets = Array.from(document.querySelectorAll(".calendly-inline-widget"));
+  if (!widgets.length) return;
+
+  widgets.forEach((widget) => {
+    widget.style.width = "100%";
+    if (!widget.style.height) {
+      widget.style.height = "760px";
+    }
+  });
+
+  function loadCalendly() {
+    if (window.Calendly || document.querySelector("script[data-parallax-calendly-loader], script[src*='assets.calendly.com/assets/external/widget.js']")) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.dataset.parallaxCalendlyLoader = "true";
+    document.head.appendChild(script);
+  }
+
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(loadCalendly, { timeout: 1500 });
+  } else {
+    window.addEventListener("load", () => window.setTimeout(loadCalendly, 500), { once: true });
+  }
+}
+
 function setupScorecardDirectDelivery() {
   document.querySelectorAll('form[data-scorecard-delivery="direct"], form[data-scorecard-delivery="backend"]').forEach((form) => {
     form.addEventListener("submit", async (event) => {
@@ -1318,6 +1348,7 @@ setupCarousel("healthSample");
 setupFractionalFlipCards();
 setupFitPathFinder();
 setupAnalyticsEventTracking();
+setupCalendlyEmbedLoader();
 setupLeadMagnetScorecard();
 setupScorecardDirectDelivery();
 

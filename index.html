@@ -72,8 +72,11 @@
 .site-header nav>a[aria-current="page"],.site-header nav>a.is-active,.site-header .nav-dropdown>.nav-dropdown-toggle[aria-current="page"],.site-header .nav-dropdown>.nav-dropdown-toggle.is-active{border:1px solid rgba(245,181,68,.78)!important;border-bottom:2px solid #f5b544!important;border-bottom-color:#f5b544!important;background:rgba(245,181,68,.12)!important;color:#fff!important;box-shadow:none!important}
 .site-header .nav-dropdown-menu.nav-menu-offerings a[aria-current="page"],.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a[aria-current="page"],.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a[aria-current="page"],.site-header .nav-dropdown-menu.nav-dropdown-menu-about a[aria-current="page"],.site-header .nav-dropdown-menu.nav-menu-offerings a.is-active,.site-header .nav-dropdown-menu.nav-dropdown-menu-intelligence a.is-active,.site-header .nav-dropdown-menu.nav-dropdown-menu-case-studies a.is-active,.site-header .nav-dropdown-menu.nav-dropdown-menu-about a.is-active{border-color:rgba(245,181,68,.78)!important;border-left-color:rgba(245,181,68,.95)!important;background:linear-gradient(90deg,rgba(245,181,68,.16),rgba(31,106,229,.18))!important;color:#fff!important;box-shadow:none!important}
 .home-page .case-study-section,.home-page .case-study-grid article,.home-page .ai-foundation-section,.home-page .enterprise-architecture-flow span,.home-page .enterprise-architecture-flow strong{border-color:rgba(69,190,255,.3)!important;border-left-color:rgba(69,190,255,.3)!important}
+/* Final inline top-ribbon button cleanup */
+.site-header .nav-dropdown-intelligence>.nav-dropdown-toggle,.site-header .nav-dropdown-case-studies>.nav-dropdown-toggle,.site-header .nav-dropdown-about>.nav-dropdown-toggle{border-color:transparent!important;box-shadow:none!important}
+.site-header .nav-dropdown-intelligence:hover>.nav-dropdown-toggle,.site-header .nav-dropdown-case-studies:hover>.nav-dropdown-toggle,.site-header .nav-dropdown-about:hover>.nav-dropdown-toggle,.site-header .nav-dropdown-intelligence:focus-within>.nav-dropdown-toggle,.site-header .nav-dropdown-case-studies:focus-within>.nav-dropdown-toggle,.site-header .nav-dropdown-about:focus-within>.nav-dropdown-toggle,.site-header .nav-dropdown-intelligence.is-open>.nav-dropdown-toggle,.site-header .nav-dropdown-case-studies.is-open>.nav-dropdown-toggle,.site-header .nav-dropdown-about.is-open>.nav-dropdown-toggle{border-color:transparent!important;border-bottom-color:#f5b544!important;box-shadow:none!important}
 </style>
-<link href="home.css?v=214" rel="stylesheet"/>
+<link href="home.css?v=218" rel="stylesheet"/>
 <link rel="preload" href="assets/z.webp" as="image" fetchpriority="high"/>
 <script>
   (function () {
@@ -83,7 +86,7 @@
       loaded = true;
       var link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "home.css?v=214";
+      link.href = "home.css?v=218";
       document.head.appendChild(link);
     }
     window.addEventListener("load", function () {
@@ -94,7 +97,7 @@
     });
   })();
 </script>
-<noscript><link href="home.css?v=214" rel="stylesheet"/></noscript>
+<noscript><link href="home.css?v=218" rel="stylesheet"/></noscript>
 <meta name="theme-color" content="#0b1745"/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
@@ -228,7 +231,7 @@
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Intelligence Lab</summary>
 <a class="nav-menu-parent" href="intelligence-lab.html"><span>Intelligence Lab Overview</span></a>
-<a class="nav-menu-child" href="decision-workspace.html"><span>Interactive Decision Workspace Demo</span></a>
+<a class="nav-menu-child" href="decision-workspace.html"><span>Decision System Reset Workspace</span></a>
 </details>
 <details class="nav-menu-group">
 <summary class="nav-menu-section-title">Lab initiatives</summary>
@@ -319,13 +322,6 @@
 <a href="data-integration-analytics-architecture.html"><strong>Analytics Architecture</strong><small>Connect sources and build for scale</small></a>
 </div>
 </div>
-<section class="share-link-panel share-link-compact" aria-label="Share this page">
-<span class="share-link-label">Share</span>
-<a class="share-link-social" href="https://www.linkedin.com/sharing/share-offsite/?url=https://parallaxdatalab.com/" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"></a>
-<a class="share-link-social" href="https://x.com/intent/post?text=Parallax%20Data%20Lab%20%7C%20Business%20Intelligence%20Consulting%20https%3A%2F%2Fparallaxdatalab.com%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on X"></a>
-<a class="share-link-social" href="mailto:?subject=Parallax%20Data%20Lab%20%7C%20Business%20Intelligence%20Consulting&amp;body=https://parallaxdatalab.com/" aria-label="Share by email"></a>
-<button class="share-link-social share-native-button" type="button" data-native-share="https://parallaxdatalab.com/" aria-label="Share this page"></button>
-</section>
 <section class="diagnostic-section reveal-card">
 <h2>Dashboard Trust Breaks Beneath The Surface</h2>
 <div class="diagnostic-panel">
@@ -343,101 +339,6 @@
 </div>
 <img alt="Balanced analytics structure connecting dashboards and decisions" class="diagnostic-image" src="assets/home-generated/diagnostic-structural-balance.webp" srcset="assets/home-generated/diagnostic-structural-balance-640.webp 640w, assets/home-generated/diagnostic-structural-balance-800.webp 800w, assets/home-generated/diagnostic-structural-balance.webp 1200w" sizes="(max-width: 760px) calc(100vw - 40px), 610px" width="1200" height="751" loading="lazy" decoding="async">
 </article>
-</div>
-</section>
-<section aria-label="Analytics foundation problems and solutions" class="symptom-section reveal-card">
-<div class="symptom-heading">
-<p>Trust Breaks &gt; Fix The System</p>
-<h2>The Breakpoints We Diagnose</h2>
-</div>
-<div aria-label="Problem card navigation" class="section-controls symptom-controls">
-<button aria-label="Show previous problem set" data-carousel-prev="symptom" type="button">Prev</button>
-<span data-carousel-status="symptom">1 / 2</span>
-<button aria-label="Show next problem set" data-carousel-next="symptom" type="button">Next</button>
-</div>
-<article class="symptom-card" data-carousel-item="symptom" data-page="0">
-<img alt="Business logic duplicated across analytics systems" class="symptom-image" src="assets/home-generated/symptom-business-logic-everywhere.webp" srcset="assets/home-generated/symptom-business-logic-everywhere-640.webp 640w, assets/home-generated/symptom-business-logic-everywhere-800.webp 800w, assets/home-generated/symptom-business-logic-everywhere.webp 1200w" sizes="(max-width: 760px) calc(100vw - 40px), 564px" width="1200" height="768" loading="lazy" decoding="async">
-<div class="symptom-copy">
-<h3>Business logic lives everywhere</h3>
-<p>Core calculations are copied across dashboards, spreadsheets, and ad-hoc queries.</p>
-<a href="insights/single-source-of-truth-myth.html">Read: Why a single source of truth fails</a>
-</div>
-</article>
-<article class="symptom-card" data-carousel-item="symptom" data-page="0">
-<img alt="Shared metric meaning organized across teams" class="symptom-image" src="assets/home-generated/symptom-metrics-shared-meaning.webp" srcset="assets/home-generated/symptom-metrics-shared-meaning-640.webp 640w, assets/home-generated/symptom-metrics-shared-meaning-800.webp 800w, assets/home-generated/symptom-metrics-shared-meaning.webp 1200w" sizes="(max-width: 760px) calc(100vw - 40px), 564px" width="1200" height="751" loading="lazy" decoding="async">
-<div class="symptom-copy">
-<h3>Metrics lack shared meaning</h3>
-<p>The same KPI means different things depending on who built the report.</p>
-<a href="insights/kpi-ownership-framework-every-leadership-team-needs.html">Read: The KPI ownership framework</a>
-</div>
-</article>
-<article class="symptom-card" data-carousel-item="symptom" data-page="0">
-<img alt="Reports disconnected from leadership questions" class="symptom-image" src="assets/home-generated/symptom-reports-wrong-questions.webp" width="1200" height="751" loading="lazy" decoding="async">
-<div class="symptom-copy">
-<h3>Reports answer wrong questions</h3>
-<p>Reports look polished, but miss the decisions leaders actually need to make.</p>
-<a href="decision-system-reset.html">See: The Decision System Reset approach</a>
-</div>
-</article>
-<article class="symptom-card" data-carousel-item="symptom" data-page="1">
-<img alt="Analytics confidence gauge surrounded by dashboards" class="symptom-image" src="assets/home-generated/symptom-confidence-erodes.webp" width="1200" height="768" loading="lazy" decoding="async">
-<div class="symptom-copy">
-<h3>Confidence erodes silently</h3>
-<p>Meetings turn into number debates instead of action.</p>
-<a href="insights/why-nobody-trusts-your-dashboard.html">Read: Why nobody trusts the dashboard</a>
-</div>
-</article>
-<article class="symptom-card" data-carousel-item="symptom" data-page="1">
-<img alt="Analytics systems under pressure as the business scales" class="symptom-image" src="assets/home-generated/symptom-systems-scale.webp" width="1200" height="751" loading="lazy" decoding="async">
-<div class="symptom-copy">
-<h3>Systems don't scale with the business</h3>
-<p>As teams grow, every change gets slower because the foundation is unclear.</p>
-<a href="data-integration-analytics-architecture.html">Explore: Architecture built for scale</a>
-</div>
-</article>
-<article class="symptom-card" data-carousel-item="symptom" data-page="1">
-<img alt="Decisions slowing as data and reports multiply" class="symptom-image" src="assets/home-generated/symptom-decisions-slow.webp" width="1200" height="751" loading="lazy" decoding="async">
-<div class="symptom-copy">
-<h3>Decisions slow down as data grows</h3>
-<p>As reports multiply, simple questions take longer and teams default back to instinct.</p>
-<a href="insights/the-difference-between-reporting-and-decision-making.html">Read: Reporting vs. decision-making</a>
-</div>
-</article>
-</section>
-<section class="work-section">
-<div class="work-shell reveal-card">
-<div class="work-heading">
-<p class="page-kicker">Built around your business</p>
-<h2>Different teams arrive with different pieces missing.</h2>
-<p>Some need KPI strategy. Others need reliable pipelines, fewer dashboards, stronger governance, or automation. Parallax connects the pieces and builds the smallest strategy that makes sense for the business.</p>
-</div>
-<div class="work-grid work-puzzle-grid">
-<article>
-<img alt="Analytics foundation health scan with connected dashboards and data pipelines" class="work-card-image" src="assets/home-generated/work-health-check.webp" width="1200" height="675" loading="lazy" decoding="async">
-<span class="work-step">01</span>
-<h3>Start with the real constraint</h3>
-<p>Bring the dashboard, KPI debate, manual process, architecture bottleneck, or decision that keeps slowing the team down.</p>
-</article>
-<article>
-<img alt="Scattered metrics converging into one aligned decision layer" class="work-card-image" src="assets/home-generated/work-clear-results.webp" width="1200" height="685" loading="lazy" decoding="async">
-<span class="work-step">02</span>
-<h3>Diagnose how the pieces connect</h3>
-<p>We trace the issue across data, definitions, tools, owners, workflows, and the decisions reporting is meant to support.</p>
-</article>
-<article>
-<img alt="Trusted metric nodes aligning across connected teams" class="work-card-image" src="assets/home-generated/work-empower-team.webp" width="1200" height="675" loading="lazy" decoding="async">
-<span class="work-step">03</span>
-<h3>Build the right-fit strategy</h3>
-<p>The answer may be a focused reliability fix, KPI reset, dashboard rebuild, governance model, automation path, or architecture roadmap.</p>
-</article>
-<article>
-<img alt="Continuous optimization loop around monitored analytics systems" class="work-card-image" src="assets/home-generated/work-ongoing-optimization.webp" width="1200" height="675" loading="lazy" decoding="async">
-<span class="work-step">04</span>
-<h3>Embed, transfer, and evolve</h3>
-<p>We document the logic, clarify ownership, enable the team, and adjust the system as priorities and operating needs change.</p>
-</article>
-</div>
-<a class="work-fit-link" href="free-fit-check.html">Start with a free 15-minute Fit Check</a>
 </div>
 </section>
 <section aria-labelledby="proof-title" class="proof-section reveal-card">
@@ -485,147 +386,6 @@
 <h2 id="founder-credibility-title">Built by a data leader who has operated inside the problems Parallax solves.</h2>
 <p>Led enterprise analytics initiatives across Fortune 500 manufacturing and SaaS organizations. Founded by a data leader with expertise in BI strategy, Power BI, data engineering, automation, governance, predictive analytics, and AI-enabled analytics.</p>
 <a href="about.html">Meet the founder and learn how Parallax works</a>
-</div>
-</section>
-<section class="enterprise-credibility-panel reveal-card" aria-labelledby="enterprise-credibility-title">
-<div>
-<p class="page-kicker">Founder-led, enterprise-tested</p>
-<h2 id="enterprise-credibility-title">Enterprise Analytics Experience, Delivered Through a Boutique Partnership</h2>
-</div>
-<div class="enterprise-credibility-grid">
-<article><strong>7+ years</strong><span>delivering enterprise analytics solutions across manufacturing, healthcare, safety, operations, and SaaS</span></article>
-<article><strong>100+ dashboards</strong><span>designed across executive, operational, and customer-facing use cases</span></article>
-<article><strong>2 billion records +</strong><span>supported across modern cloud analytics environments</span></article>
-<article><strong>Enterprise context</strong><span>supporting analytics initiatives for Fortune 500 organizations and global enterprises</span></article>
-<article><strong>Hands-on depth</strong><span>Power BI, SQL, Python, cloud data warehouses, analytics governance, and AI readiness</span></article>
-</div>
-</section>
-<section class="ai-foundation-section reveal-card" aria-labelledby="ai-foundation-title">
-<div class="ai-foundation-copy">
-<p class="page-kicker">AI readiness starts before AI</p>
-<h2 id="ai-foundation-title">Analytics Foundations for AI</h2>
-<p>Most AI initiatives struggle because reporting foundations are not ready. Disconnected data sources, conflicting KPI definitions, unclear ownership, and weak governance create unreliable inputs for AI systems.</p>
-<p>Parallax helps organizations establish the reporting, governance, semantic modeling, and data architecture required to support AI, automation, predictive analytics, and operational intelligence.</p>
-<p>The goal is not to deploy AI faster. The goal is to deploy AI on a foundation leaders can trust.</p>
-<a class="primary-action" href="data-integration-analytics-architecture.html">Explore Data Integration &amp; Analytics Architecture</a>
-</div>
-<div class="enterprise-architecture-flow" aria-label="Enterprise analytics architecture flow">
-<span>Source Systems</span>
-<span>Data Integration</span>
-<span>Semantic Layer</span>
-<span>Governed KPIs</span>
-<span>Executive Reporting</span>
-<span>Operational Intelligence</span>
-<strong>AI &amp; Decision Systems</strong>
-</div>
-</section>
-<section class="failure-section reveal-card">
-<div class="failure-heading">
-<p class="page-kicker">Patterns we see</p>
-<h2>Patterns We Look For</h2>
-<p class="section-lede">Most trust problems come from slow drift, not one obvious failure.</p>
-</div>
-<div aria-label="Failure pattern navigation" class="section-controls failure-controls">
-<button aria-label="Show previous failure patterns" data-carousel-prev="failure" type="button">Prev</button>
-<span data-carousel-status="failure">1 / 2</span>
-<button aria-label="Show next failure patterns" data-carousel-next="failure" type="button">Next</button>
-</div>
-<div class="stat-grid failure-grid">
-<article data-carousel-item="failure" data-page="0">
-<img alt="Disconnected systems creating uncertainty about the source of truth" class="failure-image" src="assets/home-generated/failure-source-of-truth.webp" width="1200" height="751" loading="lazy" decoding="async">
-<strong>Unclear source of truth</strong>
-<p>Teams are not sure which source, dashboard, or definition should win.</p>
-</article>
-<article data-carousel-item="failure" data-page="0">
-<img alt="Conflicting dashboards showing different versions of the same metric" class="failure-image" src="assets/home-generated/failure-conflicting-numbers.webp" width="1200" height="751" loading="lazy" decoding="async">
-<strong>Conflicting numbers</strong>
-<p>The same metric shows up differently across reports, teams, and meetings.</p>
-</article>
-<article data-carousel-item="failure" data-page="0">
-<img alt="Analytics system bending under growing reporting complexity" class="failure-image" src="assets/home-generated/failure-scale-breaks.webp" width="1200" height="675" loading="lazy" decoding="async">
-<strong>Fragile scale</strong>
-<p>Every new team, region, or workflow adds reporting debt and slows change.</p>
-</article>
-<article data-carousel-item="failure" data-page="1">
-<img alt="Repeated logic copied across dashboards and spreadsheets" class="failure-image" src="assets/home-generated/failure-duplicate-logic.webp" width="1200" height="720" loading="lazy" decoding="async">
-<strong>Duplicated logic</strong>
-<p>Calculations get copied into dashboards, spreadsheets, and one-off queries.</p>
-</article>
-<article data-carousel-item="failure" data-page="1">
-<img alt="Metric definitions drifting across connected reports" class="failure-image" src="assets/home-generated/failure-definition-drift.webp" width="1200" height="683" loading="lazy" decoding="async">
-<strong>Definition drift</strong>
-<p>Metric meaning changes by team, timeframe, tool, or report builder.</p>
-</article>
-<article data-carousel-item="failure" data-page="1">
-<img alt="Decision meeting turning into a debate over analytics numbers" class="failure-image" src="assets/home-generated/failure-number-debates.webp" width="1200" height="675" loading="lazy" decoding="async">
-<strong>Decision debate</strong>
-<p>Meetings shift from choosing action to defending which numbers are right.</p>
-</article>
-</div>
-<p class="section-note">These issues rarely surface all at once. Most teams experience them gradually, as definitions drift, ownership blurs, and confidence in analytics quietly erodes.</p>
-</section>
-<section class="trust-section reveal-card">
-<h2>Outcomes After Trust Is Restored</h2>
-<div aria-label="Quote navigation" class="section-controls quote-controls">
-<button aria-label="Show previous quotes" data-carousel-prev="quote" type="button">Prev</button>
-<span data-carousel-status="quote">1 / 2</span>
-<button aria-label="Show next quotes" data-carousel-next="quote" type="button">Next</button>
-</div>
-<div class="quote-grid">
-<article data-carousel-item="quote" data-page="0">
-<img alt="Verified decision signal in a trusted analytics network" class="quote-image" src="assets/home-generated/quote-trust-restored.webp" width="1200" height="675" loading="lazy" decoding="async">
-<blockquote>Teams stop arguing about which numbers are right. The biggest change is not always a new dashboard. It is shared confidence in the operating metrics.</blockquote>
-<div class="quote-person">
-<strong>Director of Analytics</strong>
-<span>Mid-market SaaS company</span>
-<em>Outcome pattern</em>
-</div>
-</article>
-<article data-carousel-item="quote" data-page="0">
-<img alt="Governed metric definitions resolving into one analytics path" class="quote-image" src="assets/home-generated/quote-ownership-definitions.webp" width="1200" height="683" loading="lazy" decoding="async">
-<blockquote>The visible dashboard problem often resolves once metric ownership, definitions, and decision use cases become explicit.</blockquote>
-<div class="quote-person">
-<strong>VP of Operations</strong>
-<span>Industrial &amp; Manufacturing</span>
-<em>Outcome pattern</em>
-</div>
-</article>
-<article data-carousel-item="quote" data-page="0">
-<img alt="Dashboards connecting to a clear leadership decision target" class="quote-image" src="assets/home-generated/quote-leadership-decisions.webp" width="1200" height="675" loading="lazy" decoding="async">
-<blockquote>Analytics becomes more useful when reports are rebuilt around the way leadership actually makes tradeoffs and decisions.</blockquote>
-<div class="quote-person">
-<strong>Product Leader</strong>
-<span>Enterprise SaaS</span>
-<em>Outcome pattern</em>
-</div>
-</article>
-<article data-carousel-item="quote" data-page="1">
-<img alt="Verified decision signal in a trusted analytics network" class="quote-image" src="assets/home-generated/quote-trust-restored.webp" width="1200" height="675" loading="lazy" decoding="async">
-<blockquote>Follow-up questions move faster because the model, logic, and definitions are stable enough to support deeper analysis.</blockquote>
-<div class="quote-person">
-<strong>Revenue Operations Lead</strong>
-<span>Growth-stage SaaS</span>
-<em>Outcome pattern</em>
-</div>
-</article>
-<article data-carousel-item="quote" data-page="1">
-<img alt="Governed metric definitions resolving into one analytics path" class="quote-image" src="assets/home-generated/quote-ownership-definitions.webp" width="1200" height="683" loading="lazy" decoding="async">
-<blockquote>Teams separate operating signals from legacy noise and assign clear ownership to the metrics that should guide action.</blockquote>
-<div class="quote-person">
-<strong>Chief Operating Officer</strong>
-<span>Multi-site Services</span>
-<em>Outcome pattern</em>
-</div>
-</article>
-<article data-carousel-item="quote" data-page="1">
-<img alt="Dashboards connecting to a clear leadership decision target" class="quote-image" src="assets/home-generated/quote-leadership-decisions.webp" width="1200" height="675" loading="lazy" decoding="async">
-<blockquote>Analytics shifts from a dashboard queue into operating infrastructure with standards, ownership, and repeatable logic.</blockquote>
-<div class="quote-person">
-<strong>Head of Product</strong>
-<span>B2B Platform Company</span>
-<em>Outcome pattern</em>
-</div>
-</article>
 </div>
 </section>
 <section class="closing-section">
@@ -696,6 +456,6 @@
   <div class="site-footer-bottom">
     <p>&copy; 2026 Parallax Data Lab. All rights reserved.</p>
   </div>
-</footer><script defer src="home.min.js?v=185"></script>
+</footer><script defer src="home.min.js?v=187"></script>
 </body>
 </html>
