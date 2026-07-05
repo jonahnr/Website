@@ -17,6 +17,7 @@ PAGES = [
     "decision-workspace",
     "expertise",
     "fractional-analytics",
+    "free-fit-check",
     "how-we-help",
     "dashboard-trust-governance",
     "insights",
