@@ -1,930 +1,759 @@
 (function () {
-  const storageKeyBase = "parallaxDecisionWorkspace.customer.v1";
-  let storageKey = `${storageKeyBase}.signed-out`;
+  const stepOrder = ["decisions", "metrics", "cadence", "triggers", "ownership"];
+  const stepLabels = {
+    decisions: "Decision inventory",
+    metrics: "Metric-to-decision mapping",
+    cadence: "Operating cadence",
+    triggers: "Trigger and action rules",
+    ownership: "Ownership and escalation"
+  };
+  const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
   const fieldSets = {
-    recommendations: [
-      ["title", "Recommendation", "text", true],
-      ["why", "Why it matters", "textarea", true],
-      ["ownerId", "Owner", "user", true],
-      ["priority", "Priority", "select", true, ["High", "Medium", "Low"]],
-      ["effort", "Effort", "select", true, ["Small", "Medium", "Large"]],
-      ["status", "Status", "select", true, ["Not started", "In progress", "Blocked", "Done"]],
-      ["dueDate", "Due date", "date", false],
-      ["related", "Related metric / dashboard / decision", "text", false],
-      ["evidence", "Evidence needed", "textarea", false],
-      ["nextStep", "Next step", "textarea", true]
+    decisions: [
+      ["decision", "Decision", "text", "Portfolio prioritization"],
+      ["owner", "Owner", "text", "Head of Strategy"],
+      ["frequency", "Frequency", "select", "Weekly", ["Weekly", "Monthly", "Quarterly", "Event-driven"]],
+      ["pain", "Current friction", "textarea", "Decisions are made from different spreadsheets and late context."]
     ],
     metrics: [
-      ["name", "Metric name", "text", true],
-      ["definition", "Business definition", "textarea", true],
-      ["ownerId", "Owner", "user", true],
-      ["contributors", "Contributors", "text", false],
-      ["source", "Source system", "text", true],
-      ["logic", "Calculation logic", "textarea", false],
-      ["refresh", "Refresh cadence", "select", true, ["Daily", "Weekly", "Monthly", "Quarterly", "Unknown"]],
-      ["decision", "Decision supported", "text", true],
-      ["disputes", "Known disputes", "textarea", false],
-      ["trust", "Trust status", "select", true, ["Trusted", "Needs review", "Disputed", "Unknown"]]
+      ["decision", "Decision supported", "text", "Portfolio prioritization"],
+      ["signal", "Metric signal", "text", "ROIC, market growth, strategic fit"],
+      ["source", "Source", "text", "Power BI executive scorecard"],
+      ["confidence", "Confidence", "select", "Needs review", ["Trusted", "Needs review", "Disputed", "Unknown"]]
     ],
-    decisions: [
-      ["name", "Decision name", "text", true],
-      ["ownerId", "Decision owner", "user", true],
-      ["cadence", "Cadence", "select", true, ["Daily", "Weekly", "Monthly", "Quarterly", "Event-driven"]],
-      ["metrics", "Supporting metrics", "text", true],
-      ["options", "Decision options", "textarea", true],
-      ["criteria", "Decision criteria", "textarea", true],
-      ["selectedOption", "Current / default option", "text", false],
-      ["trigger", "Trigger threshold", "textarea", false],
-      ["forum", "Meeting / forum", "text", false],
-      ["escalation", "Escalation path", "textarea", false],
-      ["friction", "Current friction", "textarea", true]
+    cadence: [
+      ["forum", "Forum or meeting", "text", "Weekly leadership review"],
+      ["rhythm", "Rhythm", "select", "Weekly", ["Weekly", "Monthly", "Quarterly", "Event-driven"]],
+      ["days", "Review day(s)", "days", ""],
+      ["time", "Review time", "time", "09:00"],
+      ["decisions", "Decisions reviewed", "text", "Demand forecast, capacity rebalance"],
+      ["commitment", "Required output", "textarea", "Decision, owner, next action, and escalation if blocked."]
     ],
-    dashboards: [
-      ["name", "Dashboard / report name", "text", true],
-      ["reportUrl", "Report link", "url", false],
-      ["audience", "Audience", "text", true],
-      ["ownerId", "Owner", "user", true],
-      ["platform", "Reporting source", "select", true, ["Power BI", "Tableau", "Looker", "Excel / Sheets", "ERP report", "CRM report", "Other"]],
-      ["location", "Workspace / location", "text", true],
-      ["purpose", "Purpose", "textarea", true],
-      ["sources", "Source systems", "text", false],
-      ["trustScore", "Trust score", "select", true, ["1", "2", "3", "4", "5"]],
-      ["issues", "Known issues", "textarea", true],
-      ["action", "Recommended action", "select", true, ["Keep", "Fix", "Merge", "Retire"]],
-      ["priority", "Priority", "select", true, ["High", "Medium", "Low"]]
+    triggers: [
+      ["signal", "Metric signal", "text", "Bookings delta"],
+      ["threshold", "Threshold", "text", "Below -10% quarter over quarter"],
+      ["action", "Action", "text", "Adjust forecast and review pipeline coverage"],
+      ["owner", "Response owner", "text", "VP Commercial"]
     ],
-    users: [
-      ["name", "Name", "text", true],
-      ["email", "Email", "email", true],
-      ["role", "Role", "select", true, ["Org Admin", "Owner", "Contributor", "Viewer"]]
+    ownership: [
+      ["decisionOwner", "Decision owner", "text", "VP Commercial"],
+      ["escalateTo", "Escalate to", "text", "COO"],
+      ["timeline", "Response timeline", "select", "Within 5 business days", ["Same day", "Within 48 hours", "Within 5 business days", "Next review cycle"]],
+      ["rule", "Escalation rule", "textarea", "Escalate when the owner cannot resolve the action before the next cadence review."]
     ]
   };
 
-  const tableColumns = {
-    recommendations: ["title", "ownerId", "priority", "status", "dueDate", "nextStep"],
-    metrics: ["name", "ownerId", "source", "refresh", "decision", "trust"],
-    decisions: ["name", "ownerId", "cadence", "options", "selectedOption", "criteria", "metrics"],
-    dashboards: ["name", "platform", "location", "audience", "ownerId", "trustScore", "action", "priority"],
-    users: ["name", "email", "role"]
+  const artifactColumns = {
+    decisions: ["decision", "owner", "frequency", "pain"],
+    metrics: ["decision", "signal", "source", "confidence"],
+    cadence: ["forum", "rhythm", "days", "time", "decisions", "commitment"],
+    triggers: ["signal", "threshold", "action", "owner"],
+    ownership: ["decisionOwner", "escalateTo", "timeline", "rule"]
   };
 
-  const labels = {
-    title: "Recommendation",
-    why: "Why",
-    ownerId: "Owner",
-    priority: "Priority",
-    effort: "Effort",
-    status: "Status",
-    dueDate: "Due",
-    related: "Related",
-    evidence: "Evidence",
-    nextStep: "Next step",
-    name: "Name",
-    definition: "Definition",
-    contributors: "Contributors",
-    source: "Source",
-    logic: "Logic",
-    refresh: "Refresh",
-    decision: "Decision",
-    disputes: "Disputes",
-    trust: "Trust",
-    cadence: "Cadence",
-    metrics: "Metrics",
-    options: "Decision options",
-    criteria: "Criteria",
-    selectedOption: "Current option",
-    trigger: "Trigger",
-    forum: "Forum",
-    escalation: "Escalation",
-    friction: "Friction",
-    audience: "Audience",
-    reportUrl: "Report link",
-    platform: "Source",
-    location: "Location",
-    purpose: "Purpose",
-    sources: "Sources",
-    trustScore: "Trust",
-    action: "Action",
-    email: "Email",
-    role: "Role"
+  const labels = Object.fromEntries(
+    Object.values(fieldSets).flat().map(([name, label]) => [name, label])
+  );
+
+  const sampleData = {
+    decisions: [
+      { decision: "Portfolio prioritization", owner: "Head of Strategy", frequency: "Monthly", pain: "Investment tradeoffs are debated without a common view of return, capacity, and strategic fit." },
+      { decision: "Demand forecast commit", owner: "VP Commercial", frequency: "Weekly", pain: "Forecast updates are made after leaders argue about pipeline coverage and win-rate assumptions." },
+      { decision: "Pricing adjustment", owner: "VP Pricing", frequency: "Event-driven", pain: "Price moves are delayed because leaders disagree on margin, elasticity, and customer risk." },
+      { decision: "Operating expense reallocation", owner: "CFO", frequency: "Monthly", pain: "Budget decisions lag because the team cannot distinguish run-rate noise from structural variance." },
+      { decision: "Capacity rebalance", owner: "COO", frequency: "Weekly", pain: "Staffing and vendor capacity are adjusted after service levels already miss target." }
+    ],
+    metrics: [
+      { decision: "Portfolio prioritization", signal: "ROIC, market growth, strategic fit", source: "Executive scorecard", confidence: "Needs review" },
+      { decision: "Demand forecast commit", signal: "Bookings delta, pipeline coverage, win rate", source: "CRM and finance model", confidence: "Disputed" },
+      { decision: "Pricing adjustment", signal: "ASP delta, price index, elasticity", source: "Revenue operations model", confidence: "Needs review" },
+      { decision: "Operating expense reallocation", signal: "OpEx percent of revenue, cost to serve, efficiency index", source: "Finance planning model", confidence: "Trusted" },
+      { decision: "Capacity rebalance", signal: "Utilization, lead time, backlog", source: "Operations dashboard", confidence: "Needs review" }
+    ],
+    cadence: [
+      { forum: "Metric signal review", rhythm: "Weekly", days: ["Tuesday"], time: "08:30", decisions: "Demand forecast commit, capacity rebalance", commitment: "Review signal movement and identify decisions that need action." },
+      { forum: "Decision review", rhythm: "Weekly", days: ["Tuesday"], time: "09:00", decisions: "Pricing adjustment, operating expense reallocation", commitment: "Choose action, owner, and next checkpoint for each triggered decision." },
+      { forum: "Trigger assessment", rhythm: "Weekly", days: ["Thursday"], time: "09:30", decisions: "Threshold breaches and escalations", commitment: "Confirm whether thresholds require action or executive escalation." },
+      { forum: "Action commitments", rhythm: "Weekly", days: ["Thursday"], time: "10:00", decisions: "Open actions from the reset artifact", commitment: "Close the loop on assigned actions before the next review." },
+      { forum: "Risk and escalation review", rhythm: "Monthly", days: ["Friday"], time: "10:30", decisions: "Portfolio prioritization, roadmap trade-offs, vendor selection", commitment: "Escalate unresolved cross-functional decisions to the right owner." }
+    ],
+    triggers: [
+      { signal: "Bookings delta", threshold: "Below -10% quarter over quarter", action: "Adjust forecast and review pipeline coverage", owner: "VP Commercial" },
+      { signal: "ROIC", threshold: "Below 12%", action: "Rebalance portfolio", owner: "Head of Strategy" },
+      { signal: "ASP delta", threshold: "Below -2%", action: "Review price adjustment", owner: "VP Pricing" },
+      { signal: "OpEx percent of revenue", threshold: "Above 20%", action: "Reallocate budget", owner: "CFO" },
+      { signal: "Utilization", threshold: "Below 70%", action: "Adjust capacity plan", owner: "COO" }
+    ],
+    ownership: [
+      { decisionOwner: "VP Commercial", escalateTo: "COO", timeline: "Within 48 hours", rule: "Escalate when forecast risk cannot be resolved before weekly review." },
+      { decisionOwner: "Head of Strategy", escalateTo: "CEO", timeline: "Within 5 business days", rule: "Escalate when portfolio tradeoffs affect budget, capacity, or strategic commitments." },
+      { decisionOwner: "VP Pricing", escalateTo: "CRO", timeline: "Within 48 hours", rule: "Escalate when margin and volume signals point to conflicting pricing actions." },
+      { decisionOwner: "CFO", escalateTo: "CEO", timeline: "Within 5 business days", rule: "Escalate when reallocation affects committed budget or operating targets." },
+      { decisionOwner: "COO", escalateTo: "CEO", timeline: "Same day", rule: "Escalate when capacity risk threatens service level or customer commitments." }
+    ]
   };
 
-  const helpText = {
-    title: "Write the recommendation as a clear action, not a broad theme. Example: Assign owners to the five executive KPIs.",
-    why: "Explain the business friction, risk, or cost this recommendation solves.",
-    ownerId: "Choose the person accountable for moving this item forward.",
-    priority: "Use High for work that blocks decisions, reporting trust, or executive alignment.",
-    effort: "Estimate the practical lift so leaders can sequence the work.",
-    status: "Track whether this is still open, in progress, blocked, or complete.",
-    dueDate: "Add the target date when the next meaningful progress should happen.",
-    related: "Name the metric, dashboard, decision, or reset work this recommendation supports.",
-    evidence: "List what proof, screenshots, exports, examples, or stakeholder input is needed.",
-    nextStep: "Write the next concrete action someone can take after this meeting.",
-    name: "Use the real business name people would recognize in a meeting or reporting workspace.",
-    definition: "Define the metric in business language, including what is included and excluded.",
-    contributors: "Name teams or people who provide context, data, or approval.",
-    source: "Name the source system or report where this number comes from.",
-    logic: "Describe the calculation rule, formula, filter, or grain at a practical level.",
-    refresh: "Choose how often the value should be refreshed for the decision it supports.",
-    decision: "Name the recurring business decision this metric is meant to inform.",
-    disputes: "Capture where people disagree about the definition, source, or interpretation.",
-    trust: "Mark whether leaders can use this confidently or whether it needs review.",
-    cadence: "Choose how often this decision is actually made.",
-    metrics: "List the metrics or signals leaders need before choosing an option.",
-    options: "List the real choices available. Example: approve overtime, rebalance routes, defer work, or add vendor capacity.",
-    criteria: "Explain how leaders choose between the options, including thresholds or tradeoffs.",
-    selectedOption: "Enter the default or currently favored option if one exists.",
-    trigger: "Describe the condition that forces this decision, such as margin below target or backlog above threshold.",
-    forum: "Name the meeting, workflow, or operating cadence where this decision should happen.",
-    escalation: "Explain who decides when the normal owner cannot resolve the issue.",
-    friction: "Describe what currently slows or confuses this decision.",
-    audience: "Name who uses this dashboard or report.",
-    reportUrl: "Paste the direct Power BI, Tableau, Looker, spreadsheet, or report URL.",
-    platform: "Choose where the dashboard lives, such as Power BI, Tableau, Looker, or a spreadsheet.",
-    location: "Name the workspace, folder, app, team site, or reporting source location.",
-    purpose: "Explain the decision or operating conversation this dashboard should support.",
-    sources: "List the underlying systems or extracts feeding the dashboard.",
-    trustScore: "Score how confidently leaders can act on this dashboard today.",
-    issues: "Capture known trust, ownership, definition, refresh, or duplication problems.",
-    action: "Choose whether the dashboard should stay, be repaired, merged, or retired.",
-    email: "Use the user's work email address.",
-    role: "Choose the access level this person should have in the organization workspace."
+  const state = defaultState();
+  const access = {
+    unlocked: false,
+    email: ""
   };
 
-  const state = {
-    data: loadData(),
-    session: null,
-    authUser: null,
-    authMode: initialAuthMode(),
-    activeTab: "home",
-    editing: null
-  };
-
-  function id(prefix) {
-    return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  function defaultState() {
+    return Object.fromEntries(stepOrder.map((step) => [step, [emptyRow(step)]]));
   }
 
-  function initialAuthMode() {
-    const mode = new URLSearchParams(window.location.search).get("auth");
-    return mode === "login" ? "login" : mode === "recovery" ? "recovery" : "signup";
+  function emptyRow(step) {
+    return Object.fromEntries(fieldSets[step].map(([name, , type]) => [name, type === "days" ? [] : ""]));
   }
 
-  function defaultData() {
-    return {
-      organizations: [],
-      users: [],
-      recommendations: [],
-      metrics: [],
-      decisions: [],
-      dashboards: []
-    };
+  function saveState() {
+    return state;
   }
 
-  function loadData() {
-    try {
-      return normalizeData(JSON.parse(localStorage.getItem(storageKey)) || defaultData());
-    } catch (error) {
-      return normalizeData(defaultData());
-    }
-  }
-
-  function normalizeData(data) {
-    const base = defaultData();
-    const next = {
-      schemaVersion: 2,
-      organizations: Array.isArray(data.organizations) ? data.organizations : base.organizations,
-      users: Array.isArray(data.users) ? data.users : base.users,
-      recommendations: Array.isArray(data.recommendations) ? data.recommendations : base.recommendations,
-      metrics: Array.isArray(data.metrics) ? data.metrics : base.metrics,
-      decisions: Array.isArray(data.decisions) ? data.decisions : base.decisions,
-      dashboards: Array.isArray(data.dashboards) ? data.dashboards : base.dashboards
-    };
-
-    next.decisions = next.decisions.map((item) => ({
-      options: "",
-      criteria: "",
-      selectedOption: "",
-      ...item
-    }));
-    next.dashboards = next.dashboards.map((item) => ({
-      platform: "",
-      location: "",
-      reportUrl: "",
-      ...item
-    }));
-    return next;
-  }
-
-  function saveData() {
-    localStorage.setItem(storageKey, JSON.stringify(state.data));
-  }
-
-  function loadSession() {
-    return null;
-  }
-
-  function saveSession() {
-    return state.session;
-  }
-
-  function currentUser() {
-    return state.data.users.find((user) => user.id === state.session?.userId) || null;
-  }
-
-  function isParallaxAdmin() {
-    return currentUser()?.role === "Parallax Admin";
-  }
-
-  function canEdit() {
-    const role = currentUser()?.role;
-    return role === "Parallax Admin" || role === "Org Admin" || role === "Owner" || role === "Contributor";
-  }
-
-  function canManageUsers() {
-    const role = currentUser()?.role;
-    return role === "Parallax Admin" || role === "Org Admin";
-  }
-
-  function activeOrg() {
-    return state.data.organizations.find((org) => org.id === state.session?.activeOrgId) || state.data.organizations[0];
-  }
-
-  function orgUsers() {
-    const org = activeOrg();
-    return state.data.users.filter((user) => user.orgId === org.id);
-  }
-
-  function orgItems(type) {
-    const org = activeOrg();
-    if (type === "users") return orgUsers();
-    return state.data[type].filter((item) => item.orgId === org.id);
-  }
-
-  function userName(userId) {
-    return state.data.users.find((user) => user.id === userId)?.name || "Unassigned";
-  }
-
-  async function boot() {
-    setupEvents();
-    await initializeAuth();
-    render();
-  }
-
-  async function initializeAuth() {
-    const client = window.decisionWorkspaceSupabase?.client;
-    const error = document.querySelector("[data-login-error]");
-    if (!client?.auth) {
-      if (error) error.textContent = "Secure account access is temporarily unavailable. Please try again shortly.";
-      return;
-    }
-
-    client.auth.onAuthStateChange((event, session) => {
-      if (event === "PASSWORD_RECOVERY") {
-        state.authMode = "recovery";
-        state.authUser = session?.user || null;
-        state.session = null;
-        render();
-        return;
-      }
-      if (event === "SIGNED_OUT") {
-        state.authUser = null;
-        state.session = null;
-        render();
-      }
-    });
-
-    const { data, error: sessionError } = await client.auth.getSession();
-    if (sessionError) {
-      if (error) error.textContent = sessionError.message;
-      return;
-    }
-    if (data?.session?.user && state.authMode !== "recovery") {
-      hydrateAuthenticatedWorkspace(data.session.user);
-    }
-  }
-
-  function hydrateAuthenticatedWorkspace(authUser, signupContext = {}) {
-    state.authUser = authUser;
-    storageKey = `${storageKeyBase}.${authUser.id}`;
-    state.data = loadData();
-
-    let user = state.data.users.find((item) => item.id === authUser.id);
-    if (!user) {
-      const metadata = authUser.user_metadata || {};
-      const orgId = id("org");
-      user = {
-        id: authUser.id,
-        orgId,
-        name: signupContext.name || metadata.full_name || metadata.name || authUser.email,
-        email: authUser.email,
-        role: "Org Admin"
-      };
-      state.data.organizations.push({
-        id: orgId,
-        name: signupContext.orgName || metadata.organization_name || "My organization",
-        industry: "Client workspace"
+  function track(eventName, params) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, {
+        event_category: "decision_workspace",
+        ...params
       });
-      state.data.users.push(user);
-      saveData();
-    }
-
-    state.session = { userId: user.id, activeOrgId: user.orgId };
-  }
-
-  function setupEvents() {
-    document.querySelector("[data-login-form]")?.addEventListener("submit", handleLogin);
-    document.querySelectorAll("[data-auth-mode]").forEach((button) => {
-      button.addEventListener("click", () => {
-        setAuthMode(button.dataset.authMode || "signup");
-        document.querySelector("[data-view='login']")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-    document.querySelector("[data-logout]")?.addEventListener("click", async () => {
-      await window.decisionWorkspaceSupabase?.client?.auth?.signOut();
-      state.session = null;
-      state.authUser = null;
-      render();
-    });
-    document.querySelector("[data-reset-demo]")?.addEventListener("click", () => {
-      if (!isParallaxAdmin()) {
-        alert("Only a Parallax admin can reset demo data.");
-        return;
-      }
-      state.data = defaultData();
-      const user = currentUser();
-      state.session = user ? state.session : null;
-      saveData();
-      render();
-    });
-    document.querySelector("[data-org-switch]")?.addEventListener("change", (event) => {
-      state.session.activeOrgId = event.target.value;
-      saveSession();
-      render();
-    });
-    document.querySelectorAll("[data-tab-target]").forEach((button) => {
-      button.addEventListener("click", () => {
-        state.activeTab = button.dataset.tabTarget;
-        render();
-      });
-    });
-    document.querySelectorAll("[data-open-form]").forEach((button) => {
-      button.addEventListener("click", () => openForm(button.dataset.openForm));
-    });
-    document.querySelector("[data-close-modal]")?.addEventListener("click", closeModal);
-    document.querySelector("[data-modal]")?.addEventListener("click", (event) => {
-      if (event.target.matches("[data-modal]")) closeModal();
-    });
-    document.querySelector("[data-print-report]")?.addEventListener("click", () => window.print());
-    document.querySelector("[data-delete-org]")?.addEventListener("click", deleteActiveOrg);
-    document.querySelector("[data-forgot-password]")?.addEventListener("click", handleForgotPassword);
-  }
-
-  async function handleLogin(event) {
-    event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const email = String(form.get("email") || "").trim().toLowerCase();
-    const password = String(form.get("password") || "");
-    const error = document.querySelector("[data-login-error]");
-
-    if (state.authMode === "recovery") {
-      await handlePasswordUpdate(form);
-      return;
-    }
-
-    if (!(await validateRecaptcha(state.authMode === "signup" ? "signup" : "login"))) return;
-
-    if (state.authMode === "signup") {
-      await handleSignup(form, email, password);
-      return;
-    }
-
-    const client = window.decisionWorkspaceSupabase?.client;
-    const { data, error: loginError } = await client.auth.signInWithPassword({ email, password });
-    if (loginError || !data?.user) {
-      if (error) error.textContent = loginError?.message || "Unable to log in with those credentials.";
-      resetRecaptcha();
-      return;
-    }
-    hydrateAuthenticatedWorkspace(data.user);
-    if (error) error.textContent = "";
-    render();
-  }
-
-  async function handleSignup(form, email, password) {
-    const error = document.querySelector("[data-login-error]");
-    const orgName = String(form.get("orgName") || "").trim();
-    const name = String(form.get("name") || "").trim();
-    const confirmPassword = String(form.get("confirmPassword") || "");
-    if (!orgName || !name) {
-      if (error) error.textContent = "Add an organization name and your name to create the account.";
-      return;
-    }
-    if (password !== confirmPassword) {
-      if (error) error.textContent = "Password and confirmation must match.";
-      resetRecaptcha();
-      return;
-    }
-    const redirectTo = authReturnUrl("login");
-    const client = window.decisionWorkspaceSupabase?.client;
-    const { data, error: signupError } = await client.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectTo,
-        data: { full_name: name, organization_name: orgName }
-      }
-    });
-    if (signupError) {
-      if (error) error.textContent = signupError.message;
-      resetRecaptcha();
-      return;
-    }
-    if (data?.session?.user) {
-      hydrateAuthenticatedWorkspace(data.session.user, { name, orgName });
-      if (error) error.textContent = "";
-      render();
-      return;
-    }
-    if (error) error.textContent = "Account created. Check your email to verify the account, then log in.";
-    setAuthMode("login", { preserveMessage: true });
-  }
-
-  async function handlePasswordUpdate(form) {
-    const error = document.querySelector("[data-login-error]");
-    const password = String(form.get("password") || "");
-    const confirmPassword = String(form.get("confirmPassword") || "");
-    if (password.length < 8) {
-      if (error) error.textContent = "Use at least 8 characters for the new password.";
-      return;
-    }
-    if (password !== confirmPassword) {
-      if (error) error.textContent = "Password and confirmation must match.";
-      return;
-    }
-    const client = window.decisionWorkspaceSupabase?.client;
-    const { error: updateError } = await client.auth.updateUser({ password });
-    if (updateError) {
-      if (error) error.textContent = updateError.message;
-      return;
-    }
-    await client.auth.signOut();
-    state.authMode = "login";
-    renderAuthMode();
-    if (error) error.textContent = "Password updated. Log in with your new password.";
-    window.history.replaceState({}, "", `${window.location.pathname}?auth=login`);
-  }
-
-  function authReturnUrl(mode) {
-    if (window.location.protocol === "http:" || window.location.protocol === "https:") {
-      const cleanPath = window.location.pathname.includes("/decision-workspace/")
-        ? window.location.pathname
-        : "/decision-workspace/";
-      return `${window.location.origin}${cleanPath}?auth=${mode}`;
-    }
-    return `https://parallaxdatalab.com/decision-workspace/?auth=${mode}`;
-  }
-
-  async function validateRecaptcha(action) {
-    const error = document.querySelector("[data-login-error]");
-    if (!window.grecaptcha?.execute) {
-      if (error) error.textContent = "reCAPTCHA is still loading. Please try again in a moment.";
-      return false;
-    }
-    try {
-      const token = await new Promise((resolve, reject) => {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha.execute("6LezmygtAAAAAO3kIUbPdYzX20TgkJ7T1WLLNKFN", { action }).then(resolve, reject);
-        });
-      });
-      const response = await fetch("/api/verify-recaptcha", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, action })
-      });
-      const result = await response.json();
-      if (!response.ok || !result.success) {
-        if (error) error.textContent = "reCAPTCHA verification failed. Please try again.";
-        resetRecaptcha();
-        return false;
-      }
-      if (error) error.textContent = "";
-      return true;
-    } catch (verificationError) {
-      if (error) error.textContent = "reCAPTCHA could not be verified. Please try again shortly.";
-      resetRecaptcha();
-      return false;
-    }
-  }
-
-  function resetRecaptcha() {
-    return;
-  }
-
-  async function handleForgotPassword() {
-    const error = document.querySelector("[data-login-error]");
-    const email = String(document.querySelector("[name='email']")?.value || "").trim().toLowerCase();
-    if (!email) {
-      if (error) error.textContent = "Enter your email first, then request a password reset.";
-      return;
-    }
-    if (!(await validateRecaptcha("password_reset"))) return;
-    const supabaseClient = window.decisionWorkspaceSupabase?.client;
-    if (!supabaseClient?.auth?.resetPasswordForEmail) {
-      if (error) error.textContent = "Password reset is available after Supabase Auth is fully deployed.";
-      return;
-    }
-    const redirectTo = authReturnUrl("recovery");
-    const { error: resetError } = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo });
-    if (error) {
-      error.textContent = resetError
-        ? resetError.message
-        : "Password reset email sent. Open the link in that email to choose a new password.";
     }
   }
 
   function render() {
-    const loggedIn = Boolean(currentUser() && activeOrg());
-    document.querySelector('[data-view="login"]')?.classList.toggle("is-hidden", loggedIn);
-    document.querySelector('[data-view="app"]')?.classList.toggle("is-hidden", !loggedIn);
-    document.querySelector("[data-auth-actions]")?.classList.toggle("is-hidden", loggedIn);
-    renderAuthMode();
-    if (!loggedIn) return;
-
-    renderShell();
-    renderHome();
-    renderTables();
-    renderReport();
+    stepOrder.forEach(renderRows);
+    renderProgress();
+    renderArtifact();
+    renderArtifactAccess();
   }
 
-  function setAuthMode(mode, options = {}) {
-    state.authMode = mode === "login" ? "login" : mode === "recovery" ? "recovery" : "signup";
-    const error = document.querySelector("[data-login-error]");
-    if (error && !options.preserveMessage) error.textContent = "";
-    resetRecaptcha();
-    renderAuthMode();
-  }
-
-  function renderAuthMode() {
-    const isRecovery = state.authMode === "recovery";
-    const isSignup = state.authMode === "signup";
-    const eyebrow = document.querySelector("[data-auth-eyebrow]");
-    const title = document.querySelector("[data-auth-title]");
-    const copy = document.querySelector(".workspace-login-copy");
-    const submit = document.querySelector("[data-auth-submit]");
-    if (eyebrow) eyebrow.textContent = isRecovery ? "Prototype password recovery" : isSignup ? "Interactive prototype" : "Interactive prototype";
-    if (title) title.textContent = isRecovery ? "Choose a prototype password." : isSignup ? "Explore the Interactive Decision Workspace Demo." : "Open the Interactive Decision Workspace Demo.";
-    if (copy) {
-      copy.textContent = isRecovery
-        ? "Enter and confirm a new password for this demonstration account."
-        : isSignup
-        ? "This noindex prototype demonstrates how recommendations can become owned decisions, metrics, dashboards, and action plans. Do not enter confidential production data."
-        : "Access the demonstration workspace. Do not enter confidential production data.";
-    }
-    document.querySelector("[data-signup-fields]")?.classList.toggle("is-hidden", !isSignup);
-    document.querySelector("[data-email-wrap]")?.classList.toggle("is-hidden", isRecovery);
-    document.querySelector("[data-confirm-password-wrap]")?.classList.toggle("is-hidden", !(isSignup || isRecovery));
-    document.querySelector("[data-human-check]")?.classList.toggle("is-hidden", isRecovery);
-    document.querySelector(".workspace-auth-toggle")?.classList.toggle("is-hidden", isRecovery);
-    const passwordLabel = document.querySelector("[data-password-label]");
-    if (passwordLabel) passwordLabel.textContent = isRecovery ? "New password" : "Password";
-    if (submit) submit.textContent = isRecovery ? "Set new password" : isSignup ? "Create organization" : "Log in";
-    document.querySelector("[data-forgot-password]")?.classList.toggle("is-hidden", isSignup || isRecovery);
-    document.querySelectorAll("[data-auth-mode]").forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.authMode === state.authMode);
-    });
-    const email = document.querySelector("[name='email']");
-    const password = document.querySelector("[name='password']");
-    const confirmPassword = document.querySelector("[name='confirmPassword']");
-    if (email && password) {
-      if (!isRecovery) email.value = "";
-      password.value = "";
-      password.setAttribute("autocomplete", isSignup || isRecovery ? "new-password" : "current-password");
-      password.type = "password";
-    }
-    if (confirmPassword) {
-      confirmPassword.value = "";
-      confirmPassword.required = isSignup || isRecovery;
-    }
-  }
-
-  function renderShell() {
-    const user = currentUser();
-    const org = activeOrg();
-    document.querySelector("[data-active-org-name]").textContent = org.name;
-    document.querySelector("[data-active-user-summary]").textContent = `${user.name} - ${user.role}`;
-    document.querySelector("[data-active-tab-label]").textContent = labelForTab(state.activeTab);
-    document.querySelector("[data-page-title]").textContent = titleForTab(state.activeTab);
-    document.querySelectorAll("[data-tab-target]").forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.tabTarget === state.activeTab);
-    });
-    document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
-      panel.classList.toggle("is-hidden", panel.dataset.tabPanel !== state.activeTab);
-    });
-
-    const switchWrap = document.querySelector("[data-org-switch-wrap]");
-    const switcher = document.querySelector("[data-org-switch]");
-    switchWrap?.classList.toggle("is-hidden", !isParallaxAdmin());
-    if (switcher) {
-      switcher.innerHTML = state.data.organizations.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
-      switcher.value = org.id;
-    }
-
-    document.querySelectorAll("[data-open-form]").forEach((button) => {
-      const type = button.dataset.openForm;
-      button.disabled = type === "users" ? !canManageUsers() : !canEdit();
-    });
-    document.querySelector("[data-reset-demo]")?.classList.toggle("is-hidden", !isParallaxAdmin());
-    document.querySelector("[data-org-admin-panel]")?.classList.toggle("is-hidden", !isParallaxAdmin());
-  }
-
-  function labelForTab(tab) {
-    return {
-      home: "Home",
-      recommendations: "Action plan",
-      metrics: "Metric ownership",
-      decisions: "Decision map",
-      dashboards: "Dashboard trust",
-      users: "Org access",
-      export: "Reset export"
-    }[tab] || "Workspace";
-  }
-
-  function titleForTab(tab) {
-    return {
-      home: "Reporting system command center",
-      recommendations: "Recommendation action plan",
-      metrics: "Metric ownership map",
-      decisions: "Decision map",
-      dashboards: "Dashboard trust register",
-      users: "Users and access",
-      export: "Decision System Reset artifact"
-    }[tab] || "Workspace";
-  }
-
-  function renderHome() {
-    const recs = orgItems("recommendations");
-    const metrics = orgItems("metrics");
-    const decisions = orgItems("decisions");
-    const dashboards = orgItems("dashboards");
-    const openRecs = recs.filter((item) => item.status !== "Done");
-    const unownedMetrics = metrics.filter((item) => !item.ownerId || item.trust !== "Trusted");
-    const lowTrustDashboards = dashboards.filter((item) => Number(item.trustScore) <= 3 || item.action !== "Keep");
-    const unmappedDecisions = decisions.filter((item) => !item.metrics || item.metrics.length < 5 || !item.options || !item.criteria);
-    const health = calculateHealth(recs, metrics, decisions, dashboards);
-
-    const kpis = [
-      [openRecs.length, "open recommendations"],
-      [unownedMetrics.length, "metrics needing ownership/review"],
-      [lowTrustDashboards.length, "dashboard trust issues"],
-      [unmappedDecisions.length, "decisions missing metric support"]
-    ];
-    document.querySelector("[data-kpi-grid]").innerHTML = kpis.map(([value, label]) => `<div class="workspace-kpi"><strong>${value}</strong><span>${label}</span></div>`).join("");
-
-    const next = openRecs
-      .slice()
-      .sort((a, b) => priorityWeight(a.priority) - priorityWeight(b.priority))
-      .slice(0, 5);
-    document.querySelector("[data-next-actions]").innerHTML = next.length
-      ? `<div class="workspace-action-list">${next.map((item) => `<div class="workspace-action-item"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(userName(item.ownerId))} - ${escapeHtml(item.priority)} - ${escapeHtml(item.status)}</span><span>${escapeHtml(item.nextStep || "")}</span></div>`).join("")}</div>`
-      : `<p class="workspace-muted">No open recommendations. Add a new action or export the reset artifact.</p>`;
-
-    document.querySelector("[data-health-meter]").innerHTML = `<strong>${health}% healthy</strong><div class="workspace-health-bar" aria-label="Decision system health"><span style="width:${health}%"></span></div>`;
-  }
-
-  function calculateHealth(recs, metrics, decisions, dashboards) {
-    const total = Math.max(1, recs.length + metrics.length + decisions.length + dashboards.length);
-    const good =
-      recs.filter((item) => item.status === "Done").length +
-      metrics.filter((item) => item.ownerId && item.trust === "Trusted").length +
-      decisions.filter((item) => item.metrics && item.options && item.criteria && item.ownerId).length +
-      dashboards.filter((item) => Number(item.trustScore) >= 4 && item.action === "Keep").length;
-    return Math.round((good / total) * 100);
-  }
-
-  function priorityWeight(priority) {
-    return { High: 1, Medium: 2, Low: 3 }[priority] || 4;
-  }
-
-  function renderTables() {
-    ["recommendations", "metrics", "decisions", "dashboards", "users"].forEach(renderTable);
-  }
-
-  function renderTable(type) {
-    const table = document.querySelector(`[data-table="${type}"]`);
-    if (!table) return;
-    const columns = tableColumns[type];
-    const editable = type === "users" ? canManageUsers() : canEdit();
-    const rows = orgItems(type);
-    table.innerHTML = `
-      <thead><tr>${columns.map((col) => `<th>${escapeHtml(labels[col] || col)}</th>`).join("")}<th>Actions</th></tr></thead>
-      <tbody>
-        ${rows.map((row) => `<tr>${columns.map((col) => `<td>${formatCell(col, row[col], row, type)}</td>`).join("")}<td>${editable ? `<div class="workspace-row-actions"><button class="workspace-row-action" data-edit="${type}" data-id="${row.id}" type="button">Edit</button><button class="workspace-row-action is-danger" data-delete="${type}" data-id="${row.id}" type="button">Delete</button></div>` : `<span class="workspace-muted">Read only</span>`}</td></tr>`).join("")}
-      </tbody>`;
-    table.querySelectorAll("[data-edit]").forEach((button) => {
-      button.addEventListener("click", () => openForm(button.dataset.edit, button.dataset.id));
-    });
-    table.querySelectorAll("[data-delete]").forEach((button) => {
-      button.addEventListener("click", () => deleteItem(button.dataset.delete, button.dataset.id));
+  function renderRows(step) {
+    const list = document.querySelector(`[data-row-list="${step}"]`);
+    if (!list) return;
+    list.innerHTML = "";
+    state[step].forEach((row, index) => {
+      const article = document.createElement("article");
+      article.className = "workspace-diagnostic-row";
+      article.innerHTML = `
+        <div class="workspace-row-top">
+          <strong>${stepLabels[step]} ${index + 1}</strong>
+          ${state[step].length > 1 ? `<button class="workspace-remove-row" data-remove-row="${step}" data-row-index="${index}" type="button">Remove</button>` : ""}
+        </div>
+        <div class="workspace-field-grid"></div>
+      `;
+      const grid = article.querySelector(".workspace-field-grid");
+      fieldSets[step].forEach(([name, label, type, placeholder, options]) => {
+        const field = document.createElement("label");
+        const isWide = type === "textarea" || type === "days";
+        field.className = isWide ? "is-wide" : "";
+        field.innerHTML = `${label}${renderInput(step, index, name, type, placeholder, options)}`;
+        grid.appendChild(field);
+      });
+      list.appendChild(article);
     });
   }
 
-  function formatCell(key, value, row, type) {
-    if (key === "ownerId") return escapeHtml(userName(value));
-    if (type === "dashboards" && key === "name" && row.reportUrl) {
-      return `<a class="workspace-table-link" href="${escapeHtml(row.reportUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(value || "")}</a>`;
+  function renderInput(step, index, name, type, placeholder, options) {
+    const value = escapeHtml(state[step][index][name] || "");
+    const common = `data-field-step="${step}" data-field-index="${index}" data-field-name="${name}"`;
+    if (type === "textarea") {
+      return `<textarea ${common} placeholder="${escapeHtml(placeholder)}">${value}</textarea>`;
     }
-    if (["status", "priority", "trust", "action", "role"].includes(key)) {
-      const cls = ["Blocked", "High", "Disputed", "Needs review", "Fix", "Merge", "Retire"].includes(value) ? " is-risk" : ["Done", "Trusted", "Keep"].includes(value) ? " is-done" : "";
-      return `<span class="workspace-status${cls}">${escapeHtml(value || "")}</span>`;
+    if (type === "select") {
+      const choices = options.map((option) => {
+        const selected = state[step][index][name] === option ? " selected" : "";
+        return `<option value="${escapeHtml(option)}"${selected}>${escapeHtml(option)}</option>`;
+      }).join("");
+      return `<select ${common}><option value="">Select</option>${choices}</select>`;
     }
-    if (key === "trustScore") return `<span class="workspace-status${Number(value) <= 3 ? " is-risk" : " is-done"}">${escapeHtml(value || "")}/5</span>`;
-    return escapeHtml(value || "");
+    if (type === "days") {
+      const selectedDays = Array.isArray(state[step][index][name]) ? state[step][index][name] : [];
+      return `
+        <div class="workspace-day-picker" ${common}>
+          ${weekDays.map((day) => `
+            <label>
+              <input type="checkbox" value="${escapeHtml(day)}"${selectedDays.includes(day) ? " checked" : ""}>
+              <span>${escapeHtml(day.slice(0, 3))}</span>
+            </label>
+          `).join("")}
+        </div>
+      `;
+    }
+    return `<input ${common} type="${type}" placeholder="${escapeHtml(placeholder)}" value="${value}">`;
   }
 
-  function deleteItem(type, itemId) {
-    if (type === "users" && !canManageUsers()) return;
-    if (type !== "users" && !canEdit()) return;
-    const collection = type === "users" ? state.data.users : state.data[type];
-    const item = collection.find((entry) => entry.id === itemId);
-    if (!item) return;
-    const label = item.name || item.title || item.email || "this item";
-    if (!window.confirm(`Delete ${label}? This cannot be undone in the local prototype.`)) return;
-    if (type === "users" && item.id === currentUser()?.id) {
-      alert("You cannot delete your own active user.");
-      return;
+  function renderProgress() {
+    const allFields = stepOrder.flatMap((step) => state[step].flatMap((row) => Object.values(row)));
+    const filled = allFields.filter((value) => Array.isArray(value) ? value.length : String(value || "").trim()).length;
+    const percent = allFields.length ? Math.round((filled / allFields.length) * 100) : 0;
+    const bar = document.querySelector("[data-progress-bar]");
+    const label = document.querySelector("[data-progress-label]");
+    if (bar) bar.style.width = `${percent}%`;
+    if (label) label.textContent = `${percent}% complete`;
+  }
+
+  function renderArtifact() {
+    const output = document.querySelector("[data-artifact-output]");
+    if (!output) return;
+    const counts = Object.fromEntries(stepOrder.map((step) => [
+      step,
+      state[step].filter((row) => Object.values(row).some((value) => Array.isArray(value) ? value.length : String(value || "").trim())).length
+    ]));
+    output.innerHTML = `
+      <div class="workspace-artifact-titlebar">
+        <span></span>
+        <div>
+          <strong>Decision System Reset Artifact</strong>
+          <em>Align decisions. Act on signals. Drive outcomes.</em>
+        </div>
+        <span></span>
+      </div>
+      <div class="workspace-artifact-summary">
+        <div><span>Decisions</span><strong>${counts.decisions}</strong></div>
+        <div><span>Signals</span><strong>${counts.metrics}</strong></div>
+        <div><span>Cadences</span><strong>${counts.cadence}</strong></div>
+        <div><span>Action rules</span><strong>${counts.triggers + counts.ownership}</strong></div>
+      </div>
+      <div class="workspace-architecture-strip">
+        <article><span>01</span><strong>Decision layer</strong><p>Names what leaders actually decide.</p></article>
+        <article><span>02</span><strong>Signal layer</strong><p>Connects evidence to each decision.</p></article>
+        <article><span>03</span><strong>Cadence layer</strong><p>Creates the review rhythm where action happens.</p></article>
+        <article><span>04</span><strong>Action layer</strong><p>Turns thresholds into response rules.</p></article>
+        <article><span>05</span><strong>Accountability layer</strong><p>Clarifies who owns the response and escalation.</p></article>
+      </div>
+      <div class="workspace-artifact-board">
+        ${renderArtifactPanel("decisions", "1", "Decision inventory", "What decisions we make")}
+        ${renderArtifactPanel("metrics", "2", "Metric-to-decision mapping", "What signals we watch")}
+        ${renderArtifactPanel("cadence", "3", "Operating cadence", "When we review")}
+        ${renderArtifactPanel("triggers", "4", "Trigger and action design", "What we do when signals hit")}
+        ${renderArtifactPanel("ownership", "5", "Ownership and escalation", "Who acts and who escalates")}
+      </div>
+      ${renderDecisionFlow(counts)}
+    `;
+  }
+
+  function renderArtifactPanel(step, number, title, purpose) {
+    const rows = state[step].filter((row) => Object.values(row).some((value) => Array.isArray(value) ? value.length : String(value || "").trim()));
+    if (!rows.length) {
+      return `
+        <section class="workspace-artifact-panel workspace-panel-${step}">
+          <header><span>${number}</span><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(purpose)}</p></div></header>
+          <p class="workspace-empty-note">Add at least one item to this section.</p>
+        </section>
+      `;
     }
-    const index = collection.findIndex((entry) => entry.id === itemId);
-    collection.splice(index, 1);
-    saveData();
+    const limitedRows = rows.slice(0, 6);
+    return `
+      <section class="workspace-artifact-panel workspace-panel-${step}">
+        <header><span>${number}</span><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(purpose)}</p></div></header>
+        <div class="workspace-panel-body">
+          ${limitedRows.map((row) => renderPanelRow(step, row)).join("")}
+        </div>
+        ${rows.length > limitedRows.length ? `<p class="workspace-panel-more">+${rows.length - limitedRows.length} more in worksheet</p>` : ""}
+      </section>
+    `;
+  }
+
+  function renderPanelRow(step, row) {
+    if (step === "decisions") {
+      return `
+        <article class="workspace-board-row">
+          <strong>${escapeHtml(row.decision || "Decision")}</strong>
+          <span>${escapeHtml(row.owner || "Owner TBD")}</span>
+          <em>${escapeHtml(row.frequency || "Cadence TBD")}</em>
+          <p>${escapeHtml(row.pain || "Current friction not yet defined.")}</p>
+        </article>
+      `;
+    }
+    if (step === "metrics") {
+      return `
+        <article class="workspace-board-row">
+          <strong>${escapeHtml(row.decision || "Decision")}</strong>
+          <div class="workspace-signal-chips">${splitSignals(row.signal).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("")}</div>
+          <p>${escapeHtml(row.source || "Source TBD")} - ${escapeHtml(row.confidence || "Confidence TBD")}</p>
+        </article>
+      `;
+    }
+    if (step === "cadence") {
+      return `
+        <article class="workspace-board-row workspace-cadence-row">
+          <strong>${escapeHtml(row.forum || "Review forum")}</strong>
+          ${renderMiniTimeline(row.days)}
+          <em>${escapeHtml(formatCadenceTime(row) || row.rhythm || "Schedule TBD")}</em>
+          <p>${escapeHtml(row.commitment || row.decisions || "Required output not yet defined.")}</p>
+        </article>
+      `;
+    }
+    if (step === "triggers") {
+      const escalation = findEscalationForOwner(row.owner);
+      return `
+        <article class="workspace-board-row workspace-trigger-row">
+          <strong>${escapeHtml(row.signal || "Signal")}</strong>
+          <span>${escapeHtml(row.threshold || "Threshold TBD")}</span>
+          <b>${escapeHtml(row.action || "Action TBD")}</b>
+          <p>${escapeHtml(row.owner || "Response owner TBD")}</p>
+          <i class="workspace-section-link-arrow" aria-label="Maps to ${escapeHtml(escalation || "escalation owner")}"></i>
+        </article>
+      `;
+    }
+    return `
+      <article class="workspace-board-row workspace-owner-row">
+        <strong>${escapeHtml(row.decisionOwner || "Decision owner")}</strong>
+        <span>Escalate to ${escapeHtml(row.escalateTo || "TBD")}</span>
+        <em>${escapeHtml(row.timeline || "Timeline TBD")}</em>
+        <p>${escapeHtml(row.rule || "Escalation rule not yet defined.")}</p>
+      </article>
+    `;
+  }
+
+  function renderDecisionFlow(counts) {
+    const readiness = Math.min(100, Math.round(((counts.decisions + counts.metrics + counts.cadence + counts.triggers + counts.ownership) / 8) * 100));
+    return `
+      <div class="workspace-decision-flow">
+        <section class="workspace-flow-lane" aria-label="Decision architecture flow">
+          ${[
+            ["Inventory", "What decisions we make"],
+            ["Metrics", "What signals we watch"],
+            ["Cadence", "When we review"],
+            ["Triggers", "What happens when signal changes"],
+            ["Ownership", "Who acts and escalates"],
+            ["Better decisions", "Stronger outcomes"]
+          ].map(([label, copy], index, arr) => `
+            <article>
+              <span aria-hidden="true"></span>
+              <strong>${escapeHtml(label)}</strong>
+              <p>${escapeHtml(copy)}</p>
+            </article>
+            ${index < arr.length - 1 ? "<i></i>" : ""}
+          `).join("")}
+        </section>
+        <aside class="workspace-outcome-card">
+          <span>Outcomes</span>
+          <strong>${readiness}%</strong>
+          <p>Draft completeness based on populated architecture layers.</p>
+          <ul>
+            <li>Faster decision cycles</li>
+            <li>Aligned leadership signals</li>
+            <li>Clearer escalation paths</li>
+            <li>Reduced reporting debate</li>
+          </ul>
+        </aside>
+      </div>
+    `;
+  }
+
+  function splitSignals(value) {
+    const signals = String(value || "").split(/[,;/]+/).map((item) => item.trim()).filter(Boolean);
+    return signals.length ? signals.slice(0, 4) : ["Signal TBD"];
+  }
+
+  function setActiveStep(step) {
+    document.querySelectorAll("[data-step-target]").forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.stepTarget === step);
+    });
+    document.querySelectorAll("[data-step-panel]").forEach((panel) => {
+      panel.classList.toggle("is-hidden", panel.dataset.stepPanel !== step);
+    });
+    track("workspace_step_viewed", { step });
+  }
+
+  function addRow(step) {
+    state[step].push(emptyRow(step));
+    saveState();
+    render();
+    track("workspace_row_added", { step });
+  }
+
+  function removeRow(step, index) {
+    state[step].splice(index, 1);
+    if (!state[step].length) state[step].push(emptyRow(step));
+    saveState();
     render();
   }
 
-  function deleteActiveOrg() {
-    if (!isParallaxAdmin()) return;
-    const org = activeOrg();
-    if (!org) return;
-    const orgUsers = state.data.users.filter((user) => user.orgId === org.id);
-    const artifactCount = ["recommendations", "metrics", "decisions", "dashboards"]
-      .reduce((total, type) => total + state.data[type].filter((item) => item.orgId === org.id).length, 0);
-    const firstConfirm = window.confirm(`Delete ${org.name}? This will remove ${orgUsers.length} users and ${artifactCount} workspace records from the local prototype.`);
-    if (!firstConfirm) return;
-    const typed = window.prompt(`Type DELETE ${org.name} to confirm organization deletion.`);
-    if (typed !== `DELETE ${org.name}`) {
-      alert("Organization deletion cancelled. Confirmation text did not match.");
-      return;
-    }
-    state.data.organizations = state.data.organizations.filter((item) => item.id !== org.id);
-    state.data.users = state.data.users.filter((item) => item.orgId !== org.id);
-    ["recommendations", "metrics", "decisions", "dashboards"].forEach((type) => {
-      state.data[type] = state.data[type].filter((item) => item.orgId !== org.id);
-    });
-    const nextOrg = state.data.organizations[0] || null;
-    state.session = nextOrg ? { ...state.session, activeOrgId: nextOrg.id } : null;
-    saveData();
-    saveSession();
-    render();
+  function handleFieldChange(event) {
+    const field = event.target.closest("[data-field-step]");
+    if (!field) return;
+    if (field.classList.contains("workspace-day-picker")) return;
+    const { fieldStep, fieldIndex, fieldName } = field.dataset;
+    state[fieldStep][Number(fieldIndex)][fieldName] = field.value;
+    saveState();
+    renderProgress();
+    renderArtifact();
+    track("workspace_field_changed", { step: fieldStep, field_name: fieldName });
   }
 
-  function openForm(type, itemId) {
-    if (type === "users" && !canManageUsers()) return;
-    if (type !== "users" && !canEdit()) return;
-
-    const item = itemId ? orgItems(type).find((entry) => entry.id === itemId) : null;
-    state.editing = { type, itemId };
-    const modal = document.querySelector("[data-modal]");
-    const form = document.querySelector("[data-item-form]");
-    document.querySelector("[data-modal-title]").textContent = `${item ? "Edit" : "Add"} ${singular(type)}`;
-    form.innerHTML = `<div class="workspace-form-grid">${fieldSets[type].map((field) => renderField(field, item)).join("")}</div><button class="workspace-primary-button" type="submit">${item ? "Save changes" : "Create"}</button>`;
-    form.onsubmit = handleItemSubmit;
-    modal.classList.remove("is-hidden");
-    modal.setAttribute("aria-hidden", "false");
+  function renderArtifactAccess() {
+    const output = document.querySelector("[data-artifact-output]");
+    const download = document.querySelector("[data-download-pdf]");
+    const status = document.querySelector("[data-unlock-status]");
+    const email = document.querySelector('[data-unlock-form] input[name="email"]');
+    if (output) output.classList.toggle("is-locked", !access.unlocked);
+    if (download) download.classList.toggle("is-hidden", !access.unlocked);
+    if (email && !access.unlocked) email.value = "";
+    if (status) {
+      status.textContent = access.unlocked
+        ? "Artifact unlocked. You can review it on page or download the PDF."
+        : "Enter a work email to reveal the artifact preview.";
+    }
   }
 
-  function renderField([name, label, kind, required, options], item) {
-    const value = item?.[name] || "";
-    const wide = kind === "textarea" ? " is-wide" : "";
-    const labelContent = renderFieldLabel(name, label);
-    if (kind === "textarea") {
-      return `<label class="${wide}">${labelContent}<textarea name="${name}" ${required ? "required" : ""}>${escapeHtml(value)}</textarea></label>`;
-    }
-    if (kind === "select") {
-      return `<label>${labelContent}<select name="${name}" ${required ? "required" : ""}>${options.map((option) => `<option value="${escapeHtml(option)}" ${option === value ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}</select></label>`;
-    }
-    if (kind === "user") {
-      const users = orgUsers();
-      return `<label>${labelContent}<select name="${name}" ${required ? "required" : ""}>${users.map((user) => `<option value="${user.id}" ${user.id === value ? "selected" : ""}>${escapeHtml(user.name)} - ${escapeHtml(user.role)}</option>`).join("")}</select></label>`;
-    }
-    return `<label>${labelContent}<input name="${name}" type="${kind}" value="${escapeHtml(value)}" ${required ? "required" : ""}/></label>`;
-  }
-
-  function renderFieldLabel(name, label) {
-    const help = helpText[name];
-    const helpMarkup = help
-      ? `<span class="workspace-help-wrap"><span class="workspace-help" tabindex="0" aria-label="${escapeHtml(help)}">?</span><span class="workspace-help-popover" role="tooltip">${escapeHtml(help)}</span></span>`
-      : "";
-    return `<span class="workspace-field-label">${escapeHtml(label)}${helpMarkup}</span>`;
-  }
-
-  function handleItemSubmit(event) {
+  function handleUnlockSubmit(event) {
     event.preventDefault();
-    const { type, itemId } = state.editing;
-    const form = new FormData(event.currentTarget);
-    const payload = {};
-    fieldSets[type].forEach(([name]) => {
-      payload[name] = String(form.get(name) || "").trim();
-    });
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    access.email = String(formData.get("email") || "").trim();
+    access.unlocked = Boolean(access.email);
+    if (!access.unlocked) return;
+    renderArtifactAccess();
+    sendUnlockAlert();
+    track("decision_workspace_artifact_unlocked", { ...summaryParams(), email_domain: access.email.split("@")[1] || "" });
+  }
 
-    if (type === "users") {
-      const existing = state.data.users.find((user) => user.id === itemId);
-      const emailTaken = state.data.users.some((user) => user.email.toLowerCase() === payload.email.toLowerCase() && user.id !== itemId);
-      if (emailTaken) {
-        alert("That email already has access.");
+  function summaryParams() {
+    return {
+      decisions_count: filledRows("decisions"),
+      metrics_count: filledRows("metrics"),
+      cadence_count: filledRows("cadence"),
+      triggers_count: filledRows("triggers"),
+      ownership_count: filledRows("ownership")
+    };
+  }
+
+  function filledRows(step) {
+    return state[step].filter((row) => Object.values(row).some((value) => Array.isArray(value) ? value.length : String(value || "").trim())).length;
+  }
+
+  async function downloadArtifactPdf() {
+    if (!access.unlocked) {
+      document.querySelector('[data-unlock-form] input[name="email"]')?.focus();
+      return;
+    }
+    const status = document.querySelector("[data-unlock-status]");
+    if (status) status.textContent = "Preparing the visual PDF...";
+    const blob = await createArtifactScreenshotPdfBlob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "decision-system-reset-artifact.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    if (status) status.textContent = "Artifact unlocked. You can review it on page or download the PDF.";
+    track("artifact_pdf_downloaded", summaryParams());
+  }
+
+  function sendUnlockAlert() {
+    const form = document.querySelector("[data-unlock-alert-form]");
+    if (!form) return;
+    const summary = summaryParams();
+    setHiddenFormValue(form, "Email", access.email);
+    setHiddenFormValue(form, "Decisions", summary.decisions_count);
+    setHiddenFormValue(form, "Metrics", summary.metrics_count);
+    setHiddenFormValue(form, "Cadence", summary.cadence_count);
+    setHiddenFormValue(form, "Triggers", summary.triggers_count);
+    setHiddenFormValue(form, "Ownership", summary.ownership_count);
+    try {
+      form.submit();
+    } catch (error) {
+      track("decision_workspace_alert_failed", { reason: "form_submit_error" });
+    }
+  }
+
+  function setHiddenFormValue(form, name, value) {
+    const input = form.querySelector(`[name="${name}"]`);
+    if (input) input.value = String(value ?? "");
+  }
+
+  function buildDownloadLines() {
+    const lines = [
+      "Decision System Reset Artifact",
+      `Email: ${access.email || "-"}`,
+      `Generated: ${new Date().toLocaleString()}`,
+      "",
+      "Use this as a working draft only. Do not treat sample-safe worksheet entries as a final operating model.",
+      ""
+    ];
+    stepOrder.forEach((step) => {
+      lines.push(stepLabels[step]);
+      lines.push("-".repeat(stepLabels[step].length));
+      const rows = state[step].filter((row) => Object.values(row).some((value) => Array.isArray(value) ? value.length : String(value || "").trim()));
+      if (!rows.length) {
+        lines.push("No entries yet.", "");
         return;
       }
-      if (existing) {
-        Object.assign(existing, payload);
+      rows.forEach((row, index) => {
+        lines.push(`${index + 1}.`);
+        artifactColumns[step].forEach((column) => {
+          lines.push(`   ${labels[column] || column}: ${formatDownloadValue(row[column])}`);
+        });
+      });
+      lines.push("");
+    });
+    lines.push("Next step: https://parallaxdatalab.com/decision-system-reset/");
+    return lines;
+  }
+
+  async function createArtifactScreenshotPdfBlob() {
+    const artifact = document.querySelector("[data-artifact-output]");
+    if (!artifact) {
+      return createPdfBlob(buildDownloadLines());
+    }
+    const jpeg = await renderElementToJpeg(artifact);
+    if (!jpeg) {
+      return createPdfBlob(buildDownloadLines());
+    }
+    return createImagePdfBlob(jpeg.dataUrl, jpeg.width, jpeg.height);
+  }
+
+  async function renderElementToJpeg(element) {
+    const width = Math.ceil(element.scrollWidth || element.getBoundingClientRect().width);
+    const height = Math.ceil(element.scrollHeight || element.getBoundingClientRect().height);
+    if (!width || !height) return null;
+
+    const clone = element.cloneNode(true);
+    clone.classList.remove("is-locked");
+    clone.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+    inlineComputedStyles(element, clone);
+    clone.style.width = `${width}px`;
+    clone.style.minHeight = `${height}px`;
+    clone.style.filter = "none";
+    clone.style.opacity = "1";
+    clone.style.background = "#071334";
+    clone.style.padding = "24px";
+    clone.style.boxSizing = "border-box";
+
+    const serialized = new XMLSerializer().serializeToString(clone);
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="${width + 48}" height="${height + 48}" viewBox="0 0 ${width + 48} ${height + 48}">
+        <rect width="100%" height="100%" fill="#071334"/>
+        <foreignObject x="0" y="0" width="${width + 48}" height="${height + 48}">${serialized}</foreignObject>
+      </svg>
+    `;
+    const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    const image = await loadImage(url).catch(() => null);
+    if (!image) return null;
+
+    const scale = Math.min(2, Math.max(1, 1800 / (width + 48)));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round((width + 48) * scale);
+    canvas.height = Math.round((height + 48) * scale);
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#071334";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    return {
+      dataUrl: canvas.toDataURL("image/jpeg", 0.92),
+      width: canvas.width,
+      height: canvas.height
+    };
+  }
+
+  function inlineComputedStyles(source, target) {
+    const computed = window.getComputedStyle(source);
+    target.setAttribute("style", Array.from(computed).map((name) => `${name}:${computed.getPropertyValue(name)};`).join(""));
+    const sourceChildren = Array.from(source.children);
+    const targetChildren = Array.from(target.children);
+    sourceChildren.forEach((child, index) => {
+      if (targetChildren[index]) inlineComputedStyles(child, targetChildren[index]);
+    });
+  }
+
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = reject;
+      image.src = src;
+    });
+  }
+
+  function createImagePdfBlob(dataUrl, imageWidth, imageHeight) {
+    const jpegBinary = atob(dataUrl.split(",")[1] || "");
+    const jpegBytes = new Uint8Array(jpegBinary.length);
+    for (let index = 0; index < jpegBinary.length; index += 1) {
+      jpegBytes[index] = jpegBinary.charCodeAt(index);
+    }
+    const pageWidth = 792;
+    const pageHeight = 612;
+    const margin = 24;
+    const fit = Math.min((pageWidth - margin * 2) / imageWidth, (pageHeight - margin * 2) / imageHeight);
+    const drawWidth = Math.round(imageWidth * fit);
+    const drawHeight = Math.round(imageHeight * fit);
+    const x = Math.round((pageWidth - drawWidth) / 2);
+    const y = Math.round((pageHeight - drawHeight) / 2);
+    const content = `q\n${drawWidth} 0 0 ${drawHeight} ${x} ${y} cm\n/Im0 Do\nQ`;
+    const objects = [
+      "<< /Type /Catalog /Pages 2 0 R >>",
+      "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>`,
+      [
+        `<< /Type /XObject /Subtype /Image /Width ${imageWidth} /Height ${imageHeight} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpegBytes.length} >>\nstream\n`,
+        jpegBytes,
+        "\nendstream"
+      ],
+      `<< /Length ${content.length} >>\nstream\n${content}\nendstream`
+    ];
+    const encoder = new TextEncoder();
+    const parts = [];
+    let byteOffset = 0;
+    const offsets = [0];
+    addPdfPart("%PDF-1.4\n");
+    objects.forEach((body, index) => {
+      offsets.push(byteOffset);
+      addPdfPart(`${index + 1} 0 obj\n`);
+      if (Array.isArray(body)) {
+        body.forEach(addPdfPart);
       } else {
-        state.data.users.push({ id: id("user"), orgId: activeOrg().id, ...payload });
+        addPdfPart(body);
       }
-    } else {
-      const collection = state.data[type];
-      const existing = collection.find((entry) => entry.id === itemId);
-      if (existing) {
-        Object.assign(existing, payload);
-      } else {
-        collection.push({ id: id(type.slice(0, 3)), orgId: activeOrg().id, ...payload });
+      addPdfPart("\nendobj\n");
+    });
+    const xref = byteOffset;
+    addPdfPart(`xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`);
+    offsets.slice(1).forEach((offset) => {
+      addPdfPart(`${String(offset).padStart(10, "0")} 00000 n \n`);
+    });
+    addPdfPart(`trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
+    return new Blob(parts, { type: "application/pdf" });
+
+    function addPdfPart(part) {
+      if (part instanceof Uint8Array) {
+        parts.push(part);
+        byteOffset += part.length;
+        return;
       }
+      const bytes = encoder.encode(String(part));
+      parts.push(bytes);
+      byteOffset += bytes.length;
+    }
+  }
+
+  function loadSample() {
+    stepOrder.forEach((step) => {
+      state[step] = sampleData[step].map((row) => ({ ...emptyRow(step), ...row }));
+    });
+    saveState();
+    render();
+    setActiveStep("decisions");
+    track("workspace_sample_loaded", summaryParams());
+  }
+
+  function renderMiniTimeline(days) {
+    const selected = Array.isArray(days) ? days : [];
+    return `
+      <div class="workspace-mini-timeline">
+        ${weekDays.slice(0, 5).map((day) => `<span class="${selected.includes(day) ? "is-active" : ""}">${escapeHtml(day.slice(0, 3))}</span>`).join("")}
+      </div>
+    `;
+  }
+
+  function formatCadenceTime(row) {
+    const days = Array.isArray(row.days) && row.days.length ? row.days.map((day) => day.slice(0, 3)).join(", ") : "";
+    return [days, row.time].filter(Boolean).join(" - ");
+  }
+
+  function formatDownloadValue(value) {
+    if (Array.isArray(value)) return value.length ? value.join(", ") : "-";
+    return value || "-";
+  }
+
+  function findEscalationForOwner(owner) {
+    const normalized = String(owner || "").trim().toLowerCase();
+    if (!normalized) return "";
+    const match = state.ownership.find((row) => String(row.decisionOwner || "").trim().toLowerCase() === normalized);
+    return match?.escalateTo || "";
+  }
+
+  function createPdfBlob(lines) {
+    const pageWidth = 612;
+    const pageHeight = 792;
+    const marginX = 54;
+    const topY = 738;
+    const lineHeight = 14;
+    const maxChars = 82;
+    const pages = [];
+    let current = [];
+    let y = topY;
+
+    lines.flatMap((line) => wrapPdfLine(line, maxChars)).forEach((line) => {
+      if (y < 56) {
+        pages.push(current);
+        current = [];
+        y = topY;
+      }
+      current.push({ text: line, y });
+      y -= lineHeight;
+    });
+    if (current.length) pages.push(current);
+
+    const objects = [
+      "<< /Type /Catalog /Pages 2 0 R >>",
+      "",
+      "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"
+    ];
+    const catalogId = 1;
+    const pagesId = 2;
+    const fontId = 3;
+    const pageIds = [];
+    pages.forEach((pageLines) => {
+      const content = [
+        "BT",
+        "/F1 10 Tf",
+        ...pageLines.map((line) => `1 0 0 1 ${marginX} ${line.y} Tm (${escapePdf(line.text)}) Tj`),
+        "ET"
+      ].join("\n");
+      const contentId = addObject(`<< /Length ${content.length} >>\nstream\n${content}\nendstream`);
+      const pageId = addObject(`<< /Type /Page /Parent ${pagesId} 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /Font << /F1 ${fontId} 0 R >> >> /Contents ${contentId} 0 R >>`);
+      pageIds.push(pageId);
+    });
+    objects[1] = `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(" ")}] /Count ${pageIds.length} >>`;
+
+    function addObject(body) {
+      objects.push(body);
+      return objects.length;
     }
 
-    saveData();
-    closeModal();
-    render();
+    let pdf = "%PDF-1.4\n";
+    const offsets = [0];
+    objects.forEach((body, index) => {
+      offsets.push(pdf.length);
+      pdf += `${index + 1} 0 obj\n${body}\nendobj\n`;
+    });
+    const xref = pdf.length;
+    pdf += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+    offsets.slice(1).forEach((offset) => {
+      pdf += `${String(offset).padStart(10, "0")} 00000 n \n`;
+    });
+    pdf += `trailer\n<< /Size ${objects.length + 1} /Root ${catalogId} 0 R >>\nstartxref\n${xref}\n%%EOF`;
+    return new Blob([pdf], { type: "application/pdf" });
   }
 
-  function closeModal() {
-    const modal = document.querySelector("[data-modal]");
-    modal.classList.add("is-hidden");
-    modal.setAttribute("aria-hidden", "true");
-    state.editing = null;
+  function wrapPdfLine(line, maxChars) {
+    const words = String(line || "").split(/\s+/);
+    const wrapped = [];
+    let current = "";
+    words.forEach((word) => {
+      const next = current ? `${current} ${word}` : word;
+      if (next.length > maxChars) {
+        if (current) wrapped.push(current);
+        current = word;
+      } else {
+        current = next;
+      }
+    });
+    wrapped.push(current);
+    return wrapped.length ? wrapped : [""];
   }
 
-  function singular(type) {
-    return {
-      recommendations: "recommendation",
-      metrics: "metric",
-      decisions: "decision",
-      dashboards: "dashboard",
-      users: "user"
-    }[type] || "item";
-  }
-
-  function renderReport() {
-    const org = activeOrg();
-    const recs = orgItems("recommendations");
-    const metrics = orgItems("metrics");
-    const decisions = orgItems("decisions");
-    const dashboards = orgItems("dashboards");
-    const openHigh = recs.filter((item) => item.priority === "High" && item.status !== "Done");
-    const report = document.querySelector("[data-export-report]");
-    report.innerHTML = `
-      <p class="workspace-eyebrow">Decision System Reset</p>
-      <h2>${escapeHtml(org.name)}</h2>
-      <p class="workspace-muted">Generated from the Parallax Decision Workspace. Use this as the working artifact for leadership alignment, KPI ownership, dashboard cleanup, and 30/60/90-day execution.</p>
-      <div class="workspace-report-section">
-        <h3>Executive summary</h3>
-        <ul>
-          <li>${recs.filter((item) => item.status !== "Done").length} open recommendations require ownership or follow-through.</li>
-          <li>${metrics.filter((item) => item.trust !== "Trusted").length} metrics need trust review, clearer definitions, or stronger ownership.</li>
-          <li>${dashboards.filter((item) => item.action !== "Keep").length} dashboards should be fixed, merged, or retired.</li>
-          <li>${decisions.length} recurring decisions have been mapped to owners, cadence, and supporting metrics.</li>
-        </ul>
-      </div>
-      <div class="workspace-report-section">
-        <h3>Priority recommendations</h3>
-        ${listReportItems(openHigh, (item) => `${item.title} - Owner: ${userName(item.ownerId)} - Next: ${item.nextStep}`)}
-      </div>
-      <div class="workspace-report-section">
-        <h3>Metric ownership map</h3>
-        ${listReportItems(metrics, (item) => `${item.name} - Owner: ${userName(item.ownerId)} - Trust: ${item.trust} - Decision: ${item.decision}`)}
-      </div>
-      <div class="workspace-report-section">
-        <h3>Dashboard cleanup plan</h3>
-        ${listReportItems(dashboards, (item) => `${item.name} - ${item.platform || "Unknown source"} / ${item.location || "No location"} - Action: ${item.action} - Trust: ${item.trustScore}/5 - Owner: ${userName(item.ownerId)}${item.reportUrl ? ` - Link: ${item.reportUrl}` : ""}`)}
-      </div>
-      <div class="workspace-report-section">
-        <h3>Decision map</h3>
-        ${listReportItems(decisions, (item) => `${item.name} - Options: ${item.options || "Not defined"} - Criteria: ${item.criteria || "Not defined"} - Current option: ${item.selectedOption || "Not selected"} - Cadence: ${item.cadence} - Owner: ${userName(item.ownerId)} - Metrics: ${item.metrics}`)}
-      </div>`;
-  }
-
-  function listReportItems(items, mapItem) {
-    if (!items.length) return `<p class="workspace-muted">No items yet.</p>`;
-    return `<ul>${items.map((item) => `<li>${escapeHtml(mapItem(item))}</li>`).join("")}</ul>`;
+  function escapePdf(value) {
+    return String(value).replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
   }
 
   function escapeHtml(value) {
-    return String(value ?? "")
+    return String(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
@@ -932,5 +761,33 @@
       .replace(/'/g, "&#039;");
   }
 
-  boot();
+  document.addEventListener("click", (event) => {
+    const stepButton = event.target.closest("[data-step-target]");
+    if (stepButton) setActiveStep(stepButton.dataset.stepTarget);
+
+    const addButton = event.target.closest("[data-add-row]");
+    if (addButton) addRow(addButton.dataset.addRow);
+
+    const removeButton = event.target.closest("[data-remove-row]");
+    if (removeButton) removeRow(removeButton.dataset.removeRow, Number(removeButton.dataset.rowIndex));
+
+    if (event.target.closest("[data-load-sample]")) loadSample();
+    if (event.target.closest("[data-download-pdf]")) downloadArtifactPdf();
+  });
+
+  document.addEventListener("input", handleFieldChange);
+  document.addEventListener("change", (event) => {
+    const picker = event.target.closest(".workspace-day-picker");
+    if (!picker) return;
+    const { fieldStep, fieldIndex, fieldName } = picker.dataset;
+    state[fieldStep][Number(fieldIndex)][fieldName] = Array.from(picker.querySelectorAll("input:checked")).map((input) => input.value);
+    saveState();
+    renderProgress();
+    renderArtifact();
+    track("workspace_field_changed", { step: fieldStep, field_name: fieldName });
+  });
+  document.querySelector("[data-unlock-form]")?.addEventListener("submit", handleUnlockSubmit);
+
+  render();
+  track("workspace_started", summaryParams());
 })();
